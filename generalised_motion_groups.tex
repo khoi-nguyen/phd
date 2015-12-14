@@ -45,6 +45,58 @@ with $\VectorSpace$ its underlying vector space and $\CompactGroup$ its associat
 The above representation is unfortunately reducible.
 However, as we shall see later, the Fourier Transform on $\Group$ can be written exclusively with those representations.
 
+\subsection{Unitary dual}
+\label{subsection:unitary_dual}
+
+Throughout this section, fix $\rho \in \dualGroup{V}$
+and denote by $\IsotropySubgroup{\CompactGroup}{\rho}$ its isotropy subgroup.
+
+Let $\sigma \in \dualGroup{\IsotropySubgroup{\CompactGroup}{\rho}}$ and denote by $\dimRep{\sigma}$ its dimension.
+For $q = 1, \dots, \dimRep{\sigma}$, let:
+\begin{align}
+    P^\sigma_q F(u) = \dimRep{\sigma} \int_\IsotropySubgroup{\CompactGroup}{\rho} \conj{\sigma_{qq}(m)} F(u m) \dd m,
+    \quad F \in \Lebesgue{2}{\CompactGroup}.
+\end{align}
+
+By the Inverse Fourier Transform at $e \in \IsotropySubgroup{\CompactGroup}{\rho}$,
+if $F \in \Lebesgue{2}{\CompactGroup}$ and $u \in \CompactGroup$, then:
+\begin{align}
+    F(u)
+    = \sum_{\sigma \in \dualGroup{\IsotropySubgroup{\CompactGroup}{\rho}}} \dimRep{\sigma} \sum_{q = 1}^{\dimRep{\sigma}} {\Fourier[\IsotropySubgroup{\CompactGroup}{\rho}]{F(u \dummy)}}_{qq}
+    = \sum_{\sigma \in \dualGroup{\IsotropySubgroup{\CompactGroup}{\rho}}} P^\sigma_q F(u)
+\end{align}
+
+Now, write $\Hilbert{\sigma}{q} = P^\sigma_q \Lebesgue{2}{\CompactGroup}$.
+
+\begin{lemma}
+    The Hilbert spaces
+    \begin{align*}
+        \{\Hilbert{\sigma}{q} : \sigma \in \dualGroup{\IsotropySubgroup{\CompactGroup}{\rho}}, q = 1, \dots, \dimRep{\sigma} \}
+    \end{align*}
+    are mutually orthogonal.
+    Therefore, we have
+    \begin{align*}
+        \Lebesgue{2}{K} = \bigoplus_{\sigma \in \dualGroup{\IsotropySubgroup{\CompactGroup}{\rho}}} \bigoplus_{q = 1}^{\dimRep{\sigma}} \Hilbert{\sigma}{q},
+    \end{align*}
+    where the above decomposition is orthogonal.
+\end{lemma}
+
+\begin{proposition}[Unitary dual]
+\label{proposition:unitary_dual}
+    Let $\rho, \rho' \in \dualGroup{\VectorSpace}$
+    and $\sigma \in \dualGroup{\IsotropySubgroup{\CompactGroup}{\rho}}$,
+    $\sigma' \in \dualGroup{\IsotropySubgroup{\CompactGroup}{\rho'}}$.
+    The following properties hold:
+    \begin{enumerate}
+        \item $\Rep{\rho}$ restricts to an irreducible unitary representation on each $\Hilbert{\sigma}{q}$;
+        \item $(\Hilbert{\sigma}{q}, \Rep{\rho})$ and $(\Hilbert{\sigma'}{q'}, \Rep{\rho'})$ are equivalent if and only if
+            \begin{align*}
+                \rho' = k \rho \quad \text{and} \quad \EquivalenceClass{\dualGroup{\IsotropySubgroup{\CompactGroup}{\rho}}}{\sigma} = \EquivalenceClass{\dualGroup{\IsotropySubgroup{\CompactGroup}{\rho}}}{\sigma'(k \dummy k^{-1})}
+            \end{align*}
+            for some $k \in \CompactGroup$.
+    \end{enumerate}
+\end{proposition}
+
 \section{Fourier Transform}
 \label{section:Fourier_transform}
 
