@@ -28,3 +28,19 @@
 From now on, unless stated otherwise,
 $\Group$ will denote a generalised motion group,
 with $\VectorSpace$ its underlying vector space and $\CompactGroup$ its associated compact group.
+
+\section{Unitary representations}
+\label{section:unitary_representations}
+
+\begin{definition}
+\label{definition:reducible_representation}
+    Let $\rho \in \dualGroup{V}$.
+    We define a unitary representation $\Rep{\rho} \in \Hom(\Group, \End(\Lebesgue{2}{\CompactGroup}))$ of $\Group$ via:
+    \begin{align}
+        \Rep{\rho} (x, k) F(u) = \rho(u^{-1} x) F(k^{-1} u),
+    \end{align}
+    where $(x, k) \in \CompactGroup$, $F \in \Lebesgue{2}{\CompactGroup}$ and $u \in \CompactGroup$.
+\end{definition}
+
+The above representation is unfortunately reducible.
+However, as we shall see later, the Fourier Transform on $G$ can be written exclusively with those representations.
