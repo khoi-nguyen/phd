@@ -64,3 +64,13 @@ However, as we shall see later, the Fourier Transform on $G$ can be written excl
     \end{align*}
     is called the \emph{Fourier Transform} of $f$.
 \end{definition}
+
+\begin{proposition}[Plancherel formula]
+\label{proposition:Plancherel_formula}
+\index{Plancherel formula}
+    Let $f \in \Lebesgue{1}{\Group} \cap \Lebesgue{2}{\Group}$.
+    The following formula holds:
+    \begin{align}
+        \int_G \abs{f}^2 \dd g = \int_\dualGroup{V} \norm[\HilbertSchmidt{\Lebesgue{2}{\CompactGroup}}]{\Fourier{f}(\rho)}^2 \dd \Plancherel{V}(\rho).
+    \end{align}
+\end{proposition}
