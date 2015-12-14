@@ -43,7 +43,7 @@ with $\VectorSpace$ its underlying vector space and $\CompactGroup$ its associat
 \end{definition}
 
 The above representation is unfortunately reducible.
-However, as we shall see later, the Fourier Transform on $G$ can be written exclusively with those representations.
+However, as we shall see later, the Fourier Transform on $\Group$ can be written exclusively with those representations.
 
 \section{Fourier Transform}
 \label{section:Fourier_transform}
@@ -51,7 +51,7 @@ However, as we shall see later, the Fourier Transform on $G$ can be written excl
 \begin{definition}[Fourier transform]
 \label{definition:Fourier_Transform}
 \index{Fourier transform}
-    Let $f \in \Lebesgue{1}{\Group}$ and $\rho \in \dualGroup{V}$.
+    Let $f \in \Lebesgue{1}{\Group}$ and $\rho \in \dualGroup{\VectorSpace}$.
     We define its \emph{Fourier coefficient} at $\rho$ via:
     \begin{align*}
         \Fourier{f}(\rho) = \int_\Group f(g) \adj{\Rep{\rho}(g)} \dd g.
@@ -71,6 +71,6 @@ However, as we shall see later, the Fourier Transform on $G$ can be written excl
     Let $f \in \Lebesgue{1}{\Group} \cap \Lebesgue{2}{\Group}$.
     The following formula holds:
     \begin{align}
-        \int_G \abs{f}^2 \dd g = \int_\dualGroup{V} \norm[\HilbertSchmidt{\Lebesgue{2}{\CompactGroup}}]{\Fourier{f}(\rho)}^2 \dd \Plancherel{V}(\rho).
+        \int_G \abs{f}^2 \dd g = \int_\dualGroup{\VectorSpace} \norm[\HilbertSchmidt{\Lebesgue{2}{\CompactGroup}}]{\Fourier{f}(\rho)}^2 \dd \Plancherel{\VectorSpace}(\rho).
     \end{align}
 \end{proposition}
