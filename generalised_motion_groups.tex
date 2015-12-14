@@ -44,3 +44,23 @@ with $\VectorSpace$ its underlying vector space and $\CompactGroup$ its associat
 
 The above representation is unfortunately reducible.
 However, as we shall see later, the Fourier Transform on $G$ can be written exclusively with those representations.
+
+\section{Fourier Transform}
+\label{section:Fourier_transform}
+
+\begin{definition}[Fourier transform]
+\label{definition:Fourier_Transform}
+\index{Fourier transform}
+    Let $f \in \Lebesgue{1}{\Group}$ and $\rho \in \dualGroup{V}$.
+    We define its \emph{Fourier coefficient} at $\rho$ via:
+    \begin{align*}
+        \Fourier{f}(\rho) = \int_\Group f(g) \adj{\Rep{\rho}(g)} \dd g.
+    \end{align*}
+
+    Moreover, the map
+    \begin{align*}
+        \Fourier{f} : \dualGroup{V} \to \End(\Lebesgue{2}{\CompactGroup}) :
+        \rho \mapsto \Fourier{f}(\rho)
+    \end{align*}
+    is called the \emph{Fourier Transform} of $f$.
+\end{definition}
