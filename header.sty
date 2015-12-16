@@ -3,10 +3,17 @@
 
 \usepackage{amsmath, amsthm, amssymb, amsfonts}
 
+\usepackage{cool}
+
 % Environments
 \newtheorem{definition}{Definition}[section]
 \newtheorem{lemma}{Lemma}[section]
 \newtheorem{proposition}{Proposition}[section]
+\newtheorem{theorem}{Theorem}[section]
+
+\newcounter{claimcounter}
+\numberwithin{claimcounter}{theorem}
+\newenvironment{claim}{\stepcounter{claimcounter}{\emph{Claim \theclaimcounter:}}}{}
 
 % Notation
 \newcommand{\abs}[1]{\left|{#1}\right|}
@@ -17,19 +24,34 @@
 \newcommand{\dimRep}[1]{{d_{#1}}}
 \newcommand{\dummy}{\cdot}
 \newcommand{\norm}[2][\VectorSpace]{{{\| #2 \|}_{#1}}}
+\newcommand{\Character}[1]{{\chi_{#1}}}
+\newcommand{\DifferenceOperator}[2][\Group]{{\Delta^{#1}_{#2}}}
 \newcommand{\EquivalenceClass}[2]{{{[#2]}_{#1}}}
 \newcommand{\Fourier}[2][\Group]{\mathcal{F}_{#1} {#2}}
 \newcommand{\Group}{G}
 \newcommand{\Hilbert}[2]{{\mathfrak{H}^{#1}_{#2}}}
+\newcommand{\InverseFourier}[1][\Group]{\mathcal{F}^{-1}_{#1}}
 \newcommand{\CompactGroup}{K}
 \newcommand{\HilbertSchmidt}[1]{{\mathcal{HS} \left(#1\right)}}
+\newcommand{\Id}[1]{{I_{#1}}}
 \newcommand{\IsotropySubgroup}[2]{{{#1}_{#2}}}
+\newcommand{\JapaneseBracket}[2]{{\langle #2 \rangle}_{\dualGroup{#1}}}
+\newcommand{\Kronecker}[2]{\delta_{#1,#2}}
 \newcommand{\Lebesgue}[2]{{L^{#1} (#2)}}
 \newcommand{\Plancherel}[1]{\mu_{\dualGroup{#1}}}
-\newcommand{\LeftQuotient}[2]{{{#1} \backslash {#2}}}
+\newcommand{\Polynomials}[1]{{\mathrm{Pol}_{#1}}}
+\newcommand{\LeftQuotient}[2]{{{#1} \backslash{} {#2}}}
 \newcommand{\Rep}[1]{\xi^{#1}_\Group}
 \newcommand{\VectorSpace}{V}
 
 \DeclareMathOperator{\Aut}{Aut}
 \DeclareMathOperator{\End}{End}
 \DeclareMathOperator{\Hom}{Hom}
+\DeclareMathOperator{\Span}{span}
+\DeclareMathOperator{\tr}{tr}
+
+% Sets
+\newcommand{\N}{\mathbb{N}}
+
+% Pseudo-differential calculus
+\newcommand{\SmoothSymbols}[1][\Group]{{S^{-\infty} (#1)}}
