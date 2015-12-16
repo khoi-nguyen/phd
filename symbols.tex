@@ -194,5 +194,32 @@
 
         \item[Step 4] $\DifferenceOperator{q} \eta_l(\rho)$ is non-zero on $V_\sigma$
             only if $\norm[\dualGroup{V}]{\rho}, \JapaneseBracket{\CompactGroup}{\sigma} \leq C_q 2^l$.
+
+        \item[Step 5] Conclusion.
+
+            Let
+            \begin{align*}
+                L(\rho) =
+                \begin{cases}
+                    \bigoplus_{\JapaneseBracket{\CompactGroup}{\sigma}
+                    \leq C_q 2^l} {\left(\norm[\dualGroup{\VectorSpace}]{\rho}^2 + {\JapaneseBracket{\CompactGroup}{\sigma}}^2 \right)}^\frac{1}{2} \Id{V_\sigma}
+                    & \text{if } \norm[\dualGroup{V}]{\rho} \leq C_q 2^l\\
+                    0 & \text{otherwise}.
+                \end{cases}
+            \end{align*}
+
+            Observe that $L(\rho)$ is a bounded operator in $\Lebesgue{2}{K}$,
+            and the operator norm is bounded by $C_q 2^l$ uniformly in $\rho$.
+
+            Therefore, the operator
+            \begin{align*}
+                \Rep{\rho} \BesselPotential{- m - \order(q) + \gamma}&
+                \DifferenceOperator{q} \eta_l(\rho)
+                \Rep{\rho} \BesselPotential{-\gamma}\\
+                &= {L(\rho)}^{-m - \order(q) + \gamma}
+                \DifferenceOperator{q} \eta_l(\rho)
+                {L(\rho)}^{-\gamma}
+            \end{align*}
+            is a bounded operator on $\Lebesgue{2}{\CompactGroup}$ with norm less than $C_q 2^{-l m}$.
     \end{description}
 \end{proof}
