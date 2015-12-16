@@ -20,8 +20,24 @@
     \begin{description}
         \item[Step 1] Constructing the dyadic decomposition.
 
-            Fix $l \in \N$.
+            First, let us find a smooth function $\chi_0 \in \SmoothFunctions{\dualGroup{\VectorSpace}}$ invariant under $K$ such that:
+            \begin{align*}
+                \chi_0 \equiv 1 \,\text{if}\, \norm[\dualGroup{V}]{\rho} \leq 1, \quad \text{and} \quad
+                \chi_0 \equiv 0 \,\text{if}\, \norm[\dualGroup{V}]{\rho} > 2.
+            \end{align*}
 
+            Then, for each $l \in \N$ satisfying $l \leq 1$, let:
+            \begin{align*}
+                \chi_l = \chi_0(2^{-l} \dummy) - \chi_0(2^{-l + 1} \dummy).
+            \end{align*}
+
+            In particular, it should be clear that:
+            \begin{align}
+                \sum_{l = 0}^\infty \chi_l = 1.
+                \label{eq:theorem:Littlewood-Paley_decomposition:partition_of_unity}
+            \end{align}
+
+            Fix $l \in \N$.
             We define our symbol $\eta_l$ as follows.
             For each $\sigma \in \dualGroup{\CompactGroup}$, we let:
             \begin{align}
@@ -30,6 +46,12 @@
                 \chi_{l - \Ceiling{\log_2 \JapaneseBracket{\CompactGroup}{\sigma}}}(\rho) \Id{V_\sigma},
             \end{align}
             where $V_\sigma = \Span \{ \sigma_{ij} : i, j = 1, \dots, \dimRep{\sigma} \}$.
+
+            Using~\eqref{eq:theorem:Littlewood-Paley_decomposition:partition_of_unity},
+            it should be clear that
+            \begin{align*}
+                \sum_{l = 0}^\infty \eta_l = \Id{\Lebesgue{2}{\CompactGroup}}.
+            \end{align*}
 
         \item[Step 2] Computing the associated kernels.
 
