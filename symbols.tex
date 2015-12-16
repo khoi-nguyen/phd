@@ -7,13 +7,17 @@
 \begin{theorem}[Littlewood-Paley decomposition]
 \label{theorem:Littlewood-Paley_decomposition}
 \index{Littlewood-Paley decomposition}
-    There exists a sequence $\eta_l \in \SmoothSymbols$ of smoothing symbols satisfying the following properties:
+    There exists a sequence $\eta_l \in \SmoothSymbols$, $l \in \N$ of smoothing symbols satisfying the following properties:
     \begin{enumerate}
         \item the semi-dorms decay in the following way:
-        \item the associated kernels $\kappa_l$ satisfy:
+            \begin{align}
+                \SymbolSemiNorm{m}{\rho, \delta}{\eta_l} \leq C 2^{-lm}
+            \end{align}
+        \item the associated kernels $\kappa_l$ satisfy
             \begin{align*}
-                \sum_{l = 0}^\infty \kappa_l =
+                \sum_{l = 0}^\infty \kappa_l = \DiracDelta{e_\Group}
             \end{align*}
+            in the sense of distributions.
     \end{enumerate}
 \end{theorem}
 \begin{proof}
