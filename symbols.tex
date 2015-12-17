@@ -26,16 +26,21 @@
 
             First, let us find a smooth function $\chi_0 \in \SmoothFunctions{\dualGroup{\VectorSpace}}$ invariant under $K$ such that:
             \begin{align*}
-                \chi_0 \equiv 1 \,\text{if}\, \norm[\dualGroup{V}]{\rho} \leq 1, \quad \text{and} \quad
-                \chi_0 \equiv 0 \,\text{if}\, \norm[\dualGroup{V}]{\rho} > 2.
+                \chi_0(\rho) = 1 \  \text{if}\  \norm[\dualGroup{V}]{\rho} \leq 1, \quad \text{and} \quad
+                \chi_0(\rho) \equiv 0 \ \text{if}\  \norm[\dualGroup{V}]{\rho} \geq 2.
             \end{align*}
 
-            Then, for each $l \in \N$ satisfying $l \leq 1$, let:
+            Then, for each $l \in \N$ satisfying $l \leq 1$, let
             \begin{align*}
                 \chi_l = \chi_0(2^{-l} \dummy) - \chi_0(2^{-l + 1} \dummy).
             \end{align*}
+            so that $\supp \chi_l \subset \Ball{0}{2^{l + 1}}$.
 
-            In particular, it should be clear that:
+            In particular, it should be clear that
+            \begin{align*}
+                \sum_{l = 0}^N \chi_l = \chi_0(2^{-N} \dummy)
+            \end{align*}
+            so that in fact
             \begin{align}
                 \sum_{l = 0}^\infty \chi_l = 1.
                 \label{eq:theorem:Littlewood-Paley_decomposition:partition_of_unity}
@@ -44,18 +49,44 @@
             Fix $l \in \N$.
             We define our symbol $\eta_l$ as follows.
             For each $\tau \in \dualGroup{\CompactGroup}$, we let:
-            \begin{align}
+            \begin{align*}
                 \eta_l(\rho)
                 = \sum_{\JapaneseBracket{\CompactGroup}{\tau} \leq 2^l}
                 \chi_{l - \Ceiling{\log_2 \JapaneseBracket{\CompactGroup}{\tau}}}(\rho) \Id{V_\tau},
-            \end{align}
+            \end{align*}
             where $V_\tau = \Span \{ \tau_{ij} : i, j = 1, \dots, \dimRep{\tau} \}$.
 
-            Using~\eqref{eq:theorem:Littlewood-Paley_decomposition:partition_of_unity},
-            it should be clear that
+            Note that since $\supp \chi_l \subset \Ball{0}{2^{l + 1}}$,
+            we get that
+            \begin{align}
+                \eta_l(\rho) = 0 \quad \text{if } \norm[\dualGroup{\CompactGroup}]{v} \geq 2^{l + 1}
+                \label{eq:theorem:Littlewood-Paley_decomposition:cancellation_condition}
+            \end{align}
+
+            We check that
             \begin{align*}
-                \sum_{l = 0}^\infty \eta_l = \Id{\Lebesgue{2}{\CompactGroup}}.
+                \sum_{l = 0}^\infty \eta_l
+                &= \sum_{l = 0}^\infty
+                    \sum_{\JapaneseBracket{\CompactGroup}{\tau} \leq 2^l}
+                        \chi_{l - \Ceiling{\log_2 \JapaneseBracket{\CompactGroup}{\tau}}} \Id{V_\tau}\\
+                &= \sum_{\tau \in \dualGroup{\CompactGroup}}
+                    \sum_{l = \Ceiling{\log_2 \JapaneseBracket{\CompactGroup}{\tau}}}^\infty
+                        \chi_{l - \Ceiling{\log_2 \JapaneseBracket{\CompactGroup}{\tau}}} \Id{V_\tau},
             \end{align*}
+            where the last line was obtained by commuting the two sums.
+
+            Substituing $l$ for $l + \Ceiling{\log_2 \JapaneseBracket{\CompactGroup}{\tau}}$ in the inner sum,
+            the above becomes:
+            \begin{align*}
+                \sum_{l = 0}^\infty \eta_l
+                = \sum_{\tau \in \dualGroup{\CompactGroup}}
+                    \sum_{l = 0}^\infty
+                        \chi_l \Id{V_\tau}
+                = \sum_{\tau \in \dualGroup{\CompactGroup}}
+                    \Id{V_\tau}
+                = \Id{\Lebesgue{2}{\CompactGroup}},
+            \end{align*}
+            where the second to last inequality was obtained from~\eqref{eq:theorem:Littlewood-Paley_decomposition:partition_of_unity}.
 
         \item[Step 2] Computing the associated kernels.
 
