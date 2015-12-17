@@ -22,12 +22,20 @@
 \index{generalised motion group}
     Let $\Group$ be a group.
     We shall say that $\Group$ is a \emph{generalised motion group}
-    if there exists a vector space $\VectorSpace$ and a compact group $\CompactGroup \subset \Aut(\VectorSpace)$ such that $\Group = \VectorSpace \rtimes \CompactGroup$.
+    if there exists a (finite dimensional) vector space $\VectorSpace$ and a compact group $\CompactGroup \subset \OrthogonalGroup{\VectorSpace}$ such that $\Group = \VectorSpace \rtimes \CompactGroup$.
 \end{definition}
 
 From now on, unless stated otherwise,
 $\Group$ will denote a generalised motion group,
 with $\VectorSpace$ its underlying vector space and $\CompactGroup$ its associated compact group.
+
+The requirement that $K$ should be a subgroup of $\OrthogonalGroup{\VectorSpace}$ is motivated by the following result:
+
+\begin{lemma}[Haar measure]
+\label{lemma:Haar_measure}
+    If $\dd x$ is a Lebesgue measure on $\VectorSpace$ and $\dd k$ is the Haar measure on $\CompactGroup$,
+    then the the product measure $\dd x \dd k$ is a Haar measure on $\Group = \VectorSpace \rtimes \CompactGroup$.
+\end{lemma}
 
 \section{Unitary representations}
 \label{section:unitary_representations}
