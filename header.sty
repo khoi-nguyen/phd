@@ -7,6 +7,7 @@
 
 % Environments
 \newtheorem{definition}{Definition}[section]
+\newtheorem{example}{Example}[section]
 \newtheorem{lemma}{Lemma}[section]
 \newtheorem{proposition}{Proposition}[section]
 \newtheorem{theorem}{Theorem}[section]
@@ -24,6 +25,7 @@
 \newcommand{\dimRep}[1]{{d_{#1}}}
 \newcommand{\dummy}{\cdot}
 \newcommand{\norm}[2][\VectorSpace]{{{\| #2 \|}_{#1}}}
+\newcommand{\AffineTransformations}[1]{{\mathrm{Affine} (#1)}}
 \newcommand{\BesselPotential}[1]{{(I - \mathcal{L})^\frac{#1}{2}}}
 \newcommand{\Character}[1]{{\chi_{#1}}}
 \newcommand{\DifferenceOperator}[2][\Group]{{\Delta^{#1}_{#2}}}
@@ -39,12 +41,14 @@
 \newcommand{\JapaneseBracket}[2]{{\langle #2 \rangle}_{\dualGroup{#1}}}
 \newcommand{\Kronecker}[2]{\delta_{#1,#2}}
 \newcommand{\Lebesgue}[2]{{L^{#1} (#2)}}
-\newcommand{\OrthogonalGroup}[1]{{O(#1)}}
+\newcommand{\MotionGroup}[1]{{SE (#1)}}
+\newcommand{\OrthogonalGroup}[1]{{O (#1)}}
 \newcommand{\Plancherel}[1]{\mu_{\dualGroup{#1}}}
 \newcommand{\Polynomials}[1]{{\mathrm{Pol}_{#1}}}
 \newcommand{\LeftQuotient}[2]{{{#1} \backslash{} {#2}}}
 \newcommand{\Rep}[1]{\xi^{#1}_\Group}
 \newcommand{\SmoothFunctions}[1]{{C^\infty(#1)}}
+\newcommand{\SpecialOrthogonalGroup}[1]{{SO (#1)}}
 \newcommand{\VectorSpace}{V}
 
 \DeclareMathOperator{\Aut}{Aut}
@@ -56,6 +60,7 @@
 
 % Sets
 \newcommand{\N}{\mathbb{N}}
+\newcommand{\R}{\mathbb{R}}
 
 % Pseudo-differential calculus
 \newcommand{\SmoothSymbols}[1][\Group]{{S^{-\infty} (#1)}}
