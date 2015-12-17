@@ -157,10 +157,29 @@
                 \label{eq:theorem:Littlewood-Paley_decomposition:kernel}
             \end{align}
 
-        \item[Step 3] Uniform boundedness of $\DifferenceOperator{q} \eta_l$ in $\Lebesgue{2}{\CompactGroup}$
+        \item[Step 3] We show that for every $q \in \Polynomials{\Group}$
+            and every $\rho \in \dualGroup{\VectorSpace}$,
+            \begin{align}
+                \sup_{l \in \N} \norm[\Lin{\Lebesgue{2}{\CompactGroup}}]{\DifferenceOperator{q} \eta_l(\rho)} < \infty.
+            \end{align}
 
-            Fix $q_1 \in \Polynomials{\VectorSpace}$ and $q_2 \in \Polynomials{\CompactGroup}$
+            Fix $q_1 \in \Polynomials{\VectorSpace}$, $q_2 \in \Polynomials{\CompactGroup}$
             and write $q(x, k) = q_1(x) q_2(k)$.
+            We also choose an arbitrary function $F \in \Lebesgue{2}{\CompactGroup}$,
+            and an element $u \in \CompactGroup$.
+
+            Informally, the idea behind the proof of this step is the following:
+            if we can write
+            \begin{align*}
+                \DifferenceOperator{q} \eta_l(\rho) F(u)
+                = \sum_{\tau \in \dualGroup{\CompactGroup}}
+                    \dimRep{\tau}
+                    \tr\left( \tau(u) \sigma_{l, q, \rho}(u, \tau) \Fourier[\CompactGroup] F(\tau) \right),
+            \end{align*}
+            then a bound on the operator norm of $\DifferenceOperator{q} \eta_l (\rho)$ can be obtained by finding an appropriate bound on $\sigma_{l, q, \rho}$.
+            Looking at~\eqref{eq:theorem:Littlewood-Paley_decomposition:kernel},
+            we can see the latter is the right approach
+            as we have a sum on $\dualGroup{\CompactGroup}$ already.
 
             Multiplying $\kappa_l$ par $q$ and taking the Fourier Transform, we get:
             \begin{align*}
