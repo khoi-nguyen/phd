@@ -43,13 +43,13 @@
 
             Fix $l \in \N$.
             We define our symbol $\eta_l$ as follows.
-            For each $\sigma \in \dualGroup{\CompactGroup}$, we let:
+            For each $\tau \in \dualGroup{\CompactGroup}$, we let:
             \begin{align}
                 \eta_l(\rho)
-                = \sum_{\JapaneseBracket{\CompactGroup}{\sigma} \leq 2^l}
-                \chi_{l - \Ceiling{\log_2 \JapaneseBracket{\CompactGroup}{\sigma}}}(\rho) \Id{V_\sigma},
+                = \sum_{\JapaneseBracket{\CompactGroup}{\tau} \leq 2^l}
+                \chi_{l - \Ceiling{\log_2 \JapaneseBracket{\CompactGroup}{\tau}}}(\rho) \Id{V_\tau},
             \end{align}
-            where $V_\sigma = \Span \{ \sigma_{ij} : i, j = 1, \dots, \dimRep{\sigma} \}$.
+            where $V_\tau = \Span \{ \tau_{ij} : i, j = 1, \dots, \dimRep{\tau} \}$.
 
             Using~\eqref{eq:theorem:Littlewood-Paley_decomposition:partition_of_unity},
             it should be clear that
@@ -63,24 +63,24 @@
             we obtain that the kernel is given by:
             \begin{align}
                 \kappa_l(x, k)
-                = \sum_{\JapaneseBracket{\CompactGroup}{\sigma} \leq 2^l} \int_\dualGroup{\VectorSpace}
-                        \chi_{l - \Ceiling{\log_2 \JapaneseBracket{\CompactGroup}{\sigma}}}(\rho) \tr( \left. \Rep{\rho}(x, k) \right|_{V_\sigma} )
+                = \sum_{\JapaneseBracket{\CompactGroup}{\tau} \leq 2^l} \int_\dualGroup{\VectorSpace}
+                        \chi_{l - \Ceiling{\log_2 \JapaneseBracket{\CompactGroup}{\tau}}}(\rho) \tr( \left. \Rep{\rho}(x, k) \right|_{V_\tau} )
                     \dd \Plancherel{\VectorSpace}(\rho)
                     \label{eq:theorem:Littlewood-Paley_decomposition:computing_kernel}
             \end{align}
 
             Observing that
             \begin{align*}
-                \tr( \left. \Rep{\rho}(x, k) \right|_{V_\sigma})
-                &= \sum_{p = 1}^\dimRep{\sigma}
-                    \dimRep{\sigma}
+                \tr( \left. \Rep{\rho}(x, k) \right|_{V_\tau})
+                &= \sum_{p = 1}^\dimRep{\tau}
+                    \dimRep{\tau}
                     \int_\Lebesgue{2}{\CompactGroup}
-                    (u \rho)(x) \sigma_{pp}(k^{-1} u) \conj{\sigma_{pp}(u)}
+                    (u \rho)(x) \tau_{pp}(k^{-1} u) \conj{\tau_{pp}(u)}
                     \dd u\\
-                &= \sum_{p,q = 1}^\dimRep{\sigma}
-                    \dimRep{\sigma}
+                &= \sum_{p,q = 1}^\dimRep{\tau}
+                    \dimRep{\tau}
                     \int_\Lebesgue{2}{\CompactGroup}
-                        (u \rho)(x) \sigma_{pq}(k^{-1}) \sigma_{q p}(u) \conj{\sigma_{pp}(u)}
+                        (u \rho)(x) \tau_{pq}(k^{-1}) \tau_{q p}(u) \conj{\tau_{pp}(u)}
                     \dd u
             \end{align*}
 
@@ -89,12 +89,12 @@
             we obtain:
             \begin{align}
                 \kappa_l (x, k)
-                = &\sum_{\JapaneseBracket{\CompactGroup}{\sigma} \leq 2^j}
-                        \sum_{p,q = 1}^\dimRep{\sigma}
-                        \dimRep{\sigma}
+                = &\sum_{\JapaneseBracket{\CompactGroup}{\tau} \leq 2^j}
+                        \sum_{p,q = 1}^\dimRep{\tau}
+                        \dimRep{\tau}
                         \int_\dualGroup{\VectorSpace}
                                 \int_\Lebesgue{2}{\CompactGroup} \notag\\
-                                    &\chi_{l - \Ceiling{\log_2 \JapaneseBracket{\CompactGroup}{\sigma}}}(u^{-1}\rho) \rho(x) \sigma_{pq}(k^{-1}) \sigma_{qp}(u) \conj{\sigma_{pp}(u)}
+                                    &\chi_{l - \Ceiling{\log_2 \JapaneseBracket{\CompactGroup}{\tau}}}(u^{-1}\rho) \rho(x) \tau_{pq}(k^{-1}) \tau_{qp}(u) \conj{\tau_{pp}(u)}
                                 \dd u
                             \dd \Plancherel{\VectorSpace}(\rho)
                     \label{eq:theorem:Littlewood-Paley_decomposition:computing_kernel:2}
@@ -102,23 +102,23 @@
 
             Using the invariance of $\chi_{l - j}$ under $\CompactGroup$ and
             \begin{align*}
-                \dimRep{\sigma} \int_\Lebesgue{2}{\CompactGroup} \sigma_{qp}(u) \conj{\sigma_{pp}(u)} \dd u = \Kronecker{p}{q},
+                \dimRep{\tau} \int_\Lebesgue{2}{\CompactGroup} \tau_{qp}(u) \conj{\tau_{pp}(u)} \dd u = \Kronecker{p}{q},
             \end{align*}
             then~\eqref{eq:theorem:Littlewood-Paley_decomposition:computing_kernel:2} becomes
             \begin{align*}
                 \kappa_l (x, k)
-                = &\sum_{\JapaneseBracket{\CompactGroup}{\sigma} \leq 2^j}
+                = &\sum_{\JapaneseBracket{\CompactGroup}{\tau} \leq 2^j}
                     \int_\dualGroup{\VectorSpace}
-                        \chi_{l - \Ceiling{\log_2 \JapaneseBracket{\CompactGroup}{\sigma}}}(\rho) \rho(x)
+                        \chi_{l - \Ceiling{\log_2 \JapaneseBracket{\CompactGroup}{\tau}}}(\rho) \rho(x)
                     \dd \Plancherel{\VectorSpace}(\rho)
-                    \conj{\Character{\sigma}(k)}
+                    \conj{\Character{\tau}(k)}
             \end{align*}
             which, after recognising the inverse Fourier Transform on $\dualGroup{V}$,
             yields the following expression for the kernel:
             \begin{align}
                 \kappa_l (x, k)
-                = &\sum_{\JapaneseBracket{\CompactGroup}{\sigma} \leq 2^j}
-                    \InverseFourier[\VectorSpace]{\chi_{l - \Ceiling{\log_2 \JapaneseBracket{\CompactGroup}{\sigma}}}}(x) \conj{\Character{\sigma}(k)}.
+                = &\sum_{\JapaneseBracket{\CompactGroup}{\tau} \leq 2^j}
+                    \InverseFourier[\VectorSpace]{\chi_{l - \Ceiling{\log_2 \JapaneseBracket{\CompactGroup}{\tau}}}}(x) \conj{\Character{\tau}(k)}.
                 \label{eq:theorem:Littlewood-Paley_decomposition:kernel}
             \end{align}
 
@@ -130,17 +130,17 @@
             Multiplying $\kappa_l$ par $q$ and taking the Fourier Transform, we get:
             \begin{align*}
                 \DifferenceOperator{q} \eta_l (\rho) F(u)
-                = &\sum_{\JapaneseBracket{\CompactGroup}{\sigma} \leq 2^j}
+                = &\sum_{\JapaneseBracket{\CompactGroup}{\tau} \leq 2^j}
                     \int_\VectorSpace
                         \int_\CompactGroup
-                            q_1(x) \InverseFourier[\VectorSpace]{\chi_{l - \Ceiling{\log_2 \JapaneseBracket{\CompactGroup}{\sigma}}}}(x) (k u \rho)(-x)
-                            q_2(k) \conj{\Character{\sigma}(k)} F(k u)
+                            q_1(x) \InverseFourier[\VectorSpace]{\chi_{l - \Ceiling{\log_2 \JapaneseBracket{\CompactGroup}{\tau}}}}(x) (k u \rho)(-x)
+                            q_2(k) \conj{\Character{\tau}(k)} F(k u)
                         \dd k
                     \dd x\\
-                = &\sum_{\JapaneseBracket{\CompactGroup}{\sigma} \leq 2^j}
+                = &\sum_{\JapaneseBracket{\CompactGroup}{\tau} \leq 2^j}
                     \int_\CompactGroup
-                        \DifferenceOperator[\VectorSpace]{q_1} \chi_{l - \Ceiling{\log_2 \JapaneseBracket{\CompactGroup}{\sigma}}}(k u \rho)
-                        q_2(k) \conj{\Character{\sigma}(k)} F(k u)
+                        \DifferenceOperator[\VectorSpace]{q_1} \chi_{l - \Ceiling{\log_2 \JapaneseBracket{\CompactGroup}{\tau}}}(k u \rho)
+                        q_2(k) \conj{\Character{\tau}(k)} F(k u)
                     \dd k,
             \end{align*}
             where the second line was obtained by integrating with respect to $x$.
@@ -149,48 +149,48 @@
             and using the Leibniz rule for polynomials on $q_2$, we obtain
             \begin{align*}
                 \DifferenceOperator{q} \eta_l (\rho) F(u)
-                = &\sum_{\JapaneseBracket{\CompactGroup}{\sigma} \leq 2^j}
+                = &\sum_{\JapaneseBracket{\CompactGroup}{\tau} \leq 2^j}
                     \sum_{p = 1}^{C_q}
                         \int_\CompactGroup
-                            \DifferenceOperator[\VectorSpace]{q_1} \chi_{l - \Ceiling{\log_2 \JapaneseBracket{\CompactGroup}{\sigma}}}(k \rho)
-                            q_{2, p}(k) {q'}_{2, p}(u^{-1}) \conj{\Character{\sigma}(k u^{-1})} F(k)
+                            \DifferenceOperator[\VectorSpace]{q_1} \chi_{l - \Ceiling{\log_2 \JapaneseBracket{\CompactGroup}{\tau}}}(k \rho)
+                            q_{2, p}(k) {q'}_{2, p}(u^{-1}) \conj{\Character{\tau}(k u^{-1})} F(k)
                         \dd k,
             \end{align*}
 
             \begin{claim}
                 We can find a decomposition
                 \begin{align*}
-                    \DifferenceOperator[\VectorSpace]{q_1} \chi_{l - \Ceiling{\log_2 \JapaneseBracket{\CompactGroup}{\sigma}}}(\rho) = \sum_{r = 1}^{C_q} f_{l, r}(\sigma) P_{l, r}(\rho),
+                    \DifferenceOperator[\VectorSpace]{q_1} \chi_{l - \Ceiling{\log_2 \JapaneseBracket{\CompactGroup}{\tau}}}(\rho) = \sum_{r = 1}^{C_q} f_{l, r}(\tau) P_{l, r}(\rho),
                 \end{align*}
                 where both $P_{l, r}$ and $f_{l, r}$ are uniformly bounded in $l$ and $r$.
             \end{claim}
 
             Using the above claim,
-            and the identity $\conj{\Character{\sigma}(k u^{-1})} = \sum_{i, j = 1}^\dimRep{\sigma} \sigma_{ij}(u) \conj{{\sigma_{ij}(k)}}$,
+            and the identity $\conj{\Character{\tau}(k u^{-1})} = \sum_{i, j = 1}^\dimRep{\tau} \tau_{ij}(u) \conj{{\tau_{ij}(k)}}$,
             we observe that:
             \begin{align*}
                 \DifferenceOperator{q} \eta_l (\rho) F(u)
                 = &\sum_{p, r = 1}^{C_q}
-                    \sum_{\JapaneseBracket{\CompactGroup}{\sigma} \leq 2^j}
-                        \sum_{i, j = 1}^\dimRep{\sigma}\\
-                            &\sigma_{ij}(u) {q'}_{2, p}(u^{-1})
-                            f_{l, r}(\sigma)
+                    \sum_{\JapaneseBracket{\CompactGroup}{\tau} \leq 2^j}
+                        \sum_{i, j = 1}^\dimRep{\tau}\\
+                            &\tau_{ij}(u) {q'}_{2, p}(u^{-1})
+                            f_{l, r}(\tau)
                             \int_\CompactGroup
-                                P_{l, r}(k \rho) q_{2, p}(k) F(k) \conj{\sigma_{ij}(k)}
+                                P_{l, r}(k \rho) q_{2, p}(k) F(k) \conj{\tau_{ij}(k)}
                             \dd k\\
                 = &\sum_{p, r = 1}^{C_q}
-                    \sum_{\JapaneseBracket{\CompactGroup}{\sigma} \leq 2^j}
-                        \sum_{i, j = 1}^\dimRep{\sigma}
-                            \sigma_{ij}(u) {q'}_{2, p}(u^{-1})
-                            f_{l, r}(\sigma)
+                    \sum_{\JapaneseBracket{\CompactGroup}{\tau} \leq 2^j}
+                        \sum_{i, j = 1}^\dimRep{\tau}
+                            \tau_{ij}(u) {q'}_{2, p}(u^{-1})
+                            f_{l, r}(\tau)
                             \Fourier[\CompactGroup]{} {\left\{ P_{l, r}(\dummy \rho) q_{2, p} F\right\}}_{j i}.
             \end{align*}
 
-            For $p, r = 1, \dots, \dimRep{\sigma}$, defining the symbols
+            For $p, r = 1, \dots, \dimRep{\tau}$, defining the symbols
             \begin{align}
-                \tau_{l, p, r}(u, \sigma) =
+                \sigma_{l, p, r}(u, \tau) =
                 \begin{cases}
-                    \frac{1}{\dimRep{\sigma}} {q'}_{2, p}(u^{-1}) f_{l, r}(\sigma) \Id{\dimRep{\sigma}} & \text{if } \JapaneseBracket{\CompactGroup}{\sigma} \leq 2^l\\
+                    \frac{1}{\dimRep{\tau}} {q'}_{2, p}(u^{-1}) f_{l, r}(\tau) \Id{\dimRep{\tau}} & \text{if } \JapaneseBracket{\CompactGroup}{\tau} \leq 2^l\\
                     0 & \text{otherwise}
                 \end{cases}
             \end{align}
@@ -199,18 +199,18 @@
             \begin{align*}
                 \DifferenceOperator{q} \eta_l (\rho) F(u)
                 = &\sum_{p, r = 1}^{C_q}
-                    \sum_{\sigma \in \dualGroup{\CompactGroup}}
-                        \dimRep{\sigma}
+                    \sum_{\tau \in \dualGroup{\CompactGroup}}
+                        \dimRep{\tau}
                         \tr \left(
-                            \sigma(u)
-                            \tau_{l, p, r}(u, \sigma)
+                            \tau(u)
+                            \sigma_{l, p, r}(u, \tau)
                             \Fourier[\CompactGroup]{} \left\{ P_{l, r}(\dummy \rho) q_{2, p} F\right\}
                         \right)\\
                 = &\sum_{p, r = 1}^{C_q}
                         T_{p, r} (P_r(\dummy \rho) q_{2, p} F)(u).
             \end{align*}
 
-            Since the symbols $\tau_{l, p, r}$ are uniformly bounded,
+            Since the symbols $\sigma_{l, p, r}$ are uniformly bounded,
             it follows that the operators $T_{l, p, r}$ are uniformly bounded in $\Lebesgue{2}{\CompactGroup}$.
             From there, it follows that
             \begin{align}
@@ -219,8 +219,8 @@
             \end{align}
             where $C_q$ does not depend on $l$.
 
-        \item[Step 4] $\DifferenceOperator{q} \eta_l(\rho)$ is non-zero on $V_\sigma$
-            only if $\norm[\dualGroup{V}]{\rho}, \JapaneseBracket{\CompactGroup}{\sigma} \leq C_q 2^l$.
+        \item[Step 4] $\DifferenceOperator{q} \eta_l(\rho)$ is non-zero on $V_\tau$
+            only if $\norm[\dualGroup{V}]{\rho}, \JapaneseBracket{\CompactGroup}{\tau} \leq C_q 2^l$.
 
         \item[Step 5] Conclusion.
 
@@ -228,8 +228,8 @@
             \begin{align*}
                 L_l(\rho) =
                 \begin{cases}
-                    \bigoplus_{\JapaneseBracket{\CompactGroup}{\sigma}
-                    \leq C_q 2^l} {\left(\norm[\dualGroup{\VectorSpace}]{\rho}^2 + {\JapaneseBracket{\CompactGroup}{\sigma}}^2 \right)}^\frac{1}{2} \Id{V_\sigma}
+                    \bigoplus_{\JapaneseBracket{\CompactGroup}{\tau}
+                    \leq C_q 2^l} {\left(\norm[\dualGroup{\VectorSpace}]{\rho}^2 + {\JapaneseBracket{\CompactGroup}{\tau}}^2 \right)}^\frac{1}{2} \Id{V_\tau}
                     & \text{if } \norm[\dualGroup{V}]{\rho} \leq C_q 2^l\\
                     0 & \text{otherwise}.
                 \end{cases}
