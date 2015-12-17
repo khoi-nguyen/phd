@@ -194,3 +194,16 @@ Now, write $\Hilbert{\tau}{q} = P^\tau_q \Lebesgue{2}{\CompactGroup}$.
     \end{align*}
     where the last line was obtained by applying the Plancherel formula on $\VectorSpace$.
 \end{proof}
+
+\begin{proposition}[Inverse Fourier Transform]
+\label{proposition:inverse_Fourier_Transform}
+\index{inverse Fourier Transform}
+    Let $\phi \in \Schwartz{\Group}$.
+    For each $g \in \Group$,
+    we have
+    \begin{align*}
+        \phi(g)
+        = \int_\dualGroup{\VectorSpace}
+        \tr \left( \Rep{\rho}(g) \Fourier \phi(\rho) \right) \dd \Plancherel{\VectorSpace}(\rho).
+    \end{align*}
+\end{proposition}
