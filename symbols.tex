@@ -88,19 +88,23 @@
             \end{align*}
             where the second to last inequality was obtained from~\eqref{eq:theorem:Littlewood-Paley_decomposition:partition_of_unity}.
 
-        \item[Step 2] Computing the associated kernels.
+        \item[Step 2] Computing the associated kernels $\kappa_l$.
 
-            By applying the inverse Fourier Transform,
+            By applying the inverse Fourier Transform (Proposition~\ref{proposition:inverse_Fourier_Transform})
             we obtain that the kernel is given by:
             \begin{align}
                 \kappa_l(x, k)
-                = \sum_{\JapaneseBracket{\CompactGroup}{\tau} \leq 2^l} \int_\dualGroup{\VectorSpace}
+                = \sum_{\JapaneseBracket{\CompactGroup}{\tau} \leq 2^l}
+                    \int_\dualGroup{\VectorSpace}
                         \chi_{l - \Ceiling{\log_2 \JapaneseBracket{\CompactGroup}{\tau}}}(\rho) \tr( \left. \Rep{\rho}(x, k) \right|_{V_\tau} )
                     \dd \Plancherel{\VectorSpace}(\rho)
-                    \label{eq:theorem:Littlewood-Paley_decomposition:computing_kernel}
+                \label{eq:theorem:Littlewood-Paley_decomposition:computing_kernel}
             \end{align}
 
-            Observing that
+            By the Peter-Weyl Theorem,
+            $\{ \sqrt{\dimRep{\tau}} \tau_{pq} : p, q = 1, \dots, \dimRep{\tau} \}$
+            is an orthonormal basis of $V_\tau$,
+            allowing us to compute the trace as
             \begin{align*}
                 \tr( \left. \Rep{\rho}(x, k) \right|_{V_\tau})
                 &= \sum_{p = 1}^\dimRep{\tau}
@@ -112,7 +116,7 @@
                     \dimRep{\tau}
                     \int_\Lebesgue{2}{\CompactGroup}
                         (u \rho)(x) \tau_{pq}(k^{-1}) \tau_{q p}(u) \conj{\tau_{pp}(u)}
-                    \dd u
+                    \dd u.
             \end{align*}
 
             Using the above in~\eqref{eq:theorem:Littlewood-Paley_decomposition:computing_kernel},
