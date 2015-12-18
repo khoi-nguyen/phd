@@ -4,6 +4,68 @@
 \section{Littlewood-Paley decomposition}
 \label{section:littlewood-paley_decomposition}
 
+\begin{lemma}
+    Let $\alpha \in \N^n$,
+    and fix a radial function $\chi \in \SmoothFunctions{\R^n}$.
+    If $\alpha \in \N^n$, then
+    \begin{align}
+        \D{\chi}{x^\alpha}(x)
+        = \sum_{r = 1}^{C_\alpha} f_r(\norm[\R^n]{x}) P_r(x),
+    \end{align}
+    where $P_r$ is a polynomial depending only on $\alpha$.
+\end{lemma}
+\begin{proof}
+    Using the chain rule, we know that for a purely radial function $f$
+    \begin{align}
+        \D{f}{x_i} = \D{\lambda}{x_i} \D{f}{\lambda} = \frac{\D{f}{\lambda}}{\norm[\R^n]{x}} x_i.
+    \end{align}
+
+    We know proceed to show the claim by induction on $\alpha$.
+    The result is clearly true when $\abs{\alpha} = 0$.
+    If we assume it is true for some $\alpha \in \N^n$, then by the above,
+    \begin{align}
+        \D{\chi}{x_i,x^\alpha}(x)
+        &= \D{}{x_i} \sum_{r = 1}^{C_\alpha} f_r(\norm[\R^n]{x}) P_r(x)\\
+        &= \sum_{r = 1}^{C_\alpha} \frac{\D{f_r}{\lambda}}{\norm[\R^n]{x}}(\norm[\R^n]{x}) x_i P_r(x)
+        + \sum_{r = 1}^{C_\alpha} f_r(\norm[\R^n]{x}) \D{P_r}{x_i}(x),
+    \end{align}
+    which concludes the proof.
+\end{proof}
+
+\begin{lemma}
+    Let $P \in \SmoothFunctions{\dualGroup{\VectorSpace}}$ be a polynomial.
+    We can find functions $q_i \in \Polynomials{K}$, $f_i \in \Lebesgue{2}{\dualGroup{V}}$, $i = 1, \dots, N$ such that
+    \begin{align*}
+        P(k \rho) = \sum_{i = 1}^N q_i(k) f_i(\rho)
+    \end{align*}
+    for each $k \in \CompactGroup$ and each $\rho \in \dualGroup{\VectorSpace}$.
+\end{lemma}
+\begin{proof}
+    Let $\mathcal{H}$ be the set of polynomials of order at most $m$ on $\dualGroup{V}$,
+    with the norm
+    \begin{align}
+        {\left( \int_\dualGroup{\VectorSpace} \abs{P}^2 \right)}^\frac{1}{2}, \quad P \in \mathcal{H}.
+    \end{align}
+
+    Consider $L_m$ the left-regular representaion of $\CompactGroup$ on the above Hilbert space.
+    Decomposing $L_m$ into irreducible representations
+    \begin{align}
+        \mathcal{H} = \bigoplus_{i = 1}^N \mathcal{H}_i,
+        \quad L_m = \bigoplus_{i = 1}^N \left. L_m \right|_{\mathcal{H}_i},
+    \end{align}
+    then $P$ can be written as
+    \begin{align*}
+        P = \sum_{i = 1}^N \sum_{q = 1}^{d_i} c_{i, q} e_{i, q},
+    \end{align*}
+    and if $\tau_{i, pq}(k) = \int_\dualGroup{\VectorSpace} L_m(k) e_{i, q} \conj{e_{i, p}}$, then
+    \begin{align*}
+        P(k \rho) &= L_m(k^{-1}) P(\rho)
+        = \sum_{i = 1}^N \sum_{q = 1}^{d_i} c_{i, q} L_m(k^{-1}) e_{i, q}(\rho)\\
+        &= \sum_{i = 1}^N \sum_{q = 1}^{d_i} c_{i, q} \tau_{i, pq}(k^{-1}) e_{i, p}(\rho),
+    \end{align*}
+    which concludes the proof.
+\end{proof}
+
 \begin{theorem}[Littlewood-Paley decomposition]
 \label{theorem:Littlewood-Paley_decomposition}
 \index{Littlewood-Paley decomposition}
