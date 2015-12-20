@@ -152,12 +152,14 @@ Now, write $\Hilbert{\tau}{q} = P^\tau_q \Lebesgue{2}{\CompactGroup}$.
     where $F \in \SmoothFunctions{K}$.
 \end{definition}
 
-\begin{lemma}[Infinitesimal representation of $\Laplace$]
+\begin{lemma}[Infinitesimal representation of $\Laplacian$]
 \label{lemma:infinitesimal_representation_of_the_Laplacian}
+    Let $\rho \in \dualGroup{\VectorSpace}$.
+    The infinitesimal representation of $\Laplacian$ is given by
+    \begin{align*}
+        \Rep{\rho}(\Laplacian) = - \norm[\dualGroup{\VectorSpace}]{\rho}^2 \Id{\Lebesgue{2}{\CompactGroup}} + \RightLaplacian[\CompactGroup].
+    \end{align*}
 \end{lemma}
-\begin{proof}
-    Let $X \in \LieVectorSpace$.
-\end{proof}
 
 \section{Fourier Transform}
 \label{section:Fourier_transform}

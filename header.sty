@@ -29,7 +29,7 @@
 \newcommand{\ip}[3][\VectorSpace]{{{\langle #2, #3 \rangle}_{#1}}}
 \newcommand{\AffineTransformations}[1]{{\mathrm{Affine} (#1)}}
 \newcommand{\Ball}[3][\VectorSpace]{{B_{#1} (#2, #3)}}
-\newcommand{\BesselPotential}[1]{{(I - \mathcal{L})^\frac{#1}{2}}}
+\newcommand{\BesselPotential}[2][\Group]{{(I - \Laplacian[#1])^\frac{#2}{2}}}
 \newcommand{\Character}[1]{{\chi_{#1}}}
 \newcommand{\DifferenceOperator}[2][\Group]{{\Delta^{#1}_{#2}}}
 \newcommand{\EquivalenceClass}[2]{{{[#2]}_{#1}}}
@@ -46,12 +46,14 @@
 \newcommand{\Kronecker}[2]{\delta_{#1,#2}}
 \newcommand{\Lebesgue}[2]{{L^{#1} (#2)}}
 \newcommand{\Lin}[1]{{\mathcal{L} (#1)}}
+\renewcommand{\Laplacian}[1][\Group]{{\mathcal{L}_{#1}}}
 \newcommand{\MotionGroup}[1]{{SE (#1)}}
 \newcommand{\OrthogonalGroup}[1]{{O (#1)}}
 \newcommand{\Plancherel}[1]{\mu_{\dualGroup{#1}}}
 \newcommand{\Polynomials}[1]{{\mathrm{Pol}_{#1}}}
 \newcommand{\LeftQuotient}[2]{{{#1} \backslash{} {#2}}}
 \newcommand{\Rep}[1]{\xi^{#1}_\Group}
+\newcommand{\RightLaplacian}[1][\Group]{{\tilde{\mathcal{L}}_{#1}}}
 \newcommand{\SmoothFunctions}[1]{{C^\infty(#1)}}
 \newcommand{\Schwartz}[1]{{\mathcal{S} (#1)}}
 \newcommand{\SpecialOrthogonalGroup}[1]{{SO (#1)}}
