@@ -134,6 +134,24 @@ Now, write $\Hilbert{\tau}{q} = P^\tau_q \Lebesgue{2}{\CompactGroup}$.
     \end{align*}
 \end{definition}
 
+\subsection{Infinitesimal representations}
+\label{subsection:infinitesimal_representations}
+
+\begin{definition}[Infinitesimal Representation]
+\label{definition:infinitesimal_representation}
+\index{infinitesimal representation}
+    Let $X \in \g$.
+    We define the infinitesimal representation of $X$ as the operator
+    \begin{align*}
+        \Rep{\rho}(X) : \SmoothFunctions{K} \to \SmoothFunctions{K}
+    \end{align*}
+    defined via
+    \begin{align*}
+        \Rep{\rho}(X) F(u) = \left. \D{}{t} \right|_{t = 0} F(u \exp(t X)),
+    \end{align*}
+    where $F \in \SmoothFunctions{K}$.
+\end{definition}
+
 \section{Fourier Transform}
 \label{section:Fourier_transform}
 
