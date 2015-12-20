@@ -5,6 +5,7 @@
 \label{section:littlewood-paley_decomposition}
 
 \begin{lemma}
+\label{lemma:derivatives_of_radial_functions}
     Let $\alpha \in \N^n$,
     and fix a radial function $\chi \in \SmoothFunctions{\R^n}$.
     If $\alpha \in \N^n$, then
@@ -13,6 +14,13 @@
         = \sum_{r = 1}^{C_\alpha} f_r(\norm[\R^n]{x}) P_r(x),
     \end{align}
     where $P_r$ is a polynomial depending only on $\alpha$.
+
+    Moreover, if $\supp \chi$ is compact
+    and if there exists $\delta > 0$ such that $\D{\chi}{\lambda} = 0$ on $\Ball[\R^n]{0}{\delta}$,
+    then we have
+    \begin{align*}
+        \sup_r \sup_{\lambda \in \R^+} \abs{f_r} < \infty
+    \end{align*}
 \end{lemma}
 \begin{proof}
     Using the chain rule, we know that for a purely radial function $f$
@@ -33,12 +41,18 @@
 \end{proof}
 
 \begin{lemma}
+\label{lemma:left_regular_representation_of_polynomials}
     Let $P \in \SmoothFunctions{\dualGroup{\VectorSpace}}$ be a polynomial.
     We can find functions $q_i \in \Polynomials{K}$, $f_i \in \Lebesgue{2}{\dualGroup{V}}$, $i = 1, \dots, N$ such that
     \begin{align*}
         P(k \rho) = \sum_{i = 1}^N q_i(k) f_i(\rho)
     \end{align*}
     for each $k \in \CompactGroup$ and each $\rho \in \dualGroup{\VectorSpace}$.
+
+    Moreover, the $q_i$ satisfy the bound
+    \begin{align*}
+        \sup_i \sup_\CompactGroup \abs{q_i} < \infty.
+    \end{align*}
 \end{lemma}
 \begin{proof}
     Let $\mathcal{H}$ be the set of polynomials of order at most $m$ on $\dualGroup{V}$,
@@ -274,12 +288,51 @@
             \end{align*}
 
             \begin{claim}
-                We can find a decomposition
+                We have the decomposition
                 \begin{align*}
-                    \DifferenceOperator[\VectorSpace]{q_1} \chi_{l - \Ceiling{\log_2 \JapaneseBracket{\CompactGroup}{\tau}}}(\rho) = \sum_{r = 1}^{C_q} f_{l, r}(\tau) P_{l, r}(\rho),
+                    \DifferenceOperator[\VectorSpace]{q_1} \chi_{l - \Ceiling{\log_2 \JapaneseBracket{\CompactGroup}{\tau}}}(k \rho) = \sum_{r = 1}^{C_q} f_{l, r}(\tau, \rho) q_r(k),
                 \end{align*}
-                where both $P_{l, r}$ and $f_{l, r}$ are uniformly bounded in $l$ and $r$.
+                where $q_r$ and $f_{l, r}$ satisfies the following bound:
+                \begin{align}
+                    \sup_{l \in \N} \sup_{\tau \in \dualGroup{\CompactGroup}} \sup_{\rho \in \dualGroup{\VectorSpace}} \abs{f_{l, r}(\tau, \rho)} < \infty,\quad
+                    \sup_{r} \sup_{k \in \CompactGroup} \abs{q(k)} < \infty
+                    \label{eq:theorem:Littlewood-Paley_decomposition:claim_bound}
+                \end{align}
             \end{claim}
+            \begin{proof}[Proof of the claim]
+                Assume first that $l - \Ceiling{\log_2 \JapaneseBracket{\CompactGroup}{\tau}} \neq 0$.
+                Since
+                \begin{align*}
+                    \chi_{l - \Ceiling{\log_2 \JapaneseBracket{\CompactGroup}{\tau}}}(\rho)
+                    = \chi_1(2^{-l + \Ceiling{\log_2 \JapaneseBracket{\CompactGroup}{\tau} + 1}} \rho),
+                \end{align*}
+                it follows that
+                \begin{align*}
+                    \DifferenceOperator[\VectorSpace]{q_1} \chi_{l - \Ceiling{\log_2 \JapaneseBracket{\CompactGroup}{\tau}}}(k \rho)
+                    =
+                    2^{(-l + \Ceiling{\log_2 \JapaneseBracket{\CompactGroup}{\tau} + 1}) \order{q_1}}
+                    \DifferenceOperator[\VectorSpace]{q_1} \chi_1(2^{-l + \Ceiling{\log_2 \JapaneseBracket{\CompactGroup}{\tau} + 1}} k \rho).
+                \end{align*}
+
+                Using Lemma~\ref{lemma:derivatives_of_radial_functions} and Lemma~\ref{lemma:left_regular_representation_of_polynomials}
+                we obtain:
+                \begin{align*}
+                    \DifferenceOperator[\VectorSpace]{q_1} &\chi_{l - \Ceiling{\log_2 \JapaneseBracket{\CompactGroup}{\tau}}}(k \rho) =
+                    2^{(-l + \Ceiling{\log_2 \JapaneseBracket{\CompactGroup}{\tau} + 1}) \order{q_1}}\\
+                    &\sum_{r = 1}^{C_q} f_r(2^{-l + \Ceiling{\log_2 \JapaneseBracket{\CompactGroup}{\tau} + 1}} \norm[\dualGroup{\VectorSpace}]{\rho}) q_r(k) P_r(2^{-l + \Ceiling{\log_2 \JapaneseBracket{\CompactGroup}{\tau} + 1}} \rho),
+                \end{align*}
+                where each $f_r$, $q_r$ and each $P_r$ is independent of $l$ and $\tau$.
+                Now, writing
+                \begin{align*}
+                    f_{l, r}(\tau, \rho) &=
+                    2^{(-l + \Ceiling{\log_2 \JapaneseBracket{\CompactGroup}{\tau} + 1}) \order{q_1}}
+                    f_r(2^{-l + \Ceiling{\log_2 \JapaneseBracket{\CompactGroup}{\tau} + 1}} \norm[\dualGroup{\VectorSpace}]{\rho}) P_r(2^{-l + \Ceiling{\log_2 \JapaneseBracket{\CompactGroup}{\tau} + 1}} \rho),
+                \end{align*}
+                we obtain the desired formula.
+                The bound comes from the bounds in Lemma~\ref{lemma:derivatives_of_radial_functions} and~\ref{lemma:left_regular_representation_of_polynomials}.
+
+                The case $l - \Ceiling{\log_2 \JapaneseBracket{\CompactGroup}{\tau}} = 0$ can be treated similarly.
+            \end{proof}
 
             Using the above claim,
             and the identity $\conj{\Character{\tau}(k u^{-1})} = \sum_{i, j = 1}^\dimRep{\tau} \tau_{ij}(u) \conj{{\tau_{ij}(k)}}$,
@@ -290,27 +343,27 @@
                     \sum_{\JapaneseBracket{\CompactGroup}{\tau} \leq 2^j}
                         \sum_{i, j = 1}^\dimRep{\tau}\\
                             &\tau_{ij}(u) {q'}_{2, p}(u^{-1})
-                            f_{l, r}(\tau)
+                            f_{l, r}(\tau, \rho)
                             \int_\CompactGroup
-                                P_{l, r}(k \rho) q_{2, p}(k) F(k) \conj{\tau_{ij}(k)}
+                                q_{r}(k) q_{2, p}(k) F(k) \conj{\tau_{ij}(k)}
                             \dd k\\
                 = &\sum_{p, r = 1}^{C_q}
                     \sum_{\JapaneseBracket{\CompactGroup}{\tau} \leq 2^j}
                         \sum_{i, j = 1}^\dimRep{\tau}
                             \tau_{ij}(u) {q'}_{2, p}(u^{-1})
-                            f_{l, r}(\tau)
-                            \Fourier[\CompactGroup]{} {\left\{ P_{l, r}(\dummy \rho) q_{2, p} F\right\}}_{j i}.
+                            f_{l, r}(\tau, \rho)
+                            \Fourier[\CompactGroup]{} {\left\{ q_{r} q_{2, p} F\right\}}_{j i}.
             \end{align*}
 
             For $p, r = 1, \dots, \dimRep{\tau}$, defining the symbols
             \begin{align}
-                \sigma_{l, p, r}(u, \tau) =
+                \sigma_{l, \rho, p, r}(u, \tau) =
                 \begin{cases}
-                    \frac{1}{\dimRep{\tau}} {q'}_{2, p}(u^{-1}) f_{l, r}(\tau) \Id{\dimRep{\tau}} & \text{if } \JapaneseBracket{\CompactGroup}{\tau} \leq 2^l\\
+                    \frac{1}{\dimRep{\tau}} {q'}_{2, p}(u^{-1}) f_{l, r}(\tau, \rho) \Id{\dimRep{\tau}} & \text{if } \JapaneseBracket{\CompactGroup}{\tau} \leq 2^l\\
                     0 & \text{otherwise}
                 \end{cases}
             \end{align}
-            and denoting by $T_{l, p, r}$ the corresponding operators,
+            and denoting by $T_{l, \rho, p, r}$ the corresponding operators,
             we see that in fact,
             \begin{align*}
                 \DifferenceOperator{q} \eta_l (\rho) F(u)
@@ -319,21 +372,32 @@
                         \dimRep{\tau}
                         \tr \left(
                             \tau(u)
-                            \sigma_{l, p, r}(u, \tau)
-                            \Fourier[\CompactGroup]{} \left\{ P_{l, r}(\dummy \rho) q_{2, p} F\right\}
+                            \sigma_{l, \rho, p, r}(u, \tau)
+                            \Fourier[\CompactGroup]{} \left\{ q_r q_{2, p} F\right\}
                         \right)\\
                 = &\sum_{p, r = 1}^{C_q}
-                        T_{p, r} (P_r(\dummy \rho) q_{2, p} F)(u).
+                        T_{l, \rho, p, r} (q_r q_{2, p} F)(u).
             \end{align*}
 
-            Since the symbols $\sigma_{l, p, r}$ are uniformly bounded,
-            it follows that the operators $T_{l, p, r}$ are uniformly bounded in $\Lebesgue{2}{\CompactGroup}$.
+            By~\eqref{eq:theorem:Littlewood-Paley_decomposition:claim_bound},
+            we obtain:
+            \begin{align*}
+                \norm[\Lin{\Lebesgue{2}{K}}]{T_{l, \rho, p, r}}
+                &\leq C \sup_{\tau \in \dualGroup{\CompactGroup}} \sup_{u \in \CompactGroup} \norm[\Lin{\HilbertRep{\tau}}]{\sigma_{l, \rho, p, r}(u, \tau)}\\
+                &\leq C_q < \infty
+            \end{align*}
             From there, it follows that
-            \begin{align}
+            \begin{align*}
                 \norm[\Lebesgue{2}{\CompactGroup}]{\DifferenceOperator{q} \eta_l (\rho) F}
-                \leq C_q \norm[\Lebesgue{2}{\CompactGroup}]{F},
-            \end{align}
+                &\leq C_q \sum_{p, r = 1}^{C_q} \norm[\Lebesgue{2}{\CompactGroup}]{q_r q_{2, p} F}
+            \end{align*}
             where $C_q$ does not depend on $l$.
+
+            Now, using the fact that
+            \begin{align*}
+                \sup_\CompactGroup \abs{q_r q_{2, p}} \leq C_q < \infty
+            \end{align*}
+            in the above, this concludes the step.
 
         \item[Step 4] $\DifferenceOperator{q} \eta_l(\rho)$ is non-zero on $V_\tau$
             only if $\norm[\dualGroup{V}]{\rho}, \JapaneseBracket{\CompactGroup}{\tau} \leq C_q 2^l$.
