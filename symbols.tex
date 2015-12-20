@@ -432,25 +432,31 @@
             \begin{align*}
                 L_l(\rho) =
                 \begin{cases}
-                    \bigoplus_{\JapaneseBracket{\CompactGroup}{\tau}
-                    \leq C_q 2^l} {\left(\norm[\dualGroup{\VectorSpace}]{\rho}^2 + {\JapaneseBracket{\CompactGroup}{\tau}}^2 \right)}^\frac{1}{2} \Id{V_\tau}
+                    {\left. \Rep{\rho} \BesselPotential{1} \right|}_{\oplus_{\JapaneseBracket{\CompactGroup}{\tau} \leq C_q 2^l}
+V_\tau}
                     & \text{if } \norm[\dualGroup{V}]{\rho} \leq C_q 2^l\\
-                    0 & \text{otherwise}.
+                    0 & \text{otherwise},
                 \end{cases}
             \end{align*}
+            where $C_q$ is given by Step 4.
 
             Observe that $L_l(\rho)$ is a bounded operator in $\Lebesgue{2}{K}$,
             and the operator norm is bounded by $C_q 2^l$ uniformly in $\rho$.
 
-            Therefore, the operator
+            By Step 4,
             \begin{align*}
                 \Rep{\rho} \BesselPotential{- m - \order(q) + \gamma}&
                 \DifferenceOperator{q} \eta_l(\rho)
                 \Rep{\rho} \BesselPotential{-\gamma}\\
                 &= {L_l(\rho)}^{-m - \order(q) + \gamma}
                 \DifferenceOperator{q} \eta_l(\rho)
-                {L_l(\rho)}^{-\gamma}
+                {L_l(\rho)}^{-\gamma},
             \end{align*}
-            is a bounded operator on $\Lebesgue{2}{\CompactGroup}$ with norm less than $C_q 2^{-l m}$.
+            from which it follows that
+            \begin{align*}
+                \norm[\Lin{\Lebesgue{2}{\CompactGroup}}]{\Rep{\rho} \BesselPotential{- m - \order(q) + \gamma} \DifferenceOperator{q} \eta_l(\rho) \Rep{\rho} \BesselPotential{-\gamma}}
+                \leq C_q 2^{-l m},
+            \end{align*}
+            which is what we wanted to show.
     \end{description}
 \end{proof}
