@@ -64,10 +64,10 @@ The requirement that $K$ should be a subgroup of $\OrthogonalGroup{\VectorSpace}
 
 \begin{definition}
 \label{definition:reducible_representation}
-    Let $\rho \in \dualGroup{V}$.
-    We define a unitary representation $\Rep{\rho} \in \Hom(\Group, \End(\Lebesgue{2}{\CompactGroup}))$ of $\Group$ via:
+    Let $\lambda \in \dualGroup{V}$.
+    We define a unitary representation $\Rep{\lambda} \in \Hom(\Group, \End(\Lebesgue{2}{\CompactGroup}))$ of $\Group$ via:
     \begin{align}
-        \Rep{\rho} (x, k) F(u) = \rho(u^{-1} x) F(k^{-1} u),
+        \Rep{\lambda} (x, k) F(u) = \lambda(u^{-1} x) F(k^{-1} u),
     \end{align}
     where $(x, k) \in \CompactGroup$, $F \in \Lebesgue{2}{\CompactGroup}$ and $u \in \CompactGroup$.
 \end{definition}
@@ -78,22 +78,22 @@ However, as we shall see later, the Fourier Transform on $\Group$ can be written
 \subsection{Unitary dual}
 \label{subsection:unitary_dual}
 
-Throughout this section, fix $\rho \in \dualGroup{V}$
-and denote by $\IsotropySubgroup{\CompactGroup}{\rho}$ its isotropy subgroup.
+Throughout this section, fix $\lambda \in \dualGroup{V}$
+and denote by $\IsotropySubgroup{\CompactGroup}{\lambda}$ its isotropy subgroup.
 
-Let $\tau \in \dualGroup{\IsotropySubgroup{\CompactGroup}{\rho}}$ and denote by $\dimRep{\tau}$ its dimension.
+Let $\tau \in \dualGroup{\IsotropySubgroup{\CompactGroup}{\lambda}}$ and denote by $\dimRep{\tau}$ its dimension.
 For $q = 1, \dots, \dimRep{\tau}$, let:
 \begin{align}
-    P^\tau_q F(u) = \dimRep{\tau} \int_\IsotropySubgroup{\CompactGroup}{\rho} \conj{\tau_{qq}(m)} F(u m) \dd m,
+    P^\tau_q F(u) = \dimRep{\tau} \int_\IsotropySubgroup{\CompactGroup}{\lambda} \conj{\tau_{qq}(m)} F(u m) \dd m,
     \quad F \in \Lebesgue{2}{\CompactGroup}.
 \end{align}
 
-By the Inverse Fourier Transform at $e \in \IsotropySubgroup{\CompactGroup}{\rho}$,
+By the Inverse Fourier Transform at $e \in \IsotropySubgroup{\CompactGroup}{\lambda}$,
 if $F \in \Lebesgue{2}{\CompactGroup}$ and $u \in \CompactGroup$, then:
 \begin{align}
     F(u)
-    = \sum_{\tau \in \dualGroup{\IsotropySubgroup{\CompactGroup}{\rho}}} \dimRep{\tau} \sum_{q = 1}^{\dimRep{\tau}} {\Fourier[\IsotropySubgroup{\CompactGroup}{\rho}]{F(u \dummy)}}_{qq}
-    = \sum_{\tau \in \dualGroup{\IsotropySubgroup{\CompactGroup}{\rho}}} P^\tau_q F(u)
+    = \sum_{\tau \in \dualGroup{\IsotropySubgroup{\CompactGroup}{\lambda}}} \dimRep{\tau} \sum_{q = 1}^{\dimRep{\tau}} {\Fourier[\IsotropySubgroup{\CompactGroup}{\lambda}]{F(u \dummy)}}_{qq}
+    = \sum_{\tau \in \dualGroup{\IsotropySubgroup{\CompactGroup}{\lambda}}} P^\tau_q F(u)
 \end{align}
 
 Now, write $\Hilbert{\tau}{q} = P^\tau_q \Lebesgue{2}{\CompactGroup}$.
@@ -101,27 +101,27 @@ Now, write $\Hilbert{\tau}{q} = P^\tau_q \Lebesgue{2}{\CompactGroup}$.
 \begin{lemma}
     The Hilbert spaces
     \begin{align*}
-        \{\Hilbert{\tau}{q} : \tau \in \dualGroup{\IsotropySubgroup{\CompactGroup}{\rho}}, q = 1, \dots, \dimRep{\tau} \}
+        \{\Hilbert{\tau}{q} : \tau \in \dualGroup{\IsotropySubgroup{\CompactGroup}{\lambda}}, q = 1, \dots, \dimRep{\tau} \}
     \end{align*}
     are mutually orthogonal.
     Therefore, we have
     \begin{align*}
-        \Lebesgue{2}{K} = \bigoplus_{\tau \in \dualGroup{\IsotropySubgroup{\CompactGroup}{\rho}}} \bigoplus_{q = 1}^{\dimRep{\tau}} \Hilbert{\tau}{q},
+        \Lebesgue{2}{K} = \bigoplus_{\tau \in \dualGroup{\IsotropySubgroup{\CompactGroup}{\lambda}}} \bigoplus_{q = 1}^{\dimRep{\tau}} \Hilbert{\tau}{q},
     \end{align*}
     where the above decomposition is orthogonal.
 \end{lemma}
 
 \begin{proposition}[Unitary dual]
 \label{proposition:unitary_dual}
-    Let $\rho, \rho' \in \dualGroup{\VectorSpace}$
-    and $\tau \in \dualGroup{\IsotropySubgroup{\CompactGroup}{\rho}}$,
-    $\tau' \in \dualGroup{\IsotropySubgroup{\CompactGroup}{\rho'}}$.
+    Let $\lambda, \lambda' \in \dualGroup{\VectorSpace}$
+    and $\tau \in \dualGroup{\IsotropySubgroup{\CompactGroup}{\lambda}}$,
+    $\tau' \in \dualGroup{\IsotropySubgroup{\CompactGroup}{\lambda'}}$.
     The following properties hold:
     \begin{enumerate}
-        \item $\Rep{\rho}$ restricts to an irreducible unitary representation on each $\Hilbert{\tau}{q}$;
-        \item $(\Hilbert{\tau}{q}, \Rep{\rho})$ and $(\Hilbert{\tau'}{q'}, \Rep{\rho'})$ are equivalent if and only if
+        \item $\Rep{\lambda}$ restricts to an irreducible unitary representation on each $\Hilbert{\tau}{q}$;
+        \item $(\Hilbert{\tau}{q}, \Rep{\lambda})$ and $(\Hilbert{\tau'}{q'}, \Rep{\lambda'})$ are equivalent if and only if
             \begin{align*}
-                \rho' = k \rho \quad \text{and} \quad \EquivalenceClass{\dualGroup{\IsotropySubgroup{\CompactGroup}{\rho}}}{\tau} = \EquivalenceClass{\dualGroup{\IsotropySubgroup{\CompactGroup}{\rho}}}{\tau'(k \dummy k^{-1})}
+                \lambda' = k \lambda \quad \text{and} \quad \EquivalenceClass{\dualGroup{\IsotropySubgroup{\CompactGroup}{\lambda}}}{\tau} = \EquivalenceClass{\dualGroup{\IsotropySubgroup{\CompactGroup}{\lambda}}}{\tau'(k \dummy k^{-1})}
             \end{align*}
             for some $k \in \CompactGroup$.
     \end{enumerate}
@@ -130,10 +130,10 @@ Now, write $\Hilbert{\tau}{q} = P^\tau_q \Lebesgue{2}{\CompactGroup}$.
 \begin{definition}[Unitary dual]
 \label{definition:unitary_dual}
 \index{unitary dual}
-    Fix $\rho_0 \in \dualGroup{V}$.
+    Fix $\lambda_0 \in \dualGroup{V}$.
     We define the \emph{unitary dual} of $\Group$, denoted by $\dualGroup{\Group}$, via:
     \begin{align*}
-        \dualGroup{\Group} = \{ (\Hilbert{\tau}{1}, \Rep{\rho}) : \rho \in \LeftQuotient{\IsotropySubgroup{K}{\rho_0}}{\dualGroup{\VectorSpace}}, \tau \in \dualGroup{\IsotropySubgroup{\CompactGroup}{\rho}} \}.
+        \dualGroup{\Group} = \{ (\Hilbert{\tau}{1}, \Rep{\lambda}) : \lambda \in \LeftQuotient{\IsotropySubgroup{K}{\lambda_0}}{\dualGroup{\VectorSpace}}, \tau \in \dualGroup{\IsotropySubgroup{\CompactGroup}{\lambda}} \}.
     \end{align*}
 \end{definition}
 
@@ -146,21 +146,21 @@ Now, write $\Hilbert{\tau}{q} = P^\tau_q \Lebesgue{2}{\CompactGroup}$.
     Let $X \in \g$.
     We define the infinitesimal representation of $X$ as the operator
     \begin{align*}
-        \Rep{\rho}(X) : \SmoothFunctions{K} \to \SmoothFunctions{K}
+        \Rep{\lambda}(X) : \SmoothFunctions{K} \to \SmoothFunctions{K}
     \end{align*}
     defined via
     \begin{align*}
-        \Rep{\rho}(X) F(u) = \left. \D{}{t} \right|_{t = 0} \Rep{\rho}(\exp(t X)) F(u),
+        \Rep{\lambda}(X) F(u) = \left. \D{}{t} \right|_{t = 0} \Rep{\lambda}(\exp(t X)) F(u),
     \end{align*}
     where $F \in \SmoothFunctions{K}$.
 \end{definition}
 
 \begin{lemma}[Infinitesimal representation of $\Laplacian$]
 \label{lemma:infinitesimal_representation_of_the_Laplacian}
-    Let $\rho \in \dualGroup{\VectorSpace}$.
+    Let $\lambda \in \dualGroup{\VectorSpace}$.
     The infinitesimal representation of $\Laplacian$ is given by
     \begin{align*}
-        \Rep{\rho}(\Laplacian) = - \norm[\dualGroup{\VectorSpace}]{\rho}^2 \Id{\Lebesgue{2}{\CompactGroup}} + \RightLaplacian[\CompactGroup].
+        \Rep{\lambda}(\Laplacian) = - \norm[\dualGroup{\VectorSpace}]{\lambda}^2 \Id{\Lebesgue{2}{\CompactGroup}} + \RightLaplacian[\CompactGroup].
     \end{align*}
 \end{lemma}
 
@@ -173,16 +173,16 @@ Now, write $\Hilbert{\tau}{q} = P^\tau_q \Lebesgue{2}{\CompactGroup}$.
 \begin{definition}[Fourier transform]
 \label{definition:Fourier_Transform}
 \index{Fourier transform}
-    Let $f \in \Lebesgue{1}{\Group}$ and $\rho \in \dualGroup{\VectorSpace}$.
-    We define its \emph{Fourier coefficient} at $\rho$ via:
+    Let $f \in \Lebesgue{1}{\Group}$ and $\lambda \in \dualGroup{\VectorSpace}$.
+    We define its \emph{Fourier coefficient} at $\lambda$ via:
     \begin{align*}
-        \Fourier{f}(\rho) = \int_\Group f(g) \adj{\Rep{\rho}(g)} \dd g.
+        \Fourier{f}(\lambda) = \int_\Group f(g) \adj{\Rep{\lambda}(g)} \dd g.
     \end{align*}
 
     Moreover, the map
     \begin{align*}
         \Fourier{f} : \dualGroup{V} \to \End(\Lebesgue{2}{\CompactGroup}) :
-        \rho \mapsto \Fourier{f}(\rho)
+        \lambda \mapsto \Fourier{f}(\lambda)
     \end{align*}
     is called the \emph{Fourier Transform} of $f$.
 \end{definition}
@@ -196,36 +196,36 @@ Now, write $\Hilbert{\tau}{q} = P^\tau_q \Lebesgue{2}{\CompactGroup}$.
     Let $f \in \Lebesgue{1}{\Group} \cap \Lebesgue{2}{\Group}$.
     The following formula holds:
     \begin{align}
-        \int_G \abs{f}^2 \dd g = \int_\dualGroup{\VectorSpace} \norm[\HilbertSchmidt{\Lebesgue{2}{\CompactGroup}}]{\Fourier{f}(\rho)}^2 \dd \Plancherel{\VectorSpace}(\rho).
+        \int_G \abs{f}^2 \dd g = \int_\dualGroup{\VectorSpace} \norm[\HilbertSchmidt{\Lebesgue{2}{\CompactGroup}}]{\Fourier{f}(\lambda)}^2 \dd \Plancherel{\VectorSpace}(\lambda).
         \label{proposition:Plancherel_formula:formula}
     \end{align}
 \end{proposition}
 \begin{proof}
-    Let $\rho \in \dualGroup{\VectorSpace}$ and $F \in \Lebesgue{2}{\CompactGroup}$.
+    Let $\lambda \in \dualGroup{\VectorSpace}$ and $F \in \Lebesgue{2}{\CompactGroup}$.
     If $u \in \CompactGroup$, we can check that
     \begin{align*}
-        \Fourier{f}(\rho) F(u)
-        &= \int_\VectorSpace \int_\CompactGroup f(x, k) \rho(-u^{-1} k^{-1} x) F(k u) \dd k \dd x\\
-        &= \int_\VectorSpace \int_\CompactGroup f(x, k) \conj{k u \rho(x)} F(k u) \dd k \dd x,
+        \Fourier{f}(\lambda) F(u)
+        &= \int_\VectorSpace \int_\CompactGroup f(x, k) \lambda(-u^{-1} k^{-1} x) F(k u) \dd k \dd x\\
+        &= \int_\VectorSpace \int_\CompactGroup f(x, k) \conj{k u \lambda(x)} F(k u) \dd k \dd x,
     \end{align*}
-    where we used $\rho(-{(k u)}^{-1} x) = \conj{\rho({(k u)}^{-1} x)} = \conj{(k u \rho)(x)}$.
+    where we used $\lambda(-{(k u)}^{-1} x) = \conj{\lambda({(k u)}^{-1} x)} = \conj{(k u \lambda)(x)}$.
 
     Substituing $k$ for $k u^{-1}$, we get:
     \begin{align*}
-        \Fourier{f}(\rho) F(u)
-        &= \int_\CompactGroup \Fourier[\VectorSpace]{f}(k \rho, k u^{-1}) F(k) \dd k.
+        \Fourier{f}(\lambda) F(u)
+        &= \int_\CompactGroup \Fourier[\VectorSpace]{f}(k \lambda, k u^{-1}) F(k) \dd k.
     \end{align*}
 
     Therefore, it follows by REFERENCE that:
     \begin{align*}
-        \norm[\HilbertSchmidt{\Lebesgue{2}{\CompactGroup}}]{\Fourier{f}(\rho)}^2
-        &= \int_\CompactGroup \int_\CompactGroup \abs{\Fourier[\VectorSpace]{f}(k \rho, k u^{-1})}^2 \dd u \dd k.
+        \norm[\HilbertSchmidt{\Lebesgue{2}{\CompactGroup}}]{\Fourier{f}(\lambda)}^2
+        &= \int_\CompactGroup \int_\CompactGroup \abs{\Fourier[\VectorSpace]{f}(k \lambda, k u^{-1})}^2 \dd u \dd k.
     \end{align*}
 
-    Now, integrating with respect to $\rho$, we obtain:
+    Now, integrating with respect to $\lambda$, we obtain:
     \begin{align*}
-        \int_\dualGroup{\VectorSpace} \norm[\HilbertSchmidt{\Lebesgue{2}{\CompactGroup}}]{\Fourier{f}(\rho)}^2 \dd \Plancherel{\VectorSpace}(\rho)
-        &= \int_\dualGroup{\VectorSpace} \int_\CompactGroup \abs{\Fourier[\VectorSpace]{f}(\rho, k)}^2 \dd k \dd \Plancherel{\VectorSpace}(\rho)\\
+        \int_\dualGroup{\VectorSpace} \norm[\HilbertSchmidt{\Lebesgue{2}{\CompactGroup}}]{\Fourier{f}(\lambda)}^2 \dd \Plancherel{\VectorSpace}(\lambda)
+        &= \int_\dualGroup{\VectorSpace} \int_\CompactGroup \abs{\Fourier[\VectorSpace]{f}(\lambda, k)}^2 \dd k \dd \Plancherel{\VectorSpace}(\lambda)\\
         &= \int_\VectorSpace \int_\CompactGroup \abs{f(x, k)}^2 \dd u \dd k,
     \end{align*}
     where the last line was obtained by applying the Plancherel formula on $\VectorSpace$.
@@ -240,7 +240,7 @@ Now, write $\Hilbert{\tau}{q} = P^\tau_q \Lebesgue{2}{\CompactGroup}$.
     \begin{align*}
         \phi(g)
         = \int_\dualGroup{\VectorSpace}
-        \tr \left( \Rep{\rho}(g) \Fourier \phi(\rho) \right) \dd \Plancherel{\VectorSpace}(\rho).
+        \tr \left( \Rep{\lambda}(g) \Fourier \phi(\lambda) \right) \dd \Plancherel{\VectorSpace}(\lambda).
     \end{align*}
 \end{proposition}
 
