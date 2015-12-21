@@ -210,7 +210,7 @@
             we obtain:
             \begin{align}
                 \kappa_l (x, k)
-                = &\sum_{\JapaneseBracket{\CompactGroup}{\tau} \leq 2^j}
+                = &\sum_{\JapaneseBracket{\CompactGroup}{\tau} \leq 2^l}
                         \sum_{p,q = 1}^\dimRep{\tau}
                         \dimRep{\tau}
                         \int_\dualGroup{\VectorSpace}
@@ -221,14 +221,14 @@
                     \label{eq:theorem:Littlewood-Paley_decomposition:computing_kernel:2}
             \end{align}
 
-            Using the invariance of $\chi_{l - j}$ under $\CompactGroup$ and
+            Using the invariance of $\chi_{k}$ under $\CompactGroup$ and
             \begin{align*}
                 \dimRep{\tau} \int_\Lebesgue{2}{\CompactGroup} \tau_{qp}(u) \conj{\tau_{pp}(u)} \dd u = \Kronecker{p}{q},
             \end{align*}
             then~\eqref{eq:theorem:Littlewood-Paley_decomposition:computing_kernel:2} becomes
             \begin{align*}
                 \kappa_l (x, k)
-                = &\sum_{\JapaneseBracket{\CompactGroup}{\tau} \leq 2^j}
+                = &\sum_{\JapaneseBracket{\CompactGroup}{\tau} \leq 2^l}
                     \int_\dualGroup{\VectorSpace}
                         \chi_{l - \Ceiling{\log_2 \JapaneseBracket{\CompactGroup}{\tau}}}(\rho) \rho(x)
                     \dd \Plancherel{\VectorSpace}(\rho)
@@ -238,7 +238,7 @@
             yields the following expression for the kernel:
             \begin{align}
                 \kappa_l (x, k)
-                = &\sum_{\JapaneseBracket{\CompactGroup}{\tau} \leq 2^j}
+                = &\sum_{\JapaneseBracket{\CompactGroup}{\tau} \leq 2^l}
                     \InverseFourier[\VectorSpace]{\chi_{l - \Ceiling{\log_2 \JapaneseBracket{\CompactGroup}{\tau}}}}(x) \conj{\Character{\tau}(k)}.
                 \label{eq:theorem:Littlewood-Paley_decomposition:kernel}
             \end{align}
@@ -270,14 +270,14 @@
             Multiplying $\kappa_l$ par $q$ and taking the Fourier Transform, we get:
             \begin{align}
                 \DifferenceOperator{q} \eta_l (\rho) F(u)
-                = &\sum_{\JapaneseBracket{\CompactGroup}{\tau} \leq 2^j}
+                = &\sum_{\JapaneseBracket{\CompactGroup}{\tau} \leq 2^l}
                     \int_\VectorSpace
                         \int_\CompactGroup
                             q_1(x) \InverseFourier[\VectorSpace]{\chi_{l - \Ceiling{\log_2 \JapaneseBracket{\CompactGroup}{\tau}}}}(x) (k u \rho)(-x)
                             q_2(k) \conj{\Character{\tau}(k)} F(k u)
                         \dd k
                     \dd x\notag\\
-                = &\sum_{\JapaneseBracket{\CompactGroup}{\tau} \leq 2^j}
+                = &\sum_{\JapaneseBracket{\CompactGroup}{\tau} \leq 2^l}
                     \int_\CompactGroup
                         \DifferenceOperator[\VectorSpace]{q_1} \chi_{l - \Ceiling{\log_2 \JapaneseBracket{\CompactGroup}{\tau}}}(k u \rho)
                         q_2(k) \conj{\Character{\tau}(k)} F(k u)
@@ -289,7 +289,7 @@
             and using the Leibniz rule for polynomials on $q_2$, we obtain
             \begin{align*}
                 \DifferenceOperator{q} \eta_l (\rho) F(u)
-                = &\sum_{\JapaneseBracket{\CompactGroup}{\tau} \leq 2^j}
+                = &\sum_{\JapaneseBracket{\CompactGroup}{\tau} \leq 2^l}
                     \sum_{p = 1}^{C_q}
                         \int_\CompactGroup
                             \DifferenceOperator[\VectorSpace]{q_1} \chi_{l - \Ceiling{\log_2 \JapaneseBracket{\CompactGroup}{\tau}}}(k \rho)
@@ -350,7 +350,7 @@
             \begin{align}
                 \DifferenceOperator{q} \eta_l (\rho) F(u)
                 = &\sum_{p, r = 1}^{C_q}
-                    \sum_{\JapaneseBracket{\CompactGroup}{\tau} \leq 2^j}
+                    \sum_{\JapaneseBracket{\CompactGroup}{\tau} \leq 2^l}
                         \sum_{i, j = 1}^\dimRep{\tau}\notag\\
                             &\tau_{ij}(u) {q'}_{2, p}(u^{-1})
                             f_{l, r}(\tau, \rho)
@@ -359,7 +359,7 @@
                             \dd k
                             \label{eq:theorem:Littlewood-Paley_decomposition:exact_expression_for_operator}\\
                 = &\sum_{p, r = 1}^{C_q}
-                    \sum_{\JapaneseBracket{\CompactGroup}{\tau} \leq 2^j}
+                    \sum_{\JapaneseBracket{\CompactGroup}{\tau} \leq 2^l}
                         \sum_{i, j = 1}^\dimRep{\tau}
                             \tau_{ij}(u) {q'}_{2, p}(u^{-1})
                             f_{l, r}(\tau, \rho)
