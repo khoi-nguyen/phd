@@ -64,7 +64,7 @@ The requirement that $K$ should be a subgroup of $\OrthogonalGroup{\VectorSpace}
 
 \begin{definition}
 \label{definition:reducible_representation}
-    Let $\lambda \in \dualGroup{V}$.
+    Let $\lambda \in \dualGroup{\VectorSpace}$.
     We define a unitary representation $\Rep{\lambda} \in \Hom(\Group, \End(\Lebesgue{2}{\CompactGroup}))$ of $\Group$ via:
     \begin{align}
         \Rep{\lambda} (x, k) F(u) = \lambda(u^{-1} x) F(k^{-1} u),
@@ -78,7 +78,7 @@ However, as we shall see later, the Fourier Transform on $\Group$ can be written
 \subsection{Unitary dual}
 \label{subsection:unitary_dual}
 
-Throughout this section, fix $\lambda \in \dualGroup{V}$
+Throughout this section, fix $\lambda \in \dualGroup{\VectorSpace}$
 and denote by $\IsotropySubgroup{\CompactGroup}{\lambda}$ its isotropy subgroup.
 
 Let $\tau \in \dualGroup{\IsotropySubgroup{\CompactGroup}{\lambda}}$ and denote by $\dimRep{\tau}$ its dimension.
@@ -130,7 +130,7 @@ Now, write $\Hilbert{\tau}{q} = P^\tau_q \Lebesgue{2}{\CompactGroup}$.
 \begin{definition}[Unitary dual]
 \label{definition:unitary_dual}
 \index{unitary dual}
-    Fix $\lambda_0 \in \dualGroup{V}$.
+    Fix $\lambda_0 \in \dualGroup{\VectorSpace}$.
     We define the \emph{unitary dual} of $\Group$, denoted by $\dualGroup{\Group}$, via:
     \begin{align*}
         \dualGroup{\Group} = \{ (\Hilbert{\tau}{1}, \Rep{\lambda}) : \lambda \in \LeftQuotient{\IsotropySubgroup{K}{\lambda_0}}{\dualGroup{\VectorSpace}}, \tau \in \dualGroup{\IsotropySubgroup{\CompactGroup}{\lambda}} \}.
@@ -146,7 +146,7 @@ Now, write $\Hilbert{\tau}{q} = P^\tau_q \Lebesgue{2}{\CompactGroup}$.
     Let $X \in \g$.
     We define the infinitesimal representation of $X$ as the operator
     \begin{align*}
-        \Rep{\lambda}(X) : \SmoothFunctions{K} \to \SmoothFunctions{K}
+        \Rep{\lambda}(X) : \SmoothFunctions{\CompactGroup} \to \SmoothFunctions{\CompactGroup}
     \end{align*}
     defined via
     \begin{align*}
