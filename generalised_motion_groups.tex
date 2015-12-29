@@ -70,8 +70,27 @@ by real matrices via the map:
                 \phi \circ k \circ \phi^{-1} & \phi(x)\\
                 0 & 1,
             \end{pmatrix}
+    \label{eq:motion_group_realised_as_matrices}
 \end{align}
 where by $\phi \circ k \circ \phi^{-1}$ we actually mean its corresponding matrix in the canonical basis.
+
+\begin{definition}[Lie Algebra]
+\label{definition:Lie_Algebra}
+\index{Lie Algebra}
+    Suppose $\VectorSpace$ has dimension $n$.
+    The real vector space
+    \begin{align*}
+        \LieAlgebra \defeq
+            \{
+                X \in \R^{(n + 1) \times (n + 1)} :
+                \text{for each}\
+                t \in \R,\
+                \exp(t X) \in \Phi(\Group),
+            \}
+    \end{align*}
+    where $\Phi$ is the map defined in~\eqref{eq:motion_group_realised_as_matrices},
+    is called the \emph{Lie algebra} of $\Group$.
+\end{definition}
 
 \section{Unitary representations}
 
