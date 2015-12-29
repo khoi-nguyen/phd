@@ -56,6 +56,23 @@ The requirement that $K$ should be a subgroup of $\OrthogonalGroup{\VectorSpace}
 
 \section{Lie algebra structure}
 
+Using an isomorphism
+\begin{align}
+    \phi : \VectorSpace \to \R^n
+\end{align}
+where $n = \dim \VectorSpace$,
+we can represent the generalised motion group $\Group$
+by real matrices via the map:
+\begin{align}
+    \Phi : \Group \to \R^{(n + 1) \times (n + 1)} :
+        (x, k) \mapsto
+            \begin{pmatrix}
+                \phi \circ k \circ \phi^{-1} & \phi(x)\\
+                0 & 1,
+            \end{pmatrix}
+\end{align}
+where by $\phi \circ k \circ \phi^{-1}$ we actually mean its corresponding matrix in the canonical basis.
+
 \section{Unitary representations}
 
 \begin{definition}
