@@ -83,3 +83,31 @@
 % Pseudo-differential calculus
 \newcommand{\SmoothSymbols}[1][\Group]{{S^{-\infty} (#1)}}
 \newcommand{\SymbolSemiNorm}[4][\Group]{\norm[S^{#2}_{#3}{#1}]{#4}}
+
+% More elaborate macros
+\makeatletter
+\newcommand\Der[2]{%
+    \begingroup
+    \@temptokena{\@gobble}%
+    \@tempcnta\z@
+    \@for\var:=#2\do{%
+        \expandafter\@Der\var\relax
+    }%
+    \ensuremath{\frac{\partial
+    \ifnum\@tempcnta>\@ne
+        ^{\the\@tempcnta}%
+    \fi
+    #1}{\the\@temptokena}}%
+    \endgroup
+}
+
+\def\@Der#1#2\relax{%
+    \ifx\relax#2\relax
+        \advance\@tempcnta by \@ne
+        \@temptokena\expandafter{\the\@temptokena\,\partial{#1}}%
+    \else
+        \advance\@tempcnta by #2\relax
+        \@temptokena\expandafter{\the\@temptokena\,\partial{#1}^{#2}}%
+    \fi
+}
+\makeatother
