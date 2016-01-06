@@ -49,7 +49,7 @@
 \begin{lemma}
 \label{lemma:left_regular_representation_of_polynomials}
     Let $P \in \SmoothFunctions{\dualGroup{\VectorSpace}}$ be a polynomial.
-    We can find functions $q_i \in \Polynomials{K}$, $f_i \in \Lebesgue{2}{\dualGroup{V}}$, $i = 1, \dots, N$ such that
+    We can find functions $q_i \in \Polynomials{\CompactGroup}$, $f_i \in \Lebesgue{2}{\dualGroup{V}}$, $i = 1, \dots, N$ such that
     \begin{align*}
         P(k \lambda) = \sum_{i = 1}^N q_i(k) f_i(\lambda)
     \end{align*}
@@ -106,7 +106,7 @@
     \begin{description}
         \item[Step 1] Constructing the dyadic decomposition.
 
-            First, let us find a smooth function $\chi_0 \in \SmoothFunctions{\dualGroup{\VectorSpace}}$ invariant under $K$ such that:
+            First, let us find a smooth function $\chi_0 \in \SmoothFunctions{\dualGroup{\VectorSpace}}$ invariant under $\CompactGroup$ such that:
             \begin{align*}
                 \chi_0(\lambda) = 1 \  \text{if}\  \norm[\dualGroup{V}]{\lambda} \leq 1, \quad \text{and} \quad
                 \chi_0(\lambda) \equiv 0 \ \text{if}\  \norm[\dualGroup{V}]{\lambda} \geq 2.
@@ -389,7 +389,7 @@
             By~\eqref{eq:theorem:Littlewood-Paley_decomposition:claim_bound},
             we obtain:
             \begin{align*}
-                \norm[\Lin{\Lebesgue{2}{K}}]{T_{l, \lambda, p, r}}
+                \norm[\Lin{\Lebesgue{2}{\CompactGroup}}]{T_{l, \lambda, p, r}}
                 &\leq C \sup_{\tau \in \dualGroup{\CompactGroup}} \sup_{u \in \CompactGroup} \norm[\Lin{\HilbertRep{\tau}}]{\sigma_{l, \lambda, p, r}(u, \tau)}\\
                 &\leq C_q < \infty
             \end{align*}
@@ -445,7 +445,7 @@
             \end{align*}
             where $C_q$ is given by Step 4.
 
-            Observe that $L_l(\lambda)$ is a bounded operator in $\Lebesgue{2}{K}$,
+            Observe that $L_l(\lambda)$ is a bounded operator in $\Lebesgue{2}{\CompactGroup}$,
             and the operator norm is bounded by $C_q 2^l$ uniformly in $\lambda$.
 
             By Step 4,

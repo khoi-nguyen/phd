@@ -59,7 +59,7 @@ From now on, unless stated otherwise,
 $\Group$ will denote a generalised motion group,
 with $\VectorSpace$ its underlying vector space and $\CompactGroup$ its associated compact group.
 
-The requirement that $K$ should be a subgroup of $\OrthogonalGroup{\VectorSpace}$ is motivated by the following result:
+The requirement that $\CompactGroup$ should be a subgroup of $\OrthogonalGroup{\VectorSpace}$ is motivated by the following result:
 
 \begin{lemma}[Haar measure]
 \label{lemma:Haar_measure}
@@ -163,7 +163,7 @@ Now, write $\Hilbert{\tau}{q} = P^\tau_q \Lebesgue{2}{\CompactGroup}$.
     are mutually orthogonal.
     Therefore, we have
     \begin{align*}
-        \Lebesgue{2}{K} = \bigoplus_{\tau \in \dualGroup{\IsotropySubgroup{\CompactGroup}{\lambda}}} \bigoplus_{q = 1}^{\dimRep{\tau}} \Hilbert{\tau}{q},
+        \Lebesgue{2}{\CompactGroup} = \bigoplus_{\tau \in \dualGroup{\IsotropySubgroup{\CompactGroup}{\lambda}}} \bigoplus_{q = 1}^{\dimRep{\tau}} \Hilbert{\tau}{q},
     \end{align*}
     where the above decomposition is orthogonal.
 \end{lemma}
@@ -335,7 +335,7 @@ Now, write $\Hilbert{\tau}{q} = P^\tau_q \Lebesgue{2}{\CompactGroup}$.
     Fix $\lambda_0 \in \dualGroup{\VectorSpace}$.
     We define the \emph{unitary dual} of $\Group$, denoted by $\dualGroup{\Group}$, via:
     \begin{align*}
-        \dualGroup{\Group} = \{ (\Hilbert{\tau}{1}, \Rep{\lambda}) : \lambda \in \LeftQuotient{\IsotropySubgroup{K}{\lambda_0}}{\dualGroup{\VectorSpace}}, \tau \in \dualGroup{\IsotropySubgroup{\CompactGroup}{\lambda}} \}.
+        \dualGroup{\Group} = \{ (\Hilbert{\tau}{1}, \Rep{\lambda}) : \lambda \in \LeftQuotient{\IsotropySubgroup{\CompactGroup}{\lambda_0}}{\dualGroup{\VectorSpace}}, \tau \in \dualGroup{\IsotropySubgroup{\CompactGroup}{\lambda}} \}.
     \end{align*}
 \end{definition}
 
@@ -353,7 +353,7 @@ Now, write $\Hilbert{\tau}{q} = P^\tau_q \Lebesgue{2}{\CompactGroup}$.
     \begin{align*}
         \Rep{\lambda}(X) F(u) = \left. \D{}{t} \right|_{t = 0} \Rep{\lambda}(\exp(t X)) F(u),
     \end{align*}
-    where $F \in \SmoothFunctions{K}$.
+    where $F \in \SmoothFunctions{\CompactGroup}$.
 \end{definition}
 
 \begin{lemma}[Infinitesimal representation of $\Laplacian$]
