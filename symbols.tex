@@ -49,7 +49,7 @@
 \begin{lemma}
 \label{lemma:left_regular_representation_of_polynomials}
     Let $P \in \SmoothFunctions{\dualGroup{\VectorSpace}}$ be a polynomial.
-    We can find functions $q_i \in \Polynomials{\CompactGroup}$, $f_i \in \Lebesgue{2}{\dualGroup{V}}$, $i = 1, \dots, N$ such that
+    We can find functions $q_i \in \Polynomials{\CompactGroup}$, $f_i \in \Lebesgue{2}{\dualGroup{\VectorSpace}}$, $i = 1, \dots, N$ such that
     \begin{align*}
         P(k \lambda) = \sum_{i = 1}^N q_i(k) f_i(\lambda)
     \end{align*}
@@ -61,7 +61,7 @@
     \end{align*}
 \end{lemma}
 \begin{proof}
-    Let $\mathcal{H}$ be the set of polynomials of order at most $m$ on $\dualGroup{V}$,
+    Let $\mathcal{H}$ be the set of polynomials of order at most $m$ on $\dualGroup{\VectorSpace}$,
     with the norm
     \begin{align}
         {\left( \int_\dualGroup{\VectorSpace} \abs{P}^2 \right)}^\frac{1}{2}, \quad P \in \mathcal{H}.
@@ -108,8 +108,8 @@
 
             First, let us find a smooth function $\chi_0 \in \SmoothFunctions{\dualGroup{\VectorSpace}}$ invariant under $\CompactGroup$ such that:
             \begin{align*}
-                \chi_0(\lambda) = 1 \  \text{if}\  \norm[\dualGroup{V}]{\lambda} \leq 1, \quad \text{and} \quad
-                \chi_0(\lambda) \equiv 0 \ \text{if}\  \norm[\dualGroup{V}]{\lambda} \geq 2.
+                \chi_0(\lambda) = 1 \  \text{if}\  \norm[\dualGroup{\VectorSpace}]{\lambda} \leq 1, \quad \text{and} \quad
+                \chi_0(\lambda) \equiv 0 \ \text{if}\  \norm[\dualGroup{\VectorSpace}]{\lambda} \geq 2.
             \end{align*}
 
             Then, for each $l \in \N$ satisfying $l \leq 1$, let
@@ -230,7 +230,7 @@
                     \dd \Plancherel{\VectorSpace}(\lambda)
                     \conj{\Character{\tau}(k)}
             \end{align*}
-            which, after recognising the inverse Fourier Transform on $\dualGroup{V}$,
+            which, after recognising the inverse Fourier Transform on $\dualGroup{\VectorSpace}$,
             yields the following expression for the kernel:
             \begin{align}
                 \kappa_l (x, k)
@@ -407,7 +407,7 @@
             in the above, this concludes the step.
 
         \item[Step 4] $\ip[\Lebesgue{2}{\CompactGroup}]{\DifferenceOperator{q} \eta_l(\lambda) \mu_{mn}}{\nu_{kl}}$ is non-zero
-            only if $\norm[\dualGroup{V}]{\lambda}, \JapaneseBracket{\CompactGroup}{\mu}, \JapaneseBracket{\CompactGroup}{\nu} \leq C_q 2^l$.
+            only if $\norm[\dualGroup{\VectorSpace}]{\lambda}, \JapaneseBracket{\CompactGroup}{\mu}, \JapaneseBracket{\CompactGroup}{\nu} \leq C_q 2^l$.
 
             Choose $C_q \geq 2$ so that
             \begin{align*}
@@ -439,7 +439,7 @@
                 L_l(\lambda) =
                 \begin{cases}
                     {\left. \Rep{\lambda} \BesselPotential{1} \right|}_{\oplus_{\JapaneseBracket{\CompactGroup}{\tau} \leq C_q 2^l} V_\tau}
-                    & \text{if } \norm[\dualGroup{V}]{\lambda} \leq C_q 2^l\\
+                    & \text{if } \norm[\dualGroup{\VectorSpace}]{\lambda} \leq C_q 2^l\\
                     0 & \text{otherwise},
                 \end{cases}
             \end{align*}
