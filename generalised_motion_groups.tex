@@ -142,6 +142,7 @@ For $q = 1, \dots, \dimRep{\tau}$, let:
 \begin{align}
     P^\tau_q F(u) = \dimRep{\tau} \int_\IsotropySubgroup{\CompactGroup}{\lambda} \conj{\tau_{qq}(m)} F(u m) \dd m,
     \quad F \in \Lebesgue{2}{\CompactGroup}.
+    \label{eq:projection_on_L2_of_the_compact_group}
 \end{align}
 
 By the Inverse Fourier Transform at $e \in \IsotropySubgroup{\CompactGroup}{\lambda}$,
@@ -166,6 +167,151 @@ Now, write $\Hilbert{\tau}{q} = P^\tau_q \Lebesgue{2}{\CompactGroup}$.
     \end{align*}
     where the above decomposition is orthogonal.
 \end{lemma}
+\begin{proof}
+    Let $\mu, \nu \in \dualGroup{\IsotropySubgroup{\CompactGroup}{\lambda}}$,
+    $p, \in \{1, \dots, \dimRep{\mu}\}$,
+    and $q, \in \{1, \dots, \dimRep{\nu}\}$.
+    Suppose also that $F \in \Lebesgue{2}{\CompactGroup}$.
+
+    \begin{align*}
+        &\ip[\Lebesgue{2}{\CompactGroup}]{P^{\mu}_{p} F}{P^{\nu}_{q} F}\\
+        &= \dimRep{\mu} \dimRep{\nu}
+            \int_\CompactGroup
+                \int_\IsotropySubgroup{\CompactGroup}{\lambda}
+                    \int_\IsotropySubgroup{\CompactGroup}{\lambda}
+                        \conj{{\mu}_{p p}(m_1)}
+                        {\nu}_{q q}(m_2)
+                        F(u m_1)
+                        \conj{F(u m_2)}
+                    \dd m_2
+                \dd m_1
+            \dd u
+    \end{align*}
+
+    Decomposing $u = u' m$ with
+    \begin{align*}
+    \int_\CompactGroup \dd u = \int_\RightQuotient{\CompactGroup}{\IsotropySubgroup{\CompactGroup}{\lambda}} \int_\IsotropySubgroup{\CompactGroup}{\lambda} \dd m \dd u'
+    \end{align*}
+    and substituing $m_i$ for $m^{-1} m_i$, $i = 1, 2$, we get
+    \begin{align*}
+        \ip[\Lebesgue{2}{\CompactGroup}]{P^{\mu}_{p} F}{P^{\nu}_{q} F}
+        = \dimRep{\mu} \dimRep{\nu}
+            \int_\RightQuotient{\CompactGroup}{\IsotropySubgroup{\CompactGroup}{\lambda}}
+                \int_\IsotropySubgroup{\CompactGroup}{\lambda}
+                    \int_\IsotropySubgroup{\CompactGroup}{\lambda}
+                        \int_\IsotropySubgroup{\CompactGroup}{\lambda}
+                            &\conj{{\mu}_{p p}(m^{-1} m_1)}
+                            {\nu}_{q q}(m^{-1} m_2)\\
+                            &F(u' m_1)
+                            \conj{F(u' m_2)}
+                        \dd m_2
+                    \dd m_1
+                \dd m
+            \dd u'.
+    \end{align*}
+
+    Now, using the identities
+    \begin{align*}
+        \conj{\mu_{pp}(m^{-1} m_1)}
+        = \sum_{i = 1}^\dimRep{\mu}
+            \conj{\mu_{p i}(m^{-1})}
+            \conj{\mu_{i p}(m_1)}
+        = \sum_{i = 1}^\dimRep{\mu}
+            \mu_{i p}(m)
+            \conj{\mu_{i p}(m_1)}\\
+        \nu_{qq}(m^{-1} m_2)
+        = \sum_{j = 1}^\dimRep{\nu}
+            \nu_{qj}(m^{-1})
+            \nu_{jq}(m_2)
+        = \sum_{j = 1}^\dimRep{\nu}
+            \conj{\nu_{jq}(m)}
+            \nu_{jq}(m_2),
+    \end{align*}
+    it follows that
+    \begin{align*}
+        &\ip[\Lebesgue{2}{\CompactGroup}]{P^{\mu}_{p} F}{P^{\nu}_{q} F}\\
+        &= \dimRep{\mu} \dimRep{\nu}
+            \int_\RightQuotient{\CompactGroup}{\IsotropySubgroup{\CompactGroup}{\lambda}}
+                \int_\IsotropySubgroup{\CompactGroup}{\lambda}
+                    \int_\IsotropySubgroup{\CompactGroup}{\lambda}
+                        \int_\IsotropySubgroup{\CompactGroup}{\lambda}
+                            \sum_{i = 1}^\dimRep{\mu}
+                                \sum_{j = 1}^\dimRep{\nu}
+                                    \mu_{i p}(m)
+                                    \conj{\mu_{i p}(m_1)}
+                                    \conj{\nu_{jq}(m)}
+                                    \nu_{jq}(m_2)
+                                    F(u' m_1)
+                                    \conj{F(u' m_2)}
+                        \dd m_2
+                    \dd m_1
+                \dd m
+            \dd u'.
+    \end{align*}
+
+    Integrating with respect to $m$ and keeping in mind the Peter-Weyl Theorem gives the orthogonality relation
+    \begin{align*}
+        \dimRep{\nu} \int_\IsotropySubgroup{\CompactGroup}{\lambda} \mu_{ip}(m) \conj{\nu_{jq}(m)} \dd m
+        = \Kronecker{\mu}{\nu} \Kronecker{i}{j} \Kronecker{p}{q},
+    \end{align*}
+    we obtain:
+    \begin{align*}
+        &\ip[\Lebesgue{2}{\CompactGroup}]{P^{\mu}_{p} F}{P^{\nu}_{q} F}\\
+        &= \Kronecker{\mu}{\nu} \Kronecker{p}{q} \dimRep{\mu}
+            \int_\RightQuotient{\CompactGroup}{\IsotropySubgroup{\CompactGroup}{\lambda}}
+                \int_\IsotropySubgroup{\CompactGroup}{\lambda}
+                    \int_\IsotropySubgroup{\CompactGroup}{\lambda}
+                        \sum_{i = 1}^\dimRep{\mu}
+                            \conj{\mu_{i p}(m_1)}
+                            \mu_{ip}(m_2)
+                            F(u' m_1)
+                            \conj{F(u' m_2)}
+                    \dd m_2
+                \dd m_1
+            \dd u'.
+    \end{align*}
+
+    Using $\conj{\mu_{ip}(m_1)} = \mu_{p i}(m_1^{-1})$,
+    the above becomes
+    \begin{align*}
+        &\ip[\Lebesgue{2}{\CompactGroup}]{P^{\mu}_{p} F}{P^{\nu}_{q} F}\\
+        &= \Kronecker{\mu}{\nu} \Kronecker{p}{q} \dimRep{\mu}
+            \int_\RightQuotient{\CompactGroup}{\IsotropySubgroup{\CompactGroup}{\lambda}}
+                \int_\IsotropySubgroup{\CompactGroup}{\lambda}
+                    \int_\IsotropySubgroup{\CompactGroup}{\lambda}
+                        \mu_{pp}(m_1^{-1} m_2)
+                        F(u' m_1)
+                        \conj{F(u' m_2)}
+                    \dd m_2
+                \dd m_1
+            \dd u'\\
+        &= \Kronecker{\mu}{\nu} \Kronecker{p}{q} \dimRep{\mu}
+            \int_\RightQuotient{\CompactGroup}{\IsotropySubgroup{\CompactGroup}{\lambda}}
+                \int_\IsotropySubgroup{\CompactGroup}{\lambda}
+                    \int_\IsotropySubgroup{\CompactGroup}{\lambda}
+                        \mu_{pp}(m_1^{-1})
+                        F(u' m_2 m_1)
+                        \conj{F(u' m_2)}
+                    \dd m_2
+                \dd m_1
+            \dd u'\\
+        &= \Kronecker{\mu}{\nu} \Kronecker{p}{q} \dimRep{\mu}
+            \int_\CompactGroup
+                \int_\IsotropySubgroup{\CompactGroup}{\lambda}
+                    \mu_{pp}(m_1^{-1})
+                    F(m m_1)
+                    \conj{F(u)}
+                \dd m_1
+            \dd u,
+    \end{align*}
+    where in the last line, we let $u = u' m_2$.
+    Using the fact that $\mu_{pp}(m_1^{-1}) = \conj{\mu_{pp}(m_1)}$ and~\eqref{eq:projection_on_L2_of_the_compact_group},
+    we conclude that in fact
+    \begin{align*}
+        \ip[\Lebesgue{2}{\CompactGroup}]{P^{\mu}_{p} F}{P^{\nu}_{q} F}
+        &= \Kronecker{\mu}{\nu} \Kronecker{p}{q} \ip[\Lebesgue{2}{\CompactGroup}]{P^\mu_p F}{F}.
+    \end{align*}
+\end{proof}
 
 \begin{proposition}[Unitary dual]
 \label{proposition:unitary_dual}
