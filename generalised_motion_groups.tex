@@ -328,6 +328,31 @@ Now, write $\Hilbert{\tau}{q} = P^\tau_q \Lebesgue{2}{\CompactGroup}$.
             for some $k \in \CompactGroup$.
     \end{enumerate}
 \end{proposition}
+\begin{proof}
+    \begin{enumerate}
+        \item It is clear that $\Rep{\lambda}$ is unitary.
+            If $F \in \Hilbert{\tau}{q}$, we check that
+            \begin{align*}
+                P^\tau_q \Rep{\lambda}(x, k) F(u)
+                &=  \dimRep{\tau}
+                    \int_\IsotropySubgroup{\CompactGroup}{\lambda}
+                        \conj{\tau_{qq}(m)}
+                        \lambda(u^{-1} k)
+                        F(k^{-1} u m)
+                    \dd m\\
+                &= \Rep{\lambda}(x, k) P^\tau_q F(u),
+            \end{align*}
+            in other words $P^\tau_q$ commutes with $\Rep{\lambda}(x, k)$.
+            As $P^\tau_q F = F$, this implies that
+            \begin{align}
+                P^\tau_q \Rep{\lambda}(x, k) F(u)
+                = \Rep{\lambda}(x, k) F(u),
+            \end{align}
+            in other words $\Rep{\lambda}(x, k) F$ also belongs to $\Hilbert{\tau}{q}$.
+
+            It remains to show that $\Rep{\lambda}$ is irreducible.
+    \end{enumerate}
+\end{proof}
 
 \begin{definition}[Unitary dual]
 \label{definition:unitary_dual}
