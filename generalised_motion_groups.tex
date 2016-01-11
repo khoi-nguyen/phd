@@ -312,11 +312,14 @@ Now, write $\Hilbert{\tau}{q} = P^\tau_q \Lebesgue{2}{\CompactGroup}$.
         &= \Kronecker{\mu}{\nu} \Kronecker{p}{q} \ip[\Lebesgue{2}{\CompactGroup}]{P^\mu_p F}{H}.
     \end{align*}
 
+    From there, we easily deduce that the spaces $\Hilbert{\mu}{p}$,
+    where $\mu \in \dualGroup{\IsotropySubgroup{\CompactGroup}{\lambda}}$ and $p \in \{1, \dots, \dimRep{\tau}\}$ are mutually orthogonal.
+
     Using the fact that $P^\tau_q F(u) = {\Fourier[\IsotropySubgroup{\CompactGroup}{\lambda}] \{ F(u \dummy) \} (\tau)}_{qq}$,
     we can apply the inverse Fourier Formula to $F(u \dummy)$ at $e \in \IsotropySubgroup{\CompactGroup}{\lambda}$ to obtain
     \begin{align*}
         F(u) = F(u e) = \sum_{\tau \in \dualGroup{\IsotropySubgroup{\CompactGroup}{\lambda}}}
-        \tr( \Fourier[\IsotropySubgroup{\CompactGroup}{\lambda}] \{ F(u \dummy) \}(\tau))
+        \dimRep{\tau} \tr( \Fourier[\IsotropySubgroup{\CompactGroup}{\lambda}] \{ F(u \dummy) \}(\tau))
         = \sum_{\tau \in \dualGroup{\IsotropySubgroup{\CompactGroup}{\lambda}}}
             \sum_{q = 1}^\dimRep{\tau}
                 P^\tau_q F(u).
