@@ -311,6 +311,16 @@ Now, write $\Hilbert{\tau}{q} = P^\tau_q \Lebesgue{2}{\CompactGroup}$.
         \ip[\Lebesgue{2}{\CompactGroup}]{P^{\mu}_{p} F}{P^{\nu}_{q} F}
         &= \Kronecker{\mu}{\nu} \Kronecker{p}{q} \ip[\Lebesgue{2}{\CompactGroup}]{P^\mu_p F}{F}.
     \end{align*}
+
+    Using the fact that $P^\tau_q F(u) = {\Fourier[\IsotropySubgroup{\CompactGroup}{\lambda}] \{ F(u \dummy) \} (\tau)}_{qq}$,
+    we can apply the inverse Fourier Formula to $F(u \dummy)$ at $e \in \IsotropySubgroup{\CompactGroup}{\lambda}$ to obtain
+    \begin{align*}
+        F(u) = F(u e) = \sum_{\tau \in \dualGroup{\IsotropySubgroup{\CompactGroup}{\lambda}}}
+        \tr( \Fourier[\IsotropySubgroup{\CompactGroup}{\lambda}] \{ F(u \dummy) \}(\tau))
+        = \sum_{\tau \in \dualGroup{\IsotropySubgroup{\CompactGroup}{\lambda}}}
+            \sum_{q = 1}^\dimRep{\tau}
+                P^\tau_q F(u).
+    \end{align*}
 \end{proof}
 
 \begin{proposition}[Unitary dual]
