@@ -7,7 +7,7 @@
 \index{semi-direct product}
 \index{motion group|see {generalised motion group}}
     Let $N$ be a group and $H$ be a subgroup of $\Aut(N)$.
-    The \emph{semi-direct product} $N \rtimes H$ is the group whose elements are that of $N \times H$ with the group law:
+    The \emph{semi-direct product} $N \rtimes H$ is the group whose elements are that of $N \times H$ with the group law
     \begin{align}
         (n_1, h_1) (n_2, h_2) = (n_1 h_1(n_2), h_1 h_2), \quad (n_1, h_1), (n_2, h_2) \in N \times H.
     \end{align}
@@ -59,7 +59,7 @@ From now on, unless stated otherwise,
 $\Group$ will denote a generalised motion group,
 with $\VectorSpace$ its underlying vector space and $\CompactGroup$ its associated compact group.
 
-The requirement that $\CompactGroup$ should be a subgroup of $\OrthogonalGroup{\VectorSpace}$ is motivated by the following result:
+The requirement that $\CompactGroup$ should be a subgroup of $\OrthogonalGroup{\VectorSpace}$ is motivated by the following result
 
 \begin{lemma}[Haar measure]
 \label{lemma:Haar_measure}
@@ -76,7 +76,7 @@ Using an isomorphism
 \end{align}
 where $n = \dim \VectorSpace$,
 we can represent the generalised motion group $\Group$
-by real matrices via the map:
+by real matrices via the map
 \begin{align}
     \Phi : \Group \to \R^{(n + 1) \times (n + 1)} :
         (x, k) \mapsto
@@ -122,7 +122,7 @@ where by $\phi \circ k \circ \phi^{-1}$ we actually mean its corresponding matri
 \begin{definition}
 \label{definition:reducible_representation}
     Let $\lambda \in \dualGroup{\VectorSpace}$.
-    We define a unitary representation $\Rep{\lambda} \in \Hom(\Group, \End(\Lebesgue{2}{\CompactGroup}))$ of $\Group$ via:
+    We define a unitary representation $\Rep{\lambda} \in \Hom(\Group, \End(\Lebesgue{2}{\CompactGroup}))$ of $\Group$ via
     \begin{align}
         \Rep{\lambda} (x, k) F(u) = (u \lambda)(x) F(k^{-1} u),
     \end{align}
@@ -138,7 +138,7 @@ Throughout this section, fix $\lambda \in \dualGroup{\VectorSpace}$
 and denote by $\IsotropySubgroup{\CompactGroup}{\lambda}$ its isotropy subgroup.
 
 Let $\tau \in \dualGroup{\IsotropySubgroup{\CompactGroup}{\lambda}}$ and denote by $\dimRep{\tau}$ its dimension.
-For $q = 1, \dots, \dimRep{\tau}$, let:
+For $q = 1, \dots, \dimRep{\tau}$, let
 \begin{align}
     P^\tau_q F(u) = \dimRep{\tau} \int_\IsotropySubgroup{\CompactGroup}{\lambda} \conj{\tau_{qq}(m)} F(u m) \dd m,
     \quad F \in \Lebesgue{2}{\CompactGroup}.
@@ -146,7 +146,7 @@ For $q = 1, \dots, \dimRep{\tau}$, let:
 \end{align}
 
 By the Inverse Fourier Transform at $e \in \IsotropySubgroup{\CompactGroup}{\lambda}$,
-if $F \in \Lebesgue{2}{\CompactGroup}$ and $u \in \CompactGroup$, then:
+if $F \in \Lebesgue{2}{\CompactGroup}$ and $u \in \CompactGroup$, then
 \begin{align}
     F(u)
     = \sum_{\tau \in \dualGroup{\IsotropySubgroup{\CompactGroup}{\lambda}}} \dimRep{\tau} \sum_{q = 1}^{\dimRep{\tau}} {\Fourier[\IsotropySubgroup{\CompactGroup}{\lambda}]{F(u \dummy)}}_{qq}
@@ -254,7 +254,7 @@ Now, write $\Hilbert{\tau}{q} = P^\tau_q \Lebesgue{2}{\CompactGroup}$.
         \dimRep{\nu} \int_\IsotropySubgroup{\CompactGroup}{\lambda} \mu_{ip}(m) \conj{\nu_{jq}(m)} \dd m
         = \Kronecker{\mu}{\nu} \Kronecker{i}{j} \Kronecker{p}{q},
     \end{align*}
-    we obtain:
+    we obtain
     \begin{align*}
         &\ip[\Lebesgue{2}{\CompactGroup}]{P^{\mu}_{p} F}{P^{\nu}_{q} H}\\
         &= \Kronecker{\mu}{\nu} \Kronecker{p}{q} \dimRep{\mu}
@@ -331,7 +331,7 @@ Now, write $\Hilbert{\tau}{q} = P^\tau_q \Lebesgue{2}{\CompactGroup}$.
     Let $\lambda, \lambda' \in \dualGroup{\VectorSpace}$
     and $\tau \in \dualGroup{\IsotropySubgroup{\CompactGroup}{\lambda}}$,
     $\tau' \in \dualGroup{\IsotropySubgroup{\CompactGroup}{\lambda'}}$.
-    The following properties hold:
+    The following properties hold
     \begin{enumerate}
         \item $\Rep{\lambda}$ restricts to an irreducible unitary representation on each $\Hilbert{\tau}{q}$;
         \item $(\Hilbert{\tau}{q}, \Rep{\lambda})$ and $(\Hilbert{\tau'}{q'}, \Rep{\lambda'})$ are equivalent if and only if
@@ -371,7 +371,7 @@ Now, write $\Hilbert{\tau}{q} = P^\tau_q \Lebesgue{2}{\CompactGroup}$.
 \label{definition:unitary_dual}
 \index{generalised motion group!unitary dual}
     Fix $\lambda_0 \in \dualGroup{\VectorSpace}$.
-    We define the \emph{unitary dual} of $\Group$, denoted by $\dualGroup{\Group}$, via:
+    We define the \emph{unitary dual} of $\Group$, denoted by $\dualGroup{\Group}$, via
     \begin{align*}
         \dualGroup{\Group} = \{ (\Hilbert{\tau}{1}, \Rep{\lambda}) : \lambda \in \LeftQuotient{\IsotropySubgroup{\CompactGroup}{\lambda_0}}{\dualGroup{\VectorSpace}}, \tau \in \dualGroup{\IsotropySubgroup{\CompactGroup}{\lambda}} \}.
     \end{align*}
@@ -411,7 +411,7 @@ Now, write $\Hilbert{\tau}{q} = P^\tau_q \Lebesgue{2}{\CompactGroup}$.
 \label{definition:Fourier_Transform}
 \index{generalised motion group!Fourier transform}
     Let $f \in \Lebesgue{1}{\Group}$ and $\lambda \in \dualGroup{\VectorSpace}$.
-    We define its \emph{Fourier coefficient} at $\lambda$ via:
+    We define its \emph{Fourier coefficient} at $\lambda$ via
     \begin{align*}
         \Fourier{f}(\lambda) = \int_\Group f(g) \adj{\Rep{\lambda}(g)} \dd g.
     \end{align*}
@@ -430,7 +430,7 @@ Now, write $\Hilbert{\tau}{q} = P^\tau_q \Lebesgue{2}{\CompactGroup}$.
 \label{proposition:Plancherel_formula}
 \index{generalised motion group!Fourier transform!Plancherel formula}
     Let $f \in \Lebesgue{1}{\Group} \cap \Lebesgue{2}{\Group}$.
-    The following formula holds:
+    The following formula holds
     \begin{align}
         \int_G \abs{f}^2 \dd g = \int_\dualGroup{\VectorSpace} \norm[\HilbertSchmidt{\Lebesgue{2}{\CompactGroup}}]{\Fourier{f}(\lambda)}^2 \dd \Plancherel{\VectorSpace}(\lambda).
         \label{proposition:Plancherel_formula:formula}
@@ -446,19 +446,19 @@ Now, write $\Hilbert{\tau}{q} = P^\tau_q \Lebesgue{2}{\CompactGroup}$.
     \end{align*}
     where we used $\lambda(-{(k u)}^{-1} x) = \conj{\lambda({(k u)}^{-1} x)} = \conj{(k u \lambda)(x)}$.
 
-    Substituing $k$ for $k u^{-1}$, we get:
+    Substituing $k$ for $k u^{-1}$, we get
     \begin{align*}
         \Fourier{f}(\lambda) F(u)
         &= \int_\CompactGroup \Fourier[\VectorSpace]{f}(k \lambda, k u^{-1}) F(k) \dd k.
     \end{align*}
 
-    Therefore, it follows by REFERENCE that:
+    Therefore, it follows by REFERENCE that
     \begin{align*}
         \norm[\HilbertSchmidt{\Lebesgue{2}{\CompactGroup}}]{\Fourier{f}(\lambda)}^2
         &= \int_\CompactGroup \int_\CompactGroup \abs{\Fourier[\VectorSpace]{f}(k \lambda, k u^{-1})}^2 \dd u \dd k.
     \end{align*}
 
-    Now, integrating with respect to $\lambda$, we obtain:
+    Now, integrating with respect to $\lambda$, we obtain
     \begin{align*}
         \int_\dualGroup{\VectorSpace} \norm[\HilbertSchmidt{\Lebesgue{2}{\CompactGroup}}]{\Fourier{f}(\lambda)}^2 \dd \Plancherel{\VectorSpace}(\lambda)
         &= \int_\dualGroup{\VectorSpace} \int_\CompactGroup \abs{\Fourier[\VectorSpace]{f}(\lambda, k)}^2 \dd k \dd \Plancherel{\VectorSpace}(\lambda)\\

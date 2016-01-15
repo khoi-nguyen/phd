@@ -89,9 +89,9 @@
 \begin{theorem}[Littlewood-Paley decomposition]
 \label{theorem:Littlewood-Paley_decomposition}
 \index{Littlewood-Paley decomposition}
-    There exists a sequence $\eta_l \in \SmoothSymbols$, $l \in \N$ of smoothing symbols satisfying the following properties:
+    There exists a sequence $\eta_l \in \SmoothSymbols$, $l \in \N$ of smoothing symbols satisfying the following properties
     \begin{enumerate}
-        \item the semi-norms decay in the following way:
+        \item the semi-norms decay in the following way
             \begin{align}
                 \SymbolSemiNorm{m}{\rho, \delta}{\eta_l} \leq C 2^{-lm}
             \end{align}
@@ -106,7 +106,7 @@
     \begin{description}
         \item[Step 1] Constructing the dyadic decomposition.
 
-            First, let us find a smooth function $\chi_0 \in \SmoothFunctions{\dualGroup{\VectorSpace}}$ invariant under $\CompactGroup$ such that:
+            First, let us find a smooth function $\chi_0 \in \SmoothFunctions{\dualGroup{\VectorSpace}}$ invariant under $\CompactGroup$ such that
             \begin{align*}
                 \chi_0(\lambda) = 1 \  \text{if}\  \norm[\dualGroup{\VectorSpace}]{\lambda} \leq 1, \quad \text{and} \quad
                 \chi_0(\lambda) \equiv 0 \ \text{if}\  \norm[\dualGroup{\VectorSpace}]{\lambda} \geq 2.
@@ -130,7 +130,7 @@
 
             Fix $l \in \N$.
             We define our symbol $\eta_l$ as follows.
-            For each $\tau \in \dualGroup{\CompactGroup}$, we let:
+            For each $\tau \in \dualGroup{\CompactGroup}$, we let
             \begin{align*}
                 \eta_l(\lambda)
                 = \sum_{\JapaneseBracket{\CompactGroup}{\tau} \leq 2^l}
@@ -158,7 +158,7 @@
             where the last line was obtained by commuting the two sums.
 
             Substituing $l$ for $l + \Ceiling{\log_2 \JapaneseBracket{\CompactGroup}{\tau}}$ in the inner sum,
-            the above becomes:
+            the above becomes
             \begin{align*}
                 \sum_{l = 0}^\infty \eta_l
                 = \sum_{\tau \in \dualGroup{\CompactGroup}}
@@ -173,7 +173,7 @@
         \item[Step 2] Computing the associated kernels $\kappa_l$.
 
             By applying the inverse Fourier Transform (Proposition~\ref{proposition:inverse_Fourier_Transform})
-            we obtain that the kernel is given by:
+            we obtain that the kernel is given by
             \begin{align}
                 \kappa_l(x, k)
                 = \sum_{\JapaneseBracket{\CompactGroup}{\tau} \leq 2^l}
@@ -203,7 +203,7 @@
 
             Using the above in~\eqref{eq:theorem:Littlewood-Paley_decomposition:computing_kernel},
             and substituing $\lambda$ for $u^{-1} \lambda$,
-            we obtain:
+            we obtain
             \begin{align}
                 \kappa_l (x, k)
                 = &\sum_{\JapaneseBracket{\CompactGroup}{\tau} \leq 2^l}
@@ -231,7 +231,7 @@
                     \conj{\Character{\tau}(k)}
             \end{align*}
             which, after recognising the inverse Fourier Transform on $\dualGroup{\VectorSpace}$,
-            yields the following expression for the kernel:
+            yields the following expression for the kernel
             \begin{align}
                 \kappa_l (x, k)
                 = &\sum_{\JapaneseBracket{\CompactGroup}{\tau} \leq 2^l}
@@ -250,7 +250,7 @@
             We also choose an arbitrary function $F \in \Lebesgue{2}{\CompactGroup}$,
             and an element $u \in \CompactGroup$.
 
-            Informally, the idea behind the proof of this step is the following:
+            Informally, the idea behind the proof of this step is the following
             if we can write
             \begin{align*}
                 \DifferenceOperator{q} \eta_l(\lambda) F(u)
@@ -263,7 +263,7 @@
             we can see the latter is the right approach
             as we have a sum on $\dualGroup{\CompactGroup}$ already.
 
-            Multiplying $\kappa_l$ par $q$ and taking the Fourier Transform, we get:
+            Multiplying $\kappa_l$ par $q$ and taking the Fourier Transform, we get
             \begin{align}
                 \DifferenceOperator{q} \eta_l (\lambda) F(u)
                 = &\sum_{\JapaneseBracket{\CompactGroup}{\tau} \leq 2^l}
@@ -298,7 +298,7 @@
                 \begin{align*}
                     \DifferenceOperator[\VectorSpace]{q_1} \chi_{l - \Ceiling{\log_2 \JapaneseBracket{\CompactGroup}{\tau}}}(k \lambda) = \sum_{r = 1}^{C_q} f_{l, r}(\tau, \lambda) q_r(k),
                 \end{align*}
-                where $q_r$ and $f_{l, r}$ satisfies the following bound:
+                where $q_r$ and $f_{l, r}$ satisfies the following bound
                 \begin{align}
                     \sup_{l \in \N} \sup_{\tau \in \dualGroup{\CompactGroup}} \sup_{\lambda \in \dualGroup{\VectorSpace}} \abs{f_{l, r}(\tau, \lambda)} < \infty,\quad
                     \sup_{r} \sup_{k \in \CompactGroup} \abs{q(k)} < \infty
@@ -321,7 +321,7 @@
                 \end{align*}
 
                 Using Lemma~\ref{lemma:derivatives_of_radial_functions} and Lemma~\ref{lemma:left_regular_representation_of_polynomials}
-                we obtain:
+                we obtain
                 \begin{align*}
                     \DifferenceOperator[\VectorSpace]{q_1} &\chi_{l - \Ceiling{\log_2 \JapaneseBracket{\CompactGroup}{\tau}}}(k \lambda) =
                     2^{(-l + \Ceiling{\log_2 \JapaneseBracket{\CompactGroup}{\tau} + 1}) \order{q_1}}\\
@@ -342,7 +342,7 @@
 
             Using the above claim,
             and the identity $\conj{\Character{\tau}(k u^{-1})} = \sum_{i, j = 1}^\dimRep{\tau} \tau_{ij}(u) \conj{{\tau_{ij}(k)}}$,
-            we observe that:
+            we observe that
             \begin{align}
                 \DifferenceOperator{q} \eta_l (\lambda) F(u)
                 = &\sum_{p, r = 1}^{C_q}
@@ -387,7 +387,7 @@
             \end{align*}
 
             By~\eqref{eq:theorem:Littlewood-Paley_decomposition:claim_bound},
-            we obtain:
+            we obtain
             \begin{align*}
                 \norm[\Lin{\Lebesgue{2}{\CompactGroup}}]{T_{l, \lambda, p, r}}
                 &\leq C \sup_{\tau \in \dualGroup{\CompactGroup}} \sup_{u \in \CompactGroup} \norm[\Lin{\HilbertRep{\tau}}]{\sigma_{l, \lambda, p, r}(u, \tau)}\\
@@ -417,7 +417,7 @@
 
             Suppose now that $\max\{\JapaneseBracket{\CompactGroup}{\mu}, \JapaneseBracket{\CompactGroup}{\nu}\} > C_q 2^l$.
             It follows from our choice of $C_q$ that if $\JapaneseBracket{\CompactGroup}{\tau} \leq 2^l$,
-            either of the following equations hold:
+            either of the following equations hold
             \begin{align*}
                 \int_\CompactGroup q_r(k) q_{2, p}(k) \mu_{mn}(k) \conj{\tau_{ij}(k)} \dd k &= 0\\
                 \int_\CompactGroup \tau_{ij}(u) q'_{2, p}(u) \conj{\nu_{mn}(k)} \dd k &= 0.
