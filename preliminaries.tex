@@ -18,16 +18,21 @@
     then we shall say that $\Group$ is a \emph{(locally) compact Lie group}.
 \end{definition}
 
-\begin{proposition}[Haar measure]
-    Let $\Group$ be a locally compact group.
-    There exists a positive Radon measure $\mu$ on $\Group$ such that
-    for each $g \in \Group$ and each Borel set $A \subset G$, we have
+\begin{definition}[Haar measure]
+    Let $\Group$ be a locally compact topological group.
+    A positive Radon measure on $\Group$ is called a \emph{Haar measure}
+    if it is in addition \emph{left-invariant},
+    i.e.\ for each $g \in \Group$ and each Borel set $A \subset G$, we have
     \begin{align*}
-        \mu(g A) = \mu(A),
+        \mu(g A) = \mu(A).
     \end{align*}
-    in other words, $\mu$ is \emph{left-invariant}.
+\end{definition}
 
-    If $\nu$ is another left-invariant Radon measure on $\Group$,
+\begin{proposition}[Haar measure]
+    If $\Group$ is a locally compact topological group,
+    then there exists a Haar measure $\mu$ on $\Group$.
+
+    Moreover, if $\nu$ is another left-invariant Radon measure on $\Group$,
     then we can find $c \geq 0$ such that $\nu = c \mu$.
 \end{proposition}
 
