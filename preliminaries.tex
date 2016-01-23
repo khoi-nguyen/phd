@@ -54,6 +54,24 @@
 
 \section{Representation Theory}
 
+\begin{definition}
+\label{definition:unitary_representation}
+\index{representations!unitary representations}
+    Let $\Group$ be a group and $\Hil$ be a Hilbert space.
+    A map
+    \begin{align*}
+        \xi : \Group \mapsto \Hom(\Hil)
+    \end{align*}
+    is called a \emph{unitary representation} if
+    \begin{enumerate}
+        \item for each $g \in \Group$, the map $\xi(g)$ is unitary:
+            \begin{align*}
+                {\xi(g)}^{-1} = \adj{\xi(g)};
+            \end{align*}
+        \item if $g, h \in \Group$, then we have $\xi(g h) = \xi(g) \xi(h)$.
+    \end{enumerate}
+\end{definition}
+
 \section{Fourier Transform}
 
 \section{Difference operators}
