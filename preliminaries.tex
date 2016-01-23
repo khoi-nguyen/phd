@@ -62,7 +62,7 @@
     \begin{align*}
         \xi : \Group \mapsto \Hom(\Hil)
     \end{align*}
-    is called a \emph{unitary representation} if
+    is called a \emph{unitary representation (on $\Hil$)} if
     \begin{enumerate}
         \item for each $g \in \Group$, the map $\xi(g)$ is unitary:
             \begin{align*}
@@ -74,6 +74,23 @@
     The \emph{dimension} of $\xi$ is that of $\Hil$.
     If $\Hil$ is finite-dimensional,
     we let $\dimRep{\xi} \defeq \dim{\Hil}$ denote the dimension of $\xi$.
+\end{definition}
+
+\begin{definition}
+    Let $\Group$ be a group and $\xi$ be a unitary representation of $\Group$ on a Hilbert space $\Hil$.
+    We shall say that a vector subspace $W \subset \Hil$ is \emph{invariant} under $\xi$
+    if for each $g \in \Group$, we have $\xi(g) W \subset W$.
+\end{definition}
+
+\begin{definition}
+\label{definition:irreducible_representations}
+    Let $\Group$ be a group and $\xi$ be a unitary representation of $\Group$ on a Hilbert space $\Hil$.
+    \begin{enumerate}
+        \item If the only invariant subspaces of $\xi$ are $\{0\}$ and $\Hil$,
+            then $\xi$ is said to be \emph{irreducible}.
+        \item Otherwise, if there exists a non-trivial invariant subspace,
+            then $\xi$ is \emph{reducible}.
+    \end{enumerate}
 \end{definition}
 
 \section{Fourier Transform}
