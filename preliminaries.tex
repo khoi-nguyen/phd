@@ -93,6 +93,22 @@
     \end{enumerate}
 \end{definition}
 
+\begin{definition}[Equivalent representations]
+\label{definition:equivalent_representations}
+    Let $\Group$ be a group and $\Hil_1, \Hil_2$ be Hilbert spaces.
+    Suppose $\xi_1$, $\xi_2$ are representations of $\Group$ on $\Hil_1$ and $\Hil_2$ respectively.
+    We shall say that $\xi_1$ and $\xi_2$ are \emph{equivalent}
+    if there exists an invertible linear map
+    \begin{align*}
+        A : \Hil_1 \to \Hil_2
+    \end{align*}
+    such that for each $g \in \Group$, we have
+    \begin{align*}
+        \xi_2(g) = A \circ \xi_1(g) \circ A^{-1}.
+    \end{align*}
+    In that case, $A$ is called an \emph{intertwining operator}.
+\end{definition}
+
 \section{Fourier Transform}
 
 \section{Difference operators}
