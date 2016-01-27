@@ -67,6 +67,27 @@ The requirement that $\CompactGroup$ should be a subgroup of $\OrthogonalGroup{\
     then the the product measure $\dd x \dd k$ is a Haar measure on $\Group = \VectorSpace \rtimes \CompactGroup$,
     which is both left and right-invariant.
 \end{lemma}
+\begin{proof}
+    Let $(x, k) \in \MotionGroup$.
+    \begin{align*}
+        \int_\MotionGroup f((x, k) (y, l)) \dd (y, l)
+        = \int_\VectorSpace \int_\CompactGroup f(x + ky, k l) \dd l \dd y
+    \end{align*}
+
+    Now, let us substitute $y$ for $k^{-1}(y - x)$ and $l$ for $k^{-1} l$ in the above.
+    As the Lebesgue measure is invariant under $\OrthogonalGroup{\VectorSpace}$ and under translations,
+    and because the Haar measure $\dd l$ is left-invariant,
+    we obtain
+    \begin{align*}
+        \int_\MotionGroup f((x, k) (y, l)) \dd (y, l)
+        &= \int_\VectorSpace \int_\CompactGroup f(y, l) \dd l \dd y\\
+        &= \int_\MotionGroup f(y, l) \dd (y, l),
+    \end{align*}
+    showing that $\dd y \dd l$ is indeed a Haar measure on $\MotionGroup$.
+
+    Since by Proposition~\ref{proposition:sufficient_conditions_to_be_unimodular} $\dd l$ is also right-invariant,
+    arguing similarly shows that $\dd y \dd l$ is also right-invariant.
+\end{proof}
 
 \section{Lie algebra structure}
 
