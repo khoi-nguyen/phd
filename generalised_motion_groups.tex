@@ -68,9 +68,9 @@ The requirement that $\CompactGroup$ should be a subgroup of $\OrthogonalGroup{\
     which is both left and right-invariant.
 \end{lemma}
 \begin{proof}
-    Let $(x, k) \in \MotionGroup$.
+    Let $(x, k) \in \Group$.
     \begin{align*}
-        \int_\MotionGroup f((x, k) (y, l)) \dd (y, l)
+        \int_\Group f((x, k) (y, l)) \dd (y, l)
         = \int_\VectorSpace \int_\CompactGroup f(x + ky, k l) \dd l \dd y
     \end{align*}
 
@@ -79,11 +79,11 @@ The requirement that $\CompactGroup$ should be a subgroup of $\OrthogonalGroup{\
     and because the Haar measure $\dd l$ is left-invariant,
     we obtain
     \begin{align*}
-        \int_\MotionGroup f((x, k) (y, l)) \dd (y, l)
+        \int_\Group f((x, k) (y, l)) \dd (y, l)
         &= \int_\VectorSpace \int_\CompactGroup f(y, l) \dd l \dd y\\
-        &= \int_\MotionGroup f(y, l) \dd (y, l),
+        &= \int_\Group f(y, l) \dd (y, l),
     \end{align*}
-    showing that $\dd y \dd l$ is indeed a Haar measure on $\MotionGroup$.
+    showing that $\dd y \dd l$ is indeed a Haar measure on $\Group$.
 
     Since by Proposition~\ref{proposition:sufficient_conditions_to_be_unimodular} $\dd l$ is also right-invariant,
     arguing similarly shows that $\dd y \dd l$ is also right-invariant.
