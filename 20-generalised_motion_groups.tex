@@ -9,7 +9,7 @@
     Let $N$ be a group and $H$ be a subgroup of $\Aut(N)$.
     The \emph{semi-direct product} $N \rtimes H$ is the group whose elements are that of $N \times H$ with the group law
     \begin{align}
-        (n_1, h_1) (n_2, h_2) = (n_1 h_1(n_2), h_1 h_2), \quad (n_1, h_1), (n_2, h_2) \in N \times H.
+        (n_1, h_1) (n_2, h_2) \defeq (n_1 h_1(n_2), h_1 h_2), \quad (n_1, h_1), (n_2, h_2) \in N \times H.
     \end{align}
 
     Given $(n, h)$ in $N \rtimes H$, its \emph{inverse} is given by $(h_1^{-1}(n_1^{-1}), h_1^{-1})$,
@@ -29,7 +29,7 @@
 \index{Euclidean motion group}
     For each $n \in \N$, let
     \begin{align*}
-        \MotionGroup{n} = \{g \in \AffineTransformations{\R^n} : \det g = 1\}.
+        \MotionGroup{n} \defeq \{g \in \AffineTransformations{\R^n} : \det g = 1\}.
     \end{align*}
     The elements of $\MotionGroup{n}$ are called \emph{rigid motions},
     while $\MotionGroup{n}$ is called the \emph{Euclidean motion group}.
@@ -134,7 +134,7 @@ where by $\phi \circ k \circ \phi^{-1}$ we actually mean its corresponding matri
     \begin{align*}
         \exp_\Group : \LieAlgebra \to \Group
     \end{align*}
-    defined by $\exp_\Group = \Phi^{-1} \circ \exp$,
+    defined by $\exp_\Group \defeq \Phi^{-1} \circ \exp$,
     where $\Phi$ is the map defined in~\eqref{eq:motion_group_realised_as_matrices}.
 \end{definition}
 
@@ -145,7 +145,7 @@ where by $\phi \circ k \circ \phi^{-1}$ we actually mean its corresponding matri
     Let $\lambda \in \dualGroup{\VectorSpace}$.
     We define a unitary representation $\Rep{\lambda} \in \Hom(\Group, \End(\Lebesgue{2}{\CompactGroup}))$ of $\Group$ via
     \begin{align}
-        \Rep{\lambda} (x, k) F(u) = (u \lambda)(x) F(k^{-1} u),
+        \Rep{\lambda} (x, k) F(u) \defeq (u \lambda)(x) F(k^{-1} u),
     \end{align}
     where $(x, k) \in \CompactGroup$, $F \in \Lebesgue{2}{\CompactGroup}$ and $u \in \CompactGroup$.
 \end{definition}
@@ -161,7 +161,7 @@ and denote by $\IsotropySubgroup{\CompactGroup}{\lambda}$ its isotropy subgroup.
 Let $\tau \in \dualGroup{\IsotropySubgroup{\CompactGroup}{\lambda}}$ and denote by $\dimRep{\tau}$ its dimension.
 For $q = 1, \dots, \dimRep{\tau}$, let
 \begin{align}
-    P^\tau_q F(u) = \dimRep{\tau} \int_\IsotropySubgroup{\CompactGroup}{\lambda} \conj{\tau_{qq}(m)} F(u m) \dd m,
+    P^\tau_q F(u) \defeq \dimRep{\tau} \int_\IsotropySubgroup{\CompactGroup}{\lambda} \conj{\tau_{qq}(m)} F(u m) \dd m,
     \quad F \in \Lebesgue{2}{\CompactGroup}.
     \label{eq:projection_on_L2_of_the_compact_group}
 \end{align}
@@ -174,7 +174,7 @@ if $F \in \Lebesgue{2}{\CompactGroup}$ and $u \in \CompactGroup$, then
     = \sum_{\tau \in \dualGroup{\IsotropySubgroup{\CompactGroup}{\lambda}}} P^\tau_q F(u)
 \end{align}
 
-Now, write $\Hilbert{\tau}{q} = P^\tau_q \Lebesgue{2}{\CompactGroup}$.
+Now, write $\Hilbert{\tau}{q} \defeq P^\tau_q \Lebesgue{2}{\CompactGroup}$.
 
 \begin{lemma}
     The Hilbert spaces
@@ -394,7 +394,7 @@ Now, write $\Hilbert{\tau}{q} = P^\tau_q \Lebesgue{2}{\CompactGroup}$.
     Fix $\lambda_0 \in \dualGroup{\VectorSpace}$.
     We define the \emph{unitary dual} of $\Group$, denoted by $\dualGroup{\Group}$, via
     \begin{align*}
-        \dualGroup{\Group} = \{ (\Hilbert{\tau}{1}, \Rep{\lambda}) : \lambda \in \LeftQuotient{\IsotropySubgroup{\CompactGroup}{\lambda_0}}{\dualGroup{\VectorSpace}}, \tau \in \dualGroup{\IsotropySubgroup{\CompactGroup}{\lambda}} \}.
+        \dualGroup{\Group} \defeq \{ (\Hilbert{\tau}{1}, \Rep{\lambda}) : \lambda \in \LeftQuotient{\IsotropySubgroup{\CompactGroup}{\lambda_0}}{\dualGroup{\VectorSpace}}, \tau \in \dualGroup{\IsotropySubgroup{\CompactGroup}{\lambda}} \}.
     \end{align*}
 \end{definition}
 
@@ -410,7 +410,7 @@ Now, write $\Hilbert{\tau}{q} = P^\tau_q \Lebesgue{2}{\CompactGroup}$.
     \end{align*}
     defined via
     \begin{align*}
-        \Rep{\lambda}(X) F(u) = \left. \D{}{t} \right|_{t = 0} \Rep{\lambda}(\exp(t X)) F(u),
+        \Rep{\lambda}(X) F(u) \defeq \left. \D{}{t} \right|_{t = 0} \Rep{\lambda}(\exp(t X)) F(u),
     \end{align*}
     where $F \in \SmoothFunctions{\CompactGroup}$.
 \end{definition}
@@ -434,7 +434,7 @@ Now, write $\Hilbert{\tau}{q} = P^\tau_q \Lebesgue{2}{\CompactGroup}$.
     Let $f \in \Lebesgue{1}{\Group}$ and $\lambda \in \dualGroup{\VectorSpace}$.
     We define its \emph{Fourier coefficient} at $\lambda$ via
     \begin{align*}
-        \Fourier{f}(\lambda) = \int_\Group f(g) \adj{\Rep{\lambda}(g)} \dd g.
+        \Fourier{f}(\lambda) \defeq \int_\Group f(g) \adj{\Rep{\lambda}(g)} \dd g.
     \end{align*}
 
     Moreover, the map
