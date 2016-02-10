@@ -12,3 +12,4 @@
 *.toc
 *.vim
 log.xml
+!references/*.pdf
