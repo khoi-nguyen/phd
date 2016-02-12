@@ -231,6 +231,65 @@ if $F \in \Lebesgue{2}{\CompactGroup}$ and $u \in \CompactGroup$, then
 Now, write $\Hilbert{\tau}{q} \defeq P^\tau_q \Lebesgue{2}{\CompactGroup}$.
 
 \begin{lemma}
+    Let $\mu, \tau \in \dualGroup{\IsotropySubgroup{\CompactGroup}{\lambda}}$, $q \in \{1, \dots, \dimRep{\tau}\}$ and $m, n \in \{1, \dots, \dimRep{\tau} \}$.
+    If $f \in \Lebesgue{2}{\RightQuotient{\CompactGroup}{\IsotropySubgroup{\CompactGroup}{\lambda}}}$, then
+    \begin{align*}
+        P^\mu_q (f \otimes \tau_{m n}) = \Kronecker{\mu}{\tau} \Kronecker{n}{q} (f \otimes \tau_{m n}).
+    \end{align*}
+
+    Therefore, we have the decomposition
+    \begin{align*}
+        \Hilbert{\mu}{q} =
+            \Lebesgue{2}{\RightQuotient{\CompactGroup}{\IsotropySubgroup{\CompactGroup}{\lambda}}}
+            \otimes
+            \Span \{\mu_{p q} : p = 1, \dots, \dimRep{\mu}\},
+    \end{align*}
+    which implies in particular that $\Hilbert{\mu}{q}$ is infinite dimensional.
+\end{lemma}
+\begin{proof}
+    Fix $u \in \CompactGroup$ and write $u = u' u''$,
+    where $u' \in \RightQuotient{\CompactGroup}{\IsotropySubgroup{\CompactGroup}{\lambda}}$
+    and $u'' \in \IsotropySubgroup{\CompactGroup}{\lambda}$.
+    It follows that
+    \begin{align*}
+        P^\mu_q (f \otimes \tau_{m n}) (u)
+        &= \dimRep{\mu}
+            \int_\IsotropySubgroup{\CompactGroup}{\lambda}
+                \conj{\mu_{q q}(m)}
+                f(u')
+                \tau_{m n}(u'' m)
+            \dd m\\
+        &= \sum_{p = 1}^\dimRep{\tau}
+                f(u')
+                \tau_{m p}(u'')
+                \dimRep{\mu}
+                \int_\IsotropySubgroup{\CompactGroup}{\lambda}
+                    \conj{\mu_{q q}(m)}
+                    \tau_{p n}(m)
+                \dd m.
+    \end{align*}
+
+    Using the Peter-Weyl Theorem, we conclude that in fact
+    \begin{align*}
+        P^\mu_q (f \otimes \tau_{m n}) (u)
+        &= \sum_{p = 1}^\dimRep{\tau}
+            \Kronecker{\mu}{\tau}
+            \Kronecker{q}{p}
+            \Kronecker{q}{n}
+            f(u')
+            \tau_{m p}(u'')\\
+        &= \Kronecker{\mu}{\tau}
+            \Kronecker{q}{n}
+            f(u')
+            \tau_{m q}(u'')\\
+        &= \Kronecker{\mu}{\tau}
+            \Kronecker{q}{n}
+            (f \otimes \tau_{m n})(u),
+    \end{align*}
+    which is what we wanted to show.
+\end{proof}
+
+\begin{lemma}
     The Hilbert spaces
     \begin{align*}
         \{\Hilbert{\tau}{q} : \tau \in \dualGroup{\IsotropySubgroup{\CompactGroup}{\lambda}}, q = 1, \dots, \dimRep{\tau} \}
