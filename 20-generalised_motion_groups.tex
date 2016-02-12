@@ -237,14 +237,25 @@ Now, write $\Hilbert{\tau}{q} \defeq P^\tau_q \Lebesgue{2}{\CompactGroup}$.
         P^\mu_q (f \otimes \tau_{m n}) = \Kronecker{\mu}{\tau} \Kronecker{n}{q} (f \otimes \tau_{m n}).
     \end{align*}
 
-    Therefore, we have the decomposition
-    \begin{align*}
-        \Hilbert{\mu}{q} =
-            \Lebesgue{2}{\RightQuotient{\CompactGroup}{\IsotropySubgroup{\CompactGroup}{\lambda}}}
-            \otimes
-            \Span \{\mu_{p q} : p = 1, \dots, \dimRep{\mu}\},
-    \end{align*}
-    which implies in particular that $\Hilbert{\mu}{q}$ is infinite dimensional.
+    In particular, the following properties hold:
+    \begin{enumerate}
+        \item $P^\mu_q$ is an orthogonal projection onto
+            \begin{align*}
+                \Hilbert{\mu}{q} =
+                    \Lebesgue{2}{\RightQuotient{\CompactGroup}{\IsotropySubgroup{\CompactGroup}{\lambda}}}
+                    \otimes
+                    \Span \{\mu_{p q} : p = 1, \dots, \dimRep{\mu}\};
+            \end{align*}
+        \item The Hilbert spaces
+            \begin{align*}
+                \{\Hilbert{\tau}{q} : \tau \in \dualGroup{\IsotropySubgroup{\CompactGroup}{\lambda}}, q = 1, \dots, \dimRep{\tau} \}
+            \end{align*}
+            are mutually orthogonal;
+        \item We have the decomposition
+            \begin{align*}
+                \Lebesgue{2}{\CompactGroup} = \bigoplus_{\tau \in \dualGroup{\IsotropySubgroup{\CompactGroup}{\lambda}}} \bigoplus_{q = 1}^{\dimRep{\tau}} \Hilbert{\tau}{q}.
+            \end{align*}
+    \end{enumerate}
 \end{lemma}
 \begin{proof}
     Fix $u \in \CompactGroup$ and write $u = u' u''$,
