@@ -1,4 +1,5 @@
-function derivative(f, string, evaluation, d = '\\partial')
+function derivative(f, string, evaluation, d)
+    d = '\\'..d
     local denominator, total_order, total_order_numerical = '', '', 0;
 
     -- string = argument, argument, ...

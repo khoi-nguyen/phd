@@ -78,8 +78,12 @@
 
 \newcommand{\texToLua}[1]{\luatexluaescapestring{\unexpanded{#1}}}
 \directlua{dofile("derivative.lua")}
-\DeclareDocumentCommand \D{O{}mD<>{}}{%
-    \directlua{derivative("\texToLua{#1}", "\texToLua{#2}", "\texToLua{#3}")}
+\DeclareDocumentCommand \D{s O{}mD<>{}}{%
+    \IfBooleanTF{#1}{%
+        \directlua{derivative("\texToLua{#2}", "\texToLua{#3}", "\texToLua{#4}", "dd")}
+    } {%
+        \directlua{derivative("\texToLua{#2}", "\texToLua{#3}", "\texToLua{#4}", "partial")}
+    }
 }
 
 % Sets
