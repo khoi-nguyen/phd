@@ -16,13 +16,13 @@
     and fix a radial function $\chi \in \SmoothFunctions{\R^n}$.
     If $\alpha \in \N^n$, then
     \begin{align}
-        \D{\chi}{x^\alpha}(x)
+        \D[\chi]{x^\alpha}(x)
         = \sum_{r = 1}^{C_\alpha} f_r(\norm[\R^n]{x}) P_r(x),
     \end{align}
     where $P_r$ is a polynomial depending only on $\alpha$.
 
     Moreover, if $\supp \chi$ is compact
-    and if there exists $\delta > 0$ such that $\D{\chi}{\lambda} = 0$ on $\Ball[\R^n]{0}{\delta}$,
+    and if there exists $\delta > 0$ such that $\D[\chi]{\lambda} = 0$ on $\Ball[\R^n]{0}{\delta}$,
     then we have
     \begin{align*}
         \sup_r \sup_{\lambda \in \R^+} \abs{f_r} < \infty
@@ -31,17 +31,17 @@
 \begin{proof}
     Using the chain rule, we know that for a purely radial function $f$
     \begin{align}
-        \D{f}{x_i} = \D{\lambda}{x_i} \D{f}{\lambda} = \frac{\D{f}{\lambda}}{\norm[\R^n]{x}} x_i.
+        \D[f]{x_i} = \D[\lambda]{x_i} \D[f]{\lambda} = \frac{\D[f]{\lambda}}{\norm[\R^n]{x}} x_i.
     \end{align}
 
     We know proceed to show the claim by induction on $\alpha$.
     The result is clearly true when $\abs{\alpha} = 0$.
     If we assume it is true for some $\alpha \in \N^n$, then by the above,
     \begin{align}
-        \D{\chi}{x_i,x^\alpha}(x)
-        &= \D{}{x_i} \sum_{r = 1}^{C_\alpha} f_r(\norm[\R^n]{x}) P_r(x)\\
-        &= \sum_{r = 1}^{C_\alpha} \frac{\D{f_r}{\lambda}}{\norm[\R^n]{x}}(\norm[\R^n]{x}) x_i P_r(x)
-        + \sum_{r = 1}^{C_\alpha} f_r(\norm[\R^n]{x}) \D{P_r}{x_i}(x),
+        \D[\chi]{x_i,x^\alpha}(x)
+        &= \D{x_i} \sum_{r = 1}^{C_\alpha} f_r(\norm[\R^n]{x}) P_r(x)\\
+        &= \sum_{r = 1}^{C_\alpha} \frac{\D[f_r]{\lambda}}{\norm[\R^n]{x}}(\norm[\R^n]{x}) x_i P_r(x)
+        + \sum_{r = 1}^{C_\alpha} f_r(\norm[\R^n]{x}) \D[P_r]{x_i}(x),
     \end{align}
     which concludes the proof.
 \end{proof}
