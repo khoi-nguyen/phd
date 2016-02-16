@@ -73,6 +73,7 @@
 \DeclareMathOperator{\order}{order}
 \DeclareMathOperator{\supp}{supp}
 
+\newcommand{\texToLua}[1]{\luatexluaescapestring{\unexpanded{#1}}}
 \directlua{%
 --beginlua--
 function derivative(f, string, evaluation)
@@ -117,6 +118,9 @@ function derivative(f, string, evaluation)
     tex.sprint(output)
 end
 --endlua--
+}
+\DeclareDocumentCommand \D{O{}mD<>{}}{%
+    \directlua{derivative("\texToLua{#1}", "\texToLua{#2}", "\texToLua{#3}")}
 }
 
 % Sets
