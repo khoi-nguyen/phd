@@ -242,174 +242,73 @@ if $F \in \Lebesgue{2}{\CompactGroup}$ and $u \in \CompactGroup$, then
 Now, write $\Hilbert{\tau}{q} \defeq P^\tau_q \Lebesgue{2}{\CompactGroup}$.
 
 \begin{lemma}
-    The Hilbert spaces
+    Let $\mu, \tau \in \dualGroup{\IsotropySubgroup{\CompactGroup}{\lambda}}$, $q \in \{1, \dots, \dimRep{\tau}\}$ and $m, n \in \{1, \dots, \dimRep{\tau} \}$.
+    If $f \in \Lebesgue{2}{\RightQuotient{\CompactGroup}{\IsotropySubgroup{\CompactGroup}{\lambda}}}$, then
     \begin{align*}
-        \{\Hilbert{\tau}{q} : \tau \in \dualGroup{\IsotropySubgroup{\CompactGroup}{\lambda}}, q = 1, \dots, \dimRep{\tau} \}
+        P^\mu_q (f \otimes \tau_{m n}) = \Kronecker{\mu}{\tau} \Kronecker{n}{q} (f \otimes \tau_{m n}).
     \end{align*}
-    are mutually orthogonal.
-    Therefore, we have
-    \begin{align*}
-        \Lebesgue{2}{\CompactGroup} = \bigoplus_{\tau \in \dualGroup{\IsotropySubgroup{\CompactGroup}{\lambda}}} \bigoplus_{q = 1}^{\dimRep{\tau}} \Hilbert{\tau}{q},
-    \end{align*}
-    where the above decomposition is orthogonal.
+
+    In particular, the following properties hold:
+    \begin{enumerate}
+        \item $P^\mu_q$ is an orthogonal projection onto
+            \begin{align*}
+                \Hilbert{\mu}{q} =
+                    \Lebesgue{2}{\RightQuotient{\CompactGroup}{\IsotropySubgroup{\CompactGroup}{\lambda}}}
+                    \otimes
+                    \Span \{\mu_{p q} : p = 1, \dots, \dimRep{\mu}\};
+            \end{align*}
+        \item The Hilbert spaces
+            \begin{align*}
+                \{\Hilbert{\tau}{q} : \tau \in \dualGroup{\IsotropySubgroup{\CompactGroup}{\lambda}}, q = 1, \dots, \dimRep{\tau} \}
+            \end{align*}
+            are mutually orthogonal;
+        \item We have the decomposition
+            \begin{align*}
+                \Lebesgue{2}{\CompactGroup} = \bigoplus_{\tau \in \dualGroup{\IsotropySubgroup{\CompactGroup}{\lambda}}} \bigoplus_{q = 1}^{\dimRep{\tau}} \Hilbert{\tau}{q}.
+            \end{align*}
+    \end{enumerate}
 \end{lemma}
 \begin{proof}
-    Let $\mu, \nu \in \dualGroup{\IsotropySubgroup{\CompactGroup}{\lambda}}$,
-    $p, \in \{1, \dots, \dimRep{\mu}\}$,
-    and $q, \in \{1, \dots, \dimRep{\nu}\}$.
-    Suppose also that $F \in \Lebesgue{2}{\CompactGroup}$.
-
+    Fix $u \in \CompactGroup$ and write $u = u' u''$,
+    where $u' \in \RightQuotient{\CompactGroup}{\IsotropySubgroup{\CompactGroup}{\lambda}}$
+    and $u'' \in \IsotropySubgroup{\CompactGroup}{\lambda}$.
+    It follows that
     \begin{align*}
-        &\ip[\Lebesgue{2}{\CompactGroup}]{P^{\mu}_{p} F}{P^{\nu}_{q} H}\\
-        &= \dimRep{\mu} \dimRep{\nu}
-            \int_\CompactGroup
+        P^\mu_q (f \otimes \tau_{m n}) (u)
+        &= \dimRep{\mu}
+            \int_\IsotropySubgroup{\CompactGroup}{\lambda}
+                \conj{\mu_{q q}(m)}
+                f(u')
+                \tau_{m n}(u'' m)
+            \dd m\\
+        &= \sum_{p = 1}^\dimRep{\tau}
+                f(u')
+                \tau_{m p}(u'')
+                \dimRep{\mu}
                 \int_\IsotropySubgroup{\CompactGroup}{\lambda}
-                    \int_\IsotropySubgroup{\CompactGroup}{\lambda}
-                        \conj{{\mu}_{p p}(m_1)}
-                        {\nu}_{q q}(m_2)
-                        F(u m_1)
-                        \conj{H(u m_2)}
-                    \dd m_2
-                \dd m_1
-            \dd u
-    \end{align*}
-
-    Decomposing $u = u' m$ with
-    \begin{align*}
-    \int_\CompactGroup \dd u = \int_\RightQuotient{\CompactGroup}{\IsotropySubgroup{\CompactGroup}{\lambda}} \int_\IsotropySubgroup{\CompactGroup}{\lambda} \dd m \dd u'
-    \end{align*}
-    and substituing $m_i$ for $m^{-1} m_i$, $i = 1, 2$, we get
-    \begin{align*}
-        \ip[\Lebesgue{2}{\CompactGroup}]{P^{\mu}_{p} F}{P^{\nu}_{q} H}
-        = \dimRep{\mu} \dimRep{\nu}
-            \int_\RightQuotient{\CompactGroup}{\IsotropySubgroup{\CompactGroup}{\lambda}}
-                \int_\IsotropySubgroup{\CompactGroup}{\lambda}
-                    \int_\IsotropySubgroup{\CompactGroup}{\lambda}
-                        \int_\IsotropySubgroup{\CompactGroup}{\lambda}
-                            &\conj{{\mu}_{p p}(m^{-1} m_1)}
-                            {\nu}_{q q}(m^{-1} m_2)\\
-                            &F(u' m_1)
-                            \conj{H(u' m_2)}
-                        \dd m_2
-                    \dd m_1
-                \dd m
-            \dd u'.
+                    \conj{\mu_{q q}(m)}
+                    \tau_{p n}(m)
+                \dd m.
     \end{align*}
 
-    Now, using the identities
+    Using the Peter-Weyl Theorem, we conclude that in fact
     \begin{align*}
-        \conj{\mu_{pp}(m^{-1} m_1)}
-        = \sum_{i = 1}^\dimRep{\mu}
-            \conj{\mu_{p i}(m^{-1})}
-            \conj{\mu_{i p}(m_1)}
-        = \sum_{i = 1}^\dimRep{\mu}
-            \mu_{i p}(m)
-            \conj{\mu_{i p}(m_1)}\\
-        \nu_{qq}(m^{-1} m_2)
-        = \sum_{j = 1}^\dimRep{\nu}
-            \nu_{qj}(m^{-1})
-            \nu_{jq}(m_2)
-        = \sum_{j = 1}^\dimRep{\nu}
-            \conj{\nu_{jq}(m)}
-            \nu_{jq}(m_2),
+        P^\mu_q (f \otimes \tau_{m n}) (u)
+        &= \sum_{p = 1}^\dimRep{\tau}
+            \Kronecker{\mu}{\tau}
+            \Kronecker{q}{p}
+            \Kronecker{q}{n}
+            f(u')
+            \tau_{m p}(u'')\\
+        &= \Kronecker{\mu}{\tau}
+            \Kronecker{q}{n}
+            f(u')
+            \tau_{m q}(u'')\\
+        &= \Kronecker{\mu}{\tau}
+            \Kronecker{q}{n}
+            (f \otimes \tau_{m n})(u),
     \end{align*}
-    it follows that
-    \begin{align*}
-        &\ip[\Lebesgue{2}{\CompactGroup}]{P^{\mu}_{p} F}{P^{\nu}_{q} H}\\
-        &= \dimRep{\mu} \dimRep{\nu}
-            \int_\RightQuotient{\CompactGroup}{\IsotropySubgroup{\CompactGroup}{\lambda}}
-                \int_\IsotropySubgroup{\CompactGroup}{\lambda}
-                    \int_\IsotropySubgroup{\CompactGroup}{\lambda}
-                        \int_\IsotropySubgroup{\CompactGroup}{\lambda}
-                            \sum_{i = 1}^\dimRep{\mu}
-                                \sum_{j = 1}^\dimRep{\nu}
-                                    \mu_{i p}(m)
-                                    \conj{\mu_{i p}(m_1)}
-                                    \conj{\nu_{jq}(m)}
-                                    \nu_{jq}(m_2)
-                                    F(u' m_1)
-                                    \conj{H(u' m_2)}
-                        \dd m_2
-                    \dd m_1
-                \dd m
-            \dd u'.
-    \end{align*}
-
-    Integrating with respect to $m$ and keeping in mind the Peter-Weyl Theorem gives the orthogonality relation
-    \begin{align*}
-        \dimRep{\nu} \int_\IsotropySubgroup{\CompactGroup}{\lambda} \mu_{ip}(m) \conj{\nu_{jq}(m)} \dd m
-        = \Kronecker{\mu}{\nu} \Kronecker{i}{j} \Kronecker{p}{q},
-    \end{align*}
-    we obtain
-    \begin{align*}
-        &\ip[\Lebesgue{2}{\CompactGroup}]{P^{\mu}_{p} F}{P^{\nu}_{q} H}\\
-        &= \Kronecker{\mu}{\nu} \Kronecker{p}{q} \dimRep{\mu}
-            \int_\RightQuotient{\CompactGroup}{\IsotropySubgroup{\CompactGroup}{\lambda}}
-                \int_\IsotropySubgroup{\CompactGroup}{\lambda}
-                    \int_\IsotropySubgroup{\CompactGroup}{\lambda}
-                        \sum_{i = 1}^\dimRep{\mu}
-                            \conj{\mu_{i p}(m_1)}
-                            \mu_{ip}(m_2)
-                            F(u' m_1)
-                            \conj{H(u' m_2)}
-                    \dd m_2
-                \dd m_1
-            \dd u'.
-    \end{align*}
-
-    Using $\conj{\mu_{ip}(m_1)} = \mu_{p i}(m_1^{-1})$,
-    the above becomes
-    \begin{align*}
-        &\ip[\Lebesgue{2}{\CompactGroup}]{P^{\mu}_{p} F}{P^{\nu}_{q} H}\\
-        &= \Kronecker{\mu}{\nu} \Kronecker{p}{q} \dimRep{\mu}
-            \int_\RightQuotient{\CompactGroup}{\IsotropySubgroup{\CompactGroup}{\lambda}}
-                \int_\IsotropySubgroup{\CompactGroup}{\lambda}
-                    \int_\IsotropySubgroup{\CompactGroup}{\lambda}
-                        \mu_{pp}(m_1^{-1} m_2)
-                        F(u' m_1)
-                        \conj{H(u' m_2)}
-                    \dd m_2
-                \dd m_1
-            \dd u'\\
-        &= \Kronecker{\mu}{\nu} \Kronecker{p}{q} \dimRep{\mu}
-            \int_\RightQuotient{\CompactGroup}{\IsotropySubgroup{\CompactGroup}{\lambda}}
-                \int_\IsotropySubgroup{\CompactGroup}{\lambda}
-                    \int_\IsotropySubgroup{\CompactGroup}{\lambda}
-                        \mu_{pp}(m_1^{-1})
-                        F(u' m_2 m_1)
-                        \conj{H(u' m_2)}
-                    \dd m_2
-                \dd m_1
-            \dd u'\\
-        &= \Kronecker{\mu}{\nu} \Kronecker{p}{q} \dimRep{\mu}
-            \int_\CompactGroup
-                \int_\IsotropySubgroup{\CompactGroup}{\lambda}
-                    \mu_{pp}(m_1^{-1})
-                    F(m m_1)
-                    \conj{H(u)}
-                \dd m_1
-            \dd u,
-    \end{align*}
-    where in the last line, we let $u = u' m_2$.
-    Using the fact that $\mu_{pp}(m_1^{-1}) = \conj{\mu_{pp}(m_1)}$ and~\eqref{eq:projection_on_L2_of_the_compact_group},
-    we conclude that in fact
-    \begin{align*}
-        \ip[\Lebesgue{2}{\CompactGroup}]{P^{\mu}_{p} F}{P^{\nu}_{q} H}
-        &= \Kronecker{\mu}{\nu} \Kronecker{p}{q} \ip[\Lebesgue{2}{\CompactGroup}]{P^\mu_p F}{H}.
-    \end{align*}
-
-    From there, we easily deduce that the spaces $\Hilbert{\mu}{p}$,
-    where $\mu \in \dualGroup{\IsotropySubgroup{\CompactGroup}{\lambda}}$ and $p \in \{1, \dots, \dimRep{\tau}\}$ are mutually orthogonal.
-
-    Using the fact that $P^\tau_q F(u) = {\Fourier[\IsotropySubgroup{\CompactGroup}{\lambda}] \{ F(u \dummy) \} (\tau)}_{qq}$,
-    we can apply the inverse Fourier Formula to $F(u \dummy)$ at $e \in \IsotropySubgroup{\CompactGroup}{\lambda}$ to obtain
-    \begin{align*}
-        F(u) = F(u e) = \sum_{\tau \in \dualGroup{\IsotropySubgroup{\CompactGroup}{\lambda}}}
-        \dimRep{\tau} \tr( \Fourier[\IsotropySubgroup{\CompactGroup}{\lambda}] \{ F(u \dummy) \}(\tau))
-        = \sum_{\tau \in \dualGroup{\IsotropySubgroup{\CompactGroup}{\lambda}}}
-            \sum_{q = 1}^\dimRep{\tau}
-                P^\tau_q F(u).
-    \end{align*}
+    which is what we wanted to show.
 \end{proof}
 
 \begin{proposition}[Unitary dual]
