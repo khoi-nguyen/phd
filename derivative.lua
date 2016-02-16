@@ -1,4 +1,4 @@
-function derivative(f, string, evaluation)
+function derivative(f, string, evaluation, d = '\\partial')
     local denominator, total_order, total_order_numerical = '', '', 0;
 
     -- string = argument, argument, ...
@@ -15,7 +15,7 @@ function derivative(f, string, evaluation)
             total_order = total_order..(total_order == '' and '' or ' + ')..order
         end
         local order_string = ((tonumber(order) == nil or tonumber(order) > 1) and '^{'..order..'}' or '')
-        denominator = denominator..'\\partial '..variable..order_string..' '
+        denominator = denominator..d..' '..variable..order_string..' '
     end
 
     -- Append numerical order if necessary
@@ -30,7 +30,7 @@ function derivative(f, string, evaluation)
         total_order = '^{'..total_order..'} '
     end
 
-    local output = '\\frac{\\partial '..total_order..f.. '}{'..denominator..'}'
+    local output = '\\frac{'..d..' '..total_order..f.. '}{'..denominator..'}'
 
     -- Appends evaluation if necessary
     if trim(evaluation) ~= '' then
