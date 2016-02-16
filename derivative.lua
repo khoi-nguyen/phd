@@ -39,3 +39,8 @@ function derivative(f, string, evaluation)
 
     tex.sprint(output)
 end
+
+function trim(s)
+    s = ""..s
+    return (s:gsub("^%s*(.-)%s*$", "%1"))
+end
