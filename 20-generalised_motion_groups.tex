@@ -222,6 +222,18 @@ where by $\phi \circ k \circ \phi^{-1}$ we actually mean its corresponding matri
     where $(x, t) \in \R^2 \rtimes \T$.
 \end{example}
 
+From now on, we fix a basis $X_1, \dots, X_{\dim \Group}$ of $\LieAlgebra$.
+
+\begin{definition}
+    Let $\alpha \in \N^{\dim \Group}$.
+    We define the left-invariant differential operator $\LeftDifferentialOperator{\alpha}$ via
+    \begin{align*}
+        \LeftDifferentialOperator{\alpha} =
+        \LeftDifferentialOperatorFirstOrder{X_1}^{\alpha_1} \dots
+        \LeftDifferentialOperatorFirstOrder{X_{\dim \Group}}^{\alpha_{\dim \Group}}
+    \end{align*}
+\end{definition}
+
 \section{Unitary representations}
 
 \begin{definition}
