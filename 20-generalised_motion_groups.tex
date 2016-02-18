@@ -222,16 +222,27 @@ where by $\phi \circ k \circ \phi^{-1}$ we actually mean its corresponding matri
     where $(x, t) \in \R^2 \rtimes \T$.
 \end{example}
 
-From now on, we fix a basis $X_1, \dots, X_{\dim \Group}$ of $\LieAlgebra$ such that
-\begin{align*}
-    X_i =
-        \begin{pmatrix}
-            \Id{\dim \VectorSpace} & e_i\\
-            0 & 1,
-        \end{pmatrix}
-    \quad i = 1, \dots, \dim \VectorSpace
-\end{align*}
-where $e_i$ is the $i$-th vector of the canonical basis of $\R^{\dim \VectorSpace}$.
+From now on, we fix a basis $X_1, \dots, X_{\dim \Group}$ of $\LieAlgebra$ such that:
+\begin{enumerate}
+    \item If $i = 1, \dots, \dim \VectorSpace$,
+        \begin{align*}
+            X_i =
+                \begin{pmatrix}
+                    \Id{\dim \VectorSpace} & e_i\\
+                    0 & 1,
+                \end{pmatrix}
+        \end{align*}
+        where $e_i$ is the $i$-th vector of the canonical basis of $\R^{\dim \VectorSpace}$;
+    \item If $i = \dim \VectorSpace + 1, \dots, \dim \Group$, then
+        \begin{align*}
+            X_i =
+                \begin{pmatrix}
+                    Y_i & 0\\
+                    0 & 1,
+                \end{pmatrix}
+        \end{align*}
+        where $\{Y_i : i = \dim \VectorSpace + 1, \dots, \dim \Group\}$ forms a basis of the Lie Algebra of $\CompactGroup$.
+\end{enumerate}
 
 \begin{definition}
     Let $\alpha \in \N^{\dim \Group}$.
