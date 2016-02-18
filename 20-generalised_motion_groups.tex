@@ -545,6 +545,19 @@ Now, write $\Hilbert{\tau}{q} \defeq P^\tau_q \Lebesgue{2}{\CompactGroup}$.
             \right)^{\frac{1}{2}}
     \end{align*}
     is finite.
+
+    If $\sigma_1, \sigma_2 \in \LebesgueDual{2}{\Group}$, then we let
+    \begin{align*}
+        \ip[\LebesgueDual{2}{\Group}]{\sigma_1}{\sigma_2} \defeq
+        \int_\dualGroup{\VectorSpace}
+            \tr\left(
+                \sigma_1(\lambda) \adj{\sigma_2(\lambda)}
+            \right)
+        \dd \Plancherel{\VectorSpace}(\lambda).
+    \end{align*}
+    If we quotient $\LebesgueDual{2}{\Group}$ by $\Plancherel{\VectorSpace}$-almost everywhere equality,
+    which we shall do from now onwards,
+    then the above gives $\LebesgueDual{2}{\Group}$ the structure of a Hilbert space.
 \end{definition}
 
 \begin{definition}[$\Kernels{\Group}$]
