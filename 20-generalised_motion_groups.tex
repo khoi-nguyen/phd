@@ -430,6 +430,33 @@ Now, write $\Hilbert{\tau}{q} \defeq P^\tau_q \Lebesgue{2}{\CompactGroup}$.
     where $F \in \SmoothFunctions{\CompactGroup}$.
 \end{definition}
 
+\begin{proposition}[Infinitesimal representations]
+    Let $\lambda \in \dualGroup{\VectorSpace}$ and let $j \in \{1, \dots, \dim \Group\}$.
+    The infinitesimal representation of $X_j$ has the following expression:
+    \begin{enumerate}
+        \item if $j \leq \dim \VectorSpace$, then
+            \begin{align*}
+                \Rep{\lambda}(X_j) F(u) = \lambda(u^{-1} e_i) F(u)
+            \end{align*}
+        \item if $j > \dim \VectorSpace$, then
+            \begin{align*}
+                \Rep{\lambda}(X_j) F(u) =
+            \end{align*}
+    \end{enumerate}
+    In the above, $F$ is an arbitrary function in $\SmoothFunctions{\CompactGroup}$.
+\end{proposition}
+\begin{proof}
+    \begin{enumerate}
+        \item Fix $j \in \{1, \dots, \dim \VectorSpace\}$.
+            It follows that
+            \begin{align*}
+                \Rep{\lambda}(X) F(u) &= \D*{t}<t = 0> \lambda(t u^{-1} e_i) F(u)\\
+                                      &= \lambda( u^{-1} e_i) F(u),
+            \end{align*}
+            where the last line was obtained because $\lambda$ is linear.
+    \end{enumerate}
+\end{proof}
+
 \begin{lemma}[Infinitesimal representation of $\Laplacian$]
 \label{lemma:infinitesimal_representation_of_the_Laplacian}
     Let $\lambda \in \dualGroup{\VectorSpace}$.
