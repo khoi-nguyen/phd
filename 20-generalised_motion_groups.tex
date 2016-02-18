@@ -547,6 +547,19 @@ Now, write $\Hilbert{\tau}{q} \defeq P^\tau_q \Lebesgue{2}{\CompactGroup}$.
     is finite.
 \end{definition}
 
+\begin{definition}[$\Kernels{\Group}$]
+    We shall say that a tempered distribution $\kappa \in \TemperedDistributions{\Group}$ belongs to $\Kernels{\Group}$
+    if and only if the map
+    \begin{align}
+        T_\kappa : \Schwartz{\Group} \to \TemperedDistributions{\Group} : f \mapsto \conv{f}{\kappa}
+    \end{align}
+    extends to a continuous map from $\Lebesgue{2}{\Group}$ into itself.
+    In this case, we let
+    \begin{align*}
+        \norm[\Kernels{\Group}]{\kappa} \defeq \norm[\Lin{\Lebesgue{2}{\Group}}]{T_\kappa}.
+    \end{align*}
+\end{definition}
+
 \begin{proposition}[Inverse Fourier Transform]
 \label{proposition:inverse_Fourier_Transform}
 \index{generalised motion group!Fourier transform!inverse formula}
