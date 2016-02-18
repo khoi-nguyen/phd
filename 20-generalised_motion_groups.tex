@@ -552,6 +552,21 @@ the author remarks (\cite[Remark p. 84]{Ito52}) that the argument works for gene
     \end{align*}
 \end{definition}
 
+\begin{definition}
+    We shall say that a map
+    \begin{align*}
+        \sigma : \dualGroup{\VectorSpace} \to \Lin{\Lebesgue{2}{\CompactGroup}}
+    \end{align*}
+    belongs to $\LebesgueDual{\infty}{\Group}$ if and only if the quantity
+    \begin{align*}
+        \norm[\LebesgueDual{\infty}{\Group}]{\sigma} \defeq
+            \esssup_{\lambda \in \dualGroup{\VectorSpace}}
+                \norm[\Lin{\Lebesgue{2}{\CompactGroup}}]{\sigma(\lambda)}
+    \end{align*}
+    is finite.
+    The essential supremum is taken with respect to the Plancherel measure.
+\end{definition}
+
 \begin{proposition}[Inverse Fourier Transform]
 \label{proposition:inverse_Fourier_Transform}
 \index{generalised motion group!Fourier transform!inverse formula}
