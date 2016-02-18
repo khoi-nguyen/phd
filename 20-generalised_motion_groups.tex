@@ -567,6 +567,20 @@ the author remarks (\cite[Remark p. 84]{Ito52}) that the argument works for gene
     The essential supremum is taken with respect to the Plancherel measure.
 \end{definition}
 
+\begin{theorem}[Abstract Plancherel formula]
+    The Fourier Transform can be extended to a \emph{surjective} isometry
+    \begin{align*}
+        \Fourier : \Lebesgue{2}{\Group} \to \LebesgueDual{2}{\Group}.
+    \end{align*}
+
+    Moreover, for every left-invariant operator $T \in \Lin{\Lebesgue{2}{\Group}}$,
+    there exists a unique element $\sigma \in \LebesgueDual{\infty}{\Group}$ such that
+    \begin{align*}
+        \Fourier\{T f\}(\lambda) = \sigma(\lambda) \Fourier f(\lambda)
+    \end{align*}
+    holds for $\Plancherel{\Group}$-almost every $\lambda \in \dualGroup{\VectorSpace}$.
+\end{theorem}
+
 \begin{proposition}[Inverse Fourier Transform]
 \label{proposition:inverse_Fourier_Transform}
 \index{generalised motion group!Fourier transform!inverse formula}
