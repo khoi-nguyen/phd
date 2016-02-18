@@ -24,6 +24,19 @@
     if there exists a (finite dimensional) vector space $\VectorSpace$ and a compact group $\CompactGroup \subset \OrthogonalGroup{\VectorSpace}$ such that $\Group = \VectorSpace \rtimes \CompactGroup$ and $\CompactGroup$ acts transitively on $\VectorSpace$.
 \end{definition}
 
+\begin{remark}
+    Let $x \in \VectorSpace$ and $k \in \CompactGroup$.
+    We will never identify $x$ with $(x, \Id{\VectorSpace}) \in \VectorSpace \rtimes \CompactGroup$,
+    or $k$ with $(0, k) \in \VectorSpace \rtimes \CompactGroup$.
+
+    Therefore, when we write $k x$, it will \emph{always} mean the vector obtained by rotating $x$ by $k$.
+    If we see them as elements of $\VectorSpace \rtimes \CompactGroup$,
+    we shall explicitely write
+    \begin{align*}
+        (0, k) (x, \Id{\VectorSpace}) = (k x, k).
+    \end{align*}
+\end{remark}
+
 \begin{example}[Euclidean Motion Groups]
 \label{example:Euclidean_motion_groups}
 \index{Euclidean motion group}
