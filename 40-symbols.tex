@@ -89,6 +89,22 @@
 \begin{theorem}[Littlewood-Paley decomposition]
 \label{theorem:Littlewood-Paley_decomposition}
 \index{Littlewood-Paley decomposition}
+    Suppose that $\Group = A \rtimes \CompactGroup$,
+    where $A$ is an abelian group,
+    and $\CompactGroup$ is a compact subgroup of $\Aut(A)$ acting transitively on $A$.
+    If there exists a sequence $\chi_j$ such that
+    \begin{enumerate}
+        \item they sum to $1$, i.e.
+            \begin{align*}
+                \sum_{j = 0}^\infty \chi_j = 1
+            \end{align*}
+        \item for each $j \in \N$, and every $q \in \Polynomials{\VectorSpace}$.
+            \begin{align*}
+                (\DifferenceOperator{q} \Fourier \chi_j)(k \lambda) = \sum_{r = 1}^{C_q} f_{j, r}(\lambda) q_r(k)
+            \end{align*}
+        \item condition in $\lambda$?
+    \end{enumerate}
+
     There exists a sequence $\eta_l \in \SmoothSymbols$, $l \in \N$ of smoothing symbols satisfying the following properties
     \begin{enumerate}
         \item the semi-norms decay in the following way
