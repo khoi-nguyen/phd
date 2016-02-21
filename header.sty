@@ -84,7 +84,7 @@
 \DeclareMathOperator{\supp}{supp}
 \DeclareMathOperator*{\esssup}{ess\,sup}
 
-\newcommand{\texToLua}[1]{\luatexluaescapestring{\unexpanded{#1}}}
+\newcommand{\texToLua}[1]{\luaescapestring{\unexpanded{#1}}}
 \directlua{dofile("derivative.lua")}
 \DeclareDocumentCommand \D{s O{}mD<>{}}{%
     \IfBooleanTF{#1}{%
