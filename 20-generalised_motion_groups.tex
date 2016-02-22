@@ -179,6 +179,17 @@ where by $\phi \circ k \circ \phi^{-1}$ we actually mean its corresponding matri
     where $f \in \SmoothFunctions{\Group}$.
 \end{definition}
 
+\begin{definition}
+\label{definition:right-invariant_differential_operator}
+    Let $X \in \LieAlgebra$.
+    We define $\RightDifferentialOperatorFirstOrder{X}$, the \emph{right-invariant differential operator associated to $X$}, via
+    \begin{align*}
+        \RightDifferentialOperatorFirstOrder{X} f(g)
+            = \D*{t}<t = 0> f(\exp_\Group(t X) g),
+    \end{align*}
+    where $f \in \SmoothFunctions{\Group}$.
+\end{definition}
+
 \begin{proposition}
     Let $X \in \LieAlgebra$.
     The differential operator $\LeftDifferentialOperatorFirstOrder{X}$ is the only differential operator satisfying the following properties:
