@@ -259,13 +259,14 @@ From now on, we fix a basis $X_1, \dots, X_{\dim \Group}$ of $\LieAlgebra$ such 
         \end{align*}
         where $e_i$ is the $i$-th vector of the canonical basis of $\R^{\dim \VectorSpace}$;
     \item If $i = \dim \VectorSpace + 1, \dots, \dim \Group$, then
-        \begin{align*}
+        \begin{align}
             X_i =
                 \begin{pmatrix}
                     Y_i & 0\\
                     0 & 1,
                 \end{pmatrix}
-        \end{align*}
+                \label{eq:Lie_algebra_vector_coming_from_compact_group}
+        \end{align}
         where $\{Y_i : i = \dim \VectorSpace + 1, \dots, \dim \Group\}$ forms a basis of the Lie Algebra of $\CompactGroup$.
 \end{enumerate}
 
@@ -455,8 +456,10 @@ the author remarks (\cite[Remark p. 84]{Ito52}) that the argument works for gene
             \end{align*}
         \item if $j > \dim \VectorSpace$, then
             \begin{align*}
-                \Rep{\lambda}(X_j) F(u) =
+                \Rep{\lambda}(X_j) F(u) = -\RightDifferentialOperatorFirstOrder{Y_j} F(u),
             \end{align*}
+            where $Y_j$ is like in~\eqref{eq:Lie_algebra_vector_coming_from_compact_group} and
+            $\RightDifferentialOperatorFirstOrder{Y_j}$ is the right-invariant differential operator on $\CompactGroup$ associated with $Y_j$.
     \end{enumerate}
     In the above, $F$ is an arbitrary function in $\SmoothFunctions{\CompactGroup}$.
 \end{proposition}
@@ -469,6 +472,22 @@ the author remarks (\cite[Remark p. 84]{Ito52}) that the argument works for gene
                                       &= \lambda( u^{-1} e_i) F(u),
             \end{align*}
             where the last line was obtained because $\lambda$ is linear.
+        \item Let $Y_j$ be like in~\eqref{eq:Lie_algebra_vector_coming_from_compact_group} so that
+            \begin{align*}
+                \exp_\Group(t X_j) = \Phi^{-1}
+                    \begin{pmatrix}
+                        \exp_\CompactGroup(t Y_j) & 0\\
+                        0 & 1
+                    \end{pmatrix}
+                    = (0, \exp_\CompactGroup(t Y_j)).
+            \end{align*}
+
+            From there, it immediately follows that
+            \begin{align*}
+                \Rep{\lambda}(X_j) F(u)
+                = \D*{t}<t = 0> F({(\exp_\CompactGroup(t Y_j))}^{-1} u)
+                = -\RightDifferentialOperatorFirstOrder{Y_j} F(u).
+            \end{align*}
     \end{enumerate}
 \end{proof}
 
