@@ -452,7 +452,7 @@ the author remarks (\cite[Remark p. 84]{Ito52}) that the argument works for gene
     \begin{enumerate}
         \item if $j \leq \dim \VectorSpace$, then
             \begin{align*}
-                \Rep{\lambda}(X_j) F(u) = \lambda(u^{-1} e_i) F(u)
+                \Rep{\lambda}(X_j) F(u) = \D*{t}<t = 0> \lambda(t u^{-1} e_i) F(u)
             \end{align*}
         \item if $j > \dim \VectorSpace$, then
             \begin{align*}
@@ -466,12 +466,12 @@ the author remarks (\cite[Remark p. 84]{Ito52}) that the argument works for gene
 \begin{proof}
     \begin{enumerate}
         \item Fix $j \in \{1, \dots, \dim \VectorSpace\}$.
+            Since $\exp_\Group(t X_j) = (t e_i, \Id{\VectorSpace})$.
             It follows that
             \begin{align*}
-                \Rep{\lambda}(X) F(u) &= \D*{t}<t = 0> \lambda(t u^{-1} e_i) F(u)\\
-                                      &= \lambda( u^{-1} e_i) F(u),
+                \Rep{\lambda}(X) F(u) = \D*{t}<t = 0> \lambda(t u^{-1} e_i) F(u),
             \end{align*}
-            where the last line was obtained because $\lambda$ is linear.
+            which is what we wanted to show.
         \item Let $Y_j$ be like in~\eqref{eq:Lie_algebra_vector_coming_from_compact_group} so that
             \begin{align*}
                 \exp_\Group(t X_j) = \Phi^{-1}
