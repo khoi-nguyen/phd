@@ -570,6 +570,19 @@ the author remarks (\cite[Remark p. 84]{Ito52}) that the argument works for gene
     where the last line was obtained by applying the Plancherel formula on $\VectorSpace$.
 \end{proof}
 
+\begin{proposition}[Inverse Fourier Transform]
+\label{proposition:inverse_Fourier_Transform}
+\index{generalised motion group!Fourier transform!inverse formula}
+    Let $\phi \in \Schwartz{\Group}$.
+    For each $g \in \Group$,
+    we have
+    \begin{align*}
+        \phi(g)
+        = \int_\dualGroup{\VectorSpace}
+        \tr \left( \Rep{\lambda}(g) \Fourier \phi(\lambda) \right) \dd \Plancherel{\VectorSpace}(\lambda).
+    \end{align*}
+\end{proposition}
+
 \begin{definition}[$\LebesgueDual{2}{\Group}$]
     We shall say that a map
     \begin{align*}
@@ -641,19 +654,6 @@ the author remarks (\cite[Remark p. 84]{Ito52}) that the argument works for gene
     \end{align*}
     holds for $\Plancherel{\Group}$-almost every $\lambda \in \dualGroup{\VectorSpace}$.
 \end{theorem}
-
-\begin{proposition}[Inverse Fourier Transform]
-\label{proposition:inverse_Fourier_Transform}
-\index{generalised motion group!Fourier transform!inverse formula}
-    Let $\phi \in \Schwartz{\Group}$.
-    For each $g \in \Group$,
-    we have
-    \begin{align*}
-        \phi(g)
-        = \int_\dualGroup{\VectorSpace}
-        \tr \left( \Rep{\lambda}(g) \Fourier \phi(\lambda) \right) \dd \Plancherel{\VectorSpace}(\lambda).
-    \end{align*}
-\end{proposition}
 
 \subsection{Sobolev spaces}
 
