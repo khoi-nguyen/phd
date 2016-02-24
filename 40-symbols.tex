@@ -81,6 +81,32 @@ Using \cite[Lemma 4.4]{RuzhanskyTurunenWirth10}, we can show
     The elements of $\SmoothingSymbols$ will be called \emph{smoothing symbols}.
 \end{definition}
 
+\begin{definition}[Operator classes]
+\label{definition:operator_classes}
+    Let $\sigma \in \SymbolClass{m}{\rho, \delta}$.
+    We define the operator $\Op(\sigma)$ via
+    \begin{align*}
+        \Op(\sigma) \phi(g) \defeq
+        \int_\dualGroup\VectorSpace
+            \tr\left(\Rep\lambda(g) \sigma(g, \lambda) \Fourier f(\lambda)\right)
+        \dd \Plancherel{\VectorSpace}(\lambda),
+        \quad \phi \in \Schwartz\Group, g \in \Group.
+    \end{align*}
+
+    If $T = \Op(\sigma)$ for a certain $\sigma \in \SymbolClass{m}{\rho, \delta}$,
+    we shall say that $T$ is an \emph{operator of order $m$ and of type $(\rho, \delta)$}.
+
+    The set of all such operators will be denoted by
+    \begin{align*}
+        \OperatorClass{m}{\rho, \delta} \defeq \Op(\SymbolClass{m}{\rho, \delta}).
+    \end{align*}
+    Naturally, an operator in
+    \begin{align*}
+        \SmoothingOperators \defeq \Op(\SmoothingSymbols)
+    \end{align*}
+    is called \emph{smoothing}.
+\end{definition}
+
 \section{Link with the Hormander classes}
 
 \section{Littlewood-Paley decomposition}
