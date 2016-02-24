@@ -18,13 +18,13 @@
 \begin{definition}
 \label{definition:admissibility_of_difference_operators}
 \index{difference operators!admissibility}
-    A collection $q_1, \dots, q_m \in \SmoothFunctions{\Group}$ is said to be \emph{admissible}
-    if $\dd q_j(e) \neq 0$ for each $j \in \{1, \dots, m\}$
+    A collection $q_1, \dots, q_M \in \SmoothFunctions{\Group}$ is said to be \emph{admissible}
+    if $\dd q_j(e) \neq 0$ for each $j \in \{1, \dots, M\}$
     and if $\rank(\dd q_1(e), \dots, \dd q_m(e)) = \dim \Group$.
 
     Moreover, if
     \begin{align*}
-        \bigcap_{j = 1}^m \{ q_j = 0 \} = \{e\},
+        \bigcap_{j = 1}^M \{ q_j = 0 \} = \{e\},
     \end{align*}
     we shall say that the collection is \emph{strongly admissible}.
 
@@ -35,14 +35,14 @@
 Using \cite[Lemma 4.4]{RuzhanskyTurunenWirth10}, we can show
 
 \begin{lemma}
-    There exists a strongly admissible family $q_1, \dots, q_m \in \SmoothFunctions{\Group}$ on $\Group$.
+    There exists a strongly admissible family $q_1, \dots, q_M \in \SmoothFunctions{\Group}$ on $\Group$.
 \end{lemma}
 
 \begin{remark}
-    From now on, we fix an admissible family $q_1, \dots, q_m$ on $\Group$.
-    Given $\alpha \in \N^m$, we let
+    From now on, we fix an admissible family $q_1, \dots, q_M$ on $\Group$.
+    Given $\alpha \in \N^M$, we let
     \begin{align*}
-        q^\alpha = \prod_{j = 1}^m q_j^{\alpha_j}.
+        q^\alpha = \prod_{j = 1}^M q_j^{\alpha_j}.
     \end{align*}
     Moreover, we let $\DifferenceOperatorOrder{\alpha}$ be the difference operator associated with the smooth function
     \begin{align*}
