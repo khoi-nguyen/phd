@@ -708,3 +708,12 @@ the author remarks (\cite[Remark p. 84]{Ito52}) that the argument works for gene
 
 For the sequel, we need to be able to take the Fourier Transform of certain distributions.
 To this end, we follow the ideas of \cite{FischerRuzhansky12}.
+
+\begin{definition}
+    Let $a, b \in \R$.
+    We shall say that $f \in \TemperedDistributions\Group$ belongs to $\KernelsSobolev{a}{b}$ if and only if the map
+    \begin{align*}
+        \Schwartz\Group \to \Schwartz\Group : \phi \to \conv{\phi}{f}
+    \end{align*}
+    is a continuous map in $\Lin{\Sobolev{a}, \Sobolev{b}}$.
+\end{definition}
