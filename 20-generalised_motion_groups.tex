@@ -666,4 +666,20 @@ the author remarks (\cite[Remark p. 84]{Ito52}) that the argument works for gene
 
 \subsection{Sobolev spaces}
 
+\begin{definition}[Sobolev norm]
+    Let $s \in \R$.
+    If $\phi \in \Schwartz\Group$, we let
+    \begin{align*}
+        \norm[\Sobolev{s}]{\phi} \defeq
+        \left(
+            \int_\dualGroup\VectorSpace
+                \norm[\HilbertSchmidt{\Lebesgue{2}{\CompactGroup}}]{%
+                    \Rep\lambda \BesselPotential{s}
+                    \Fourier \phi(\lambda)
+                    }^2
+            \dd \Plancherel\VectorSpace(\lambda)
+        \right)^{1 / 2}.
+    \end{align*}
+\end{definition}
+
 \subsection{Fourier Transform of distributions}
