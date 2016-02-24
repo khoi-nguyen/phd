@@ -688,4 +688,20 @@ the author remarks (\cite[Remark p. 84]{Ito52}) that the argument works for gene
     We define the \emph{Sobolev space of order $s$} to be the completion of $\Schwartz\Group$ with the norm $\norm[\Sobolev{s}]{\dummy}$.
 \end{definition}
 
+\subsubsection{Sobolev embeddings}
+
+\begin{proposition}[Sobolev embedding]
+\label{proposition:Sobolev_embedding}
+    If $s > \dim \Group / 2$, then we have the following continuous inclusion
+    \begin{align*}
+        \Sobolev{s} \subset \ContinuousFunctions\Group \cap \Lebesgue{\infty}{\Group}.
+    \end{align*}
+    More precisely, there exists $C \geq 0$ such that the following property holds:
+    for every $f \in \Sobolev{s}$,
+    there exists a continuous function $\tilde{f} \in \ContinuousFunctions\Group$ such that $f = \tilde{f}$ almost everywhere and
+    \begin{align*}
+        \norm[\ContinuousFunctions\Group]{\tilde{f}} \leq C \norm[\Sobolev{s}]{f}.
+    \end{align*}
+\end{proposition}
+
 \subsection{Fourier Transform of distributions}
