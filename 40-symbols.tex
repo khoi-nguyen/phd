@@ -543,6 +543,29 @@ Using \cite[Lemma 4.4]{RuzhanskyTurunenWirth10}, we can show
 
 \section{Kernel estimates}
 
+\begin{theorem}[Kernel estimates]
+\label{theorem:kernel_estimates}
+    Let $\sigma \in \SymbolClass{m}{\rho, \delta}$, and denote by $\kappa$ its associated kernel.
+    \begin{enumerate}
+        \item For every $N \in \N$, there exists $C > 0$ such that for every $g, (y, l) \in \Group$ with $\norm{y} \geq 1$, we have
+            \begin{align*}
+                \abs{\kappa_g(y, l)} \leq C \norm{y}^{-N}
+            \end{align*}
+        \item If $\dim \Group + m > 0$, there exists $C > 0$ such that for every $g, (y, l) \in \Group$ with $y \neq 0$, we have
+            \begin{align*}
+                \abs{\kappa_g(y, l)} \leq C \norm{y}^{- \frac{\dim \Group + m}{\rho}}
+            \end{align*}
+        \item If $\dim \Group + m = 0$, there exists $C > 0$ such that for every $g, (y, l) \in \Group$ with $y \neq 0$, we have
+            \begin{align*}
+                \abs{\kappa_g(y, l)} \leq C \log \norm{y}
+            \end{align*}
+        \item If $\dim \Group + m < 0$, $\kappa_g$ is continuous on $\Group$ and is bounded:
+            \begin{align*}
+                \sup_{g, h \in \Group} \abs{\kappa_g(h)} \leq C < \infty.
+            \end{align*}
+    \end{enumerate}
+\end{theorem}
+
 \section{Adjoint and composition formulas}
 
 \section{$L^2$ boundedness}
