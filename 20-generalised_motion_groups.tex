@@ -717,3 +717,21 @@ To this end, we follow the ideas of \cite{FischerRuzhansky15}.
     \end{align*}
     is a continuous map in $\Lin{\Sobolev{a}, \Sobolev{b}}$.
 \end{definition}
+
+\begin{definition}
+    Let $a, b \in \R$.
+    We shall say that a map
+    \begin{align*}
+        \sigma : \dualGroup\VectorSpace \to \End(\SmoothFunctions{\CompactGroup})
+    \end{align*}
+    belongs to $\LebesgueDual[a, b]{\infty}{\Group}$ if and only if
+    \begin{enumerate}
+        \item TODO: Invariance condition
+        \item The map
+            \begin{align*}
+                \lambda \in \dualGroup\VectorSpace \mapsto
+                \Rep\lambda \BesselPotential{b} \sigma(\lambda) \Rep\lambda \BesselPotential{-a}
+            \end{align*}
+            belongs to $\LebesgueDual{\infty}{\Group}$.
+    \end{enumerate}
+\end{definition}
