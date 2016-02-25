@@ -107,6 +107,20 @@ Using \cite[Lemma 4.4]{RuzhanskyTurunenWirth10}, we can show
     is called \emph{smoothing}.
 \end{definition}
 
+\begin{definition}[Kernel of a symbol]
+\label{definition:kernel_of_symbol}
+    Let $\sigma \in \SymbolClass{m}{\rho, \delta}$.
+    For each $g \in \Group$, we let
+    \begin{align*}
+        \kappa_g \defeq \InverseFourier\{\sigma(g, \dummy)\} \in \TemperedDistributions\Group.
+    \end{align*}
+    The map
+    \begin{align*}
+        \kappa : \Group \to \TemperedDistributions\Group : g \mapsto \kappa_g
+    \end{align*}
+    is called the \emph{kernel} of $\sigma$.
+\end{definition}
+
 \section{Link with the Hormander classes}
 
 \section{Littlewood-Paley decomposition}
