@@ -5,7 +5,7 @@
 \begin{definition}
 \label{definition:difference_operators}
     Let $q \in \SmoothFunctions{\Group}$.
-    The \emph{difference operator} associated to $q$, $\DifferenceOperator{q}$ is defined via:
+    The \emph{difference operator} associated to $q$, $\DifferenceOperator{q}$ is defined via
     \begin{align*}
         \DifferenceOperator{q} \Fourier f \defeq \Fourier\{q f\},
     \end{align*}
@@ -124,7 +124,7 @@ Using \cite[Lemma 4.4]{RuzhanskyTurunenWirth10}, we can show
 \begin{proposition}[Quantisation]
     Let $\sigma \in \SymbolClass{m}{\rho, \delta}$,
     and denote by $\kappa$ its associated kernel.
-    If $\phi \in \Schwartz\Group$, then for each $g \in \Group$, we have:
+    If $\phi \in \Schwartz\Group$, then for each $g \in \Group$, we have
     \begin{align*}
         \Op(\sigma) \phi(g) = \conv{\phi}{\kappa_g}.
     \end{align*}
@@ -132,7 +132,7 @@ Using \cite[Lemma 4.4]{RuzhanskyTurunenWirth10}, we can show
     In other words, $\kappa$ is the right convolution kernel associated with $\Op(\sigma)$.
 \end{proposition}
 
-\section{Link with the Hormander classes}
+\section{Link with the H\"ormander classes}
 
 \section{Littlewood-Paley decomposition}
 
@@ -148,7 +148,7 @@ Using \cite[Lemma 4.4]{RuzhanskyTurunenWirth10}, we can show
     where $P_r$ is a polynomial depending only on $\alpha$.
 
     Moreover, if $\supp \chi$ is compact
-    and if there exists $\delta > 0$ such that $\D[\chi]{\lambda} = 0$ on $\Ball[\R^n]{0}{\delta}$,
+    and if there exists $\delta > 0$ such that the radial derivative $\D[\chi]{\lambda}$ vanishes on on $\Ball[\R^n]{0}{\delta}$,
     then we have
     \begin{align*}
         \sup_r \sup_{\lambda \in \R^+} \abs{f_r} < \infty
@@ -238,7 +238,7 @@ Using \cite[Lemma 4.4]{RuzhanskyTurunenWirth10}, we can show
                 \chi_0(\lambda) \equiv 0 \ \text{if}\  \norm[\dualGroup{\VectorSpace}]{\lambda} \geq 2.
             \end{align*}
 
-            Then, for each $l \in \N$ satisfying $l \leq 1$, let
+            Then, for each $l \in \N$ satisfying $l \geq 1$, let
             \begin{align*}
                 \chi_l = \chi_0(2^{-l} \dummy) - \chi_0(2^{-l + 1} \dummy).
             \end{align*}
@@ -610,7 +610,7 @@ Using \cite[Lemma 4.4]{RuzhanskyTurunenWirth10}, we can show
             \begin{align*}
                 \abs{\kappa_g(y, l)} \leq C \log \norm{y}
             \end{align*}
-        \item If $\dim \Group + m < 0$, $\kappa_g$ is continuous on $\Group$ and is bounded:
+        \item If $\dim \Group + m < 0$, $\kappa_g$ is continuous on $\Group$ and is bounded
             \begin{align*}
                 \sup_{g, h \in \Group} \abs{\kappa_g(h)} \leq C < \infty.
             \end{align*}

@@ -330,19 +330,26 @@ Let $\tau \in \dualGroup{\IsotropySubgroup{\CompactGroup}{\lambda}}$ and denote 
 For $q = 1, \dots, \dimRep{\tau}$, let
 \begin{align}
     P^\tau_q F(u) \defeq \dimRep{\tau} \int_\IsotropySubgroup{\CompactGroup}{\lambda} \conj{\tau_{qq}(m)} F(u m) \dd m,
-    \quad F \in \Lebesgue{2}{\CompactGroup}.
+    \quad F \in \Lebesgue{2}{\CompactGroup}, u \in \CompactGroup.
     \label{eq:projection_on_L2_of_the_compact_group}
 \end{align}
 
 By the Inverse Fourier Transform at $e \in \IsotropySubgroup{\CompactGroup}{\lambda}$,
 if $F \in \Lebesgue{2}{\CompactGroup}$ and $u \in \CompactGroup$, then
-\begin{align}
+\begin{align*}
     F(u)
-    = \sum_{\tau \in \dualGroup{\IsotropySubgroup{\CompactGroup}{\lambda}}} \dimRep{\tau} \sum_{q = 1}^{\dimRep{\tau}} {\Fourier[\IsotropySubgroup{\CompactGroup}{\lambda}]{F(u \dummy)}}_{qq}
-    = \sum_{\tau \in \dualGroup{\IsotropySubgroup{\CompactGroup}{\lambda}}} P^\tau_q F(u)
-\end{align}
+    &= F(u e) = \sum_{\tau \in \dualGroup{\IsotropySubgroup{\CompactGroup}{\lambda}}} \dimRep{\tau} \tr\left(\Rep[\IsotropySubgroup{\CompactGroup}{\lambda}]{\tau}(e) \Fourier[\IsotropySubgroup{\CompactGroup}{\lambda}]{F(u \dummy)}\right)\\
+    &= \sum_{\tau \in \dualGroup{\IsotropySubgroup{\CompactGroup}{\lambda}}} \dimRep{\tau} \sum_{q = 1}^{\dimRep{\tau}} {\Fourier[\IsotropySubgroup{\CompactGroup}{\lambda}]{F(u \dummy)}}_{qq}
+    = \sum_{\tau \in \dualGroup{\IsotropySubgroup{\CompactGroup}{\lambda}}} \sum_{q = 1}^\dimRep\tau P^\tau_q F(u).
+\end{align*}
+Now, writing $\Hilbert{\tau}{q} \defeq P^\tau_q \Lebesgue{2}{\CompactGroup}$,
+it then follows that
+\begin{align*}
+    \Lebesgue{2}{\CompactGroup}
+    = \sum_{\tau \in \dualGroup{\IsotropySubgroup{\CompactGroup}{\lambda}}} \sum_{q = 1}^\dimRep\tau \Hilbert{\tau}{q}.
+\end{align*}
 
-Now, write $\Hilbert{\tau}{q} \defeq P^\tau_q \Lebesgue{2}{\CompactGroup}$.
+In fact, we shall see that the $P^\tau_q$ are \emph{orthogonal projections}.
 
 \begin{lemma}
     Let $\mu, \tau \in \dualGroup{\IsotropySubgroup{\CompactGroup}{\lambda}}$, $q \in \{1, \dots, \dimRep{\tau}\}$ and $m, n \in \{1, \dots, \dimRep{\tau} \}$.
@@ -420,27 +427,29 @@ the author remarks (\cite[Remark p. 84]{Ito52}) that the argument works for gene
 
 \begin{proposition}[Unitary dual]
 \label{proposition:unitary_dual}
-    Let $\lambda, \lambda' \in \dualGroup{\VectorSpace}$
+    Let $\lambda, \lambda' \in \dualGroup{\VectorSpace} \setminus \{0\}$
     and $\tau \in \dualGroup{\IsotropySubgroup{\CompactGroup}{\lambda}}$,
     $\tau' \in \dualGroup{\IsotropySubgroup{\CompactGroup}{\lambda'}}$.
     The following properties hold
     \begin{enumerate}
-        \item $\Rep{\lambda}$ restricts to an irreducible unitary representation on each $\Hilbert{\tau}{q}$;
+        \item $\Rep{\lambda}$ restricts to an infinite-dimensional irreducible unitary representation on each $\Hilbert{\tau}{q}$;
         \item $(\Hilbert{\tau}{q}, \Rep{\lambda})$ and $(\Hilbert{\tau'}{q'}, \Rep{\lambda'})$ are equivalent if and only if
             \begin{align*}
                 \lambda' = k \lambda \quad \text{and} \quad \EquivalenceClass{\dualGroup{\IsotropySubgroup{\CompactGroup}{\lambda}}}{\tau} = \EquivalenceClass{\dualGroup{\IsotropySubgroup{\CompactGroup}{\lambda}}}{\tau'(k \dummy k^{-1})}
             \end{align*}
             for some $k \in \CompactGroup$.
+            In particular, if $q_1, q_2 \in \{1, \dots, \dimRep\tau\}$,
+            then $(\Hilbert{\tau}{q_1}, \Rep{\lambda})$ and $(\Hilbert{\tau}{q_2}, \Rep{\lambda})$ are equivalent.
     \end{enumerate}
 \end{proposition}
 
 \begin{definition}[Unitary dual]
 \label{definition:unitary_dual}
 \index{generalised motion group!unitary dual}
-    Fix $\lambda_0 \in \dualGroup{\VectorSpace}$.
+    Fix $\lambda_0 \in \dualGroup{\VectorSpace} \setminus \{0\}$.
     We define the \emph{unitary dual} of $\Group$, denoted by $\dualGroup{\Group}$, via
     \begin{align*}
-        \dualGroup{\Group} \defeq \{ (\Hilbert{\tau}{1}, \Rep{\lambda}) : \lambda \in \LeftQuotient{\IsotropySubgroup{\CompactGroup}{\lambda_0}}{\dualGroup{\VectorSpace}}, \tau \in \dualGroup{\IsotropySubgroup{\CompactGroup}{\lambda}} \}.
+        \dualGroup{\Group} \defeq \{ (\Hilbert{\tau}{1}, \Rep{\lambda \lambda_0}) : \lambda \in \R, \tau \in \dualGroup{\IsotropySubgroup{\CompactGroup}{\lambda}} \}.
     \end{align*}
 \end{definition}
 
