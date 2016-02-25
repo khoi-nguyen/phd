@@ -427,17 +427,19 @@ the author remarks (\cite[Remark p. 84]{Ito52}) that the argument works for gene
 
 \begin{proposition}[Unitary dual]
 \label{proposition:unitary_dual}
-    Let $\lambda, \lambda' \in \dualGroup{\VectorSpace}$
+    Let $\lambda, \lambda' \in \dualGroup{\VectorSpace} \setminus \{0\}$
     and $\tau \in \dualGroup{\IsotropySubgroup{\CompactGroup}{\lambda}}$,
     $\tau' \in \dualGroup{\IsotropySubgroup{\CompactGroup}{\lambda'}}$.
     The following properties hold
     \begin{enumerate}
-        \item $\Rep{\lambda}$ restricts to an irreducible unitary representation on each $\Hilbert{\tau}{q}$;
+        \item $\Rep{\lambda}$ restricts to an infinite-dimensional irreducible unitary representation on each $\Hilbert{\tau}{q}$;
         \item $(\Hilbert{\tau}{q}, \Rep{\lambda})$ and $(\Hilbert{\tau'}{q'}, \Rep{\lambda'})$ are equivalent if and only if
             \begin{align*}
                 \lambda' = k \lambda \quad \text{and} \quad \EquivalenceClass{\dualGroup{\IsotropySubgroup{\CompactGroup}{\lambda}}}{\tau} = \EquivalenceClass{\dualGroup{\IsotropySubgroup{\CompactGroup}{\lambda}}}{\tau'(k \dummy k^{-1})}
             \end{align*}
             for some $k \in \CompactGroup$.
+            In particular, if $q_1, q_2 \in \{1, \dots, \dimRep\tau\}$,
+            then $(\Hilbert{\tau}{q_1}, \Rep{\lambda})$ and $(\Hilbert{\tau}{q_2}, \Rep{\lambda})$ are equivalent.
     \end{enumerate}
 \end{proposition}
 
