@@ -336,13 +336,20 @@ For $q = 1, \dots, \dimRep{\tau}$, let
 
 By the Inverse Fourier Transform at $e \in \IsotropySubgroup{\CompactGroup}{\lambda}$,
 if $F \in \Lebesgue{2}{\CompactGroup}$ and $u \in \CompactGroup$, then
-\begin{align}
+\begin{align*}
     F(u)
-    = \sum_{\tau \in \dualGroup{\IsotropySubgroup{\CompactGroup}{\lambda}}} \dimRep{\tau} \sum_{q = 1}^{\dimRep{\tau}} {\Fourier[\IsotropySubgroup{\CompactGroup}{\lambda}]{F(u \dummy)}}_{qq}
-    = \sum_{\tau \in \dualGroup{\IsotropySubgroup{\CompactGroup}{\lambda}}} P^\tau_q F(u)
-\end{align}
+    &= F(u e) = \sum_{\tau \in \dualGroup{\IsotropySubgroup{\CompactGroup}{\lambda}}} \dimRep{\tau} \tr\left(\Rep[\IsotropySubgroup{\CompactGroup}{\lambda}]{\tau}(e) \Fourier[\IsotropySubgroup{\CompactGroup}{\lambda}]{F(u \dummy)}\right)\\
+    &= \sum_{\tau \in \dualGroup{\IsotropySubgroup{\CompactGroup}{\lambda}}} \dimRep{\tau} \sum_{q = 1}^{\dimRep{\tau}} {\Fourier[\IsotropySubgroup{\CompactGroup}{\lambda}]{F(u \dummy)}}_{qq}
+    = \sum_{\tau \in \dualGroup{\IsotropySubgroup{\CompactGroup}{\lambda}}} \sum_{q = 1}^\dimRep\tau P^\tau_q F(u).
+\end{align*}
+Now, writing $\Hilbert{\tau}{q} \defeq P^\tau_q \Lebesgue{2}{\CompactGroup}$,
+it then follows that
+\begin{align*}
+    \Lebesgue{2}{\CompactGroup}
+    = \sum_{\tau \in \dualGroup{\IsotropySubgroup{\CompactGroup}{\lambda}}} \sum_{q = 1}^\dimRep\tau \Hilbert{\tau}{q}.
+\end{align*}
 
-Now, write $\Hilbert{\tau}{q} \defeq P^\tau_q \Lebesgue{2}{\CompactGroup}$.
+In fact, we shall see that the $P^\tau_q$ are \emph{orthogonal projections}.
 
 \begin{lemma}
     Let $\mu, \tau \in \dualGroup{\IsotropySubgroup{\CompactGroup}{\lambda}}$, $q \in \{1, \dots, \dimRep{\tau}\}$ and $m, n \in \{1, \dots, \dimRep{\tau} \}$.
