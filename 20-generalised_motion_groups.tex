@@ -735,3 +735,28 @@ To this end, we follow the ideas of \cite{FischerRuzhansky15}.
             belongs to $\LebesgueDual{\infty}{\Group}$.
     \end{enumerate}
 \end{definition}
+
+\begin{proposition}[Extension of the Fourier Transform]
+    Define the sets
+    \begin{align*}
+        K \defeq \bigcup_{a, b \in \R} \KernelsSobolev{a}{b}, \quad
+        L \defeq \bigcup_{a, b \in \R} \LebesgueDual[a, b]{\infty}{\Group}.
+    \end{align*}
+
+    The Fourier Transform can be extended as a bijective map
+    \begin{align*}
+        \Fourier : K \to L,
+    \end{align*}
+    and preserve the following properties.
+    \begin{enumerate}
+        \item If $f \in \Lebesgue{1}{\Group}$, then it coincides with Definition~\ref{definition:Fourier_Transform}.
+        \item If $f_1, f_2 \in K$ are such that $\conv{f_1}{f_2} \in K$, then
+            \begin{align*}
+                \Fourier\{\conv{f_1}{f_2}\} = \Fourier f_2 \Fourier f_1.
+            \end{align*}
+        \item If $f \in \SmoothFunctions{\Group} \cap K$, $X \in \LieAlgebra$ and $\LeftDifferentialOperatorFirstOrder{X} f \in K$, then
+            \begin{align*}
+                \Fourier\{\LeftDifferentialOperatorFirstOrder{X} f\}(\lambda) = \Rep\lambda(X) \Fourier f(\lambda).
+            \end{align*}
+    \end{enumerate}
+\end{proposition}
