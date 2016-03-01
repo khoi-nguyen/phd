@@ -458,6 +458,28 @@ the author remarks (\cite[Remark p. 84]{Ito52}) that the argument works for gene
     \end{align*}
 \end{definition}
 
+\begin{definition}
+    A \emph{measurable field of operators on $\dualGroup\Group$} is a map
+    \begin{align*}
+        \sigma : \dualGroup\VectorSpace \to \End(\SmoothFunctions{\CompactGroup})
+    \end{align*}
+    satisfying the following properties.
+    \begin{enumerate}
+        \item For each $\lambda \in \dualGroup\VectorSpace$,
+            each $\tau \in \dualGroup{\IsotropySubgroup{\CompactGroup}{\lambda}}$, and each $q \in \{1, \dots, \dimRep \tau\}$, we have
+            \begin{align*}
+                \sigma(\lambda) \SmoothVectors{\Hilbert{\tau}{q}} \subset \SmoothVectors{\Hilbert{\tau}{q}}
+            \end{align*}
+        \item If $\lambda_1, \lambda_2 \in \dualGroup\VectorSpace$ and if $H_1, H_2$ are two Hilbert subspaces of $\Lebesgue{2}{\CompactGroup}$ such that
+            $(H_1, \Rep{\lambda_1})$ and $(H_2, \Rep{\lambda_2})$ are equivalent,
+            then if $T : H_1 \to H_2$ is the intertwining operator,
+            we have
+            \begin{align*}
+                \eval{\sigma(\lambda_1)}{H_1}  = T \sigma(\lambda_2) T^{-1}
+            \end{align*}
+    \end{enumerate}
+\end{definition}
+
 \subsection{Infinitesimal representations}
 
 \begin{definition}[Infinitesimal Representation]
