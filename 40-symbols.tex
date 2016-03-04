@@ -101,14 +101,11 @@
         \item the functions $\chi_j$, $j \in \N$, are invariant under $\CompactGroup$:
             for each $\lambda \in \dualGroup\AbelianGroup$ and each $k \in \CompactGroup$, we have $\chi_j(k \lambda) = \chi_j(\lambda)$.
         \item for each $q \in \Polynomials\AbelianGroup$,
-            there exists a finite family $q_1, \dots, q_{C_q} \in \Polynomials\AbelianGroup$ such that for each $j \in \N$, we have
+            there exists a finite family $q_1, \dots, q_{C_q} \in \Polynomials\CompactGroup$ such that
             \begin{align*}
-                (\DifferenceOperator[\AbelianGroup]{q} \Fourier[\AbelianGroup] \chi_j)(k \lambda) = \sum_{r = 1}^{C_q} f_{j, r}(\lambda) q_r(k),
+                q(k a) = \sum_{r = 1}^{C_q} f_r(a) q_j(k)
             \end{align*}
-            where the functions $f_j$ are defined on $\dualGroup\AbelianGroup$ such that
-            \begin{align*}
-                \sup_{r = 1, \dots, C_q} \sup_{j \in \N} \sup_\dualGroup\AbelianGroup \abs{f_{j, r}} < \infty.
-            \end{align*}
+            for some bounded functions $f_r : A \to \C$, $r \in \{1, \dots, C_q\}$.
         \item There exists $C > 0$ such that for every $j \in \N$, we have
             \begin{align*}
                 \chi_j(\lambda) = 0 \quad \text{if} \quad \norm[\dualGroup\AbelianGroup]{\lambda} \geq C 2^j.
