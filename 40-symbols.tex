@@ -215,7 +215,45 @@ Using \cite[Lemma 4.4]{RuzhanskyTurunenWirth10}, we can show
 \begin{theorem}[Littlewood-Paley decomposition]
 \label{theorem:Littlewood-Paley_decomposition}
 \index{Littlewood-Paley decomposition}
-    There exists a sequence $\eta_l \in \SmoothingSymbols$, $l \in \N$ of smoothing symbols satisfying the following properties
+    Let $\AbelianGroup$ be a \emph{locally compact abelian Lie group},
+    and suppose that $\CompactGroup \subset \Aut(\AbelianGroup)$ is \emph{compact}.
+
+    We now consider the group $\Group = \AbelianGroup \rtimes \CompactGroup$.
+
+    Suppose further that the following conditions are satisfied.
+    \begin{enumerate}
+        \item The Haar measure of $\AbelianGroup$ is invariant under $\CompactGroup$,
+            i.e.\ for each $f \in \Lebesgue{1}{\Group}$ and each $k \in \CompactGroup$, we have
+            \begin{align*}
+                \int_\AbelianGroup f(a) \dd a = \int_\AbelianGroup f(k a) \dd a.
+            \end{align*}
+        \item The Laplacian on $\AbelianGroup$ is invariant under $\CompactGroup$,
+            i.e.\ for every $\phi \in \Schwartz\AbelianGroup$ and every $k \in \CompactGroup$, we have
+            \begin{align*}
+                (\Laplacian[\AbelianGroup] \phi(k \dummy))(a)
+                = (\Laplacian[\AbelianGroup] \phi)(k a).
+            \end{align*}
+        \item There exists a Littlewood-Paley decomposition on $\AbelianGroup$ invariant under $\CompactGroup$,
+            i.e.\ a sequence $\chi_j \in \Fourier(\Schwartz\AbelianGroup), j \in \N$ such that:
+            \begin{enumerate}
+                \item they sum to 1, i.e.\ we have $\sum_{j = 0}^\infty \chi_j = 1$.
+                \item the functions $\chi_j$, $j \in \N$, are invariant under $\CompactGroup$:
+                    for each $\lambda \in \dualGroup\AbelianGroup$ and each $k \in \CompactGroup$, we have $\chi_j(k \lambda) = \chi_j(\lambda)$.
+                \item There exists $C > 0$ such that for every $j \in \N$, we have
+                    \begin{align*}
+                        \chi_j(\lambda) = 0 \quad \text{if} \quad \JapaneseBracket{\AbelianGroup}{\lambda} \geq C 2^j.
+                    \end{align*}
+                \item for each $q \in \Polynomials\AbelianGroup$,
+                    there exists a finite family $q_1, \dots, q_{C_q} \in \Polynomials\CompactGroup$ such that
+                    \begin{align*}
+                        q(k a) = \sum_{r = 1}^{C_q} f_r(a) q_j(k)
+                    \end{align*}
+                    for some bounded functions $f_r : A \to \C$, $r \in \{1, \dots, C_q\}$.
+            \end{enumerate}
+    \end{enumerate}
+
+    If all the above conditions hold,
+    there exists a sequence $\eta_l \in \SmoothSymbols$, $l \in \N$ of smoothing symbols satisfying the following properties
     \begin{enumerate}
         \item the semi-norms decay in the following way
             \begin{align}
