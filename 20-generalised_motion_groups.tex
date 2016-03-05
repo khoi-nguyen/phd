@@ -281,6 +281,29 @@ From now on, we fix a basis $X_1, \dots, X_{\dim \Group}$ of $\LieAlgebra$ such 
         where $\{Y_i : i = \dim \VectorSpace + 1, \dots, \dim \Group\}$ forms a basis of the Lie Algebra of $\CompactGroup$.
 \end{enumerate}
 
+\begin{lemma}
+    Let $j \in \{1, \dots, \dim \VectorSpace\}$.
+    If $\phi \in \SmoothFunctions\Group$,
+    \begin{align*}
+        \LeftDifferentialOperatorFirstOrder{X_j} \phi(x, k)
+        = \sum_{i = 1} \ip{k e_j}{e_i} \D[\phi]{x_i}(x, k)
+    \end{align*}
+\end{lemma}
+\begin{proof}
+    By a simple calculation,
+    \begin{align*}
+        \LeftDifferentialOperatorFirstOrder{X_j} \phi(x, k)
+        =& \D*{t}<t = 0> \phi((x, k) (t e_j, \Id\VectorSpace))\\
+        =& \D*{t}<t = 0> \phi(x + t k e_j, k).
+    \end{align*}
+
+    From there, it follows that:
+    \begin{align*}
+        \LeftDifferentialOperatorFirstOrder{X_j} \phi(x, k)
+        = \sum_{i = 1} \ip{k e_j}{e_i} \D[\phi]{x_i}(x, k)
+    \end{align*}
+\end{proof}
+
 \begin{definition}
     Let $\alpha \in \N^{\dim \Group}$.
     We define the left-invariant differential operator $\LeftDifferentialOperator{\alpha}$ via
