@@ -120,6 +120,25 @@ The requirement that $\CompactGroup$ should be a subgroup of $\OrthogonalGroup{\
     arguing similarly shows that $\dd y \dd l$ is also right-invariant.
 \end{proof}
 
+\begin{proposition}
+    Let $\VectorSpace$ be a finite dimensional vector space
+    and $\CompactGroup$ be a subgroup of $\SpecialOrthogonalGroup\VectorSpace$.
+    The following properties hold:
+    \begin{enumerate}
+        \item The Lebesgue measure on $\VectorSpace$ is invariant under $\CompactGroup$,
+            i.e.\ for every $k \in \CompactGroup$ and each Borel set $A \subset \VectorSpace$, we have
+            \begin{align*}
+                \int_A 1 \dd x = \int_{kA} 1 \dd x;
+            \end{align*}
+        \item The Laplacian on $\VectorSpace$ is invariant under $\CompactGroup$,
+            i.e.\ for every $k \in \CompactGroup$ and every $\phi \in \SmoothFunctions\VectorSpace$, we have
+            \begin{align*}
+                \Laplacian[\VectorSpace] (\phi \circ k)(x) = \Laplacian[\VectorSpace] \phi(k x);
+            \end{align*}
+        \item The action of $\CompactGroup$ on $\VectorSpace$ commutes with the dilation structure of $\VectorSpace$.
+    \end{enumerate}
+\end{proposition}
+
 \section{Lie algebra structure}
 
 Using an isomorphism
