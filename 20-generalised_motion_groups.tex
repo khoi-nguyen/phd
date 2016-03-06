@@ -526,7 +526,7 @@ the author remarks (\cite[Remark p. 84]{Ito52}) that the argument works for gene
     \begin{enumerate}
         \item if $j \leq \dim \VectorSpace$, then
             \begin{align*}
-                \Rep{\lambda}(X_j) F(u) = \D*{t}<t = 0> \lambda(t u^{-1} e_i) F(u)
+                \Rep{\lambda}(X_j) F(u) = \directionalDerivative{u^{-1} e_i} \lambda(0) F(u)
             \end{align*}
         \item if $j > \dim \VectorSpace$, then
             \begin{align*}
@@ -543,7 +543,8 @@ the author remarks (\cite[Remark p. 84]{Ito52}) that the argument works for gene
             Since $\exp_\Group(t X_j) = (t e_i, \Id{\VectorSpace})$.
             It follows that
             \begin{align*}
-                \Rep{\lambda}(X) F(u) = \D*{t}<t = 0> \lambda(t u^{-1} e_i) F(u),
+                \Rep{\lambda}(X) F(u) = \D*{t}<t = 0> \lambda(t u^{-1} e_i) F(u)
+                = \directionalDerivative{u^{-1} e_i} \lambda(0) F(u)
             \end{align*}
             which is what we wanted to show.
         \item Let $Y_j$ be like in~\eqref{eq:Lie_algebra_vector_coming_from_compact_group} so that
