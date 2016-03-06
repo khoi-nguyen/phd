@@ -521,6 +521,7 @@ the author remarks (\cite[Remark p. 84]{Ito52}) that the argument works for gene
 \end{definition}
 
 \begin{proposition}[Infinitesimal representations]
+\label{proposition:infinitesimal_representations_of_differential_operators}
     Let $\lambda \in \dualGroup{\VectorSpace}$ and let $j \in \{1, \dots, \dim \Group\}$.
     The infinitesimal representation of $X_j$ has the following expression:
     \begin{enumerate}
@@ -574,6 +575,38 @@ the author remarks (\cite[Remark p. 84]{Ito52}) that the argument works for gene
         \Rep{\lambda}(\Laplacian) = - \norm[\dualGroup{\VectorSpace}]{\lambda}^2 \Id{\Lebesgue{2}{\CompactGroup}} + \RightLaplacian[\CompactGroup].
     \end{align*}
 \end{corollary}
+\begin{proof}
+    By Proposition~\ref{proposition:infinitesimal_representations_of_differential_operators},
+    we know that
+    \begin{align*}
+        \Rep{\lambda}(\Laplacian) F(u) =
+        \left(
+            \sum_{j = 1}^{\dim \VectorSpace}
+                \directionalDerivative{u^{-1} e_i}^2 \lambda(0)
+                + \RightLaplacian[\CompactGroup]
+        \right)
+        F(u).
+    \end{align*}
+
+    Since the Laplacian on $\VectorSpace$ is invariant under $\CompactGroup$,
+    we have
+    \begin{align*}
+        \Laplacian[\VectorSpace] \lambda(0)
+        = (\Laplacian[\VectorSpace] \lambda \circ u)(0)
+        = \Laplacian (\lambda \circ u)(0).
+    \end{align*}
+
+    Since the right-hand side is exactly equal to
+    \begin{align*}
+        \sum_{j = 1}^{\dim \VectorSpace} \directionalDerivative{u^{-1} e_j}^2 \lambda(0),
+    \end{align*}
+    it follows that we have
+    \begin{align*}
+        \Rep{\lambda}(\Laplacian) F(u)
+        = (\Laplacian[\VectorSpace] \lambda(0) + \RightLaplacian[\CompactGroup]) F(u),
+    \end{align*}
+    which concludes the proof.
+\end{proof}
 
 \section{Fourier Transform}
 
