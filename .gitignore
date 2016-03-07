@@ -9,6 +9,7 @@
 *.log
 *.fdb_latexmk
 *.pdf
+*.synctex.gz
 *.toc
 *.vim
 log.xml
