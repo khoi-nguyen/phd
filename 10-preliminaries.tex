@@ -351,6 +351,32 @@ The requirement that $\CompactGroup$ should be a subgroup of $\OrthogonalGroup{\
     is called the \emph{Fourier transform of $f$}.
 \end{definition}
 
+\begin{proposition}
+    Let $f, f_1, f_2 \in \Lebesgue{1}{\Group}$ and $\xi \in \dualGroup\Group$.
+    The Fourier Transform satisfies the following properties:
+    \begin{enumerate}
+        \item For each $g \in \Group$, we have
+            \begin{align*}
+                \Fourier \{f(\dummy g)\} (\xi)
+                = \xi(g) \Fourier f(\xi), \quad
+                \Fourier \{f(g \dummy)\} (\xi)
+                = \Fourier f(\xi) \xi(g).
+            \end{align*}
+        \item We have
+            \begin{align*}
+                \Fourier \{\conv{f_1}{f_2}\}(\xi)
+                = \Fourier f_2(\xi) \Fourier f_1(\xi).
+            \end{align*}
+        \item If $f \in \SmoothFunctions\Group$ and $X \in \LieAlgebra$,
+            \begin{align*}
+                \Fourier \{\LeftDifferentialOperatorFirstOrder{X} f\}(\xi)
+                = \xi(X) \Fourier f(\xi), \quad
+                \Fourier \{\RightDifferentialOperatorFirstOrder{X} f\}(\xi)
+                = \Fourier f(\xi) \xi(X).
+            \end{align*}
+    \end{enumerate}
+\end{proposition}
+
 \section{Difference operators}
 
 \begin{proposition}
