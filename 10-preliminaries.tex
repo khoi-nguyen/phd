@@ -141,6 +141,35 @@ The requirement that $\CompactGroup$ should be a subgroup of $\OrthogonalGroup{\
         \item The action of $\CompactGroup$ on $\VectorSpace$ commutes with the dilation structure of $\VectorSpace$.
     \end{enumerate}
 \end{proposition}
+\begin{proof}
+    \begin{enumerate}
+        \item This follows easily from the change of variables formula,
+            \begin{align*}
+                \int_{k A} 1 \dd x
+                = \int_A (1 \circ k) \det k \dd x
+                = \int_A 1 \dd x,
+            \end{align*}
+            where we used the fact that $\det k = 1$ since $k \in \SpecialOrthogonalGroup\VectorSpace$.
+        \item First, observe that
+            \begin{align*}
+                \dd (\phi \circ k)(x) = \dd \phi(k x) k
+            \end{align*}
+            which implies that $\grad (\phi \circ k)(x) = k^{-1} \grad \phi(k x)$.
+
+            From there, using the fact that $\Hessian = \dd \grad$,
+            \begin{align*}
+                \Hessian (\phi \circ k)(x) = (\dd \grad(\phi \circ k))(x) = k^{-1} (\Hessian \phi(k x)) k.
+            \end{align*}
+
+            Therefore, we conclude by observing that
+            \begin{align*}
+                \Laplacian[\VectorSpace] (\phi \circ k)(x)
+                = \tr (\Hessian (\phi \circ k)(x))
+                = \tr (\Hessian \phi (k x))
+                = \Laplacian[\VectorSpace] \phi(k x).
+            \end{align*}
+    \end{enumerate}
+\end{proof}
 
 \section{Lie groups}
 
