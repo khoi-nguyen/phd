@@ -334,6 +334,19 @@ The requirement that $\CompactGroup$ should be a subgroup of $\OrthogonalGroup{\
     exactly one representation in each equivalence class of the actual unitary dual.
 \end{remark}
 
+\begin{example}[$\dualGroup\VectorSpace$]
+    For each $\lambda \in \VectorSpace$,
+    define
+    \begin{align*}
+        \xi_\lambda : \VectorSpace \to \UnitaryGroup{1} : x \mapsto \e^{\i \turn \ip{\lambda}{x}}.
+    \end{align*}
+
+    It can be shown that
+    \begin{align*}
+        \dualGroup\VectorSpace = \{ \xi_\lambda : \lambda \in \VectorSpace \}.
+    \end{align*}
+\end{example}
+
 \begin{theorem}[Peter-Weyl theorem]
 \label{theorem:Peter-Weyl_theorem}
     Let $\Group$ be a compact topological group.
