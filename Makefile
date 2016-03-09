@@ -1,4 +1,4 @@
-.PHONY: all clean
+.PHONY: all clean run
 
 all: main.pdf
 
@@ -7,3 +7,6 @@ main.pdf: main.tex Makefile
 
 clean:
 	latexmk -CA
+
+run:
+	(xdg-open main.pdf) &
