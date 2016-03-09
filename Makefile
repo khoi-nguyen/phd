@@ -7,6 +7,7 @@ main.pdf: main.tex Makefile
 
 clean:
 	latexmk -CA
+	rm *.bbl
 
 run:
 	(xdg-open main.pdf) &
