@@ -211,6 +211,7 @@ From now on, we fix a basis $X_1, \dots, X_{\dim \Group}$ of $\LieAlgebra$ such 
     We define a unitary representation $\Rep{\lambda} \in \Hom(\Group, \End(\Lebesgue{2}{\CompactGroup}))$ of $\Group$ via
     \begin{align}
         \Rep{\lambda} (x, k) F(u) \defeq (u \lambda)(x) F(k^{-1} u),
+        \label{eq:reducible_representations_on_the_generalised_motion_groups}
     \end{align}
     where $(x, k) \in \CompactGroup$, $F \in \Lebesgue{2}{\CompactGroup}$ and $u \in \CompactGroup$.
 \end{definition}
@@ -222,6 +223,14 @@ However, as we shall see later, the Fourier Transform on $\Group$ can be written
     Let $\lambda \in \R^2$.
     Let $(x, t) \in \Group = \R^2 \rtimes \SpecialOrthogonalGroup{2}$.
     If $\lambda \neq 0$, then $\Rep{\lambda}$ is irreducible.
+
+    Using the isomorphism $\SpecialOrthogonalGroup{2} \sim \T$,
+    \eqref{eq:reducible_representations_on_the_generalised_motion_groups} takes the form
+    \begin{align*}
+        \Rep\lambda(x, t) F(u)
+        = \lambda(-\e^{\i \turn u}x) F(u - t),
+    \end{align*}
+    where $F \in \Lebesgue{2}{\T}$, $(x, t) \in \Group$, and $u \in \T$.
 \end{example}
 
 \subsection{Unitary dual}
