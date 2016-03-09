@@ -337,9 +337,10 @@ The requirement that $\CompactGroup$ should be a subgroup of $\OrthogonalGroup{\
 \begin{example}[$\dualGroup\VectorSpace$]
     For each $\lambda \in \VectorSpace$,
     define
-    \begin{align*}
+    \begin{align}
         \xi_\lambda : \VectorSpace \to \UnitaryGroup{1} : x \mapsto \e^{\i \turn \ip{\lambda}{x}}.
-    \end{align*}
+        \label{eq:elements_of_dual_of_vector_space}
+    \end{align}
 
     It can be shown that
     \begin{align*}
@@ -347,9 +348,10 @@ The requirement that $\CompactGroup$ should be a subgroup of $\OrthogonalGroup{\
     \end{align*}
 
     Therefore, the map
-    \begin{align*}
+    \begin{align}
         \lambda \mapsto \xi_\lambda
-    \end{align*}
+        \label{eq:isomorphism_between_vector_space_and_its_dual_group}
+    \end{align}
     is a group isomorphism which allows us to give $\dualGroup\VectorSpace$ a vector space structure.
 \end{example}
 
@@ -433,6 +435,15 @@ The requirement that $\CompactGroup$ should be a subgroup of $\OrthogonalGroup{\
         = \int_{\dualGroup\Group} \tr \left( \Fourier f(\xi) \adj{\Fourier f(\xi)} \right) \dd \Plancherel\Group(\xi).
     \end{align*}
 \end{proposition}
+
+\begin{example}[Plancherel measure on $\dualGroup\VectorSpace$]
+    The \emph{Plancherel measure} on $\VectorSpace$ is the pushforward measure of the Lebesgue measure on $\VectorSpace$ via the isomorphism~\eqref{eq:isomorphism_between_vector_space_and_its_dual_group}.
+    In other words, if $f \in \Schwartz\VectorSpace$, then
+    \begin{align*}
+        \int_\VectorSpace \abs{f}^2 \dd x = \int_\VectorSpace \abs{\Fourier[\VectorSpace] f(\xi_\lambda)}^2 \dd \lambda,
+    \end{align*}
+    where $\xi_\lambda$ was defined in~\eqref{eq:elements_of_dual_of_vector_space}.
+\end{example}
 
 \section{Difference operators}
 
