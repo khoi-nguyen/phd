@@ -166,7 +166,7 @@ From now on, we fix a basis $X_1, \dots, X_{\dim \Group}$ of $\LieAlgebra$ such 
     If $\phi \in \SmoothFunctions\Group$,
     \begin{align*}
         \LeftDifferentialOperatorFirstOrder{X_j} \phi(x, k)
-        = \sum_{i = 1} \ip{k e_j}{e_i} \D[\phi]{x_i}(x, k)
+        = \ip{k^{-1} \grad \phi(x, k)}{e_j}
     \end{align*}
 \end{lemma}
 \begin{proof}
@@ -174,13 +174,14 @@ From now on, we fix a basis $X_1, \dots, X_{\dim \Group}$ of $\LieAlgebra$ such 
     \begin{align*}
         \LeftDifferentialOperatorFirstOrder{X_j} \phi(x, k)
         =& \D*{t}<t = 0> \phi((x, k) (t e_j, \Id\VectorSpace))\\
-        =& \D*{t}<t = 0> \phi(x + t k e_j, k).
+        =& \D*{t}<t = 0> \phi(x + t k e_j, k)\\
+        =& \ip{\grad \phi(x, k)}{k e_j}.
     \end{align*}
 
     From there, it follows that:
     \begin{align*}
         \LeftDifferentialOperatorFirstOrder{X_j} \phi(x, k)
-        = \sum_{i = 1} \ip{k e_j}{e_i} \D[\phi]{x_i}(x, k)
+        = \ip{k^{-1} \grad \phi(x, k)}{e_j}
     \end{align*}
 \end{proof}
 
