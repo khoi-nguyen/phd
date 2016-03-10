@@ -240,6 +240,34 @@ However, as we shall see later, the Fourier Transform on $\Group$ can be written
     \end{align*}
 \end{example}
 
+\begin{lemma}
+    Suppose $\Group = \R^2 \rtimes \SpecialOrthogonalGroup{2}$.
+    If $(x, t) \in \Group$, then for each $m, n \in \Z$, we have
+    \begin{align*}
+        (m - n) {\Rep\lambda(x, t)}_{m n}
+        = - \conj{x} \D{\conj{x}} {\Rep\lambda(x, t)}_{mn}
+    \end{align*}
+\end{lemma}
+\begin{proof}
+    Using integration by parts, we obtain:
+    \begin{align}
+        (m - n) {\Rep\lambda(x, t)}_{m n}
+    = -\frac{\e^{-\i \turn n t}}{\i \turn} \int_\T \lambda(-\e^{\i \turn u}x) \D*{u} \e^{\i \turn (n - m)u} \dd u \notag\\
+        = \frac{\e^{-\i \turn n t}}{\i \turn} \int_\T \D*{u} \lambda(-\e^{\i \turn u}x) \e^{\i \turn (n - m)u} \dd u.
+        \label{eq:lemma:off_diagonal_decay_in_dimension_2}
+    \end{align}
+
+    By simple calculations, we can show that
+    \begin{align*}
+        \D*{u} \lambda(-\e^{\i \turn u} x) = {(-\i \turn)} \conj{x} \D{\conj{x}} \lambda(-\e^{\i \turn u} x).
+    \end{align*}
+    From there, it follows that~\eqref{eq:lemma:off_diagonal_decay_in_dimension_2} becomes
+    \begin{align*}
+        (m - n) {\Rep\lambda(x, t)}_{m n}
+        = - \conj{x} \D{\conj{x}} {\Rep\lambda(x, t)}_{mn}
+    \end{align*}
+\end{proof}
+
 \subsection{Unitary dual}
 
 Our description of the unitary dual comes from \cite{Kumahara73},
