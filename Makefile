@@ -1,5 +1,6 @@
 .PHONY: all clean run
 
+
 all: main.pdf
 
 main.pdf: main.tex Makefile
@@ -7,8 +8,8 @@ main.pdf: main.tex Makefile
 
 clean:
 	latexmk -CA
-	rm *.bbl
-	rm *.synctex.gz
+	if [ -f *.bbl ]; then rm *.bbl ; fi;
+	if [ -f *.synctex.gz ]; then rm *.synctex.gz ; fi;
 
 run:
 	(xdg-open main.pdf) &
