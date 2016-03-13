@@ -474,6 +474,18 @@ The requirement that $\CompactGroup$ should be a subgroup of $\OrthogonalGroup{\
     \end{align*}
 \end{proposition}
 
+\begin{example}[Inverse Fourier Transform on $\VectorSpace$]
+    Let $x \in \VectorSpace$.
+    If $f \in \Schwartz\VectorSpace$,
+    then we have
+    \begin{align*}
+        f(x) =
+        \int_\VectorSpace
+            \e^{\i \turn \ip{x}{\xi}} \Fourier[\VectorSpace] f(\xi)
+        \dd \xi.
+    \end{align*}
+\end{example}
+
 \section{Difference operators}
 
 \begin{proposition}
