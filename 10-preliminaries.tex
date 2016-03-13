@@ -445,6 +445,20 @@ The requirement that $\CompactGroup$ should be a subgroup of $\OrthogonalGroup{\
     where $\xi_\lambda$ was defined in~\eqref{eq:elements_of_dual_of_vector_space}.
 \end{example}
 
+\begin{example}[Plancherel Measure on $\dualGroup\CompactGroup$]
+    If $f \in \SmoothFunctions{\CompactGroup}$,
+    then the Peter-Weyl theorem implies:
+    \begin{align*}
+        \int_\CompactGroup \abs{f}^2 \dd g
+        = \sum_{\tau \in \dualGroup\CompactGroup}
+            \dimRep\tau
+            \tr \left(
+                \Fourier[\CompactGroup] f(\tau)
+                \adj{\Fourier[\CompactGroup] f(\tau)}
+            \right)
+    \end{align*}
+\end{example}
+
 \section{Difference operators}
 
 \begin{proposition}
