@@ -459,6 +459,21 @@ The requirement that $\CompactGroup$ should be a subgroup of $\OrthogonalGroup{\
     \end{align*}
 \end{example}
 
+\begin{proposition}[Inverse Fourier Transform]
+    Let $g \in \Group$.
+    If $f \in \Schwartz\Group$,
+    then we have
+    \begin{align*}
+        f(g) =
+        \int_\dualGroup\Group
+            \tr\left(
+                \xi(g)
+                \Fourier f(\xi)
+            \right)
+        \dd \Plancherel\Group(\xi).
+    \end{align*}
+\end{proposition}
+
 \section{Difference operators}
 
 \begin{proposition}
