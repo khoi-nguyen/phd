@@ -406,6 +406,15 @@ The requirement that $\CompactGroup$ should be a subgroup of $\OrthogonalGroup{\
     is called the \emph{Fourier transform of $f$}.
 \end{definition}
 
+\begin{definition}
+    Let $\xi \in \VectorSpace$.
+    If $f \in \Lebesgue{1}\VectorSpace$,
+    we define the \emph{Fourier coefficient of $f$ at $\lambda$}, $\Fourier[\VectorSpace] f(\xi)$, via
+    \begin{align*}
+        \Fourier[\VectorSpace] f(\xi) \defeq \int_\VectorSpace f(x) \e^{-\i \turn \ip{x}\xi} \dd x.
+    \end{align*}
+\end{definition}
+
 \begin{proposition}
     Let $f, f_1, f_2 \in \Lebesgue{1}{\Group}$ and $\xi \in \dualGroup\Group$.
     The Fourier Transform satisfies the following properties:
