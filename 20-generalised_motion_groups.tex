@@ -935,3 +935,19 @@ To this end, we follow the ideas of \cite{FischerRuzhansky15}.
             \end{align*}
     \end{enumerate}
 \end{proposition}
+
+\section{Taylor formula}
+
+\begin{proposition}[Taylor remainder]
+    There exists an admissible collection of smooth functions $q_1, \dots, q_M \in \SmoothFunctions\Group$
+    and a collection $\{\TaylorLeftDifferentialOperator{\alpha}\}_{\alpha \in \N^M}$ of left-invariant differential operators satisfying the following properties:
+    \begin{enumerate}
+        \item for each $\alpha \in \N^M$, $\TaylorLeftDifferentialOperator\alpha$'s order is less than $\abs\alpha$;
+        \item if $f \in \SmoothFunctions\Group$ and $(x, k) \in \Group$,
+            we have the following Taylor development
+            \begin{align*}
+                f(x, k) &= \sum_{\abs\alpha \leq N} \frac{1}{\alpha!} q^\alpha({(x, k)}^{-1}) \TaylorLeftDifferentialOperator\alpha f(0, e) + \BigO(h(x, k)^N),
+            \end{align*}
+            where $h : \Group \to \R^+$ denotes the geodesic distance to the identity.
+    \end{enumerate}
+\end{proposition}
