@@ -816,6 +816,36 @@ the author remarks (\cite[Remark p. 84]{Ito52}) that the argument works for gene
         \tr \left( \Rep{\lambda}(g) \Fourier \phi(\lambda) \right) \dd \Plancherel{\VectorSpace}(\lambda).
     \end{align*}
 \end{proposition}
+\begin{proof}
+    Let us assume that $g = e$.
+    By \cite[Corollary 4.1]{DelgadoRuzhansky14}, we know that $\Fourier \phi(\lambda)$ is trace class and
+    \begin{align*}
+        \tr(\Fourier \phi(\lambda))
+        = \int_\CompactGroup \Fourier[\VectorSpace] \phi(k \lambda, e) \dd k.
+    \end{align*}
+
+    Integrating with respect to $\lambda$, we obtain
+    \begin{align*}
+        \int_\VectorSpace \tr(\Fourier \phi(\lambda)) \dd \lambda
+        &= \int_\VectorSpace \int_\CompactGroup \Fourier[\VectorSpace] \phi(k \lambda, e) \dd k \dd \lambda\\
+        &= \int_\VectorSpace \Fourier[\VectorSpace] \phi(\lambda, e) \dd \lambda,
+    \end{align*}
+    where the last line was obtained by a change of variables after permuting the integrals.
+
+    Recognising an inverse Fourier Transform in the right-hand side of the above, we obtain
+    \begin{align*}
+        \int_\VectorSpace \tr(\Fourier \phi(\lambda)) \dd \lambda
+        = \phi(0, e),
+    \end{align*}
+    concluding the case $g = e$.
+
+    The general case follows immediately, since
+    \begin{align*}
+        \phi(g) = \phi(e g) = \int_\VectorSpace \tr(\Fourier \{\phi(\dummy g)\}(\lambda)) \dd \lambda
+        = \int_\VectorSpace \tr(\Rep\lambda(g) \Fourier \phi(\lambda)) \dd \lambda,
+    \end{align*}
+    where the last equality was obained by Proposition~\ref{proposition:elementary_properties_of_the_Fourier_transform}.
+\end{proof}
 
 \begin{definition}[$\LebesgueDual{2}{\Group}$]
     We shall say that a map
