@@ -757,12 +757,17 @@ the author remarks (\cite[Remark p. 84]{Ito52}) that the argument works for gene
 \begin{lemma}
     Let $\phi \in \Schwartz\Group$.
     For each $\lambda \in \VectorSpace$,
-    the operator $\Fourier \phi(\lambda)$ is trace class,
-    and the map
+    the operator $\Fourier \phi(\lambda)$ is trace class.
+    Moreover, for each $N \in \N$, there exists $C \geq 0$ such that
+    \begin{align*}
+        \norm[\SchattenClasses{1}{\Lebesgue{2}{\CompactGroup}}]{\Fourier \phi(\lambda)}
+        &\leq C {(1 + \abs\lambda)}^{-N}.
+    \end{align*}
+    In particular, the map
     \begin{align*}
         \lambda \in \VectorSpace \mapsto \norm[\SchattenClasses{1}{\Lebesgue{2}{\CompactGroup}}]{\Fourier \phi(\lambda)}
     \end{align*}
-    is in $\Lebesgue{1}\VectorSpace$.
+    is integrable.
 \end{lemma}
 
 \begin{proposition}[Inverse Fourier Transform]
