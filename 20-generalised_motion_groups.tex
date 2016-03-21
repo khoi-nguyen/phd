@@ -711,6 +711,32 @@ the author remarks (\cite[Remark p. 84]{Ito52}) that the argument works for gene
     is called the \emph{Fourier Transform} of $f$.
 \end{definition}
 
+\begin{lemma}
+    Let $\lambda \in \VectorSpace$, and $f \in \Lebesgue{1}\Group$.
+    The \emph{integral kernel} of the operator $\Fourier f(\lambda)$ is given by
+    \begin{align*}
+        K_{f, \lambda}(u, k) \defeq \int_\CompactGroup \Fourier[\VectorSpace] f(k \lambda, k u^{-1}),
+    \end{align*}
+    i.e. for every $F \in \Lebesgue{2}\CompactGroup$ and every $u \in \CompactGroup$, we have
+    \begin{align*}
+        \Fourier f(\lambda) F(u) = \int_\CompactGroup K_{f, \lambda}(u, k) F(k) \dd k.
+    \end{align*}
+
+    In particular, the following properties hold:
+    \begin{enumerate}
+        \item if $f \in \Schwartz\Group$, then $K_{f, \lambda}$ is smooth,
+            $\Fourier f(\lambda)$ is trace class and
+            \begin{align*}
+                \tr(\Fourier f(\lambda)) = \int_\CompactGroup \Fourier[\VectorSpace] f(k \lambda, e) \dd k;
+            \end{align*}
+        \item if $f \in \Lebesgue{1}\Group \cap \Lebesgue{2}\Group$, then $K_{f, \lambda}$ is Hilbert-Schmidt and
+            \begin{align*}
+                \norm[\SchattenClasses{2}{\Lebesgue{2}\CompactGroup}]{\Fourier f(\lambda)}^2
+                = \int_\CompactGroup \int_\CompactGroup \abs{\Fourier[\VectorSpace] f(k \lambda, u)}^2 \dd u \dd k
+            \end{align*}
+    \end{enumerate}
+\end{lemma}
+
 \subsection{Plancherel formula}
 
 \begin{proposition}[Plancherel formula]
