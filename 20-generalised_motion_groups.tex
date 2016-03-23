@@ -822,55 +822,55 @@ the author remarks (\cite[Remark p. 84]{Ito52}) that the argument works for gene
     where the last line was obtained by applying the Plancherel formula on $\VectorSpace$.
 \end{proof}
 
-\begin{lemma}
-    Let $\phi \in \Schwartz\Group$.
-    For each $\lambda \in \VectorSpace$,
-    the operator $\Fourier \phi(\lambda)$ is trace class.
-    Moreover, for each $N \in \N$, there exists $C \geq 0$ such that
-    \begin{align*}
-        \norm[\SchattenClasses{1}{\Lebesgue{2}{\CompactGroup}}]{\Fourier \phi(\lambda)}
-        &\leq C {(1 + \abs\lambda)}^{-N}.
-    \end{align*}
-    In particular, the map
-    \begin{align*}
-        \lambda \in \VectorSpace \mapsto \norm[\SchattenClasses{1}{\Lebesgue{2}{\CompactGroup}}]{\Fourier \phi(\lambda)}
-    \end{align*}
-    is integrable.
-\end{lemma}
-\begin{proof}
-    Let $\alpha > \dim \CompactGroup$.
-    It follows by \cite[Proposition 3.3]{DelgadoRuzhansky14} that
-    \begin{align}
-        \BesselPotential[\CompactGroup]{-\alpha} \in \SchattenClasses{1}{\Lebesgue{2}\CompactGroup}
-        \label{lemma:preparation_for_inverse_formula:Bessel_potential_in_trace_class}
-    \end{align}
-
-    Let $\lambda \in \VectorSpace$.
-    We check that for each $F \in \Lebesgue{2}\CompactGroup$,
-    \begin{align*}
-        \BesselPotential[\CompactGroup]{\alpha} \Fourier \phi(\lambda) F(u)
-        = \int_\CompactGroup \BesselPotential[\CompactGroup]{\alpha}_u K_{\phi, \lambda}(u, k) F(k) \dd k,
-    \end{align*}
-    where $K_{\phi, \lambda}(u, k)$ represents the kernel of $\Fourier \phi(\lambda)$.
-
-    Since $K_{\phi, \lambda}$ is smooth with respect to $(u, k)$ and is rapidly decaying in $\lambda$,
-    it follows that for each $N \in \N$, there exists $C \geq 0$ such that
-    \begin{align*}
-        \norm[\Lin{\Lebesgue{2}\CompactGroup}]{\BesselPotential[\CompactGroup]{\alpha} \Fourier \phi(\lambda)}
-        \leq C {(1 + \abs\lambda)}^{-N}.
-    \end{align*}
-
-    Combining the above with~\eqref{lemma:preparation_for_inverse_formula:Bessel_potential_in_trace_class},
-    we obtain
-    \begin{align*}
-        \norm[\SchattenClasses{1}{\Lebesgue{2}{\CompactGroup}}]{\Fourier \phi(\lambda)}
-        &\leq
-        \norm[\SchattenClasses{1}{\Lebesgue{2}\CompactGroup}]{\BesselPotential[\CompactGroup]{-\alpha}}
-            \norm[\Lin{\Lebesgue{2}\CompactGroup}]{\BesselPotential[\CompactGroup]{\alpha} \Fourier \phi(\lambda)}\\
-        &\leq C {(1 + \abs\lambda)}^{-N},
-    \end{align*}
-    which is the desired estimate.
-\end{proof}
+%\begin{lemma}
+%    Let $\phi \in \Schwartz\Group$.
+%    For each $\lambda \in \VectorSpace$,
+%    the operator $\Fourier \phi(\lambda)$ is trace class.
+%    Moreover, for each $N \in \N$, there exists $C \geq 0$ such that
+%    \begin{align*}
+%        \norm[\SchattenClasses{1}{\Lebesgue{2}{\CompactGroup}}]{\Fourier \phi(\lambda)}
+%        &\leq C {(1 + \abs\lambda)}^{-N}.
+%    \end{align*}
+%    In particular, the map
+%    \begin{align*}
+%        \lambda \in \VectorSpace \mapsto \norm[\SchattenClasses{1}{\Lebesgue{2}{\CompactGroup}}]{\Fourier \phi(\lambda)}
+%    \end{align*}
+%    is integrable.
+%\end{lemma}
+%\begin{proof}
+%    Let $\alpha > \dim \CompactGroup$.
+%    It follows by \cite[Proposition 3.3]{DelgadoRuzhansky14} that
+%    \begin{align}
+%        \BesselPotential[\CompactGroup]{-\alpha} \in \SchattenClasses{1}{\Lebesgue{2}\CompactGroup}
+%        \label{lemma:preparation_for_inverse_formula:Bessel_potential_in_trace_class}
+%    \end{align}
+%
+%    Let $\lambda \in \VectorSpace$.
+%    We check that for each $F \in \Lebesgue{2}\CompactGroup$,
+%    \begin{align*}
+%        \BesselPotential[\CompactGroup]{\alpha} \Fourier \phi(\lambda) F(u)
+%        = \int_\CompactGroup \BesselPotential[\CompactGroup]{\alpha}_u K_{\phi, \lambda}(u, k) F(k) \dd k,
+%    \end{align*}
+%    where $K_{\phi, \lambda}(u, k)$ represents the kernel of $\Fourier \phi(\lambda)$.
+%
+%    Since $K_{\phi, \lambda}$ is smooth with respect to $(u, k)$ and is rapidly decaying in $\lambda$,
+%    it follows that for each $N \in \N$, there exists $C \geq 0$ such that
+%    \begin{align*}
+%        \norm[\Lin{\Lebesgue{2}\CompactGroup}]{\BesselPotential[\CompactGroup]{\alpha} \Fourier \phi(\lambda)}
+%        \leq C {(1 + \abs\lambda)}^{-N}.
+%    \end{align*}
+%
+%    Combining the above with~\eqref{lemma:preparation_for_inverse_formula:Bessel_potential_in_trace_class},
+%    we obtain
+%    \begin{align*}
+%        \norm[\SchattenClasses{1}{\Lebesgue{2}{\CompactGroup}}]{\Fourier \phi(\lambda)}
+%        &\leq
+%        \norm[\SchattenClasses{1}{\Lebesgue{2}\CompactGroup}]{\BesselPotential[\CompactGroup]{-\alpha}}
+%            \norm[\Lin{\Lebesgue{2}\CompactGroup}]{\BesselPotential[\CompactGroup]{\alpha} \Fourier \phi(\lambda)}\\
+%        &\leq C {(1 + \abs\lambda)}^{-N},
+%    \end{align*}
+%    which is the desired estimate.
+%\end{proof}
 
 \begin{proposition}[Inverse Fourier Transform]
 \label{proposition:inverse_Fourier_Transform}
