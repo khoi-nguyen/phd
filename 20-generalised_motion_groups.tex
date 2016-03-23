@@ -712,6 +712,7 @@ the author remarks (\cite[Remark p. 84]{Ito52}) that the argument works for gene
 \end{definition}
 
 \begin{lemma}
+\label{lemma:kernels_of_Fourier_coefficients}
     Let $\lambda \in \VectorSpace$, and $f \in \Lebesgue{1}\Group$.
     The \emph{integral kernel} of the operator $\Fourier f(\lambda)$ is given by
     \begin{align}
@@ -804,28 +805,15 @@ the author remarks (\cite[Remark p. 84]{Ito52}) that the argument works for gene
     \end{align}
 \end{proposition}
 \begin{proof}
-    Let $\lambda \in \dualGroup{\VectorSpace}$ and $F \in \Lebesgue{2}{\CompactGroup}$.
-    If $u \in \CompactGroup$, we can check that
+    It follows from Lemma~\ref{lemma:kernels_of_Fourier_coefficients} that for almost every $\lambda \in \VectorSpace$,
+    $\Fourier f(\lambda)$ is trace class and
     \begin{align*}
-        \Fourier{f}(\lambda) F(u)
-        &= \int_\VectorSpace \int_\CompactGroup f(x, k) \lambda(-u^{-1} k^{-1} x) F(k u) \dd k \dd x\\
-        &= \int_\VectorSpace \int_\CompactGroup f(x, k) \conj{k u \lambda(x)} F(k u) \dd k \dd x,
-    \end{align*}
-    where we used $\lambda(-{(k u)}^{-1} x) = \conj{\lambda({(k u)}^{-1} x)} = \conj{(k u \lambda)(x)}$.
-
-    Substituing $k$ for $k u^{-1}$, we get
-    \begin{align*}
-        \Fourier{f}(\lambda) F(u)
-        &= \int_\CompactGroup \Fourier[\VectorSpace]{f}(k \lambda, k u^{-1}) F(k) \dd k.
+        \norm[\SchattenClasses{2}{\Lebesgue{2}\CompactGroup}]{\Fourier f(\lambda)}^2
+        = \int_\CompactGroup \int_\CompactGroup \abs{\Fourier[\VectorSpace] f(k \lambda, u)}^2 \dd u \dd k.
     \end{align*}
 
-    Therefore, it follows by \cite[Theorem VI.23]{Reed72} that
-    \begin{align*}
-        \norm[\HilbertSchmidt{\Lebesgue{2}{\CompactGroup}}]{\Fourier{f}(\lambda)}^2
-        &= \int_\CompactGroup \int_\CompactGroup \abs{\Fourier[\VectorSpace]{f}(k \lambda, k u^{-1})}^2 \dd u \dd k.
-    \end{align*}
-
-    Now, integrating with respect to $\lambda$, we obtain
+    Now, integrating with respect to $\lambda$,
+    we obtain
     \begin{align*}
         \int_\dualGroup{\VectorSpace} \norm[\HilbertSchmidt{\Lebesgue{2}{\CompactGroup}}]{\Fourier{f}(\lambda)}^2 \dd \Plancherel{\VectorSpace}(\lambda)
         &= \int_\dualGroup{\VectorSpace} \int_\CompactGroup \abs{\Fourier[\VectorSpace]{f}(\lambda, k)}^2 \dd k \dd \Plancherel{\VectorSpace}(\lambda)\\
