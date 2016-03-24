@@ -13,6 +13,16 @@
     and $\CompactGroup$ acts transitively on $\VectorSpace$.
 \end{definition}
 
+\begin{lemma}[$\CompactGroup$-invariant inner product]
+    Let $\VectorSpace$ be a vector space,
+    and $\CompactGroup$ be a compact Lie group acting acting on $\VectorSpace$.
+    There exists an inner product $\ip{\dummy}{\dummy} : \VectorSpace \times \VectorSpace \to \R$ which is $\CompactGroup$-invariant,
+    i.e.\ for each $k \in \CompactGroup$ and every $x, y \in \VectorSpace$, we have
+    \begin{align*}
+        \ip{x}{y} = \ip{k x}{k y}.
+    \end{align*}
+\end{lemma}
+
 \begin{remark}
     Let $x \in \VectorSpace$ and $k \in \CompactGroup$.
     We will never identify $x$ with $(x, \Id{\VectorSpace}) \in \VectorSpace \rtimes \CompactGroup$,
