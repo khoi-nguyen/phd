@@ -920,16 +920,24 @@ the author remarks (\cite[Remark p. 84]{Ito52}) that the argument works for gene
     \begin{align*}
         \sigma : \dualGroup{\VectorSpace} \to \HilbertSchmidt{\Lebesgue{2}{\CompactGroup}}
     \end{align*}
-    belongs to $\LebesgueDual{2}{\Group}$ if and only if $\sigma$ is measurable, invariant under $\CompactGroup$ and the quantity
-    \begin{align*}
-        \norm[\LebesgueDual{2}{\Group}]{\sigma} \defeq
-            \left(
-                \int_\dualGroup{\VectorSpace}
-                    \norm[\HilbertSchmidt{\Lebesgue{2}{\CompactGroup}}]{\sigma(\lambda)}^2
-                \dd \Plancherel{\VectorSpace}(\lambda)
-            \right)^{\frac{1}{2}}
-    \end{align*}
-    is finite.
+    belongs to $\LebesgueDual{2}{\Group}$ if and only if the following conditions are met:
+    \begin{enumerate}
+        \item $\sigma$ is measurable;
+        \item for each $k \in \CompactGroup$, we have
+            \begin{align*}
+                \sigma(k \lambda) = R_k \sigma(\lambda) R_k^{-1}
+            \end{align*}
+        \item the quantity
+            \begin{align*}
+                \norm[\LebesgueDual{2}{\Group}]{\sigma} \defeq
+                    \left(
+                        \int_\dualGroup{\VectorSpace}
+                            \norm[\HilbertSchmidt{\Lebesgue{2}{\CompactGroup}}]{\sigma(\lambda)}^2
+                        \dd \Plancherel{\VectorSpace}(\lambda)
+                    \right)^{\frac{1}{2}}
+            \end{align*}
+            is finite.
+    \end{enumerate}
 
     If $\sigma_1, \sigma_2 \in \LebesgueDual{2}{\Group}$, then we let
     \begin{align*}
