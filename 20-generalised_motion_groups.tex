@@ -14,6 +14,7 @@
 \end{definition}
 
 \begin{lemma}[$\CompactGroup$-invariant inner product]
+\label{lemma:existence_of_K-invariant_inner_product}
     Let $\VectorSpace$ be a vector space,
     and $\CompactGroup$ be a compact Lie group acting acting on $\VectorSpace$.
     There exists an inner product $\ip{\dummy}{\dummy} : \VectorSpace \times \VectorSpace \to \R$ which is $\CompactGroup$-invariant,
@@ -37,6 +38,9 @@
     It follows that $Q(k x, k x) = 0$ for almost every $k \in \CompactGroup$, hence for at least one such $k$.
     However, that means that $k x = 0$, hence $x = 0$ as $k$ is invertible.
 \end{proof}
+
+From now on, $\VectorSpace$ will be given the structure of a \emph{Euclidean space} with a $\CompactGroup$-invariant inner product
+whose existence is ensured by Lemma~\ref{lemma:existence_of_K-invariant_inner_product}.
 
 \begin{remark}
     Let $x \in \VectorSpace$ and $k \in \CompactGroup$.
