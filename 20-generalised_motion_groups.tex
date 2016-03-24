@@ -22,6 +22,19 @@
         \ip{x}{y} = \ip{k x}{k y}.
     \end{align*}
 \end{lemma}
+\begin{proof}
+    Let $Q : \VectorSpace \times \VectorSpace \to \R$ be an arbitrary inner product.
+    Given $x, y \in \VectorSpace$, we let
+    \begin{align*}
+        \ip{x}{y} \defeq \int_\CompactGroup Q(k x, k y) \dd k,
+    \end{align*}
+    where $\dd k$ is the Haar measure on $\CompactGroup$.
+
+    The fact that $\ip{\dummy}{\dummy}$ is bilinear and nonnegative definite follows immediately from the fact that $Q$ has those properties.
+    Now, if $x, y \in \VectorSpace$ are such that $\ip{x}{x} = 0$.
+    It follows that $Q(k x, k x) = 0$ for almost every $k \in \CompactGroup$, hence for at least one such $k$.
+    However, that means that $k x = 0$, hence $x = 0$ as $k$ is invertible.
+\end{proof}
 
 \begin{remark}
     Let $x \in \VectorSpace$ and $k \in \CompactGroup$.
