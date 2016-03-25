@@ -79,6 +79,16 @@ which will naturally determine two isomorphisms
     in other words, the columns of $k$ are orthogonal, hence $k \in \OrthogonalGroup{\VectorSpace}$.
 
     Since $\CompactGroup$ is connected and contains $\Id\VectorSpace$, $\CompactGroup \subset \SpecialOrthogonalGroup\VectorSpace$.
+
+    If $f : \VectorSpace \to \C$ is integrable with respect to $\dd v = \phi^* \dd x$,
+    then
+    \begin{align*}
+        \int_\VectorSpace f(k v) \dd v \defeq \int_{\R^{\dim \VectorSpace}} f((\phi \circ k \circ \phi^{-1})x) \dd x
+        = \int_{\R^{\dim \VectorSpace}} f(x) \dd x
+        = \int_\VectorSpace f(v) \dd v,
+    \end{align*}
+    since $\phi \circ k \circ \phi^{-1} \in \SpecialOrthogonalGroup{\dim \VectorSpace}$.
+    The translation-invariance of $\dd v$ is trivial.
 \end{proof}
 
 \begin{remark}
