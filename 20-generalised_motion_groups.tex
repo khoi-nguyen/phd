@@ -12,6 +12,74 @@
     such that $\Group = \VectorSpace \rtimes \CompactGroup$.
 \end{definition}
 
+\begin{remark}
+    Let $x \in \VectorSpace$ and $k \in \CompactGroup$.
+    We will never identify $x$ with $(x, \Id{\VectorSpace}) \in \VectorSpace \rtimes \CompactGroup$,
+    or $k$ with $(0, k) \in \VectorSpace \rtimes \CompactGroup$.
+
+    Therefore, when we write $k x$, it will \emph{always} mean the vector obtained by rotating $x$ by $k$, i.e.\ $k(x)$.
+    If we see them as elements of $\VectorSpace \rtimes \CompactGroup$,
+    we shall explicitely write
+    \begin{align*}
+        (0, k) (x, \Id{\VectorSpace}) = (k x, k).
+    \end{align*}
+\end{remark}
+
+\begin{example}[Vector spaces]
+\label{example:trivial_case_of_generalised_motion_groups}
+    Suppose that $\CompactGroup = \{\Id\VectorSpace\}$.
+    It follows that $\Group \defeq \VectorSpace \rtimes \CompactGroup$ is isomorphic to $\VectorSpace$.
+\end{example}
+
+\begin{example}[Euclidean Motion Groups]
+\label{example:Euclidean_motion_groups}
+\index{Euclidean motion group}
+    For each $n \in \N$, let
+    \begin{align*}
+        \MotionGroup{n} \defeq \{g \in \AffineTransformations{\R^n} : \det g = 1\}.
+    \end{align*}
+    The elements of $\MotionGroup{n}$ are called \emph{rigid motions},
+    while $\MotionGroup{n}$ is called the \emph{Euclidean motion group}.
+
+    It is easily shown that associating $(x, k) \in \R^n \rtimes \SpecialOrthogonalGroup{n}$ to the motion
+    \begin{align*}
+        g_{(x, k)} : \R^n \to \R^n : y \mapsto x + ky
+    \end{align*}
+    defines a group isomorphism between $\R^n \rtimes \SpecialOrthogonalGroup{n}$ and $\MotionGroup{n}$.
+    We shall therefore identify $\MotionGroup{n}$ with $\R^n \rtimes \SpecialOrthogonalGroup{n}$ from now on.
+\end{example}
+
+\begin{example}[$2$-dimensional Euclidean motion group]
+\label{example:Euclidean_motion_groups:dimension_2}
+\index{Euclidean motion group!dimenion 2}
+    The $2$-dimensional case is worth mentioning because
+    in that case, $\SpecialOrthogonalGroup{2}$ is \emph{abelian}.
+
+    Since $\SpecialOrthogonalGroup{2}$ is isomorphic to $\T$,
+    we shall often identify $\MotionGroup{2}$ with $\R^2 \times \T$ and the group law
+    \begin{align*}
+        (x, t) (y, s) \defeq (x + \e^{\i \turn t} y, t + s), \quad (x, t), (y, s) \in \R^2 \times \T.
+    \end{align*}
+\end{example}
+
+\begin{example}
+    \label{example:complex_motion_groups}
+    Let $n \in \N$.
+    Consider the group
+    \begin{align*}
+        \{g \in \AffineTransformations{\C^n} : \det_{\C^n} g = 1\}
+    \end{align*}
+    where the law is the composition of functions.
+
+    Arguing like in Example~\ref{example:Euclidean_motion_groups},
+    the above group can be identified with $\C^n \rtimes \SpecialUnitaryGroup{n}$.
+\end{example}
+
+\begin{remark}
+    Since in our examples (e.g. Example \ref{example:complex_motion_groups}) our vector space might be $\C^n$,
+    we choose to use $\VectorSpace$ to denote the vector space instead of simply $\R^n$ to avoid any confusion.
+\end{remark}
+
 \begin{lemma}[$\CompactGroup$-invariant inner product]
 \label{lemma:existence_of_K-invariant_inner_product}
     Let $\VectorSpace$ be a vector space,
@@ -96,74 +164,6 @@ which will naturally determine two isomorphisms
     The measure defined in Lemma~\ref{lemma:K_subset_of_SO_and_invariance_of_the_induced_Lebesgue_measure}
     will be called the \emph{Lebesgue measure} on $\CompactGroup$ and will be denoted by $\dd x$.
 \end{definition}
-
-\begin{remark}
-    Let $x \in \VectorSpace$ and $k \in \CompactGroup$.
-    We will never identify $x$ with $(x, \Id{\VectorSpace}) \in \VectorSpace \rtimes \CompactGroup$,
-    or $k$ with $(0, k) \in \VectorSpace \rtimes \CompactGroup$.
-
-    Therefore, when we write $k x$, it will \emph{always} mean the vector obtained by rotating $x$ by $k$, i.e.\ $k(x)$.
-    If we see them as elements of $\VectorSpace \rtimes \CompactGroup$,
-    we shall explicitely write
-    \begin{align*}
-        (0, k) (x, \Id{\VectorSpace}) = (k x, k).
-    \end{align*}
-\end{remark}
-
-\begin{example}[Vector spaces]
-\label{example:trivial_case_of_generalised_motion_groups}
-    Suppose that $\CompactGroup = \{\Id\VectorSpace\}$.
-    It follows that $\Group \defeq \VectorSpace \rtimes \CompactGroup$ is isomorphic to $\VectorSpace$.
-\end{example}
-
-\begin{example}[Euclidean Motion Groups]
-\label{example:Euclidean_motion_groups}
-\index{Euclidean motion group}
-    For each $n \in \N$, let
-    \begin{align*}
-        \MotionGroup{n} \defeq \{g \in \AffineTransformations{\R^n} : \det g = 1\}.
-    \end{align*}
-    The elements of $\MotionGroup{n}$ are called \emph{rigid motions},
-    while $\MotionGroup{n}$ is called the \emph{Euclidean motion group}.
-
-    It is easily shown that associating $(x, k) \in \R^n \rtimes \SpecialOrthogonalGroup{n}$ to the motion
-    \begin{align*}
-        g_{(x, k)} : \R^n \to \R^n : y \mapsto x + ky
-    \end{align*}
-    defines a group isomorphism between $\R^n \rtimes \SpecialOrthogonalGroup{n}$ and $\MotionGroup{n}$.
-    We shall therefore identify $\MotionGroup{n}$ with $\R^n \rtimes \SpecialOrthogonalGroup{n}$ from now on.
-\end{example}
-
-\begin{example}[$2$-dimensional Euclidean motion group]
-\label{example:Euclidean_motion_groups:dimension_2}
-\index{Euclidean motion group!dimenion 2}
-    The $2$-dimensional case is worth mentioning because
-    in that case, $\SpecialOrthogonalGroup{2}$ is \emph{abelian}.
-
-    Since $\SpecialOrthogonalGroup{2}$ is isomorphic to $\T$,
-    we shall often identify $\MotionGroup{2}$ with $\R^2 \times \T$ and the group law
-    \begin{align*}
-        (x, t) (y, s) \defeq (x + \e^{\i \turn t} y, t + s), \quad (x, t), (y, s) \in \R^2 \times \T.
-    \end{align*}
-\end{example}
-
-\begin{example}
-    \label{example:complex_motion_groups}
-    Let $n \in \N$.
-    Consider the group
-    \begin{align*}
-        \{g \in \AffineTransformations{\C^n} : \det_{\C^n} g = 1\}
-    \end{align*}
-    where the law is the composition of functions.
-
-    Arguing like in Example~\ref{example:Euclidean_motion_groups},
-    the above group can be identified with $\C^n \rtimes \SpecialUnitaryGroup{n}$.
-\end{example}
-
-\begin{remark}
-    Since in our examples (e.g. Example \ref{example:complex_motion_groups}) our vector space might be $\C^n$,
-    we choose to use $\VectorSpace$ to denote the vector space instead of simply $\R^n$ to avoid any confusion.
-\end{remark}
 
 From now on, unless stated otherwise,
 $\Group$ will denote a generalised motion group,
