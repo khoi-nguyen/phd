@@ -8,9 +8,8 @@
     Let $\Group$ be a group.
     We shall say that $\Group$ is a \emph{generalised motion group}
     if there exists a (finite dimensional) real Euclidean space $\VectorSpace$
-    and a compact group $\CompactGroup \subset \SpecialOrthogonalGroup{\VectorSpace}$
-    such that $\Group = \VectorSpace \rtimes \CompactGroup$
-    and $\CompactGroup$ acts transitively on $\VectorSpace$.
+    and a compact connected Lie group $\CompactGroup \subset \GeneralLinear\VectorSpace$
+    such that $\Group = \VectorSpace \rtimes \CompactGroup$.
 \end{definition}
 
 \begin{remark}
@@ -25,6 +24,12 @@
         (0, k) (x, \Id{\VectorSpace}) = (k x, k).
     \end{align*}
 \end{remark}
+
+\begin{example}[Vector spaces]
+\label{example:trivial_case_of_generalised_motion_groups}
+    Suppose that $\CompactGroup = \{\Id\VectorSpace\}$.
+    It follows that $\Group \defeq \VectorSpace \rtimes \CompactGroup$ is isomorphic to $\VectorSpace$.
+\end{example}
 
 \begin{example}[Euclidean Motion Groups]
 \label{example:Euclidean_motion_groups}
@@ -74,6 +79,91 @@
     Since in our examples (e.g. Example \ref{example:complex_motion_groups}) our vector space might be $\C^n$,
     we choose to use $\VectorSpace$ to denote the vector space instead of simply $\R^n$ to avoid any confusion.
 \end{remark}
+
+\begin{lemma}[$\CompactGroup$-invariant inner product]
+\label{lemma:existence_of_K-invariant_inner_product}
+    Let $\VectorSpace$ be a vector space,
+    and $\CompactGroup$ be a compact Lie group acting acting on $\VectorSpace$.
+    There exists an inner product $\ip{\dummy}{\dummy} : \VectorSpace \times \VectorSpace \to \R$ which is $\CompactGroup$-invariant,
+    i.e.\ for each $k \in \CompactGroup$ and every $x, y \in \VectorSpace$, we have
+    \begin{align*}
+        \ip{x}{y} = \ip{k x}{k y}.
+    \end{align*}
+
+    In particular, the Lebesgue measure which arises from $\ip{\dummy}{\dummy}$ is invariant under $\CompactGroup$.
+\end{lemma}
+\begin{proof}
+    Let $Q : \VectorSpace \times \VectorSpace \to \R$ be an arbitrary inner product.
+    Given $x, y \in \VectorSpace$, we let
+    \begin{align*}
+        \ip{x}{y} \defeq \int_\CompactGroup Q(k x, k y) \dd k,
+    \end{align*}
+    where $\dd k$ is the Haar measure on $\CompactGroup$.
+
+    It follows that if $k \in \CompactGroup$,
+    then using the right-invariance of the Haar measure on compact groups,
+    we obtain
+    \begin{align*}
+        \ip{k x}{k y}
+        = \int_\CompactGroup Q(h k x, h k y) \dd h
+        = \int_\CompactGroup Q(h x, h y) \dd h
+        = \ip{x}{y},
+    \end{align*}
+    i.e.\ $\ip{\dummy}{\dummy}$ is $\CompactGroup$-invariant.
+
+    The fact that $\ip{\dummy}{\dummy}$ is bilinear and nonnegative definite follows immediately from the fact that $Q$ has those properties.
+    Now, if $x, y \in \VectorSpace$ are such that $\ip{x}{x} = 0$.
+    It follows that $Q(k x, k x) = 0$ for almost every $k \in \CompactGroup$, hence for at least one such $k$.
+    However, that means that $k x = 0$, hence $x = 0$ as $k$ is invertible.
+\end{proof}
+
+From now on, $\VectorSpace$ will be given the structure of a \emph{Euclidean space} with a $\CompactGroup$-invariant inner product
+whose existence is ensured by Lemma~\ref{lemma:existence_of_K-invariant_inner_product}.
+We shall also fix an orthonormal basis $e_1, \dots, e_{\dim \VectorSpace}$ with respect to that inner product,
+which will naturally determine two isomorphisms
+\begin{align*}
+    \VectorSpace \sim \R^{\dim \VectorSpace}, \quad \End(\VectorSpace) \sim \R^{\dim \VectorSpace \times \dim \VectorSpace}.
+\end{align*}
+
+\begin{lemma}
+\label{lemma:K_subset_of_SO_and_invariance_of_the_induced_Lebesgue_measure}
+    With the inner product defined in Lemma~\ref{lemma:existence_of_K-invariant_inner_product},
+    $\CompactGroup$ is a Lie subgroup of $\SpecialOrthogonalGroup\VectorSpace$.
+
+    Moreover, if
+    \begin{align*}
+        \phi : \VectorSpace \to \R^{\dim \VectorSpace}
+    \end{align*}
+    is an isomorphism of Euclidean spaces,
+    then the pull-back of the Lebesgue measure on $\R^{\dim \VectorSpace}$ defines a measure on $\VectorSpace$
+    which is both translation-invariant and $\CompactGroup$-invariant.
+\end{lemma}
+\begin{proof}
+    Let $k \in \CompactGroup$.
+    Given $i, j \in \{1, \dots, \dim \VectorSpace\}$,
+    the $\CompactGroup$-invariance yields
+    \begin{align*}
+        \ip{k e_i}{k e_j} = \ip{e_i}{e_j} = \Kronecker{i}{j},
+    \end{align*}
+    in other words, the columns of $k$ are orthogonal, hence $k \in \OrthogonalGroup{\VectorSpace}$.
+
+    Since $\CompactGroup$ is connected and contains $\Id\VectorSpace$, $\CompactGroup \subset \SpecialOrthogonalGroup\VectorSpace$.
+
+    If $f : \VectorSpace \to \C$ is integrable with respect to $\dd v = \phi^* \dd x$,
+    then
+    \begin{align*}
+        \int_\VectorSpace f(k v) \dd v \defeq \int_{\R^{\dim \VectorSpace}} f((\phi \circ k \circ \phi^{-1})x) \dd x
+        = \int_{\R^{\dim \VectorSpace}} f(x) \dd x
+        = \int_\VectorSpace f(v) \dd v,
+    \end{align*}
+    since $\phi \circ k \circ \phi^{-1} \in \SpecialOrthogonalGroup{\dim \VectorSpace}$.
+    The translation-invariance of $\dd v$ is trivial.
+\end{proof}
+
+\begin{definition}[$K$-invariant Lebesgue measure]
+    The measure defined in Lemma~\ref{lemma:K_subset_of_SO_and_invariance_of_the_induced_Lebesgue_measure}
+    will be called the \emph{Lebesgue measure} on $\CompactGroup$ and will be denoted by $\dd x$.
+\end{definition}
 
 From now on, unless stated otherwise,
 $\Group$ will denote a generalised motion group,
