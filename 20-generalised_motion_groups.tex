@@ -32,6 +32,17 @@
     \end{align*}
     where $\dd k$ is the Haar measure on $\CompactGroup$.
 
+    It follows that if $k \in \CompactGroup$,
+    then using the right-invariance of the Haar measure on compact groups,
+    we obtain
+    \begin{align*}
+        \ip{k x}{k y}
+        = \int_\CompactGroup Q(h k x, h k y) \dd h
+        = \int_\CompactGroup Q(h x, h y) \dd h
+        = \ip{x}{y},
+    \end{align*}
+    i.e.\ $\ip{\dummy}{\dummy}$ is $\CompactGroup$-invariant.
+
     The fact that $\ip{\dummy}{\dummy}$ is bilinear and nonnegative definite follows immediately from the fact that $Q$ has those properties.
     Now, if $x, y \in \VectorSpace$ are such that $\ip{x}{x} = 0$.
     It follows that $Q(k x, k x) = 0$ for almost every $k \in \CompactGroup$, hence for at least one such $k$.
