@@ -50,6 +50,17 @@ which will naturally determine two isomorphisms
     With the inner product defined in Lemma~\ref{lemma:existence_of_K-invariant_inner_product},
     $\CompactGroup$ is a Lie subgroup of $\SpecialOrthogonalGroup\VectorSpace$.
 \end{lemma}
+\begin{proof}
+    Let $k \in \CompactGroup$.
+    Given $i, j \in \{1, \dots, \dim \VectorSpace\}$,
+    the $\CompactGroup$-invariance yields
+    \begin{align*}
+        \ip{k e_i}{k e_j} = \ip{e_i}{e_j} = \Kronecker{i}{j},
+    \end{align*}
+    in other words, the columns of $k$ are orthogonal, hence $k \in \OrthogonalGroup{\VectorSpace}$.
+
+    Since $\CompactGroup$ is connected and contains $\Id\VectorSpace$, $\CompactGroup \subset \SpecialOrthogonalGroup\VectorSpace$.
+\end{proof}
 
 \begin{remark}
     Let $x \in \VectorSpace$ and $k \in \CompactGroup$.
