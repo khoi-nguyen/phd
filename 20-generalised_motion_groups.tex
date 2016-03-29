@@ -488,6 +488,24 @@ However, as we shall see later, the Fourier Transform on $\Group$ can be written
     \end{align*}
 \end{example}
 
+\begin{lemma}[Invariance property]
+    Let $\lambda \in \VectorSpace$.
+    For each $k \in \CompactGroup$, we have
+    \begin{align*}
+        \Rep{k \lambda}(y, l) = R_k \Rep{\lambda}(y, l) R_{k^{-1}}
+    \end{align*}
+\end{lemma}
+\begin{proof}
+    Let $F \in \Lebesgue{2}\CompactGroup$.
+    It follows that
+    \begin{align*}
+        R_k \Rep\lambda(y, l) R_{k^{-1}} F(u)
+        &= R_k (u \lambda)(x) F(l^{-1} u k^{-1})\\
+        &= (u k \lambda)(x) F(l^{-1} u)
+        = \Rep{k \lambda}(y, l) F(u).
+    \end{align*}
+\end{proof}
+
 \begin{lemma}
     Suppose $\Group = \R^2 \rtimes \SpecialOrthogonalGroup{2}$.
     If $(x, t) \in \Group$, then for each $m, n \in \Z$, we have
