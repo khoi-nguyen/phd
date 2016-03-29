@@ -824,23 +824,23 @@ the author remarks (\cite[Remark p. 84]{Ito52}) that the argument works for gene
     Let $\lambda \in \VectorSpace$, and $f \in \Lebesgue{1}\Group$.
     The \emph{integral kernel} of the operator $\Fourier f(\lambda)$ is given by
     \begin{align}
-        K_{f, \lambda}(u, k) \defeq \int_\CompactGroup \Fourier[\VectorSpace] f(k \lambda, k u^{-1}),
+        K_{f}(\lambda; u, k) \defeq \int_\CompactGroup \Fourier[\VectorSpace] f(k \lambda, k u^{-1}),
         \label{integral_kernel_of_Fourier_coefficient}
     \end{align}
     i.e. for every $F \in \Lebesgue{2}\CompactGroup$ and every $u \in \CompactGroup$, we have
     \begin{align*}
-        \Fourier f(\lambda) F(u) = \int_\CompactGroup K_{f, \lambda}(u, k) F(k) \dd k.
+        \Fourier f(\lambda) F(u) = \int_\CompactGroup K_f(\lambda; u, k) F(k) \dd k.
     \end{align*}
 
     In particular, the following properties hold:
     \begin{enumerate}
-        \item if $f \in \Schwartz\Group$, then $K_{f, \lambda}$ is smooth,
+        \item if $f \in \Schwartz\Group$, then $K_f$ is smooth,
             $\Fourier f(\lambda)$ is trace class and
             \begin{align*}
                 \tr(\Fourier f(\lambda)) = \int_\CompactGroup \Fourier[\VectorSpace] f(k \lambda, e) \dd k;
             \end{align*}
         \item if $f \in \Lebesgue{1}\Group \cap \Lebesgue{2}\Group$, then for almost every $\lambda \in \VectorSpace$,
-            $K_{f, \lambda}$ is Hilbert-Schmidt and
+            $\Fourier f(\lambda)$ is Hilbert-Schmidt and
             \begin{align*}
                 \norm[\SchattenClasses{2}{\Lebesgue{2}\CompactGroup}]{\Fourier f(\lambda)}^2
                 = \int_\CompactGroup \int_\CompactGroup \abs{\Fourier[\VectorSpace] f(k \lambda, u)}^2 \dd u \dd k
@@ -880,15 +880,15 @@ the author remarks (\cite[Remark p. 84]{Ito52}) that the argument works for gene
             Using~\cite[Corollary 4.1]{DelgadoRuzhansky14}, it follows that $\Fourier f(\lambda)$ is trace-class, and
             \begin{align*}
             \tr(\Fourier f(\lambda))
-            = \int_\CompactGroup K_{f, \lambda}(k, k) \dd k
+            = \int_\CompactGroup K_f(\lambda; k, k) \dd k
             = \int_\CompactGroup \Fourier[\VectorSpace] f(k \lambda, e) \dd k.
         \end{align*}
     \item Now, if $f \in \Lebesgue{1}\Group \cap \Lebesgue{2}\Group$,
-        then $K_{f, \lambda} \in \Lebesgue{2}{\CompactGroup \times \CompactGroup}$ for almost every $\lambda \in \VectorSpace$.
+        then $K_{f} \in \Lebesgue{2}{\CompactGroup \times \CompactGroup}$ for almost every $\lambda \in \VectorSpace$.
         For such $\lambda$, it follows by~\cite[Theorem VI.23]{Reed72} that $\Fourier f(\lambda)$ is Hilbert-Schmidt and
         \begin{align*}
             \norm[\SchattenClasses{2}{\Lebesgue{2}\CompactGroup}]{\Fourier f(\lambda)}^2
-            &= \int_\CompactGroup \int_\CompactGroup \abs{K_{f, \lambda}(u, k)}^2 \dd k \dd u\\
+            &= \int_\CompactGroup \int_\CompactGroup \abs{K_f(\lambda; u, k)}^2 \dd k \dd u\\
             &= \int_\CompactGroup \int_\CompactGroup \abs{\Fourier[\VectorSpace] f(k \lambda, k u^{-1})}^2 \dd k \dd u.
         \end{align*}
         Substituing $u$ for $u^{-1} k$ in the above, we obtain
