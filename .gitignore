@@ -16,3 +16,4 @@
 *.vim
 log.xml
 !references/*.pdf
+*-blx.bib
