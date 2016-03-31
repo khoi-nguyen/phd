@@ -85,6 +85,24 @@
     \end{enumerate}
 \end{proposition}
 
+\begin{definition}[Schwartz space]
+    We let $\Schwartz\Group$ be the space of all $f \in \SmoothFunctions\Group$
+    which are \emph{rapidly decaying},
+    i.e.\ such that for each $N \in \N$,
+    \begin{align*}
+        \seminorm[\Schwartz\Group]{N}{f} \defeq
+        \sup_{\abs\alpha \leq N}
+        \abs{%
+            {(1 + \abs{x})}^N
+            \LeftDifferentialOperator{\alpha} f(x, k)
+        }
+        < \infty.
+    \end{align*}
+
+    The maps ${(\seminorm[\Schwartz\Group]{N}{\dummy})}_{N \in \N}$ define a collection of semi-norms on $\Schwartz\Group$
+    and give it a structure of \emph{Fr\'echet space}.
+\end{definition}
+
 \section{Representation Theory}
 
 \begin{definition}[Unitary representations]
