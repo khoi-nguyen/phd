@@ -1,9 +1,8 @@
 .PHONY: all clean run
 
-
 all: main.pdf
 
-main.pdf: main.tex Makefile
+main.pdf: *.tex Makefile
 	latexmk -lualatex -pdf -use-make main.tex
 
 clean:
