@@ -1055,6 +1055,20 @@ The proof of the following result can be found in~\cite{Kumahara76}.
     where the last equality was obained by Proposition~\ref{proposition:elementary_properties_of_the_Fourier_transform}.
 \end{proof}
 
+\section{Fourier Transform of distributions}
+
+\begin{proposition}[Fourier transform and duality]
+    Let $f \in \Schwartz\Group$, and $H \in \Schwartz{\dualGroup\Group}$.
+    We have the identities
+    \begin{align*}
+        \ip[\dualGroup\Group]{\Fourier f}{H}
+        = \ip[\Group]{f}{\iota \circ \InverseFourier H},\quad
+        \ip[\Group]{\InverseFourier H}{f}
+        = \ip[\dualGroup\Group]{H}{\Fourier (\iota \circ f)},
+    \end{align*}
+    where $(\iota \circ f)(g) = f(g^{-1})$.
+\end{proposition}
+
 %\begin{definition}[$\LebesgueDual{2}{\Group}$]
 %    We shall say that a map
 %    \begin{align*}
