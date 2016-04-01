@@ -1069,6 +1069,26 @@ The proof of the following result can be found in~\cite{Kumahara76}.
     where $(\iota \circ f)(g) = f(g^{-1})$.
 \end{proposition}
 
+\begin{definition}[Fourier Transform on distributions]
+    Let $f \in \TemperedDistributions\Group$.
+    We define the \emph{Fourier Transform} of $f$, $\Fourier f$,
+    an element of $\TemperedDistributions{\dualGroup\Group}$, via
+    \begin{align*}
+        \ip[\dualGroup\Group]{\Fourier f}{H}
+        \defeq \ip[\Group]{f}{\iota \circ \InverseFourier H},\quad
+    \end{align*}
+    for any $H \in \Schwartz{\dualGroup\Group}$.
+
+    Similarly, let $H \in \TemperedDistributions{\dualGroup\Group}$.
+    We define the tempered distribution $\InverseFourier H \in \TemperedDistributions\Group$,
+    called the \emph{inverse Fourier Transform} of $H$, via
+    \begin{align*}
+        \ip[\Group]{\InverseFourier H}{f}
+        = \ip[\dualGroup\Group]{H}{\Fourier (\iota \circ f)},
+    \end{align*}
+    for any $f \in \TemperedDistributions\Group$.
+\end{definition}
+
 %\begin{definition}[$\LebesgueDual{2}{\Group}$]
 %    We shall say that a map
 %    \begin{align*}
