@@ -1055,85 +1055,155 @@ The proof of the following result can be found in~\cite{Kumahara76}.
     where the last equality was obained by Proposition~\ref{proposition:elementary_properties_of_the_Fourier_transform}.
 \end{proof}
 
-\begin{definition}[$\LebesgueDual{2}{\Group}$]
-    We shall say that a map
-    \begin{align*}
-        \sigma : \dualGroup{\VectorSpace} \to \HilbertSchmidt{\Lebesgue{2}{\CompactGroup}}
-    \end{align*}
-    belongs to $\LebesgueDual{2}{\Group}$ if and only if the following conditions are met:
+\section{Fourier Transform of distributions}
+
+\begin{definition}[Image of the Schwartz space]
+    We shall denote by $\Schwartz{\dualGroup\Group}$
+    the set of all functions $F \in \SmoothFunctions{\VectorSpace, \Lin{\Lebesgue{2}\CompactGroup}}$ such that:
     \begin{enumerate}
-        \item $\sigma$ is measurable;
-        \item for each $k \in \CompactGroup$, we have
+        \item For each $\alpha \in \N^{\dim \VectorSpace}$,
+            $\D[F]{\lambda^\alpha}$ leaves $\SmoothFunctions\CompactGroup$ stable;
+        \item For each $N \in \N$, the quantity
             \begin{align*}
-                \sigma(k \lambda) = R_k \sigma(\lambda) R_k^{-1}
+                \seminorm[\Schwartz{\dualGroup\Group}]{N}{F} \defeq
+                \sup_{\abs\alpha, \abs\beta, \abs{\beta'} \leq N}
+                \sup_{\lambda \in \VectorSpace}
+                {(1 + \abs\lambda)}^N
+                \norm[\Lin{\Lebesgue{2}\CompactGroup}]{%
+                    \Rep\lambda(\LeftDifferentialOperator\beta)
+                    \D[F]{\lambda^\alpha}(\lambda)
+                    \Rep\lambda(\LeftDifferentialOperator{\beta'})
+                }
             \end{align*}
-        \item the quantity
+            is finite;
+        \item For every $k \in \VectorSpace$ and each $\lambda \in \VectorSpace$,
             \begin{align*}
-                \norm[\LebesgueDual{2}{\Group}]{\sigma} \defeq
-                    \left(
-                        \int_\dualGroup{\VectorSpace}
-                            \norm[\HilbertSchmidt{\Lebesgue{2}{\CompactGroup}}]{\sigma(\lambda)}^2
-                        \dd \Plancherel{\VectorSpace}(\lambda)
-                    \right)^{\frac{1}{2}}
+                F(\lambda) = R_k^{-1} F(k \lambda) R(k).
             \end{align*}
-            is finite.
     \end{enumerate}
-
-    If $\sigma_1, \sigma_2 \in \LebesgueDual{2}{\Group}$, then we let
-    \begin{align*}
-        \ip[\LebesgueDual{2}{\Group}]{\sigma_1}{\sigma_2} \defeq
-        \int_\dualGroup{\VectorSpace}
-            \tr\left(
-                \sigma_1(\lambda) \adj{\sigma_2(\lambda)}
-            \right)
-        \dd \Plancherel{\VectorSpace}(\lambda).
-    \end{align*}
-    If we quotient $\LebesgueDual{2}{\Group}$ by $\Plancherel{\VectorSpace}$-almost everywhere equality,
-    which we shall do from now onwards,
-    then the above gives $\LebesgueDual{2}{\Group}$ the structure of a Hilbert space.
 \end{definition}
 
-\begin{definition}[$\Kernels{\Group}$]
-    We shall say that a tempered distribution $\kappa \in \TemperedDistributions{\Group}$ belongs to $\Kernels{\Group}$
-    if and only if the map
-    \begin{align}
-        T_\kappa : \Schwartz{\Group} \to \TemperedDistributions{\Group} : f \mapsto \conv{f}{\kappa}
-    \end{align}
-    extends to a continuous map from $\Lebesgue{2}{\Group}$ into itself.
-    In this case, we let
+\begin{lemma}
+    The space $\Schwartz{\dualGroup\Group}$ is a Fr\'echet space
+    whose topology is given by the seminorms $\seminorm[\Schwartz{\dualGroup\Group}]{N}{\dummy}$, $N \in \N$.
+\end{lemma}
+
+\begin{proposition}[Fourier transform and duality]
+    Let $f \in \Schwartz\Group$, and $H \in \Schwartz{\dualGroup\Group}$.
+    We have the identities
     \begin{align*}
-        \norm[\Kernels{\Group}]{\kappa} \defeq \norm[\Lin{\Lebesgue{2}{\Group}}]{T_\kappa}.
+        \ip[\dualGroup\Group]{\Fourier f}{H}
+        = \ip[\Group]{f}{\iota \circ \InverseFourier H},\quad
+        \ip[\Group]{\InverseFourier H}{f}
+        = \ip[\dualGroup\Group]{H}{\Fourier (\iota \circ f)},
     \end{align*}
+    where $(\iota \circ f)(g) = f(g^{-1})$.
+\end{proposition}
+
+\begin{definition}[Fourier Transform on distributions]
+    Let $f \in \TemperedDistributions\Group$.
+    We define the \emph{Fourier Transform} of $f$, $\Fourier f$,
+    an element of $\TemperedDistributions{\dualGroup\Group}$, via
+    \begin{align*}
+        \ip[\dualGroup\Group]{\Fourier f}{H}
+        \defeq \ip[\Group]{f}{\iota \circ \InverseFourier H},\quad
+    \end{align*}
+    for any $H \in \Schwartz{\dualGroup\Group}$.
+
+    Similarly, let $H \in \TemperedDistributions{\dualGroup\Group}$.
+    We define the tempered distribution $\InverseFourier H \in \TemperedDistributions\Group$,
+    called the \emph{inverse Fourier Transform} of $H$, via
+    \begin{align*}
+        \ip[\Group]{\InverseFourier H}{f}
+        = \ip[\dualGroup\Group]{H}{\Fourier (\iota \circ f)},
+    \end{align*}
+    for any $f \in \TemperedDistributions\Group$.
 \end{definition}
 
-\begin{definition}
-    We shall say that a map
-    \begin{align*}
-        \sigma : \dualGroup{\VectorSpace} \to \Lin{\Lebesgue{2}{\CompactGroup}}
-    \end{align*}
-    belongs to $\LebesgueDual{\infty}{\Group}$ if and only if it is invariant under $\CompactGroup$ and the quantity
-    \begin{align*}
-        \norm[\LebesgueDual{\infty}{\Group}]{\sigma} \defeq
-            \esssup_{\lambda \in \dualGroup{\VectorSpace}}
-                \norm[\Lin{\Lebesgue{2}{\CompactGroup}}]{\sigma(\lambda)}
-    \end{align*}
-    is finite.
-    The essential supremum is taken with respect to the Plancherel measure.
-\end{definition}
+\begin{proposition}
+    The Fourier Transform is a topological linear isomorphism
+    of $\TemperedDistributions\Group$ onto $\TemperedDistributions{\dualGroup\Group}$.
+\end{proposition}
 
-\begin{theorem}[Abstract Plancherel formula]
-    The Fourier Transform can be extended to a \emph{surjective} isometry
-    \begin{align*}
-        \Fourier : \Lebesgue{2}{\Group} \to \LebesgueDual{2}{\Group}.
-    \end{align*}
-
-    Moreover, for every left-invariant operator $T \in \Lin{\Lebesgue{2}{\Group}}$,
-    there exists a unique element $\sigma \in \LebesgueDual{\infty}{\Group}$ such that
-    \begin{align*}
-        \Fourier\{T f\}(\lambda) = \sigma(\lambda) \Fourier f(\lambda)
-    \end{align*}
-    holds for $\Plancherel{\Group}$-almost every $\lambda \in \dualGroup{\VectorSpace}$.
-\end{theorem}
+%\begin{definition}[$\LebesgueDual{2}{\Group}$]
+%    We shall say that a map
+%    \begin{align*}
+%        \sigma : \dualGroup{\VectorSpace} \to \HilbertSchmidt{\Lebesgue{2}{\CompactGroup}}
+%    \end{align*}
+%    belongs to $\LebesgueDual{2}{\Group}$ if and only if the following conditions are met:
+%    \begin{enumerate}
+%        \item $\sigma$ is measurable;
+%        \item for each $k \in \CompactGroup$, we have
+%            \begin{align*}
+%                \sigma(k \lambda) = R_k \sigma(\lambda) R_k^{-1}
+%            \end{align*}
+%        \item the quantity
+%            \begin{align*}
+%                \norm[\LebesgueDual{2}{\Group}]{\sigma} \defeq
+%                    \left(
+%                        \int_\dualGroup{\VectorSpace}
+%                            \norm[\HilbertSchmidt{\Lebesgue{2}{\CompactGroup}}]{\sigma(\lambda)}^2
+%                        \dd \Plancherel{\VectorSpace}(\lambda)
+%                    \right)^{\frac{1}{2}}
+%            \end{align*}
+%            is finite.
+%    \end{enumerate}
+%
+%    If $\sigma_1, \sigma_2 \in \LebesgueDual{2}{\Group}$, then we let
+%    \begin{align*}
+%        \ip[\LebesgueDual{2}{\Group}]{\sigma_1}{\sigma_2} \defeq
+%        \int_\dualGroup{\VectorSpace}
+%            \tr\left(
+%                \sigma_1(\lambda) \adj{\sigma_2(\lambda)}
+%            \right)
+%        \dd \Plancherel{\VectorSpace}(\lambda).
+%    \end{align*}
+%    If we quotient $\LebesgueDual{2}{\Group}$ by $\Plancherel{\VectorSpace}$-almost everywhere equality,
+%    which we shall do from now onwards,
+%    then the above gives $\LebesgueDual{2}{\Group}$ the structure of a Hilbert space.
+%\end{definition}
+%
+%\begin{definition}[$\Kernels{\Group}$]
+%    We shall say that a tempered distribution $\kappa \in \TemperedDistributions{\Group}$ belongs to $\Kernels{\Group}$
+%    if and only if the map
+%    \begin{align}
+%        T_\kappa : \Schwartz{\Group} \to \TemperedDistributions{\Group} : f \mapsto \conv{f}{\kappa}
+%    \end{align}
+%    extends to a continuous map from $\Lebesgue{2}{\Group}$ into itself.
+%    In this case, we let
+%    \begin{align*}
+%        \norm[\Kernels{\Group}]{\kappa} \defeq \norm[\Lin{\Lebesgue{2}{\Group}}]{T_\kappa}.
+%    \end{align*}
+%\end{definition}
+%
+%\begin{definition}
+%    We shall say that a map
+%    \begin{align*}
+%        \sigma : \dualGroup{\VectorSpace} \to \Lin{\Lebesgue{2}{\CompactGroup}}
+%    \end{align*}
+%    belongs to $\LebesgueDual{\infty}{\Group}$ if and only if it is invariant under $\CompactGroup$ and the quantity
+%    \begin{align*}
+%        \norm[\LebesgueDual{\infty}{\Group}]{\sigma} \defeq
+%            \esssup_{\lambda \in \dualGroup{\VectorSpace}}
+%                \norm[\Lin{\Lebesgue{2}{\CompactGroup}}]{\sigma(\lambda)}
+%    \end{align*}
+%    is finite.
+%    The essential supremum is taken with respect to the Plancherel measure.
+%\end{definition}
+%
+%\begin{theorem}[Abstract Plancherel formula]
+%    The Fourier Transform can be extended to a \emph{surjective} isometry
+%    \begin{align*}
+%        \Fourier : \Lebesgue{2}{\Group} \to \LebesgueDual{2}{\Group}.
+%    \end{align*}
+%
+%    Moreover, for every left-invariant operator $T \in \Lin{\Lebesgue{2}{\Group}}$,
+%    there exists a unique element $\sigma \in \LebesgueDual{\infty}{\Group}$ such that
+%    \begin{align*}
+%        \Fourier\{T f\}(\lambda) = \sigma(\lambda) \Fourier f(\lambda)
+%    \end{align*}
+%    holds for $\Plancherel{\Group}$-almost every $\lambda \in \dualGroup{\VectorSpace}$.
+%\end{theorem}
 
 \subsection{Sobolev spaces}
 
