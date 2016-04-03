@@ -1057,6 +1057,32 @@ The proof of the following result can be found in~\cite{Kumahara76}.
 
 \section{Fourier Transform of distributions}
 
+\begin{definition}[Image of the Schwartz space]
+    We shall denote by $\Schwartz{\dualGroup\Group}$
+    the set of all functions $F \in \SmoothFunctions{\VectorSpace, \Lin{\Lebesgue{2}\CompactGroup}}$ such that:
+    \begin{enumerate}
+        \item For each $\alpha \in \N^{\dim \VectorSpace}$,
+            $\D[F]{\lambda^\alpha}$ leaves $\SmoothFunctions\CompactGroup$ stable;
+        \item For each $N \in \N$, the quantity
+            \begin{align*}
+                \seminorm[\Schwartz{\dualGroup\Group}]{N}{F} \defeq
+                \sup_{\abs\alpha, \abs\beta, \abs{\beta'} \leq N}
+                \sup_{\lambda \in \VectorSpace}
+                {(1 + \abs\lambda)}^N
+                \norm[\Lin{\Lebesgue{2}\CompactGroup}]{%
+                    \Rep\lambda(\LeftDifferentialOperator\beta)
+                    \D[F]{\lambda^\alpha}(\lambda)
+                    \Rep\lambda(\LeftDifferentialOperator{\beta'})
+                }
+            \end{align*}
+            is finite;
+        \item For every $k \in \VectorSpace$ and each $\lambda \in \VectorSpace$,
+            \begin{align*}
+                F(\lambda) = R_k^{-1} F(k \lambda) R(k).
+            \end{align*}
+    \end{enumerate}
+\end{definition}
+
 \begin{proposition}[Fourier transform and duality]
     Let $f \in \Schwartz\Group$, and $H \in \Schwartz{\dualGroup\Group}$.
     We have the identities
