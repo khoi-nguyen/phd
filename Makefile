@@ -15,6 +15,7 @@ clean:
 	latexmk -CA
 	if [ -f *.bbl ]; then rm *.bbl ; fi;
 	if [ -f *.synctex.gz ]; then rm *.synctex.gz ; fi;
+	rm talks/*.md.pdf
 
 run:
 	(xdg-open main.pdf) &
