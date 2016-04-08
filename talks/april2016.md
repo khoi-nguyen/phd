@@ -77,3 +77,61 @@ The \emph{Euclidean} structure naturally gives us **partial derivatives**.
 > - $\Delta$ is invariant under $K$:
     $$(\Delta f)(k x) = \Delta \{ f(k \cdot) \} (x)$$
 > - Action of $K$ on $V$ commutes with the dilation structure of $V$.
+
+# Fourier Analysis
+
+## Unitary representations
+
+### Definition ($\xi^\lambda$)
+
+Let $\lambda \in V$.
+We let
+
+$$\xi^\lambda(x, k) F(u) = e^{i 2 \pi (u \lambda, x)} F(k^{-1} u),$$
+
+where $F \in L^2(K)$ and $u \in K$.
+
+. . .
+
+### Remark
+
+$\xi^\lambda$ is **reducible** but all irreducible unitary representations are contained in at least one of the $\xi^\lambda$ for some $\lambda \in V$.
+
+## Fourier Transform
+
+### Fourier coefficient
+
+Let $\lambda \in V$ and $f \in L^1(G)$.
+The *Fourier coefficient of $f$ at $\lambda$* is defined via
+
+$$\mathcal{F} f(\lambda) = \int_{V \times K} f(x, k) {\xi^\lambda(x, k)}^* dx dk.$$
+
+. . .
+
+### Fourier Transform
+
+The map
+
+$$\lambda \mapsto \mathcal{F} f(\lambda)$$
+
+is called the **Fourier Transform of $f$**.
+
+## Plancherel and Inverse Formula
+
+### Plancherel formula
+
+Let $f \in L^1(G) \cap L^2(G)$.
+For almost every $\lambda \in V$,
+the operator $\mathcal{F} f$ is *Hilbert-Schmidt*
+and we have
+
+$$\int_G |f|^2 dg = \int_V tr(\mathcal{F} f(\lambda) \mathcal{F} f(\lambda)^*) d\lambda.$$
+
+. . .
+
+### Inverse formula
+
+Let $f \in \mathcal{S}(G)$.
+For every $g \in G$, we have
+
+$$f(g) = \int_V tr(\xi^\lambda(g) \mathcal{F} f(\lambda)) d\lambda.$$
