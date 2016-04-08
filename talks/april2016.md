@@ -47,7 +47,7 @@ Therefore, we have:
 
 $$\mathbb{R}^n \ltimes SO(n) = \left( \{g \in \text{Aff}(\mathbb{R}^n) : \det g = 1\}, \circ \right)$$
 
-## Euclidean structure on $V$
+## Choice of Euclidean structure on $V$
 
 Suppose $Q$ is an inner product on $V$.
 
@@ -65,12 +65,15 @@ $$(kx, ky) = (x, y),$$
 
 in other words $K \subset SO(V)$ (since $K$ is *connected*).
 
+. . .
+
+The \emph{Euclidean} structure naturally gives us **partial derivatives** and a **Lebesgue measure** $dx$.
+
 ## Euclidean structure on $V$
 
 > - $dx$ is invariant under $K$:
     $$\int f(k x) dx = \int f(x) dx$$
+>     - $dx dk$ is a **Haar measure** on $V \ltimes K$.
 > - $\Delta$ is invariant under $K$:
     $$(\Delta f)(k x) = \Delta \{ f(k \cdot) \} (x)$$
 > - Action of $K$ on $V$ commutes with the dilation structure of $V$.
-
-> - $dx dk$ is a **Haar measure** on $V \ltimes K$.
