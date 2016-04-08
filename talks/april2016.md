@@ -1,6 +1,7 @@
 ---
 title: Pseudo-differential calculus on the Motion Group
 author: Binh-Khoi Nguyen
+institute: Imperial College London
 ...
 
 # Preliminaries
