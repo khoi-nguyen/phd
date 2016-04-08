@@ -135,3 +135,53 @@ Let $f \in \mathcal{S}(G)$.
 For every $g \in G$, we have
 
 $$f(g) = \int_V tr(\xi^\lambda(g) \mathcal{F} f(\lambda)) d\lambda.$$
+
+# Pseudo-differential calculus
+
+## Difference operators
+
+If $q \in C^\infty$, we let
+
+$$(\Delta_q \mathcal{F} f)(\lambda) = \mathcal{F}\{q f\}(\lambda)$$
+
+. . .
+
+We choose an *"admissible"* family $q_1, \dots, q_M$ and write
+$$q^\alpha = q_1^{\alpha_1} \dots q_M^{\alpha_M}, \quad \Delta^\alpha = \Delta_{q^\alpha}$$
+
+## Symbol classes
+
+A map $(g; \lambda) \mapsto \sigma(g; \lambda)$ is called a **symbol of order $m$** if
+
+> - for each $g \in G$ and each $\lambda \in V$, $\sigma(g, \lambda) \in End(C^\infty(K))$
+> - for each $k \in K$,
+    $$\sigma(g, k\lambda) = R_k \sigma(g, \lambda) R_k^{-1},$$
+    where $R_k$ is the right-regular representation.
+> - for almost every $\lambda \in V$,
+    $$\xi^\lambda(I - \Delta_G)^{\frac{-m + |\alpha| - \gamma}{2}} X^\beta_g \Delta^\alpha_\lambda \sigma(g, \lambda) \xi^\lambda(I - \Delta_G)^{\frac{\gamma}{2}}$$
+    is a bounded linear operator in $L^2(K)$ uniformly in $g \in G$.
+
+## Quantization
+
+### Quantization
+
+Let $\sigma$ be a *symbol of order $m$*.
+For each $f \in \mathcal{S}(G)$, we let
+
+$$T_\sigma f(g) = \int_V tr\left(\xi^\lambda(g) \sigma(g, \lambda) \mathcal{F} f(\lambda) \right) d\lambda.$$
+
+. . .
+
+### Operator classes
+
+An operator $T$ is said to be of **order $m$** if
+there exists a symbol $\sigma \in S^m$ such that $T = T_\sigma$.
+
+**Notation**: $\Psi^m$
+
+## Main results
+
+> - If $T \in \Psi^m$, then $T^* \in \Psi^m$
+> - If $T_1 \in \Psi^{m_1}$ and $T_2 \in \Psi^{m_2}$, then $T = T_1 T_2 \in \Psi^{m_1 + m_2}$ and
+    $$\sigma - \sum_{|\alpha| \leq M} \Delta^\alpha \sigma_1 X^{(\alpha)}_g \sigma_2 \in S^{m - M}$$
+> - If $K$ is *abelian*, correspondence with **Hormander classes**.
