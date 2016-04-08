@@ -67,7 +67,7 @@ in other words $K \subset SO(V)$ (since $K$ is *connected*).
 
 . . .
 
-The \emph{Euclidean} structure naturally gives us **partial derivatives** and a **Lebesgue measure** $dx$.
+The \emph{Euclidean} structure naturally gives us **partial derivatives**.
 
 ## Euclidean structure on $V$
 
