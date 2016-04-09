@@ -49,29 +49,9 @@ Therefore, we have:
 
 $$\mathbb{R}^n \ltimes SO(n) \simeq \left( \{g \in \text{Aff}(\mathbb{R}^n) : \det g = 1\}, \circ \right)$$
 
-## Choice of Euclidean structure on $V$
-
-Suppose $Q$ is an inner product on $V$.
-
-We let
-
-$$(x, y) = \int_K Q(kx, ky) dk,$$
-
-where $dk$ is the **(normalised) Haar measure** on $K$.
-
-. . .
-
-It follows that for each $k \in K$,
-
-$$(kx, ky) = (x, y),$$
-
-in other words $K \subset SO(V)$ (since $K$ is *connected*).
-
-. . .
-
-The \emph{Euclidean} structure naturally gives us **partial derivatives**.
-
 ## Euclidean structure on $V$
+
+By choosing a suitable inner product, $K \subset SO(V)$.
 
 > - $dx$ is invariant under $K$:
     $$\int f(k x) dx = \int f(x) dx$$
