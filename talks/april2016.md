@@ -64,9 +64,9 @@ Symbol/pseudo-differential calculus has been developed for
 
 . . .
 
-> - Euclidean spaces $\mathbb{R}^n$
-> - Compact lie groups (Ruzhansky-Turunen 2010, Fischer 2015)
-> - Graded Lie groups (Fischer, Ruzhansky)
+> - Euclidean spaces $\mathbb{R}^n$ (Kohn-Nirenberg, Hormander)
+> - Compact Lie groups (Ruzhansky-Turunen 2010)
+> - Graded Lie groups (Fischer-Ruzhansky 2015)
 
 # The Motion Group
 
