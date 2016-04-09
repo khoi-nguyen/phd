@@ -10,6 +10,8 @@ institute: Imperial College London
 
 ### Our setting
 
+. . .
+
 > - $V$: finite-dimensional vector space
 > - $K$: compact, connected, Lie group acting linearly on $V$
 > - $G = V \ltimes K$
@@ -27,6 +29,8 @@ $$(x, k) (y, l) := (x + ky, kl).$$
 . . .
 
 ### Examples
+
+. . .
 
 > - $K = \{Id\}$, $G = V \times K$.
 > - $K = SO(V)$: Euclidean motion group
@@ -52,6 +56,8 @@ $$\mathbb{R}^n \ltimes SO(n) \simeq \left( \{g \in \text{Aff}(\mathbb{R}^n) : \d
 ## Euclidean structure on $V$
 
 By choosing a suitable inner product, $K \subset SO(V)$.
+
+. . .
 
 > - $dx$ is invariant under $K$:
     $$\int f(k x) dx = \int f(x) dx$$
@@ -148,6 +154,8 @@ $$q^\alpha = q_1^{\alpha_1} \dots q_M^{\alpha_M}, \quad \Delta^\alpha = \Delta_{
 
 A map $(g; \lambda) \mapsto \sigma(g; \lambda)$ is called a **symbol of order $m$** if
 
+. . .
+
 > - for each $g \in G$ and each $\lambda \in V$, $\sigma(g, \lambda) \in End(C^\infty(K))$
 > - for each $k \in K$,
     $$\sigma(g, k\lambda) = R_k \sigma(g, \lambda) R_k^{-1},$$
@@ -176,6 +184,8 @@ there exists a symbol $\sigma \in S^m$ such that $T = T_\sigma$.
 
 ## Main results
 
+. . .
+
 > - If $T \in \Psi^m$, then $T^* \in \Psi^m$
 > - If $T_1 \in \Psi^{m_1}$ and $T_2 \in \Psi^{m_2}$, then $T = T_1 T_2 \in \Psi^{m_1 + m_2}$ and
     $$\sigma - \sum_{|\alpha| \leq M} \Delta^\alpha \sigma_1 X^{(\alpha)}_g \sigma_2 \in S^{m - M}$$
@@ -187,6 +197,8 @@ there exists a symbol $\sigma \in S^m$ such that $T = T_\sigma$.
 
 A collection of symbols $\eta_l$, $l \in \mathbb{N}$ is called a **Littlewood-Paley decomposition**
 if
+
+. . .
 
 > - They sum to the identity $\sum_{l = 0}^\infty \eta_l = Id$
 > - for each $m, l, \alpha, \gamma$
@@ -211,6 +223,8 @@ we can construct a Littlewood-Paley decomposition on $V \ltimes K$.
 ## Proof when $\alpha = 0$
 
 Suppose $(\chi_l)_l$ is our Littlewood-Paley decomposition on $V$.
+
+. . .
 
 > - **Step 1**: Define
     $$\left. \eta_l(\lambda) \right|_{V_\tau} = \begin{cases} \chi_{l - \lceil \log_2 \langle \tau \rangle \rceil}(\lambda) Id_{V_\tau} & \text{if } \langle \tau \rangle \leq 2^l \\ 0 & \text{otherwise} \end{cases}$$
