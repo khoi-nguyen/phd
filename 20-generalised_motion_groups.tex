@@ -451,6 +451,31 @@ From now on, we fix a basis $X_1, \dots, X_{\dim \Group}$ of $\LieAlgebra$ such 
     \end{align*}
 \end{definition}
 
+\begin{proposition}
+    Let $f \in \SmoothFunctions\Group$.
+    If $(x, k) \in \Group$, we check that
+    \begin{align*}
+        \Laplacian f(x, k) = \Laplacian[\VectorSpace] f(x, k) + \Laplacian[\CompactGroup] f(x, k)
+    \end{align*}
+\end{proposition}
+\begin{proof}
+    Let $(x, k) \in \Group$.
+    By ,
+    we check that for each $j \in \{1, \dots, \dim \VectorSpace\}$,
+    \begin{align*}
+        \LeftDifferentialOperatorFirstOrder{X_j} \LeftDifferentialOperatorFirstOrder{X_j} f(x, k)
+        &= \LeftDifferentialOperatorFirstOrder{X_j} \ip{k^{-1} \grad f(x, k)}{e_j}\\
+        &= \ip{k^{-1} \dd \grad f(x, k)[k e_j]}{e_j}\\
+        &= \ip{k^{-1} \Hessian f(x, k) k e_j}{e_j}.
+    \end{align*}
+
+    Summing with respect to $j$, we get that
+    \begin{align*}
+        \sum_{j = 0}^{\dim \VectorSpace} \LeftDifferentialOperatorFirstOrder{X_j} \LeftDifferentialOperatorFirstOrder{X_j} f(x, k)
+        = \tr \Hessian f(x, k) = \Laplacian[\VectorSpace] f(x, k).
+    \end{align*}
+\end{proof}
+
 \section{Unitary representations}
 
 \begin{definition}
