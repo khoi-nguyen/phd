@@ -4,7 +4,7 @@ author: Binh-Khoi Nguyen
 institute: Imperial College London
 ...
 
-# Preliminaries
+# The Motion Group
 
 ## Motion Groups
 
@@ -16,9 +16,11 @@ institute: Imperial College London
 
 . . .
 
-### Group law
+### Semi-direct product: group law
 
-If $(x, k), (y, l) \in V$, we let:
+If $(x, k), (y, l) \in G$, we let:
+
+. . .
 
 $$(x, k) (y, l) := (x + ky, kl).$$
 
@@ -39,13 +41,13 @@ $$g_{x, k}(z) = k z + x$$
 
 It follows that
 
-$$g_{x, k} \circ g_{y, l} = g_{x + ky, kl} = g_{(x, k)(y, l)}$$
+$$g_{x, k} \circ g_{y, l} = g_{x + ky, kl}$$
 
 . . .
 
 Therefore, we have:
 
-$$\mathbb{R}^n \ltimes SO(n) = \left( \{g \in \text{Aff}(\mathbb{R}^n) : \det g = 1\}, \circ \right)$$
+$$\mathbb{R}^n \ltimes SO(n) \simeq \left( \{g \in \text{Aff}(\mathbb{R}^n) : \det g = 1\}, \circ \right)$$
 
 ## Choice of Euclidean structure on $V$
 
