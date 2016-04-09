@@ -58,6 +58,16 @@ It follows that $\kappa_g = \Delta \delta_0$ and $\sigma(g, \xi) = - (2 \pi)^2 |
 > - **Inverting the symbol** constitutes a first **approximation to $T^{-1}$**:
     $$T_{\sigma_1} T_{\sigma_2} = T_{\sigma_1 \sigma_2} + \text{lower order terms}$$
 
+## Current situation
+
+Symbol/pseudo-differential calculus has been developed for
+
+. . .
+
+> - Euclidean spaces $\mathbb{R}^n$
+> - Compact lie groups (Ruzhansky-Turunen 2010, Fischer 2015)
+> - Graded Lie groups (Fischer, Ruzhansky)
+
 # The Motion Group
 
 ## Motion Groups
