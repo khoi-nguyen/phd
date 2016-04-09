@@ -2,7 +2,61 @@
 title: Pseudo-differential calculus on the Motion Group
 author: Binh-Khoi Nguyen
 institute: Imperial College London
+header-includes:
+    - \usepackage{tikz-cd}
+    - \usetikzlibrary{matrix}
 ...
+
+# Introduction
+
+## Pseudo-differential calculus
+
+### Definition (Pseudo-differential calculus on a Lie group G)
+
+For each $m \in \mathbb{R}$, let $\Psi^m$ be a collection of operators $\mathcal{S}(G)$ to $C^\infty(G)$.
+
+The collection $(\Psi_m)_m$ is called a **pseudo-differential calculus** if
+
+. . .
+
+> - $Diff^m \subset \Psi^m$
+> - $m \leq m'$ implies $\Psi^m \subset \Psi^{m'}$
+> - If $T_1 \in \Psi^{m_1}$, $T_2 \in \Psi^{m_2}$, then $T_1 T_2 \in \Psi^{m_1 + m_2}$
+> - $\Psi^m$ is stable under taking the adjoint
+> - If $T \in \Psi^m$, then $T$ extends continuously to a bounded operator
+    $$T : H^s \to H^{s - m}.$$
+
+## Symbol {.fragile}
+
+Suppose that $T \phi(g) = \phi * \kappa_g$.
+Letting $\sigma(g, \xi) = \mathcal{F} \kappa_g(\xi)$, we have
+$$T \phi(g) = \int_{\widehat{G}} tr\left(\xi(g) \sigma(g, \xi) \widehat\phi(\xi)\right) d\mu(\xi)$$
+
+. . .
+
+In other words,
+
+\begin{equation*}
+\begin{tikzcd}
+\phi(g) \arrow{r}{T}\arrow{d}[swap]{\mathcal{F}} & T \phi(g) \\
+\widehat\phi(\xi)\arrow{r}[swap]{\sigma} & \sigma(g, \xi) \widehat\phi(\xi) \arrow{u}[swap]{\mathcal{F}^{-1}} \\
+\end{tikzcd}
+\end{equation*}
+
+## Advantages of symbols
+
+Suppose $G = \mathbb{R}^n$, $T = \Delta_{\mathbb{R}^n}$.
+
+. . .
+
+It follows that $\kappa_g = \Delta \delta_0$ and $\sigma(g, \xi) = - (2 \pi)^2 |\xi|^2$.
+
+. . .
+
+> - Symbols are **smoother** than kernels
+> - For a fixed $(g, \xi)$, $\sigma(g, \xi)$ is a **linear operator** and so has an easy **inversion criterion**.
+> - **Inverting the symbol** constitutes a first **approximation to $T^{-1}$**:
+    $$T_{\sigma_1} T_{\sigma_2} = T_{\sigma_1 \sigma_2} + \text{lower order terms}$$
 
 # The Motion Group
 
