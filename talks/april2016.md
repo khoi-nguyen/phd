@@ -119,6 +119,18 @@ For every $g \in G$, we have
 
 $$f(g) = \int_V tr(\xi^\lambda(g) \mathcal{F} f(\lambda)) d\lambda.$$
 
+## Fourier Transform and differential operators
+
+If $X$ is a **left-invariant differential operator**,
+
+$$\xi^\lambda(X) \mathcal{F} f(\lambda) = \mathcal{F} \{ X f \}(\lambda).$$
+
+. . .
+
+### Example
+
+$$\xi^\lambda(1 - \Delta_G) = (1 + |\lambda|^2)Id + \tilde\Delta_K$$
+
 # Pseudo-differential calculus
 
 ## Difference operators
