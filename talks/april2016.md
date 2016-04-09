@@ -128,7 +128,7 @@ By choosing a suitable inner product, $K \subset SO(V)$.
 >     - $dx dk$ is a **Haar measure** on $V \ltimes K$.
 > - $\Delta$ is invariant under $K$:
     $$(\Delta f)(k x) = \Delta \{ f(k \cdot) \} (x)$$
->      - $\Delta_G f(x, k) = \Delta_V f(k x, k) + \Delta_K f(x, k)$
+>      - $\Delta_G f(x, k) = \Delta_V f(x, k) + \Delta_K f(x, k)$
 > - Action of $K$ on $V$ commutes with the dilation structure of $V$.
 
 # Fourier Analysis
