@@ -125,7 +125,7 @@ By choosing a suitable inner product, $K \subset SO(V)$.
 
 ## Unitary representations
 
-### Definition ($\xi^\lambda$)
+### Definition ($\xi^\lambda$) [Ito 1952]
 
 Let $\lambda \in V$.
 We let
@@ -193,7 +193,7 @@ $$\xi^\lambda(1 - \Delta_G) = (1 + |\lambda|^2)Id + \tilde\Delta_K$$
 
 # Pseudo-differential calculus
 
-## Difference operators
+## Difference operators [Ruzhansky-Turunen 2010]
 
 If $q \in C^\infty$, we let
 
