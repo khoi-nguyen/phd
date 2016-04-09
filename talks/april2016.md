@@ -187,3 +187,43 @@ there exists a symbol $\sigma \in S^m$ such that $T = T_\sigma$.
 > - If $T_1 \in \Psi^{m_1}$ and $T_2 \in \Psi^{m_2}$, then $T = T_1 T_2 \in \Psi^{m_1 + m_2}$ and
     $$\sigma - \sum_{|\alpha| \leq M} \Delta^\alpha \sigma_1 X^{(\alpha)}_g \sigma_2 \in S^{m - M}$$
 > - If $K$ is *abelian*, correspondence with **Hormander classes**.
+
+## Main ingredient for proofs
+
+### Definition (Littlewood-Paley decomposition)
+
+A collection of symbols $\eta_l$, $l \in \mathbb{N}$ is called a **Littlewood-Paley decomposition**
+if
+
+> - They sum to the identity $\sum_{l = 0}^\infty \eta_l = Id$
+> - for each $m, l, \alpha, \gamma$
+    $$\left\|\xi^\lambda(I - \Delta_G)^{\frac{-m - |\alpha| + \gamma}{2}} \Delta^\alpha \eta_l(\lambda) \xi^\lambda(I - \Delta_G)^{\frac{-\gamma}{2}}\right\|_{op} \leq C_\alpha 2^{-l m}$$
+
+. . .
+
+### Littlewood-Paley decomposition on V
+
+A sequence $\chi_l \in C^\infty(V)$, $l \in \mathbb{N}$ such that
+$\sum_{l = 0}^\infty \chi_l = 1$ and
+
+$$|\partial^\alpha \chi_l(\lambda)| \leq C_\alpha 2^{-lm} (1 + |\lambda|)^{m - |\alpha|}$$
+
+- - -
+
+### Theorem: Littlewood-Paley decomposition
+
+From a Littlewood-Paley decomposition on $V$ which is **invariant under $K$**,
+we can construct a Littlewood-Paley decomposition on $V \ltimes K$.
+
+## Proof when $\alpha = 0$
+
+Suppose $(\chi_l)_l$ is our Littlewood-Paley decomposition on $V$.
+
+> - **Step 1**: Define
+    $$\left. \eta_l(\lambda) \right|_{V_\tau} = \begin{cases} \chi_{l - \lceil \log_2 \langle \tau \rangle \rceil}(\lambda) Id_{V_\tau} & \text{if } \langle \tau \rangle \leq 2^l \\ 0 & \text{otherwise} \end{cases}$$
+    where $V_\tau = {span \{\tau_{ij} : i, j \leq d_\tau \}}$.
+    Remember that $L^2(K) = \bigoplus_{\tau \in \widehat{K}} V_\tau$.
+> - **Step 2**: Check $\sum_{l = 0}^\infty \eta_l = Id$.
+> - **Step 3**: Compute
+    $$\left. \xi^\lambda(I - \Delta_G)^{\frac{-m + \gamma}{2}} \eta_l(\lambda) \xi^\lambda(l - \Delta_G)^{-\frac{\gamma}{2}} \right|_{V_\tau} = (|\lambda|^2 + \langle \tau \rangle^2)^{\frac{-m}{2}} \left. \eta_l(\lambda) \right|_{V_\tau}$$
+> - **Step 4**: Conclude.
