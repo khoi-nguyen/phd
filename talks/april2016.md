@@ -224,9 +224,13 @@ A map $(g; \lambda) \mapsto \sigma(g; \lambda)$ is called a **symbol of order $m
 > - for each $k \in K$,
     $$\sigma(g, k\lambda) = R_k \sigma(g, \lambda) R_k^{-1},$$
     where $R_k$ is the right-regular representation.
-> - for almost every $\lambda \in V$,
+> - for every $g \in G$ and almost every $\lambda \in V$,
     $$\xi^\lambda(I - \Delta_G)^{\frac{-m + |\alpha| - \gamma}{2}} X^\beta_g \Delta^\alpha_\lambda \sigma(g, \lambda) \xi^\lambda(I - \Delta_G)^{\frac{\gamma}{2}}$$
-    is a bounded linear operator in $L^2(K)$ uniformly in $g \in G$.
+    is a bounded linear operator in $L^2(K)$ uniformly in $g \in G$ and $\lambda \in V$.
+
+. . .
+
+**Notation**: $S^m$
 
 ## Quantization
 
