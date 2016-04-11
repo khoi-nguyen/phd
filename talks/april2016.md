@@ -220,12 +220,13 @@ A map $(g; \lambda) \mapsto \sigma(g; \lambda)$ is called a **symbol of order $m
 
 . . .
 
+> - it is smooth in $g$;
 > - for each $g \in G$ and each $\lambda \in V$, $\sigma(g, \lambda) \in End(C^\infty(K))$
 > - for each $k \in K$,
     $$\sigma(g, k\lambda) = R_k \sigma(g, \lambda) R_k^{-1},$$
     where $R_k$ is the right-regular representation.
 > - for every $g \in G$ and almost every $\lambda \in V$,
-    $$\xi^\lambda(I - \Delta_G)^{\frac{-m + |\alpha| - \gamma}{2}} X^\beta_g \Delta^\alpha_\lambda \sigma(g, \lambda) \xi^\lambda(I - \Delta_G)^{\frac{\gamma}{2}}$$
+    $$\xi^\lambda(I - \Delta_G)^{\frac{-m + |\alpha|}{2}} X^\beta_g \Delta^\alpha_\lambda \sigma(g, \lambda)$$
     is a bounded linear operator in $L^2(K)$ uniformly in $g \in G$ and $\lambda \in V$.
 
 . . .
@@ -270,7 +271,7 @@ if
 
 > - They sum to the identity $\sum_{l = 0}^\infty \eta_l = Id$
 > - for each $m, l, \alpha, \gamma$
-    $$\left\|\xi^\lambda(I - \Delta_G)^{\frac{-m - |\alpha| + \gamma}{2}} \Delta^\alpha \eta_l(\lambda) \xi^\lambda(I - \Delta_G)^{\frac{-\gamma}{2}}\right\|_{op} \leq C_\alpha 2^{-l m}$$
+    $$\left\|\xi^\lambda(I - \Delta_G)^{\frac{-m - |\alpha| }{2}} \Delta^\alpha \eta_l(\lambda) \right\|_{op} \leq C_\alpha 2^{-l m}$$
 
 . . .
 
@@ -300,5 +301,5 @@ Suppose $(\chi_l)_l$ is our Littlewood-Paley decomposition on $V$.
     Remember that $L^2(K) = \bigoplus_{\tau \in \widehat{K}} V_\tau$.
 > - **Step 2**: Check $\sum_{l = 0}^\infty \eta_l = Id$.
 > - **Step 3**: Compute
-    $$\left. \xi^\lambda(I - \Delta_G)^{\frac{-m + \gamma}{2}} \eta_l(\lambda) \xi^\lambda(l - \Delta_G)^{-\frac{\gamma}{2}} \right|_{V_\tau} = (|\lambda|^2 + \langle \tau \rangle^2)^{\frac{-m}{2}} \left. \eta_l(\lambda) \right|_{V_\tau}$$
+    $$\left. \xi^\lambda(I - \Delta_G)^{\frac{-m + \gamma}{2}} \eta_l(\lambda) \right|_{V_\tau} = (|\lambda|^2 + \langle \tau \rangle^2)^{\frac{-m}{2}} \left. \eta_l(\lambda) \right|_{V_\tau}$$
 > - **Step 4**: Conclude.
