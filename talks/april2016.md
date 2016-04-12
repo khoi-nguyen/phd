@@ -199,7 +199,7 @@ $$\xi^\lambda(X) \mathcal{F} f(\lambda) = \mathcal{F} \{ X f \}(\lambda).$$
 
 ### Example
 
-$$\xi^\lambda(1 - \Delta_G) = (1 + |\lambda|^2)Id - \tilde\Delta_K$$
+$$\xi^\lambda(1 - \Delta_G) = (1 + |\lambda|^2)Id - \Delta_K$$
 
 # Pseudo-differential calculus
 
