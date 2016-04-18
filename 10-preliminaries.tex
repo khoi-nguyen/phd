@@ -223,6 +223,130 @@
     is a group isomorphism which allows us to give $\dualGroup\VectorSpace$ a vector space structure.
 \end{example}
 
+\section{Fourier Transform}
+
+\begin{definition}[Fourier coefficient]
+    Let $\xi \in \dualGroup\Group$.
+    If $f \in \Lebesgue{1}{\Group}$,
+    we define the \emph{Fourier coefficient of $f$ at $\xi$}, $\Fourier f(\xi)$, via
+    \begin{align*}
+        \Fourier f(\xi) \defeq \int_\Group f(g) \adj{\xi(g)} \dd g.
+    \end{align*}
+
+    The map
+    \begin{align*}
+        \Fourier f : \xi \mapsto \Fourier f(\xi)
+    \end{align*}
+    is called the \emph{Fourier transform of $f$}.
+\end{definition}
+
+\begin{definition}
+    Let $\xi \in \VectorSpace$.
+    If $f \in \Lebesgue{1}\VectorSpace$,
+    we define the \emph{Fourier coefficient of $f$ at $\lambda$}, $\Fourier[\VectorSpace] f(\xi)$, via
+    \begin{align*}
+        \Fourier[\VectorSpace] f(\xi) \defeq \int_\VectorSpace f(x) \e^{-\i \turn \ip{x}\xi} \dd x.
+    \end{align*}
+\end{definition}
+
+\begin{proposition}
+\label{proposition:elementary_properties_of_the_Fourier_transform}
+    Let $f, f_1, f_2 \in \Lebesgue{1}{\Group}$ and $\xi \in \dualGroup\Group$.
+    The Fourier Transform satisfies the following properties:
+    \begin{enumerate}
+        \item For each $g \in \Group$, we have
+            \begin{align*}
+                \Fourier \{f(\dummy g)\} (\xi)
+                = \xi(g) \Fourier f(\xi), \quad
+                \Fourier \{f(g \dummy)\} (\xi)
+                = \Fourier f(\xi) \xi(g).
+            \end{align*}
+        \item We have
+            \begin{align*}
+                \Fourier \{\conv{f_1}{f_2}\}(\xi)
+                = \Fourier f_2(\xi) \Fourier f_1(\xi).
+            \end{align*}
+        \item If $f \in \SmoothFunctions\Group$ and $X \in \LieAlgebra$,
+            \begin{align*}
+                \Fourier \{\LeftDifferentialOperatorFirstOrder{X} f\}(\xi)
+                = \xi(X) \Fourier f(\xi), \quad
+                \Fourier \{\RightDifferentialOperatorFirstOrder{X} f\}(\xi)
+                = \Fourier f(\xi) \xi(X).
+            \end{align*}
+    \end{enumerate}
+\end{proposition}
+
+\begin{proposition}
+    There exists a measure $\Plancherel\Group$ on $\dualGroup\Group$ such that the following property holds:
+    if $f \in \Schwartz\Group$, we have
+    \begin{align*}
+        \int_\Group \abs{f}^2 \dd g
+        = \int_{\dualGroup\Group} \tr \left( \Fourier f(\xi) \adj{\Fourier f(\xi)} \right) \dd \Plancherel\Group(\xi).
+    \end{align*}
+\end{proposition}
+
+\begin{example}[Plancherel measure on $\dualGroup\VectorSpace$]
+    The \emph{Plancherel measure} on $\VectorSpace$ is the pushforward measure of the Lebesgue measure on $\VectorSpace$ via the isomorphism~\eqref{eq:isomorphism_between_vector_space_and_its_dual_group}.
+    In other words, if $f \in \Schwartz\VectorSpace$, then
+    \begin{align*}
+        \int_\VectorSpace \abs{f}^2 \dd x = \int_\VectorSpace \abs{\Fourier[\VectorSpace] f(\xi_\lambda)}^2 \dd \lambda,
+    \end{align*}
+    where $\xi_\lambda$ was defined in~\eqref{eq:elements_of_dual_of_vector_space}.
+\end{example}
+
+\begin{example}[Plancherel Measure on $\dualGroup\CompactGroup$]
+    If $f \in \SmoothFunctions{\CompactGroup}$,
+    then the Peter-Weyl theorem implies:
+    \begin{align*}
+        \int_\CompactGroup \abs{f}^2 \dd g
+        = \sum_{\tau \in \dualGroup\CompactGroup}
+            \dimRep\tau
+            \tr \left(
+                \Fourier[\CompactGroup] f(\tau)
+                \adj{\Fourier[\CompactGroup] f(\tau)}
+            \right)
+    \end{align*}
+\end{example}
+
+\begin{proposition}[Inverse Fourier Transform]
+    Let $g \in \Group$.
+    If $f \in \Schwartz\Group$,
+    then we have
+    \begin{align*}
+        f(g) =
+        \int_\dualGroup\Group
+            \tr\left(
+                \xi(g)
+                \Fourier f(\xi)
+            \right)
+        \dd \Plancherel\Group(\xi).
+    \end{align*}
+\end{proposition}
+
+\begin{example}[Inverse Fourier Transform on $\VectorSpace$]
+    Let $x \in \VectorSpace$.
+    If $f \in \Schwartz\VectorSpace$,
+    then we have
+    \begin{align*}
+        f(x) =
+        \int_\VectorSpace
+            \e^{\i \turn \ip{x}{\xi}} \Fourier[\VectorSpace] f(\xi)
+        \dd \xi.
+    \end{align*}
+\end{example}
+
+\begin{example}[Inverse Fourier Transform on $\CompactGroup$]
+    Let $k \in \CompactGroup$.
+    If $f \in \SmoothFunctions\CompactGroup$,
+    then we have
+    \begin{align*}
+        f(k) =
+        \sum_{\tau \in \dualGroup\CompactGroup}
+            \dimRep\tau
+            \tr(\tau(k) \Fourier[\CompactGroup] f(\tau)).
+    \end{align*}
+\end{example}
+
 \section{Pseudo-differential operators on compact Lie groups}
 
 \begin{theorem}[Peter-Weyl theorem]
@@ -275,130 +399,6 @@ This will allow useful comparisons later on.
     \end{align*}
 \end{proposition}
 
-%\section{Fourier Transform}
-%
-%\begin{definition}[Fourier coefficient]
-%    Let $\xi \in \dualGroup\Group$.
-%    If $f \in \Lebesgue{1}{\Group}$,
-%    we define the \emph{Fourier coefficient of $f$ at $\xi$}, $\Fourier f(\xi)$, via
-%    \begin{align*}
-%        \Fourier f(\xi) \defeq \int_\Group f(g) \adj{\xi(g)} \dd g.
-%    \end{align*}
-%
-%    The map
-%    \begin{align*}
-%        \Fourier f : \xi \mapsto \Fourier f(\xi)
-%    \end{align*}
-%    is called the \emph{Fourier transform of $f$}.
-%\end{definition}
-%
-%\begin{definition}
-%    Let $\xi \in \VectorSpace$.
-%    If $f \in \Lebesgue{1}\VectorSpace$,
-%    we define the \emph{Fourier coefficient of $f$ at $\lambda$}, $\Fourier[\VectorSpace] f(\xi)$, via
-%    \begin{align*}
-%        \Fourier[\VectorSpace] f(\xi) \defeq \int_\VectorSpace f(x) \e^{-\i \turn \ip{x}\xi} \dd x.
-%    \end{align*}
-%\end{definition}
-%
-%\begin{proposition}
-%\label{proposition:elementary_properties_of_the_Fourier_transform}
-%    Let $f, f_1, f_2 \in \Lebesgue{1}{\Group}$ and $\xi \in \dualGroup\Group$.
-%    The Fourier Transform satisfies the following properties:
-%    \begin{enumerate}
-%        \item For each $g \in \Group$, we have
-%            \begin{align*}
-%                \Fourier \{f(\dummy g)\} (\xi)
-%                = \xi(g) \Fourier f(\xi), \quad
-%                \Fourier \{f(g \dummy)\} (\xi)
-%                = \Fourier f(\xi) \xi(g).
-%            \end{align*}
-%        \item We have
-%            \begin{align*}
-%                \Fourier \{\conv{f_1}{f_2}\}(\xi)
-%                = \Fourier f_2(\xi) \Fourier f_1(\xi).
-%            \end{align*}
-%        \item If $f \in \SmoothFunctions\Group$ and $X \in \LieAlgebra$,
-%            \begin{align*}
-%                \Fourier \{\LeftDifferentialOperatorFirstOrder{X} f\}(\xi)
-%                = \xi(X) \Fourier f(\xi), \quad
-%                \Fourier \{\RightDifferentialOperatorFirstOrder{X} f\}(\xi)
-%                = \Fourier f(\xi) \xi(X).
-%            \end{align*}
-%    \end{enumerate}
-%\end{proposition}
-%
-%\begin{proposition}
-%    There exists a measure $\Plancherel\Group$ on $\dualGroup\Group$ such that the following property holds:
-%    if $f \in \Schwartz\Group$, we have
-%    \begin{align*}
-%        \int_\Group \abs{f}^2 \dd g
-%        = \int_{\dualGroup\Group} \tr \left( \Fourier f(\xi) \adj{\Fourier f(\xi)} \right) \dd \Plancherel\Group(\xi).
-%    \end{align*}
-%\end{proposition}
-%
-%\begin{example}[Plancherel measure on $\dualGroup\VectorSpace$]
-%    The \emph{Plancherel measure} on $\VectorSpace$ is the pushforward measure of the Lebesgue measure on $\VectorSpace$ via the isomorphism~\eqref{eq:isomorphism_between_vector_space_and_its_dual_group}.
-%    In other words, if $f \in \Schwartz\VectorSpace$, then
-%    \begin{align*}
-%        \int_\VectorSpace \abs{f}^2 \dd x = \int_\VectorSpace \abs{\Fourier[\VectorSpace] f(\xi_\lambda)}^2 \dd \lambda,
-%    \end{align*}
-%    where $\xi_\lambda$ was defined in~\eqref{eq:elements_of_dual_of_vector_space}.
-%\end{example}
-%
-%\begin{example}[Plancherel Measure on $\dualGroup\CompactGroup$]
-%    If $f \in \SmoothFunctions{\CompactGroup}$,
-%    then the Peter-Weyl theorem implies:
-%    \begin{align*}
-%        \int_\CompactGroup \abs{f}^2 \dd g
-%        = \sum_{\tau \in \dualGroup\CompactGroup}
-%            \dimRep\tau
-%            \tr \left(
-%                \Fourier[\CompactGroup] f(\tau)
-%                \adj{\Fourier[\CompactGroup] f(\tau)}
-%            \right)
-%    \end{align*}
-%\end{example}
-%
-%\begin{proposition}[Inverse Fourier Transform]
-%    Let $g \in \Group$.
-%    If $f \in \Schwartz\Group$,
-%    then we have
-%    \begin{align*}
-%        f(g) =
-%        \int_\dualGroup\Group
-%            \tr\left(
-%                \xi(g)
-%                \Fourier f(\xi)
-%            \right)
-%        \dd \Plancherel\Group(\xi).
-%    \end{align*}
-%\end{proposition}
-%
-%\begin{example}[Inverse Fourier Transform on $\VectorSpace$]
-%    Let $x \in \VectorSpace$.
-%    If $f \in \Schwartz\VectorSpace$,
-%    then we have
-%    \begin{align*}
-%        f(x) =
-%        \int_\VectorSpace
-%            \e^{\i \turn \ip{x}{\xi}} \Fourier[\VectorSpace] f(\xi)
-%        \dd \xi.
-%    \end{align*}
-%\end{example}
-%
-%\begin{example}[Inverse Fourier Transform on $\CompactGroup$]
-%    Let $k \in \CompactGroup$.
-%    If $f \in \SmoothFunctions\CompactGroup$,
-%    then we have
-%    \begin{align*}
-%        f(k) =
-%        \sum_{\tau \in \dualGroup\CompactGroup}
-%            \dimRep\tau
-%            \tr(\tau(k) \Fourier[\CompactGroup] f(\tau)).
-%    \end{align*}
-%\end{example}
-%
 %\section{Difference operators}
 %
 %\begin{proposition}
