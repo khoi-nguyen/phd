@@ -1,16 +1,16 @@
-\chapter{Generalised Motion Groups}
+\chapter{Motion Groups}
 
 From now on,
 $\VectorSpace$ will denote a finite-dimensional vector space over $\R$,
 while $\CompactGroup$ is a compact Lie subgroup of $\GeneralLinear\VectorSpace$.
 
-\section{Generalised motion groups}
+\section{Motion groups}
 
-\begin{definition}[Generalised motion group]
-\label{definition:generalised_motion_group}
-\index{generalised motion group}
+\begin{definition}[Motion group]
+\label{definition:motion_group}
+\index{motion group}
     Let $\Group$ be a group.
-    We shall say that $\Group$ is a \emph{generalised motion group}
+    We shall say that $\Group$ is a \emph{motion group}
     if there exists a finite dimensional real vector space $\VectorSpace$
     and a compact connected Lie group $\CompactGroup \subset \GeneralLinear\VectorSpace$
     such that $\Group = \VectorSpace \rtimes \CompactGroup$.
@@ -25,7 +25,7 @@ while $\CompactGroup$ is a compact Lie subgroup of $\GeneralLinear\VectorSpace$.
 \end{remark}
 
 \begin{example}[Vector spaces]
-\label{example:trivial_case_of_generalised_motion_groups}
+\label{example:trivial_case_of_motion_groups}
     Suppose that $\CompactGroup = \{\Id\VectorSpace\}$.
     It follows that $\Group \defeq \VectorSpace \rtimes \CompactGroup$ is isomorphic to $\VectorSpace$.
 \end{example}
@@ -165,7 +165,7 @@ which will naturally determine two isomorphisms
 \end{definition}
 
 From now on, unless stated otherwise,
-$\Group$ will denote a generalised motion group,
+$\Group$ will denote a motion group,
 with $\VectorSpace$ its underlying Eucliean space and $\CompactGroup$ its associated compact group.
 
 The requirement that $\CompactGroup$ should be a subgroup of $\OrthogonalGroup{\VectorSpace}$ is motivated by the following result
@@ -253,7 +253,7 @@ Using an isomorphism
     \phi : \VectorSpace \to \R^n
 \end{align}
 where $n = \dim \VectorSpace$,
-we can represent the generalised motion group $\Group$
+we can represent the motion group $\Group$
 by real matrices via the map
 \begin{align}
     \Phi : \Group \to \R^{(n + 1) \times (n + 1)} :
@@ -268,7 +268,7 @@ where by $\phi \circ k \circ \phi^{-1}$ we actually mean its corresponding matri
 
 \begin{definition}[Lie Algebra]
 \label{definition:Lie_Algebra}
-\index{generalised motion group!Lie algebra}
+\index{motion group!Lie algebra}
     Suppose $\VectorSpace$ has dimension $n$.
     The real vector space
     \begin{align*}
@@ -291,7 +291,7 @@ where by $\phi \circ k \circ \phi^{-1}$ we actually mean its corresponding matri
 
 \begin{definition}[Exponential map]
 \label{definition:exponential_map}
-\index{generalised motion group!exponential map}
+\index{motion group!exponential map}
     The \emph{exponential map} on $\Group$ is the map
     \begin{align*}
         \exp_\Group : \LieAlgebra \to \Group
@@ -483,7 +483,7 @@ From now on, we fix a basis $X_1, \dots, X_{\dim \Group}$ of $\LieAlgebra$ such 
     We define a unitary representation $\Rep{\lambda} \in \Hom(\Group, \End(\Lebesgue{2}{\CompactGroup}))$ of $\Group$ via
     \begin{align}
         \Rep{\lambda} (x, k) F(u) \defeq (u \lambda)(x) F(k^{-1} u),
-        \label{eq:reducible_representations_on_the_generalised_motion_groups}
+        \label{eq:reducible_representations_on_the_motion_groups}
     \end{align}
     where $(x, k) \in \CompactGroup$, $F \in \Lebesgue{2}{\CompactGroup}$ and $u \in \CompactGroup$.
 \end{definition}
@@ -497,7 +497,7 @@ However, as we shall see later, the Fourier Transform on $\Group$ can be written
     If $\lambda \neq 0$, then $\Rep{\lambda}$ is irreducible.
 
     Using the isomorphism $\SpecialOrthogonalGroup{2} \sim \T$,
-    \eqref{eq:reducible_representations_on_the_generalised_motion_groups} takes the form
+    \eqref{eq:reducible_representations_on_the_motion_groups} takes the form
     \begin{align*}
         \Rep\lambda(x, t) F(u)
         = \lambda(-\e^{\i \turn u}x) F(u - t),
@@ -563,7 +563,7 @@ However, as we shall see later, the Fourier Transform on $\Group$ can be written
 Our description of the unitary dual comes from \cite{Kumahara73},
 which itself is a minor adaptation of the one in \cite{Ito52}.
 Although both articles only specifically mention the case of the Euclidean motion group,
-the author of \cite{Ito52} mentions that the arguments generalise verbatim to generalised motion groups.
+the author of \cite{Ito52} mentions that the arguments generalise verbatim to motion groups.
 
 Throughout this section, fix $\lambda \in \dualGroup{\VectorSpace}$
 and denote by $\IsotropySubgroup{\CompactGroup}{\lambda}$ its isotropy subgroup.
@@ -665,7 +665,7 @@ In fact, we shall see that the $P^\tau_q$ are \emph{orthogonal projections}.
 
 The following result and its proof can be found in \cite[Theorem 1.1, 1.2, 1.3]{Ito52}.
 Although the paper specifically treats the case of the Euclidean motion groups,
-the author remarks (\cite[Remark p. 84]{Ito52}) that the argument works for generalised motion groups.
+the author remarks (\cite[Remark p. 84]{Ito52}) that the argument works for motion groups.
 
 \begin{proposition}[Unitary dual]
 \label{proposition:unitary_dual}
@@ -686,8 +686,8 @@ the author remarks (\cite[Remark p. 84]{Ito52}) that the argument works for gene
 \end{proposition}
 
 \begin{definition}[Unitary dual]
-\label{definition:unitary_dual_of_generalised_motion_group}
-\index{generalised motion group!unitary dual}
+\label{definition:unitary_dual_of_motion_group}
+\index{motion group!unitary dual}
     Fix $\lambda_0 \in \dualGroup{\VectorSpace} \setminus \{0\}$.
     We define the \emph{unitary dual} of $\Group$, denoted by $\dualGroup{\Group}$, via
     \begin{align*}
@@ -721,7 +721,7 @@ the author remarks (\cite[Remark p. 84]{Ito52}) that the argument works for gene
 
 \begin{definition}[Infinitesimal Representation]
 \label{definition:infinitesimal_representation}
-\index{generalised motion group!infinitesimal representation}
+\index{motion group!infinitesimal representation}
     Let $X \in \g$.
     We define the infinitesimal representation of $X$ as the operator
     \begin{align*}
@@ -828,7 +828,7 @@ the author remarks (\cite[Remark p. 84]{Ito52}) that the argument works for gene
 
 \begin{definition}[Fourier transform]
 \label{definition:Fourier_Transform}
-\index{generalised motion group!Fourier transform}
+\index{motion group!Fourier transform}
     Let $f \in \Lebesgue{1}{\Group}$ and $\lambda \in \dualGroup{\VectorSpace}$.
     We define its \emph{Fourier coefficient} at $\lambda$ via
     \begin{align*}
@@ -960,7 +960,7 @@ The proof of the following result can be found in~\cite{Kumahara76}.
 
 \begin{proposition}[Plancherel formula]
 \label{proposition:Plancherel_formula}
-\index{generalised motion group!Fourier transform!Plancherel formula}
+\index{motion group!Fourier transform!Plancherel formula}
     Let $f \in \Lebesgue{1}{\Group} \cap \Lebesgue{2}{\Group}$.
     The following formula holds
     \begin{align}
@@ -1038,7 +1038,7 @@ The proof of the following result can be found in~\cite{Kumahara76}.
 
 \begin{proposition}[Inverse Fourier Transform]
 \label{proposition:inverse_Fourier_Transform}
-\index{generalised motion group!Fourier transform!inverse formula}
+\index{motion group!Fourier transform!inverse formula}
     Let $\phi \in \Schwartz{\Group}$.
     For each $g \in \Group$,
     we have
