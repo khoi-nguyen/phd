@@ -104,10 +104,10 @@ while $\CompactGroup$ is a compact Lie subgroup of $\GeneralLinear\VectorSpace$.
 
 From now on, $\VectorSpace$ will be given the structure of a \emph{Euclidean space} with a $\CompactGroup$-invariant inner product
 whose existence is ensured by Lemma~\ref{lemma:existence_of_K-invariant_inner_product}.
-We shall also fix an orthonormal basis $e_1, \dots, e_{\dim \VectorSpace}$ with respect to that inner product,
-which will naturally determine two isomorphisms
+Every time we integrate on $\VectorSpace$,
+it will be with respect to the unique Haar measure $\mu$ on $\VectorSpace$ such that
 \begin{align*}
-    \VectorSpace \sim \R^{\dim \VectorSpace}, \quad \End(\VectorSpace) \sim \R^{\dim \VectorSpace \times \dim \VectorSpace}.
+    \mu\left(\{x \in \VectorSpace : \ip{x}{x} \leq 1\}\right) = \frac{\pi^{\dim \VectorSpace/2}}{\Gamma(\frac{\dim \VectorSpace}{2} + 1)}.
 \end{align*}
 
 \begin{lemma}
