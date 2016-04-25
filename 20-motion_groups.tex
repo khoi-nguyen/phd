@@ -115,35 +115,8 @@ it will be with respect to the unique Haar measure $\mu$ on $\VectorSpace$ such 
     With the inner product defined in Lemma~\ref{lemma:existence_of_K-invariant_inner_product},
     $\CompactGroup$ is a Lie subgroup of $\SpecialOrthogonalGroup\VectorSpace$.
 
-    Moreover, if
-    \begin{align*}
-        \phi : \VectorSpace \to \R^{\dim \VectorSpace}
-    \end{align*}
-    is an isomorphism of Euclidean spaces,
-    then the pull-back of the Lebesgue measure on $\R^{\dim \VectorSpace}$ defines a measure on $\VectorSpace$
-    which is both translation-invariant and $\CompactGroup$-invariant.
+    Therefore, any Haar measure on $\VectorSpace$ is also invariant under the action of $\CompactGroup$.
 \end{lemma}
-\begin{proof}
-    Let $k \in \CompactGroup$.
-    Given $i, j \in \{1, \dots, \dim \VectorSpace\}$,
-    the $\CompactGroup$-invariance yields
-    \begin{align*}
-        \ip{k e_i}{k e_j} = \ip{e_i}{e_j} = \Kronecker{i}{j},
-    \end{align*}
-    in other words, the columns of $k$ are orthogonal, hence $k \in \OrthogonalGroup{\VectorSpace}$.
-
-    Since $\CompactGroup$ is connected and contains $\Id\VectorSpace$, $\CompactGroup \subset \SpecialOrthogonalGroup\VectorSpace$.
-
-    If $f : \VectorSpace \to \C$ is integrable with respect to $\dd v = \phi^* \dd x$,
-    then
-    \begin{align*}
-        \int_\VectorSpace f(k v) \dd v \defeq \int_{\R^{\dim \VectorSpace}} f((\phi \circ k \circ \phi^{-1})x) \dd x
-        = \int_{\R^{\dim \VectorSpace}} f(x) \dd x
-        = \int_\VectorSpace f(v) \dd v,
-    \end{align*}
-    since $\phi \circ k \circ \phi^{-1} \in \SpecialOrthogonalGroup{\dim \VectorSpace}$.
-    The translation-invariance of $\dd v$ is trivial.
-\end{proof}
 
 \begin{definition}[$K$-invariant Lebesgue measure]
     The measure defined in Lemma~\ref{lemma:K_subset_of_SO_and_invariance_of_the_induced_Lebesgue_measure}
