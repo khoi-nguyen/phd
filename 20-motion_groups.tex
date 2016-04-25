@@ -104,11 +104,16 @@ while $\CompactGroup$ is a compact Lie subgroup of $\GeneralLinear\VectorSpace$.
 
 From now on, $\VectorSpace$ will be given the structure of a \emph{Euclidean space} with a $\CompactGroup$-invariant inner product
 whose existence is ensured by Lemma~\ref{lemma:existence_of_K-invariant_inner_product}.
-Every time we integrate on $\VectorSpace$,
-it will be with respect to the unique Haar measure $\mu$ on $\VectorSpace$ such that
-\begin{align*}
-    \mu\left(\{x \in \VectorSpace : \ip{x}{x} \leq 1\}\right) = \frac{\pi^{\dim \VectorSpace/2}}{\Gamma(\frac{\dim \VectorSpace}{2} + 1)}.
-\end{align*}
+
+\begin{definition}[Lebesgue measure]
+    We call the \emph{Lebesgue measure} on $\VectorSpace$
+    the unique Haar measure $\mu$ on $\VectorSpace$ such that
+    \begin{align*}
+        \mu\left(\{x \in \VectorSpace : \ip{x}{x} \leq 1\}\right) = \frac{\pi^{\dim \VectorSpace/2}}{\Gamma(\frac{\dim \VectorSpace}{2} + 1)}.
+    \end{align*}
+\end{definition}
+
+From now on, integration on $\VectorSpace$ will always be performed with respect to the above Lebesgue measure.
 
 \begin{lemma}
 \label{lemma:K_subset_of_SO_and_invariance_of_the_induced_Lebesgue_measure}
