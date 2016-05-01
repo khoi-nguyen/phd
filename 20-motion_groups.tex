@@ -201,48 +201,27 @@ From now on, integration on $\VectorSpace$ will always be performed with respect
 
 \section{Lie algebra structure}
 
-We shall denote by $\LieAlgebra$, $\LieAlgebraVectorSpace$ and $\LieAlgebraCompactgroup$
-the Lie algebras of $\Group$, $\VectorSpace$ and $\CompactGroup$ respectively.
+We shall denote by $\LieAlgebraCompactgroup$ the Lie algebra of $\CompactGroup$.
+Since $\LieAlgebraCompactgroup \subset \GeneralLinear \VectorSpace$,
+it follows that $\LieAlgebraCompactgroup$ is also an algebra acting on $\VectorSpace$.
 
-\begin{proposition}[Lie algebra of $\Group$]
-    Let $\iota_1 : \VectorSpace \to \Group$
-    and $\iota_2 : \CompactGroup \to \Group$ denote the canonical inclusions.
-    It follows that as a vector space,
-    \begin{align*}
-        \LieAlgebra =
-        \eval{\dd \iota_1}{0}(\LieAlgebraVectorSpace) \oplus \eval{\dd \iota_2}{\Id\VectorSpace}(\LieAlgebraCompactgroup),
-    \end{align*}
-    while $\eval{\dd \iota_1}{0}$ and $\eval{\dd \iota_2}{\Id\VectorSpace}$ define homorphisms of Lie algebras.
-
-    Moreover, we have
-    \begin{align*}
-        \LieBracket{%
-            \eval{\dd \iota_1} 0 (\LieAlgebraVectorSpace)
-        }{%
-            \eval{\dd \iota_2}{\Id \VectorSpace} (\LieAlgebraCompactgroup)
-        }
-        = \eval{\dd \iota_1} 0 (\LieAlgebraVectorSpace)
-    \end{align*}
-\end{proposition}
-
-\begin{definition}[Lie Algebra]
-\label{definition:Lie_Algebra}
-\index{motion group!Lie algebra}
-    Suppose $\VectorSpace$ has dimension $n$.
-    The real vector space
+\begin{definition}[Lie algebra of $\Group$]
+    We shall call the set
     \begin{align*}
         \LieAlgebra \defeq
-            \{
-                X \in \R^{(n + 1) \times (n + 1)} :
-                \text{for each}\
-                t \in \R,\
-                \exp(t X) \in \Phi(\Group),
-            \}
+        \VectorSpace \oplus \LieAlgebraCompactgroup
     \end{align*}
-    where $\Phi$ is the map defined in~\eqref{eq:motion_group_realised_as_matrices},
-    is called the \emph{Lie algebra} of $\Group$.
+    the \emph{Lie algebra} of $\Group$.
 
-    Moreover, given $X, Y \in \LieAlgebra$, we define its \emph{Lie Bracket} via
+    Given $(X_1, Y_1), (X_2, Y_2) \in \LieAlgebra$,
+    we let
+    \begin{align*}
+        (X_1, Y_1) (X_2, Y_2) = (X_1 + Y_1 X_2, Y_1, Y_2),
+    \end{align*}
+    which gives $\LieAlgebra$ an \emph{algebraic structure}.
+
+    Therefore, if $X, Y \in \LieAlgebra$,
+    we can define its \emph{Lie bracket} via
     \begin{align*}
         \LieBracket{X}{Y} = X Y - Y X.
     \end{align*}
