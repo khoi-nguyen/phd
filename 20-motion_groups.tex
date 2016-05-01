@@ -204,6 +204,27 @@ From now on, integration on $\VectorSpace$ will always be performed with respect
 We shall denote by $\LieAlgebra$, $\LieAlgebraVectorSpace$ and $\LieAlgebraCompactgroup$
 the Lie algebras of $\Group$, $\VectorSpace$ and $\CompactGroup$ respectively.
 
+\begin{proposition}[Lie algebra of $\Group$]
+    Let $\iota_1 : \VectorSpace \to \Group$
+    and $\iota_2 : \CompactGroup \to \Group$ denote the canonical inclusions.
+    It follows that as a vector space,
+    \begin{align*}
+        \LieAlgebra =
+        \eval{\dd \iota_1}{0}(\LieAlgebraVectorSpace) \oplus \eval{\dd \iota_2}{\Id\VectorSpace}(\LieAlgebraCompactgroup),
+    \end{align*}
+    while $\eval{\dd \iota_1}{0}$ and $\eval{\dd \iota_2}{\Id\VectorSpace}$ define homorphisms of Lie algebras.
+
+    Moreover, we have
+    \begin{align*}
+        \LieBracket{%
+            \eval{\dd \iota_1} 0 (\LieAlgebraVectorSpace)
+        }{%
+            \eval{\dd \iota_2}{\Id \VectorSpace} (\LieAlgebraCompactgroup)
+        }
+        = \eval{\dd \iota_1} 0 (\LieAlgebraVectorSpace)
+    \end{align*}
+\end{proposition}
+
 \begin{definition}[Lie Algebra]
 \label{definition:Lie_Algebra}
 \index{motion group!Lie algebra}
