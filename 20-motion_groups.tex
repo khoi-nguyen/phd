@@ -672,47 +672,43 @@ However, as we shall see later, the Fourier Transform on $\Group$ can be written
 
 \begin{proposition}[Infinitesimal representations]
 \label{proposition:infinitesimal_representations_of_differential_operators}
-    Let $\lambda \in \dualGroup{\VectorSpace}$ and let $j \in \{1, \dots, \dim \Group\}$.
+    Let $\lambda \in \VectorSpace$ and let $j \in \{1, \dots, \dim \Group\}$.
+    Fix also $F \in \SmoothFunctions \CompactGroup$ and $u \in \CompactGroup$.
     The infinitesimal representation of $X_j$ has the following expression:
     \begin{enumerate}
         \item if $j \leq \dim \VectorSpace$, then
             \begin{align*}
-                \Rep{\lambda}(X_j) F(u) = \directionalDerivative{u^{-1} e_i} \lambda(0) F(u)
+                \Rep{\lambda}(X_j) F(u) = \i \turn \ip \lambda {u e_j} F(u)
             \end{align*}
         \item if $j > \dim \VectorSpace$, then
             \begin{align*}
-                \Rep{\lambda}(X_j) F(u) = -\RightDifferentialOperatorFirstOrder{X_j} F(u),
+                \Rep{\lambda}(X_j) F(u) = \LeftDifferentialOperatorFirstOrder{X_j} F(u),
             \end{align*}
-            where $\RightDifferentialOperatorFirstOrder{Y_j}$ is the right-invariant differential operator on $\CompactGroup$ associated with $Y_j \in \LieAlgebraCompactGroup$.
+            where in the right-hand side $\LeftDifferentialOperatorFirstOrder{X_j}$ is the right-invariant differential operator on $\CompactGroup$ associated with $X_j \in \LieAlgebraCompactGroup$.
     \end{enumerate}
-    In the above, $F$ is an arbitrary function in $\SmoothFunctions{\CompactGroup}$.
 \end{proposition}
 \begin{proof}
+    Let $F \in \SmoothFunctions \CompactGroup$ and $u \in \CompactGroup$.
     \begin{enumerate}
         \item Fix $j \in \{1, \dots, \dim \VectorSpace\}$.
-            Since $\exp_\Group(t X_j) = (t e_i, \Id{\VectorSpace})$.
+            Since $\exp_\Group(t X_j) = (t e_j, \Id{\VectorSpace})$.
             It follows that
             \begin{align*}
-                \Rep{\lambda}(X) F(u) = \D*{t}<t = 0> \lambda(t u^{-1} e_i) F(u)
-                = \directionalDerivative{u^{-1} e_i} \lambda(0) F(u)
+                \Rep{\lambda}(X_j) F(u) = \D*{t}<t = 0> \e^{\i \turn \ip \lambda {t u e_j}} F(u)
+                = \i \turn \ip \lambda {u e_j} F(u)
             \end{align*}
             which is what we wanted to show.
-        \item If $j > \dim \VectorSpace$, it should be clear that
+        \item If $j > \dim \VectorSpace$, $X_j \in \LieAlgebraCompactGroup$ so that
             \begin{align*}
-                \exp_\Group(t X_j) = \Phi^{-1}
-                    \begin{pmatrix}
-                        \exp_\CompactGroup(t Y_j) & 0\\
-                        0 & 1
-                    \end{pmatrix}
-                    = (0, \exp_\CompactGroup(t Y_j)).
+                \exp_\Group(t X_j) = (0, \exp_\CompactGroup(t X_j)).
             \end{align*}
 
             From there, it immediately follows that
             \begin{align*}
                 \Rep{\lambda}(X_j) F(u)
-                = \D*{t}<t = 0> F({(\exp_\CompactGroup(t Y_j))}^{-1} u)
-                = -\RightDifferentialOperatorFirstOrder{Y_j} F(u).
+                = \D*{t}<t = 0> F(u \exp_\CompactGroup(t X_j)),
             \end{align*}
+            which by definition is $\LeftDifferentialOperatorFirstOrder{X_j} F(u)$.
     \end{enumerate}
 \end{proof}
 
