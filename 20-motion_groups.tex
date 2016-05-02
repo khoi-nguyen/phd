@@ -337,9 +337,26 @@ We shall denote by $\LieAlgebraCompactgroup$ the Lie algebra of $\CompactGroup$.
     From there, it follows that:
     \begin{align*}
         \LeftDifferentialOperatorFirstOrder{X_j} \phi(x, k)
-        = \ip{k^{-1} \grad \phi(x, k)}{e_j}
+        = \ip{k^{-1} \grad \phi(x, k)}{e_j}.
     \end{align*}
 \end{proof}
+
+Since $\CompactGroup$ is compact,
+$\LieAlgebraCompactgroup$ is \emph{reductive}.
+Therefore, it follows that
+\begin{align*}
+    \LieAlgebra = \VectorSpace \oplus \mathfrak a \oplus \mathfrak s,
+\end{align*}
+where $\mathfrak a$ is \emph{abelian} and $\mathfrak s$ is \emph{semisimple}.
+In particular, we can naturally define an inner product $\ip[\LieAlgebra]\dummy\dummy$ on $\LieAlgebra$ via the Killing form of $\mathfrak s$.
+
+From now on,
+$X_1, \dots, X_{\dim \Group}$ will denote a basis such that
+\begin{enumerate}
+    \item the collection is orthonormal with respect to $\ip[\LieAlgebra]\dummy\dummy$;
+    \item If $1 \leq j \leq \dim \VectorSpace$, then $X_j \in \VectorSpace$,
+        otherwise $X_j \in \LieAlgebraCompactgroup$.
+\end{enumerate}
 
 \begin{definition}
     Let $\alpha \in \N^{\dim \Group}$.
