@@ -233,10 +233,8 @@ We shall denote by $\LieAlgebraCompactgroup$ the Lie algebra of $\CompactGroup$.
 \index{motion group!exponential map}
     The \emph{exponential map} on $\Group$ is the map
     \begin{align*}
-        \exp_\Group : \LieAlgebra \to \Group
+        \exp_\Group : \LieAlgebra \to \Group : (X, Y) \mapsto \left(\D*{t}<t = 1>(\exp_\CompactGroup tY) X, \exp_\CompactGroup Y\right)
     \end{align*}
-    defined by $\exp_\Group \defeq \Phi^{-1} \circ \exp$,
-    where $\Phi$ is the map defined in~\eqref{eq:motion_group_realised_as_matrices}.
 \end{definition}
 
 \begin{definition}
