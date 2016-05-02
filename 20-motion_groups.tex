@@ -452,16 +452,16 @@ However, as we shall see later, the Fourier Transform on $\Group$ can be written
     Let $\lambda \in \VectorSpace$.
     For each $k \in \CompactGroup$, we have
     \begin{align*}
-        \Rep{k \lambda}(y, l) = R_k \Rep{\lambda}(y, l) R_{k^{-1}}
+        \Rep{k \lambda}(y, l) = \LeftRegularRepresentation(k) \Rep{\lambda}(y, l) \LeftRegularRepresentation(k^{-1})
     \end{align*}
 \end{lemma}
 \begin{proof}
-    Let $F \in \Lebesgue{2}\CompactGroup$.
+    Let $F \in \Lebesgue{2}\CompactGroup$ and $u \in \CompactGroup$.
     It follows that
     \begin{align*}
-        R_k \Rep\lambda(y, l) R_{k^{-1}} F(u)
-        &= R_k (u \lambda)(x) F(l^{-1} u k^{-1})\\
-        &= (u k \lambda)(x) F(l^{-1} u)
+        \LeftRegularRepresentation(k) \Rep\lambda(y, l) \LeftRegularRepresentation(k^{-1}) F(u)
+        &= \LeftRegularRepresentation(k) \e^{\i \turn \ip \lambda {u x}} F(k u l)\\
+        &= \e^{\i \turn \ip \lambda {k^{-1} u x}} F(u l)
         = \Rep{k \lambda}(y, l) F(u).
     \end{align*}
 \end{proof}
