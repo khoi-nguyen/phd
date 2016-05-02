@@ -201,13 +201,13 @@ From now on, integration on $\VectorSpace$ will always be performed with respect
 
 \section{Lie algebra structure}
 
-We shall denote by $\LieAlgebraCompactgroup$ the Lie algebra of $\CompactGroup$.
+We shall denote by $\LieAlgebraCompactGroup$ the Lie algebra of $\CompactGroup$.
 
 \begin{definition}[Lie algebra of $\Group$]
     We shall call the set
     \begin{align*}
         \LieAlgebra \defeq
-        \VectorSpace \oplus \LieAlgebraCompactgroup
+        \VectorSpace \oplus \LieAlgebraCompactGroup
     \end{align*}
     the \emph{Lie algebra} of $\Group$.  
     Given $(X_1, Y_1), (X_2, Y_2) \in \LieAlgebra$,
@@ -219,12 +219,12 @@ We shall denote by $\LieAlgebraCompactgroup$ the Lie algebra of $\CompactGroup$.
 \end{definition}
 
 \begin{lemma}[Commutation relations]
-    Let $X_1, X_2, X \in \VectorSpace$ and $Y_1, Y_2, Y \in \LieAlgebraCompactgroup$.
+    Let $X_1, X_2, X \in \VectorSpace$ and $Y_1, Y_2, Y \in \LieAlgebraCompactGroup$.
     We have the following \emph{commutation relations}
     \begin{align*}
         \LieBracket{X_1}{X_2} = 0,\quad
         \LieBracket{X}{Y} = (-Y X, 0),\quad
-        \LieBracket{Y_1}{Y_2} = \LieBracket[\LieAlgebraCompactgroup]{Y_1}{Y_2}.
+        \LieBracket{Y_1}{Y_2} = \LieBracket[\LieAlgebraCompactGroup]{Y_1}{Y_2}.
     \end{align*}
 \end{lemma}
 
@@ -350,7 +350,7 @@ We shall denote by $\LieAlgebraCompactgroup$ the Lie algebra of $\CompactGroup$.
 \end{proof}
 
 Since $\CompactGroup$ is compact,
-$\LieAlgebraCompactgroup$ is \emph{reductive}.
+$\LieAlgebraCompactGroup$ is \emph{reductive}.
 Therefore, it follows that
 \begin{align*}
     \LieAlgebra = \VectorSpace \oplus \mathfrak a \oplus \mathfrak s,
@@ -363,7 +363,7 @@ $X_1, \dots, X_{\dim \Group}$ will denote a basis such that
 \begin{enumerate}
     \item the collection is orthonormal with respect to $\ip[\LieAlgebra]\dummy\dummy$;
     \item If $1 \leq j \leq \dim \VectorSpace$, then $X_j \in \VectorSpace$,
-        otherwise $X_j \in \LieAlgebraCompactgroup$.
+        otherwise $X_j \in \LieAlgebraCompactGroup$.
 \end{enumerate}
 
 \begin{definition}
