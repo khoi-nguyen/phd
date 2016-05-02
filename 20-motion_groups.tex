@@ -414,10 +414,10 @@ $X_1, \dots, X_{\dim \Group}$ will denote a basis such that
 
 \begin{definition}
 \label{definition:reducible_representation}
-    Let $\lambda \in \dualGroup{\VectorSpace}$.
+    Let $\lambda \in \VectorSpace$.
     We define a unitary representation $\Rep{\lambda} \in \Hom(\Group, \End(\Lebesgue{2}{\CompactGroup}))$ of $\Group$ via
     \begin{align}
-        \Rep{\lambda} (x, k) F(u) \defeq (u \lambda)(x) F(k^{-1} u),
+        \Rep{\lambda} (x, k) F(u) \defeq \e^{\i \turn \ip \lambda {u x}} F(u k),
         \label{eq:reducible_representations_on_the_motion_groups}
     \end{align}
     where $(x, k) \in \CompactGroup$, $F \in \Lebesgue{2}{\CompactGroup}$ and $u \in \CompactGroup$.
