@@ -301,7 +301,7 @@ We shall denote by $\LieAlgebraCompactgroup$ the Lie algebra of $\CompactGroup$.
     \begin{align*}
         \LieBracket{X_1}{X_2} = 0,\quad
         \LieBracket{X_2}{X_3} = X_1,\quad
-        \LieBracket{X_3}{X_1} = X_2
+        \LieBracket{X_3}{X_1} = X_2.
     \end{align*}
 
     Moreover, if $f \in \SmoothFunctions{\Group}$,
@@ -316,29 +316,6 @@ We shall denote by $\LieAlgebraCompactgroup$ the Lie algebra of $\CompactGroup$.
     \end{align*}
     where $(x, t) \in \R^2 \rtimes \T$.
 \end{example}
-
-From now on, we fix a basis $X_1, \dots, X_{\dim \Group}$ of $\LieAlgebra$ such that:
-\begin{enumerate}
-    \item If $i = 1, \dots, \dim \VectorSpace$,
-        \begin{align*}
-            X_i =
-                \begin{pmatrix}
-                    \Id{\dim \VectorSpace} & e_i\\
-                    0 & 1,
-                \end{pmatrix}
-        \end{align*}
-        where $e_i$ is the $i$-th vector of the canonical basis of $\R^{\dim \VectorSpace}$;
-    \item If $i = \dim \VectorSpace + 1, \dots, \dim \Group$, then
-        \begin{align}
-            X_i =
-                \begin{pmatrix}
-                    Y_i & 0\\
-                    0 & 1,
-                \end{pmatrix}
-                \label{eq:Lie_algebra_vector_coming_from_compact_group}
-        \end{align}
-        where $\{Y_i : i = \dim \VectorSpace + 1, \dots, \dim \Group\}$ forms a basis of the Lie Algebra of $\CompactGroup$.
-\end{enumerate}
 
 \begin{lemma}
     Let $j \in \{1, \dots, \dim \VectorSpace\}$.
