@@ -202,8 +202,6 @@ From now on, integration on $\VectorSpace$ will always be performed with respect
 \section{Lie algebra structure}
 
 We shall denote by $\LieAlgebraCompactgroup$ the Lie algebra of $\CompactGroup$.
-Since $\LieAlgebraCompactgroup \subset \GeneralLinear \VectorSpace$,
-it follows that $\LieAlgebraCompactgroup$ is also an algebra acting on $\VectorSpace$.
 
 \begin{definition}[Lie algebra of $\Group$]
     We shall call the set
@@ -211,19 +209,12 @@ it follows that $\LieAlgebraCompactgroup$ is also an algebra acting on $\VectorS
         \LieAlgebra \defeq
         \VectorSpace \oplus \LieAlgebraCompactgroup
     \end{align*}
-    the \emph{Lie algebra} of $\Group$.
-
+    the \emph{Lie algebra} of $\Group$.  
     Given $(X_1, Y_1), (X_2, Y_2) \in \LieAlgebra$,
-    we let
+    we define its \emph{Lie bracket} via
     \begin{align*}
-        (X_1, Y_1) (X_2, Y_2) = (X_1 + Y_1 X_2, Y_1, Y_2),
-    \end{align*}
-    which gives $\LieAlgebra$ an \emph{algebraic structure}.
-
-    Therefore, if $X, Y \in \LieAlgebra$,
-    we can define its \emph{Lie bracket} via
-    \begin{align*}
-        \LieBracket{X}{Y} = X Y - Y X.
+        \LieBracket{(X_1, Y_1)}{(X_2, Y_2)}
+        \defeq \left(Y_1 X_2 - Y_2 X_1, \LieBracket[\CompactGroup]{Y_1}{Y_2}\right).
     \end{align*}
 \end{definition}
 
