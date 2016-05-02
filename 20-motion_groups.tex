@@ -714,44 +714,12 @@ However, as we shall see later, the Fourier Transform on $\Group$ can be written
 
 \begin{corollary}[Infinitesimal representation of $\Laplacian$]
 \label{corollary:infinitesimal_representation_of_the_Laplacian}
-    Let $\lambda \in \dualGroup{\VectorSpace}$.
+    Let $\lambda \in \VectorSpace$.
     The infinitesimal representation of $\Laplacian$ is given by
     \begin{align*}
-        \Rep{\lambda}(\Laplacian) = - \norm[\dualGroup{\VectorSpace}]{\lambda}^2 \Id{\Lebesgue{2}{\CompactGroup}} + \RightLaplacian[\CompactGroup].
+        \Rep{\lambda}(\Laplacian) = - {(\turn)}^2 \norm{\lambda}^2 \Id{\Lebesgue{2}{\CompactGroup}} + \Laplacian[\CompactGroup].
     \end{align*}
 \end{corollary}
-\begin{proof}
-    By Proposition~\ref{proposition:infinitesimal_representations_of_differential_operators},
-    we know that
-    \begin{align*}
-        \Rep{\lambda}(\Laplacian) F(u) =
-        \left(
-            \sum_{j = 1}^{\dim \VectorSpace}
-                \directionalDerivative{u^{-1} e_i}^2 \lambda(0)
-                + \RightLaplacian[\CompactGroup]
-        \right)
-        F(u).
-    \end{align*}
-
-    Since the Laplacian on $\VectorSpace$ is invariant under $\CompactGroup$,
-    we have
-    \begin{align*}
-        \Laplacian[\VectorSpace] \lambda(0)
-        = (\Laplacian[\VectorSpace] \lambda \circ u)(0)
-        = \Laplacian (\lambda \circ u)(0).
-    \end{align*}
-
-    Since the right-hand side is exactly equal to
-    \begin{align*}
-        \sum_{j = 1}^{\dim \VectorSpace} \directionalDerivative{u^{-1} e_j}^2 \lambda(0),
-    \end{align*}
-    it follows that we have
-    \begin{align*}
-        \Rep{\lambda}(\Laplacian) F(u)
-        = (\Laplacian[\VectorSpace] \lambda(0) + \RightLaplacian[\CompactGroup]) F(u),
-    \end{align*}
-    which concludes the proof.
-\end{proof}
 
 \section{Fourier Transform}
 
