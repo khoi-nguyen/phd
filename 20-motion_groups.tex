@@ -435,7 +435,7 @@ However, as we shall see later, the Fourier Transform on $\Group$ can be written
     \eqref{eq:reducible_representations_on_the_motion_groups} takes the form
     \begin{align*}
         \Rep\lambda(x, t) F(u)
-        = \lambda(-\e^{\i \turn u}x) F(u - t),
+        = \e^{\i \turn \ip \lambda {\e^{\i \turn u} x}} F(u + t),
     \end{align*}
     where $F \in \Lebesgue{2}{\T}$, $(x, t) \in \Group$, and $u \in \T$.
 
@@ -443,7 +443,8 @@ However, as we shall see later, the Fourier Transform on $\Group$ can be written
     it follows that
     \begin{align*}
         {\Rep\lambda(x, t)}_{m n}
-        = \e^{-\i \turn n t} \int_\T \lambda(-\e^{\i \turn u}x) \e^{\i \turn (n - m)u} \dd u.
+        &= \int_\T \e^{\i \turn \ip \lambda {\e^{\i \turn u} x}} \e^{\i \turn [n (u + t) - m u]} \dd u\\
+        &= \e^{\i \turn n t} \int_\T \e^{\i \turn \ip \lambda {\e^{\i \turn u} x}} \e^{\i \turn (n - m)u} \dd u.
     \end{align*}
 \end{example}
 
