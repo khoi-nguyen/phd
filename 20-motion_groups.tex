@@ -237,21 +237,20 @@ We shall denote by $\LieAlgebraCompactgroup$ the Lie algebra of $\CompactGroup$.
     \end{align*}
 \end{definition}
 
-\begin{definition}
-\label{definition:left-invariant_differential_operator}
+\begin{definition}[Left and right-invariant vector fields]
+\label{definition:invariant_differential_operators}
     Let $X \in \LieAlgebra$.
-    We define $\LeftDifferentialOperatorFirstOrder{X}$, the \emph{left-invariant differential operator associated to $X$}, via
+    We define $\LeftDifferentialOperatorFirstOrder{X}$,
+    the \emph{left-invariant differential operator associated to $X$}, via
     \begin{align*}
         \LeftDifferentialOperatorFirstOrder{X} f(g)
             \defeq \D*{t}<t = 0> f(g \exp_\Group(t X)),
     \end{align*}
-    where $f \in \SmoothFunctions{\Group}$.
-\end{definition}
+    for each $f \in \SmoothFunctions{\Group}$.
 
-\begin{definition}
-\label{definition:right-invariant_differential_operator}
-    Let $X \in \LieAlgebra$.
-    We define $\RightDifferentialOperatorFirstOrder{X}$, the \emph{right-invariant differential operator associated to $X$}, via
+    Similarly,
+    we define $\RightDifferentialOperatorFirstOrder{X}$,
+    the \emph{right-invariant differential operator associated to $X$}, via
     \begin{align*}
         \RightDifferentialOperatorFirstOrder{X} f(g)
             \defeq \D*{t}<t = 0> f(\exp_\Group(t X) g),
