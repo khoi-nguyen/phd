@@ -326,11 +326,11 @@ We shall denote by $\LieAlgebraCompactgroup$ the Lie algebra of $\CompactGroup$.
 \end{example}
 
 \begin{lemma}
-    Let $j \in \{1, \dots, \dim \VectorSpace\}$.
+    Let $X \in \VectorSpace \subset \LieAlgebra$.
     If $\phi \in \SmoothFunctions\Group$,
     \begin{align*}
-        \LeftDifferentialOperatorFirstOrder{X_j} \phi(x, k)
-        = \ip{k^{-1} \grad \phi(x, k)}{e_j}
+        \LeftDifferentialOperatorFirstOrder{X} \phi(x, k)
+        &= \ip{{-1} \grad \phi(x, k)}{X}.
     \end{align*}
 \end{lemma}
 \begin{proof}
