@@ -134,6 +134,32 @@ Using \cite[Lemma 4.4]{RuzhanskyTurunenWirth10}, we can show
 
 \section{Link with the H\"ormander classes}
 
+\begin{proof}
+    Suppose first that $\sigma \in \SmoothSymbols$ so that its kernel $\kappa_{x, k} \in \Schwartz \Group$.
+    By definition, we have
+    \begin{align*}
+        \DifferenceOperator{q} \LeftDifferentialOperator{X} \sigma(x, k; \lambda)
+        = \int_\Group q((y, l)^{-1}) \kappa_{x, k}((y, l)^{-1}) \e^{\i \turn \ip {u^{-1} \lambda} y} \RightRegularRepresentation(l) \dd (y, l)\\
+        = \int_\Group q((y, l)^{-1} (x, k)) \kappa_{x, k}((y, l)^{-1} (x, k)) \e^{\i \turn \ip {u^{-1} \lambda} {k^{-1} (y - x)} \RightRegularRepresentation(k^{-1} l) \dd (y, l)
+    \end{align*}
+    where we substituted $(y, l)$ for $(x, k)^{-1} (y, l)$ to obtain the last line.
+
+    Using $(y, l)^{-1} (x, k) = (l^{-1}(x - y), l^{-1} k)$ and
+    \begin{align*}
+        \kappa_{x, k} ((y, l)^{-1} (x, k)) = \tilde \kappa_{x, k} (y - x, l^{-1} k),
+    \end{align*}
+    if follows that
+    \begin{align*}
+        \DifferenceOperator{q} \LeftDifferentialOperator{X} \sigma(x, k; \lambda)
+        = \int_\Group q(l^{-1}(x - y), l^{-1} k) \tilde \kappa_{x, k}(x - y, l^{-1} k) \e^{\i \turn \ip {k u^{-1} \lambda} {(y - x)} \RightRegularRepresentation(k^{-1} l) \dd (y, l).
+    \end{align*}
+
+    We can now substitute $y$ for $y + x$ and $l$ for $k l$ to obtain
+    \begin{align*}
+        \DifferenceOperator{q} \LeftDifferentialOperator{X} \sigma(x, k; \lambda)
+        = \int_\Group q(-l^{-1} y, l^{-1}) \tilde \kappa_{x, k}(-y, l^{-1}) \e^{\i \turn \ip {k u^{-1} \lambda} {(y - x)} \RightRegularRepresentation(l) \dd (y, l).
+    \end{align*}
+\end{proof}
 \begin{definition}[Rotation of symbols]
     Let $\sigma \in \SymbolClass[\GroupDirect]{m}{\rho, \delta}$.
     We define the operator
