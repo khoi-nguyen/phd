@@ -1,10 +1,12 @@
-.PHONY: all clean run
+.PHONY: all talks clean run
 
 TALKS := $(wildcard talks/*.md)
 TALKS_PDF := $(TALKS:.md=.md.pdf)
 TALKS_HANDOUT_PDF := $(TALKS:.md=.md.handout.pdf)
 
-all: main.pdf $(TALKS_PDF) $(TALKS_HANDOUT_PDF)
+all: main.pdf
+
+talks: $(TALKS_PDF) $(TALKS_HANDOUT_PDF)
 
 talks/%.md.pdf: talks/%.md
 	pandoc $< -t beamer --toc --slide-level 2 -o $@ -V theme:Warsaw
@@ -13,7 +15,7 @@ talks/%.md.handout.pdf: talks/%.md
 	pandoc $< -t beamer --toc --slide-level 2 -o $@ -V theme:Warsaw -V handout
 
 main.pdf: *.tex Makefile
-	latexmk -lualatex -pdf -use-make main.tex
+	latexmk --interaction=nonstopmode -lualatex -pdf -use-make main.tex
 
 clean:
 	latexmk -CA
