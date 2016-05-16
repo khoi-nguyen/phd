@@ -145,6 +145,17 @@ Using \cite[Lemma 4.4]{RuzhanskyTurunenWirth10}, we can show
         \Rotation {\tilde \sigma}(x, k; \lambda) F(u) \defeq \tilde \sigma(x, k; k u^{-1} \lambda) F(u),
     \end{align*}
     where $x, \lambda \in \VectorSpace$, $k, u \in \CompactGroup$, and $F \in \SmoothFunctions \CompactGroup$.
+
+    Similarly, given $\sigma \in \SymbolClass m {\rho, \delta}$,
+    we define the operator
+    \begin{align*}
+        \InverseRotation \sigma : \SmoothFunctions \CompactGroup \to \SmoothFunctions \CompactGroup
+    \end{align*}
+    via the formula
+    \begin{align*}
+        \InverseRotation \sigma (x, k; \lambda) F(u) \defeq \tilde \sigma(x, k; u k^{-1} \lambda) F(u),
+    \end{align*}
+    where again $x, \lambda \in \VectorSpace$, $k, u \in \CompactGroup$, and $F \in \SmoothFunctions \CompactGroup$.
 \end{definition}
 
 \begin{lemma}
