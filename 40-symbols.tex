@@ -134,13 +134,25 @@ Using \cite[Lemma 4.4]{RuzhanskyTurunenWirth10}, we can show
 
 \section{Link with the H\"ormander classes}
 
-\begin{proof}
-    Suppose first that $\sigma \in \SmoothSymbols$ so that its kernel $\kappa_{x, k} \in \Schwartz \Group$.
-    By definition, we have
+\begin{lemma}
+    Let $q \in \SmoothFunctions{\Group}$ and $X \in \LieAlgebra$.
+    If we define $\tilde q(y, l) = q(l y, l)$,
+    then we have
     \begin{align*}
-        \DifferenceOperator{q} \sigma(x, k; \lambda)
-        = \int_\Group q((y, l)^{-1}) \kappa_{x, k}((y, l)^{-1}) \e^{\i \turn \ip {u^{-1} \lambda} y} \RightRegularRepresentation(l) \dd (y, l)\\
-        = \int_\Group q((y, l)^{-1} (x, k)) \kappa_{x, k}((y, l)^{-1} (x, k)) \e^{\i \turn \ip {u^{-1} \lambda} {k^{-1} (y - x)} \RightRegularRepresentation(k^{-1} l) \dd (y, l)
+        \sigma(x, k; \lambda) &= \Rotation {\tilde \sigma}(x, k; \lambda)\\
+        \DifferenceOperator{q} \LeftDifferentialOperatorFirstOrder{X} \sigma(x, k; \lambda)
+        &= \Rotation {
+            \DifferenceOperator[\GroupDirect] {\tilde q} \LeftDifferentialOperatorFirstOrder{X} \tilde \sigma
+            + \sum_{j = 1}^{\dim \VectorSpace} (\DifferenceOperator[\GroupDirect] {\tilde q} \DifferenceOperator[\VectorSpace]{j} \tilde \sigma) \Rep[\GroupDirect] {k \Projection \LieAlgebraCompactGroup X k^{-1} \lambda} (\partial_j)
+        }(x, k; \lambda)
+    \end{align*}
+\end{lemma}
+\begin{proof}
+    Suppose first that $\sigma \in \SmoothingSymbols$ so that its kernel $\kappa_{x, k} \in \Schwartz \Group$.
+    By definition, $\DifferenceOperator{q} \sigma(x, k; \lambda)$ is equal to
+    \begin{align*}
+        &\quad \int_\Group q((y, l)^{-1}) \kappa_{x, k}((y, l)^{-1}) \e^{\i \turn \ip {u^{-1} \lambda} y} \RightRegularRepresentation(l) \dd (y, l)\\
+        &= \int_\Group q((y, l)^{-1} (x, k)) \kappa_{x, k}((y, l)^{-1} (x, k)) \e^{\i \turn \ip {u^{-1} \lambda} {k^{-1} (y - x)}} \RightRegularRepresentation(k^{-1} l) \dd (y, l)
     \end{align*}
     where we substituted $(y, l)$ for $(x, k)^{-1} (y, l)$ to obtain the last line.
 
@@ -148,16 +160,47 @@ Using \cite[Lemma 4.4]{RuzhanskyTurunenWirth10}, we can show
     \begin{align*}
         \kappa_{x, k} ((y, l)^{-1} (x, k)) = \tilde \kappa_{x, k} (y - x, l^{-1} k),
     \end{align*}
-    if follows that
+    if follows that $\DifferenceOperator{q} \sigma(x, k; \lambda)$ becomes
     \begin{align*}
-        \DifferenceOperator{q} \sigma(x, k; \lambda)
-        = \int_\Group q(l^{-1}(x - y), l^{-1} k) \tilde \kappa_{x, k}(x - y, l^{-1} k) \e^{\i \turn \ip {k u^{-1} \lambda} {(y - x)}} \RightRegularRepresentation(k^{-1} l) \dd (y, l).
+        \int_\Group q(l^{-1}(x - y), l^{-1} k) \tilde \kappa_{x, k}(x - y, l^{-1} k) \e^{\i \turn \ip {k u^{-1} \lambda} {(y - x)}} \RightRegularRepresentation(k^{-1} l) \dd (y, l).
     \end{align*}
 
-    We can now substitute $y$ for $y + x$ and $l$ for $k l$ to obtain
+    We can now substitute $y$ for $y + x$ and $l$ for $k l$ to obtain that $\DifferenceOperator{q} \sigma(x, k; \lambda) F(u)$ is equal to
     \begin{align*}
-        \DifferenceOperator{q} \sigma(x, k; \lambda)
-        = \int_\Group q(-l^{-1} y, l^{-1}) \tilde \kappa_{x, k}(-y, l^{-1}) \e^{\i \turn \ip {k u^{-1} \lambda} y} \RightRegularRepresentation(l) \dd (y, l).
+        \int_\Group q(-l^{-1} y, l^{-1}) \tilde \kappa_{x, k}(-y, l^{-1}) \e^{\i \turn \ip {k u^{-1} \lambda} y} \RightRegularRepresentation(l) \dd (y, l) F(u)
+    \end{align*}
+    which we recognise to be exactly $\DifferenceOperator {\tilde q} \tilde \sigma(x, k, k u^{-1} \lambda) F(u)$.
+
+    So far, we have shown that
+    \begin{align*}
+        \DifferenceOperator{q} \sigma(x, k; \lambda) F(u)
+        = \DifferenceOperator {\tilde q} \tilde \sigma(x, k, k u^{-1} \lambda) F(u)
+    \end{align*}
+    Now, applying $\LeftDifferentialOperatorFirstOrder{X}$ on both sides of the above,
+    we get
+    \begin{align*}
+        \DifferenceOperator{q} \LeftDifferentialOperatorFirstOrder{X} \sigma(x, k; \lambda)
+        &= \DifferenceOperator[\GroupDirect] {\tilde q} \eval{\LeftDifferentialOperatorFirstOrder{X}}{(x', k') = (x, k)} \tilde \sigma(x', k', k u^{-1} \lambda) F(u)\\
+        &\quad+ \sum_{j = 1}^{\dim \VectorSpace} \DifferenceOperator[\GroupDirect] {\tilde q} \D[\tilde \sigma]{\lambda_j}(x, k; k u^{-1} \lambda) \LeftDifferentialOperatorFirstOrder{X}_k \ip {k u^{-1} \lambda} {e_j}\\
+        &= \Rotation {\DifferenceOperator[\GroupDirect] {\tilde q} \LeftDifferentialOperatorFirstOrder{X} \tilde \sigma}(x, k, \lambda) F(u)\\
+        &\quad+ \sum_{j = 1}^{\dim \VectorSpace} \Rotation {\DifferenceOperator[\GroupDirect] {\tilde q} \D[\tilde \sigma]{\lambda_j}} (x, k; \lambda) \LeftDifferentialOperatorFirstOrder{X}_k \ip {k u^{-1} \lambda} {e_j}
+    \end{align*}
+
+    Computing
+    \begin{align*}
+        \LeftDifferentialOperatorFirstOrder{X}_k \ip {k u^{-1} \lambda} {e_j}
+        &= \D*{t}<t = 0> \ip {k \exp_\CompactGroup(t \Projection \LieAlgebraCompactGroup X) u^{-1} \lambda} {e_j}\\
+        &= \ip {k \Projection \LieAlgebraCompactGroup X u^{-1} \lambda} {e_j}\\
+        &= \frac 1 {\i \turn} \Rep[\GroupDirect] {k \Projection \LieAlgebraCompactGroup X k^{-1} k u^{-1} \lambda} (\partial_j)\\
+        &= \frac 1 {\i \turn} \Rotation {\Rep[\GroupDirect] {k \Projection \LieAlgebraCompactGroup X k^{-1} \lambda} (\partial_j)},
+    \end{align*}
+    we obtain
+    \begin{align*}
+        \DifferenceOperator{q} \LeftDifferentialOperatorFirstOrder{X} \sigma(x, k; \lambda)
+        = \Rotation {
+            \DifferenceOperator[\GroupDirect] {\tilde q} \LeftDifferentialOperatorFirstOrder{X} \tilde \sigma
+            + \sum_{j = 1}^{\dim \VectorSpace} (\DifferenceOperator[\GroupDirect] {\tilde q} \DifferenceOperator[\VectorSpace]{j} \tilde \sigma) \Rep[\GroupDirect] {k \Projection \LieAlgebraCompactGroup X k^{-1} \lambda} (\partial_j)
+        }(x, k; \lambda)
     \end{align*}
 \end{proof}
 
@@ -175,7 +218,7 @@ Using \cite[Lemma 4.4]{RuzhanskyTurunenWirth10}, we can show
 \end{definition}
 
 \begin{theorem}
-    The operator $\Rotation$ restricts to a map
+    The operator $\Rotation \dummy$ restricts to a map
     \begin{align*}
         \Rotation : \SymbolClass[\GroupDirect]{m}{\rho, \delta} \to \SymbolClass{m}{\rho, \delta}.
     \end{align*}
