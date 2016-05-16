@@ -134,6 +134,19 @@ Using \cite[Lemma 4.4]{RuzhanskyTurunenWirth10}, we can show
 
 \section{Link with the H\"ormander classes}
 
+\begin{definition}[Rotation of symbols]
+    Let $\sigma \in \SymbolClass[\GroupDirect]{m}{\rho, \delta}$.
+    We define the operator
+    \begin{align*}
+        \Rotation \sigma : \SmoothFunctions \CompactGroup \to \SmoothFunctions \CompactGroup
+    \end{align*}
+    via the formula
+    \begin{align*}
+        \Rotation \sigma(x, k; \lambda) F(u) \defeq \sigma(x, k; k u^{-1} \lambda) F(u),
+    \end{align*}
+    where $x, \lambda \in \VectorSpace$, $k, u \in \CompactGroup$, and $F \in \SmoothFunctions \CompactGroup$.
+\end{definition}
+
 \begin{lemma}
     Let $q \in \SmoothFunctions{\Group}$ and $X \in \LieAlgebra$.
     If we define $\tilde q(y, l) = q(l y, l)$,
@@ -203,19 +216,6 @@ Using \cite[Lemma 4.4]{RuzhanskyTurunenWirth10}, we can show
         }(x, k; \lambda)
     \end{align*}
 \end{proof}
-
-\begin{definition}[Rotation of symbols]
-    Let $\sigma \in \SymbolClass[\GroupDirect]{m}{\rho, \delta}$.
-    We define the operator
-    \begin{align*}
-        \Rotation \sigma : \SmoothFunctions \CompactGroup \to \SmoothFunctions \CompactGroup
-    \end{align*}
-    via the formula
-    \begin{align*}
-        \Rotation \sigma(x, k; \lambda) F(u) \defeq \sigma(x, k; k u^{-1} \lambda) F(u),
-    \end{align*}
-    where $x, \lambda \in \VectorSpace$, $k, u \in \CompactGroup$, and $F \in \SmoothFunctions \CompactGroup$.
-\end{definition}
 
 \begin{theorem}
     The operator $\Rotation \dummy$ restricts to a map
