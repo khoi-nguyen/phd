@@ -159,6 +159,46 @@ Using \cite[Lemma 4.4]{RuzhanskyTurunenWirth10}, we can show
 \end{definition}
 
 \begin{lemma}
+    Let $Y \in \LieAlgebraCompactGroup$.
+    The following expressions hold:
+    \begin{align*}
+        \LeftDifferentialOperatorFirstOrder Y_l \sigma(x, k; l \lambda)
+        =
+    \end{align*}
+\end{lemma}
+\begin{proof}
+    By definition, we know that
+    \begin{align*}
+        \LeftDifferentialOperatorFirstOrder Y_l \sigma(x, k; l \lambda)
+        &= \D{t}<t = 0> \sigma(x, k; l \exp_\CompactGroup (t Y) \lambda)
+    \end{align*}
+    which after applying the chain rule, becomes
+    \begin{align}
+        \LeftDifferentialOperatorFirstOrder Y_l \sigma(x, k; l \lambda)
+        &= \sum_{j = 1}^{\dim \VectorSpace} \D{s}<s = 0> \sigma(x, k; l \lambda + s u e_j) \D{t}<t = 0> \ip {l \exp_\CompactGroup (t Y) \lambda} {u e_j}.
+        \label{eq:k_differentiation_of_lambda_variable_in_symbol}
+    \end{align}
+
+    Now, we observe that
+    \begin{align*}
+        \D{t}<t = 0> \ip {l \exp_\CompactGroup (t Y) \lambda} {u e_j}
+        &= \ip {l Y \lambda} {u e_j}\\
+        &= \frac{1}{\i \turn} \Rep {l Y \lambda} (X_j),
+    \end{align*}
+    while at the same time
+    \begin{align*}
+        \D{s}<s = 0> \sigma(x, k; l \lambda + s u e_j)
+        = \i \turn \DifferenceOperator{j} \sigma(x, k; l \lambda).
+    \end{align*}
+
+    Therefore, it follows that~\eqref{eq:k_differentiation_of_lambda_variable_in_symbol} becomes
+    \begin{align*}
+        \LeftDifferentialOperatorFirstOrder Y_l \sigma(x, k; l \lambda)
+        = \DifferenceOperator{j} \sigma(x, k; l \lambda) \Rep {l Y \lambda} (X_j).
+    \end{align*}
+\end{proof}
+
+\begin{lemma}
     Let $q \in \SmoothFunctions{\Group}$ and $X \in \LieAlgebra$.
     If we define $\tilde q(y, l) = q(l y, l)$,
     then we have
