@@ -163,7 +163,7 @@ Using \cite[Lemma 4.4]{RuzhanskyTurunenWirth10}, we can show
     The following expressions hold:
     \begin{align*}
         \LeftDifferentialOperatorFirstOrder Y_l \sigma(x, k; l \lambda)
-        =
+        = \DifferenceOperator{j} \sigma(x, k; l \lambda) \Rep {l Y \lambda} (X_j).
     \end{align*}
 \end{lemma}
 \begin{proof}
@@ -196,6 +196,36 @@ Using \cite[Lemma 4.4]{RuzhanskyTurunenWirth10}, we can show
         \LeftDifferentialOperatorFirstOrder Y_l \sigma(x, k; l \lambda)
         = \DifferenceOperator{j} \sigma(x, k; l \lambda) \Rep {l Y \lambda} (X_j).
     \end{align*}
+
+    Now, we turn to the case of symbols on the direct product.
+    Again, we start with
+    \begin{align*}
+        \LeftDifferentialOperatorFirstOrder Y_l \tilde \sigma(x, k; l \lambda)
+        &= \D{t}<t = 0> \tilde \sigma(x, k; l \exp_\CompactGroup (t Y) \lambda).
+    \end{align*}
+    Applying the chain rule, we obtain
+    \begin{align}
+        \LeftDifferentialOperatorFirstOrder Y_l \tilde \sigma(x, k; l \lambda)
+        &= \sum_{j = 1}^{\dim \VectorSpace} \D{s}<s = 0> \tilde \sigma(x, k; l \lambda + s e_j) \D{t}<t = 0> \ip {l \exp_\CompactGroup (t Y) \lambda} {e_j}.
+        \label{eq:k_differentiation_of_lambda_variable_in_symbol_2}
+    \end{align}
+
+    By definition, it is clear that
+    \begin{align*}
+        \DifferenceOperator[\VectorSpace]{j} \tilde \sigma(x, k; l \lambda) = \frac 1 {\i \turn} \D[\tilde \sigma]{\lambda_j} (x, k, l \lambda),
+    \end{align*}
+    while
+    \begin{align*}
+        \ip {l \exp_\CompactGroup (t Y) \lambda} {e_j}
+        &= \ip {l Y \lambda} {e_j}
+        = \frac{1}{\i \turn} \Rep[\VectorSpace] {l Y \lambda} {\partial_j}.
+    \end{align*}
+
+    Therefore, it follows that \eqref{eq:k_differentiation_of_lambda_variable_in_symbol_2} becomes
+    \begin{align}
+        \LeftDifferentialOperatorFirstOrder Y_l \tilde \sigma(x, k; l \lambda)
+        &= \sum_{j = 1}^{\dim \VectorSpace} \DifferenceOperator[\VectorSpace]{j} \tilde \sigma(x, k; l \lambda) \Rep[\VectorSpace] {l Y \lambda} {\partial_j}.
+    \end{align}
 \end{proof}
 
 \begin{lemma}
