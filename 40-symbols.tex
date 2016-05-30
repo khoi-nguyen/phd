@@ -276,10 +276,11 @@ Using \cite[Lemma 4.4]{RuzhanskyTurunenWirth10}, we can show
     \end{align*}
     in the sense of distributions.
     Therefore, it follows that we have
-    \begin{align*}
+    \begin{align}
         {\tilde \kappa}_{x, k}(x - y, l^{-1} k) =
         {\kappa}_{x, k}({(y, l)}^{-1} (x, k)),
-    \end{align*}
+        \label{eq:link_between_the_kernels}
+    \end{align}
     again in the sense of distributions.
 
     \begin{enumerate}
@@ -292,10 +293,7 @@ Using \cite[Lemma 4.4]{RuzhanskyTurunenWirth10}, we can show
             \end{align*}
             where we substituted $(y, l)$ for $(x, k)^{-1} (y, l)$ to obtain the last line.
 
-            Using $(y, l)^{-1} (x, k) = (l^{-1}(x - y), l^{-1} k)$ and
-            \begin{align*}
-                \kappa_{x, k} ((y, l)^{-1} (x, k)) = \tilde \kappa_{x, k} (y - x, l^{-1} k),
-            \end{align*}
+            Using $(y, l)^{-1} (x, k) = (l^{-1}(x - y), l^{-1} k)$ and \eqref{eq:link_between_the_kernels}
             if follows that $\DifferenceOperator{q} \sigma(x, k; \lambda)$ becomes
             \begin{align*}
                 \int_\Group q(l^{-1}(x - y), l^{-1} k) \tilde \kappa_{x, k}(x - y, l^{-1} k) \e^{\i \turn \ip {k u^{-1} \lambda} {(y - x)}} \RightRegularRepresentation(k^{-1} l) \dd (y, l).
@@ -306,13 +304,17 @@ Using \cite[Lemma 4.4]{RuzhanskyTurunenWirth10}, we can show
                 \int_\Group q(-l^{-1} y, l^{-1}) \tilde \kappa_{x, k}(-y, l^{-1}) \e^{\i \turn \ip {k u^{-1} \lambda} y} \RightRegularRepresentation(l) \dd (y, l) F(u)
             \end{align*}
             which we recognise to be exactly $\DifferenceOperator {\tilde q} \tilde \sigma(x, k, k u^{-1} \lambda) F(u)$.
-            So far, we have shown that
+            Therefore, we have shown that
             \begin{align*}
                 \DifferenceOperator{q} \sigma(x, k; \lambda) F(u)
-                = \DifferenceOperator {\tilde q} \tilde \sigma(x, k, k u^{-1} \lambda) F(u)
+                = \DifferenceOperator {\tilde q} \tilde \sigma(x, k, k u^{-1} \lambda) F(u),
             \end{align*}
+            or in other words $\DifferenceOperator q \sigma = \Rotation {\DifferenceOperator[\GroupDirect] {\tilde q} \tilde \sigma}$.
 
+            The other identity is proven by observing that $\InverseRotation \dummy$ is the inverse of $\Rotation \dummy$.
         \item
+            This identity follows easily from the previous point.
+.       \item
             Now, applying $\LeftDifferentialOperatorFirstOrder{X}$ on both sides of the above,
             we get
             \begin{align*}
