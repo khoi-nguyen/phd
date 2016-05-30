@@ -159,6 +159,7 @@ Using \cite[Lemma 4.4]{RuzhanskyTurunenWirth10}, we can show
 \end{definition}
 
 \begin{lemma}
+\label{lemma:Y_derivative_on_lambda_variable_of_symbols}
     Let $Y \in \LieAlgebraCompactGroup$, $\sigma \in \SymbolClass m {\rho, \delta}$, $\tilde \sigma \in \SymbolClass[\GroupDirect] m {\rho, \delta}$.
     We have the following expression
     \begin{align*}
@@ -315,32 +316,33 @@ Using \cite[Lemma 4.4]{RuzhanskyTurunenWirth10}, we can show
         \item
             This identity follows easily from the previous point.
         \item
-            Now, applying $\LeftDifferentialOperatorFirstOrder{X}$ on both sides of the above,
-            we get
-            \begin{align*}
-                \DifferenceOperator{q} \LeftDifferentialOperatorFirstOrder{X} \sigma(x, k; \lambda)
-                &= \DifferenceOperator[\GroupDirect] {\tilde q} \eval{\LeftDifferentialOperatorFirstOrder{X}}{(x', k') = (x, k)} \tilde \sigma(x', k', k u^{-1} \lambda) F(u)\\
-                &\quad+ \sum_{j = 1}^{\dim \VectorSpace} \DifferenceOperator[\GroupDirect] {\tilde q} \D[\tilde \sigma]{\lambda_j}(x, k; k u^{-1} \lambda) \LeftDifferentialOperatorFirstOrder{X}_k \ip {k u^{-1} \lambda} {e_j}\\
-                &= \Rotation {\DifferenceOperator[\GroupDirect] {\tilde q} \LeftDifferentialOperatorFirstOrder{X} \tilde \sigma}(x, k, \lambda) F(u)\\
-                &\quad+ \sum_{j = 1}^{\dim \VectorSpace} \Rotation {\DifferenceOperator[\GroupDirect] {\tilde q} \D[\tilde \sigma]{\lambda_j}} (x, k; \lambda) \LeftDifferentialOperatorFirstOrder{X}_k \ip {k u^{-1} \lambda} {e_j}
-            \end{align*}
-
-            Computing
-            \begin{align*}
-                \LeftDifferentialOperatorFirstOrder{X}_k \ip {k u^{-1} \lambda} {e_j}
-                &= \D*{t}<t = 0> \ip {k \exp_\CompactGroup(t \Projection \LieAlgebraCompactGroup X) u^{-1} \lambda} {e_j}\\
-                &= \ip {k \Projection \LieAlgebraCompactGroup X u^{-1} \lambda} {e_j}\\
-                &= \frac 1 {\i \turn} \Rep[\GroupDirect] {k \Projection \LieAlgebraCompactGroup X k^{-1} k u^{-1} \lambda} (\partial_j)\\
-                &= \frac 1 {\i \turn} \Rotation {\Rep[\GroupDirect] {k \Projection \LieAlgebraCompactGroup X k^{-1} \lambda} (\partial_j)},
-            \end{align*}
+            Applying $\LeftDifferentialOperatorFirstOrder Y$ on both sides of $\sigma = \Rotation {\tilde \sigma}$,
             we obtain
             \begin{align*}
-                \DifferenceOperator{q} \LeftDifferentialOperatorFirstOrder{X} \sigma(x, k; \lambda)
-                = \Rotation {
-                    \DifferenceOperator[\GroupDirect] {\tilde q} \LeftDifferentialOperatorFirstOrder{X} \tilde \sigma
-                    + \sum_{j = 1}^{\dim \VectorSpace} (\DifferenceOperator[\GroupDirect] {\tilde q} \DifferenceOperator[\VectorSpace]{j} \tilde \sigma) \Rep[\GroupDirect] {k \Projection \LieAlgebraCompactGroup X k^{-1} \lambda} (\partial_j)
-                }(x, k; \lambda)
+                \LeftDifferentialOperatorFirstOrder Y_k \sigma(x, k; \lambda)
+                = \LeftDifferentialOperatorFirstOrder Y_{k' = k} \tilde \sigma(x, k'; k u^{-1} \lambda) + \LeftDifferentialOperatorFirstOrder Y_{k' = k} \tilde \sigma(x, k; k' u^{-1} \lambda)\\
+                = \Rotation {\LeftDifferentialOperatorFirstOrder Y \tilde \sigma}(x, k; \lambda) + \LeftDifferentialOperatorFirstOrder Y_{k' = k} \tilde \sigma(x, k; k' u^{-1} \lambda).
+                \label{eq:Y_derivative_of_rotated_symbol_on_direct_product}
             \end{align*}
+
+            The second term on the right-hand side can be computed via Lemma \ref{lemma:Y_derivative_on_lambda_variable_of_symbols} to be
+            \begin{align*}
+                \LeftDifferentialOperatorFirstOrder Y_{k' = k} \tilde \sigma(x, k; k' u^{-1} \lambda)
+                &= \sum_{j = 1}^{\dim \VectorSpace} \DifferenceOperator[\VectorSpace]{j} \tilde \sigma(x, k; k u^{-1} \lambda) \Rep[\GroupDirect]{k Y u^{-1} \lambda} (\partial_j)\\
+                &= \sum_{j = 1}^{\dim \VectorSpace} \DifferenceOperator[\VectorSpace]{j} \tilde \sigma(x, k; k u^{-1} \lambda) \Rep[\GroupDirect]{k Y k^{-1} (k u^{-1} \lambda)} (\partial_j)\\
+                &= \sum_{j = 1}^{\dim \VectorSpace} \Rotation {\DifferenceOperator[\VectorSpace]{j} \tilde \sigma} (x, k; \lambda) \Rotation {\Rep[\GroupDirect]{k Y k^{-1} \lambda} (\partial_j)}.
+            \end{align*}
+
+            Plugging the above into \eqref{eq:Y_derivative_of_rotated_symbol_on_direct_product}, we obtain
+            \begin{align*}
+                \LeftDifferentialOperatorFirstOrder Y \sigma(x, k; \lambda)
+                &= \Rotation {\LeftDifferentialOperatorFirstOrder Y \tilde \sigma}(x, k; \lambda)
+                + \sum_{j = 1}^{\dim \VectorSpace} \Rotation {\DifferenceOperator[\VectorSpace]{j} \tilde \sigma \ \Rep[\GroupDirect]{k Y k^{-1} \lambda} (\partial_j)}(x, k; \lambda)\\
+                &= \Rotation {\LeftDifferentialOperatorFirstOrder Y \tilde \sigma
+                    + \sum_{j = 1}^{\dim \VectorSpace} \DifferenceOperator[\VectorSpace]{j} \tilde \sigma \ \Rep[\GroupDirect]{k Y k^{-1} \lambda} (\partial_j)
+                }(x, k; \lambda),
+            \end{align*}
+            which is what we wanted to show.
     \end{enumerate}
 \end{proof}
 
