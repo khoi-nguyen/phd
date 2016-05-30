@@ -267,6 +267,21 @@ Using \cite[Lemma 4.4]{RuzhanskyTurunenWirth10}, we can show
 
 \end{lemma}
 \begin{proof}
+    Let us write $T = \Op (\sigma)$.
+    It follows that by \todo{Reference both quantisations},
+    \begin{align*}
+        T \phi(x, k)
+        &= \int_{\GroupDirect} \phi(y, l) {\tilde \kappa}_{x, k}(x - y, l^{-1} k) \dd (y, l)\\
+        &= \int_{\GroupDirect} \phi(y, l) {\kappa}_{x, k}({(y, l)}^{-1} (x, k)) \dd (y, l)
+    \end{align*}
+    in the sense of distributions.
+    Therefore, it follows that we have
+    \begin{align*}
+        {\tilde \kappa}_{x, k}(x - y, l^{-1} k) =
+        {\kappa}_{x, k}({(y, l)}^{-1} (x, k)),
+    \end{align*}
+    again in the sense of distributions.
+
     Suppose first that $\sigma \in \SmoothingSymbols$ so that its kernel $\kappa_{x, k} \in \Schwartz \Group$.
     By definition, $\DifferenceOperator{q} \sigma(x, k; \lambda)$ is equal to
     \begin{align*}
