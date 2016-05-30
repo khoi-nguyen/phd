@@ -231,17 +231,40 @@ Using \cite[Lemma 4.4]{RuzhanskyTurunenWirth10}, we can show
 \end{proof}
 
 \begin{lemma}
-    Let $q \in \SmoothFunctions{\Group}$ and $X \in \LieAlgebra$.
-    If we define $\tilde q(y, l) = q(l y, l)$,
-    then we have
+    Let $\sigma$ and $\tilde \sigma$ be symbols on $\Group$ and $\GroupDirect$ respectively be such that
     \begin{align*}
-        \sigma(x, k; \lambda) &= \Rotation {\tilde \sigma}(x, k; \lambda)\\
-        \DifferenceOperator{q} \LeftDifferentialOperatorFirstOrder{X} \sigma(x, k; \lambda)
-        &= \Rotation {
-            \DifferenceOperator[\GroupDirect] {\tilde q} \LeftDifferentialOperatorFirstOrder{X} \tilde \sigma
-            + \sum_{j = 1}^{\dim \VectorSpace} (\DifferenceOperator[\GroupDirect] {\tilde q} \DifferenceOperator[\VectorSpace]{j} \tilde \sigma) \Rep[\GroupDirect] {k \Projection \LieAlgebraCompactGroup X k^{-1} \lambda} (\partial_j)
-        }(x, k; \lambda)
+        \Op[\Group] (\sigma) = \Op[\GroupDirect] (\tilde \sigma).
     \end{align*}
+    \begin{enumerate}
+        \item
+            If $q \in \SmoothFunctions \Group$,
+            then defining $\tilde q(y, l) = q(l y, l)$ yields
+            \begin{align*}
+                \DifferenceOperator{q} \sigma = \Rotation {\DifferenceOperator[\GroupDirect]{\tilde q} \tilde \sigma}
+                \quad \text{and} \quad
+                \DifferenceOperator[\GroupDirect]{\tilde q} \tilde \sigma = \InverseRotation {\DifferenceOperator{q} \sigma}.
+            \end{align*}
+            In particular, $\sigma = \Rotation {\tilde \sigma}$ and $\tilde \sigma = \InverseRotation \sigma$.
+        \item
+            If $X \in \LieAlgebra \cap \VectorSpace$, then
+            \begin{align*}
+                \LeftDifferentialOperatorFirstOrder{X} \sigma
+                = \Rotation {\LeftDifferentialOperatorFirstOrder{X} \tilde \sigma}
+                \quad \text{and} \quad
+                \LeftDifferentialOperatorFirstOrder{X} \tilde \sigma
+                = \InverseRotation {\LeftDifferentialOperatorFirstOrder{X} \sigma}.
+            \end{align*}
+        \item
+            If $Y \in \LieAlgebraCompactGroup$, we have
+            \begin{align*}
+                \LeftDifferentialOperatorFirstOrder{Y} \sigma(x, k; \lambda)
+                &= \Rotation {
+                    \LeftDifferentialOperatorFirstOrder{Y} \tilde \sigma
+                    + \sum_{j = 1}^{\dim \VectorSpace} (\DifferenceOperator[\VectorSpace]{j} \tilde \sigma) \Rep[\GroupDirect] {k Y k^{-1} \lambda} (\partial_j)
+                }(x, k; \lambda).
+            \end{align*}
+    \end{enumerate}
+
 \end{lemma}
 \begin{proof}
     Suppose first that $\sigma \in \SmoothingSymbols$ so that its kernel $\kappa_{x, k} \in \Schwartz \Group$.
