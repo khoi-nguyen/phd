@@ -239,6 +239,7 @@ Using \cite[Lemma 4.4]{RuzhanskyTurunenWirth10}, we can show
     \end{align*}
     \begin{enumerate}
         \item
+            \label{item:action_of_difference_operators}
             If $q \in \SmoothFunctions \Group$,
             then defining $\tilde q(y, l) = q(l y, l)$ yields
             \begin{align*}
@@ -248,6 +249,7 @@ Using \cite[Lemma 4.4]{RuzhanskyTurunenWirth10}, we can show
             \end{align*}
             In particular, $\sigma = \Rotation {\tilde \sigma}$ and $\tilde \sigma = \InverseRotation \sigma$.
         \item
+            \label{item:action_of_Euclidean_derivative}
             If $X \in \LieAlgebra \cap \VectorSpace$, then
             \begin{align*}
                 \LeftDifferentialOperatorFirstOrder{X} \sigma
@@ -257,6 +259,7 @@ Using \cite[Lemma 4.4]{RuzhanskyTurunenWirth10}, we can show
                 = \InverseRotation {\LeftDifferentialOperatorFirstOrder{X} \sigma}.
             \end{align*}
         \item
+            \label{item:action_of_K-derivative}
             If $Y \in \LieAlgebraCompactGroup$, we have
             \begin{align*}
                 \LeftDifferentialOperatorFirstOrder{Y} \sigma(x, k; \lambda)
@@ -389,6 +392,7 @@ Using \cite[Lemma 4.4]{RuzhanskyTurunenWirth10}, we can show
 \end{proof}
 
 \begin{lemma}
+\label{lemma:inclusion_in_zero_class}
     Let $m \defeq \frac {-\dim \CompactGroup} 2 (1 - \rho)$.
     \todo{Can we prove the result for $m = 0$ or improve?}
     \begin{enumerate}
@@ -461,6 +465,77 @@ Using \cite[Lemma 4.4]{RuzhanskyTurunenWirth10}, we can show
         \SymbolClass m {1, \delta} = \SymbolClass [\GroupDirect] m {1, \delta}.
     \end{align*}
 \end{theorem}
+\begin{proof}
+    Let us prove the first claim,
+    as the proof of the second uses an identical argument.
+
+    Let $\sigma \in \SymbolClass m {\rho, \delta}$,
+    and write $\tilde \sigma \defeq \InverseRotation \sigma$.
+
+    \begin{claim}
+        Given $\tilde{q} \in \CompactGroup$ and $\beta \in \N^{\dim \Group}$,
+        there exists a symbol $\tau \in \SymbolClass {m - \rho \order(q) + \delta' \abs \beta} {\rho, \delta'}$ such that
+        \begin{align*}
+            \DifferenceOperator [\GroupDirect] {\tilde q} X^\beta \tilde \sigma = \InverseRotation \tau.
+        \end{align*}
+    \end{claim}
+    \begin{proof}[Proof of the claim]
+        Let us prove the claim by induction on $\abs \beta$.
+        The initial case $\beta = 0$ follows easily from Lemma~\ref{lemma:link_between_symbols} (\ref{item:action_of_difference_operators})
+        and the inclusion
+        \begin{align*}
+            \SymbolClass {m - \rho \order(q)} {\rho, \delta} \subset \SymbolClass {m - \rho \order(q)} {\rho, \delta'}.
+        \end{align*}
+
+        Now, let us assume the claim holds for a certain $\beta$,
+        so that there exists $\tau \in \SymbolClass {m - \rho \order(q) + \delta' \abs \beta} {\rho, \delta'}$ such that
+        \begin{align*}
+            \DifferenceOperator [\GroupDirect] {\tilde q} X^\beta \tilde \sigma = \InverseRotation \tau.
+        \end{align*}
+
+        If $X \in \LieAlgebra \cap \VectorSpace$,
+        then by (\ref{item:action_of_Euclidean_derivative}) of Lemma~\ref{lemma:link_between_symbols} we have
+        \begin{align*}
+            \DifferenceOperator [\GroupDirect] {\tilde q} X X^\beta \tilde \sigma = \InverseRotation {X \tau},
+        \end{align*}
+        where $X \tau \in \SymbolClass {m - \rho \order(q) + \delta' (\abs \beta + 1)} {\rho, \delta'}$.
+
+        If $X \in \LieAlgebraCompactGroup$,
+        then by (\ref{item:action_of_K-derivative}) of Lemma~\ref{lemma:link_between_symbols} we have
+        \begin{align*}
+            \DifferenceOperator [\GroupDirect] {\tilde q} X X^\beta \tilde \sigma = \InverseRotation {X \tau - \sum_{j = 1}^{\dim \VectorSpace} \DifferenceOperator{j} \tau \ \Rep {\lambda} (X^t X_j) }
+        \end{align*}
+        where $X \tau - \sum_{j = 1}^{\dim \VectorSpace} \DifferenceOperator{j} \tau \ \Rep {\lambda} (X^t X_j) \in \SymbolClass {m - \rho \order(q) + \delta' (\abs \beta + 1)} {\rho, \delta'}$.
+        To see this,
+        we observe the condition $\delta' \geq 1 - \rho$ implies that $X \tau$ is the term with higher order.
+
+        Either way, this concludes the induction, and thus the proof of the claim.
+    \end{proof}
+
+    By our claim,
+    there exists a symbol $\tau \in \SymbolClass {m - \rho \order(q) + \delta' \abs \beta} {\rho, \delta'}$ such that
+    \begin{align*}
+        \DifferenceOperator [\GroupDirect] {\tilde q} X^\beta \tilde \sigma = \InverseRotation \tau.
+    \end{align*}
+
+    Note that the above implies that
+    \begin{align*}
+        \Rep[\GroupDirect] \lambda \BesselPotential{-m' + \rho \order(q) - \delta' \abs \beta + \gamma} \DifferenceOperator [\GroupDirect] {\tilde q} X^\beta \tilde \sigma(x, k; \lambda) \Rep [\GroupDirect] \lambda \BesselPotential{-\gamma}\\
+        = \InverseRotation {\Rep \lambda \BesselPotential{-m' + \rho \order(q) - \delta' \abs \beta + \gamma} \tau \Rep \lambda \BesselPotential{-\gamma}} (x, k; \lambda).
+    \end{align*}
+
+    Since the operator inside $\InverseRotation \dummy$ on the second line is in $\SymbolClass {-\frac {\dim \CompactGroup} 2 (1 - \rho) } {\rho, \delta'}$,
+    then Lemma~\ref{lemma:inclusion_in_zero_class} implies that
+    \begin{align*}
+        &\sup_{g \in \GroupDirect} \esssup_{\lambda \in \VectorSpace}\\
+        &\quad
+        \norm [\Lin {\Lebesgue 2 \CompactGroup}] {%
+            \Rep[\GroupDirect] \lambda \BesselPotential{-m' + \rho \abs \alpha  - \delta' \abs \beta + \gamma} \DifferenceOperator [\GroupDirect] {\tilde q} X^\beta \tilde \sigma(x, k; \lambda) \Rep [\GroupDirect] \lambda \BesselPotential{-\gamma}
+        }
+    \end{align*}
+    is finite,
+    which by definition means that $\tilde \sigma \in \SymbolClass [\GroupDirect] {m'} {\rho, \delta'}$.
+\end{proof}
 
 \section{Littlewood-Paley decomposition}
 
