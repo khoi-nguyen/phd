@@ -383,6 +383,35 @@ Using \cite[Lemma 4.4]{RuzhanskyTurunenWirth10}, we can show
     \end{enumerate}
 \end{proof}
 
+\begin{theorem}
+    Let $\delta' = \max \{\delta, 1 - \rho\}$.
+
+    \begin{enumerate}
+        \item
+            For each $\sigma \in \SymbolClass m {\rho, \delta}$,
+            the symbol $\tilde \sigma = \InverseRotation \sigma$ belongs to $\SymbolClass [\GroupDirect] m {\rho, \delta'}$
+            and satisfies
+            \begin{align*}
+                \Op[\Group] (\sigma) = \Op[\GroupDirect] (\tilde \sigma).
+            \end{align*}
+        \item
+            Reciprocally, for each $\tilde \sigma \in \SymbolClass [\GroupDirect] m {\rho, \delta}$,
+            the symbol $\sigma = \Rotation {\tilde \sigma}$ belongs to $\SymbolClass m {\rho, \delta'}$
+            and satisfies
+            \begin{align*}
+                \Op[\GroupDirect] (\tilde \sigma) = \Op[\Group] (\sigma).
+            \end{align*}
+    \end{enumerate}
+
+    In particular, if $\delta \geq 1 - \rho$, the symbol classes coincide (i.e. $\SymbolClass m {\rho, \delta} = \SymbolClass [\GroupDirect] m {\rho, \delta}$).
+    Moreover, if we impose the condition $\rho \geq \delta$,
+    then we have
+    \begin{align*}
+        \SymbolClass m {\rho, \delta} = \SymbolClass [\GroupDirect] m {\rho, \delta}
+        \quad \text{if } \rho \geq \frac 1 2.
+    \end{align*}
+\end{theorem}
+
 \section{Littlewood-Paley decomposition}
 
 \begin{lemma}
