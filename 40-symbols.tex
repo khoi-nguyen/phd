@@ -232,6 +232,7 @@ Using \cite[Lemma 4.4]{RuzhanskyTurunenWirth10}, we can show
 \end{proof}
 
 \begin{lemma}
+\label{lemma:link_between_symbols}
     Let $\sigma$ and $\tilde \sigma$ be symbols on $\Group$ and $\GroupDirect$ respectively be such that
     \begin{align*}
         \Op[\Group] (\sigma) = \Op[\GroupDirect] (\tilde \sigma).
@@ -269,7 +270,6 @@ Using \cite[Lemma 4.4]{RuzhanskyTurunenWirth10}, we can show
                 }(x, k; \lambda).
             \end{align*}
     \end{enumerate}
-
 \end{lemma}
 \begin{proof}
     Let us write $T = \Op (\sigma)$.
@@ -381,6 +381,56 @@ Using \cite[Lemma 4.4]{RuzhanskyTurunenWirth10}, we can show
             \end{align*}
             concluding the proof.
     \end{enumerate}
+\end{proof}
+
+\begin{lemma}
+    Let $\sigma$ and $\tilde \sigma$ be symbols on $\Group$ and $\GroupDirect$ respectively be such that
+    \begin{align*}
+        \Op[\Group] (\sigma) = \Op[\GroupDirect] (\tilde \sigma).
+    \end{align*}
+    If $\sigma \in \SymbolClass 0 {1, 0}$, we have
+    \begin{align*}
+        \sup_{(x, k) \in \Group} \esssup_{\lambda \in \VectorSpace}
+        \norm [\Lin {\Lebesgue 2 \CompactGroup}] {\tilde \sigma(x, k; \lambda)} < \infty.
+    \end{align*}
+    Reciprocally,
+    if $\tilde \sigma \in \SymbolClass [\GroupDirect] 0 {1, 0}$, we have
+    \begin{align*}
+        \sup_{(x, k) \in \Group} \esssup_{\lambda \in \VectorSpace}
+        \norm [\Lin {\Lebesgue 2 \CompactGroup}] {\sigma(x, k; \lambda)} < \infty.
+    \end{align*}
+\end{lemma}
+\begin{proof}
+    Let $F \in \Lebesgue 2 \CompactGroup$ and $u \in \CompactGroup$.
+    By Lemma \ref{lemma:link_between_symbols}, we know that
+    \begin{align*}
+        \tilde \sigma(x,  k; \lambda) F(u) = \sigma(x, k; u k^{-1} \lambda) F(u).
+    \end{align*}
+
+    By the Sobolev Inequality,
+    we know that
+    \begin{align*}
+        \int_\CompactGroup \sup_{v \in \CompactGroup} \abs {\sigma(x, k; v \lambda) F(u)}^2 \dd u
+        \leq C \sum_{\beta} \int_\CompactGroup \int_\CompactGroup \abs{Y^\beta_v \sigma(x, k; v \lambda) F(u)}^2 \dd v \dd u
+    \end{align*}
+    Using Lemma~\ref{lemma:Y_derivative_on_lambda_variable_of_symbols},
+    we know that each $Y^\beta_v \sigma$ belongs to $\SymbolClass 0 {1, 0}$ so that the above becomes
+    \begin{align*}
+        \sup_{(x, k) \in \Group} \esssup_{\lambda \in \VectorSpace}
+        \int_\CompactGroup \sup_{v \in \CompactGroup} \abs {\sigma(x, k; v \lambda) F(u)}^2 \dd u
+        \leq C \norm [\Lebesgue 2 \CompactGroup] {F}^2.
+    \end{align*}
+
+    From the above inequality, we easily derive that
+    \begin{align*}
+        \sup_{(x, k) \in \Group}& \esssup_{\lambda \in \VectorSpace} \norm [\Lebesgue 2 \CompactGroup] {\tilde \sigma(x, k; \lambda) F}^2\\
+        &= \sup_{(x, k) \in \Group} \esssup_{\lambda \in \VectorSpace} \int_\CompactGroup \abs {\sigma(x, k; u k^{-1} \lambda) F(u)}^2 \dd u\\
+        &\leq \sup_{(x, k) \in \Group} \esssup_{\lambda \in \VectorSpace} \int_\CompactGroup \sup_{v \in \CompactGroup} \abs {\sigma(x, k; v \lambda) F(u)}^2 \dd u\\
+        &\leq C \norm [\Lebesgue 2 \CompactGroup] {F}^2,
+    \end{align*}
+    which concludes the proof.
+
+    The second bound is obtained with an identical argument.
 \end{proof}
 
 \begin{theorem}
