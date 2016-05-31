@@ -262,6 +262,10 @@ Using \cite[Lemma 4.4]{RuzhanskyTurunenWirth10}, we can show
                 &= \Rotation {
                     \LeftDifferentialOperatorFirstOrder{Y} \tilde \sigma
                     + \sum_{j = 1}^{\dim \VectorSpace} (\DifferenceOperator[\VectorSpace]{j} \tilde \sigma) \Rep[\GroupDirect] {k Y k^{-1} \lambda} (\partial_j)
+                }(x, k; \lambda)\\
+                \LeftDifferentialOperatorFirstOrder Y \tilde \sigma(x, k; \lambda)
+                &= \InverseRotation {\LeftDifferentialOperatorFirstOrder Y \sigma
+                - \sum_{j = 1}^{\dim \VectorSpace} \DifferenceOperator{j} \sigma \ \Rep \lambda (Y^t X_j)
                 }(x, k; \lambda).
             \end{align*}
     \end{enumerate}
@@ -343,6 +347,39 @@ Using \cite[Lemma 4.4]{RuzhanskyTurunenWirth10}, we can show
                 }(x, k; \lambda),
             \end{align*}
             which is what we wanted to show.
+
+            To show the second identity,
+            we apply $\LeftDifferentialOperatorFirstOrder Y$ on both sides of $\tilde \sigma = \InverseRotation {\sigma}$ to obtain
+            \begin{align*}
+                \LeftDifferentialOperatorFirstOrder Y_k \tilde \sigma(x, k; \lambda)
+                = \LeftDifferentialOperatorFirstOrder Y_{k' = k} \sigma(x, k'; u k^{-1} \lambda) + \LeftDifferentialOperatorFirstOrder Y_{k' = k} \sigma(x, k; u {k'}^{-1} \lambda) \notag\\
+                = \InverseRotation {\LeftDifferentialOperatorFirstOrder Y \sigma}(x, k; \lambda) - \LeftDifferentialOperatorFirstOrder Y_{u} \tilde \sigma(x, k; u k^{-1} \lambda).
+                \label{eq:Y_derivative_of_rotated_symbol_on_semi-direct_product}
+            \end{align*}
+
+            Using Lemma~\ref{lemma:Y_derivative_on_lambda_variable_of_symbols} again to compute the second term of the right-hand side,
+            \begin{align*}
+                \LeftDifferentialOperatorFirstOrder Y_u \tilde \sigma(x, k; u k^{-1} \lambda)
+                &= \sum_{j = 1}^{\dim \VectorSpace} \DifferenceOperator{j} \sigma (x, k; u k^{-1} \lambda) \Rep {u Y k \lambda} (X_j)\\
+                &= \sum_{j = 1}^{\dim \VectorSpace} \DifferenceOperator{j} \sigma (x, k; u k^{-1} \lambda) \Rep {u Y u^{-1} u k \lambda} (X_j)\\
+                &= \sum_{j = 1}^{\dim \VectorSpace} \InverseRotation {\DifferenceOperator{j} \sigma \Rep {u Y u^{-1} \lambda} (X_j)}.
+            \end{align*}
+
+            Observing that in the above,
+            \begin{align*}
+                \Rep {u Y u^{-1} \lambda} (X_j)
+                = \i \turn \ip {u Y u^{-1} \lambda} {u X_j}
+                = \i \turn \ip {\lambda} {u Y^t X_j}
+                = \Rep \lambda (Y^t X_j)
+            \end{align*}
+            so that \eqref{eq:Y_derivative_of_rotated_symbol_on_direct_product} becomes
+            \begin{align*}
+                \LeftDifferentialOperatorFirstOrder Y_k \tilde \sigma(x, k; \lambda)
+                = \InverseRotation {\LeftDifferentialOperatorFirstOrder Y \sigma
+                - \sum_{j = 1}^{\dim \VectorSpace} \DifferenceOperator{j} \sigma \ \Rep \lambda (Y^t X_j)
+                }(x, k; \lambda),
+            \end{align*}
+            concluding the proof.
     \end{enumerate}
 \end{proof}
 
