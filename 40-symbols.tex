@@ -386,19 +386,23 @@ Using \cite[Lemma 4.4]{RuzhanskyTurunenWirth10}, we can show
 \begin{lemma}
     Let $\sigma$ and $\tilde \sigma$ be symbols on $\Group$ and $\GroupDirect$ respectively be such that
     \begin{align*}
-        \Op[\Group] (\sigma) = \Op[\GroupDirect] (\tilde \sigma).
+        \Op[\Group] (\sigma) = \Op[\GroupDirect] (\tilde \sigma),
     \end{align*}
-    If $\sigma \in \SymbolClass 0 {1, 0}$, we have
-    \begin{align*}
-        \sup_{(x, k) \in \Group} \esssup_{\lambda \in \VectorSpace}
-        \norm [\Lin {\Lebesgue 2 \CompactGroup}] {\tilde \sigma(x, k; \lambda)} < \infty.
-    \end{align*}
-    Reciprocally,
-    if $\tilde \sigma \in \SymbolClass [\GroupDirect] 0 {1, 0}$, we have
-    \begin{align*}
-        \sup_{(x, k) \in \Group} \esssup_{\lambda \in \VectorSpace}
-        \norm [\Lin {\Lebesgue 2 \CompactGroup}] {\sigma(x, k; \lambda)} < \infty.
-    \end{align*}
+    and let $m \defeq \frac {-\dim \CompactGroup} 2 (1 - \rho)$.
+    \begin{enumerate}
+        \item
+            If $\sigma \in \SymbolClass m {\rho, \delta}$, we have
+            \begin{align*}
+                \sup_{(x, k) \in \Group} \esssup_{\lambda \in \VectorSpace}
+                \norm [\Lin {\Lebesgue 2 \CompactGroup}] {\tilde \sigma(x, k; \lambda)} < \infty.
+            \end{align*}
+        \item
+            if $\tilde \sigma \in \SymbolClass [\GroupDirect] m {\rho, \delta}$, we have
+            \begin{align*}
+                \sup_{(x, k) \in \Group} \esssup_{\lambda \in \VectorSpace}
+                \norm [\Lin {\Lebesgue 2 \CompactGroup}] {\sigma(x, k; \lambda)} < \infty.
+            \end{align*}
+    \end{enumerate}
 \end{lemma}
 \begin{proof}
     Let $F \in \Lebesgue 2 \CompactGroup$ and $u \in \CompactGroup$.
@@ -414,7 +418,7 @@ Using \cite[Lemma 4.4]{RuzhanskyTurunenWirth10}, we can show
         \leq C \sum_{\beta} \int_\CompactGroup \int_\CompactGroup \abs{Y^\beta_v \sigma(x, k; v \lambda) F(u)}^2 \dd v \dd u
     \end{align*}
     Using Lemma~\ref{lemma:Y_derivative_on_lambda_variable_of_symbols},
-    we know that each $Y^\beta_v \sigma$ belongs to $\SymbolClass 0 {1, 0}$ so that the above becomes
+    we know that each $Y^\beta_v \sigma \in \SymbolClass {m + \abs \beta (1 - \rho)} {\rho, \delta} \subset \SymbolClass 0 {\rho, \delta}$ so that the above becomes
     \begin{align*}
         \sup_{(x, k) \in \Group} \esssup_{\lambda \in \VectorSpace}
         \int_\CompactGroup \sup_{v \in \CompactGroup} \abs {\sigma(x, k; v \lambda) F(u)}^2 \dd u
