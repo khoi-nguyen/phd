@@ -389,21 +389,19 @@ Using \cite[Lemma 4.4]{RuzhanskyTurunenWirth10}, we can show
 \end{proof}
 
 \begin{lemma}
-    Let $\sigma$ and $\tilde \sigma$ be symbols on $\Group$ and $\GroupDirect$ respectively be such that
-    \begin{align*}
-        \Op[\Group] (\sigma) = \Op[\GroupDirect] (\tilde \sigma),
-    \end{align*}
-    and let $m \defeq \frac {-\dim \CompactGroup} 2 (1 - \rho)$.
+    Let $m \defeq \frac {-\dim \CompactGroup} 2 (1 - \rho)$.
     \todo{Can we prove the result for $m = 0$ or improve?}
     \begin{enumerate}
         \item
-            If $\sigma \in \SymbolClass m {\rho, \delta}$, we have
+            If $\sigma \in \SymbolClass m {\rho, \delta}$,
+            then $\tilde \sigma = \InverseRotation \sigma$ satisfies
             \begin{align*}
                 \sup_{(x, k) \in \Group} \esssup_{\lambda \in \VectorSpace}
                 \norm [\Lin {\Lebesgue 2 \CompactGroup}] {\tilde \sigma(x, k; \lambda)} < \infty.
             \end{align*}
         \item
-            if $\tilde \sigma \in \SymbolClass [\GroupDirect] m {\rho, \delta}$, we have
+            If $\tilde \sigma \in \SymbolClass [\GroupDirect] m {\rho, \delta}$,
+            then $\sigma = \Rotation {\tilde \sigma}$ satisfies
             \begin{align*}
                 \sup_{(x, k) \in \Group} \esssup_{\lambda \in \VectorSpace}
                 \norm [\Lin {\Lebesgue 2 \CompactGroup}] {\sigma(x, k; \lambda)} < \infty.
@@ -412,11 +410,6 @@ Using \cite[Lemma 4.4]{RuzhanskyTurunenWirth10}, we can show
 \end{lemma}
 \begin{proof}
     Let $F \in \Lebesgue 2 \CompactGroup$ and $u \in \CompactGroup$.
-    By Lemma \ref{lemma:link_between_symbols}, we know that
-    \begin{align*}
-        \tilde \sigma(x,  k; \lambda) F(u) = \sigma(x, k; u k^{-1} \lambda) F(u).
-    \end{align*}
-
     By the Sobolev Inequality,
     we know that
     \begin{align*}
