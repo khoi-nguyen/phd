@@ -325,6 +325,35 @@ We shall denote by $\LieAlgebraCompactGroup$ the Lie algebra of $\CompactGroup$.
     where $(x, t) \in \R^2 \rtimes \T$.
 \end{example}
 
+\begin{example}[Euclidean motion groups]
+    Assume $G = \R^n \rtimes \SpecialOrthogonalGroup n$.
+    Its Lie algebra is the vector space
+    \begin{align*}
+        \LieAlgebra \defeq \R^n \oplus \SkewSymmetric {\R^n}.
+    \end{align*}
+
+    For each pair of distinct $i, j \in \{1, \dots, n\}$,
+    we let $E_{ij}$ be the only matrix satisfying
+    \begin{align*}
+        E_{ij} e_k = \Kronecker i j e_j - \Kronecker j k e_i
+    \end{align*}
+    for each $k \in \{1, \dots, n\}$.
+
+    A basis of $\LieAlgebra$ can now be given by
+    \begin{align*}
+        X_i &\defeq e_i \oplus 0_{\SquareMatrices n}, &\quad &i = 1, \dots, n\\
+        X_{ij} &\defeq 0_{\R^n} \oplus E_{ij}, &\quad &i,j \in \{1, \dots, n\} \text{ with } i < j,
+    \end{align*}
+    and these vectors satisfy the following commutation relations
+    \begin{align*}
+        \LieBracket {X_i} {X_j} &= 0\\
+        \LieBracket {X_{ij}} {X_{k}} &= E_{ij} X_k = \Kronecker i k X_j - \Kronecker j k X_i\\
+        \LieBracket {X_{ij}} {X_{kl}} &= \Kronecker j l X_{i k} - \Kronecker j k X_{i l}
+    \end{align*}
+    where in the above $i < j$, $k < l$ and
+    for the last commutation relation we additionally assume $i < k$.
+\end{example}
+
 \begin{lemma}
     Let $X \in \VectorSpace \subset \LieAlgebra$.
     If $\phi \in \SmoothFunctions\Group$,
