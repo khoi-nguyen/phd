@@ -823,37 +823,37 @@ However, as we shall see later, the Fourier Transform on $\Group$ can be written
     \end{enumerate}
 \end{proof}
 
-\begin{definition}
-    We shall say that $L \in \SmoothFunctions{\VectorSpace \times \CompactGroup \times \CompactGroup}$ belongs to $\ScalarImageSchwartz\Group$ if and only if
-    \begin{enumerate}
-        \item $L$ is rapidly decaying in $x$, i.e.\ for each $N \in \N$,
-            \begin{align*}
-                \seminorm[\ScalarImageSchwartz\Group]{N}{L}
-                \defeq
-                \sup_{\abs\alpha, \abs\beta, \abs{\beta'} \leq N}
-                \abs{%
-                    {(1 + \abs{x})}^N
-                    \LeftDifferentialOperatorOnCompactGroup[k_1]{\beta}
-                    \LeftDifferentialOperatorOnCompactGroup[k_2]{\beta'}
-                    \D[L]{x^\alpha}(x, k_1, k_2)
-                }
-                < \infty.
-            \end{align*}
-        \item for each $k \in \CompactGroup$, we have
-            \begin{align*}
-                L(k \lambda; k_1, k_2) = L(\lambda, k_1 k, k_2 k).
-            \end{align*}
-    \end{enumerate}
-\end{definition}
-
-The proof of the following result can be found in~\cite{Kumahara76}.
-\begin{proposition}
-    The map
-    \begin{align*}
-        f \in \Schwartz\Group \to K_f \in \ScalarImageSchwartz\Group
-    \end{align*}
-    is a topological isomorphism from $\Schwartz\Group$ onto $\ScalarImageSchwartz\Group$.
-\end{proposition}
+%\begin{definition}
+%    We shall say that $L \in \SmoothFunctions{\VectorSpace \times \CompactGroup \times \CompactGroup}$ belongs to $\ScalarImageSchwartz\Group$ if and only if
+%    \begin{enumerate}
+%        \item $L$ is rapidly decaying in $x$, i.e.\ for each $N \in \N$,
+%            \begin{align*}
+%                \seminorm[\ScalarImageSchwartz\Group]{N}{L}
+%                \defeq
+%                \sup_{\abs\alpha, \abs\beta, \abs{\beta'} \leq N}
+%                \abs{%
+%                    {(1 + \abs{x})}^N
+%                    \LeftDifferentialOperatorOnCompactGroup[k_1]{\beta}
+%                    \LeftDifferentialOperatorOnCompactGroup[k_2]{\beta'}
+%                    \D[L]{x^\alpha}(x, k_1, k_2)
+%                }
+%                < \infty.
+%            \end{align*}
+%        \item for each $k \in \CompactGroup$, we have
+%            \begin{align*}
+%                L(k \lambda; k_1, k_2) = L(\lambda, k_1 k, k_2 k).
+%            \end{align*}
+%    \end{enumerate}
+%\end{definition}
+%
+%The proof of the following result can be found in~\cite{Kumahara76}.
+%\begin{proposition}
+%    The map
+%    \begin{align*}
+%        f \in \Schwartz\Group \to K_f \in \ScalarImageSchwartz\Group
+%    \end{align*}
+%    is a topological isomorphism from $\Schwartz\Group$ onto $\ScalarImageSchwartz\Group$.
+%\end{proposition}
 
 \subsection{Plancherel formula}
 
