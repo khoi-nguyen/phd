@@ -207,7 +207,7 @@ We shall denote by $\LieAlgebraCompactGroup$ the Lie algebra of $\CompactGroup$.
     We shall call the set
     \begin{align*}
         \LieAlgebra \defeq
-        \VectorSpace \oplus \LieAlgebraCompactGroup
+        \VectorSpace \otimes \LieAlgebraCompactGroup
     \end{align*}
     the \emph{Lie algebra} of $\Group$.  
     Given $(X_1, Y_1), (X_2, Y_2) \in \LieAlgebra$,
@@ -283,22 +283,22 @@ We shall denote by $\LieAlgebraCompactGroup$ the Lie algebra of $\CompactGroup$.
     Assume $\Group = \R^2 \rtimes \T$.
     The Lie Algebra is the vector space
     \begin{align*}
-        \LieAlgebra \defeq \R^2 \oplus \SkewSymmetric{\R^2}.
+        \LieAlgebra \defeq \R^2 \otimes \SkewSymmetric{\R^2}.
     \end{align*}
     
     The vectors
     \begin{align*}
-        X_1 = (1, 0) \oplus
+        X_1 = (1, 0) \otimes
             \begin{pmatrix}
                 0 & 0\\
                 0 & 0
             \end{pmatrix},\quad
-        X_2 = (0, 1) \oplus
+        X_2 = (0, 1) \otimes
             \begin{pmatrix}
                 0 & 0\\
                 0 & 0
             \end{pmatrix},\quad
-        X_3 = (0, 0) \oplus
+        X_3 = (0, 0) \otimes
             \begin{pmatrix}
                 0 & -1\\
                 1 &  0
@@ -329,7 +329,7 @@ We shall denote by $\LieAlgebraCompactGroup$ the Lie algebra of $\CompactGroup$.
     Assume $G = \R^n \rtimes \SpecialOrthogonalGroup n$.
     Its Lie algebra is the vector space
     \begin{align*}
-        \LieAlgebra \defeq \R^n \oplus \SkewSymmetric {\R^n}.
+        \LieAlgebra \defeq \R^n \otimes \SkewSymmetric {\R^n}.
     \end{align*}
 
     For each pair of distinct $i, j \in \{1, \dots, n\}$,
@@ -341,8 +341,8 @@ We shall denote by $\LieAlgebraCompactGroup$ the Lie algebra of $\CompactGroup$.
 
     A basis of $\LieAlgebra$ can now be given by
     \begin{align*}
-        X_i &\defeq e_i \oplus 0_{\SquareMatrices n}, &\quad &i = 1, \dots, n\\
-        X_{ij} &\defeq 0_{\R^n} \oplus E_{ij}, &\quad &i,j \in \{1, \dots, n\} \text{ with } i < j,
+        X_i &\defeq e_i \otimes 0_{\SquareMatrices n}, &\quad &i = 1, \dots, n\\
+        X_{ij} &\defeq 0_{\R^n} \otimes E_{ij}, &\quad &i,j \in \{1, \dots, n\} \text{ with } i < j,
     \end{align*}
     and these vectors satisfy the following commutation relations
     \begin{align*}
@@ -382,7 +382,7 @@ Since $\CompactGroup$ is compact,
 $\LieAlgebraCompactGroup$ is \emph{reductive}.
 Therefore, it follows that
 \begin{align*}
-    \LieAlgebra = \VectorSpace \oplus \mathfrak a \oplus \mathfrak s,
+    \LieAlgebra = \VectorSpace \otimes \mathfrak a \otimes \mathfrak s,
 \end{align*}
 where $\mathfrak a$ is \emph{abelian} and $\mathfrak s$ is \emph{semisimple}.
 In particular, we can naturally define an inner product $\ip[\LieAlgebra]\dummy\dummy$ on $\LieAlgebra$ via the Killing form of $\mathfrak s$.
