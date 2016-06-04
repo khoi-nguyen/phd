@@ -15,7 +15,7 @@ talks/%.md.handout.pdf: talks/%.md
 	pandoc $< -t beamer --toc --slide-level 2 -o $@ -V theme:Warsaw -V handout
 
 main.pdf: *.tex Makefile
-	latexmk --interaction=nonstopmode -lualatex -pdf -use-make main.tex
+	latexmk --interaction=nonstopmode -pdf -use-make main.tex
 
 clean:
 	latexmk -CA
