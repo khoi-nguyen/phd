@@ -130,6 +130,20 @@
     }
 }
 
+\ExplSyntaxOn
+\DeclareDocumentCommand \Der{m O{} m}{%
+    \IfBooleanTF{#1}{%
+        \frac{\dd\ifnum#1=1\else^{#1}\fi {#2}}{%
+            \clist_map_inline:nn { #3 } { \dd ##1 }
+        }
+    } {%
+        \frac{\partial\ifnum#1=1\else^{#1}\fi {#2}}{%
+            \clist_map_inline:nn { #3 } { \partial ##1 }
+        }
+    }
+}
+\ExplSyntaxOff
+
 % Sets
 \newcommand{\C}{\mathbb{C}}
 \newcommand{\N}{\mathbb{N}}
