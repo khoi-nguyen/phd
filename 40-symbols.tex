@@ -174,23 +174,23 @@ Using \cite[Lemma 4.4]{RuzhanskyTurunenWirth10}, we can show
     By definition, we know that
     \begin{align*}
         \LeftDifferentialOperatorFirstOrder Y_l \sigma(x, k; l \lambda)
-        &= \D*{t}<t = 0> \sigma(x, k; l \exp_\CompactGroup (t Y) \lambda),
+        &= \eval{\D*{1}{t}}{t = 0} \sigma(x, k; l \exp_\CompactGroup (t Y) \lambda),
     \end{align*}
     which after applying the chain rule, becomes
     \begin{align}
         &\LeftDifferentialOperatorFirstOrder Y_l \sigma(x, k; l \lambda) \notag\\
-        &\quad = \sum_{j = 1}^{\dim \VectorSpace} \D*{s}<s = 0> \sigma(x, k; l \lambda + s u e_j) \D*{t}<t = 0> \ip {l \exp_\CompactGroup (t Y) \lambda} {u e_j}.
+        &\quad = \sum_{j = 1}^{\dim \VectorSpace} \eval{\D*{1}{s}}{s = 0} \sigma(x, k; l \lambda + s u e_j) \D*{t}<t = 0> \ip {l \exp_\CompactGroup (t Y) \lambda} {u e_j}.
         \label{eq:k_differentiation_of_lambda_variable_in_symbol}
     \end{align}
 
     Now, we observe that
     \begin{align*}
-        \D*{t}<t = 0> \ip {l \exp_\CompactGroup (t Y) \lambda} {u e_j}
+        \eval{\D*{1}{t}}{t = 0} \ip {l \exp_\CompactGroup (t Y) \lambda} {u e_j}
         = \ip {l Y \lambda} {u e_j} = \frac{1}{\i \turn} \Rep {l Y \lambda} (X_j),
     \end{align*}
     while at the same time
     \begin{align*}
-        \D*{s}<s = 0> \sigma(x, k; l \lambda + s u e_j)
+        \eval{\D*{1}{s}}{s = 0} \sigma(x, k; l \lambda + s u e_j)
         = \i \turn \DifferenceOperator{j} \sigma(x, k; l \lambda).
     \end{align*}
 
@@ -204,22 +204,22 @@ Using \cite[Lemma 4.4]{RuzhanskyTurunenWirth10}, we can show
     Again, we start with
     \begin{align*}
         \LeftDifferentialOperatorFirstOrder Y_l \tilde \sigma(x, k; l \lambda)
-        &= \D*{t}<t = 0> \tilde \sigma(x, k; l \exp_\CompactGroup (t Y) \lambda).
+        &= \eval{\D*{1}{t}}{t = 0} \tilde \sigma(x, k; l \exp_\CompactGroup (t Y) \lambda).
     \end{align*}
     Applying the chain rule, we obtain
     \begin{align}
         \LeftDifferentialOperatorFirstOrder Y_l \tilde \sigma(x, k; l \lambda)
-        &= \sum_{j = 1}^{\dim \VectorSpace} \D*{s}<s = 0> \tilde \sigma(x, k; l \lambda + s e_j) \D*{t}<t = 0> \ip {l \exp_\CompactGroup (t Y) \lambda} {e_j}.
+        &= \sum_{j = 1}^{\dim \VectorSpace} \eval{\D*{1}{s}}{s = 0} \tilde \sigma(x, k; l \lambda + s e_j) \D*{t}<t = 0> \ip {l \exp_\CompactGroup (t Y) \lambda} {e_j}.
         \label{eq:k_differentiation_of_lambda_variable_in_symbol_2}
     \end{align}
 
     By definition, it is clear that
     \begin{align*}
-        \DifferenceOperator[\VectorSpace]{j} \tilde \sigma(x, k; l \lambda) = \frac 1 {\i \turn} \D[\tilde \sigma]{\lambda_j} (x, k, l \lambda),
+        \DifferenceOperator[\VectorSpace]{j} \tilde \sigma(x, k; l \lambda) = \frac 1 {\i \turn} \D{1}[\tilde \sigma]{\lambda_j} (x, k, l \lambda),
     \end{align*}
     while
     \begin{align*}
-        \D*{t}<t = 0> \ip {l \exp_\CompactGroup (t Y) \lambda} {e_j}
+        \eval{\D*{1}{t}}{t = 0} \ip {l \exp_\CompactGroup (t Y) \lambda} {e_j}
         &= \ip {l Y \lambda} {e_j}
         = \frac{1}{\i \turn} \Rep[\GroupDirect] {l Y \lambda} (\partial_j).
     \end{align*}
@@ -276,7 +276,8 @@ Using \cite[Lemma 4.4]{RuzhanskyTurunenWirth10}, we can show
 \end{lemma}
 \begin{proof}
     Let us write $T = \Op (\sigma)$.
-    It follows that by \todo{Reference both quantisations},
+    It follows that by
+    % TODO: Reference both quantisations
     \begin{align*}
         T \phi(x, k)
         &= \int_{\GroupDirect} \phi(y, l) {\tilde \kappa}_{x, k}(x - y, l^{-1} k) \dd (y, l)\\
@@ -394,7 +395,7 @@ Using \cite[Lemma 4.4]{RuzhanskyTurunenWirth10}, we can show
 \begin{lemma}
 \label{lemma:inclusion_in_zero_class}
     Let $m \defeq \frac {-\dim \CompactGroup} 2 (1 - \rho)$.
-    \todo{Can we prove the result for $m = 0$ or improve?}
+    % TODO: Can we prove the result for $m = 0$ or improve?
     \begin{enumerate}
         \item
             If $\sigma \in \SymbolClass m {\rho, \delta}$,
@@ -545,13 +546,13 @@ Using \cite[Lemma 4.4]{RuzhanskyTurunenWirth10}, we can show
     and fix a radial function $\chi \in \SmoothFunctions{\R^n}$.
     If $\alpha \in \N^n$, then
     \begin{align}
-        \D[\chi]{x^\alpha}(x)
+        \D{\abs \alpha}[\chi]{x^\alpha}(x)
         = \sum_{r = 1}^{C_\alpha} f_r(\norm[\R^n]{x}) P_r(x),
     \end{align}
     where $P_r$ is a polynomial depending only on $\alpha$.
 
     Moreover, if $\supp \chi$ is compact
-    and if there exists $\delta > 0$ such that the radial derivative $\D[\chi]{\lambda}$ vanishes on on $\Ball[\R^n]{0}{\delta}$,
+    and if there exists $\delta > 0$ such that the radial derivative $\D{\abs \alpha}[\chi]{\lambda}$ vanishes on on $\Ball[\R^n]{0}{\delta}$,
     then we have
     \begin{align*}
         \sup_r \sup_{\lambda \in \R^+} \abs{f_r} < \infty
@@ -560,17 +561,17 @@ Using \cite[Lemma 4.4]{RuzhanskyTurunenWirth10}, we can show
 \begin{proof}
     Using the chain rule, we know that for a purely radial function $f$
     \begin{align}
-        \D[f]{x_i} = \D[\lambda]{x_i} \D[f]{\lambda} = \frac{\D[f]{\lambda}}{\norm[\R^n]{x}} x_i.
+        \D{1}[f]{x_i} = \D{1}[\lambda]{x_i} \D{1}[f]{\lambda} = \frac{\D{1}[f]{\lambda}}{\norm[\R^n]{x}} x_i.
     \end{align}
 
     We know proceed to show the claim by induction on $\alpha$.
     The result is clearly true when $\abs{\alpha} = 0$.
     If we assume it is true for some $\alpha \in \N^n$, then by the above,
     \begin{align}
-        \D[\chi]{x_i,x^\alpha}(x)
-        &= \D{x_i} \sum_{r = 1}^{C_\alpha} f_r(\norm[\R^n]{x}) P_r(x)\\
-        &= \sum_{r = 1}^{C_\alpha} \frac{\D[f_r]{\lambda}}{\norm[\R^n]{x}}(\norm[\R^n]{x}) x_i P_r(x)
-        + \sum_{r = 1}^{C_\alpha} f_r(\norm[\R^n]{x}) \D[P_r]{x_i}(x),
+        \D{\abs \alpha + 1}[\chi]{x_i,x^\alpha}(x)
+        &= \D{1}{x_i} \sum_{r = 1}^{C_\alpha} f_r(\norm[\R^n]{x}) P_r(x)\\
+        &= \sum_{r = 1}^{C_\alpha} \frac{\D{1}[f_r]{\lambda}}{\norm[\R^n]{x}}(\norm[\R^n]{x}) x_i P_r(x)
+        + \sum_{r = 1}^{C_\alpha} f_r(\norm[\R^n]{x}) \D{1}[P_r]{x_i}(x),
     \end{align}
     which concludes the proof.
 \end{proof}

@@ -256,7 +256,7 @@ and a diffeomorphism to a subgroup of $\GeneralLinear n$.
     the \emph{left-invariant differential operator associated to $X$}, via
     \begin{align*}
         \LeftDifferentialOperatorFirstOrder{X} f(g)
-            \defeq \D*{t}<t = 0> f(g \exp_\Group(t X)),
+            \defeq \eval{\D*{1}{t}}{t = 0} f(g \exp_\Group(t X)),
     \end{align*}
     for each $f \in \SmoothFunctions{\Group}$.
 
@@ -265,7 +265,7 @@ and a diffeomorphism to a subgroup of $\GeneralLinear n$.
     the \emph{right-invariant differential operator associated to $X$}, via
     \begin{align*}
         \RightDifferentialOperatorFirstOrder{X} f(g)
-            \defeq \D*{t}<t = 0> f(\exp_\Group(t X) g),
+            \defeq \eval{\D*{1}{t}}{t = 0} f(\exp_\Group(t X) g),
     \end{align*}
     where $f \in \SmoothFunctions{\Group}$.
 \end{definition}
@@ -328,11 +328,11 @@ and a diffeomorphism to a subgroup of $\GeneralLinear n$.
     then the associated left-invariant operators act via
     \begin{align*}
         \LeftDifferentialOperatorFirstOrder{X_1} f(x, t)
-            &= \cos(\turn t) \D[f]{x_1}(x, t) + \sin(\turn t) \D[f]{x_2}(x, t)\\
+            &= \cos(\turn t) \D{1}[f]{x_1}(x, t) + \sin(\turn t) \D{1}[f]{x_2}(x, t)\\
         \LeftDifferentialOperatorFirstOrder{X_2} f(x, t)
-            &= -\sin(\turn t) \D[f]{x_1}(x, t) + \cos(\turn t) \D[f]{x_2}(x, t)\\
+            &= -\sin(\turn t) \D{1}[f]{x_1}(x, t) + \cos(\turn t) \D{1}[f]{x_2}(x, t)\\
         \LeftDifferentialOperatorFirstOrder{X_3} f(x, t)
-            &= \D[f]{t}(x, t),
+            &= \D{1}[f]{t}(x, t),
     \end{align*}
     where $(x, t) \in \R^2 \rtimes \T$.
 \end{example}
@@ -378,8 +378,8 @@ and a diffeomorphism to a subgroup of $\GeneralLinear n$.
     By a simple calculation,
     \begin{align*}
         \LeftDifferentialOperatorFirstOrder{X} \phi(x, k)
-        =& \D*{t}<t = 0> \phi((x, k) (t X, \Id\VectorSpace))\\
-        =& \D*{t}<t = 0> \phi(x + t k X, k)\\
+        =& \eval{\D{1}*{t}}{t = 0} \phi((x, k) (t X, \Id\VectorSpace))\\
+        =& \eval{\D{1}*{t}}{t = 0} \phi(x + t k X, k)\\
         =& \ip{\grad \phi(x, k)}{k X}.
     \end{align*}
 
@@ -512,26 +512,26 @@ However, as we shall see later, the Fourier Transform on $\Group$ can be written
     If $(x, t) \in \Group$, then for each $m, n \in \Z$, we have
     \begin{align*}
         (m - n) {\Rep\lambda(x, t)}_{m n}
-        = - \conj{x} \D{\conj{x}} {\Rep\lambda(x, t)}_{mn}
+        = - \conj{x} \D{1}{\conj{x}} {\Rep\lambda(x, t)}_{mn}
     \end{align*}
 \end{lemma}
 \begin{proof}
     Using integration by parts, we obtain:
     \begin{align}
         (m - n) {\Rep\lambda(x, t)}_{m n}
-    = -\frac{\e^{-\i \turn n t}}{\i \turn} \int_\T \lambda(-\e^{\i \turn u}x) \D*{u} \e^{\i \turn (n - m)u} \dd u \notag\\
-        = \frac{\e^{-\i \turn n t}}{\i \turn} \int_\T \D*{u} \lambda(-\e^{\i \turn u}x) \e^{\i \turn (n - m)u} \dd u.
+    = -\frac{\e^{-\i \turn n t}}{\i \turn} \int_\T \lambda(-\e^{\i \turn u}x) \D*{1}{u} \e^{\i \turn (n - m)u} \dd u \notag\\
+        = \frac{\e^{-\i \turn n t}}{\i \turn} \int_\T \D*{1}{u} \lambda(-\e^{\i \turn u}x) \e^{\i \turn (n - m)u} \dd u.
         \label{eq:lemma:off_diagonal_decay_in_dimension_2}
     \end{align}
 
     By simple calculations, we can show that
     \begin{align*}
-        \D*{u} \lambda(-\e^{\i \turn u} x) = {(-\i \turn)} \conj{x} \D{\conj{x}} \lambda(-\e^{\i \turn u} x).
+        \D*{1}{u} \lambda(-\e^{\i \turn u} x) = {(-\i \turn)} \conj{x} \D{1}{\conj{x}} \lambda(-\e^{\i \turn u} x).
     \end{align*}
     From there, it follows that~\eqref{eq:lemma:off_diagonal_decay_in_dimension_2} becomes
     \begin{align*}
         (m - n) {\Rep\lambda(x, t)}_{m n}
-        = - \conj{x} \D{\conj{x}} {\Rep\lambda(x, t)}_{mn}
+        = - \conj{x} \D{1}{\conj{x}} {\Rep\lambda(x, t)}_{mn}
     \end{align*}
 \end{proof}
 
@@ -706,7 +706,7 @@ However, as we shall see later, the Fourier Transform on $\Group$ can be written
     \end{align*}
     defined via
     \begin{align*}
-        \Rep{\lambda}(X) F(u) \defeq \D*{t}<t=0> \Rep{\lambda}(\exp(t X)) F(u),
+        \Rep{\lambda}(X) F(u) \defeq \eval{\D*{1}{t}}{t=0} \Rep{\lambda}(\exp(t X)) F(u),
     \end{align*}
     where $F \in \SmoothFunctions{\CompactGroup}$.
 \end{definition}
@@ -735,7 +735,7 @@ However, as we shall see later, the Fourier Transform on $\Group$ can be written
             Since $\exp_\Group(t X_j) = (t e_j, \Id{\VectorSpace})$.
             It follows that
             \begin{align*}
-                \Rep{\lambda}(X_j) F(u) = \D*{t}<t = 0> \e^{\i \turn \ip \lambda {t u e_j}} F(u)
+                \Rep{\lambda}(X_j) F(u) = \eval{\D*{1}{t}}{t = 0} \e^{\i \turn \ip \lambda {t u e_j}} F(u)
                 = \i \turn \ip \lambda {u e_j} F(u)
             \end{align*}
             which is what we wanted to show.
@@ -747,7 +747,7 @@ However, as we shall see later, the Fourier Transform on $\Group$ can be written
             From there, it immediately follows that
             \begin{align*}
                 \Rep{\lambda}(X_j) F(u)
-                = \D*{t}<t = 0> F(u \exp_\CompactGroup(t X_j)),
+                = \eval{\D*{1}{t}}{t = 0} F(u \exp_\CompactGroup(t X_j)),
             \end{align*}
             which by definition is $\LeftDifferentialOperatorFirstOrder{X_j} F(u)$.
     \end{enumerate}
@@ -1026,7 +1026,7 @@ However, as we shall see later, the Fourier Transform on $\Group$ can be written
     the set of all functions $F \in \SmoothFunctions{\VectorSpace, \Lin{\Lebesgue{2}\CompactGroup}}$ such that:
     \begin{enumerate}
         \item For each $\alpha \in \N^{\dim \VectorSpace}$,
-            $\D[F]{\lambda^\alpha}$ leaves $\SmoothFunctions\CompactGroup$ stable;
+            $\D{\abs \alpha}[F]{\lambda^\alpha}$ leaves $\SmoothFunctions\CompactGroup$ stable;
         \item For each $N \in \N$, the quantity
             \begin{align*}
                 \seminorm[\Schwartz{\dualGroup\Group}]{N}{F} \defeq
@@ -1035,7 +1035,7 @@ However, as we shall see later, the Fourier Transform on $\Group$ can be written
                 {(1 + \abs\lambda)}^N
                 \norm[\Lin{\Lebesgue{2}\CompactGroup}]{%
                     \Rep\lambda(\LeftDifferentialOperator\beta)
-                    \D[F]{\lambda^\alpha}(\lambda)
+                    \D{\abs \alpha}[F]{\lambda^\alpha}(\lambda)
                     \Rep\lambda(\LeftDifferentialOperator{\beta'})
                 }
             \end{align*}
@@ -1301,7 +1301,7 @@ To this end, we follow the ideas of \cite{FischerRuzhansky15}.
         \sum_{\substack{\alpha = (\alpha_1, \alpha_2)\\ \abs\alpha \leq N}}
             \frac{1}{\alpha!}
             &x^{\alpha_1} {(y - \iota(e))}^{\alpha_2}
-            \D[F]{x^{\alpha_1}, y^{\alpha_2}}(0, \iota(e))\\
+            \D{\abs \alpha}[F]{x^{\alpha_1}, y^{\alpha_2}}(0, \iota(e))\\
             &+ \BigO\left((\norm{x} + \norm[\R^N]{y - \iota(e)})^N\right).
     \end{align*}
     In particular, denoting by $h(g)$ the geodesic distance between $g \in \Group$ and $e \in \Group$,
@@ -1311,7 +1311,7 @@ To this end, we follow the ideas of \cite{FischerRuzhansky15}.
         \sum_{\substack{\alpha = \alpha_1 + \alpha_2\\ \abs\alpha \leq N}}
             \frac{1}{\alpha!}
             x^{\alpha_1} {(\iota(k) - \iota(e))}^{\alpha_2}
-            \D[F]{x^{\alpha_1}, y^{\alpha_2}}(0, \iota(e))
+            \D{\abs \alpha}[F]{x^{\alpha_1}, y^{\alpha_2}}(0, \iota(e))
             + \BigO\left({h(x, k)}^N\right).
         \label{proposition:Taylor_remainder_theorem:Taylor_development}
     \end{align}
@@ -1326,7 +1326,7 @@ To this end, we follow the ideas of \cite{FischerRuzhansky15}.
     Moreover, we know that for each $\alpha = (\alpha_1, \alpha_2)$,
     there exists a left-invariant differential operator $\TaylorLeftDifferentialOperator{\alpha}$ of order at most $\abs\alpha$ such that
     \begin{align*}
-        \TaylorLeftDifferentialOperator{\alpha} f(e) = \D[F]{x^{\alpha_1}, y^{\alpha_2}}(0, \iota(e)),
+        \TaylorLeftDifferentialOperator{\alpha} f(e) = \D{\abs \alpha}[F]{x^{\alpha_1}, y^{\alpha_2}}(0, \iota(e)),
     \end{align*}
     since $F$ doesn't locally vary in the directions perpendicular to the tangent plane of $\iota(\CompactGroup)$.
 
