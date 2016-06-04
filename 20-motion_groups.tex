@@ -249,6 +249,39 @@ and a diffeomorphism to a subgroup of $\GeneralLinear n$.
     \end{align*}
 \end{definition}
 
+\begin{proposition}
+    Fix an orthonormal basis $e_1, \dots, e_n$ of $\VectorSpace$,
+    and consider the map
+    \begin{align*}
+        \Phi : \Group \to \GeneralLinear{n + 1} : (x, k) \mapsto
+        \begin{pmatrix}
+            \tilde k & \tilde x\\
+            0 & 1,
+        \end{pmatrix}
+    \end{align*}
+    where $\tilde k \in \SpecialOrthogonalGroup n$ and $\tilde x \in \R^n$ satisfy
+    \begin{align*}
+        {\tilde k}_{ij} = \ip {k e_j} {e_i} \text{ and } {\tilde x}_i = \ip x {e_i}
+    \end{align*}
+    for all $i, j \in \{1, \dots, n\}$.
+
+    The following properties hold.
+    \begin{enumerate}
+        \item $\Phi$ is a faithful representation of $\Group$.
+        \item The map
+            \begin{align*}
+                \eval {\dd \Phi} {(0, \Id \VectorSpace)} : \LieAlgebra \to \Lie(\Phi(\Group))
+            \end{align*}
+            is an isomorphism of Lie algebras.
+        \item The exponential map $\exp_\LieAlgebra$ satisfies
+            \begin{align*}
+                \exp_\LieAlgebra(X) = \sum_{j = 0}^{+\infty} \frac {{(\eval {\dd \Phi} {(0, \Id \VectorSpace)}(X))}^j} {j!}
+            \end{align*}
+            for every $X \in \LieAlgebra$.
+    \end{enumerate}
+\end{proposition}
+% TODO: prove!
+
 \begin{definition}[Left and right-invariant vector fields]
 \label{definition:invariant_differential_operators}
     Let $X \in \LieAlgebra$.
