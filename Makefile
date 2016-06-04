@@ -25,7 +25,7 @@ clean:
 	if [ -f *.bbl ]; then rm *.bbl ; fi;
 	if [ -f *.fmt ]; then rm *.fmt ; fi;
 	if [ -f *.synctex.gz ]; then rm *.synctex.gz ; fi;
-	rm talks/*.md.pdf
+	if [ -f talks/*.md.pdf ]; then rm talks/*.md.pdf ; fi;
 
 run:
 	(xdg-open main.pdf) &
