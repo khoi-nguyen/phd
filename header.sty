@@ -131,14 +131,14 @@
 }
 
 \ExplSyntaxOn
-\DeclareDocumentCommand \Der{m O{} m}{%
+\DeclareDocumentCommand \D{s m O{} m}{%
     \IfBooleanTF{#1}{%
-        \frac{\dd\ifnum#1=1\else^{#1}\fi {#2}}{%
-            \clist_map_inline:nn { #3 } { \dd ##1 }
+        \frac{\dd\ifnum#2=1\else^{#2}\fi {#3}}{%
+            \clist_map_inline:nn { #4 } { \dd ##1 }
         }
     } {%
-        \frac{\partial\ifnum#1=1\else^{#1}\fi {#2}}{%
-            \clist_map_inline:nn { #3 } { \partial ##1 }
+        \frac{\partial\ifnum#2=1\else^{#2}\fi {#3}}{%
+            \clist_map_inline:nn { #4 } { \partial ##1 }
         }
     }
 }
