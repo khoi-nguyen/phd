@@ -120,16 +120,6 @@
 \DeclareMathOperator{\supp}{supp}
 \DeclareMathOperator*{\esssup}{ess\,sup}
 
-\newcommand{\texToLua}[1]{\luaescapestring{\unexpanded{#1}}}
-\directlua{dofile("derivative.lua")}
-\DeclareDocumentCommand \D{s O{}mD<>{}}{%
-    \IfBooleanTF{#1}{%
-        \directlua{derivative("\texToLua{#2}", "\texToLua{#3}", "\texToLua{#4}", "dd")}
-    } {%
-        \directlua{derivative("\texToLua{#2}", "\texToLua{#3}", "\texToLua{#4}", "partial")}
-    }
-}
-
 \ExplSyntaxOn
 \DeclareDocumentCommand \D{s m O{} m}{%
     \IfBooleanTF{#1}{%
