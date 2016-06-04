@@ -121,11 +121,11 @@
 \ExplSyntaxOn
 \DeclareDocumentCommand \D{s m O{} m}{%
     \IfBooleanTF{#1}{%
-        \frac{\dd\ifnum#2=1\else^{#2}\fi {#3}}{%
+        \frac{\dd\ifnum\pdfstrcmp{#2}{1}=0\else^{#2}\fi {#3}}{%
             \clist_map_inline:nn { #4 } { \dd ##1 }
         }
     } {%
-        \frac{\partial\ifnum#2=1\else^{#2}\fi {#3}}{%
+        \frac{\partial\ifnum\pdfstrcmp{#2}{1}=0\else^{#2}\fi {#3}}{%
             \clist_map_inline:nn { #4 } { \partial ##1 }
         }
     }
