@@ -18,7 +18,7 @@ preamble.fmt: preamble.tex header.sty
 	pdflatex -ini -jobname="preamble" "&pdflatex preamble.tex\dump"
 
 main.pdf: *.tex Makefile preamble.fmt
-	latexmk --interaction=nonstopmode -pdf -use-make main.tex
+	latexmk --interaction=nonstopmode -pdf -use-make main.tex -file-line-error
 
 clean:
 	latexmk -CA
