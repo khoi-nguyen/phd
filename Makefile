@@ -22,10 +22,7 @@ main.pdf: *.tex Makefile preamble.fmt
 
 clean:
 	latexmk -CA
-	if [ -f *.bbl ]; then rm *.bbl ; fi;
-	if [ -f *.fmt ]; then rm *.fmt ; fi;
-	if [ -f *.synctex.gz ]; then rm *.synctex.gz ; fi;
-	if [ -f talks/*.md.pdf ]; then rm talks/*.md.pdf ; fi;
+	rm -f $(shell git ls-files . --ignored --exclude-standard --others | grep -v *.vim)
 
 run:
 	(xdg-open main.pdf) &
