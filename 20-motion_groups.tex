@@ -275,12 +275,143 @@ and a diffeomorphism to a subgroup of $\GeneralLinear n$.
             is an isomorphism of Lie algebras.
         \item The exponential map $\exp_\LieAlgebra$ satisfies
             \begin{align*}
-                \exp_\LieAlgebra(X) = \sum_{j = 0}^{+\infty} \frac {{(\eval {\dd \Phi} {(0, \Id \VectorSpace)}(X))}^j} {j!}
+                (\Phi \circ \exp_\LieAlgebra) (X) = \sum_{j = 0}^{+\infty} \frac {{(\eval {\dd \Phi} {(0, \Id \VectorSpace)}(X))}^j} {j!}
             \end{align*}
             for every $X \in \LieAlgebra$.
     \end{enumerate}
 \end{proposition}
-% TODO: prove!
+\begin{proof}
+    Assume without loss of generality that $\VectorSpace = \R^n$
+    and that the chosen basis is the canonical one so that $k = \tilde k$ and $x = \tilde x$.
+
+    \begin{enumerate}
+        \item
+            Suppose $(x, k), (y, l) \in \Group$.
+            It follows that
+            \begin{align*}
+                \Phi(x, k) \Phi(y, l)
+                &=
+                \begin{pmatrix}
+                    k & x\\
+                    0 & 1
+                \end{pmatrix}
+                \begin{pmatrix}
+                    l & y\\
+                    0 & 1
+                \end{pmatrix}\\
+                &=
+                \begin{pmatrix}
+                    kl & ky + x\\
+                    0 & 1
+                \end{pmatrix}
+                = \Phi((x, k) (y, l)),
+            \end{align*}
+            so $\Phi$ is indeed a group representation.
+            The fact that $\Phi$ is faithful is trivial.
+        \item
+            Suppose $X \oplus Y \in \LieAlgebra$.
+            We can check that
+            \begin{align*}
+                \eval {\dd \Phi} {(0, \Id \VectorSpace)} (X \oplus Y)
+                &=
+                [(\LeftDifferentialOperatorFirstOrder X + \LeftDifferentialOperatorFirstOrder Y) \Phi]
+                (0_\VectorSpace, \Id \VectorSpace)\\
+                &=
+                \begin{pmatrix}
+                    0 & X\\
+                    0 & 0
+                \end{pmatrix}
+                +
+                \begin{pmatrix}
+                    Y & 0\\
+                    0 & 0
+                \end{pmatrix}\\
+                &=
+                \begin{pmatrix}
+                    Y & X\\
+                    0 & 0
+                \end{pmatrix}.
+            \end{align*}
+
+            Then, we can check that
+            \begin{align*}
+                &\eval {\dd \Phi} {(0, \Id \VectorSpace)} (\LieBracket {(X_1, Y_1)} {(X_2, Y_2)})\\
+                &\quad= \eval {\dd \Phi} {((0, \Id \VectorSpace)} (Y_1 X_2 - Y_2 X_1, Y_1 Y_2 - Y_2 Y_1)\\
+                &\quad=
+                \begin{pmatrix}
+                    Y_1 Y_2 & Y_1 X_2\\
+                    0 & 0
+                \end{pmatrix}
+                -
+                \begin{pmatrix}
+                    Y_2 Y_1 & Y_2 X_1\\
+                    0 & 0
+                \end{pmatrix}\\
+                &\quad=
+                \begin{pmatrix}
+                    Y_1 & X_1\\
+                    0 & 0
+                \end{pmatrix}
+                \begin{pmatrix}
+                    Y_2 & X_2\\
+                    0 & 0
+                \end{pmatrix}
+                -
+                \begin{pmatrix}
+                    Y_2 & X_2\\
+                    0 & 0
+                \end{pmatrix}
+                \begin{pmatrix}
+                    Y_1 & X_1\\
+                    0 & 0
+                \end{pmatrix},
+            \end{align*}
+            which means that we have
+            \begin{align*}
+                &\eval {\dd \Phi} {(0, \Id \VectorSpace)} (\LieBracket {(X_1, Y_1)} {(X_2, Y_2)})\\
+                &\quad =
+                \LieBracket [\eval {\dd \Phi} {(0, \Id \VectorSpace)} (\LieAlgebra)]
+                {\eval {\dd \Phi} {(0, \Id \VectorSpace)} (X_1, Y_1)}
+                {\eval {\dd \Phi} {(0, \Id \VectorSpace)} (X_2, Y_2)}.
+            \end{align*}
+        \item
+            Suppose again that $X \oplus Y \in \LieAlgebra$.
+            We can easily check by induction that
+            \begin{align*}
+                (\eval {\dd \Phi} {(0, \Id \VectorSpace)} (X, Y))^k
+                =
+                \begin{pmatrix}
+                    Y^k & Y^{k - 1} X\\
+                    0 & 0
+                \end{pmatrix}
+            \end{align*}
+            for $k \geq 1$.
+
+            Therefore, it follows that
+            \begin{align*}
+                \sum_{k = 0}^{+\infty} \frac 1 {k!}
+                (\eval {\dd \Phi} {(0, \Id \VectorSpace)} (X, Y))^k
+                &=
+                \begin{pmatrix}
+                    \Id \VectorSpace & 0\\
+                    0 & 1
+                \end{pmatrix}
+                +
+                \sum_{k = 1}^{+\infty} \frac 1 {k!}
+                \begin{pmatrix}
+                    Y^k & Y^{k - 1} X\\
+                    0 & 0
+                \end{pmatrix}\\
+                &=
+                \begin{pmatrix}
+                    \exp_\LieAlgebraCompactGroup Y & \sum_{k = 0}^{+\infty} \frac{1}{(k + 1)!} Y^{k} X\\
+                    0 & 1
+                \end{pmatrix}\\
+                &= (\Phi \circ \exp_\LieAlgebra) (X, Y),
+            \end{align*}
+            which is what we wanted to show.
+    \end{enumerate}
+\end{proof}
 
 \begin{definition}[Left and right-invariant vector fields]
 \label{definition:invariant_differential_operators}
