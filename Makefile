@@ -18,10 +18,9 @@ preamble.fmt: preamble.tex
 	pdflatex -ini -jobname="preamble" "&pdflatex preamble.tex\dump"
 
 main.pdf: *.tex Makefile preamble.fmt
-	latexmk --interaction=nonstopmode -pdf -use-make main.tex -file-line-error
+	latexmk --interaction=batchmode -pdf -use-make main.tex -file-line-error -synctex=0
 
 clean:
-	latexmk -CA
 	rm -f $(shell git ls-files . --ignored --exclude-standard --others | grep -v *.vim)
 
 run:
