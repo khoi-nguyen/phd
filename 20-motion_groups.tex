@@ -6,6 +6,9 @@ while $\CompactGroup$ is a compact Lie subgroup of $\GeneralLinear\VectorSpace$.
 
 \section{Motion groups}
 
+We shall say that $\Group$ is a \emph{motion group}
+if it is the \emph{semi-direct product} between a vector space and a compact connected subgroup of $\GeneralLinear \VectorSpace$.
+
 \begin{definition}[Motion group]
 \label{definition:motion_group}
 \index{motion group}
@@ -13,7 +16,11 @@ while $\CompactGroup$ is a compact Lie subgroup of $\GeneralLinear\VectorSpace$.
     We shall say that $\Group$ is a \emph{motion group}
     if there exists a finite dimensional real vector space $\VectorSpace$
     and a compact connected Lie group $\CompactGroup \subset \GeneralLinear\VectorSpace$
-    such that $\Group = \VectorSpace \rtimes \CompactGroup$.
+    such that $\Group = \VectorSpace \times \CompactGroup$ as a set, and
+    \begin{align*}
+        (x, k) (y, l) \defeq (x + ky, k l)
+    \end{align*}
+    for every $(x, k), (y, l) \in \Group$.
 \end{definition}
 
 \begin{remark}
