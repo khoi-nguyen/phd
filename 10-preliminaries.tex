@@ -2,16 +2,8 @@
 
 \section{Lie groups}
 
-\begin{definition}[Topological group]
-\label{definition:topological_group}
-    Let $\Group$ be a group and a Haussdorf topological space.
-    We shall say that $\Group$ is a \emph{topological group} if the map
-    \begin{align*}
-        \Group \times \Group \to \Group :
-        (g_1, g_2) \mapsto g_1^{-1} g_2
-    \end{align*}
-    is continuous.
-\end{definition}
+To develop a \emph{pseudo-differential calculus} on groups,
+a reasonable prerequisite is that the group be equipped with a differential structure.
 
 \begin{definition}[Lie group]
 \label{definition:Lie_group}
@@ -37,13 +29,13 @@
 \end{definition}
 
 \begin{remark}
-    Every Lie group $\Group$ is also topological group.
+    Every Lie group $\Group$ is also topological space.
     As a result, all the topological definitions apply to Lie groups.
 \end{remark}
 
 \begin{definition}[Haar measure]
 \index{Haar measure}
-    Let $\Group$ be a locally compact topological group.
+    Let $\Group$ be a Lie group.
     A positive Radon measure on $\Group$ is called a \emph{Haar measure}
     if it is in addition \emph{left-invariant},
     i.e.\ for each $g \in \Group$ and each Borel set $A \subset G$, we have
@@ -53,7 +45,7 @@
 \end{definition}
 
 \begin{proposition}[Haar measure]
-    If $\Group$ is a locally compact topological group,
+    If $\Group$ is a locally compact Lie group,
     then there exists a Haar measure $\mu$ on $\Group$.
 
     Moreover, if $\nu$ is another left-invariant Radon measure on $\Group$,
@@ -62,7 +54,7 @@
 
 \begin{definition}[Unimodular group]
 \label{definition:unimodular_group}
-    Let $\Group$ be a locally compact group.
+    Let $\Group$ be a locally compact Lie group.
     If a non-zero Haar measure on $\Group$ is also right-invariant,
     or equivalently if all Haar measure are right-invariant,
     we shall say that $\Group$ is \emph{unimodular}.
@@ -70,7 +62,7 @@
 
 \begin{proposition}
 \label{proposition:sufficient_conditions_to_be_unimodular}
-    Let $\Group$ be a topological group.
+    Let $\Group$ be a Lie group.
     \begin{enumerate}
         \item If $\Group$ is compact, then $\Group$ is \emph{unimodular}.
         \item If $\Group$ is abelian and locally compact, then $\Group$ is unimodular.
