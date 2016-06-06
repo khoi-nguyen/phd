@@ -10,6 +10,7 @@
 *.ind
 *.log
 *.fdb_latexmk
+*.out
 *.pdf
 *.run.xml
 *.synctex.gz
