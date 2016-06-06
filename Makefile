@@ -14,7 +14,7 @@ talks/%.md.pdf: talks/%.md
 talks/%.md.handout.pdf: talks/%.md
 	pandoc $< -t beamer --toc --slide-level 2 -o $@ -V theme:Warsaw -V handout
 
-preamble.fmt: preamble.tex header.sty
+preamble.fmt: preamble.tex
 	pdflatex -ini -jobname="preamble" "&pdflatex preamble.tex\dump"
 
 main.pdf: *.tex Makefile preamble.fmt
