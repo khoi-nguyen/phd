@@ -26,15 +26,15 @@ if it is the \emph{semi-direct product} between a vector space and a compact con
 \begin{remark}
 \label{remark:notation_kx}
     Let $x \in \VectorSpace$ and $k \in \CompactGroup$.
-    We will never identify $x$ with $(x, \Id{\VectorSpace}) \in \VectorSpace \rtimes \CompactGroup$,
-    or $k$ with $(0, k) \in \VectorSpace \rtimes \CompactGroup$.
+    We will never identify $x$ with $(x, \Id{\VectorSpace}) \in \VectorSpace \ltimes \CompactGroup$,
+    or $k$ with $(0, k) \in \VectorSpace \ltimes \CompactGroup$.
     Therefore, when we write $k x$, it will \emph{always} mean the vector obtained by rotating $x$ by $k$, i.e.\ $k(x)$.
 \end{remark}
 
 \begin{example}[Vector spaces]
 \label{example:trivial_case_of_motion_groups}
     Suppose that $\CompactGroup = \{\Id\VectorSpace\}$.
-    It follows that $\Group \defeq \VectorSpace \rtimes \CompactGroup$ is isomorphic to $\VectorSpace$.
+    It follows that $\Group \defeq \VectorSpace \ltimes \CompactGroup$ is isomorphic to $\VectorSpace$.
 \end{example}
 
 \begin{example}[Euclidean Motion Groups]
@@ -47,12 +47,12 @@ if it is the \emph{semi-direct product} between a vector space and a compact con
     The elements of $\MotionGroup{n}$ are called \emph{rigid motions},
     while $\MotionGroup{n}$ is called the \emph{Euclidean motion group}.
 
-    It is easily shown that associating $(x, k) \in \R^n \rtimes \SpecialOrthogonalGroup{n}$ to the motion
+    It is easily shown that associating $(x, k) \in \R^n \ltimes \SpecialOrthogonalGroup{n}$ to the motion
     \begin{align*}
         g_{(x, k)} : \R^n \to \R^n : y \mapsto x + ky
     \end{align*}
-    defines a group isomorphism between $\R^n \rtimes \SpecialOrthogonalGroup{n}$ and $\MotionGroup{n}$.
-    We shall therefore identify $\MotionGroup{n}$ with $\R^n \rtimes \SpecialOrthogonalGroup{n}$ from now on.
+    defines a group isomorphism between $\R^n \ltimes \SpecialOrthogonalGroup{n}$ and $\MotionGroup{n}$.
+    We shall therefore identify $\MotionGroup{n}$ with $\R^n \ltimes \SpecialOrthogonalGroup{n}$ from now on.
 \end{example}
 
 \begin{example}
@@ -65,7 +65,7 @@ if it is the \emph{semi-direct product} between a vector space and a compact con
     where the law is the composition of functions.
 
     Arguing like in Example~\ref{example:Euclidean_motion_groups},
-    the above group can be identified with $\C^n \rtimes \SpecialUnitaryGroup{n}$.
+    the above group can be identified with $\C^n \ltimes \SpecialUnitaryGroup{n}$.
 \end{example}
 
 \begin{remark}
@@ -133,7 +133,7 @@ From now on, integration on $\VectorSpace$ will always be performed with respect
 \begin{lemma}[Haar measure]
 \label{lemma:Haar_measure}
     If $\dd x$ is the Lebesgue measure on $\VectorSpace$ and $\dd k$ is the normalised Haar measure on $\CompactGroup$,
-    then the the product measure $\dd x \dd k$ is a Haar measure on $\Group = \VectorSpace \rtimes \CompactGroup$,
+    then the the product measure $\dd x \dd k$ is a Haar measure on $\Group = \VectorSpace \ltimes \CompactGroup$,
     which is both left and right-invariant.
 \end{lemma}
 \begin{proof}
@@ -463,7 +463,7 @@ and a diffeomorphism to a subgroup of $\GeneralLinear n$.
 
 \begin{example}[$2$-dimensional Euclidean motion group]
 \label{example:Lie_Algebra_of_2-dimensional_Euclidean_motion_group}
-    Assume $\Group = \R^2 \rtimes \T$.
+    Assume $\Group = \R^2 \ltimes \T$.
     The Lie Algebra is the vector space
     \begin{align*}
         \LieAlgebra \defeq \R^2 \oplus \SkewSymmetric{\R^2}.
@@ -505,11 +505,11 @@ and a diffeomorphism to a subgroup of $\GeneralLinear n$.
         \LeftDifferentialOperatorFirstOrder{X_3} f(x, t)
             &= \D{1}[f]{t}(x, t),
     \end{align*}
-    where $(x, t) \in \R^2 \rtimes \T$.
+    where $(x, t) \in \R^2 \ltimes \T$.
 \end{example}
 
 \begin{example}[Euclidean motion groups]
-    Assume $G = \R^n \rtimes \SpecialOrthogonalGroup n$.
+    Assume $G = \R^n \ltimes \SpecialOrthogonalGroup n$.
     Its Lie algebra is the vector space
     \begin{align*}
         \LieAlgebra \defeq \R^n \oplus \SkewSymmetric {\R^n}.
@@ -640,7 +640,7 @@ However, as we shall see later, the Fourier Transform on $\Group$ can be written
 
 \begin{example}[$2$-dimensional Euclidean motion group]
     Let $\lambda \in \R^2$.
-    Let $(x, t) \in \Group = \R^2 \rtimes \SpecialOrthogonalGroup{2}$.
+    Let $(x, t) \in \Group = \R^2 \ltimes \SpecialOrthogonalGroup{2}$.
     If $\lambda \neq 0$, then $\Rep{\lambda}$ is irreducible.
 
     Using the isomorphism $\SpecialOrthogonalGroup{2} \sim \T$,
@@ -679,7 +679,7 @@ However, as we shall see later, the Fourier Transform on $\Group$ can be written
 \end{proof}
 
 \begin{lemma}
-    Suppose $\Group = \R^2 \rtimes \SpecialOrthogonalGroup{2}$.
+    Suppose $\Group = \R^2 \ltimes \SpecialOrthogonalGroup{2}$.
     If $(x, t) \in \Group$, then for each $m, n \in \Z$, we have
     \begin{align*}
         (m - n) {\Rep\lambda(x, t)}_{m n}
