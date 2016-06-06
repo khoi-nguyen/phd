@@ -22,7 +22,48 @@ a reasonable prerequisite is that the group be equipped with a differential stru
 \end{definition}
 
 \begin{definition}[Lie algebra]
-\label{definition:Lie_algebra}
+    A (real) Lie algebra is a (real) vector space $\LieAlgebra$
+    equipped with a bilinear map
+    \begin{align*}
+        \LieBracket \dummy \dummy : \VectorSpace \times \VectorSpace \to \VectorSpace,
+    \end{align*}
+    called the \emph{Lie bracket} or \emph{commutator},
+    such that
+    \begin{enumerate}
+        \item $\LieBracket X X = 0$ for every $X \in \LieAlgebra$;
+        \item for every $X, Y, Z \in \LieAlgebra$, we have the following \emph{Jacobi identity}
+            \begin{align*}
+                \LieBracket X {\LieBracket Y Z} +
+                \LieBracket Y {\LieBracket Z X} +
+                \LieBracket Z {\LieBracket X Y}
+                = 0.
+            \end{align*}
+    \end{enumerate}
+\end{definition}
+
+\begin{example}
+    Let $\Group$ be a Lie group.
+    If we define $\LieAlgebra$ to be the set of all left-invariant vector fields,
+    i.e.\ the set of all vector fields $X$ such that
+    \begin{align*}
+        X f(x) = X_{y = e} f(x y)
+    \end{align*}
+    for every $f \in \SmoothFunctions \Group$.
+
+    Given two left-invariant vector fields $X, Y$,
+    we define
+    \begin{align*}
+        \LieBracket X Y f(x) = X Y f(x) - Y X f(x),
+    \end{align*}
+    and we can show that $\LieBracket X Y$ is also a left-invariant vector field.
+
+    We can check that $\LieBracket \dummy \dummy$ gives $\LieAlgebra$ a \emph{Lie algebra} structure.
+    Moreover, since left-invariant vector fields are completely determined by the tangent vector at the identity,
+    $\LieBracket \dummy \dummy$ gives a \emph{Lie algebra} structure to the tangent plane of $\Group$ at the identity.
+\end{example}
+
+\begin{definition}[Lie algebra of Lie group]
+\label{definition:Lie_algebra_of_Lie_group}
     Let $\Group$ be a Lie group.
     The tangent plane of $\Group$ at the identity is called
     the \emph{Lie algebra} of $\Group$.
