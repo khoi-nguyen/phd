@@ -236,6 +236,17 @@ a reasonable prerequisite is that the group be equipped with a differential stru
 
 \section{Distributions}
 
+\begin{theorem}[Schwartz Kernel Theorem]
+\label{theorem:Schwartz_Kernel_Theorem}
+\index{Schwartz Kernel Theorem}
+    If $T : \Schwartz \GroupDirect \to \TemperedDistributions \GroupDirect$ is a continuous linear operator,
+    then there exists a unique distribution
+    $\kappa \in \TemperedDistributions {\GroupDirect \times \GroupDirect}$ such that
+    \begin{align*}
+        T \phi(x, k) = \int_{\GroupDirect} \kappa(x, k; y, l) \phi(y, l) \dd (y, l).
+    \end{align*}
+\end{theorem}
+
 \section{Fourier Transform}
 
 \begin{definition}[Fourier coefficient]
