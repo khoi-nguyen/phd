@@ -43,32 +43,56 @@ a reasonable prerequisite is that the group be equipped with a differential stru
     \end{enumerate}
 \end{definition}
 
-\begin{example}[Left-invariant vector fields]
-    Let $\Group$ be a Lie group.
-    If we define $\LieAlgebra$ to be the set of all left-invariant vector fields,
-    i.e.\ the set of all vector fields $X$ such that
-    \begin{align*}
-        X f(x) = X_{y = e} f(x y)
-    \end{align*}
-    for every $f \in \SmoothFunctions \Group$.
+Given a Lie group $\Group$,
+let us denote by $\VectorFields$ the set of all \emph{smooth vector fields} on $\Group$.
 
-    Given two left-invariant vector fields $X, Y$,
+\begin{definition}[Left-invariant vector fields]
+    Let $\Group$ be a Lie group.
+    We shall say that $X \in \VectorFields$ is \emph{left-invariant}
+    if for every $g \in \Group$,
+    \begin{align*}
+        X \circ L_g = \dd L_g \circ X,
+    \end{align*}
+    where
+    \begin{align*}
+        L_g : \Group \to \Group : h \mapsto g h
+    \end{align*}
+    is the left translation on $\Group$ by $g$.
+    We shall denote the set of left-invariant vector fields by $\LeftInvariantVectorFields$.
+\end{definition}
+
+\begin{example}[Left-invariant vector fields]
+\label{example:Lie_algebra_of_left-invariant_vector_fields}
+    Let $\Group$ be a Lie group.
+    Given two left-invariant vector fields $X, Y \in \LeftInvariantVectorFields$,
     we define
     \begin{align*}
-        \LieBracket X Y f(x) = X Y f(x) - Y X f(x),
+        \LieBracket [\LeftInvariantVectorFields] X Y f(x) \defeq X Y f(x) - Y X f(x),
+        \quad f \in \SmoothFunctions \Group
     \end{align*}
-    and we can show that $\LieBracket X Y$ is also a left-invariant vector field.
-
-    We can check that $\LieBracket \dummy \dummy$ gives $\LieAlgebra$ a \emph{Lie algebra} structure.
-    Moreover, since left-invariant vector fields are completely determined by the tangent vector at the identity,
-    $\LieBracket \dummy \dummy$ gives a \emph{Lie algebra} structure to the tangent plane of $\Group$ at the identity.
+    and we can show that $\LieBracket [\LeftInvariantVectorFields] X Y$ is also a left-invariant vector field.
+    Therefore, $\LeftInvariantVectorFields$ is a Lie algebra.
 \end{example}
+
+Let $X, Y \in \TangentSpace \Group e$.
+Defining for each $g \in \Group$
+\begin{align*}
+    \tilde X(g) \defeq \dd L_g(X), \quad \tilde Y(g) = \dd L_g(Y),
+\end{align*}
+we check that $\tilde X, \tilde Y \in \LeftInvariantVectorFields$.
+
+The Lie algebra structure of $\LeftInvariantVectorFields$ allows us then to define
+\begin{align}
+    \LieBracket [\TangentSpace \Group e] X Y \defeq \LieBracket [\LeftInvariantVectorFields] {\tilde X} {\tilde Y}(e).
+    \label{eq:Lie_bracket_on_the_tangent_space}
+\end{align}
 
 \begin{definition}[Lie algebra of Lie group]
 \label{definition:Lie_algebra_of_Lie_group}
     Let $\Group$ be a Lie group.
-    The tangent plane of $\Group$ at the identity is called
-    the \emph{Lie algebra} of $\Group$.
+    The \emph{Lie algebra} of $\Group$ is the tangent space at the identity $\TangentSpace \Group e$
+    with the Lie bracket $\LieBracket [\TangentSpace \Group e] \dummy \dummy$
+    defined in \eqref{eq:Lie_bracket_on_the_tangent_space}.
 \end{definition}
 
 \subsection{Haar measure}
