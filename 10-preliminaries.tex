@@ -479,11 +479,11 @@ This will allow useful comparisons later on.
 \end{definition}
 
 \begin{proposition}[Inverse formula]
-    Let $f \in \SmoothFunctions\CompactGroup$.
-    If $k \in \CompactGroup$,
+    Let $f \in \SmoothFunctions \GroupDirect$.
+    If $(x, k) \in \GroupDirect$,
     then $f$ can be recovered via the formula
     \begin{align*}
-        f(k) = \tr\left(\RightRegularRepresentation(k) \Fourier[\CompactGroup] f \right)
+        f(x, k) = \int_\VectorSpace \tr\left(\e^{\i \turn \ip x \lambda} \RightRegularRepresentation(k) \Fourier[\GroupDirect] f(\lambda) \right) \dd \lambda.
     \end{align*}
 \end{proposition}
 
