@@ -458,18 +458,24 @@ and shall say that the above integral is interpreted \emph{in the sense of distr
     \end{align*}
 \end{proposition}
 
-\section{Compact Lie groups}
+\section{The $\GroupDirect$ case }
 
 As our representations on the motion group will act on $\Lebesgue{2}\CompactGroup$,
 we will define our Fourier Transform on $\CompactGroup$ so that it acts on $\Lebesgue{2}\CompactGroup$ as well.
 This will allow useful comparisons later on.
 
 \begin{definition}[Fourier Transform]
-    Let $f \in \Lebesgue{1}\CompactGroup$.
-    We define the \emph{Fourier transform of $f$}, denoted via $\Fourier[\CompactGroup] f$, via
+    Let $f \in \Lebesgue 1 \GroupDirect$ and $\lambda \in \VectorSpace$.
+    We define the \emph{Fourier coefficient of $f$} at $\lambda$,
+    denoted via $\Fourier[\GroupDirect] f(\lambda)$, via
     \begin{align*}
-        \Fourier[\CompactGroup] f \defeq \int_\CompactGroup f(k) \adj{\RightRegularRepresentation(k)} \dd k.
+        \Fourier [\GroupDirect] f(\lambda) \defeq \int_\CompactGroup f(x, k) \e^{\i \turn \ip \lambda x} \adj{\RightRegularRepresentation(k)} \dd (x, k).
     \end{align*}
+    The map
+    \begin{align*}
+        \lambda \in \VectorSpace \mapsto \Fourier [\GroupDirect] f(\lambda)
+    \end{align*}
+    is called the \emph{Fourier Transform} of $f$ on $\GroupDirect$.
 \end{definition}
 
 \begin{proposition}[Inverse formula]
