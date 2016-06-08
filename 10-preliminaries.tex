@@ -270,6 +270,31 @@ The Lie algebra structure of $\LeftInvariantVectorFields$ allows us then to defi
 
 \section{Distributions}
 
+For this section,
+we assume that $\VectorSpace$ is a vector space
+and $\CompactGroup$ is a compact Lie group.
+
+We shall denote by $\LieAlgebraCompactGroup$ the Lie algebra of $\CompactGroup$.
+We fix a basis $Y_1, \dots, Y_{\dim \CompactGroup}$ of $\LieAlgebraCompactGroup$ and write
+\begin{align*}
+    Y^\beta \defeq Y_1^{\beta_1} \dots Y_{\dim \CompactGroup}^{\beta_{\dim \CompactGroup}},
+    \quad \beta \in \N^{\dim \CompactGroup}.
+\end{align*}
+
+\begin{definition}[Schwartz space]
+    We shall say that $f \in \SmoothFunctions \GroupDirect$ is \emph{rapidly decaying}
+    if for every $N \in \N$,
+    \begin{align*}
+        \seminorm [\Schwartz \GroupDirect] N {f}
+        \defeq
+        \sup_{\abs \alpha, \abs \beta \leq N}
+        \abs{%
+            {(1 + \abs x)}^N \D{\abs \alpha}{x^\alpha} Y^{\beta}_k f(x, k)
+        } < \infty.
+    \end{align*}
+    The set of all rapidly decaying functions will denoted by $\Schwartz \GroupDirect$.
+\end{definition}
+
 \begin{theorem}[Schwartz Kernel Theorem]
 \label{theorem:Schwartz_Kernel_Theorem}
 \index{Schwartz Kernel Theorem}
