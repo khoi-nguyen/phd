@@ -367,6 +367,21 @@ and shall say that the above integral is interpreted \emph{in the sense of distr
     \end{align*}
 \end{theorem}
 
+\section{Convolutions}
+
+In this section,
+$\Group$ is a locally compact Lie group.
+
+\begin{definition}[Convolution]
+    Let $f_1, f_2 \in \Lebesgue 1 \Group$.
+    We define the convolution of $f_1$ and $f_2$,
+    denoted by $\conv {f_1} {f_2}$, via
+    \begin{align*}
+        \conv {f_1} {f_2} (g)
+        \defeq \int_\Group f_1(h) f_2(h^{-1} g) \dd h.
+    \end{align*}
+\end{definition}
+
 \section{Fourier Transform}
 
 \begin{definition}[Fourier coefficient]
