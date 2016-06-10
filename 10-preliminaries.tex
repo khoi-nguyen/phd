@@ -105,6 +105,19 @@ The Lie algebra structure of $\LeftInvariantVectorFields$ allows us then to defi
     defined in \eqref{eq:Lie_bracket_on_the_tangent_space}.
 \end{definition}
 
+\begin{example}[Lie algebra of $\SpecialOrthogonalGroup n$]
+\label{example:Lie_algebra_of_SO_n}
+    Suppose $\CompactGroup \defeq \SpecialOrthogonalGroup n$.
+    Its Lie algebra is
+    \begin{align*}
+        \LieAlgebraCompactGroup \defeq \SkewSymmetric n
+    \end{align*}
+    equipped with the Lie bracket
+    \begin{align*}
+        \LieBracket [\LieAlgebraCompactGroup] \dummy \dummy : \LieAlgebraCompactGroup \times \LieAlgebraCompactGroup \to \LieAlgebraCompactGroup : (A, B) \mapsto AB - BA.
+    \end{align*}
+\end{example}
+
 \begin{lemma}
     Let $\CompactGroup$ be a compact Lie group.
     There exists an inner product on $\LieAlgebraCompactGroup = \Lie(\CompactGroup)$ such that
