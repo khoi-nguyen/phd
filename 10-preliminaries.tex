@@ -115,6 +115,24 @@ The Lie algebra structure of $\LeftInvariantVectorFields$ allows us then to defi
     where $\Laplacian [\CompactGroup]$ is the \emph{Laplace-Beltrami operator}.
 \end{lemma}
 
+\subsubsection{Exponential map}
+
+\begin{definition}[Exponential map]
+    Let $\Group$ be a Lie group,
+    and fix $X \in \LieAlgebra$.
+    We define the \emph{exponential} of $X$ via
+    \begin{align*}
+        \exp_\LieAlgebra(X) \defeq \gamma_X(1),
+    \end{align*}
+    where $\gamma_X : I \subset \R \to \Group$ is the unique solution to the following ordinary differential equation
+    \begin{align*}
+        \begin{cases}
+            \D* 1 [\gamma_X] t(t) &= X(\gamma_X(t))\\
+            \gamma_X(0) &= (0_{\VectorSpace}, \Id{\VectorSpace}).
+        \end{cases}
+    \end{align*}
+\end{definition}
+
 \subsection{Haar measure}
 
 \begin{remark}
