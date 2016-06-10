@@ -554,6 +554,15 @@ This will allow useful comparisons later on.
     is called the \emph{Fourier Transform} of $f$ on $\GroupDirect$.
 \end{definition}
 
+\begin{proposition}[Plancherel formula]
+    Let $f_1, f_2 \in \Lebesgue 1 \GroupDirect \cap \Lebesgue 2 \GroupDirect$.
+    The following identity holds
+    \begin{align*}
+        \ip [\Lebesgue 2 \GroupDirect] {f_1} {f_2}
+        = \int_\VectorSpace \tr\left(\Fourier [\GroupDirect] f_1(\lambda) \adj{\Fourier [\GroupDirect] f_2(\lambda)}\right) \dd \lambda.
+    \end{align*}
+\end{proposition}
+
 \begin{proposition}[Inverse formula]
     Let $f \in \SmoothFunctions \GroupDirect$.
     If $(x, k) \in \GroupDirect$,
