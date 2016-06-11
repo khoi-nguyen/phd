@@ -571,6 +571,19 @@ As our representations on the motion group will act on $\Lebesgue{2}\CompactGrou
 we will define our Fourier Transform on $\CompactGroup$ so that it acts on $\Lebesgue{2}\CompactGroup$ as well.
 This will allow useful comparisons later on.
 
+\begin{definition}[Representations on $\GroupDirect$]
+    Let $\lambda \in \VectorSpace$.
+    We define the representation associated to $\lambda$,
+    \begin{align*}
+        \Rep [\GroupDirect] \lambda : \Group \to \Lin{\Lebesgue 2 \CompactGroup},
+    \end{align*}
+    via
+    \begin{align*}
+        \Rep [\GroupDirect] \lambda (x, k) \defeq \e^{\i \turn \ip \lambda x} \RightRegularRepresentation (k),
+    \end{align*}
+    where $(x, k) \in \GroupDirect$.
+\end{definition}
+
 \begin{definition}[Fourier Transform]
     Let $f \in \Lebesgue 1 \GroupDirect$ and $\lambda \in \VectorSpace$.
     We define the \emph{Fourier coefficient of $f$} at $\lambda$,
