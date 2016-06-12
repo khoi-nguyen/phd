@@ -18,9 +18,12 @@
 \begin{definition}
 \label{definition:admissibility_of_difference_operators}
 \index{difference operators!admissibility}
-    A collection $q_1, \dots, q_M \in \SmoothFunctions{\Group}$ is said to be \emph{admissible}
+    A finite collection $q_1$, \dots, $q_M \in \SmoothFunctions{\Group}$ of smooth functions is said to be \emph{admissible}
     if $\dd q_j(e) \neq 0$ for each $j \in \{1, \dots, M\}$
-    and if $\rank(\dd q_1(e), \dots, \dd q_m(e)) = \dim \Group$.
+    and if
+    \begin{align*}
+        \rank(\dd q_1(e), \dots, \dd q_m(e)) = \dim \Group.
+    \end{align*}
 
     Moreover, if
     \begin{align*}
@@ -35,7 +38,7 @@
 Using \cite[Lemma 4.4]{RuzhanskyTurunenWirth10}, we can show
 
 \begin{lemma}
-    There exists a strongly admissible family $q_1, \dots, q_M \in \SmoothFunctions{\Group}$ on $\Group$.
+    There exists a strongly admissible family $q_1$, \dots, $q_M \in \SmoothFunctions{\Group}$ on $\Group$.
 \end{lemma}
 
 \begin{remark}
@@ -90,8 +93,9 @@ Using \cite[Lemma 4.4]{RuzhanskyTurunenWirth10}, we can show
         \int_\dualGroup\VectorSpace
             \tr\left(\Rep\lambda(g) \sigma(g, \lambda) \Fourier f(\lambda)\right)
         \dd \Plancherel{\VectorSpace}(\lambda),
-        \quad \phi \in \Schwartz\Group, g \in \Group.
     \end{align*}
+    where $\phi \in \Schwartz\Group$, and $g \in \Group$.
+
 
     If $T = \Op(\sigma)$ for a certain $\sigma \in \SymbolClass{m}{\rho, \delta}$,
     we shall say that $T$ is an \emph{operator of order $m$ and of type $(\rho, \delta)$}.
@@ -298,7 +302,8 @@ Using \cite[Lemma 4.4]{RuzhanskyTurunenWirth10}, we can show
             By definition, $\DifferenceOperator{q} \sigma(x, k; \lambda)$ is equal to
             \begin{align*}
                 &\quad \int_\Group q((y, l)^{-1}) \kappa_{x, k}((y, l)^{-1}) \e^{\i \turn \ip {u^{-1} \lambda} y} \RightRegularRepresentation(l) \dd (y, l)\\
-                &= \int_\Group q((y, l)^{-1} (x, k)) \kappa_{x, k}((y, l)^{-1} (x, k)) \e^{\i \turn \ip {u^{-1} \lambda} {k^{-1} (y - x)}} \RightRegularRepresentation(k^{-1} l) \dd (y, l)
+                &= \int_\Group q((y, l)^{-1} (x, k)) \kappa_{x, k}((y, l)^{-1} (x, k))\\
+                &\qquad \qquad \e^{\i \turn \ip {u^{-1} \lambda} {k^{-1} (y - x)}} \RightRegularRepresentation(k^{-1} l) \dd (y, l)
             \end{align*}
             where we substituted $(y, l)$ for $(x, k)^{-1} (y, l)$ to obtain the last line.
 
@@ -525,14 +530,18 @@ Using \cite[Lemma 4.4]{RuzhanskyTurunenWirth10}, we can show
         = \InverseRotation {\Rep \lambda \BesselPotential{-m' + \rho \order(q) - \delta' \abs \beta + \gamma} \tau \Rep \lambda \BesselPotential{-\gamma}} (x, k; \lambda).
     \end{align*}
 
-    Since the operator inside $\InverseRotation \dummy$ on the second line is in $\SymbolClass {-\frac {\dim \CompactGroup} 2 (1 - \rho) } {\rho, \delta'}$,
+    Since the operator inside $\InverseRotation \dummy$ on the second line belongs to
+    \begin{align*}
+        \SymbolClass {-\frac {\dim \CompactGroup} 2 (1 - \rho) } {\rho, \delta'},
+    \end{align*}
     then Lemma~\ref{lemma:inclusion_in_zero_class} implies that
     \begin{align*}
         &\sup_{g \in \GroupDirect} \esssup_{\lambda \in \VectorSpace}\\
         &\quad
         \norm [\Lin {\Lebesgue 2 \CompactGroup}] {%
-            \Rep[\GroupDirect] \lambda \BesselPotential{-m' + \rho \abs \alpha  - \delta' \abs \beta + \gamma} \DifferenceOperator [\GroupDirect] {\tilde q} X^\beta \tilde \sigma(x, k; \lambda) \Rep [\GroupDirect] \lambda \BesselPotential{-\gamma}
+            \Rep[\GroupDirect] \lambda \BesselPotential{-m' + \rho \abs \alpha  - \delta' \abs \beta} \DifferenceOperator [\GroupDirect] {\tilde q} X^\beta \tilde \sigma(x, k; \lambda) \Rep [\GroupDirect] \lambda
         }
+        % TODO: show the direct product doesn't require the gamma trick
     \end{align*}
     is finite,
     which by definition means that $\tilde \sigma \in \SymbolClass [\GroupDirect] {m'} {\rho, \delta'}$.
@@ -857,9 +866,9 @@ Using \cite[Lemma 4.4]{RuzhanskyTurunenWirth10}, we can show
                 \end{align*}
                 it follows that
                 \begin{align*}
-                    \DifferenceOperator[\VectorSpace]{q_1} \chi_{l - \Ceiling{\log_2 \JapaneseBracket{\CompactGroup}{\tau}}}(k \lambda)
-                    =
-                    2^{(-l + \Ceiling{\log_2 \JapaneseBracket{\CompactGroup}{\tau} + 1}) \order{q_1}}
+                    \DifferenceOperator[\VectorSpace]{q_1} &\chi_{l - \Ceiling{\log_2 \JapaneseBracket{\CompactGroup}{\tau}}}(k \lambda)
+                    =\\
+                    &\qquad 2^{(-l + \Ceiling{\log_2 \JapaneseBracket{\CompactGroup}{\tau} + 1}) \order{q_1}}
                     \DifferenceOperator[\VectorSpace]{q_1} \chi_1(2^{-l + \Ceiling{\log_2 \JapaneseBracket{\CompactGroup}{\tau} + 1}} k \lambda).
                 \end{align*}
 
@@ -884,15 +893,18 @@ Using \cite[Lemma 4.4]{RuzhanskyTurunenWirth10}, we can show
             \end{proof}
 
             Using the above claim,
-            and the identity $\conj{\Character{\tau}(k u^{-1})} = \sum_{i, j = 1}^\dimRep{\tau} \tau_{ij}(u) \conj{{\tau_{ij}(k)}}$,
+            and the identity
+            \begin{align*}
+                \conj{\Character{\tau}(k u^{-1})} = \sum_{i, j = 1}^\dimRep{\tau} \tau_{ij}(u) \conj{{\tau_{ij}(k)}},
+            \end{align*}
             we observe that
             \begin{align}
                 \DifferenceOperator{q} \eta_l (\lambda) F(u)
                 = &\sum_{p, r = 1}^{C_q}
                     \sum_{\JapaneseBracket{\CompactGroup}{\tau} \leq 2^l}
-                        \sum_{i, j = 1}^\dimRep{\tau}\notag\\
-                            &\tau_{ij}(u) {q'}_{2, p}(u^{-1})
-                            f_{l, r}(\tau, \lambda)
+                        \sum_{i, j = 1}^\dimRep{\tau}\notag
+                            \tau_{ij}(u) {q'}_{2, p}(u^{-1})\\
+                            &\quad f_{l, r}(\tau, \lambda)
                             \int_\CompactGroup
                                 q_{r}(k) q_{2, p}(k) F(k) \conj{\tau_{ij}(k)}
                             \dd k
@@ -900,8 +912,8 @@ Using \cite[Lemma 4.4]{RuzhanskyTurunenWirth10}, we can show
                 = &\sum_{p, r = 1}^{C_q}
                     \sum_{\JapaneseBracket{\CompactGroup}{\tau} \leq 2^l}
                         \sum_{i, j = 1}^\dimRep{\tau}
-                            \tau_{ij}(u) {q'}_{2, p}(u^{-1})
-                            f_{l, r}(\tau, \lambda)
+                            \tau_{ij}(u) {q'}_{2, p}(u^{-1})\notag\\
+                            &\quad f_{l, r}(\tau, \lambda)
                             \Fourier[\CompactGroup]{} {\left\{ q_{r} q_{2, p} F\right\}}_{j i}(\tau).\notag
             \end{align}
 
@@ -1036,4 +1048,4 @@ Using \cite[Lemma 4.4]{RuzhanskyTurunenWirth10}, we can show
 
 \section{Adjoint and composition formulas}
 
-\section{$L^2$ boundedness}
+\section{L\textsuperscript 2 boundedness}
