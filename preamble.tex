@@ -129,20 +129,19 @@
 \DeclareMathOperator{\supp}{supp}
 \DeclareMathOperator*{\esssup}{ess\,sup}
 
-\makeatletter
 \ExplSyntaxOn
+\newcommand\der{}
 \DeclareDocumentCommand \D{s m O{} m}{%
     % Choice of right d
-    \IfBooleanTF{#1}{\def\@der{\dd}}{\def\@der{\partial}}
+    \IfBooleanTF{#1}{\renewcommand\der{\dd}}{\renewcommand\der{\partial}}
     % Write the derivative
     \frac{
-        \@der\ifnum\pdfstrcmp{#2}{1}=0\else^{#2}\fi {#3}
+        \der\ifnum\pdfstrcmp{#2}{1}=0\else^{#2}\fi {#3}
     }{%
-        \clist_map_inline:nn {#4} {\@der ##1}
+        \clist_map_inline:nn {#4} {\der ##1}
     }
 }
 \ExplSyntaxOff
-\makeatother
 
 % Sets
 \newcommand{\C}{\mathbb{C}}
