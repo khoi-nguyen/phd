@@ -129,17 +129,22 @@
 \DeclareMathOperator{\supp}{supp}
 \DeclareMathOperator*{\esssup}{ess\,sup}
 
-\ExplSyntaxOn
 \newcommand\der{}
+\newcommand \inlineDerivative [2] {{#1}_#2}
+\ExplSyntaxOn
 \DeclareDocumentCommand \D{s m O{} m}{%
     % Choice of right d
     \IfBooleanTF{#1}{\renewcommand\der{\dd}}{\renewcommand\der{\partial}}
     % Write the derivative
-    \frac{
-        \der\ifnum\pdfstrcmp{#2}{1}=0\else^{#2}\fi {#3}
-    }{%
-        \clist_map_inline:nn {#4} {\der ##1}
-    }
+    \mathchoice{%
+        \frac{
+            \der\ifnum\pdfstrcmp{#2}{1}=0\else^{#2}\fi {#3}
+        }{%
+            \clist_map_inline:nn {#4} {\der ##1}
+        }
+    } {%
+        \clist_map_inline:nn {#4} {\inlineDerivative \der {##1}} #3
+    } {} {}
 }
 \ExplSyntaxOff
 
