@@ -236,7 +236,7 @@ and a diffeomorphism to a subgroup of $\GeneralLinear n$.
 \end{definition}
 
 \begin{lemma}[Commutation relations]
-    Let $X_1, X_2, X \in \VectorSpace$ and $Y_1, Y_2, Y \in \LieAlgebraCompactGroup$.
+    Suppose that $X_1$, $X_2$, $X \in \VectorSpace$ and $Y_1$, $Y_2$, $Y \in \LieAlgebraCompactGroup$.
     We have the following \emph{commutation relations}
     \begin{align*}
         \LieBracket{X_1}{X_2} = 0,\quad
@@ -1219,9 +1219,9 @@ However, as we shall see later, the Fourier Transform on $\Group$ can be written
             \begin{align*}
                 \seminorm[\Schwartz{\dualGroup\Group}]{N}{F} \defeq
                 \sup_{\abs\alpha, \abs\beta, \abs{\beta'} \leq N}
-                \sup_{\lambda \in \VectorSpace}
-                {(1 + \abs\lambda)}^N
-                \norm[\Lin{\Lebesgue{2}\CompactGroup}]{%
+                &\sup_{\lambda \in \VectorSpace}
+                {(1 + \abs\lambda)}^N\\
+                &\norm[\Lin{\Lebesgue{2}\CompactGroup}]{%
                     \Rep\lambda(\LeftDifferentialOperator\beta)
                     \D{\abs \alpha}[F]{\lambda^\alpha}(\lambda)
                     \Rep\lambda(\LeftDifferentialOperator{\beta'})
