@@ -590,31 +590,6 @@ Using \cite[Lemma 4.4]{RuzhanskyTurunenWirth10}, we can show
         \sup_i \sup_\CompactGroup \abs{q_i} < \infty.
     \end{align*}
 \end{lemma}
-\begin{proof}
-    Let $\mathcal{H}$ be the set of polynomials of order at most $m$ on $\dualGroup{\VectorSpace}$,
-    with the norm
-    \begin{align}
-        {\left( \int_\dualGroup{\VectorSpace} \abs{P}^2 \right)}^\frac{1}{2}, \quad P \in \mathcal{H}.
-    \end{align}
-
-    Consider $L_m$ the left-regular representaion of $\CompactGroup$ on the above Hilbert space.
-    Decomposing $L_m$ into irreducible representations
-    \begin{align}
-        \mathcal{H} = \bigoplus_{i = 1}^N \mathcal{H}_i,
-        \quad L_m = \bigoplus_{i = 1}^N \left. L_m \right|_{\mathcal{H}_i},
-    \end{align}
-    then $P$ can be written as
-    \begin{align*}
-        P = \sum_{i = 1}^N \sum_{q = 1}^{d_i} c_{i, q} e_{i, q},
-    \end{align*}
-    and if $\tau_{i, pq}(k) = \int_\dualGroup{\VectorSpace} L_m(k) e_{i, q} \conj{e_{i, p}}$, then
-    \begin{align*}
-        P(k \lambda) &= L_m(k^{-1}) P(\lambda)
-        = \sum_{i = 1}^N \sum_{q = 1}^{d_i} c_{i, q} L_m(k^{-1}) e_{i, q}(\lambda)\\
-        &= \sum_{i = 1}^N \sum_{q = 1}^{d_i} c_{i, q} \tau_{i, pq}(k^{-1}) e_{i, p}(\lambda),
-    \end{align*}
-    which concludes the proof.
-\end{proof}
 
 \begin{theorem}[Littlewood-Paley decomposition]
 \label{theorem:Littlewood-Paley_decomposition}
