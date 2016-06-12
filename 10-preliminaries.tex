@@ -155,7 +155,7 @@ The Lie algebra structure of $\LeftInvariantVectorFields$ allows us then to defi
 \end{lemma}
 
 Suppose that $\Group$ is a Lie group
-with $\LieAlgebra$ as Lie algebra.
+and that $\LieAlgebra$ is its Lie algebra.
 If $X_1, \dots, X_{\dim \Group} \in \LieAlgebra$ is a given basis,
 and $\alpha \in \N^{\dim \Group}$
 we let
@@ -329,7 +329,7 @@ we do so with respect to the Lebesgue measure.
 \begin{definition}[Strongly continuous representations]
 \label{definition:strongly_continuous_representation}
 \index{strongly continuous}
-    Let $\Group$ be a group and $\Hil$ be a Hilbert space.
+    Suppose that $\Group$ is a group and $\Hil$ be a Hilbert space.
     Suppose further that $\xi$ is a representation of $\Group$ on $\Hil$.
     We shall say that $\xi$ is \emph{strongly continuous}
     if for each $x \in \Hil$,
@@ -421,7 +421,7 @@ Also, when we integrate on $\VectorSpace$, $\CompactGroup$ or $\GroupDirect$,
 we always mean with respect to a \emph{Haar measure}.
 
 We shall denote by $\LieAlgebraCompactGroup$ the Lie algebra of $\CompactGroup$.
-We fix a basis $Y_1, \dots, Y_{\dim \CompactGroup}$ of $\LieAlgebraCompactGroup$ and write
+We fix a basis $Y_1$, \dots, $Y_{\dim \CompactGroup}$ of $\LieAlgebraCompactGroup$ and write
 \begin{align*}
     Y^\beta \defeq Y_1^{\beta_1} \dots Y_{\dim \CompactGroup}^{\beta_{\dim \CompactGroup}},
     \quad \beta \in \N^{\dim \CompactGroup}.
@@ -466,7 +466,11 @@ and shall say that the above integral is interpreted \emph{in the sense of distr
 \begin{theorem}[Schwartz Kernel Theorem]
 \label{theorem:Schwartz_Kernel_Theorem}
 \index{Schwartz Kernel Theorem}
-    If $T : \Schwartz \GroupDirect \to \TemperedDistributions \GroupDirect$ is a continuous linear operator,
+    If the map
+    \begin{align*}
+        T : \Schwartz \GroupDirect \to \TemperedDistributions \GroupDirect
+    \end{align*}
+    is a continuous linear operator,
     then there exists a unique distribution
     $\kappa \in \TemperedDistributions {\GroupDirect \times \GroupDirect}$ such that
     \begin{align*}
@@ -580,7 +584,7 @@ $\Group$ is a locally compact Lie group.
     \end{align*}
 \end{proposition}
 
-\section{The $\GroupDirect$ case }
+\section{The direct product case} 
 
 As our representations on the motion group will act on $\Lebesgue{2}\CompactGroup$,
 we will define our Fourier Transform on $\CompactGroup$ so that it acts on $\Lebesgue{2}\CompactGroup$ as well.
@@ -614,8 +618,9 @@ This will allow useful comparisons later on.
 \end{definition}
 
 \begin{proposition}[Plancherel formula]
-    Let $f_1, f_2 \in \Lebesgue 1 \GroupDirect \cap \Lebesgue 2 \GroupDirect$.
-    The following identity holds
+    Let $f_1, f_2 \in \Lebesgue 1 \GroupDirect$.
+    If in addition $f_1, f_2 \in \Lebesgue 2 \GroupDirect$,
+    then the following identity holds
     \begin{align*}
         \ip [\Lebesgue 2 \GroupDirect] {f_1} {f_2}
         = \int_\VectorSpace \tr\left(\Fourier [\GroupDirect] f_1(\lambda) \adj{\Fourier [\GroupDirect] f_2(\lambda)}\right) \dd \lambda.

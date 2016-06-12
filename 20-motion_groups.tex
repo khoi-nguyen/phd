@@ -107,7 +107,7 @@ while $\CompactGroup$ is a compact Lie subgroup of $\GeneralLinear\VectorSpace$.
     However, that means that $k x = 0$, hence $x = 0$ as $k$ is invertible.
 \end{proof}
 
-From now on, $\VectorSpace$ will be given the structure of a \emph{Euclidean space} with a $\CompactGroup$-invariant inner product
+From now on, $\VectorSpace$ will be given the structure of \emph{Euclidean space} with a $\CompactGroup$-invariant inner product
 whose existence is ensured by Lemma~\ref{lemma:existence_of_K-invariant_inner_product}.
 
 \begin{definition}[Lebesgue measure]
@@ -469,7 +469,7 @@ and a diffeomorphism to a subgroup of $\GeneralLinear n$.
     
     The vectors
     \begin{align*}
-        X_1 = (1, 0) \oplus
+        X_1 = (1, 0) &\oplus
             \begin{pmatrix}
                 0 & 0\\
                 0 & 0
@@ -478,8 +478,8 @@ and a diffeomorphism to a subgroup of $\GeneralLinear n$.
             \begin{pmatrix}
                 0 & 0\\
                 0 & 0
-            \end{pmatrix},\quad
-        X_3 = (0, 0) \oplus
+            \end{pmatrix},\\
+        &X_3 = (0, 0) \oplus
             \begin{pmatrix}
                 0 & -1\\
                 1 &  0
@@ -1012,11 +1012,12 @@ However, as we shall see later, the Fourier Transform on $\Group$ can be written
 
     Recognising the Fourier Transform on $\VectorSpace$ in the above, we obtain
     \begin{align*}
-        \Fourier f(\lambda) F(u) =
+        \Fourier f(\lambda) F(u)
+        &=
         \int_\CompactGroup
             \Fourier[\VectorSpace] f(k u^{-1} \lambda, k) F(u k^{-1})
-        \dd k
-        =
+        \dd k\\
+        &=
         \int_\CompactGroup
             \Fourier[\VectorSpace] f(k^{-1} \lambda, k^{-1} u) F(k)
         \dd k
@@ -1508,8 +1509,8 @@ To this end, we follow the ideas of \cite{FischerRuzhansky15}.
         q_j(x, k) &= -\ip{x}{k e_i}, \quad &1 \leq &j \leq \dim \VectorSpace\\
         q_j(x, k) &= \ip[\R^N]{\iota(k^{-1}) - \iota(e)}{e_{j}}, \quad &\dim \VectorSpace < &j \leq \dim \VectorSpace + D
     \end{align*}
-    where $e_1, \dots, e_{\dim V}$ is an orthonormal basis of $\VectorSpace$
-    and $e_{\dim V + 1}, \dots, e_{\dim \VectorSpace + D}$ is an orthonormal basis of $\R^D$.
+    where $e_1$, \dots, $e_{\dim V}$ is an orthonormal basis of $\VectorSpace$
+    and $e_{\dim V + 1}$, \dots, $e_{\dim \VectorSpace + D}$ is an orthonormal basis of $\R^D$.
     Moreover, we know that for each $\alpha = (\alpha_1, \alpha_2)$,
     there exists a left-invariant differential operator $\TaylorLeftDifferentialOperator{\alpha}$ of order at most $\abs\alpha$ such that
     \begin{align*}
