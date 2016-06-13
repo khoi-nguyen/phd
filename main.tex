@@ -138,16 +138,11 @@
     % Choice of right d
     \IfBooleanTF{#1}{\def\@der{\dd}}{\def\@der{\partial}}
     % Write the derivative
-    \mathchoice{%
-        \frac{
-            \@der\ifnum\pdfstrcmp{#2}{1}=0\else^{#2}\fi {#3}
-        }{%
-            \@for\@token:={#4}\do{\@der \@token}
-        }
-    } {%
-        % TODO: split exponent/variable
-        \@for\@token:={#4}\do{{\@der}_{\@token}} #3
-    } {} {}
+    \frac{
+        \@der\ifnum\pdfstrcmp{#2}{1}=0\else^{#2}\fi {#3}
+    }{%
+        \@for\@token:={#4}\do{\@der \@token}
+    }
 }
 \makeatother
 
