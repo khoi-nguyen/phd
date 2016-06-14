@@ -28,20 +28,24 @@ with the additional assumption that $\CompactGroup$ is compact.
 Moreover, we shall denote the \emph{identity element} of $\Group$ by $e$,
 or $e_\Group$ should an ambiguity arise.
 
-\begin{example}[General Linear group]
-    The set of invertible matrices $\GeneralLinear \VectorSpace$,
-    equipped with the usual multiplication of matrices,
-    is a locally compact Lie group.
-\end{example}
+Closed Lie subgroups consisting of invertible matrices form an important class of Lie groups called \emph{linear Lie groups},
+a non-exhaustive list of which is now given.
 
-\begin{example}[Special orthogonal group]
-    The set
-    \begin{align*}
-        \SpecialOrthogonalGroup \VectorSpace
-        \defeq
-        \{ A \in \Lin{\VectorSpace} : \det A = 1 \}
-    \end{align*}
-    is a compact Lie group.
+\begin{example}[Linear Lie groups]
+    Let $\VectorSpace$ be a Euclidean space.
+    \begin{enumerate}
+        \item The set $\GeneralLinear \VectorSpace$ of invertible linear maps,
+            equipped with the composition of functions,
+            naturally forms a Lie Group called the \emph{general linear group} of $\VectorSpace$.
+        \item The set
+            \begin{align*}
+                \SpecialOrthogonalGroup \VectorSpace
+                \defeq
+                \{ A \in \Lin{\VectorSpace} : \det A = 1 \}
+            \end{align*}
+            is a compact Lie subgroup of $\GeneralLinear \VectorSpace$
+            called the \emph{special orthogonal group} of $\VectorSpace$.
+    \end{enumerate}
 \end{example}
 
 \subsection{Lie algebra}
