@@ -1068,6 +1068,39 @@ However, as we shall see later, the Fourier Transform on $\Group$ can be written
     \end{enumerate}
 \end{proof}
 
+\begin{corollary}
+    Let $\lambda \in \VectorSpace$ and $f \in \Lebesgue 1 \Group$.
+    If for every $l \in \CompactGroup$,
+    \begin{align}
+        f(l x, k) = f(x, k), \quad (x, k) \in \Group,
+        \label{eq:function_on_motion_group_invariant_under_K}
+    \end{align}
+    then we have
+    \begin{align*}
+        \Fourier f(\lambda) = \Fourier [\GroupDirect] f(\lambda).
+    \end{align*}
+\end{corollary}
+\begin{proof}
+    By Lemma~\ref{lemma:kernels_of_Fourier_coefficients} and \eqref{eq:function_on_motion_group_invariant_under_K},
+    we know that
+    \begin{align*}
+        \Fourier f(\lambda) F(u)
+        &=
+        \int_\CompactGroup \Fourier [\VectorSpace] f(\lambda, k^{-1} u) F(k) \dd k\\
+        \int_\CompactGroup \Fourier [\VectorSpace] f(\lambda, k) F(u k^{-1}) \dd k,
+    \end{align*}
+    where the last line was obtained by substituing $k$ for $u k^{-1}$.
+
+    Recognising a Fourier transform on $\CompactGroup$ is the right-hand side of the above,
+    we obtain
+    \begin{align*}
+        \Fourier f(\lambda) F(u)
+        &=
+        \Fourier [\GroupDirect] f(\lambda) F(u),
+    \end{align*}
+    which shows that both Fourier transforms are indeed equal for $f$.
+\end{proof}
+
 %\begin{definition}
 %    We shall say that $L \in \SmoothFunctions{\VectorSpace \times \CompactGroup \times \CompactGroup}$ belongs to $\ScalarImageSchwartz\Group$ if and only if
 %    \begin{enumerate}
