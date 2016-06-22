@@ -81,9 +81,10 @@ let us denote by $\VectorFields$ the set of all \emph{smooth vector fields} on $
         X \circ L_g = \dd L_g \circ X,
     \end{align*}
     where
-    \begin{align*}
+    \begin{align}
         L_g : \Group \to \Group : h \mapsto g h
-    \end{align*}
+        \label{eq:left_translation_on_Lie_group}
+    \end{align}
     is the left translation on $\Group$ by $g$.
     We shall denote the set of left-invariant vector fields by $\LeftInvariantVectorFields$.
 \end{definition}
@@ -187,10 +188,14 @@ we let
     where $\gamma_X : I \subset \R \to \Group$ is the unique solution to the following ordinary differential equation
     \begin{align*}
         \begin{cases}
-            \D* 1 [\gamma_X] t(t) &= X(\gamma_X(t))\\
+            \D* 1 [\gamma_X] t(t) &= \eval{\dd L_{\gamma_X(t)}}{e}(X)\\
             \gamma_X(0) &= e.
         \end{cases}
+        \quad
     \end{align*}
+    In the above,
+    $L_g$ designates the left-translation by $g$ on $\Group$
+    as defined in~\eqref{eq:left_translation_on_Lie_group}.
 \end{definition}
 
 \begin{example}[Exponential map on $\SpecialOrthogonalGroup n$]
