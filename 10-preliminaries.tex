@@ -198,6 +198,21 @@ we let
     as defined in~\eqref{eq:left_translation_on_Lie_group}.
 \end{definition}
 
+\begin{example}[Exponential map on $\GeneralLinear n$]
+    Suppose that $\Group \defeq \GeneralLinear n$,
+    so that $\LieAlgebra = \SquareMatrices n$ by Example~\eqref{example:Lie_algebra_of_GL_n}.
+    The \emph{exponential map} on $\Group$ is
+    \begin{align}
+        \exp_{\GeneralLinear n} : \SquareMatrices n \to \GeneralLinear n :
+        A \to \sum_{k = 1}^{+\infty} \frac 1 {k!} A^k.
+        \label{eq:definition_of_exponential_of_matrices}
+    \end{align}
+\end{example}
+
+The convergence of the series~\eqref{eq:definition_of_exponential_of_matrices} can be shown
+by using a \emph{submultiplicative norm} on $\SquareMatrices n$
+and the convergence of the exponential power series for real numbers.
+
 \begin{example}[Exponential map on $\SpecialOrthogonalGroup n$]
     Suppose that $\CompactGroup \defeq \SpecialOrthogonalGroup n$.
     By Example~\ref{example:Lie_algebra_of_SO_n},
