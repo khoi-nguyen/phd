@@ -526,6 +526,18 @@ Naturally, every integration on $\Group$ is performed with respect to a Haar mea
     \end{align*}
 \end{definition}
 
+\subsection{Convolutions of distributions}
+
+% TODO: define Schwartz space on Lie group
+\begin{definition}[Convolution]
+    Let $\kappa \in \TemperedDistributions \Group$ and $\phi \in \Schwartz \Group$.
+    For every $g \in \Group$,
+    we let
+    \begin{align*}
+        \conv \phi \kappa(g) \defeq \dualBracket [\Group] \kappa {\RightRegularRepresentation(g^{-1}) \InverseFunctionArgument \phi}.
+    \end{align*}
+\end{definition}
+
 \section{Fourier Transform}
 
 \begin{definition}[Fourier coefficient]
