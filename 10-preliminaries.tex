@@ -520,13 +520,25 @@ Naturally, every integration on $\Group$ is performed with respect to a Haar mea
     Let $f_1, f_2 \in \Lebesgue 1 \Group$.
     We define the convolution of $f_1$ and $f_2$,
     denoted by $\conv {f_1} {f_2}$, via
-    \begin{align*}
+    \begin{align}
         \conv {f_1} {f_2} (g)
         \defeq \int_\Group f_1(h) f_2(h^{-1} g) \dd h.
-    \end{align*}
+        \label{eq:alternative_definition_of_convolution}
+    \end{align}
 \end{definition}
 
 \subsection{Convolutions of distributions}
+
+Suppose that $\kappa, \phi \in \Schwartz \Group$.
+It follows that \eqref{eq:alternative_definition_of_convolution} can be rewritten
+\begin{align*}
+    \conv \phi \kappa &= \int_\Group \kappa(h) \phi({(g^{-1} h)}^{-1}) \dd h\\
+    &= \int_\Group \kappa(h) \RightRegularRepresentation(g^{-1}) \InverseFunctionArgument \phi(h) \dd g.
+\end{align*}
+
+The above can be generalised for $\kappa \in \TemperedDistributions \Group$
+provided that we interpret the above in the sense of distributions,
+leading to the following definition.
 
 % TODO: define Schwartz space on Lie group
 \begin{definition}[Convolution]
