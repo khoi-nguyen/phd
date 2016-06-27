@@ -522,7 +522,9 @@ Naturally, every integration on $\Group$ is performed with respect to a Haar mea
     denoted by $\conv {f_1} {f_2}$, via
     \begin{align}
         \conv {f_1} {f_2} (g)
-        \defeq \int_\Group f_1(h) f_2(h^{-1} g) \dd h.
+        &\defeq \int_\Group f_1(h) f_2(h^{-1} g) \dd h
+        \label{eq:definition_of_convolution}\\
+        &= \int_\Group f_1(g h^{-1}) f_2(h) \dd h.
         \label{eq:alternative_definition_of_convolution}
     \end{align}
 \end{definition}
@@ -532,11 +534,17 @@ Naturally, every integration on $\Group$ is performed with respect to a Haar mea
 Suppose that $\kappa, \phi \in \Schwartz \Group$.
 It follows that \eqref{eq:alternative_definition_of_convolution} can be rewritten
 \begin{align*}
-    \conv \phi \kappa &= \int_\Group \kappa(h) \phi({(g^{-1} h)}^{-1}) \dd h\\
-    &= \int_\Group \kappa(h) \RightRegularRepresentation(g^{-1}) \InverseFunctionArgument \phi(h) \dd g.
+    \conv \phi \kappa &= \int_\Group \phi(g h^{-1}) \kappa(h) \dd h\\
+    &= \int_\Group \kappa(h) \RightRegularRepresentation(g^{-1}) \InverseFunctionArgument \phi(h) \dd g,
+\end{align*}
+where $\InverseFunctionArgument \phi(h) \defeq \phi(h^{-1})$ for each $h \in \Group$.
+Similarly, we show that \eqref{eq:definition_of_convolution} becomes
+\begin{align*}
+    \conv \kappa \phi &= \int_\Group \kappa(h) \phi({(g^{-1} h)}^{-1}) \dd h\\
+    &= \int_\Group \kappa(h) \LeftRegularRepresentation(g^{-1}) \InverseFunctionArgument \phi(h) \dd g.
 \end{align*}
 
-The above can be generalised for $\kappa \in \TemperedDistributions \Group$
+Both of the above can be generalised for $\kappa \in \TemperedDistributions \Group$
 provided that we interpret the above in the sense of distributions,
 leading to the following definition.
 
@@ -546,7 +554,8 @@ leading to the following definition.
     For every $g \in \Group$,
     we let
     \begin{align*}
-        \conv \phi \kappa(g) \defeq \dualBracket [\Group] \kappa {\RightRegularRepresentation(g^{-1}) \InverseFunctionArgument \phi},
+        \conv \phi \kappa(g) &\defeq \dualBracket [\Group] \kappa {\RightRegularRepresentation(g^{-1}) \InverseFunctionArgument \phi}\\
+        \conv \kappa \phi(g) &\defeq \dualBracket [\Group] \kappa {\LeftRegularRepresentation(g) \InverseFunctionArgument \phi},
     \end{align*}
     where $\InverseFunctionArgument \phi(h) \defeq \phi(h^{-1})$ for each $h \in \Group$.
 \end{definition}
