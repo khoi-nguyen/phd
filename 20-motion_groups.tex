@@ -1256,6 +1256,17 @@ However, as we shall see later, the Fourier Transform on $\Group$ can be written
     where the last equality was obained by Proposition~\ref{proposition:elementary_properties_of_the_Fourier_transform}.
 \end{proof}
 
+\section{Applications to engineering}
+
+\begin{application}[3D Fokker-Planck equation]
+    \begin{align}
+        \begin{cases}
+            \D{1}[f]{s} = -h(s) \cos (\turn t) \D{1}[f]{x_1} - h(s) \sin(\turn t) \D{1}[f]{x_2} + C \D{2}[f]{t^2}
+            f(\dummy; 0) = \DiracDelta_{(0_{\R^2}, 0)};
+        \end{cases}
+    \end{align}
+\end{application}
+
 \section{Fourier Transform of distributions}
 
 \begin{definition}[Image of the Schwartz space]
