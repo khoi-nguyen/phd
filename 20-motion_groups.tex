@@ -1260,6 +1260,28 @@ However, as we shall see later, the Fourier Transform on $\Group$ can be written
 \section{Applications to engineering}
 
 \begin{application}[Phase-noise Fokker-Planck equation]
+    Suppose that
+    \begin{align*}
+        s : \R^+ \times \Omega \to \R
+    \end{align*}
+    is a Brownian motion on a probability space $(\Omega, \mathcal F, \mathbb P)$
+    that represents the (normalised) phase of a signal
+    \begin{align*}
+        x : \R^+ \times \Omega \to \C : (t, \omega) \mapsto x(t) \defeq \e^{\i \turn s(t, \omega)}.
+    \end{align*}
+
+    Assume further that after going through a bandpass filter,
+    the signal $x$ becomes
+    \begin{align*}
+        z : \R^+ \times \Omega \to \C : (t, \omega) \mapsto z(t, \omega) \defeq \int_0^t h(t') \e^{\i \turn s(t - t', \omega)} \dd t',
+    \end{align*}
+    where $h \in \Distributions {\R}$.
+
+    [Citation] modelises the probability density
+    \begin{align*}
+        f : \R^+ \to \Distributions{\R^2 \times \T} : t \mapsto f(\dummy, t)
+    \end{align*}
+    of the random variable $(z, s)$ as the solution of
     \begin{align}
         \begin{cases}
             \D{1}[f]{t} &= -h(t) \cos (\turn s) \D{1}[f]{{y_1} } - h(t) \sin(\turn s) \D{1}[f]{{y_2} } + C \D{2}[f]{s^2}\\
