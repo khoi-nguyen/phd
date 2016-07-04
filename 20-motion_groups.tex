@@ -1286,9 +1286,36 @@ of the random variable $(z, s)$ as the solution of
 \begin{align}
     \begin{cases}
         \D{1}[f]{t} &= -h(t) \cos (\turn s) \D{1}[f]{{y_1} } - h(t) \sin(\turn s) \D{1}[f]{{y_2} } + C \D{2}[f]{s^2}\\
-        f(\dummy; 0) &= \DiracDelta{(0_{\R^2}, 0)};
+        f(\dummy; 0) &= \DiracDelta{(0_{\R^2}, 0)}.
     \end{cases}
+    \label{eq:Fokker-Planck_phase_noise}
 \end{align}
+
+By Example~\ref{example:Lie_Algebra_of_2-dimensional_Euclidean_motion_group},
+\eqref{eq:Fokker-Planck_phase_noise} can be rewritten
+\begin{align}
+    \begin{cases}
+        \D{1}[f]{t}(y, s; t) &= -h(t) \LeftDifferentialOperatorFirstOrder {X_1}_{(y, s)} f(y, s; t) + C \LeftDifferentialOperatorFirstOrder {X_3}^2_{(y, s)} f(y, s; t)\\
+        f(\dummy; 0) &= \DiracDelta{(0_{\R^2}, 0)}.
+    \end{cases}
+    \label{eq:Fokker-Planck_phase_noise:left-invariant_operators}
+\end{align}
+
+Applying the Fourier Transform on both sides of the above with respect to $(y, s)$,
+we obtain
+
+\begin{align}
+    \begin{cases}
+        \D{1}{t} \hat f(\lambda; t) &= A(\lambda, t) \hat f(\lambda; t)\\
+        \hat f(\lambda; 0) &= \Id{\Lebesgue 2 \CompactGroup},
+    \end{cases}
+    \quad
+    \label{eq:Fokker-Planck_phase_noise:Fourier_side}
+\end{align}
+where in the above $\hat f(\lambda, t) \defeq \Fourier f(\lambda, t)$, and
+\begin{align*}
+    A(\lambda, t) \defeq \left( -h(t) \Rep \lambda (X_1) + C \Rep \lambda ({X_3})^2 \right).
+\end{align*}
 
 \section{Fourier Transform of distributions}
 
