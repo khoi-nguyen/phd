@@ -1523,6 +1523,20 @@ where in the above $\hat f(\lambda, t) \defeq \Fourier [\MotionGroup 2] f(\lambd
     \end{align*}
 \end{proposition}
 
+\begin{proposition}[Fourier inverse formula]
+    Let $f \in \Sobolev s$ for $s > \dim \Group$.
+    For almost every $\lambda \in \VectorSpace$,
+    the operator $\Fourier f(\lambda)$ is trace class and the map
+    \begin{align*}
+        \lambda \in \VectorSpace \mapsto \norm [\SchattenClasses 1 {\Lebesgue 2 \CompactGroup}] {\Fourier f(\lambda)}
+    \end{align*}
+    is integrable on $\VectorSpace$.
+    Moreover, $f$ is continuous on $\Group$ and for every $g \in \Group$, we have
+    \begin{align*}
+        f(g) = \int_\VectorSpace \tr\left(\Rep \lambda (g) \Fourier f(\lambda)\right) \dd \lambda.
+    \end{align*}
+\end{proposition}
+
 \subsection{Fourier Transform of distributions}
 
 For the sequel, we need to be able to take the Fourier Transform of certain distributions.
