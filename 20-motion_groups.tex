@@ -1546,14 +1546,23 @@ where in the above $\hat f(\lambda, t) \defeq \Fourier [\MotionGroup 2] f(\lambd
     belongs to $\Lebesgue 2 \Group$.
     By the Cauchy-Schwartz inequality for Schatten classes,
     we have
-    \begin{align*}
+    \begin{align}
         \norm [\SchattenClasses 1 {\Lebesgue 2 \CompactGroup}] {\Fourier f(\lambda)}
         \leq
         \norm [\SchattenClasses 2 {\Lebesgue 2 \CompactGroup}] {\Rep \lambda \BesselPotential {-s}}
         \norm [\SchattenClasses 2 {\Lebesgue 2 \CompactGroup}] {\Fourier f_s(\lambda)}.
+        \label{eq:estimate_on_Schatten_norm_of_Fourier_coefficient}
+    \end{align}
+    The first Hilbert-Schmidt norm on the left-hand side is finite by Proposition~\ref{proposition:Sobolev_embedding},
+    while the second one is finite for almost every $\lambda \in \VectorSpace$ by the Plancherel formula (Proposition \ref{proposition:Plancherel_formula}).
+    Therefore, we have so far shown that
+    \begin{align*}
+        \norm [\SchattenClasses 1 {\Lebesgue 2 \CompactGroup}] {\Fourier f(\lambda)}
+        < \infty,
     \end{align*}
+    i.e.\ $\Fourier f(\lambda)$ is trace class for almost every $\lambda \in \VectorSpace$.
 
-    Integrating both sides of the above with respect to $\lambda$,
+    Integrating both sides of~\eqref{eq:estimate_on_Schatten_norm_of_Fourier_coefficient} with respect to $\lambda$,
     we obtain
     \begin{align}
         \int_\VectorSpace
