@@ -1538,6 +1538,43 @@ where in the above $\hat f(\lambda, t) \defeq \Fourier [\MotionGroup 2] f(\lambd
     \end{align*}
     is continuous and equal to $f$ almost-everywhere.
 \end{proposition}
+\begin{proof}
+    By definition, the distribution
+    \begin{align*}
+        f_s \defeq \BesselPotential s f
+    \end{align*}
+    belongs to $\Lebesgue 2 \Group$.
+    By the Cauchy-Schwartz inequality for Schatten classes,
+    we have
+    \begin{align*}
+        \norm [\SchattenClasses 1 {\Lebesgue 2 \CompactGroup}] {\Fourier f(\lambda)}
+        \leq
+        \norm [\SchattenClasses 2 {\Lebesgue 2 \CompactGroup}] {\Rep \lambda \BesselPotential {-s}}
+        \norm [\SchattenClasses 2 {\Lebesgue 2 \CompactGroup}] {\Fourier f_s(\lambda)}.
+    \end{align*}
+
+    Integrating both sides of the above with respect to $\lambda$,
+    we obtain
+    \begin{align}
+        \int_\VectorSpace
+            &\norm [\SchattenClasses 1 {\Lebesgue 2 \CompactGroup}] {\Fourier f(\lambda)}
+        \dd \lambda \notag\\
+        &\leq
+        \int_\VectorSpace
+            \norm [\SchattenClasses 2 {\Lebesgue 2 \CompactGroup}] {\Rep \lambda \BesselPotential {-s}}
+            \norm [\SchattenClasses 2 {\Lebesgue 2 \CompactGroup}] {\Fourier f_s(\lambda)}
+        \dd \lambda \notag\\
+        &\leq
+        \norm [\LebesgueDual 2 \Group] {\Rep \dummy \BesselPotential {-s}}
+        \norm [\Lebesgue 2 \Group] {f_s},
+        \label{eq:L2_norm_of_Bessel_potential_times_L2_norm_of_fs}
+    \end{align}
+    where the last line was obtained via the Cauchy-Schwartz inequality on $\Lebesgue 2 \VectorSpace$
+    and the Plancherel formula.
+    By the Sobolev embeddings (Proposition~\ref{proposition:Sobolev_embedding}),
+    the right-hand side of~\eqref{eq:L2_norm_of_Bessel_potential_times_L2_norm_of_fs} is finite,
+    finishing the proof of our first claim.
+\end{proof}
 
 \subsection{Fourier Transform of distributions}
 
