@@ -220,7 +220,7 @@ Using \cite[Lemma 4.4]{RuzhanskyTurunenWirth10}, we can show
 
     By definition, it is clear that
     \begin{align*}
-        \DifferenceOperator[\VectorSpace]{j} \tilde \sigma(x, k; l \lambda) = \frac 1 {\i \turn} \D{1}[\tilde \sigma]{\lambda_j} (x, k, l \lambda),
+        \DifferenceOperator[\VectorSpace]{j} \tilde \sigma(x, k; l \lambda) = \frac 1 {\i \turn} \D{1}[\tilde \sigma]{{\lambda_j} } (x, k, l \lambda),
     \end{align*}
     while
     \begin{align*}
@@ -571,17 +571,17 @@ Using \cite[Lemma 4.4]{RuzhanskyTurunenWirth10}, we can show
 \begin{proof}
     Using the chain rule, we know that for a purely radial function $f$
     \begin{align}
-        \D{1}[f]{x_i} = \D{1}[\lambda]{x_i} \D{1}[f]{\lambda} = \frac{\D{1}[f]{\lambda}}{\norm[\R^n]{x}} x_i.
+        \D{1}[f]{{x_i} } = \D{1}[\lambda]{{x_i} } \D{1}[f]{\lambda} = \frac{\D{1}[f]{\lambda}}{\norm[\R^n]{x}} x_i.
     \end{align}
 
     We know proceed to show the claim by induction on $\alpha$.
     The result is clearly true when $\abs{\alpha} = 0$.
     If we assume it is true for some $\alpha \in \N^n$, then by the above,
     \begin{align}
-        \D{\abs \alpha + 1}[\chi]{x_i,x^\alpha}(x)
-        &= \D{1}{x_i} \sum_{r = 1}^{C_\alpha} f_r(\norm[\R^n]{x}) P_r(x)\\
+        \D{\abs \alpha + 1}[\chi]{{x_i} , x^\alpha}(x)
+        &= \D{1}{{x_i} } \sum_{r = 1}^{C_\alpha} f_r(\norm[\R^n]{x}) P_r(x)\\
         &= \sum_{r = 1}^{C_\alpha} \frac{\D{1}[f_r]{\lambda}}{\norm[\R^n]{x}}(\norm[\R^n]{x}) x_i P_r(x)
-        + \sum_{r = 1}^{C_\alpha} f_r(\norm[\R^n]{x}) \D{1}[P_r]{x_i}(x),
+        + \sum_{r = 1}^{C_\alpha} f_r(\norm[\R^n]{x}) \D{1}[P_r]{{x_i} }(x),
     \end{align}
     which concludes the proof.
 \end{proof}

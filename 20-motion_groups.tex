@@ -513,9 +513,9 @@ and a diffeomorphism to a subgroup of $\GeneralLinear n$.
     then the associated left-invariant operators act via
     \begin{align*}
         \LeftDifferentialOperatorFirstOrder{X_1} f(x, t)
-            &= \cos(\turn t) \D{1}[f]{x_1}(x, t) + \sin(\turn t) \D{1}[f]{x_2}(x, t)\\
+            &= \cos(\turn t) \D{1}[f]{{x_1} }(x, t) + \sin(\turn t) \D{1}[f]{{x_2} }(x, t)\\
         \LeftDifferentialOperatorFirstOrder{X_2} f(x, t)
-            &= -\sin(\turn t) \D{1}[f]{x_1}(x, t) + \cos(\turn t) \D{1}[f]{x_2}(x, t)\\
+            &= -\sin(\turn t) \D{1}[f]{{x_1} }(x, t) + \cos(\turn t) \D{1}[f]{{x_2} }(x, t)\\
         \LeftDifferentialOperatorFirstOrder{X_3} f(x, t)
             &= \D{1}[f]{t}(x, t),
     \end{align*}
@@ -697,7 +697,7 @@ However, as we shall see later, the Fourier Transform on $\Group$ can be written
     If $(x, t) \in \Group$, then for each $m, n \in \Z$, we have
     \begin{align*}
         (m - n) {\Rep\lambda(x, t)}_{m n}
-        = - \conj{x} \D{1}{\conj{x}} {\Rep\lambda(x, t)}_{mn}
+        = - \conj{x} \D{1}{{\conj{x}} } {\Rep\lambda(x, t)}_{mn}
     \end{align*}
 \end{lemma}
 \begin{proof}
@@ -711,12 +711,12 @@ However, as we shall see later, the Fourier Transform on $\Group$ can be written
 
     By simple calculations, we can show that
     \begin{align*}
-        \D*{1}{u} \lambda(-\e^{\i \turn u} x) = {(-\i \turn)} \conj{x} \D{1}{\conj{x}} \lambda(-\e^{\i \turn u} x).
+        \D*{1}{u} \lambda(-\e^{\i \turn u} x) = {(-\i \turn)} \conj{x} \D{1}{{\conj{x}} } \lambda(-\e^{\i \turn u} x).
     \end{align*}
     From there, it follows that~\eqref{eq:lemma:off_diagonal_decay_in_dimension_2} becomes
     \begin{align*}
         (m - n) {\Rep\lambda(x, t)}_{m n}
-        = - \conj{x} \D{1}{\conj{x}} {\Rep\lambda(x, t)}_{mn}
+        = - \conj{x} \D{1}{{\conj{x}} } {\Rep\lambda(x, t)}_{mn}
     \end{align*}
 \end{proof}
 
@@ -1263,7 +1263,7 @@ However, as we shall see later, the Fourier Transform on $\Group$ can be written
     % TODO: Explain what the quantities represent
     \begin{align}
         \begin{cases}
-            \D{1}[f]{s} &= -h(s) \cos (\turn t) \D{1}[f]{x_1} - h(s) \sin(\turn t) \D{1}[f]{x_2} + C \D{2}[f]{t^2}\\
+            \D{1}[f]{s} &= -h(s) \cos (\turn t) \D{1}[f]{{x_1} } - h(s) \sin(\turn t) \D{1}[f]{{x_2} } + C \D{2}[f]{t^2}\\
             f(\dummy; 0) &= \DiracDelta{(0_{\R^2}, 0)};
         \end{cases}
     \end{align}

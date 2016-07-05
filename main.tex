@@ -144,11 +144,15 @@
     % Choice of right d
     \IfBooleanTF{#1}{\def\@der{\dd}}{\def\@der{\partial}}
     % Write the derivative
-    \frac{
-        \@der\ifnum\pdfstrcmp{#2}{1}=0\else^{#2}\fi {#3}
-    }{%
-        \@for\@token:={#4}\do{\@der \@token}
-    }
+    \mathchoice{%
+        \frac{
+            \@der\ifnum\pdfstrcmp{#2}{1}=0\else^{#2}\fi {#3}
+        }{%
+            \@for\@token:={#4}\do{\@der \@token}
+        }
+    } {%
+        \@for\@token:={#4}\do{\@der_\@token} #3
+    } {} {}
 }
 \makeatother
 
