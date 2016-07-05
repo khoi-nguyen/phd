@@ -1532,9 +1532,11 @@ where in the above $\hat f(\lambda, t) \defeq \Fourier [\MotionGroup 2] f(\lambd
     \end{align*}
     is integrable on $\VectorSpace$.
     Moreover, $f$ is continuous on $\Group$ and for every $g \in \Group$, we have
+    Moreover, the map
     \begin{align*}
-        f(g) = \int_\VectorSpace \tr\left(\Rep \lambda (g) \Fourier f(\lambda)\right) \dd \lambda.
+        \Group \to \C : g \mapsto \int_\VectorSpace \tr\left(\Rep \lambda (g) \Fourier f(\lambda)\right) \dd \lambda.
     \end{align*}
+    is continuous and equal to $f$ almost-everywhere.
 \end{proposition}
 
 \subsection{Fourier Transform of distributions}
