@@ -1539,88 +1539,84 @@ where in the above $\hat f(\lambda, t) \defeq \Fourier [\MotionGroup 2] f(\lambd
     is continuous and equal to $f$ almost-everywhere.
 \end{proposition}
 \begin{proof}
+    Suppose that $h \in \Sobolev s$.
     By definition, the distribution
     \begin{align*}
-        f_s \defeq \BesselPotential s f
+        h_s \defeq \BesselPotential s h
     \end{align*}
     belongs to $\Lebesgue 2 \Group$.
     By the Cauchy-Schwartz inequality for Schatten classes,
     we have
     \begin{align}
-        \norm [\SchattenClasses 1 {\Lebesgue 2 \CompactGroup}] {\Fourier f(\lambda)}
+        \norm [\SchattenClasses 1 {\Lebesgue 2 \CompactGroup}] {\Fourier h(\lambda)}
         \leq
         \norm [\SchattenClasses 2 {\Lebesgue 2 \CompactGroup}] {\Rep \lambda \BesselPotential {-s}}
-        \norm [\SchattenClasses 2 {\Lebesgue 2 \CompactGroup}] {\Fourier f_s(\lambda)}.
+        \norm [\SchattenClasses 2 {\Lebesgue 2 \CompactGroup}] {\Fourier h_s(\lambda)}.
         \label{eq:estimate_on_Schatten_norm_of_Fourier_coefficient}
     \end{align}
     The first Hilbert-Schmidt norm on the left-hand side is finite by Proposition~\ref{proposition:Sobolev_embedding},
     while the second one is finite for almost every $\lambda \in \VectorSpace$ by the Plancherel formula (Proposition \ref{proposition:Plancherel_formula}).
     Therefore, we have so far shown that
     \begin{align*}
-        \norm [\SchattenClasses 1 {\Lebesgue 2 \CompactGroup}] {\Fourier f(\lambda)}
+        \norm [\SchattenClasses 1 {\Lebesgue 2 \CompactGroup}] {\Fourier h(\lambda)}
         < \infty,
     \end{align*}
-    i.e.\ $\Fourier f(\lambda)$ is trace class for almost every $\lambda \in \VectorSpace$.
+    i.e.\ $\Fourier h(\lambda)$ is trace class for almost every $\lambda \in \VectorSpace$.
 
     Integrating both sides of~\eqref{eq:estimate_on_Schatten_norm_of_Fourier_coefficient} with respect to $\lambda$,
     we obtain
     \begin{align}
         \int_\VectorSpace
-            &\norm [\SchattenClasses 1 {\Lebesgue 2 \CompactGroup}] {\Fourier f(\lambda)}
+            &\norm [\SchattenClasses 1 {\Lebesgue 2 \CompactGroup}] {\Fourier h(\lambda)}
         \dd \lambda \notag\\
         &\leq
         \int_\VectorSpace
             \norm [\SchattenClasses 2 {\Lebesgue 2 \CompactGroup}] {\Rep \lambda \BesselPotential {-s}}
-            \norm [\SchattenClasses 2 {\Lebesgue 2 \CompactGroup}] {\Fourier f_s(\lambda)}
+            \norm [\SchattenClasses 2 {\Lebesgue 2 \CompactGroup}] {\Fourier h_s(\lambda)}
         \dd \lambda \notag\\
         &\leq
         \norm [\LebesgueDual 2 \Group] {\Rep \dummy \BesselPotential {-s}}
-        \norm [\Lebesgue 2 \Group] {f_s},
+        \norm [\Lebesgue 2 \Group] {h_s},
         \label{eq:L2_norm_of_Bessel_potential_times_L2_norm_of_fs}
     \end{align}
     where the last line was obtained via the Cauchy-Schwartz inequality on $\Lebesgue 2 \VectorSpace$
     and the Plancherel formula.
     By the Sobolev embeddings (Proposition~\ref{proposition:Sobolev_embedding}),
     the right-hand side of~\eqref{eq:L2_norm_of_Bessel_potential_times_L2_norm_of_fs} is finite,
-    finishing the proof of our first claim.
+    so that the equation becomes
+    \begin{align}
+        \int_\VectorSpace
+            \norm [\SchattenClasses 1 {\Lebesgue 2 \CompactGroup}] {\Fourier h(\lambda)}
+        \dd \lambda
+        \leq C \norm [\Sobolev s] {h}.
+        \label{eq:Sobolev_inclusion_into_fields_with_integrable_S1_norm}
+    \end{align}
 
-    By Proposition~\ref{proposition:Sobolev_embedding},
-    we may assume that $f$ is continuous.
-    Fix now a positive test function $\phi \in \Schwartz \Group$.
-    By the Plancherel formula (Proposition~\ref{proposition:Plancherel_formula}),
-    we know that
+    The first claim follows from applying the above to $h \defeq f$,
+    so we only need to check the actual inverse formula.
+
+    To this end,
+    select a sequence ${(f_j)}_{j \in \N} \subset \Schwartz \Group$ such that
     \begin{align*}
-        \dualBracket [\Group] f \phi
-        &= \dualBracket [\Group] {f_s} {\BesselPotential {-s} \phi}
-        = \ip [\Lebesgue 2 \Group] {f_s} {\BesselPotential {-s} \phi}\\
-        &=
-        \int_\VectorSpace
-        \tr\left(
-            \Rep \lambda \BesselPotential s \Fourier f(\lambda)
-            \adj {(\Rep \lambda \BesselPotential {-s} \Fourier \phi(\lambda))}
-        \right)
-        \dd \lambda\\
-        &=
-        \int_\VectorSpace
-        \tr\left(
-            \Fourier f(\lambda)
-            \adj {\Fourier \phi(\lambda)}
-        \right)
-        \dd \lambda.
+        \lim_{j \to \infty} \norm [\Sobolev s] {f_j - f} = 0.
     \end{align*}
 
-    Since we have shown $\Fourier f$ is trace class almost everywhere,
-    the above becomes
+    By the Sobolev embeddings (Proposition~\ref{proposition:Sobolev_embedding}),
+    we also have \emph{uniform convergence}, hence
     \begin{align*}
-        \dualBracket [\Group] f \phi
-        =
-        \int_\VectorSpace
-        \tr\left(
-            \Fourier f(\lambda)
-            \adj {\Fourier \phi(\lambda)}
-        \right)
-        \dd \lambda.
+        f(g)
+        &= \lim_{j \to \infty} f_j(g)\\
+        &= \lim_{j \to \infty} \int_\VectorSpace \tr\left(\Rep \lambda(g) \Fourier f_j(\lambda)\right) \dd \lambda,
     \end{align*}
+    where the last line was obtained via the classical Fourier inverse formula (Proposition \ref{proposition:inverse_Fourier_Transform}).
+
+    Using~\eqref{eq:Sobolev_inclusion_into_fields_with_integrable_S1_norm} with $h \defeq f_j - f$,
+    we obtain that in fact
+    \begin{align*}
+        f(g)
+        &= \int_\VectorSpace \tr\left(\Rep \lambda(g) \Fourier f(\lambda)\right) \dd \lambda,
+    \end{align*}
+    which concludes the proof.
 \end{proof}
 
 \subsection{Fourier Transform of distributions}
