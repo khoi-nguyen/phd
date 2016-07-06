@@ -1583,6 +1583,44 @@ where in the above $\hat f(\lambda, t) \defeq \Fourier [\MotionGroup 2] f(\lambd
     By the Sobolev embeddings (Proposition~\ref{proposition:Sobolev_embedding}),
     the right-hand side of~\eqref{eq:L2_norm_of_Bessel_potential_times_L2_norm_of_fs} is finite,
     finishing the proof of our first claim.
+
+    By Proposition~\ref{proposition:Sobolev_embedding},
+    we may assume that $f$ is continuous.
+    Fix now a positive test function $\phi \in \Schwartz \Group$.
+    By the Plancherel formula (Proposition~\ref{proposition:Plancherel_formula}),
+    we know that
+    \begin{align*}
+        \dualBracket [\Group] f \phi
+        &= \dualBracket [\Group] {f_s} {\BesselPotential {-s} \phi}
+        = \ip [\Lebesgue 2 \Group] {f_s} {\BesselPotential {-s} \phi}\\
+        &=
+        \int_\VectorSpace
+        \tr\left(
+            \Rep \lambda \BesselPotential s \Fourier f(\lambda)
+            \adj {(\Rep \lambda \BesselPotential {-s} \Fourier \phi(\lambda))}
+        \right)
+        \dd \lambda\\
+        &=
+        \int_\VectorSpace
+        \tr\left(
+            \Fourier f(\lambda)
+            \adj {\Fourier \phi(\lambda)}
+        \right)
+        \dd \lambda.
+    \end{align*}
+
+    Since we have shown $\Fourier f$ is trace class almost everywhere,
+    the above becomes
+    \begin{align*}
+        \dualBracket [\Group] f \phi
+        =
+        \int_\VectorSpace
+        \tr\left(
+            \Fourier f(\lambda)
+            \adj {\Fourier \phi(\lambda)}
+        \right)
+        \dd \lambda.
+    \end{align*}
 \end{proof}
 
 \subsection{Fourier Transform of distributions}
