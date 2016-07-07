@@ -1592,6 +1592,18 @@ where in the above $\hat f(\lambda, t) \defeq \Fourier [\MotionGroup 2] f(\lambd
         \leq C \norm [\Sobolev s] {f}.
         \label{eq:Sobolev_inclusion_into_fields_with_integrable_S1_norm}
     \end{align}
+
+    Now, fix a sequence $(f_j)_{j \in \N} \subset \Sobolev s$ converging to $f$.
+    By applying~\eqref{eq:Sobolev_inclusion_into_fields_with_integrable_S1_norm} to $f_j - f$,
+    we obtain
+    \begin{align*}
+        &\abs {\int_\VectorSpace \tr(\Fourier \{f - f_j\}(\lambda)) \dd \lambda}\\
+        &\quad \leq \int_\VectorSpace \norm [\SchattenClasses 1 {\Lebesgue 2 \CompactGroup}] {\Fourier \{f - f_j\}(\lambda)} \dd \lambda\\
+        &\quad \leq C \norm [\Sobolev s] {f - f_j}.
+    \end{align*}
+
+    Letting $j \to \infty$ in the above,
+    we obtain the desired conclusion.
 \end{proof}
 
 \begin{proposition}[Fourier inverse formula]
