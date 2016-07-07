@@ -1533,11 +1533,13 @@ where in the above $\hat f(\lambda, t) \defeq \Fourier [\MotionGroup 2] f(\lambd
         \leq C \norm [\Sobolev s] f.
     \end{align*}
     In particular,
-    if a sequence $(f_j)_{j \in \N} \subset \Sobolev s$ converges to $f$ in $\Sobolev s$, then
+    if a sequence $(f_j)_{j \in \N} \subset \Sobolev s$ converges to $f$ in $\Sobolev s$,
+    then we have
     \begin{align*}
-        \lim_{j \to \infty} \int_\VectorSpace \tr(\Fourier {f_j}(\lambda)) \dd \lambda
-        = \int_\VectorSpace \tr(\Fourier f(\lambda)) \dd \lambda.
+        \lim_{j \to \infty} \int_\VectorSpace \tr(\Rep \lambda (g) \Fourier {f_j}(\lambda)) \dd \lambda
+        = \int_\VectorSpace \tr(\Rep \lambda (g) \Fourier f(\lambda)) \dd \lambda.
     \end{align*}
+    for every $g \in \Group$.
 \end{lemma}
 \begin{proof}
     Suppose that $f \in \Sobolev s$.
@@ -1597,7 +1599,7 @@ where in the above $\hat f(\lambda, t) \defeq \Fourier [\MotionGroup 2] f(\lambd
     By applying~\eqref{eq:Sobolev_inclusion_into_fields_with_integrable_S1_norm} to $f_j - f$,
     we obtain
     \begin{align*}
-        &\abs {\int_\VectorSpace \tr(\Fourier \{f - f_j\}(\lambda)) \dd \lambda}\\
+        &\abs {\int_\VectorSpace \tr(\Rep \lambda (g)\Fourier \{f - f_j\}(\lambda)) \dd \lambda}\\
         &\quad \leq \int_\VectorSpace \norm [\SchattenClasses 1 {\Lebesgue 2 \CompactGroup}] {\Fourier \{f - f_j\}(\lambda)} \dd \lambda\\
         &\quad \leq C \norm [\Sobolev s] {f - f_j}.
     \end{align*}
