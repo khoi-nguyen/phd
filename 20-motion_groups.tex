@@ -1525,6 +1525,7 @@ where in the above $\hat f(\lambda, t) \defeq \Fourier [\MotionGroup 2] f(\lambd
 \end{proposition}
 
 \begin{lemma}
+\label{lemma:preparation_for_general_inverse_formula}
     Let $f \in \Sobolev s$ for $s > \dim \Group / 2$.
     For almost every $\lambda \in \VectorSpace$,
     the operator $\Fourier f(\lambda)$ is trace class and we have the estimate
@@ -1624,31 +1625,31 @@ where in the above $\hat f(\lambda, t) \defeq \Fourier [\MotionGroup 2] f(\lambd
     is continuous and equal to $f$ almost-everywhere.
 \end{proposition}
 \begin{proof}
-    The first claim follows from applying the above to $h \defeq f$,
-    so we only need to check the actual inverse formula.
+    The first claim follows immediately from Lemma~\ref{lemma:preparation_for_general_inverse_formula}.
 
-    To this end,
-    select a sequence ${(f_j)}_{j \in \N} \subset \Schwartz \Group$ such that
+    Now, select a sequence ${(f_j)}_{j \in \N} \subset \Schwartz \Group$ such that
     \begin{align*}
         \lim_{j \to \infty} \norm [\Sobolev s] {f_j - f} = 0.
     \end{align*}
 
-    By the Sobolev embeddings (Proposition~\ref{proposition:Sobolev_embedding}),
-    we also have \emph{uniform convergence}, hence
+    By the inverse formula on $\Schwartz \Group$ (Proposition~\ref{proposition:inverse_Fourier_Transform}),
+    we have
     \begin{align*}
-        f(g)
-        &= \lim_{j \to \infty} f_j(g)\\
-        &= \lim_{j \to \infty} \int_\VectorSpace \tr\left(\Rep \lambda(g) \Fourier f_j(\lambda)\right) \dd \lambda,
+        f_j(g)
+        = \int_\VectorSpace \tr\left(\Rep \lambda(g) \Fourier f_j(\lambda)\right) \dd \lambda,
     \end{align*}
-    where the last line was obtained via the classical Fourier inverse formula (Proposition \ref{proposition:inverse_Fourier_Transform}).
+    for each $j \in \N$.
 
-    Using~\eqref{eq:Sobolev_inclusion_into_fields_with_integrable_S1_norm} with $h \defeq f_j - f$,
-    we obtain that in fact
+    By the Sobolev embedding theorem (Proposition~\ref{proposition:Sobolev_embedding}),
+    $f_j$ converges uniformly to a continuous function $\tilde f$ which is equal to $f$ almost everywhere.
+    In particular, this means that we have
     \begin{align*}
-        f(g)
-        &= \int_\VectorSpace \tr\left(\Rep \lambda(g) \Fourier f(\lambda)\right) \dd \lambda,
+        \tilde f(g)
+        &= \lim_{j \to \infty} f_j(g)\\
+        &= \lim_{j \to \infty} \int_\VectorSpace \tr\left(\Rep \lambda(g) \Fourier f_j(\lambda)\right) \dd \lambda\\
+        &= \int_\VectorSpace \tr\left(\Rep \lambda(g) \Fourier f(\lambda)\right) \dd \lambda.
     \end{align*}
-    which concludes the proof.
+    concluding the proof.
 \end{proof}
 
 \subsection{Fourier Transform of distributions}
