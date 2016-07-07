@@ -1524,6 +1524,22 @@ where in the above $\hat f(\lambda, t) \defeq \Fourier [\MotionGroup 2] f(\lambd
     \end{align*}
 \end{proposition}
 
+\begin{lemma}
+    Let $f \in \Sobolev s$ for $s > \dim \Group / 2$.
+    For almost every $\lambda \in \VectorSpace$,
+    the operator $\Fourier f(\lambda)$ is trace class and we have the estimate
+    \begin{align*}
+        \int_\VectorSpace \norm [\SchattenClasses 1 {\Lebesgue 2 \CompactGroup}] {\Fourier f(\lambda)} \dd \lambda
+        \leq C \norm [\Sobolev s] f.
+    \end{align*}
+    In particular,
+    if a sequence $(f_j)_{j \in \N} \subset \Sobolev s$ converges to $f$ in $\Sobolev s$, then
+    \begin{align*}
+        \lim_{j \to \infty} \int_\VectorSpace \tr(\Fourier {f_j}(\lambda)) \dd \lambda
+        = \int_\VectorSpace \tr(\Fourier f(\lambda)) \dd \lambda.
+    \end{align*}
+\end{lemma}
+
 \begin{proposition}[Fourier inverse formula]
     Let $f \in \Sobolev s$ for $s > \dim \Group / 2$.
     For almost every $\lambda \in \VectorSpace$,
