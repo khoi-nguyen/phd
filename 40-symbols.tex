@@ -1050,3 +1050,15 @@ Using \cite[Lemma 4.4]{RuzhanskyTurunenWirth10}, we can show
 \section{Adjoint and composition formulas}
 
 \section{\texorpdfstring{$L^2$}{L2} boundedness}
+
+\begin{lemma}
+    Let $\rho, \delta \in \R$ be such that $1 \geq \rho > \delta \geq 0$.
+    If $\sigma \in \SymbolClass 0 {\rho, \delta}$ is \emph{positive definite} and \emph{elliptic},
+    then the map
+    \begin{align*}
+        \tilde \sigma(x, k; \lambda)
+        \defeq \int_{\Gamma} z^{-\frac 1 2} \Resolvent z {\sigma(x, k; \lambda)} \dd z
+        % TODO specify what \gamma is
+    \end{align*}
+    also belongs to $\SymbolClass 0 {\rho, \delta}$.
+\end{lemma}
