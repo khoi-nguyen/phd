@@ -1071,6 +1071,38 @@ for every $s \in \R$.
 
 \subsection{The case $\rho > \delta$}
 
+Suppose that $\sigma_T \in \SymbolClass 0 {\rho, \delta}$ for $0 \leq \delta < \rho \leq 1$.
+One way of showing that $T \defeq \Op(\sigma_T)$ is bounded would be to find $S \in \OperatorClass 0 {\rho, \delta}$ such that
+\begin{align}
+    \adj T T = C \Id {\Schwartz \Group} - \adj S S + R,
+    \label{eq:L2_boundedness_decomposition}
+\end{align}
+where $R \in \OperatorClass m {\rho, \delta}$ for some $m < 0$.
+
+It would then follow that
+\begin{align*}
+    \norm [\Lebesgue 2 \Group] {T \phi}^2
+    = C \norm [\Lebesgue 2 \Group] {\phi}^2 - \norm [\Lebesgue 2 \Group] {S \phi}^2 + \ip [\Lebesgue 2 \Group] {R \phi} \phi,
+\end{align*}
+reducing the boundedness of $T$ to that of $R$,
+which is much easier to prove.
+
+A sufficient condition to have \eqref{eq:L2_boundedness_decomposition} would be to have
+\begin{align*}
+    \adj {\sigma_T} \sigma_T = C \Id {\Lebesgue 2 \CompactGroup} - \adj {\sigma_S} \sigma_S,
+\end{align*}
+on the symbol side,
+with $\sigma_S \defeq \Op^{-1}(S)$.
+A good candidate for $\sigma_S$ would therefore be
+\begin{align}
+    \sigma_S \defeq \sqrt{C \Id {\Lebesgue 2 \CompactGroup} - \adj {\sigma_T} \sigma_T}.
+    \label{eq:symbol_to_prove_L2_boundedness}
+\end{align}
+
+The condition that $S \in \OperatorClass 0 {\rho, \delta}$ is equivalent to showing
+that $\sigma_S \in \SymbolClass 0 {\rho, \delta}$.
+The crucial part of the proof is therefore to show that~\eqref{eq:symbol_to_prove_L2_boundedness} is a symbol of order $0$.
+
 \begin{lemma}
 \label{lemma:inverse_of_square_root_of_a_symbol_of_order_zero}
     Let $\rho, \delta \in \R$ be such that $1 \geq \rho > \delta \geq 0$.
