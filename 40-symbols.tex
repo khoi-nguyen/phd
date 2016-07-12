@@ -1052,6 +1052,7 @@ Using \cite[Lemma 4.4]{RuzhanskyTurunenWirth10}, we can show
 \section{\texorpdfstring{$L^2$}{L2} boundedness}
 
 \begin{lemma}
+\label{lemma:inverse_of_square_root_of_a_symbol_of_order_zero}
     Let $\rho, \delta \in \R$ be such that $1 \geq \rho > \delta \geq 0$.
     If $\sigma \in \SymbolClass 0 {\rho, \delta}$ is \emph{positive definite} and \emph{elliptic},
     then the map
@@ -1072,6 +1073,17 @@ Using \cite[Lemma 4.4]{RuzhanskyTurunenWirth10}, we can show
     \end{align*}
     also belongs to $\SymbolClass 0 {\rho, \delta}$.
 \end{corollary}
+\begin{proof}
+    Let $\tilde \sigma$ be the symbol defined in Lemma~\ref{lemma:inverse_of_square_root_of_a_symbol_of_order_zero}.
+    By the Helffer-Sjostrand formula,
+    % TODO Reference for Helffer-Sjostrand
+    we get
+    \begin{align*}
+        \sqrt{\sigma(x, k; \lambda)} = \tilde \sigma(x, k; \lambda) \sigma(x, k; \lambda),
+    \end{align*}
+    which must be in $\SymbolClass 0 {\rho, \delta}$,
+    since $\tilde \sigma, \sigma \in \SymbolClass 0 {\rho, \delta}$ by Lemma~\ref{lemma:inclusion_in_zero_class}.
+\end{proof}
 
 \begin{proposition}[$L^2$ boundedness]
     Let $\rho, \delta \in \R$ be such that $1 \geq \rho > \delta \geq 0$.
