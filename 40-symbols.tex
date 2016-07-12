@@ -1103,6 +1103,15 @@ The condition that $S \in \OperatorClass 0 {\rho, \delta}$ is equivalent to show
 that $\sigma_S \in \SymbolClass 0 {\rho, \delta}$.
 The crucial part of the proof is therefore to show that~\eqref{eq:symbol_to_prove_L2_boundedness} is a symbol of order $0$.
 
+\begin{definition}[Resolvent of a symbol]
+    Let $\sigma \in \SymbolClass m {\rho, \delta}$.
+    For every $z \in \C$ such that $\sigma - z \Id {\Lebesgue 2 \CompactGroup}$ is invertible,
+    we let
+    \begin{align*}
+        R(z, \sigma) \defeq {(\sigma - z \Id {\Lebesgue 2 \CompactGroup})}^{-1}.
+    \end{align*}
+\end{definition}
+
 \begin{lemma}
 \label{lemma:inverse_of_square_root_of_a_symbol_of_order_zero}
     Let $\rho, \delta \in \R$ be such that $1 \geq \rho > \delta \geq 0$.
