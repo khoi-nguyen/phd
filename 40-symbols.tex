@@ -1082,7 +1082,9 @@ where $R \in \OperatorClass m {\rho, \delta}$ for some $m < 0$.
 It would then follow that
 \begin{align*}
     \norm [\Lebesgue 2 \Group] {T \phi}^2
-    = C \norm [\Lebesgue 2 \Group] {\phi}^2 - \norm [\Lebesgue 2 \Group] {S \phi}^2 + \ip [\Lebesgue 2 \Group] {R \phi} \phi,
+    &= \ip [\Lebesgue 2 \Group] {\adj T T \phi} \phi\\
+    &= C \norm [\Lebesgue 2 \Group] {\phi}^2 - \norm [\Lebesgue 2 \Group] {S \phi}^2 + \ip [\Lebesgue 2 \Group] {R \phi} \phi\\
+    &\leq C \norm [\Lebesgue 2 \Group] {\phi}^2 + \norm [\Lebesgue 2 \Group] {R \phi} \norm [\Lebesgue 2 \Group] \phi,
 \end{align*}
 reducing the boundedness of $T$ to that of $R$,
 which is much easier to prove.
