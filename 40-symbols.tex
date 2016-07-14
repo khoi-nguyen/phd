@@ -1117,6 +1117,36 @@ The crucial part of the proof is therefore to show that~\eqref{eq:symbol_to_prov
     \end{align*}
     also belongs to $\SymbolClass 0 {\rho, \delta}$.
 \end{lemma}
+\begin{proof}
+    To shorten the notation,
+    we write
+    \begin{align*}
+        R(z, \sigma)(x, k; \lambda) \defeq (\sigma(x, k; \lambda) - z \Id {\Lebesgue 2 \CompactGroup})^{-1}
+    \end{align*}
+
+    Let us now prove the following claim.
+
+    \begin{claim}
+        For every $\beta \in \N^{\dim \Group}$, and each $\alpha$
+        % TODO: specify set for \alpha
+        \begin{align}
+            &\norm [\Lin {\Lebesgue 2 \CompactGroup}] {\Rep \lambda \BesselPotential {\rho \abs \alpha - \delta \abs \beta} \LeftDifferentialOperator \beta \DifferenceOperatorOrder \alpha R(z, \sigma)(x, k; \lambda)} \notag\\
+            &\qquad \leq C_{\alpha, \beta} (1 + \abs z)^{-1}.
+            \label{eq:estimates_on_the_resolvent}
+        \end{align}
+    \end{claim}
+    \begin{proof}[Proof of the claim]
+        First let us prove the claim for $\abs \alpha = \abs \beta = 0$.
+    \end{proof}
+
+    Using~\eqref{eq:estimates_on_the_resolvent},
+    we can show that
+    \begin{align*}
+        &\norm [\Lin {\Lebesgue 2 \Group}] {\Rep \lambda \BesselPotential {\rho \abs \alpha - \delta \abs \beta} \LeftDifferentialOperator \beta \DifferenceOperatorOrder \alpha \tilde \sigma(x, k; \lambda)}\\
+        &\quad \leq C_{\alpha, \beta} \int_\Gamma \abs z^{-\frac 1 2} (1 + \abs z)^{-1} \abs{\dd z} < +\infty,
+    \end{align*}
+    showing that $\tilde \sigma$ belongs to $\SymbolClass 0 {\rho, \delta}$.
+\end{proof}
 
 \begin{corollary}
 \label{corollary:square_root_of_a_symbol_of_order_zero}
