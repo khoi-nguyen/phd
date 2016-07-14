@@ -1128,6 +1128,7 @@ The crucial part of the proof is therefore to show that~\eqref{eq:symbol_to_prov
 \end{lemma}
 
 \begin{corollary}
+\label{corollary:square_root_of_a_symbol_of_order_zero}
     Let $\rho, \delta \in \R$ be such that $1 \geq \rho > \delta \geq 0$.
     If $\sigma \in \SymbolClass 0 {\rho, \delta}$ is \emph{positive definite} and \emph{elliptic},
     then its \emph{square root}
@@ -1168,6 +1169,61 @@ The crucial part of the proof is therefore to show that~\eqref{eq:symbol_to_prov
             \begin{align*}
                 \norm [\Lin{\Lebesgue 2 \Group}] {\Op(\sigma)} < \infty.
             \end{align*}
-        \item[Step 3.] Conclude.
+
+            Suppose by contradiction that the claim does not hold.
+            Therefore, there exists $m < 0$ and $\sigma \in \SymbolClass m {\rho, \delta}$ such that
+            $\Op(\sigma)$ is not bounded.
+            In particular, for each $n \in \N$,
+            \begin{align*}
+                (\Op(\sigma) \adj {\Op(\sigma)})^n
+            \end{align*}
+            is in $\OperatorClass {2 m n} {\rho, \delta}$ and unbounded.
+            When $n$ is such that $-2 m n < -1$, this contradicts Step 1.
+        \item[Step 3.] Conclusion
+
+            Let $C \geq 0$ be such that
+            \begin{align*}
+                \sup_{(x, k) \in \Group} \esssup_{\lambda \in \VectorSpace} \norm [\Lebesgue 2 \CompactGroup] {\sigma(x, k; \lambda)} \leq C.
+            \end{align*}
+
+            It follows that
+            \begin{align*}
+                4 C^2 \Id {\Lebesgue 2 \CompactGroup} - \adj \sigma \sigma
+            \end{align*}
+            is an operator of order $0$,
+            and so by Corollary~\ref{corollary:square_root_of_a_symbol_of_order_zero}, the symbol
+            \begin{align*}
+                \sigma_S \defeq \sqrt{4 C^2 \Id {\Lebesgue 2 \CompactGroup} - \adj \sigma \sigma}
+            \end{align*}
+            is also in $\SymbolClass 0 {\rho, \delta}$.
+            By definition, we have
+            \begin{align}
+                \adj \sigma \sigma = 4 C^2 \Id {\Lebesgue 2 \CompactGroup} - \adj {\sigma_S} \sigma_S.
+                \label{eq:decomposition_of_unity_in_terms_of_symbols_squared}
+            \end{align}
+
+            By the adjoint and composition formulas,
+            we have
+            \begin{align*}
+                \Op(\adj \sigma \sigma) = \adj T T + R_1\\
+                \Op(\adj {\sigma_S} \sigma_S) = \adj S S +  R_2,
+            \end{align*}
+            with $R_1, R_2 \in \OperatorClass {\rho - \delta} {\rho, \delta}$.
+            Therefore, applying $\Op$ on both sides of~\eqref{eq:decomposition_of_unity_in_terms_of_symbols_squared} yields
+            \begin{align*}
+                \adj T T = 4 C^2 \Id {\Schwartz \Group} - \adj S S + R,
+                \quad R \defeq (R_2 - R_1) \in \OperatorClass {\rho - \delta} {\rho, \delta}.
+            \end{align*}
+
+            Now, fix $\phi \in \Lebesgue 2 \Group$.
+            Since Step 2 implies that $R$ is bounded,
+            we get
+            \begin{align*}
+                \norm [\Lebesgue 2 \Group] {T \phi}^2
+                &= \ip [\Lebesgue 2 \Group] {\adj T T \phi} \phi\\
+                &= 4 C^2 \norm [\Lebesgue 2 \Group] \phi^2 - \norm [\Lebesgue 2 \Group] {S \phi}^2 + \ip [\Lebesgue 2 \Group] {R \phi} {\phi}\\
+                &\leq (4 C^2 + \norm [\Lin {\Lebesgue 2 \Group}] R) \norm [\Lebesgue 2 \Group] \phi^2,
+            \end{align*}
+            concluding the proof.
     \end{description}
 \end{proof}
