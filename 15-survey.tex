@@ -22,38 +22,19 @@ The description of the unitary dual is given by the following \emph{Peter-Weyl t
     is an orthonormal basis of $\Lebesgue{2}{\CompactGroup}$ with respect to the \emph{normalised} Haar measure.
 \end{theorem}
 
-In particuar,
-the Peter-Weyl theorems implies that $\Lebesgue 2 \CompactGroup$ has the following orthogonal decomposition
-\begin{align}
-    \Lebesgue 2 \CompactGroup
-    = \bigoplus_{\tau \in \dualGroup \CompactGroup} \dimRep \tau H_{\tau, j},
-    \label{eq:decomposition_of_L2_for_compact_groups}
-\end{align}
-where $H_{\tau, j} \defeq \Span\{\tau_{j l} \in \Lebesgue 2 \CompactGroup : l = 1, \dots, \dim \CompactGroup\}$,
-while
+Since we have
 \begin{align*}
-    e^{\tau, j}_l \defeq \sqrt {\dimRep \tau} \tau_{j l}, \quad l = 1, \dots, \dim \CompactGroup
+    \eval \RightRegularRepresentation {\Span \{\tau_{i j} : j = 1, \dots, \dimRep \tau\}} \simeq \tau,
+    \qquad i = 1, \dots, \dimRep \tau,
 \end{align*}
-forms an orthonormal basis of $H_{\tau, j}$.
-
-Observe that
+the Peter-Weyl theorem gives the following decomposition into irreducible components
 \begin{align*}
-    \ip [\Lebesgue 2 \CompactGroup] {\RightRegularRepresentation(k) e^{\tau, j}_n} {e^{\tau, j}_m}
-    &= \dimRep \tau \int_\CompactGroup \tau_{j n}(h k) \conj{\tau_{j m}}(h) \dd h\\
-    &= \sum_{p = 1}^{\dimRep \tau} \left( \dimRep \tau \int_\CompactGroup \tau_{j p}(h) \conj{\tau_{j m}}(h) \dd h \right) \tau_{p n}(k)\\
-    &= \sum_{p = 1}^{\dimRep \tau} \Kronecker p m \tau_{p n}(k) = \tau_{m n}(k),
-\end{align*}
-which means that
-\begin{align*}
-    (\RightRegularRepresentation(k), H_{\tau, j}) \simeq \tau.
+    \RightRegularRepresentation \simeq \bigoplus_{\tau \in \dualGroup \CompactGroup} \dimRep \tau \tau.
 \end{align*}
 
-Combining the above with~\eqref{eq:decomposition_of_L2_for_compact_groups},
-we obtain
-\begin{align*}
-    \RightRegularRepresentation \simeq \bigoplus_{\tau \in \dualGroup \CompactGroup} \dimRep \tau \tau,
-\end{align*}
-i.e.\ the right-regular representation of $\CompactGroup$ generates the unitary dual $\dualGroup \CompactGroup$.
+This allows us to write the entire Fourier analysis with $\RightRegularRepresentation$ as the only representation,
+and we shall do so henceforth.
+We choose to do so as it will allow us to draw useful comparisons with the representations of the motion group.
 
 \subsection{Fourier analysis}
 
