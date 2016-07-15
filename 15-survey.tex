@@ -55,6 +55,25 @@ we obtain
 \end{align*}
 i.e.\ the right-regular representation of $\CompactGroup$ generates the unitary dual $\dualGroup \CompactGroup$.
 
-\subsection{Fourier analysis on Lie groups}
+\subsection{Fourier analysis}
+
+Given $f \in \Lebesgue 1 \CompactGroup$,
+we define its \emph{Fourier transform} via
+\begin{align*}
+    \Fourier [\CompactGroup] f \defeq \int_\CompactGroup f(k) \adj{\RightRegularRepresentation(k)} \dd k.
+\end{align*}
+
+If $f \in \SmoothFunctions \CompactGroup$,
+then $f$ can be recovered via the following \emph{inversion formula}:
+\begin{align*}
+    f(k) = \tr(\RightRegularRepresentation(k) \Fourier [\CompactGroup] f),
+    \quad k \in \CompactGroup,
+\end{align*}
+while the \emph{Plancherel formula} takes the form
+\begin{align*}
+    \ip [\Lebesgue 2 \CompactGroup] {f_1} {f_2}
+    = \tr(\Fourier [\CompactGroup] f_1 \adj{\Fourier [\CompactGroup] f_2})
+\end{align*}
+for $f_1, f_2 \in \Lebesgue 2 \CompactGroup$.
 
 \section{The graded case}
