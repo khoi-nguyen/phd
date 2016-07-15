@@ -20,14 +20,14 @@
 \usepackage{xparse}
 
 % Environments
-\newtheorem{application}{Application}[section]
-\newtheorem{corollary}{Corollary}[section]
-\newtheorem{definition}{Definition}[section]
-\newtheorem{example}{Example}[section]
-\newtheorem{lemma}{Lemma}[section]
-\newtheorem{proposition}{Proposition}[section]
-\newtheorem{remark}{Remark}[section]
 \newtheorem{theorem}{Theorem}[section]
+\newtheorem{application}[theorem]{Application}
+\newtheorem{corollary}[theorem]{Corollary}
+\newtheorem{definition}[theorem]{Definition}
+\newtheorem{example}[theorem]{Example}
+\newtheorem{lemma}[theorem]{Lemma}
+\newtheorem{proposition}[theorem]{Proposition}
+\newtheorem{remark}[theorem]{Remark}
 
 \newcounter{claimcounter}
 \numberwithin{claimcounter}{theorem}
