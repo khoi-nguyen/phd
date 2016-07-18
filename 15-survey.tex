@@ -66,4 +66,22 @@ for $f_1, f_2 \in \Lebesgue 2 \CompactGroup$.
 
 \subsection{Symbolic calculus}
 
+\begin{definition}[Symbol classes on $\CompactGroup$]
+    Let $m \in \R$ and fix $\rho, \delta \in \R$ such that $1 \geq \rho \geq \delta \geq 0$.
+    We shall say that
+    \begin{align*}
+        \sigma : \CompactGroup \to \End(\SmoothFunctions \CompactGroup)
+    \end{align*}
+    is a \emph{symbol of order $m$} and of \emph{type $(\rho, \delta)$} if
+    \begin{align*}
+        \sup_{k \in \CompactGroup}
+        \norm [\Lin {\Lebesgue 2 \CompactGroup}] {%
+            \Rep [\CompactGroup] {} \BesselPotential [\CompactGroup] {-m}
+            \LeftDifferentialOperator \beta \DifferenceOperatorOrder [\CompactGroup] \alpha \sigma(k)
+        } < \infty
+    \end{align*}
+    for every $\beta \in \N^{\dim \VectorSpace}$ and every $\alpha$.
+    % TODO: specify set for alpha
+\end{definition}
+
 \section{The graded case}
