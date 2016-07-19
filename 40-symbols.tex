@@ -178,6 +178,32 @@ Using \cite[Lemma 4.4]{RuzhanskyTurunenWirth10}, we can show
 
     In other words, $\kappa$ is the right convolution kernel associated with $\Op(\sigma)$.
 \end{proposition}
+\begin{proof}
+    Let $g \in \Group$ and fix $s < -\max \{\dim \Group/2, \abs m\}$.
+    By definition, we know that $\conv \phi \kappa_g \in \Sobolev s$ if and only if
+    \begin{align*}
+        \Rep \dummy \BesselPotential s \Fourier \{\conv \phi {\kappa_g}\}
+        = \Rep \dummy \BesselPotential s \sigma(g, \dummy) \Fourier \phi
+    \end{align*}
+    belongs to $\LebesgueDual 2 \Group$.
+    To show this,
+    observe that the above identity implies
+    \begin{align*}
+        \norm[\SchattenClasses 2 {\Lebesgue 2 \CompactGroup}] {\Rep \dummy \BesselPotential s \Fourier \{\conv \phi {\kappa_g}\}}^2
+        \leq C_s \norm[\SchattenClasses 2 {\Lebesgue 2 \CompactGroup}] {\Fourier \phi}^2,
+    \end{align*}
+    which, since the right-hand side is integrable on $\VectorSpace$,
+    means that $\conv \phi {\kappa_g}$ belongs to $\Sobolev s$.
+    By Proposition~\ref{proposition:general_Fourier_inverse_formula},
+    we get that
+    \begin{align*}
+        \conv \phi {\kappa_g}(g)
+        &= \int_\VectorSpace \tr\left(\Rep \lambda(g) \Fourier \{\conv \phi {\kappa_g}\}\right) \dd \lambda\\
+        &= \int_\VectorSpace \tr\left(\Rep \lambda(g) \sigma(g; \lambda) \Fourier \phi(\lambda)\right) \dd \lambda,
+    \end{align*}
+    which concludes the proof,
+    as the right-hand side is exactly $\Op(\sigma) \phi(g)$.
+\end{proof}
 
 \section{Link with the H\"ormander classes}
 
