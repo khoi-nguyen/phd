@@ -75,20 +75,20 @@ Using \cite[Lemma 4.4]{RuzhanskyTurunenWirth10}, we can show
             \end{align*}
             is smooth.
         \item
+            For each $\beta \in \N^{\dim \Group}$,
+            $\LeftDifferentialOperator \beta \sigma(g, \dummy) \in \TemperedDistributions {\dualGroup \Group}$
+            for each $g \in \Group$ and the map
+            \begin{align*}
+                g \in \Group \mapsto \LeftDifferentialOperator \beta \sigma(g, \dummy) \in \TemperedDistributions {\dualGroup \Group}
+            \end{align*}
+            is continuous.
+        \item
             For each $\alpha \in \N^{\dim \Group}$, $\beta \in \N^m$, and each $\gamma \in \R$,
             the operator
             \begin{align*}
                 \Rep{\lambda} \BesselPotential{\rho \abs\alpha - m - \delta \abs\beta + \gamma} \LeftDifferentialOperator{\beta} \DifferenceOperatorOrder{\alpha} \sigma(g, \lambda) \Rep{\lambda} \BesselPotential{-\gamma}
             \end{align*}
             is bounded in $\Lebesgue 2 \CompactGroup$ by a finite constant that does not depend on $g \in \Group$ or $\lambda \in \VectorSpace$.
-            Moreover,
-            the map
-            \begin{align*}
-                &\Group \times \VectorSpace \to \Lin {\Lebesgue 2 \CompactGroup} :\\
-                &\ (g, \lambda) \mapsto
-                \Rep{\lambda} \BesselPotential{\rho \abs\alpha - m - \delta \abs\beta + \gamma} \LeftDifferentialOperator{\beta} \DifferenceOperatorOrder{\alpha} \sigma(g, \lambda) \Rep{\lambda} \BesselPotential{-\gamma}
-            \end{align*}
-            is continuous.
     \end{enumerate}
 
     The set $\SymbolClass{m}{\rho, \delta}$ will be used to denote the set of all symbols of order $m$ and type $(\rho, \delta)$.
@@ -155,6 +155,9 @@ Using \cite[Lemma 4.4]{RuzhanskyTurunenWirth10}, we can show
     is smooth,
     i.e.\ $\kappa \in \SmoothFunctions {\Group, \TemperedDistributions \Group}$.
 \end{lemma}
+\begin{proof}
+    Let
+\end{proof}
 
 \begin{proposition}[Quantisation]
     Let $\sigma \in \SymbolClass{m}{\rho, \delta}$,
