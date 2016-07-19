@@ -156,7 +156,16 @@ Using \cite[Lemma 4.4]{RuzhanskyTurunenWirth10}, we can show
     i.e.\ $\kappa \in \SmoothFunctions {\Group, \TemperedDistributions \Group}$.
 \end{lemma}
 \begin{proof}
-    Let
+    Let $g \in \Group$ and $\beta \in \N^{\dim \Group}$.
+    By ???, $\kappa_g = \InverseFourier \{\LeftDifferentialOperator \beta \sigma(g, \dummy)\}$ is a tempered distribution.
+    % TODO: Give reference
+    Since the inverse Fourier transform is also continuous,
+    the continuity of $\sigma$ in $g$ implies that
+    \begin{align*}
+        g \mapsto \kappa_g = \InverseFourier \{\LeftDifferentialOperator \beta \sigma(g, \dummy)\}
+    \end{align*}
+    is continuous.
+    This concludes the proof.
 \end{proof}
 
 \begin{proposition}[Quantisation]
