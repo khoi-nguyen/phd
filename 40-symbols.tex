@@ -1171,19 +1171,22 @@ The above is of course an abuse of notation, as $\norm [\Group] \dummy$ is not a
 
 \begin{theorem}[Kernel estimates]
 \label{theorem:kernel_estimates}
-    Let $\sigma \in \SymbolClass{m}{\rho, \delta}$, and denote by $\kappa$ its associated kernel.
+    Let $\rho, \delta \in \R$ be such that $1 \geq \rho \geq \delta \geq 0$
+    and assume further that $\rho > 0$.
+    Suppose that $\sigma \in \SymbolClass{m}{\rho, \delta}$,
+    and $\kappa \in \SmoothFunctions {\Group, \TemperedDistributions \Group}$ is its associated kernel.
     \begin{enumerate}
-        \item For every $N \in \N$, there exists $C > 0$ such that for every $g, (y, l) \in \Group$ with $\norm{y} \geq 1$, we have
+        \item For every $N \in \N$, there exists $C \geq 0$ such that for every $g, h \in \Group$ with $\norm [\Group] {h} \geq 1$, we have
             \begin{align*}
-                \abs{\kappa_g(y, l)} \leq C \norm{y}^{-N}
+                \abs{\kappa_g(h)} \leq C \norm [\Group] h^{-N}.
             \end{align*}
-        \item If $\dim \Group + m > 0$, there exists $C > 0$ such that for every $g, (y, l) \in \Group$ with $y \neq 0$, we have
+        \item If $\dim \Group + m > 0$, there exists $C \geq 0$ such that for every $g, h \in \Group$ with $h \neq 0$, we have
             \begin{align*}
-                \abs{\kappa_g(y, l)} \leq C \norm{y}^{- \frac{\dim \Group + m}{\rho}}
+                \abs{\kappa_g(h)} \leq C \norm [\Group] h^{- \frac{\dim \Group + m}{\rho}}.
             \end{align*}
-        \item If $\dim \Group + m = 0$, there exists $C > 0$ such that for every $g, (y, l) \in \Group$ with $y \neq 0$, we have
+        \item If $\dim \Group + m = 0$, there exists $C \geq 0$ such that for every $g, h \in \Group$ with $h \neq 0$, we have
             \begin{align*}
-                \abs{\kappa_g(y, l)} \leq C \log \norm{y}
+                \abs{\kappa_g(h)} \leq C \log \norm [\Group] h.
             \end{align*}
         \item If $\dim \Group + m < 0$, $\kappa_g$ is continuous on $\Group$ and is bounded
             \begin{align*}
