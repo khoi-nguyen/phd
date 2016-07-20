@@ -1146,6 +1146,22 @@ Using \cite[Lemma 4.4]{RuzhanskyTurunenWirth10}, we can show
 
 \section{Kernel estimates}
 
+As we have seen so far,
+a pseudo-differential operator is entirely determined by either its \emph{right-convolution kernel} or its \emph{symbol}.
+Symbols have the distinctive advantage of being \emph{smooth},
+which is why for \emph{abelian} Lie groups,
+a pseudo-differential calculus can be developed by doing all the calculations on the symbolic side
+(for this, see e.g.\ \cite{RuzhanskyTurunen10}).
+
+For non-commutative groups such as the motion group,
+the Fourier transform is \emph{operator valued} and therefore, so are symbols.
+This unfortunately means that it will sometimes be impractical to work with symbols,
+and that calculations will have to be carried out in terms of the kernels.
+
+It is therefore crucial to study their properties,
+such as their \emph{singularity} or their \emph{decay} away from the origin.
+The aim of this section is the following result.
+
 \begin{theorem}[Kernel estimates]
 \label{theorem:kernel_estimates}
     Let $\sigma \in \SymbolClass{m}{\rho, \delta}$, and denote by $\kappa$ its associated kernel.
