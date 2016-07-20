@@ -1176,24 +1176,37 @@ The above is of course an abuse of notation, as $\norm [\Group] \dummy$ is not a
     Suppose that $\sigma \in \SymbolClass{m}{\rho, \delta}$,
     and $\kappa \in \SmoothFunctions {\Group, \TemperedDistributions \Group}$ is its associated kernel.
     \begin{enumerate}
-        \item For every $N \in \N$, there exists $C \geq 0$ such that for every $g, h \in \Group$ with $\norm [\Group] {h} \geq 1$, we have
+        \item \label{item:kernel_estimates:at_infinity}
+            For every $N \in \N$, there exists $C \geq 0$ such that for every $g, h \in \Group$ with $\norm [\Group] {h} \geq 1$, we have
             \begin{align*}
                 \abs{\kappa_g(h)} \leq C \norm [\Group] h^{-N}.
             \end{align*}
-        \item If $\dim \Group + m > 0$, there exists $C \geq 0$ such that for every $g, h \in \Group$ with $h \neq 0$, we have
+        \item \label{item:kernel_estimates:at_origin:positive}
+            If $\dim \Group + m > 0$, there exists $C \geq 0$ such that for every $g, h \in \Group$ with $h \neq 0$, we have
             \begin{align*}
                 \abs{\kappa_g(h)} \leq C \norm [\Group] h^{- \frac{\dim \Group + m}{\rho}}.
             \end{align*}
-        \item If $\dim \Group + m = 0$, there exists $C \geq 0$ such that for every $g, h \in \Group$ with $h \neq 0$, we have
+        \item \label{item:kernel_estimates:at_origin:zero}
+            If $\dim \Group + m = 0$, there exists $C \geq 0$ such that for every $g, h \in \Group$ with $h \neq 0$, we have
             \begin{align*}
                 \abs{\kappa_g(h)} \leq C \log \norm [\Group] h.
             \end{align*}
-        \item If $\dim \Group + m < 0$, $\kappa_g$ is continuous on $\Group$ and is bounded
+        \item \label{item:kernel_estimates:at_origin:negative}
+            If $\dim \Group + m < 0$, $\kappa_g$ is continuous on $\Group$ and is bounded
             \begin{align*}
                 \sup_{g, h \in \Group} \abs{\kappa_g(h)} \leq C < \infty.
             \end{align*}
     \end{enumerate}
 \end{theorem}
+
+\subsection{Estimates at infinity}
+
+We start by proving Part \ref{item:kernel_estimates:at_infinity} of Theorem~\ref{theorem:kernel_estimates}.
+
+\subsection{Estimates at the origin}
+
+We now turn our attention to Parts \ref{item:kernel_estimates:at_origin:positive},
+\ref{item:kernel_estimates:at_origin:zero} and \ref{item:kernel_estimates:at_origin:negative}.
 
 \section{Adjoint and composition formulas}
 
