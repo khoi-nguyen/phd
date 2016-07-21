@@ -80,7 +80,7 @@ Using \cite[Lemma 4.4]{RuzhanskyTurunenWirth10}, we can show
                 g \in \Group \mapsto \LeftDifferentialOperator \beta \sigma(g, \dummy) \in \TemperedDistributions {\dualGroup \Group}
             \end{align*}
             is continuous.
-        \item
+        \item \label{item:symbol_bound_condition}
             For each $\alpha \in \N^{\dim \Group}$, $\beta \in \N^m$, and each $\gamma \in \R$,
             the operator
             \begin{align*}
@@ -1199,6 +1199,12 @@ The above is of course an abuse of notation, as $\norm [\Group] \dummy$ is not a
             \end{align*}
     \end{enumerate}
 \end{theorem}
+
+\subsection{\texorpdfstring{$L^2$}{L2} estimates for the kernel}
+
+The first step towards establishing estimates on $\sup_{g, h \in \Group} \abs {\kappa_g(h)}$
+is to provide $\Lebesgue 2 \Group$ estimates for derivatives of $\kappa_g$ that are not dependent on $g \in \Group$.
+This is, of course, a consequence of the Sobolev inequality.
 
 \subsection{Estimates at infinity}
 
