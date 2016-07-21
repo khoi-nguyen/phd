@@ -1205,8 +1205,37 @@ We start by proving Part \ref{item:kernel_estimates:at_infinity} of Theorem~\ref
 
 \subsection{Estimates at the origin}
 
-We now turn our attention to Parts \ref{item:kernel_estimates:at_origin:positive},
-\ref{item:kernel_estimates:at_origin:zero} and \ref{item:kernel_estimates:at_origin:negative}.
+We now turn our attention to
+Parts \ref{item:kernel_estimates:at_origin:positive}, \ref{item:kernel_estimates:at_origin:zero} and \ref{item:kernel_estimates:at_origin:negative}.
+
+\begin{lemma}
+    Let $\sigma \in \SymbolClass m {\rho, \delta}$ be a symbol
+    with kernel $\kappa \in \SmoothFunctions {\Group, \TemperedDistributions \Group}$,
+    where $1 \geq \rho \geq \delta \geq 0$.
+    We let
+    \begin{align*}
+        \kappa_{l, g} \defeq \InverseFourier \{ \sigma(g, \dummy) \eta_l \},
+    \end{align*}
+    for each $g \in \Group$ and each $l \in \N$.
+
+    The following properties hold.
+    \begin{enumerate}
+        \item For any compact subset of $S \subset \Group \setminus \{e\}$ and any $g \in \Group$,
+            the series
+            \begin{align*}
+                \sum_{l = 0}^\infty \sup_{h \in S} \abs {\kappa_{l, g}(h)} < \infty
+            \end{align*}
+            converges.
+        \item For every $m_1 < -\dim \Group$,
+            we can find $C_{m_1} \geq 0$ such that
+            \begin{align*}
+                \sup_{h \in \Group} \abs {\kappa_{l, g}(h)} \leq C_{m_1} 2^{l(m - m_1)}
+            \end{align*}
+            holds for every $l \in \N$.
+    \end{enumerate}
+\end{lemma}
+\begin{proof}
+\end{proof}
 
 \section{Adjoint and composition formulas}
 
