@@ -1212,11 +1212,13 @@ Parts \ref{item:kernel_estimates:at_origin:positive}, \ref{item:kernel_estimates
     Let $\sigma \in \SymbolClass m {\rho, \delta}$ be a symbol
     with kernel $\kappa \in \SmoothFunctions {\Group, \TemperedDistributions \Group}$,
     where $1 \geq \rho \geq \delta \geq 0$.
-    We let
+    For each $g \in \Group$ and each $l \in \N$,
+    we let
     \begin{align*}
         \kappa_{l, g} \defeq \InverseFourier \{ \sigma(g, \dummy) \eta_l \},
+        \label{eq:kernels_convoluted_by_Littlewood-Paley_kernels}
     \end{align*}
-    for each $g \in \Group$ and each $l \in \N$.
+    where $\eta_l$ is the symbol defined in Theorem~\ref{theorem:Littlewood-Paley_decomposition}.
 
     The following properties hold.
     \begin{enumerate}
