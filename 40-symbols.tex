@@ -1206,6 +1206,45 @@ The first step towards establishing estimates on $\sup_{g, h \in \Group} \abs {\
 is to provide $\Lebesgue 2 \Group$ estimates for derivatives of $\kappa_g$ that are not dependent on $g \in \Group$.
 This is, of course, a consequence of the Sobolev inequality.
 
+\begin{proposition}
+\label{proposition:L2_bound_on_the_kernel}
+    Let $\sigma \in \SymbolClass m {\rho, \delta}$ with $1 \geq \rho \geq \delta \geq 0$,
+    and denote by $\kappa \in \SmoothFunctions {\Group, \TemperedDistributions \Group}$ its associated kernel.
+    If $m < -\dim \Group / 2$,
+    then $\kappa_g \in \Lebesgue 2 \Group$ for every $g \in \Group$,
+    \begin{align*}
+        \sup_{g \in \Group} \norm [\Lebesgue 2 \Group] {\kappa_g} < \infty.
+    \end{align*}
+\end{proposition}
+\begin{proof}
+    Let $g \in \Group$ and $\lambda \in \VectorSpace$.
+    Clearly,
+    \begin{align*}
+        &\norm [\SchattenClasses 2 {\Lebesgue 2 \CompactGroup}] {\sigma(g, \lambda)}^2\\
+        &\quad= \norm [\SchattenClasses 2 {\Lebesgue 2 \CompactGroup}] {\Rep \lambda \BesselPotential m \Rep \lambda \BesselPotential {-m} \sigma(g, \lambda)}^2\\
+        &\quad\leq
+        \norm [\SchattenClasses 2 {\Lebesgue 2 \CompactGroup}] {\Rep \lambda \BesselPotential {-m}}^2
+        \norm [\Lin {\Lebesgue 2 \CompactGroup}] {\Rep \lambda \BesselPotential {-m} \sigma(g, \lambda)}^2.
+    \end{align*}
+
+    Using $\sigma \in \SymbolClass m {\rho, \delta}$,
+    the above becomes
+    \begin{align*}
+        \norm [\SchattenClasses 2 {\Lebesgue 2 \CompactGroup}] {\sigma(g, \lambda)}^2
+        \leq C \norm [\SchattenClasses 2 {\Lebesgue 2 \CompactGroup}] {\Rep \lambda \BesselPotential {-m}}^2.
+    \end{align*}
+
+    Integrating both sides of the above with respect to $\lambda \in \VectorSpace$
+    and using the Plancherel formula (Proposition~\ref{proposition:Plancherel_formula}) on either sides,
+    we get
+    \begin{align*}
+        \norm [\Lebesgue 2 \CompactGroup] {\kappa_g}^2 \leq C \norm [\Lebesgue 2 \CompactGroup] {\BesselPotentialKernel {-m}}^2.
+    \end{align*}
+
+    We conclude the proof by observing that the right-hand side is finite by assumption on $m$ and Proposition~\ref{proposition:Sobolev_embedding},
+    but also that the right-hand side does not depend on $g$.
+\end{proof}
+
 \subsection{Estimates at infinity}
 
 We start by proving Part \ref{item:kernel_estimates:at_infinity} of Theorem~\ref{theorem:kernel_estimates}.
