@@ -50,6 +50,7 @@
 \newcommand{\dummy}{\cdot}
 \newcommand{\eval}[2]{\left. #1 \right|_{#2}}
 \newcommand{\g}{\mathfrak{g}}
+\newcommand{\lcsum}[1]{\sum_{#1}^{--}}
 \newcommand{\norm}[2][\VectorSpace]{{\left\| #2 \right\|}_{#1}}
 \newcommand{\seminorm}[3][\VectorSpace]{\norm[#1, #2]{#3}}
 \newcommand{\ip}[3][\VectorSpace]{{\left(#2, #3\right)_{#1}}}
@@ -88,7 +89,7 @@
 \newcommand{\Lebesgue}[2]{{L^{#1} (#2)}}
 \newcommand{\LebesgueDual}[3][]{{L^{#2}_{#1} (\dualGroup{#3})}}
 \newcommand{\LeftDifferentialOperatorFirstOrder}[1]{{#1}}
-\newcommand{\LeftDifferentialOperator}[1]{X^{#1}_L}
+\newcommand{\LeftDifferentialOperator}[2][]{X^{#2}_{L\if #1\empty \else ; #1 \fi}}
 \newcommand{\LeftDifferentialOperatorOnCompactGroup}[2][]{Y^{#2}_{#1}}
 \newcommand{\LeftRegularRepresentation}[1][\CompactGroup]{\pi^L_{#1}}
 \newcommand{\RightRegularRepresentation}[1][\CompactGroup]{\pi^R_{#1}}

@@ -1287,6 +1287,89 @@ We can now prove Part~\ref{item:kernel_estimates:at_origin:negative} of Theorem~
 
 We start by proving Part \ref{item:kernel_estimates:at_infinity} of Theorem~\ref{theorem:kernel_estimates}.
 
+\begin{proof}
+    Let $M \in \R$ and choose $p \in 2 \N$ sufficiently large so that
+    \begin{align*}
+        g \geq M
+    \end{align*}
+
+    Fix $d > 0$,
+    and let $\chi \in \SmoothFunctions \Group$ be a smooth radial function satisfying
+    \begin{align*}
+        \chi(y, l) =
+        \begin{cases}
+            0 & \text{if } \norm y \leq d/2\\
+            1 & \text{if } \norm y \geq d
+        \end{cases}
+    \end{align*}
+
+    From now on, we shall write $h = (y, l)$.
+
+    By the Sobolev inequality (Proposition~\ref{proposition:Sobolev_embedding}),
+    we have
+    \begin{align}
+        \sup_{\norm y \geq d} &\abs{\norm y^M \kappa_g(h)} \notag\\
+        &\leq \sup_{h \in \Group} \abs{\norm y^M \kappa_g(h) \chi(h)} \notag\\
+        &\leq C \sum_{\abs \beta \leq \Ceiling {\dim \Group / 2}} \norm [\Lebesgue 2 {\Group, \dd h}] {\LeftDifferentialOperator [h] \beta \{\norm y^M \kappa_g(h) \chi(h)\}}.
+        \label{eq:Schwartz_decay_of_kernel:first_estimate}
+    \end{align}
+
+    Let us do some calculations on the right-hand side of the above.
+    By the Leibniz formula, we have
+    \begin{align}
+        &\abs {\LeftDifferentialOperator [h] \beta \{\kappa_g(h) \chi(h)\}} \notag\\
+        &\leq \lcsum {\beta' \leq \beta} \abs{\LeftDifferentialOperator [h] {\beta - \beta'} \{\norm y^{M - p} \chi(h)\} \LeftDifferentialOperator [h] {\beta'} \{\norm y^p \kappa_g(h)\}} \notag\\
+        &\leq
+        \left(\lcsum {\beta' \leq \beta} \abs{\LeftDifferentialOperator [h] {\beta'} \{\norm y^{M - p} \chi(h)\}}^2\right)^{\frac 1 2}
+        \left(\lcsum {\beta' \leq \beta} \abs{\LeftDifferentialOperator [h] {\beta'} \{\norm y^p \kappa_g(h)\}}^2\right)^{\frac 1 2},
+        \label{eq:Schwartz_decay_of_kernel:Leibniz}
+    \end{align}
+    where the last line was obtained by applying the Cauchy-Schwartz inequality to the sum.
+    Since $p \geq M$ and $\chi$ vanishes around $\{0_\VectorSpace\} \times \CompactGroup$,
+    it follows that
+    \begin{align*}
+        \sup_{h \in \Group} \lcsum {\beta' \leq \beta} \abs{\LeftDifferentialOperator [h] {\beta'} \{\norm y^{M - p} \chi(h)\}}^2 < \infty,
+    \end{align*}
+    which means that~\eqref{eq:Schwartz_decay_of_kernel:Leibniz} becomes
+    \begin{align*}
+        \abs {\LeftDifferentialOperator [h] \beta \{\kappa_g(h) \chi(h)\}}
+        \leq C \left(\lcsum {\beta' \leq \beta} \abs{\LeftDifferentialOperator [h] {\beta'} \{\norm y^p \kappa_g(h)\}}^2\right)^{\frac 1 2}.
+    \end{align*}
+
+    Therefore, if we square both sides of the above and integrate with respect to $h$, we obtain
+    \begin{align*}
+        &\int_\Group \abs {\LeftDifferentialOperator [h] \beta \{\kappa_g(h) \chi(h)\}}^2 \dd h\\
+        &\qquad \leq C \int_\Group \lcsum {\beta' \leq \beta} \abs{\LeftDifferentialOperator [h] {\beta'} \{\norm y^p \kappa_g(h)\}}^2 \dd h\\
+        &\qquad \leq C \lcsum {\beta' \leq \beta} \sum_{\abs \alpha = p} \int_\Group \abs{\LeftDifferentialOperator {\beta'} \{q^\alpha \kappa_g\}}^2 \dd h,
+    \end{align*}
+    where the last line was obtained by using ??. % TODO: reference!
+    Continuing the above calculation,
+    we get
+    \begin{align*}
+        &\int_\Group \abs {\LeftDifferentialOperator [h] \beta \{\kappa_g(h) \chi(h)\}}^2 \dd h\\
+        &\quad \leq C \sum_{\abs \alpha = p} \int_\Group \abs{\BesselPotential {\Ceiling {\dim \Group / 2}} \{q^\alpha \kappa_g\}}^2 \dd h.
+    \end{align*}
+
+    Combinig the above with~\eqref{eq:Schwartz_decay_of_kernel:first_estimate},
+    this yields
+    \begin{align}
+        \sup_{\norm y \geq d} &\abs{\norm y^M \kappa_g(h)}
+        \leq C \sum_{\abs \alpha = p} \norm [\Lebesgue 2 \Group] {\BesselPotential {\Ceiling {\dim \Group / 2}} \{q^\alpha \kappa_g\}}.
+        \label{eq:Schwartz_decay_of_kernel:final_step}
+    \end{align}
+    In the above,
+    each symbol $\Rep \lambda \BesselPotential {\Ceiling {\dim \Group / 2}} \DifferenceOperatorOrder \alpha \sigma(g, \lambda)$ is of order
+    \begin{align*}
+        m - \rho p + \Ceiling {\dim \Group / 2} < -\frac {\dim \Group} 2
+    \end{align*}
+    so that its kernel $\BesselPotential {\Ceiling {\dim \Group / 2}} \{q^\alpha \kappa_g\}$ belongs to $\Lebesgue 2 \Group$ uniformly in $g \in \Group$ by Proposition~\ref{proposition:L2_bound_on_the_kernel}.
+    This implies that~\eqref{eq:Schwartz_decay_of_kernel:final_step} becomes
+    \begin{align*}
+        \sup_{g \in \Group} \sup_{\norm y \geq d} &\abs{\norm y^M \kappa_g(h)} < \infty,
+    \end{align*}
+    concluding the proof.
+\end{proof}
+
 \subsection{Estimates at the origin}
 
 We now turn our attention to
