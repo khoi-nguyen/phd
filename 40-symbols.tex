@@ -1246,6 +1246,7 @@ This is, of course, a consequence of the Sobolev inequality (Proposition~\ref{pr
 \end{proof}
 
 \begin{corollary}
+\label{corollary:Sobolev_estimates_on_the_kernel}
     Let $\sigma \in \SymbolClass m {\rho,\delta}$ with $1 \geq \rho \geq \delta \geq 0$,
     and denote by $\kappa \in \SmoothFunctions {\Group, \TemperedDistributions \Group}$ its associated kernel.
 
@@ -1297,22 +1298,22 @@ We can now prove Part~\ref{item:kernel_estimates:at_origin:negative} of Theorem~
     \end{align*}
     which is possible since $m < -\dim \Group$.
 
-    Since $m + s < \dim \Group / 2$,
-    and since $\BesselPotential s \kappa_g$ is the kernel of the symbol $\Rep \lambda \BesselPotential s \sigma(g, \lambda)$ which is of order $m + s$,
-    Proposition~\ref{proposition:L2_bound_on_the_kernel} implies that $\BesselPotential s \kappa_g \in \Lebesgue 2 \Group$ for each $g \in \Group$ and
+    Since $m < -\dim \Group/2 - s$,
+    Corollary~\ref{corollary:Sobolev_estimates_on_the_kernel} implies that
+    $\kappa_g \in \Sobolev s$ for every $g \in \Group$,
     \begin{align*}
-        \sup_{g \in \Group} \norm [\Lebesgue 2 \Group] {\BesselPotential s \kappa_g} < \infty.
+        \sup_{g \in \Group} \norm [\Sobolev s] {\kappa_g} < \infty.
     \end{align*}
 
-    Since $s > \dim \Group / 2$,
-    and because we have shown that $\kappa_g \in \Sobolev s$,
-    we can apply the Sobolev inequality (Proposition~\ref{proposition:Sobolev_embedding}),
-    which implies that $\kappa_g$ is continuous and
+    However,
+    since $s > \dim \Group / 2$,
+    the Sobolev inequality (Proposition~\ref{proposition:Sobolev_embedding})
+    implies that
     \begin{align*}
-        \sup_{g, h \in \Group} \abs{\kappa_g(h)}
-        \leq C \sup_{g \in \Group} \norm [\Lebesgue 2 \Group] {\BesselPotential s \kappa_g} < \infty,
+        \sup_{g \in \Group} \norm [\ContinuousFunctions \Group] {\kappa_g}
+        \leq C \sup_{g \in \Group} \norm [\Sobolev s] {\kappa_g} < \infty.
     \end{align*}
-    concluding the proof.
+    This concludes the proof.
 \end{proof}
 
 \subsection{Estimates at infinity}
