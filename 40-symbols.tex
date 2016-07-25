@@ -1410,8 +1410,23 @@ We start by proving Part \ref{item:kernel_estimates:at_infinity} of Theorem~\ref
 
 \subsection{Estimates at the origin}
 
-We now turn our attention to
-Parts \ref{item:kernel_estimates:at_origin:positive} and \ref{item:kernel_estimates:at_origin:zero}.
+We have shown so far that the regularity of the kernel is linked to the order of its corresponding symbol in the following way:
+the lower the order, the more regular the kernel is.
+As applying difference operator strictly \emph{reduces the order} when $\rho > 0$,
+the distribution
+\begin{align*}
+    q^\alpha \kappa_g \defeq \InverseFourier \{ \DifferenceOperatorOrder \alpha \sigma(g, \dummy) \}
+\end{align*}
+becomes more regular as $\abs \alpha$ increases.
+This means that $\kappa_g$ can only have singularities at the common zeros
+\begin{align*}
+    \bigcap_{j = 1}^{\dimDifferenceOperators} \{ q_j = 0 \} = (0_\VectorSpace, \Id \VectorSpace),
+\end{align*}
+which happens to simply be the origin
+as the family $\{q_j : j = 1, \dots, \dimDifferenceOperators\}$ was chosen to be \emph{strongly admissible}.
+
+The aim of this subsection is therefore to study the strength of the only singularity that a kernel can have,
+which will lead to the proof of parts \ref{item:kernel_estimates:at_origin:positive} and \ref{item:kernel_estimates:at_origin:zero} of Theorem~\ref{theorem:kernel_estimates}.
 
 \begin{lemma}
     Let $\sigma \in \SymbolClass m {\rho, \delta}$ be a symbol
