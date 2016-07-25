@@ -1429,6 +1429,7 @@ The aim of this subsection is therefore to study the strength of the only singul
 which will lead to the proof of parts \ref{item:kernel_estimates:at_origin:positive} and \ref{item:kernel_estimates:at_origin:zero} of Theorem~\ref{theorem:kernel_estimates}.
 
 \begin{lemma}
+\label{lemma:prepare_kernel_estimates_at_the_origin}
     Let $\sigma \in \SymbolClass m {\rho, \delta}$ be a symbol
     with kernel $\kappa \in \SmoothFunctions {\Group, \TemperedDistributions \Group}$,
     where $1 \geq \rho \geq \delta \geq 0$.
@@ -1460,6 +1461,84 @@ which will lead to the proof of parts \ref{item:kernel_estimates:at_origin:posit
         \item
         \item
     \end{enumerate}
+\end{proof}
+
+\begin{proof}
+    By the second part of Lemma~\ref{lemma:prepare_kernel_estimates_at_the_origin},
+    we know that
+    \begin{align*}
+        \abs {\kappa_g(h)} \leq \sum_{l = 0}^\infty \abs{\kappa_{l, g}(h)}
+    \end{align*}
+    for each $h \in \Group \setminus \{e_\Group\}$.
+    Moreover,
+    for every $r \in 2 \N$ and every $m_1 < -\dim \Group$,
+    we have
+    \begin{align}
+        \sup_{h \in \Group} \norm [\Group] h^{r} \abs{\kappa_{l, g}(h)}
+        &\leq \sup_{h \in \Group} \sum_{\abs \alpha = r} \abs{q^\alpha \kappa_{l, g}(h)} \notag\\
+        &\leq C 2^{l(m - m_1 - \rho r)}
+        \label{eq:singularity_of_frequency_localised_kernels}
+    \end{align}
+    or equivalently
+    \begin{align}
+        \sup_{h \in \Group} \abs{\kappa_{l, g}(h)}
+        &\leq C 2^{l(m - m_1 - \rho r)} \norm [\Group] h^{-r} 
+        \label{eq:singularity_of_frequency_localised_kernels:2}
+    \end{align}
+    by applying the first part of Lemma~\ref{lemma:preparation_for_general_inverse_formula} to the symbol $\DifferenceOperatorOrder \alpha \sigma$.
+
+    Now, fix $h \in \Group$ such that $\norm [\Group] h \leq 1$.
+    We let $l_0 \in \N$ be the unique natural number such that
+    \begin{align*}
+        2^{-l_0 - 1} < \norm [\Group] h \leq 2^{-l_0}.
+    \end{align*}
+
+    The idea is to estimate the singularity on the kernel via
+    \begin{align*}
+        \abs {\kappa_g(h)} \leq \sum_{l = 0}^{l_0 - 1} \abs{\kappa_{l, g}(h)} + \sum_{l = l_0}^\infty \abs{\kappa_{l, g}(h)}
+    \end{align*}
+    and use~\eqref{eq:singularity_of_frequency_localised_kernels} with carefully chosen $m_1 \in \R$ and $r \in 2 \N$ to estimate each term on the right-hand side.
+
+    Let us now treat the two cases separately.
+    \begin{description}
+        \item[$m > -\dim \Group$.]
+            Let us start with the sum over $l = 0, \dots, l_0 - 1$.
+            We let $r = 0$ and choose $m_1 \in \R$ such that
+            \begin{align*}
+                m - m_1 = \frac {\dim \Group + m} \rho \iff m_1 = m\left(1 - \frac 1 \rho\right) - \frac {\dim \Group} \rho
+            \end{align*}
+
+            Since $m > -\dim \Group$, we know that
+            \begin{align*}
+                m_1 \leq -m(1 - \frac 1 \rho - \frac 1 \rho) \leq -m < -\dim \Group
+            \end{align*}
+            so that we may apply~\eqref{eq:singularity_of_frequency_localised_kernels},
+            which yields
+            \begin{align*}
+                \sum_{l = 0}^{l_0 - 1} \abs{\kappa_{l, g}(h)} &\leq C \sum_{l = 0}^{l_0 - 1} 2^{l(m - m_1)} \leq C 2^{l_0(m - m_1)}\\
+                &\leq C \norm [\Group] h^{-\frac {\dim \Group + m} \rho}
+            \end{align*}
+            by our choice of $m_1$.
+
+            Now, let us deal with the sum over $l \geq l_0$.
+            In order to be able to apply~\eqref{eq:singularity_of_frequency_localised_kernels} and have a convergent sum,
+            we need $m_1 < -\dim \Group$,
+            \begin{align*}
+                m - m_1 - \rho r < 0, \quad \text{and} \quad r(1 - \rho) + m - m_1 = \frac{\dim \Group + m} \rho.
+            \end{align*}
+
+            % Checks
+
+            Since we may now use~\eqref{eq:singularity_of_frequency_localised_kernels:2},
+            we obtain
+            \begin{align*}
+                \sum_{l = l_0}^\infty \abs{\kappa_{l, g}(h)}
+                &\leq C \sum_{l = l_0}^\infty 2^{l(m - m_1 - \rho r)} \norm [\Group] h^{-r}\\
+                &\leq C 2^{l_0(m - m_1 - \rho r)} \norm [\Group] h^{-r}\\
+                &\leq C \norm [\Group] h^{m_1 - m + \rho r - r} = C \norm [\Group] h^{-\frac{\dim \Group + m} \rho},
+            \end{align*}
+            concluding the case $m > -\dim \Group$.
+    \end{description}
 \end{proof}
 
 \section{Adjoint and composition formulas}
