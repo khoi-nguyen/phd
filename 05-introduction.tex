@@ -1,1 +1,41 @@
 \chapter{Introduction}
+
+In the Euclidean setting,
+it is a known fact that constant-coefficient differential operators act like their characteristic polynomials on the Fourier Transform side.
+Moreover, composing, taking the adjoint, or inverting such operators can be done by multiplication, adjunction or inversion of their associated polynomials.
+
+Although the above properties do not hold for general differential operators with smooth coefficients,
+the composition and adjunction of such operators can still be written solely in terms of their characteristic polynomials.
+As an example,
+if $T_a$ and $T_b$ are two operators arising from the polynomials $a(x, \xi)$ and $b(x, \xi)$ via
+\begin{align*}
+    T_a \defeq \sum_{\abs \alpha \leq N} \frac 1 {\alpha!} \iD{\xi^\alpha} a(x, 0) \iD{x^\alpha}
+    \quad
+    T_b \defeq \sum_{\abs \alpha \leq N} \frac 1 {\alpha!} \iD{\xi^\alpha} b(x, 0) \iD{x^\alpha},
+\end{align*}
+then it follows from an elementary computation
+that the characteristic polynomial of $T_c \defeq T_a \circ T_b$ is given by the finite sum
+\begin{align}
+    c(x, \xi) = \sum_{\alpha \in \N^n} \frac 1 {\alpha!} \iD{\xi^\alpha} a(x, \xi) \iD{x^\alpha} b(x, \xi)
+    \label{eq:composition_formula_for_characteristic_polynomials}.
+\end{align}
+Importantly,
+\eqref{eq:composition_formula_for_characteristic_polynomials} means that
+composition is reduced to summing and multiplying smooth functions.
+
+Laurent Schwartz's \emph{Kernel Theorem} and his extension of the \emph{Fourier transform} allows us to extend the concept of characteristic polynomial much beyond the class of ordinary differential operators.
+The resulting concept, called the \emph{symbol} of an operator,
+is formally defined by taking the Fourier transform of the convolution kernel,
+i.e.\ if $T$ is formally given by
+\begin{align*}
+    T \phi(x) \defeq \conv \phi {\kappa_x}(x),
+\end{align*}
+then we define its symbol via
+\begin{align*}
+    \sigma(x, \xi) \defeq \Fourier \kappa_x(\xi).
+\end{align*}
+
+Can we define a generalised notion of differential operator
+with an approprate notion of order,
+stable under composition and adjunction,
+and for which both these operations can be expressed in terms of their symbols?
