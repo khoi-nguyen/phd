@@ -155,8 +155,12 @@
             \@for\@token:={#4}\do{\@der \@token}
         }
     } {%
-        \@for\@token:={#4}\do{\@der_\@token} #3
+        %\@for\@token:={#4}\do{\@der_\@token} #3
+        \iD{#4} #3
     } {} {}
+}
+\DeclareDocumentCommand \iD {m}{%
+    \@for\@token:={#1}\do{\partial_\@token}
 }
 \makeatother
 
