@@ -7,16 +7,16 @@ Moreover, composing, taking the adjoint, or inverting such operators can be done
 Although the above properties do not hold for general differential operators with smooth coefficients,
 the composition and adjunction of such operators can still be written solely in terms of their characteristic polynomials.
 As an example,
-if $T_a$ and $T_b$ are two operators arising from the polynomials $a(x, \xi)$ and $b(x, \xi)$ via
+if $T_{\sigma_1}$ and $T_{\sigma_2}$ are two operators arising from the polynomials $\sigma_1(x, \xi)$ and $\sigma_2(x, \xi)$ via
 \begin{align*}
-    T_a \defeq \sum_{\abs \alpha \leq N} \frac 1 {\alpha!} \iD{\xi^\alpha} a(x, 0) \iD{x^\alpha}
+    T_1 \defeq \sum_{\abs \alpha \leq N} \frac 1 {\alpha!} \iD{\xi^\alpha} \sigma_1(x, 0) \iD{x^\alpha}
     \quad
-    T_b \defeq \sum_{\abs \alpha \leq N} \frac 1 {\alpha!} \iD{\xi^\alpha} b(x, 0) \iD{x^\alpha},
+    T_2 \defeq \sum_{\abs \alpha \leq N} \frac 1 {\alpha!} \iD{\xi^\alpha} \sigma_2(x, 0) \iD{x^\alpha},
 \end{align*}
 then it follows from an elementary computation
-that the characteristic polynomial of $T_c \defeq T_a \circ T_b$ is given by the finite sum
+that the characteristic polynomial of $T_3 \defeq T_1 \circ T_2$ is given by the finite sum
 \begin{align}
-    c(x, \xi) = \sum_{\alpha \in \N^n} \frac 1 {\alpha!} \iD{\xi^\alpha} a(x, \xi) \iD{x^\alpha} b(x, \xi)
+    \sigma_3(x, \xi) = \sum_{\alpha \in \N^n} \frac 1 {\alpha!} \iD{\xi^\alpha} \sigma_1(x, \xi) \iD{x^\alpha} \sigma_2(x, \xi)
     \label{eq:composition_formula_for_characteristic_polynomials}.
 \end{align}
 Importantly,
