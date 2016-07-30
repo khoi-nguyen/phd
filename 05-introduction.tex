@@ -49,3 +49,24 @@ Naturally, the condition on the derivatives is motivated by~\eqref{eq:compositio
 if $\sigma_1$ and $\sigma_2$ are two symbols of order $m_1$ and $m_2 \in \R$ respectively,
 the composition of their associated operators should yield a symbol of order $m_1 + m_2$.
 We shall say that an operator associated with a symbol of order $m$ is also of order $m$.
+
+Denoting the set of operators of order $m \in \R$ by $\OperatorClass [\R^n] m {1, 0}$,
+we obtain the following important collection of results:
+\begin{enumerate}
+    \item
+        If $T_1 \in \OperatorClass [\R^n] {m_1} {1, 0}$
+        and $T_2 \in \OperatorClass [\R^n] {m_2} {1, 0}$,
+        then $T_1 \circ T_2$
+    \item
+        The set $\OperatorClass [\R^n] m {1, 0}$ is stable under taking the adjoint.
+    \item
+        If $T \in \OperatorClass m {\rho, \delta}$ is uniformly elliptic,
+        its inverse belongs to $T^{-1} \in \OperatorClass {-m} {\rho, \delta}$
+    \item
+        If $T \in \OperatorClass [\R^n] m {\rho, \delta} {1, 0}$,
+        then $T$ extends continuously to a bounded operator
+        \begin{align*}
+            T : \Sobolev [\R^n] s \to \Sobolev [\R^n] {s - m},
+        \end{align*}
+        where in the above $\Sobolev [\R^n] s$ denotes the Sobolev space of order $s \in \R$.
+\end{enumerate}
