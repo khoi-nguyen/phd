@@ -7,8 +7,8 @@ it is a known fact that constant-coefficient differential operators act like the
 Moreover, composing or inverting such operators can be done by multiplication or inversion of their associated polynomials.
 Similarly, taking the adjoint can equally be expressed in terms of polynomials.
 
-Although the above properties do not hold for general differential operators with smooth coefficients,
-the composition and adjunction of such operators can still be written solely in terms of their characteristic polynomials.
+Although the above properties do not hold for differential operators with smooth, non-constant, coefficients,
+the composition, inversion and adjunction of such operators can still be written solely in terms of their characteristic polynomials.
 As an example,
 if $T_{\sigma_1}$ and $T_{\sigma_2}$ are two operators arising from the polynomials $\sigma_1(x, \xi)$ and $\sigma_2(x, \xi)$ via
 \begin{align*}
@@ -28,7 +28,7 @@ composition is reduced to summing and multiplying smooth functions,
 and motivates the introduction of the concept of \empth{ellipticity}
 as this formula can be used to construct approximate inverses to a suitable class of differential operators.
 
-Laurent Schwartz's \emph{Kernel Theorem} and his extension of the \emph{Fourier transform} allows us to extend the concept of characteristic polynomial much beyond the class of ordinary differential operators.
+Laurent Schwartz's \emph{Kernel Theorem} and his extension of the \emph{Fourier transform} allows us to extend the concept of characteristic polynomials far beyond the class of ordinary differential operators.
 The resulting concept, called the \emph{symbol} of an operator,
 is formally defined by taking the Fourier transform of the convolution kernel,
 i.e.\ if $T$ is formally given by
@@ -40,10 +40,10 @@ then we define its symbol via
     \sigma(x, \xi) \defeq \Fourier \kappa_x(\xi).
 \end{align*}
 
-Interestingly, the formula~\eqref{eq:composition_formula_for_characteristic_polynomials} still holds for smooth symbols
-although this time, the sum is infinite.
-The \emph{order} of a characteristic polynomial can therefore be extended onto smooth symbols as the following.
-We shall say that $\sigma \in \SmoothFunctions {\R^n \times \R^n}$ is of order $m \in \R$
+Interestingly, the formula~\eqref{eq:composition_formula_for_characteristic_polynomials} still holds for smooth symbols,
+although this time the sum is infinite.
+The \emph{order} of a characteristic polynomial can therefore be extended onto smooth symbols as follows:
+we shall say that $\sigma \in \SmoothFunctions {\R^n \times \R^n}$ is of order $m \in \R$
 if the following holds
 \begin{align*}
     \abs {\iD{\xi^\alpha, \xi^\beta} \sigma(x, \xi)} \leq C_{\alpha, \beta} (1 + \abs \xi)^{m - \abs \alpha}.
