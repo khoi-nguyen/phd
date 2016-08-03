@@ -1522,10 +1522,38 @@ which will lead to the proof of parts \ref{item:kernel_estimates:at_origin:posit
 
             Now, let us deal with the sum over $l \geq l_0$.
             In order to be able to apply~\eqref{eq:singularity_of_frequency_localised_kernels} and have a convergent sum,
-            we need $m_1 < -\dim \Group$,
+            we need
+            \begin{align}
+                \begin{cases}
+                    m_1 < -\dim \Group,\\
+                    m - m_1 - \rho r < 0,\\
+                    r(1 - \rho) + m - m_1 = \frac{\dim \Group + m} \rho.
+                \end{cases}
+                \label{eq:conditions_to_apply_dyadic_sum_for_large_terms}
+            \end{align}
+            To this end,
+            we let
             \begin{align*}
-                m - m_1 - \rho r < 0, \quad \text{and} \quad r(1 - \rho) + m - m_1 = \frac{\dim \Group + m} \rho.
+                r &\defeq \min_{\N} \{n \in \N : n > {\frac {m + \dim \Group} \rho}\}\\
+                m_1 &\defeq r(1 - \rho) + m - \frac{\dim \Group + m} \rho.
             \end{align*}
+
+            The third identify in~\eqref{eq:conditions_to_apply_dyadic_sum_for_large_terms} holds by definition of $m_1$.
+            For the second, we observe that
+            \begin{align*}
+                m - m_1 - \rho r
+                &= - r + \frac{\dim \Group + m} \rho < 0
+            \end{align*}
+            by definition of $r$.
+            Similarly,
+            \begin{align*}
+                m - m_1
+                &= r(\rho - 1) + \frac{\dim \Group + m} \rho\\
+                &> (\dim \Group + m) (1 - \frac 1 \rho + \frac 1 \rho)\\
+                &> \dim \Group + m,
+            \end{align*}
+            which is equivalent to $m_1 < - \dim \Group$.
+            We have thus shown that~\eqref{eq:conditions_to_apply_dyadic_sum_for_large_terms} holds.
 
             % Checks
 
@@ -1537,7 +1565,7 @@ which will lead to the proof of parts \ref{item:kernel_estimates:at_origin:posit
                 &\leq C 2^{l_0(m - m_1 - \rho r)} \norm [\Group] h^{-r}\\
                 &\leq C \norm [\Group] h^{m_1 - m + \rho r - r} = C \norm [\Group] h^{-\frac{\dim \Group + m} \rho},
             \end{align*}
-            concluding the case $m > -\dim \Group$.
+            concluding the case when $m > -\dim \Group$.
     \end{description}
 \end{proof}
 
