@@ -1501,7 +1501,7 @@ which will lead to the proof of parts \ref{item:kernel_estimates:at_origin:posit
 
     Let us now treat the two cases separately.
     \begin{description}
-        \item[$m > -\dim \Group$.]
+        \item[Case 1: $m > -\dim \Group$.]
             Let us start with the sum over $l = 0, \dots, l_0 - 1$.
             We let $r = 0$ and choose $m_1 \in \R$ such that
             \begin{align*}
@@ -1555,8 +1555,6 @@ which will lead to the proof of parts \ref{item:kernel_estimates:at_origin:posit
             which is equivalent to $m_1 < - \dim \Group$.
             We have thus shown that~\eqref{eq:conditions_to_apply_dyadic_sum_for_large_terms} holds.
 
-            % Checks
-
             Since we may now use~\eqref{eq:singularity_of_frequency_localised_kernels:2},
             we obtain
             \begin{align*}
@@ -1566,6 +1564,7 @@ which will lead to the proof of parts \ref{item:kernel_estimates:at_origin:posit
                 &\leq C \norm [\Group] h^{m_1 - m + \rho r - r} = C \norm [\Group] h^{-\frac{\dim \Group + m} \rho},
             \end{align*}
             concluding the case when $m > -\dim \Group$.
+        \item[Case 2: $m = \dim \Group$.]
     \end{description}
 \end{proof}
 
