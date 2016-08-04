@@ -908,15 +908,15 @@ However, as we shall see later, the Fourier Transform on $\Group$ can be written
             \begin{align*}
                 \Rep{\lambda}(X_j) F(u) = \LeftDifferentialOperatorFirstOrder{X_j} F(u),
             \end{align*}
-            where in the right-hand side $\LeftDifferentialOperatorFirstOrder{X_j}$ is the left-invariant differential operator on $\CompactGroup$ associated with $X_j \in \LieAlgebraCompactGroup$.
+            where on the right-hand side $\LeftDifferentialOperatorFirstOrder{X_j}$ is the left-invariant differential operator on $\CompactGroup$ associated with $X_j \in \LieAlgebraCompactGroup$.
     \end{enumerate}
 \end{proposition}
 \begin{proof}
     Let $F \in \SmoothFunctions \CompactGroup$ and $u \in \CompactGroup$.
     \begin{enumerate}
         \item Fix $j \in \{1, \dots, \dim \VectorSpace\}$.
-            Since $\exp_\Group(t X_j) = (t e_j, \Id{\VectorSpace})$.
-            It follows that
+            Since $\exp_\Group(t X_j) = (t e_j, \Id{\VectorSpace})$,
+            it follows that
             \begin{align*}
                 \Rep{\lambda}(X_j) F(u) = \eval{\D*{1}{t}}{t = 0} \e^{\i \turn \ip \lambda {t u e_j}} F(u)
                 = \i \turn \ip \lambda {u e_j} F(u)
@@ -1057,7 +1057,7 @@ However, as we shall see later, the Fourier Transform on $\Group$ can be written
             &= \int_\CompactGroup \int_\CompactGroup \abs{K_f(\lambda; u, k)}^2 \dd k \dd u\\
             &= \int_\CompactGroup \int_\CompactGroup \abs{\Fourier[\VectorSpace] f(k^{-1} \lambda, k^{-1} u)}^2 \dd k \dd u.
         \end{align*}
-        Substituing $k$ for $k^{-1}$ and then $k$ for $k^{-1}$ and then $k$ for $k^{-1}$ and then $k$ for $k^{-1}$ and then $u$ for $k^{-1} u$ in the above, we obtain
+        Substituing $k$ for $k^{-1}$ and then $u$ for $k^{-1} u$ in the above, we obtain
         \begin{align*}
             \norm[\SchattenClasses{2}{\Lebesgue{2}\CompactGroup}]{\Fourier f(\lambda)}^2
             &= \int_\CompactGroup \int_\CompactGroup \abs{\Fourier[\VectorSpace] f(k \lambda, u)}^2 \dd k \dd u,
