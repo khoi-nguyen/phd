@@ -95,9 +95,10 @@ a differential operator $T$ arising from a discrete polynomial $\sigma(x, \xi)$ 
     T \defeq \sum_{\abs \alpha \leq N} \frac 1 {\alpha!} \DifferenceOperatorOrder [\T^n] \alpha \sigma_1(x, 0) \iD{x^\alpha},
 \end{align*}
 so that~\eqref{eq:composition_formula_for_characteristic_polynomials} becomes
-\begin{align*}
+\begin{align}
     \sigma_3(x, \xi) = \sum_{\alpha \in \N^n} \frac 1 {\alpha!} \DifferenceOperatorOrder [\T^n] \alpha \sigma_1(x, \xi) \iD{x^\alpha} \sigma_2(x, \xi)
-\end{align*}
+    \label{eq:composition_formula_for_discrete_characteristic_polynomials}
+\end{align}
 
 A symbolic calculus is obtained in a similar fashion as $\R^n$,
 with discrete differences instead of derivatives in $\xi$.
@@ -105,6 +106,10 @@ In facts, the proofs are either identical to the classcial Euclidean case,
 or considerably simplified by the compactness of $\T^n$.
 
 \subsection{Compact groups}
+
+As the first non-specific case,
+a difficulty that arises is how to replace $\DifferenceOperatorOrder [\T^n] \alpha$ and $\iD{\xi^\alpha}$
+in~\eqref{eq:composition_formula_for_characteristic_polynomials} and~\eqref{eq:composition_formula_for_discrete_characteristic_polynomials} respectively.
 
 \subsection{Graded Lie groups}
 
