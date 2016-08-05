@@ -421,7 +421,9 @@ Using \cite[Lemma 4.4]{RuzhanskyTurunenWirth10}, we can show
 
     \begin{enumerate}
         \item
-            Suppose first that $\sigma \in \SmoothingSymbols$ so that its kernel $\kappa_{x, k} \in \Schwartz \Group$.
+            Suppose first that $\sigma \in \SymbolClass m {\rho, \delta}$ for $m < -\dim \Group$
+            so that its kernel $\kappa_{x, k} \in \Schwartz \Group$ by Theorem~\ref{theorem:kernel_estimates}.
+
             By definition, $\DifferenceOperator{q} \sigma(x, k; \lambda)$ is equal to
             \begin{align*}
                 &\quad \int_\Group q((y, l)^{-1}) \kappa_{x, k}((y, l)^{-1}) \e^{\i \turn \ip {u^{-1} \lambda} y} \RightRegularRepresentation(l) \dd (y, l)\\
@@ -452,6 +454,21 @@ Using \cite[Lemma 4.4]{RuzhanskyTurunenWirth10}, we can show
                 = \DifferenceOperator {\tilde q} \tilde \sigma(x, k, k u^{-1} \lambda) F(u),
             \end{align*}
             or in other words $\DifferenceOperator q \sigma = \Rotation {\DifferenceOperator[\GroupDirect] {\tilde q} \tilde \sigma}$.
+
+            Now, suppose that $m \geq -\dim \Group$.
+            Setting
+            \begin{align*}
+                \gamma \defeq -\dim \Group - 1 - m.
+            \end{align*}
+            Since $\Rep \lambda \BesselPotential \gamma \sigma$ is a symbol of order $< -\dim \Group$,
+            then by the adove, we have
+            \begin{align*}
+                \Rep \lambda \BesselPotential \gamma \sigma
+                = \Rotation {\Rep \lambda \BesselPotential \gamma \tilde \sigma}
+                = \Rep \lambda \BesselPotential \gamma \Rotation {\tilde \sigma},
+            \end{align*}
+            or in other words $\sigma = \Rotation {\tilde \sigma}$.
+            % TODO Conclude for difference operators
 
             The other identity is proven by observing that $\InverseRotation \dummy$ is the inverse of $\Rotation \dummy$.
         \item
