@@ -81,7 +81,28 @@ Naturally, that setting should have a \emph{differential structure} and a \emph{
 
 It follows that we should aim to establish a pseudo-differential calculus on \emph{locally compact Lie groups with polynomial growth}.
 
-\subsection{The torus}
+\subsection{The abelian case}
+
+Since all abelian Lie groups are isomorphic to $\R^m \times \T^n$,
+we need only treat the case of $\T^n$.
+
+This time,
+the Fourier transform is the classical Fourier series,
+and differential operators act like their \emph{discrete} characteristic polynomial (i.e. restricted to $\Z^n$).
+As a result,
+a differential operator $T$ arising from a discrete polynomial $\sigma(x, \xi)$ is written
+\begin{align*}
+    T \defeq \sum_{\abs \alpha \leq N} \frac 1 {\alpha!} \DifferenceOperatorOrder [\T^n] \alpha \sigma_1(x, 0) \iD{x^\alpha},
+\end{align*}
+so that~\eqref{eq:composition_formula_for_characteristic_polynomials} becomes
+\begin{align*}
+    \sigma_3(x, \xi) = \sum_{\alpha \in \N^n} \frac 1 {\alpha!} \DifferenceOperatorOrder [\T^n] \alpha \sigma_1(x, \xi) \iD{x^\alpha} \sigma_2(x, \xi)
+\end{align*}
+
+A symbolic calculus is obtained in a similar fashion as $\R^n$,
+with discrete differences instead of derivatives in $\xi$.
+In facts, the proofs are either identical to the classcial Euclidean case,
+or considerably simplified by the compactness of $\T^n$.
 
 \subsection{Compact groups}
 
