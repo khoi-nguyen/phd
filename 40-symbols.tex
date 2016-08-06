@@ -1623,6 +1623,27 @@ which will lead to the proof of parts \ref{item:kernel_estimates:at_origin:posit
 
 \subsection{Composition formula}
 
+\begin{lemma}
+    Let $\sigma_1, \sigma_2 \in \SmoothingSymbols$
+    and denote by $\kappa_1$ and $\kappa_2$ their respective associated kernels.
+    We also set
+    \begin{align*}
+        \kappa_g(h) \defeq \int_\Group \kappa_{2, g l^{-1}}(h l^{-1}) \kappa_{1, g}(l) \dd l
+    \end{align*}
+    for each $g, h \in \Group$,
+    and subsequently define the map
+    \begin{align*}
+        \sigma(g, \lambda) \defeq \Fourier \kappa_g(\lambda),
+        \quad g \in \Group, \lambda \in \VectorSpace.
+    \end{align*}
+
+    The map $\sigma$ defined above is a smoothing symbol for which
+    \begin{align*}
+        \sigma(g, \lambda) = \int_\Group \kappa_{1, g}(l) \adj {\Rep \lambda(l)} \sigma_2(g l^{-1}, \lambda) \dd l
+    \end{align*}
+    holds for all $g \in \Group$ and $\lambda \in \VectorSpace$.
+\end{lemma}
+
 \section{\texorpdfstring{$L^2$}{L2} boundedness}
 
 The aim of this section is to prove
