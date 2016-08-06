@@ -95,14 +95,12 @@ Using \cite[Lemma 4.4]{RuzhanskyTurunenWirth10}, we can show
 \begin{definition}[Symbol semi-norms]
     Let $m \in \R$ and fix $\rho, \delta \in \R$ such that $0 \leq \rho \leq \delta \leq 1$.
     If $\sigma \in \SymbolClass m {\rho, \delta}$,
-    then for each $a, b, c \in \N$,
+    then for each $N \in \N$,
     we let
     \begin{align*}
-        &\SymbolSemiNorm m {\rho, \delta} {a, b, c} {\sigma(g; \lambda)}
+        &\SymbolSemiNorm m {\rho, \delta} N {\sigma(g; \lambda)}
         \defeq
-        \sup_{\abs \alpha \leq a}
-        \sup_{\abs \beta \leq b}
-        \sup_{\abs \gamma \leq c}
+        \sup_{\abs \alpha, \abs \beta, \abs \gamma \leq N}
         \\
         &\qquad
         \norm [\Lin{\Lebesgue 2 \CompactGroup}] {%
@@ -112,11 +110,11 @@ Using \cite[Lemma 4.4]{RuzhanskyTurunenWirth10}, we can show
 
     Moreover, we also let
     \begin{align*}
-        \SymbolSemiNorm m {\rho, \delta} {a, b, c} \sigma
+        \SymbolSemiNorm m {\rho, \delta} N \sigma
         \defeq \sup_{g \in \Group} \sup_{\lambda \in \VectorSpace}
-        \SymbolSemiNorm m {\rho, \delta} {a, b, c} {\sigma(g; \lambda)}
+        \SymbolSemiNorm m {\rho, \delta} N {\sigma(g; \lambda)}
     \end{align*}
-    for each $a, b, c \in \N$.
+    for each $N \in \N$.
 \end{definition}
 
 \begin{lemma}
