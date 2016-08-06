@@ -20,6 +20,16 @@
 
 \usepackage{xparse}
 
+% Quotes
+\def\signed #1{{\leavevmode\unskip\nobreak\hfil\penalty50\hskip2em
+  \hbox{}\nobreak\hfil(#1)%
+  \parfillskip=0pt \finalhyphendemerits=0 \endgraf}}
+
+\newsavebox\mybox
+\newenvironment{aquote}[1]
+  {\savebox\mybox{#1}\begin{quote}}
+  {\signed{\usebox\mybox}\end{quote}}
+
 % Environments
 \newtheorem{theorem}{Theorem}[section]
 \newtheorem{application}[theorem]{Application}
@@ -200,6 +210,7 @@
 
 \include{03-copyright}
 \include{05-introduction}
+\include{07-notation}
 \include{10-preliminaries}
 \include{15-survey}
 \include{20-motion_groups}
