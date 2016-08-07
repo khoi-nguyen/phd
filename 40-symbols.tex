@@ -1644,6 +1644,24 @@ which will lead to the proof of parts \ref{item:kernel_estimates:at_origin:posit
     holds for all $g \in \Group$ and $\lambda \in \VectorSpace$.
 \end{lemma}
 
+\begin{lemma}
+    Let $m_1, m_2 \in \R$ and suppose $\rho, \delta \in \R$ are chosen such that $1 \geq \rho > \delta \geq 0$.
+    % TODO: Add conditions on constants
+
+    There exists $C \geq 0$ and an $N \in \N$ such that
+    for any $\sigma_1, \sigma_2 \in \SmoothingSymbols$ and any $(g, \lambda) \in \Group \times \VectorSpace$,
+    we have
+    \begin{align*}
+        &\norm [\Lin {\Lebesgue 2 \CompactGroup}] {%
+            \LeftDifferentialOperator [g]  \beta \left(
+                \sigma_1 \circ \sigma_2(g, \lambda)
+                - \sum_{\abs \alpha \leq M} \sigma_1(g, \lambda) \LeftDifferentialOperator [g] \alpha \sigma_2(x, \lambda)
+            \right)
+        }\\
+        &\qquad \leq C \SymbolSemiNorm {m_1, R} {\rho, \delta} N {\sigma_1} \SymbolSemiNorm {m_2} {\rho, \delta} N {\sigma_2}
+    \end{align*}
+\end{lemma}
+
 \section{\texorpdfstring{$L^2$}{L2} boundedness}
 
 The aim of this section is to prove
