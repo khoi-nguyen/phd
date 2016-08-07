@@ -1167,17 +1167,33 @@ Using \cite[Lemma 4.4]{RuzhanskyTurunenWirth10}, we can show
     \end{enumerate}
 \end{corollary}
 \begin{proof}
-    First, let us find a smooth function $\chi \in \SmoothFunctions{\dualGroup{\VectorSpace}}$ invariant under $\CompactGroup$ such that
+    First, let us find a smooth radial function $\chi \in \SmoothFunctions \VectorSpace$ such that
     \begin{align*}
-        \chi(\lambda) = 1 \  \text{if}\  \norm[\dualGroup{\VectorSpace}]{\lambda} \leq 1, \quad \text{and} \quad
-        \chi(\lambda) \equiv 0 \ \text{if}\  \norm[\dualGroup{\VectorSpace}]{\lambda} \geq 2.
+        \chi(\lambda) = 1 \  \text{if}\  \norm[\VectorSpace]{\lambda} \leq 1, \quad \text{and} \quad
+        \chi(\lambda) \equiv 0 \ \text{if}\  \norm[\VectorSpace]{\lambda} \geq 2.
     \end{align*}
 
     Then, for each $\epsilon \in (0, 1]$,
     we define
     \begin{align*}
-        \eta_\epsilon(\lambda) \defeq \chi(\epsilon \lambda) \Id {\bigoplus_{\JapaneseBracket \CompactGroup \tau \leq \epsilon^{-1}} \Span \{\tau_{ij} : 1 \leq i, j \leq \dimRep \tau\}}
+        \eta_\epsilon(\lambda)
+        \defeq \sum_{\JapaneseBracket \CompactGroup \tau \leq \epsilon^{-1}} \chi(\epsilon \JapaneseBracket \CompactGroup \tau^{-1} \lambda) \Id {V_\tau},
     \end{align*}
+    where in the above $V_\tau \defeq \Span \{\tau_{ij} : 1 \leq i, j \leq \dimRep \tau\}$.
+
+    We check that
+    \begin{align*}
+        \lim_{\epsilon \to 0} \eta_\epsilon(\lambda)
+        &= \lim_{\epsilon \to 0} \sum_{\JapaneseBracket \CompactGroup \tau \leq \epsilon^{-1}} \chi(\epsilon \JapaneseBracket \CompactGroup \tau^{-1} \lambda) \Id {V_\tau}\\
+        &= \sum_{\tau \in \dualGroup \CompactGroup} \Id {V_\tau}
+        = \Id {\Lebesgue 2 \CompactGroup}
+    \end{align*}
+
+    \begin{description}
+        \item [Step 1] Computing the associated kernel $\kappa_\epsilon$.
+        \item [Step 2] Difference operators computations.
+        \item [Step 3] Conclude.
+    \end{description}
 \end{proof}
 
 \section{Kernel estimates}
