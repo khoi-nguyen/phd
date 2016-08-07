@@ -1266,6 +1266,41 @@ Using \cite[Lemma 4.4]{RuzhanskyTurunenWirth10}, we can show
                 \DifferenceOperatorOrder [\CompactGroup] {\alpha_2} \Fourier [\CompactGroup] \chi_\tau F(u).
                 \label{eq:Littlewood-Paley:difference_operators}
             \end{align}
+
+            For each $j \in \N$,
+            define
+            \begin{align*}
+                \begin{cases}
+                    \eta_{\epsilon, 0}(\lambda) = \eta_{\epsilon}(\lambda) - \eta_{\epsilon}(2 \lambda)\\
+                    \eta_{\epsilon, j}(\lambda) = \eta_{\epsilon, j - 1}(2 \lambda) & j > 1
+                \end{cases}
+            \end{align*}
+            so that
+            \begin{align*}
+                \eta_\epsilon = \sum_{j = 0}^{+\infty} \eta_{\epsilon, j}.
+            \end{align*}
+
+            It is clear that by linearity
+            \begin{align*}
+                \DifferenceOperatorOrder \alpha \eta_{\epsilon, j}(\lambda) F(u)
+                &= \sum_{\JapaneseBracket \CompactGroup \tau \leq \epsilon^{-1}}
+                f_{\alpha_1, \tau, \epsilon, j}(u^{-1} \lambda)
+                \DifferenceOperatorOrder [\CompactGroup] {\alpha_2} \Fourier [\CompactGroup] \chi_\tau F(u),
+            \end{align*}
+            where
+            \begin{align*}
+                \begin{cases}
+                f_{\alpha_1, \tau, \epsilon, 0}(\lambda)
+            = \iD {x^{\alpha_1} } \chi_{\epsilon \JapaneseBracket \CompactGroup \tau}(\lambda) - \iD {x^{\alpha_1} } \chi_{\epsilon \JapaneseBracket \CompactGroup \tau}\right)(2 \lambda)\\
+                f_{\alpha_1, \tau, \epsilon, j}(\lambda)
+                = f_{\alpha_1, \tau, \epsilon, j}(2 \lambda) & j > 1
+                \end{cases}
+            \end{align*}
+
+            It is straightforward to check by induction that
+            \begin{align*}
+                \supp f_{\alpha_1, \tau, \epsilon, j} \subset \{ c 2^{-j} \epsilon^{-1} \leq \JapaneseBracket \CompactGroup \tau \norm \lambda \leq C 2^{-j} \epsilon^{-1} \},
+            \end{align*}
         \item [Step 3] Conclude.
     \end{description}
 \end{proof}
