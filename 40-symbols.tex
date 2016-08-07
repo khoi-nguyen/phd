@@ -1166,6 +1166,19 @@ Using \cite[Lemma 4.4]{RuzhanskyTurunenWirth10}, we can show
             \end{align*}
     \end{enumerate}
 \end{corollary}
+\begin{proof}
+    First, let us find a smooth function $\chi \in \SmoothFunctions{\dualGroup{\VectorSpace}}$ invariant under $\CompactGroup$ such that
+    \begin{align*}
+        \chi(\lambda) = 1 \  \text{if}\  \norm[\dualGroup{\VectorSpace}]{\lambda} \leq 1, \quad \text{and} \quad
+        \chi(\lambda) \equiv 0 \ \text{if}\  \norm[\dualGroup{\VectorSpace}]{\lambda} \geq 2.
+    \end{align*}
+
+    Then, for each $\epsilon \in (0, 1]$,
+    we define
+    \begin{align*}
+        \eta_\epsilon(\lambda) \defeq \chi(\epsilon \lambda) \Id {\bigoplus_{\JapaneseBracket \CompactGroup \tau \leq \epsilon^{-1}} \Span \{\tau_{ij} : 1 \leq i, j \leq \dimRep \tau\}}
+    \end{align*}
+\end{proof}
 
 \section{Kernel estimates}
 
