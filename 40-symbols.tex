@@ -1192,6 +1192,48 @@ Using \cite[Lemma 4.4]{RuzhanskyTurunenWirth10}, we can show
 
     \begin{description}
         \item [Step 1] Computing the associated kernel $\kappa_\epsilon$.
+
+            By applying the inverse Fourier Transform (Proposition~\ref{proposition:inverse_Fourier_Transform}),
+            we know that the kernel is given by
+            \begin{align}
+                \kappa_\epsilon(x, k)
+                = \sum_{\JapaneseBracket \CompactGroup \tau \leq \epsilon^{-1}}
+                \int_\VectorSpace
+                \tr \left(\chi_{\epsilon \JapaneseBracket \CompactGroup \tau^{-1}} (\lambda) \eval {\Rep \lambda(x, k)} {V_\tau}\right) \dd \lambda \notag\\
+                = \sum_{\JapaneseBracket \CompactGroup \tau \leq \epsilon^{-1}}
+                \tr \left(\int_\VectorSpace
+                \chi_{\epsilon \JapaneseBracket \CompactGroup \tau^{-1}} (\lambda) \eval {\Rep \lambda(x, k)} {V_\tau}\right) \dd \lambda,
+                \label{eq:Littlewood-Paley:computing_kernel}
+            \end{align}
+            where we are allowed to permutate integral and trace because the support of $\xi$ is compact
+            and the operator $\eval {\Rep \lambda(x, k)} {V_\tau}$ is finite-dimensional.
+
+            Using the invariance of $\chi$ under rotations,
+            we obtain that
+            for each $F \in \Lebesgue 2 \CompactGroup$ and each $u \in \CompactGroup$,
+            \begin{align*}
+                &\left(\int_\VectorSpace \chi_{\epsilon \JapaneseBracket \CompactGroup \tau^{-1}} (\lambda) \eval {\Rep \lambda(x, k)} {V_\tau} \dd \lambda\right) F(u)\\
+                &\quad = \int_\VectorSpace \chi_{\epsilon \JapaneseBracket \CompactGroup \tau^{-1} u} (\lambda) \eval {\Rep {u \lambda}(x, k)} {V_\tau} F(u) \dd \lambda\\
+                &\quad = \left(\int_\VectorSpace \chi_{\epsilon \JapaneseBracket \CompactGroup \tau^{-1}} (\lambda) \e^{\i \turn \ip \lambda x} \eval {\RightRegularRepresentation(k)} {V_\tau}\right) F(u)\\
+                &\quad = \InverseFourier [\R^n] \chi_{\epsilon \JapaneseBracket \CompactGroup \tau^{-1}}(x) \eval {\RightRegularRepresentation(k)} {V_\tau} F(u)
+            \end{align*}
+            Taking the trace on both sides of the above,
+            and keeping in mind that $\eval {\RightRegularRepresentation(k)} {V_\tau} \simeq \tau$,
+            we get
+            \begin{align*}
+                &\tr \left(\int_\VectorSpace \chi_{\epsilon \JapaneseBracket \CompactGroup \tau^{-1}} (\lambda) \eval {\Rep \lambda(x, k)} {V_\tau} \dd \lambda\right)\\
+                &\quad = \InverseFourier [\R^n] \chi_{\epsilon \JapaneseBracket \CompactGroup \tau^{-1}}(x) \chi_\tau(k),
+            \end{align*}
+            where $\chi_\tau \defeq \tr \tau$ is the character of $\tau$.
+
+            Injecting the above in~\eqref{eq:Littlewood-Paley:computing_kernel},
+            we obtain
+            \begin{align}
+                \kappa_\epsilon(x, k)
+                = \sum_{\JapaneseBracket \CompactGroup \tau \leq \epsilon^{-1}}
+                \InverseFourier [\R^n] \chi_{\epsilon \JapaneseBracket \CompactGroup \tau^{-1}}(x) \chi_\tau(k).
+                \label{eq:Littlewood-Paley:kernel}
+            \end{align}
         \item [Step 2] Difference operators computations.
         \item [Step 3] Conclude.
     \end{description}
