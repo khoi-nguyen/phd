@@ -1234,7 +1234,38 @@ Using \cite[Lemma 4.4]{RuzhanskyTurunenWirth10}, we can show
                 \InverseFourier [\R^n] \chi_{\epsilon \JapaneseBracket \CompactGroup \tau^{-1}}(x) \chi_\tau(k).
                 \label{eq:Littlewood-Paley:kernel}
             \end{align}
-        \item [Step 2] Difference operators computations.
+        \item [Step 2] Computing $\DifferenceOperatorOrder \alpha \eta_\epsilon$.
+
+            % Conditions on polynomials
+            First, select a strongly admissible family of operators such that
+            \begin{align*}
+                q_j((x, k)^{-1}) = x_j, \quad j = 1, \dots, \dim \VectorSpace
+            \end{align*}
+            and $q_j$ does not depend on $x$ for $j > \dim \VectorSpace$.
+
+            Fix $\alpha = \alpha_1 + \alpha_2 \in \N^{\dimDifferenceOperators}$ with $\alpha_1 \in \N^{\dim \VectorSpace}$.
+            Using~\eqref{eq:Littlewood-Paley:kernel},
+            \begin{align*}
+                &\DifferenceOperatorOrder \alpha \eta_\epsilon(\lambda) F(u)\\
+                &= \sum_{\JapaneseBracket \CompactGroup \tau \leq \epsilon^{-1}} \int_\Group
+                q^{\alpha_1}((x, k)^{-1}) \InverseFourier [\R^n] \chi_{\epsilon \JapaneseBracket \CompactGroup \tau^{-1}}(x) \e^{\i \turn \ip \lambda {u x}}\\
+                & \qquad \qquad (q^{\alpha_2} \chi_\tau)(k^{-1}) F(u k) \dd (x, k)\\
+                &= \sum_{\JapaneseBracket \CompactGroup \tau \leq \epsilon^{-1}}
+                \int_\VectorSpace x^{\alpha_1} \InverseFourier [\R^n] \chi_{\epsilon \JapaneseBracket \CompactGroup \tau^{-1}}(x) \e^{\i \turn \ip \lambda {u x}} \dd x\\
+                & \qquad \qquad \int_\CompactGroup (q^{\alpha_2} \chi_\tau)(k^{-1}) F(u k) \dd k\\
+                &= \sum_{\JapaneseBracket \CompactGroup \tau \leq \epsilon^{-1}}
+                \iD {x^{\alpha_1} } \chi_{\epsilon \JapaneseBracket \CompactGroup \tau^{-1}}(u^{-1} \lambda)
+                \DifferenceOperatorOrder [\CompactGroup] {\alpha_2} \Fourier [\CompactGroup] \chi_\tau F(u).
+            \end{align*}
+
+            Therefore, it follows that
+            \begin{align}
+                &\DifferenceOperatorOrder \alpha \eta_\epsilon(\lambda) F(u)\notag\\
+                &\quad= \sum_{\JapaneseBracket \CompactGroup \tau \leq \epsilon^{-1}}
+                (\epsilon \JapaneseBracket \CompactGroup \tau^{-1})^{\alpha_1} \iD {x^{\alpha_1} } \chi(\epsilon \JapaneseBracket \CompactGroup \tau^{-1} u^{-1} \lambda)
+                \DifferenceOperatorOrder [\CompactGroup] {\alpha_2} \Fourier [\CompactGroup] \chi_\tau F(u).
+                \label{eq:Littlewood-Paley:difference_operators}
+            \end{align}
         \item [Step 3] Conclude.
     \end{description}
 \end{proof}
