@@ -885,6 +885,16 @@ Using \cite[Lemma 4.4]{RuzhanskyTurunenWirth10}, we can show
                 \label{eq:Littlewood-Paley:difference_operators}
             \end{align}
 
+            This implies in turn that
+            % TODO: detail
+            \begin{align*}
+                \norm [\Lin {\Lebesgue 2 \CompactGroup}] {%
+                    \Rep \lambda \BesselPotential {\rho \abs \alpha + \gamma}
+                    \DifferenceOperatorOrder \alpha \eta_\epsilon(\lambda)
+                    \Rep \lambda \BesselPotential {-\gamma}
+                } \leq C_{\alpha, \gamma}
+            \end{align*}
+
             For each $j \in \N$,
             define
             \begin{align*}
@@ -919,7 +929,7 @@ Using \cite[Lemma 4.4]{RuzhanskyTurunenWirth10}, we can show
             \begin{align*}
                 \supp f_{\alpha_1, \tau, \epsilon, j} \subset \{c \leq 2^{-j} \epsilon \JapaneseBracket \CompactGroup \tau \norm \lambda \leq C\},
             \end{align*}
-        \item [Step 3] Assume that $m - \rho \abs \alpha \leq 0$ and define the operator
+        \item [Step 3] Assume that $m \leq 0$ and define the operator
             \begin{align*}
                 L(\lambda) \defeq 1_{\{\norm \lambda \leq C \epsilon^{-1}\}} \bigoplus_{\JapaneseBracket \CompactGroup \tau \leq C \epsilon^{-1}} \Rep \lambda \BesselPotential 1.
             \end{align*}
@@ -932,19 +942,19 @@ Using \cite[Lemma 4.4]{RuzhanskyTurunenWirth10}, we can show
                     \Rep \lambda \BesselPotential {-\gamma}
                 }\\
                 &\quad \leq \norm [\Lin {\Lebesgue 2 \CompactGroup}] {%
-                    L(\lambda)^{-m + \rho \abs \alpha}
-                    \Rep \lambda \BesselPotential \gamma
+                    L(\lambda)^{-m}
+                    \Rep \lambda \BesselPotential {\rho \abs \alpha + \gamma}
                     \DifferenceOperatorOrder \alpha \eta_\epsilon(\lambda)
                     \Rep \lambda \BesselPotential {-\gamma}
                 }\\
-                &\quad \leq C_\alpha \epsilon^{m - \rho \abs \alpha}.
+                &\quad \leq C_{\alpha, \gamma, m} \epsilon^{m}.
             \end{align*}
 
-        \item [Step 4] Assume now that $m - \rho \abs \alpha \geq 0$.
+        \item [Step 4] Assume now that $m \geq 0$.
 
             Define the operator
             \begin{align*}
-                L_j(\lambda) \defeq \bigoplus_{\JapaneseBracket \CompactGroup \tau \leq C_\alpha \epsilon^{-1}} 1_{\{c \leq 2^{-j} \epsilon \JapaneseBracket \CompactGroup \tau \norm \lambda \leq C\}} \Rep \lambda \BesselPotential 1
+                L_j(\lambda) \defeq \bigoplus_{\JapaneseBracket \CompactGroup \tau \leq C \epsilon^{-1}} 1_{\{c \leq 2^{-j} \epsilon \JapaneseBracket \CompactGroup \tau \norm \lambda \leq C\}} \Rep \lambda \BesselPotential 1
             \end{align*}
 
             Since the Cauchy Schwartz inequality implies
@@ -961,13 +971,13 @@ Using \cite[Lemma 4.4]{RuzhanskyTurunenWirth10}, we can show
                     \Rep \lambda \BesselPotential {-\gamma}
                 }\\
                 &\leq \sum_{j = 0}^{+\infty} \norm [\Lin {\Lebesgue 2 \CompactGroup}] {%
-                    L_j(\lambda)^{-m + \rho \abs \alpha}
-                    \Rep \lambda \BesselPotential \gamma
+                    L_j(\lambda)^{-m}
+                    \Rep \lambda \BesselPotential {\rho \abs \alpha + \gamma}
                     \DifferenceOperatorOrder \alpha \eta_{\epsilon, j}(\lambda)
                     \Rep \lambda \BesselPotential {-\gamma}
                 }\\
-                &\leq C_\alpha \epsilon^{m - \rho \abs \alpha} \sum_{j = 0}^{+\infty} 2^{-j(m - \rho \abs \alpha)}
-                = C_{\alpha, m} \epsilon^{m - \rho \abs \alpha}.
+                &\leq C_{\alpha, \gamma, m} \epsilon^{m} \sum_{j = 0}^{+\infty} 2^{-j m}
+                = C_{\alpha, \gamma, m} \epsilon^m.
             \end{align*}
     \end{description}
 \end{proof}
