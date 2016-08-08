@@ -1271,8 +1271,8 @@ Using \cite[Lemma 4.4]{RuzhanskyTurunenWirth10}, we can show
             define
             \begin{align*}
                 \begin{cases}
-                    \eta_{\epsilon, 0}(\lambda) = \eta_{\epsilon}(\lambda) - \eta_{\epsilon}(2 \lambda)\\
-                    \eta_{\epsilon, j}(\lambda) = \eta_{\epsilon, j - 1}(2 \lambda) & j > 1
+                    \eta_{\epsilon, 0}(\lambda) = \eta_{\epsilon}(\lambda) - \eta_{\epsilon}(\frac \lambda 2)\\
+                    \eta_{\epsilon, j}(\lambda) = \eta_{\epsilon, j - 1}(\frac \lambda 2) & j > 1
                 \end{cases}
             \end{align*}
             so that
@@ -1291,15 +1291,15 @@ Using \cite[Lemma 4.4]{RuzhanskyTurunenWirth10}, we can show
             \begin{align*}
                 \begin{cases}
                 f_{\alpha_1, \tau, \epsilon, 0}(\lambda)
-                = \iD {x^{\alpha_1} } \chi_{\epsilon \JapaneseBracket \CompactGroup \tau}(\lambda) - \iD {x^{\alpha_1} } \chi_{\epsilon \JapaneseBracket \CompactGroup \tau}(2 \lambda)\\
+                = \iD {x^{\alpha_1} } \chi_{\epsilon \JapaneseBracket \CompactGroup \tau}(\lambda) - \iD {x^{\alpha_1} } \chi_{\epsilon \JapaneseBracket \CompactGroup \tau}(\frac \lambda 2)\\
                 f_{\alpha_1, \tau, \epsilon, j}(\lambda)
-                = f_{\alpha_1, \tau, \epsilon, j}(2 \lambda) & j > 1
+                = f_{\alpha_1, \tau, \epsilon, j}(\frac \lambda 2) & j > 1
                 \end{cases}
             \end{align*}
 
             It is straightforward to check by induction that
             \begin{align*}
-                \supp f_{\alpha_1, \tau, \epsilon, j} \subset \{ c 2^{-j} \epsilon^{-1} \leq \JapaneseBracket \CompactGroup \tau \norm \lambda \leq C 2^{-j} \epsilon^{-1} \},
+                \supp f_{\alpha_1, \tau, \epsilon, j} \subset \{c \leq 2^{-j} \epsilon \JapaneseBracket \CompactGroup \tau \norm \lambda \leq C\},
             \end{align*}
         \item [Step 3] Assume that $m - \rho \abs \alpha \leq 0$ and define the operator
             \begin{align*}
@@ -1320,6 +1320,36 @@ Using \cite[Lemma 4.4]{RuzhanskyTurunenWirth10}, we can show
                     \Rep \lambda \BesselPotential {-\gamma}
                 }\\
                 &\quad \leq C_\alpha \epsilon^{m - \rho \abs \alpha}.
+            \end{align*}
+
+        \item [Step 4] Assume now that $m - \rho \abs \alpha \geq 0$.
+
+            Define the operator
+            \begin{align*}
+                L_j(\lambda) \defeq \bigoplus_{\JapaneseBracket \CompactGroup \tau \leq C_\alpha \epsilon^{-1}} 1_{\{c \leq 2^{-j} \epsilon \JapaneseBracket \CompactGroup \tau \norm \lambda \leq C\}} \Rep \lambda \BesselPotential 1
+            \end{align*}
+
+            Since the Cauchy Schwartz inequality implies
+            \begin{align*}
+                c 2^{j} \epsilon^{-1}
+                & \leq 1_{\{c \leq 2^{-j} \epsilon \JapaneseBracket \CompactGroup \tau \norm \lambda \leq C\}} \JapaneseBracket \CompactGroup \tau \norm \lambda\\
+                & \leq 1_{\{c \leq 2^{-j} \epsilon \JapaneseBracket \CompactGroup \tau \norm \lambda \leq C\}} (1 + (\turn \norm \lambda)^2 + \lambda_\tau^2),
+            \end{align*}
+            it follows that $\norm [\Lin {\Lebesgue 2 \CompactGroup}] {L_j} \geq c 2^{j} \epsilon^{-1}$.
+            \begin{align*}
+                &\norm [\Lin {\Lebesgue 2 \CompactGroup}] {%
+                    \Rep \lambda \BesselPotential {-m + \rho \abs\alpha + \gamma}
+                    \DifferenceOperatorOrder \alpha \eta_\epsilon(\lambda)
+                    \Rep \lambda \BesselPotential {-\gamma}
+                }\\
+                &\leq \sum_{j = 0}^{+\infty} \norm [\Lin {\Lebesgue 2 \CompactGroup}] {%
+                    L_j(\lambda)^{-m + \rho \abs \alpha}
+                    \Rep \lambda \BesselPotential \gamma
+                    \DifferenceOperatorOrder \alpha \eta_{\epsilon, j}(\lambda)
+                    \Rep \lambda \BesselPotential {-\gamma}
+                }\\
+                &\leq C_\alpha \epsilon^{m - \rho \abs \alpha} \sum_{j = 0}^{+\infty} 2^{-j(m - \rho \abs \alpha)}
+                = C_\alpha \epsilon^{m - \rho \abs \alpha}.
             \end{align*}
     \end{description}
 \end{proof}
