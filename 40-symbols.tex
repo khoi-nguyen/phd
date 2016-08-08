@@ -1301,7 +1301,26 @@ Using \cite[Lemma 4.4]{RuzhanskyTurunenWirth10}, we can show
             \begin{align*}
                 \supp f_{\alpha_1, \tau, \epsilon, j} \subset \{ c 2^{-j} \epsilon^{-1} \leq \JapaneseBracket \CompactGroup \tau \norm \lambda \leq C 2^{-j} \epsilon^{-1} \},
             \end{align*}
-        \item [Step 3] Conclude.
+        \item [Step 3] Assume that $m - \rho \abs \alpha \leq 0$ and define the operator
+            \begin{align*}
+                L(\lambda) \defeq 1_{\{\norm \lambda \leq C \epsilon^{-1}\}} \bigoplus_{\JapaneseBracket \CompactGroup \tau \leq C \epsilon^{-1}} \Rep \lambda \BesselPotential 1.
+            \end{align*}
+
+            Is is clear that $\norm [\Lin {\Lebesgue 2 \CompactGroup}] {L(\lambda)} \leq C \epsilon^{-1}$ so that
+            \begin{align*}
+                &\norm [\Lin {\Lebesgue 2 \CompactGroup}] {%
+                    \Rep \lambda \BesselPotential {-m + \rho \abs\alpha + \gamma}
+                    \DifferenceOperatorOrder \alpha \eta_\epsilon(\lambda)
+                    \Rep \lambda \BesselPotential {-\gamma}
+                }\\
+                &\quad \leq \norm [\Lin {\Lebesgue 2 \CompactGroup}] {%
+                    L(\lambda)^{-m + \rho \abs \alpha}
+                    \Rep \lambda \BesselPotential \gamma
+                    \DifferenceOperatorOrder \alpha \eta_\epsilon(\lambda)
+                    \Rep \lambda \BesselPotential {-\gamma}
+                }\\
+                &\quad \leq C_\alpha \epsilon^{m - \rho \abs \alpha}.
+            \end{align*}
     \end{description}
 \end{proof}
 
