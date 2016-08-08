@@ -776,7 +776,7 @@ Using \cite[Lemma 4.4]{RuzhanskyTurunenWirth10}, we can show
             \begin{align*}
                 \SymbolSemiNorm m {\rho, \delta} N {\eta_\epsilon} \leq C_{m, N} \epsilon^m.
             \end{align*}
-        \item For each $m \in \R$ and each $N \in \N$,
+        \item For each $m \geq 0$ and each $N \in \N$,
             there exists $C_{m, N} \geq 0$ such that for every $\epsilon \in (0, 1]$,
             we have
             \begin{align*}
@@ -873,8 +873,26 @@ Using \cite[Lemma 4.4]{RuzhanskyTurunenWirth10}, we can show
                 & \qquad \qquad \int_\CompactGroup (q^{\alpha_2} \chi_\tau)(k^{-1}) F(u k) \dd k\\
                 &= \sum_{\JapaneseBracket \CompactGroup \tau \leq \epsilon^{-1}}
                 \iD {x^{\alpha_1} } \chi_{\epsilon \JapaneseBracket \CompactGroup \tau}(u^{-1} \lambda)
-                \DifferenceOperatorOrder [\CompactGroup] {\alpha_2} \Fourier [\CompactGroup] \chi_\tau F(u).
+                \DifferenceOperatorOrder [\CompactGroup] {\alpha_2} \Fourier [\CompactGroup] \chi_\tau F(u),
             \end{align*}
+            which can be rewritten
+            \begin{align*}
+                &\DifferenceOperatorOrder \alpha \eta_\epsilon(\lambda) F(u)\\
+                & \qquad = \bigoplus_{\JapaneseBracket \CompactGroup \tau \leq \epsilon^{-1}}
+                \iD {x^{\alpha_1} } \chi_{\epsilon \JapaneseBracket \CompactGroup \tau}(u^{-1} \lambda)
+                \eval {\DifferenceOperatorOrder [\CompactGroup] {\alpha_2} \Id {\Lebesgue 2 \CompactGroup}} {V_\tau} F(u).
+            \end{align*}
+
+            From that last expression,
+            we can deduce that in fact
+            \begin{align*}
+                \norm [\Lin {\Lebesgue 2 \CompactGroup}] {%
+                    \Rep \lambda \BesselPotential {\rho \abs \alpha + \gamma}
+                    \DifferenceOperatorOrder \alpha \eta_\epsilon(\lambda)
+                    \Rep \lambda \BesselPotential {-\gamma}
+                } \leq C_{\alpha, \gamma},
+            \end{align*}
+            where $C_{\alpha, \gamma}$ does \emph{not} depend on $\epsilon$ or $\lambda$.
 
             Therefore, it follows that
             \begin{align}
@@ -884,16 +902,6 @@ Using \cite[Lemma 4.4]{RuzhanskyTurunenWirth10}, we can show
                 \DifferenceOperatorOrder [\CompactGroup] {\alpha_2} \Fourier [\CompactGroup] \chi_\tau F(u).
                 \label{eq:Littlewood-Paley:difference_operators}
             \end{align}
-
-            This implies in turn that
-            % TODO: detail
-            \begin{align*}
-                \norm [\Lin {\Lebesgue 2 \CompactGroup}] {%
-                    \Rep \lambda \BesselPotential {\rho \abs \alpha + \gamma}
-                    \DifferenceOperatorOrder \alpha \eta_\epsilon(\lambda)
-                    \Rep \lambda \BesselPotential {-\gamma}
-                } \leq C_{\alpha, \gamma}
-            \end{align*}
 
             For each $j \in \N$,
             define
@@ -980,6 +988,9 @@ Using \cite[Lemma 4.4]{RuzhanskyTurunenWirth10}, we can show
                 = C_{\alpha, \gamma, m} \epsilon^m.
             \end{align*}
     \end{description}
+
+    Now, let us turn our attention to the second claim,
+    and fix $m > 0$.
 \end{proof}
 
 \begin{corollary}[Littlewood-Paley decomposition]
