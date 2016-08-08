@@ -863,42 +863,80 @@ Using \cite[Lemma 4.4]{RuzhanskyTurunenWirth10}, we can show
 
             Fix $\alpha = \alpha_1 + \alpha_2 \in \N^{\dimDifferenceOperators}$ with $\alpha_1 \in \N^{\dim \VectorSpace}$.
             Using~\eqref{eq:Littlewood-Paley:kernel},
+            we can multiply by $q^\alpha$ and take the Fourier Transform to obtain
             \begin{align*}
                 &\DifferenceOperatorOrder \alpha \eta_\epsilon(\lambda) F(u)\\
                 &= \sum_{\JapaneseBracket \CompactGroup \tau \leq \epsilon^{-1}} \int_\Group
                 q^{\alpha_1}((x, k)^{-1}) \InverseFourier [\R^n] \chi_{\epsilon \JapaneseBracket \CompactGroup \tau}(x) \e^{\i \turn \ip \lambda {u x}}\\
-                & \qquad \qquad (q^{\alpha_2} \chi_\tau)(k^{-1}) F(u k) \dd (x, k)\\
+                & \qquad \qquad \qquad (q^{\alpha_2} \chi_\tau)(k^{-1}) F(u k) \dd (x, k)
+            \end{align*}
+            Note that to obtain the above,
+            we used the fact that $\InverseFourier [\R^n] \chi_{\epsilon \JapaneseBracket \CompactGroup \tau}$ is invariant under rotations.
+
+            Using our choice of difference operators and grouping the terms depending on
+            wether they depend on $x$ or on $k$,
+            we obtain
+            \begin{align*}
+                \DifferenceOperatorOrder \alpha \eta_\epsilon(\lambda) F(u)
                 &= \sum_{\JapaneseBracket \CompactGroup \tau \leq \epsilon^{-1}}
                 \int_\VectorSpace x^{\alpha_1} \InverseFourier [\R^n] \chi_{\epsilon \JapaneseBracket \CompactGroup \tau}(x) \e^{\i \turn \ip \lambda {u x}} \dd x\\
-                & \qquad \qquad \int_\CompactGroup (q^{\alpha_2} \chi_\tau)(k^{-1}) F(u k) \dd k\\
+                & \qquad \qquad \times \int_\CompactGroup (q^{\alpha_2} \chi_\tau)(k^{-1}) F(u k) \dd k.
+            \end{align*}
+
+            Recognising that the integral on $\CompactGroup$ can be seen as a Fourier Transform on $\CompactGroup$,
+            we get the formula
+            \begin{align*}
+                \DifferenceOperatorOrder \alpha \eta_\epsilon(\lambda) F(u)
                 &= \sum_{\JapaneseBracket \CompactGroup \tau \leq \epsilon^{-1}}
                 \iD {x^{\alpha_1} } \chi_{\epsilon \JapaneseBracket \CompactGroup \tau}(u^{-1} \lambda)
                 \DifferenceOperatorOrder [\CompactGroup] {\alpha_2} \Fourier [\CompactGroup] \chi_\tau F(u),
             \end{align*}
-            which can be rewritten
-            \begin{align*}
-                &\DifferenceOperatorOrder \alpha \eta_\epsilon(\lambda) F(u)\\
-                & \qquad = \bigoplus_{\JapaneseBracket \CompactGroup \tau \leq \epsilon^{-1}}
+            which can be rewritten more elegantly as follows
+            \begin{align}
+                \DifferenceOperatorOrder \alpha \eta_\epsilon(\lambda) F(u)
+                = \bigoplus_{\JapaneseBracket \CompactGroup \tau \leq \epsilon^{-1}}
                 \iD {x^{\alpha_1} } \chi_{\epsilon \JapaneseBracket \CompactGroup \tau}(u^{-1} \lambda)
                 \eval {\DifferenceOperatorOrder [\CompactGroup] {\alpha_2} \Id {\Lebesgue 2 \CompactGroup}} {V_\tau} F(u).
-            \end{align*}
+                \label{eq:Littlewood-Paley:difference_operators}
+            \end{align}
 
-            From that last expression,
-            we can deduce that in fact
+        \item [Step 3] We show that there exists $C = C_{\alpha, \gamma} \geq 0$ which does \emph{not} depend on $\epsilon$ or $\lambda$ such that
             \begin{align*}
                 \norm [\Lin {\Lebesgue 2 \CompactGroup}] {%
                     \Rep \lambda \BesselPotential {\rho \abs \alpha + \gamma}
                     \DifferenceOperatorOrder \alpha \eta_\epsilon(\lambda)
                     \Rep \lambda \BesselPotential {-\gamma}
-                } \leq C_{\alpha, \gamma},
-            \end{align*}
-            where $C_{\alpha, \gamma}$ does \emph{not} depend on $\epsilon$ or $\lambda$.
-        \item [Step 3] Assume that $m \leq 0$ and define the operator
-            \begin{align*}
-                L(\lambda) \defeq 1_{\{\norm \lambda \leq C \epsilon^{-1}\}} \bigoplus_{\JapaneseBracket \CompactGroup \tau \leq C \epsilon^{-1}} \Rep \lambda \BesselPotential 1.
+                } \leq C_{\alpha, \gamma}.
             \end{align*}
 
-            Is is clear that $\norm [\Lin {\Lebesgue 2 \CompactGroup}] {L(\lambda)} \leq C \epsilon^{-1}$ so that
+        \item [Step 4a] Conclude when $m \leq 0$.
+
+            From~\eqref{eq:Littlewood-Paley:difference_operators} and Lemma~\ref{lemma:left_regular_representation_of_polynomials},
+            % TODO: Make lemmas more relevant
+            we know that the range of the operator
+            \begin{align}
+                \Rep \lambda \BesselPotential {\rho \abs \alpha + \gamma}
+                \DifferenceOperatorOrder \alpha \eta_\epsilon(\lambda)
+                \Rep \lambda \BesselPotential {-\gamma}
+                \label{eq:Littlewood-Paley:central_operator}
+            \end{align}
+            is finite-dimensional,
+            and is actually contained in
+            \begin{align*}
+                \bigoplus_{\JapaneseBracket \CompactGroup \tau \leq C_\alpha \epsilon^{-1}} V_\tau
+            \end{align*}
+            for some $C_\alpha$ depending only on $\alpha$.
+            As a result,
+            we can define the operator
+            \begin{align*}
+                L(\lambda) \defeq 1_{\{\norm \lambda \leq C \epsilon^{-1}\}} \bigoplus_{\JapaneseBracket \CompactGroup \tau \leq C_\alpha \epsilon^{-1}} \Rep \lambda \BesselPotential 1
+            \end{align*}
+            and be certain that $L(\lambda)$ and $\Rep \lambda \BesselPotential 1$ coincide on the range of~\eqref{eq:Littlewood-Paley:central_operator}
+            for every $\lambda \in \VectorSpace$.
+
+            Moreover,
+            it is clear that from the way we constructed $L(\lambda)$ that $\norm [\Lin {\Lebesgue 2 \CompactGroup}] {L(\lambda)} \leq C \epsilon^{-1}$.
+            Therefore,
             \begin{align*}
                 &\norm [\Lin {\Lebesgue 2 \CompactGroup}] {%
                     \Rep \lambda \BesselPotential {-m + \rho \abs\alpha + \gamma}
@@ -911,10 +949,20 @@ Using \cite[Lemma 4.4]{RuzhanskyTurunenWirth10}, we can show
                     \DifferenceOperatorOrder \alpha \eta_\epsilon(\lambda)
                     \Rep \lambda \BesselPotential {-\gamma}
                 }\\
-                &\quad \leq C_{\alpha, \gamma, m} \epsilon^{m}.
+                &\quad \leq C_{\alpha, \gamma, m} \epsilon^{m},
             \end{align*}
+            which concludes the proof when $m \leq 0$.
 
-        \item [Step 4] Assume now that $m \geq 0$.
+        \item [Step 4b] Assume now that $m \geq 0$.
+
+            We would like to proceed like in Step 4a,
+            where we construct an operator $L(\lambda)$ which is equal to $\Rep \lambda \BesselPotential 1$ on the range of~\eqref{eq:Littlewood-Paley:central_operator},
+            but as $m \geq 0$,
+            $L(\lambda)^{-m}$ is bounded provided that we can bound $\norm [\Lin {\Lebesgue 2 \CompactGroup}] {L(\lambda)}$ from \emph{below}.
+
+            This is a bit tricky since as $\eval{\eta_\epsilon(\lambda)} {V_\tau}$ is non-zero when $\epsilon$ is sufficiently small,
+            even for small $\norm \lambda$ and small $\JapaneseBracket \CompactGroup \tau$.
+            We shall therefore decompose $\eta_\epsilon$ into a countable sum of similar symbols.
 
             For each $j \in \N$,
             define
@@ -924,10 +972,7 @@ Using \cite[Lemma 4.4]{RuzhanskyTurunenWirth10}, we can show
                     \eta_{\epsilon, j}(\lambda) = \eta_{\epsilon, j - 1}(\frac \lambda 2) & j > 1
                 \end{cases}
             \end{align*}
-            so that
-            \begin{align*}
-                \eta_\epsilon = \sum_{j = 0}^{+\infty} \eta_{\epsilon, j}.
-            \end{align*}
+            so that $\eta_\epsilon = \sum_{j = 0}^{+\infty} \eta_{\epsilon, j}$.
 
             It is clear that by linearity
             \begin{align*}
