@@ -1470,7 +1470,30 @@ which will lead to the proof of parts \ref{item:kernel_estimates:at_origin:posit
             \end{align*}
             concluding the case when $m > -\dim \Group$.
         \item[Case 2: $m = -\dim \Group$.]
-            % TODO: Ask Veronique
+            Set $\epsilon \defeq \norm [\Group] h$.
+
+            We observe that
+            \begin{align*}
+                \sigma_\epsilon(g, \lambda) &= \sigma(g, \lambda) \eta_\epsilon(\lambda)\\
+                &= \sigma(g, \lambda) \Rep \lambda \BesselPotential {\dim \Group} \eta_\epsilon(\lambda) \Rep \lambda \BesselPotential {-\dim \Group}.
+            \end{align*}
+
+            It follows then that
+            \begin{align*}
+                \norm [\SchattenClasses 1 {\Lebesgue 2 \CompactGroup}] {\sigma_\epsilon(g, \lambda)}
+                &\leq C \norm [\SchattenClasses 1 {\Lebesgue 2 \CompactGroup}] {\eta_\epsilon(\lambda) \Rep \lambda \BesselPotential {-\dim \Group}}\\
+                &= C \norm [\SchattenClasses 2 {\Lebesgue 2 \CompactGroup}] {\sqrt{\eta_\epsilon}(\lambda) \Rep \lambda \BesselPotential {-\dim \Group / 2}}\\
+            \end{align*}
+
+            Integrating the above with respect to $\lambda$
+            and using the inverse Formula yields
+            \begin{align*}
+                \abs{\kappa_{\epsilon, g}(h)}
+                &\leq \int_\VectorSpace \norm [\SchattenClasses 1 {\Lebesgue 2 \CompactGroup}] {\sigma_\epsilon(g, \lambda)} \dd \lambda\\
+                &\leq C \norm [\LebesgueDual 2 \Group] {\sqrt{\eta_\epsilon} \Rep \lambda \BesselPotential {\dim \Group / 2}}\\
+                &\leq C \log \epsilon = C \log \norm [\Group] h,
+            \end{align*}
+            where the last line was obtained by the Sobolev inequality.
     \end{description}
 \end{proof}
 
