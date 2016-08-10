@@ -1349,35 +1349,34 @@ which will lead to the proof of parts \ref{item:kernel_estimates:at_origin:posit
 \label{lemma:prepare_kernel_estimates_at_the_origin}
     Let $\sigma \in \SymbolClass m {\rho, \delta}$ be a symbol
     with kernel $\kappa \in \SmoothFunctions {\Group, \TemperedDistributions \Group}$,
-    where $1 \geq \rho \geq \delta \geq 0$.
-    For each $g \in \Group$ and each $l \in \N$,
+    where $1 \geq \rho > \delta \geq 0$.
+    For each $g \in \Group$ and each $\epsilon \in (0, 1]$,
     we let
     \begin{align*}
-        \kappa_{l, g} \defeq \InverseFourier \{ \sigma(g, \dummy) \eta_l \},
+        \kappa_{\epsilon, g} \defeq \InverseFourier \{ \sigma(g, \dummy) \eta_\epsilon \},
     \end{align*}
-    where $\eta_l$ is the symbol defined in Theorem~\ref{theorem:Littlewood-Paley_decomposition}.
+    where $\eta_l$ is the symbol defined in Theorem~\ref{theorem:generalised_Littlewood-Paley_decomposition}.
 
-    The following properties hold.
+    Fix $h \in \Group$ such that $0 < \norm [\Group] h \leq 1$ and
+    suppose that $m_1 < \dim \Group$ and $r \in \N$.
+
+    The following estimates hold.
     \begin{enumerate}
-        \item For every $m_1 < -\dim \Group$,
-            we can find $C_{m_1} \geq 0$ such that
+        \item \label{item:prepare_kernel_estimates_at_the_origin:k_epsilon}
+            If $m_1 - m + \rho r \leq 0$,
+            then
             \begin{align*}
-                \sup_{h \in \Group} \abs {\kappa_{l, g}(h)} \leq C_{m_1} 2^{l(m - m_1)}
+                \abs{\kappa_{\norm [\Group] h, g}(h)} \leq C \norm [\Group] h^{m_1 - m + (\rho - 1) r}.
             \end{align*}
-            holds for every $l \in \N$.
-        \item For any compact subset of $S \subset \Group \setminus \{e\}$ and any $g \in \Group$,
-            the series
+        \item \label{item:prepare_kernel_estimates_at_the_origin:remainder}
+            If $m_1 - m + \rho r \geq 0$,
+            then
             \begin{align*}
-                \sum_{l = 0}^\infty \sup_{h \in S} \abs {\kappa_{l, g}(h)} < \infty
+                \abs{\kappa_g(h) - \kappa_{\norm [\Group] h, g}(h)} \leq C \norm [\Group] h^{m_1 - m + (\rho - 1) r}.
             \end{align*}
-            converges.
     \end{enumerate}
 \end{lemma}
 \begin{proof}
-    \begin{enumerate}
-        \item
-        \item
-    \end{enumerate}
 \end{proof}
 
 \begin{proof}
