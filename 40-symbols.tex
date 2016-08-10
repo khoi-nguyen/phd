@@ -770,13 +770,15 @@ Using \cite[Lemma 4.4]{RuzhanskyTurunenWirth10}, we can show
     There exists a family $(\eta_\epsilon)_{0 < \epsilon \leq 1} \subset \SmoothingSymbols$ of smoothing symbols
     such that the following properties hold.
     \begin{enumerate}
-        \item For each $m \leq 0$ and each $N \in \N$,
+        \item \label{item:generalised_Littlewood-Paley_decomposition:negative_m}
+            For each $m \leq 0$ and each $N \in \N$,
             there exists $C_{m, N} \geq 0$ such that for every $\epsilon \in (0, 1]$,
             we have
             \begin{align*}
                 \SymbolSemiNorm m {\rho, \delta} N {\eta_\epsilon} \leq C_{m, N} \epsilon^m.
             \end{align*}
-        \item For each $m \geq 0$ and each $N \in \N$,
+        \item \label{item:generalised_Littlewood-Paley_decomposition:positive_m}
+            For each $m \geq 0$ and each $N \in \N$,
             there exists $C_{m, N} \geq 0$ such that for every $\epsilon \in (0, 1]$,
             we have
             \begin{align*}
@@ -909,7 +911,9 @@ Using \cite[Lemma 4.4]{RuzhanskyTurunenWirth10}, we can show
                 } \leq C_{\alpha, \gamma}.
             \end{align*}
 
-        \item [Step 4a] Conclude when $\alpha_1 \neq 0$.
+        \item [Step 4a] Prove~\ref{item:generalised_Littlewood-Paley_decomposition:negative_m}.
+
+            Let $m \leq 0$.
 
             From~\eqref{eq:Littlewood-Paley:difference_operators} and Lemma~\ref{lemma:left_regular_representation_of_polynomials},
             % TODO: Make lemmas more relevant
@@ -923,16 +927,15 @@ Using \cite[Lemma 4.4]{RuzhanskyTurunenWirth10}, we can show
             is finite-dimensional,
             and is actually contained in
             \begin{align*}
-                R_\lambda =
-                \bigoplus \{V_\tau : c_\alpha \epsilon^{-2} \leq \JapaneseBracket \CompactGroup \tau \norm \lambda \leq C_\alpha \epsilon^{-2} \text{ and } \JapaneseBracket \CompactGroup \tau \leq C_\alpha \epsilon^{-1} \}
+                R_\epsilon(\lambda) =
+                \bigoplus \{V_\tau : \norm \lambda \leq C_\alpha \epsilon^{-1} \text{ and } \JapaneseBracket \CompactGroup \tau \leq C_\alpha \epsilon^{-1} \}
             \end{align*}
             for some $c_\alpha, C_\alpha \geq 0$ depending only on $\alpha$.
             As a result,
             we can define the operator
             \begin{align*}
                 L_\epsilon(\lambda) \defeq
-                \eval {\Rep \lambda \BesselPotential 1} {R_\lambda}
-                \oplus c_\alpha \epsilon^{-2} \Id {R_\lambda^\perp}
+                \eval {\Rep \lambda \BesselPotential 1} {R_\epsilon(\lambda)}
             \end{align*}
             and be certain that $L_\epsilon(\lambda)$ and $\Rep \lambda \BesselPotential 1$ coincide on the range of~\eqref{eq:Littlewood-Paley:central_operator}
             for every $\lambda \in \VectorSpace$.
@@ -940,7 +943,7 @@ Using \cite[Lemma 4.4]{RuzhanskyTurunenWirth10}, we can show
             Moreover,
             it is clear that from the way we constructed $L_\epsilon(\lambda)$ that
             \begin{align*}
-                c_\alpha \epsilon^{-1} \leq \norm [\Lin {\Lebesgue 2 \CompactGroup}] {L_\epsilon(\lambda)} \leq C_\alpha \epsilon^{-1}.
+                \norm [\Lin {\Lebesgue 2 \CompactGroup}] {L_\epsilon(\lambda)} \leq C_\alpha \epsilon^{-1}.
             \end{align*}
             Therefore,
             \begin{align*}
@@ -957,42 +960,51 @@ Using \cite[Lemma 4.4]{RuzhanskyTurunenWirth10}, we can show
                 }\\
                 &\quad \leq C_{\alpha, \gamma, m} \epsilon^{m},
             \end{align*}
-            which concludes the proof when $\alpha_1 \neq 0$.
+            which concludes the proof of~\ref{item:generalised_Littlewood-Paley_decomposition:negative_m}
 
-        \item [Step 4b] Assume that $\alpha_1 = 0$.
+        \item [Step 4b] Prove~\ref{item:generalised_Littlewood-Paley_decomposition:positive_m}
 
-            Using the invariance of $\chi$ under rotations,
-            we get that
+            Let $m \geq 0$.
+            Clearly,
             \begin{align*}
                 \DifferenceOperatorOrder \alpha \eta_\epsilon(\lambda) F(u)
-                = \bigoplus_{\JapaneseBracket \CompactGroup \tau \leq \epsilon^{-1}}
-                \chi_{\epsilon^2 \JapaneseBracket \CompactGroup \tau}(\lambda)
-                \eval {\DifferenceOperatorOrder [\CompactGroup] {\alpha_2} \Id {\Lebesgue 2 \CompactGroup}} {V_\tau} F(u).
-            \end{align*}
-            Therefore, as the above operator is block diagonal in the Peter-Weyl basis,
-            \begin{align*}
-                &\Rep \lambda \BesselPotential {-m + \rho \abs \alpha_2 + \gamma}
-                \DifferenceOperatorOrder \alpha \eta_\epsilon(\lambda)
-                \Rep \lambda \BesselPotential {-\gamma}\\
-                &= \bigoplus_{\JapaneseBracket \CompactGroup \tau \leq \epsilon^{-1}}
-                \chi_{\epsilon^2 \JapaneseBracket \CompactGroup \tau}(\lambda)
-                (1 + \norm {\turn \lambda}^2 + \lambda_\tau^2)^{\frac {-m + \rho \abs {\alpha_2}} 2} \eval {\DifferenceOperatorOrder [\CompactGroup] {\alpha_2} \Id {\Lebesgue 2 \CompactGroup}} {V_\tau}.
+                &= \sum_{\JapaneseBracket \CompactGroup \tau \leq \epsilon^{-1}}
+                \iD {x^{\alpha_1} } (1 - \chi_{\epsilon^2 \JapaneseBracket \CompactGroup \tau})(u^{-1} \lambda)
+                \DifferenceOperatorOrder [\CompactGroup] {\alpha_2} \Fourier [\CompactGroup] \chi_\tau F(u),
             \end{align*}
 
-            Clearly, the above operator vanishes for $\norm \lambda$, $\JapaneseBracket \CompactGroup \tau \leq \epsilon^{-1}$,
-            so that
+            Since $1 - \chi_{\epsilon^2 \JapaneseBracket \CompactGroup \tau}$ vanishes only when $\JapaneseBracket \CompactGroup \tau \norm \lambda \geq c \epsilon^{-2}$,
+            we can deduce that the range of~\eqref{eq:Littlewood-Paley:central_operator} is contained in
+            \begin{align*}
+                R_\epsilon(\lambda) \defeq \bigoplus \{V_\tau : \JapaneseBracket \CompactGroup \tau \norm \lambda \geq c_\alpha \epsilon^{-2} \}.
+            \end{align*}
+
+            Now, if we define the operator
+            \begin{align*}
+                L_\epsilon(\lambda) \defeq \eval {\Rep \lambda \BesselPotential 1} {R_\epsilon(\lambda)} \bigoplus c_\alpha \epsilon^{-1} \Id {\R_\epsilon(\lambda)^\perp},
+            \end{align*}
+            then by construction our operator satisfies
+            \begin{align*}
+                \norm [\Lin {\Lebesgue 2 \CompactGroup}] {L_\epsilon(\lambda)} \geq \epsilon^{-1}.
+            \end{align*}
+
+            Therefore,
             \begin{align*}
                 &\norm [\Lin {\Lebesgue 2 \CompactGroup}] {%
                     \Rep \lambda \BesselPotential {-m + \rho \abs\alpha + \gamma}
                     \DifferenceOperatorOrder \alpha \eta_\epsilon(\lambda)
                     \Rep \lambda \BesselPotential {-\gamma}
                 }\\
-                &\quad \leq C_{\alpha, \gamma, m} \epsilon^{m}.
+                &\quad \leq \norm [\Lin {\Lebesgue 2 \CompactGroup}] {%
+                    L_\epsilon(\lambda)^{-m}
+                    \Rep \lambda \BesselPotential {\rho \abs \alpha + \gamma}
+                    \DifferenceOperatorOrder \alpha \eta_\epsilon(\lambda)
+                    \Rep \lambda \BesselPotential {-\gamma}
+                }\\
+                &\quad \leq C_{\alpha, \gamma, m} \epsilon^{m},
             \end{align*}
+            which concludes the proof of~\ref{item:generalised_Littlewood-Paley_decomposition:positive_m}
     \end{description}
-
-    Now, let us turn our attention to the second claim,
-    and fix $m > 0$.
 \end{proof}
 
 \begin{corollary}[Littlewood-Paley decomposition]
