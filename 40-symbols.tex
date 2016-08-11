@@ -1481,6 +1481,13 @@ which will lead to the proof of parts \ref{item:kernel_estimates:at_origin:posit
 \end{theorem}
 \begin{proof}
     Fix $h \in \Group \setminus \{(0, \Id \VectorSpace)\}$ such that $\epsilon \defeq \norm [\Group] h \leq 1$.
+    Define the symbol
+    \begin{align*}
+        \sigma_\epsilon(g, \lambda) \defeq \sigma(g, \lambda),
+        \quad g \in \Group, \lambda \in \VectorSpace,
+    \end{align*}
+    and denote by $\kappa_\epsilon \defeq \InverseFourier \{\sigma(g, \dummy)\}$
+    its associated kernel.
 
     Using
     \begin{align*}
