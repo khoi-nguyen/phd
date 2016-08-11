@@ -1461,30 +1461,32 @@ which will lead to the proof of parts \ref{item:kernel_estimates:at_origin:posit
 
     \begin{description}
         \item[Case $m > -\dim \Group$].
-            Assume that $m > -\dim \Group$.
             Letting
             \begin{align*}
-                m_1 = m\left(1 - \frac 1 \rho\right) - \frac {\dim \Group} \rho
+                m_1 = m \left(1 - \frac 1 \rho\right) - \frac {\dim \Group} \rho > - \dim \Group
             \end{align*}
-            so that $m - m_1 = (\dim \Group + m)/\rho > 0$,
-            we obtain
-            \begin{align*}
-                \abs{\kappa_\epsilon(h)} \leq C \epsilon^{m_1 - m} = C \norm [\Group] h^{- \frac {\dim \Group + m} \rho}.
-            \end{align*}
+            so that $m_1 - m = -(\dim \Group + m)/\rho < 0$.
+            Applying Part~\ref{item:prepare_kernel_estimates_at_the_origin:k_epsilon} of
+            Lemma~\ref{lemma:prepare_kernel_estimates_at_the_origin},
+            we get
+            \begin{align}
+                \abs{\kappa_\epsilon(h)} \leq C \norm [\Group] h^{- \frac {\dim \Group + m} \rho}.
+                \label{eq:kernel_estimate_for_large_m:k_epsilon}
+            \end{align}
 
             For the second term,
             let
             \begin{align*}
-                r &\defeq \min_{\N} \{n \in 2 \N : n > {\frac {m + \dim \Group} \rho}\}\\
-                m_1 &\defeq r(1 - \rho) + m - \frac{\dim \Group + m} \rho.
+                r &\defeq \min_{\N} \{n \in 2 \N : n > {\frac {m + \dim \Group} {\rho}}\}\\
+                m_1 &\defeq m + r(1 - 2 \rho) - \frac{\dim \Group + m} \rho.
             \end{align*}
 
             Let us prove that they satisfy the following properties:
             \begin{align}
                 \begin{cases}
                     m_1 < -\dim \Group,\\
-                    m - m_1 - \rho r < 0,\\
-                    r(1 - \rho) + m - m_1 = \frac{\dim \Group + m} \rho.
+                    m_1 - m + \rho r \geq 0,\\
+                    m_1 - m + (\rho - 1)r = -\frac{\dim \Group + m} \rho.
                 \end{cases}
                 \label{eq:conditions_to_apply_dyadic_sum_for_large_terms}
             \end{align}
@@ -1492,27 +1494,35 @@ which will lead to the proof of parts \ref{item:kernel_estimates:at_origin:posit
             The third identify in~\eqref{eq:conditions_to_apply_dyadic_sum_for_large_terms} holds by definition of $m_1$.
             For the second, we observe that
             \begin{align*}
-                m - m_1 - \rho r
-                &= - r + \frac{\dim \Group + m} \rho < 0
+                m_1 - m + \rho r
+                &= r - \frac{\dim \Group + m} \rho \geq 0\\
             \end{align*}
             by definition of $r$.
             Similarly,
             \begin{align*}
-                m - m_1
-                &= r(\rho - 1) + \frac{\dim \Group + m} \rho\\
-                &> (\dim \Group + m) (1 - \frac 1 \rho + \frac 1 \rho)\\
-                &> \dim \Group + m,
+                m_1 - m
+                &= -r \rho(1 - \frac 1 \rho) - \frac{\dim \Group + m} \rho\\
+                &< - (\dim \Group + m) (1 - \frac 1 \rho + \frac 1 \rho)\\
+                &= -\dim \Group - m,
             \end{align*}
             which is equivalent to $m_1 < - \dim \Group$.
             We have thus shown that~\eqref{eq:conditions_to_apply_dyadic_sum_for_large_terms} holds.
 
-            %TODO: ref,
             Therefore,
-            \begin{align*}
-                \norm [\Group] h^r \abs{(\kappa_g - \kappa_{\epsilon, g})(h)}
-                \leq C \epsilon^{m_1 - m + \rho r}
-            \end{align*}
+            applying Lemma~\ref{lemma:prepare_kernel_estimates_at_the_origin} yields
+            \begin{align}
+                \abs{(\kappa_g - \kappa_{\epsilon, g})(h)}
+                \leq C \norm [\Group] h^{-\frac{\dim \Group + m} \rho},
+                \label{eq:kernel_estimate_for_large_m:remainder}.
+            \end{align}
 
+            Combining~\eqref{eq:kernel_estimate_for_large_m:k_epsilon}
+            and~\eqref{eq:kernel_estimate_for_large_m:remainder},
+            we obtain
+            \begin{align*}
+                \abs {\kappa_g(h)} \leq C \norm [\Group] h^{-\frac {\dim \Group + m} \rho},
+            \end{align*}
+            concluding the case $m > -\dim \Group$.
         \item[Case 2: $m = -\dim \Group$.]
             Set $\epsilon \defeq \norm [\Group] h$.
 
