@@ -1007,53 +1007,53 @@ Using \cite[Lemma 4.4]{RuzhanskyTurunenWirth10}, we can show
     \end{description}
 \end{proof}
 
-\begin{corollary}[Littlewood-Paley decomposition]
-    There exists a sequence $\eta_l \in \SmoothingSymbols$, $l \in \N$ of smoothing symbols satisfying the following properties
-    \begin{enumerate}
-        \item the semi-norms decay in the following way
-            \begin{align}
-                \SymbolSemiNorm{m}{\rho, \delta} N {\eta_l} \leq C 2^{-lm}
-            \end{align}
-        \item the associated kernels $\kappa_l$ satisfy
-            \begin{align*}
-                \sum_{l = 0}^\infty \kappa_l = \DiracDelta{e_\Group}
-            \end{align*}
-            in the sense of distributions.
-    \end{enumerate}
-\end{corollary}
-\begin{proof}
-    Let $\eta'_\epsilon$, $\epsilon \in (0, 1]$ be the family given by Theorem~\ref{theorem:generalised_Littlewood-Paley_decomposition}.
-    For each $l \in \N$,
-    we define
-    \begin{align*}
-        \begin{cases}
-            \eta_0 \defeq \eta'_1\\
-            \eta_l \defeq \eta'_{2^{-l}} - \eta'_{2^{-l + 1}}
-        \end{cases}
-    \end{align*}
-    For $l \geq 1$,
-    we have
-    \begin{align*}
-        &\norm [\Lin {\Lebesgue 2 \Group}] {%
-        \Rep \lambda \BesselPotential {-m + \rho \abs \alpha + \gamma}
-        \DifferenceOperatorOrder \alpha \left( \eta'_{2^{-l}} - \eta'_{2^{-l + 1}} \right)
-        \Rep \lambda \BesselPotential {-\gamma}
-        }\\
-        & \qquad \leq C_{\alpha, \gamma, m} (1 + 2^{-m}) 2^{-l m}\\
-        & \qquad \leq C_{\alpha, \gamma, m} 2^{-l m},
-    \end{align*}
-    while the case $l = 1$ follows directly from Theorem~\ref{theorem:generalised_Littlewood-Paley_decomposition}.
-
-    The second claim follows from the fact that
-    \begin{align*}
-        \sum_{l = 0}^{L} \eta_l
-        &= \eta'_1 + \sum_{l = 1}^{L} \eta_l
-        = \eta'_{2^{-1}} + \sum_{l = 2}^{L} \eta_l\\
-        &= \eta'_{2^{-L + 1}} + \eta_L
-        = \eta'_{2^{-L}}
-    \end{align*}
-    and Theorem~\ref{theorem:generalised_Littlewood-Paley_decomposition}.
-\end{proof}
+%\begin{corollary}[Littlewood-Paley decomposition]
+%    There exists a sequence $\eta_l \in \SmoothingSymbols$, $l \in \N$ of smoothing symbols satisfying the following properties
+%    \begin{enumerate}
+%        \item the semi-norms decay in the following way
+%            \begin{align}
+%                \SymbolSemiNorm{m}{\rho, \delta} N {\eta_l} \leq C 2^{-lm}
+%            \end{align}
+%        \item the associated kernels $\kappa_l$ satisfy
+%            \begin{align*}
+%                \sum_{l = 0}^\infty \kappa_l = \DiracDelta{e_\Group}
+%            \end{align*}
+%            in the sense of distributions.
+%    \end{enumerate}
+%\end{corollary}
+%\begin{proof}
+%    Let $\eta'_\epsilon$, $\epsilon \in (0, 1]$ be the family given by Theorem~\ref{theorem:generalised_Littlewood-Paley_decomposition}.
+%    For each $l \in \N$,
+%    we define
+%    \begin{align*}
+%        \begin{cases}
+%            \eta_0 \defeq \eta'_1\\
+%            \eta_l \defeq \eta'_{2^{-l}} - \eta'_{2^{-l + 1}}
+%        \end{cases}
+%    \end{align*}
+%    For $l \geq 1$,
+%    we have
+%    \begin{align*}
+%        &\norm [\Lin {\Lebesgue 2 \Group}] {%
+%        \Rep \lambda \BesselPotential {-m + \rho \abs \alpha + \gamma}
+%        \DifferenceOperatorOrder \alpha \left( \eta'_{2^{-l}} - \eta'_{2^{-l + 1}} \right)
+%        \Rep \lambda \BesselPotential {-\gamma}
+%        }\\
+%        & \qquad \leq C_{\alpha, \gamma, m} (1 + 2^{-m}) 2^{-l m}\\
+%        & \qquad \leq C_{\alpha, \gamma, m} 2^{-l m},
+%    \end{align*}
+%    while the case $l = 1$ follows directly from Theorem~\ref{theorem:generalised_Littlewood-Paley_decomposition}.
+%
+%    The second claim follows from the fact that
+%    \begin{align*}
+%        \sum_{l = 0}^{L} \eta_l
+%        &= \eta'_1 + \sum_{l = 1}^{L} \eta_l
+%        = \eta'_{2^{-1}} + \sum_{l = 2}^{L} \eta_l\\
+%        &= \eta'_{2^{-L + 1}} + \eta_L
+%        = \eta'_{2^{-L}}
+%    \end{align*}
+%    and Theorem~\ref{theorem:generalised_Littlewood-Paley_decomposition}.
+%\end{proof}
 
 \section{Kernel estimates}
 
