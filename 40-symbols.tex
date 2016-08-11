@@ -1353,9 +1353,9 @@ which will lead to the proof of parts \ref{item:kernel_estimates:at_origin:posit
     For each $g \in \Group$ and each $\epsilon \in (0, 1]$,
     we let
     \begin{align*}
-        \kappa_{\epsilon, g} \defeq \InverseFourier \{ \sigma(g, \dummy) \eta_\epsilon \},
+        \kappa_{\epsilon, g} \defeq \InverseFourier \{ \sigma_\epsilon(g, \dummy) \}, \quad \sigma_\epsilon = \sigma(g, \lambda) \eta_\epsilon(\lambda)
     \end{align*}
-    where $\eta_l$ is the symbol defined in Theorem~\ref{theorem:generalised_Littlewood-Paley_decomposition}.
+    where $\eta_\epsilon$ is the symbol defined in Theorem~\ref{theorem:generalised_Littlewood-Paley_decomposition}.
 
     Fix $h \in \Group$ such that $0 < \norm [\Group] h \leq 1$ and
     suppose that $m_1 < \dim \Group$ and $r \in \N$.
@@ -1363,20 +1363,75 @@ which will lead to the proof of parts \ref{item:kernel_estimates:at_origin:posit
     The following estimates hold.
     \begin{enumerate}
         \item \label{item:prepare_kernel_estimates_at_the_origin:k_epsilon}
-            If $m_1 - m + \rho r \leq 0$,
+            If $m_1 - m + 2 \rho r \leq 0$,
             then
             \begin{align*}
-                \abs{\kappa_{\norm [\Group] h, g}(h)} \leq C \norm [\Group] h^{m_1 - m + (\rho - 1) r}.
+                \abs{\kappa_{\norm [\Group] h, g}(h)} \leq C \norm [\Group] h^{m_1 - m + (2 \rho - 1) r}.
             \end{align*}
         \item \label{item:prepare_kernel_estimates_at_the_origin:remainder}
             If $m_1 - m + \rho r \geq 0$,
             then
             \begin{align*}
-                \abs{\kappa_g(h) - \kappa_{\norm [\Group] h, g}(h)} \leq C \norm [\Group] h^{m_1 - m + (\rho - 1) r}.
+                \abs{\kappa_g(h) - \kappa_{\norm [\Group] h, g}(h)} \leq C \norm [\Group] h^{m_1 - m + (2 \rho - 1) r}.
             \end{align*}
     \end{enumerate}
 \end{lemma}
 \begin{proof}
+    Let us prove each claim separately.
+    \begin{enumerate}
+        \item
+            Since $m_1 < -\dim \Group$,
+            \begin{align*}
+                \norm [\Group] h^r
+                \abs{\kappa_{\norm [\Group] h, g}(h)}
+                &\leq C \sum_{\abs \alpha = r}
+                \sup_{\lambda \in \VectorSpace} \SymbolSemiNorm {m} {\rho, \delta} 0 {\DifferenceOperatorOrder \alpha \sigma_\epsilon(g, \lambda)}\\
+                &\leq C \sum_{r \leq \abs \alpha \leq 2 r}
+                \SymbolSemiNorm{m_1 - m + \rho \abs \alpha} {\rho, \delta} {2 r} {\eta_{\norm [\Group] h}}.
+            \end{align*}
+
+            Since $m_1 - m + \rho \abs \alpha \leq 0$ for each $\alpha$,
+            then
+            \begin{align*}
+                \norm [\Group] h^r
+                \abs{\kappa_{\norm [\Group] h, g}(h)}
+                \leq C \sum_{r \leq \abs \alpha \leq 2 r}
+                \norm [\Group] h^{m_1 - m + \rho \abs \alpha}
+                \leq C \norm [\Group] h^{m_1 - m + 2 \rho r}.
+            \end{align*}
+            This can be rewritten
+            \begin{align*}
+                \abs{\kappa_{\norm [\Group] h, g}(h)}
+                \leq C \norm [\Group] h^{m_1 - m + (2 \rho - 1) r},
+            \end{align*}
+            concluding the proof.
+        \item
+            Since $m_1 < -\dim \Group$,
+            \begin{align*}
+                &\norm [\Group] h^r
+                \abs{\kappa_g(h) - \kappa_{\norm [\Group] h, g}(h)}\\
+                &\quad \leq C \sum_{\abs \alpha = r}
+                \sup_{\lambda \in \VectorSpace} \SymbolSemiNorm {m} {\rho, \delta} 0 {\DifferenceOperatorOrder \alpha (\Id {\Lebesgue 2 \CompactGroup} - \sigma_\epsilon)(g, \lambda)}\\
+                &\quad \leq C \sum_{r \leq \abs \alpha \leq 2 r}
+                \SymbolSemiNorm{m_1 - m + \rho \abs \alpha} {\rho, \delta} {2 r} {\Id {\Lebesgue 2 \CompactGroup} - \eta_{\norm [\Group] h}}.
+            \end{align*}
+
+            Since $m_1 - m + \rho \abs \alpha \leq 0$ for each $\alpha$,
+            then
+            \begin{align*}
+                \norm [\Group] h^r
+                \abs{\kappa_{\norm [\Group] h, g}(h)}
+                \leq C \sum_{r \leq \abs \alpha \leq 2 r}
+                \norm [\Group] h^{m_1 - m + \rho \abs \alpha}
+                \leq C \norm [\Group] h^{m_1 - m + 2 \rho r}.
+            \end{align*}
+            This can be rewritten
+            \begin{align*}
+                \abs{\kappa_{\norm [\Group] h, g}(h)}
+                \leq C \norm [\Group] h^{m_1 - m + (2 \rho - 1) r},
+            \end{align*}
+            concluding the proof.
+    \end{enumerate}
 \end{proof}
 
 \begin{proof}
