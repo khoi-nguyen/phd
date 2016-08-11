@@ -1349,138 +1349,180 @@ which will lead to the proof of parts \ref{item:kernel_estimates:at_origin:posit
 \label{lemma:prepare_kernel_estimates_at_the_origin}
     Let $\sigma \in \SymbolClass m {\rho, \delta}$ be a symbol
     with kernel $\kappa \in \SmoothFunctions {\Group, \TemperedDistributions \Group}$,
-    where $1 \geq \rho \geq \delta \geq 0$.
-    For each $g \in \Group$ and each $l \in \N$,
+    where $1 \geq \rho > \delta \geq 0$.
+    For each $g \in \Group$ and each $\epsilon \in (0, 1]$,
     we let
     \begin{align*}
-        \kappa_{l, g} \defeq \InverseFourier \{ \sigma(g, \dummy) \eta_l \},
+        \kappa_{\epsilon, g} \defeq \InverseFourier \{ \sigma_\epsilon(g, \dummy) \}, \quad \sigma_\epsilon = \sigma(g, \lambda) \eta_\epsilon(\lambda)
     \end{align*}
-    where $\eta_l$ is the symbol defined in Theorem~\ref{theorem:Littlewood-Paley_decomposition}.
+    where $\eta_\epsilon$ is the symbol defined in Theorem~\ref{theorem:generalised_Littlewood-Paley_decomposition}.
 
-    The following properties hold.
+    Fix $h \in \Group$ such that $0 < \norm [\Group] h \leq 1$ and
+    suppose that $m_1 < \dim \Group$ and $r \in 2 \N$.
+
+    The following estimates hold.
     \begin{enumerate}
-        \item For every $m_1 < -\dim \Group$,
-            we can find $C_{m_1} \geq 0$ such that
+        \item \label{item:prepare_kernel_estimates_at_the_origin:k_epsilon}
+            If $m_1 - m + \rho r \leq 0$,
+            then
             \begin{align*}
-                \sup_{h \in \Group} \abs {\kappa_{l, g}(h)} \leq C_{m_1} 2^{l(m - m_1)}
+                \abs{\kappa_{\norm [\Group] h, g}(h)} \leq C \norm [\Group] h^{m_1 - m + (\rho - 1) r}.
             \end{align*}
-            holds for every $l \in \N$.
-        \item For any compact subset of $S \subset \Group \setminus \{e\}$ and any $g \in \Group$,
-            the series
+        \item \label{item:prepare_kernel_estimates_at_the_origin:remainder}
+            If $m_1 - m + \rho r \geq 0$,
+            then
             \begin{align*}
-                \sum_{l = 0}^\infty \sup_{h \in S} \abs {\kappa_{l, g}(h)} < \infty
+                \abs{\kappa_g(h) - \kappa_{\norm [\Group] h, g}(h)} \leq C \norm [\Group] h^{m_1 - m + (\rho - 1) r}.
             \end{align*}
-            converges.
     \end{enumerate}
 \end{lemma}
 \begin{proof}
+    Let us prove each claim separately.
     \begin{enumerate}
         \item
+            Since $m_1 < -\dim \Group$,
+            \begin{align*}
+                \norm [\Group] h^r
+                \abs{\kappa_{\norm [\Group] h, g}(h)}
+                &\leq C \sum_{\abs \alpha = r}
+                \sup_{\lambda \in \VectorSpace} \SymbolSemiNorm {m} {\rho, \delta} 0 {\DifferenceOperatorOrder \alpha \sigma_\epsilon(g, \lambda)}\\
+                &\leq C
+                \SymbolSemiNorm{m_1 - m + \rho r} {\rho, \delta} {r} {\eta_{\norm [\Group] h}}.
+            \end{align*}
+
+            Since $m_1 - m + \rho r \leq 0$,
+            we can apply Theorem~\ref{theorem:generalised_Littlewood-Paley_decomposition} to get
+            \begin{align*}
+                \norm [\Group] h^r
+                \abs{\kappa_{\norm [\Group] h, g}(h)}
+                \leq C
+                \norm [\Group] h^{m_1 - m + \rho r}.
+            \end{align*}
+            This can be rewritten
+            \begin{align*}
+                \abs{\kappa_{\norm [\Group] h, g}(h)}
+                \leq C \norm [\Group] h^{m_1 - m + (\rho - 1) r},
+            \end{align*}
+            concluding the proof.
         \item
+            Since $m_1 < -\dim \Group$,
+            \begin{align*}
+                &\norm [\Group] h^r
+                \abs{\kappa_g(h) - \kappa_{\norm [\Group] h, g}(h)}\\
+                &\quad \leq C \sum_{\abs \alpha = r}
+                \sup_{\lambda \in \VectorSpace} \SymbolSemiNorm {m} {\rho, \delta} 0 {\DifferenceOperatorOrder \alpha (\Id {\Lebesgue 2 \CompactGroup} - \sigma_\epsilon)(g, \lambda)}\\
+                &\quad \leq C
+                \SymbolSemiNorm{m_1 - m + \rho r} {\rho, \delta} {r} {\Id {\Lebesgue 2 \CompactGroup} - \eta_{\norm [\Group] h}}.
+            \end{align*}
+
+            Since $m_1 - m + \rho r \leq 0$,
+            we can apply Theorem~\ref{theorem:generalised_Littlewood-Paley_decomposition} to get
+            \begin{align*}
+                \norm [\Group] h^r
+                \abs{\kappa_{\norm [\Group] h, g}(h)}
+                \leq C \norm [\Group] h^{m_1 - m + 2 \rho r}.
+            \end{align*}
+            This can be rewritten
+            \begin{align*}
+                \abs{\kappa_{\norm [\Group] h, g}(h)}
+                \leq C \norm [\Group] h^{m_1 - m + (2 \rho - 1) r},
+            \end{align*}
+            concluding the proof.
     \end{enumerate}
 \end{proof}
 
+\begin{theorem}[Kernel estimates at the origin]
+\label{theorem:kernel_estimates:at_origin}
+    Let $\rho, \delta \in \R$ be such that $1 \geq \rho \geq \delta \geq 0$
+    and assume further that $\rho > 0$.
+    Suppose that $\sigma \in \SymbolClass{m}{\rho, \delta}$,
+    and $\kappa \in \SmoothFunctions {\Group, \TemperedDistributions \Group}$ is its associated kernel.
+    \begin{enumerate}
+        \item
+            If $m > - \dim \Group$, there exists $C \geq 0$ such that for every $g, h \in \Group$ with $h \neq 0$, we have
+            \begin{align*}
+                \abs{\kappa_g(h)} \leq C \norm [\Group] h^{- \frac{\dim \Group + m}{\rho}}.
+            \end{align*}
+        \item
+            If $m = -\dim \Group$, there exists $C \geq 0$ such that for every $g, h \in \Group$ with $h \neq 0$, we have
+            \begin{align*}
+                \abs{\kappa_g(h)} \leq C \log \norm [\Group] h.
+            \end{align*}
+    \end{enumerate}
+\end{theorem}
 \begin{proof}
-    By the second part of Lemma~\ref{lemma:prepare_kernel_estimates_at_the_origin},
-    we know that
-    \begin{align*}
-        \abs {\kappa_g(h)} \leq \sum_{l = 0}^\infty \abs{\kappa_{l, g}(h)}
-    \end{align*}
-    for each $h \in \Group \setminus \{e_\Group\}$.
-    Moreover,
-    for every $r \in 2 \N$ and every $m_1 < -\dim \Group$,
-    we have
-    \begin{align}
-        \sup_{h \in \Group} \norm [\Group] h^{r} \abs{\kappa_{l, g}(h)}
-        &\leq \sup_{h \in \Group} \sum_{\abs \alpha = r} \abs{q^\alpha \kappa_{l, g}(h)} \notag\\
-        &\leq C 2^{l(m - m_1 - \rho r)}
-        \label{eq:singularity_of_frequency_localised_kernels}
-    \end{align}
-    or equivalently
-    \begin{align}
-        \sup_{h \in \Group} \abs{\kappa_{l, g}(h)}
-        &\leq C 2^{l(m - m_1 - \rho r)} \norm [\Group] h^{-r}
-        \label{eq:singularity_of_frequency_localised_kernels:2}
-    \end{align}
-    by applying the first part of Lemma~\ref{lemma:preparation_for_general_inverse_formula} to the symbol $\DifferenceOperatorOrder \alpha \sigma$.
+    Fix $h \in \Group \setminus \{(0, \Id \VectorSpace)\}$ such that $\epsilon \defeq \norm [\Group] h \leq 1$.
 
-    Now, fix $h \in \Group$ such that $\norm [\Group] h \leq 1$.
-    We let $l_0 \in \N$ be the unique natural number such that
+    Using
     \begin{align*}
-        2^{-l_0 - 1} < \norm [\Group] h \leq 2^{-l_0}.
+        \abs {\kappa_g(h)} \leq \abs{\kappa_{\epsilon, g}(h)} + \abs{\kappa_g(h) - \kappa_{\epsilon, g}(h)},
     \end{align*}
+    the idea of the proof is to estimate both terms of the right-hand side above separately.
 
-    The idea is to estimate the singularity on the kernel via
-    \begin{align*}
-        \abs {\kappa_g(h)} \leq \sum_{l = 0}^{l_0 - 1} \abs{\kappa_{l, g}(h)} + \sum_{l = l_0}^\infty \abs{\kappa_{l, g}(h)}
-    \end{align*}
-    and use~\eqref{eq:singularity_of_frequency_localised_kernels} with carefully chosen $m_1 \in \R$ and $r \in 2 \N$ to estimate each term on the right-hand side.
-
-    Let us now treat the two cases separately.
     \begin{description}
-        \item[Case 1: $m > -\dim \Group$.]
-            Let us start with the sum over $l = 0, \dots, l_0 - 1$.
-            We let $r = 0$ and choose $m_1 \in \R$ such that
+        \item[Case $m > -\dim \Group$].
+            Letting
             \begin{align*}
-                m - m_1 = \frac {\dim \Group + m} \rho \iff m_1 = m\left(1 - \frac 1 \rho\right) - \frac {\dim \Group} \rho
+                m_1 = m \left(1 - \frac 1 \rho\right) - \frac {\dim \Group} \rho > - \dim \Group
+            \end{align*}
+            so that $m_1 - m = -(\dim \Group + m)/\rho < 0$.
+            Applying Part~\ref{item:prepare_kernel_estimates_at_the_origin:k_epsilon} of
+            Lemma~\ref{lemma:prepare_kernel_estimates_at_the_origin},
+            we get
+            \begin{align}
+                \abs{\kappa_\epsilon(h)} \leq C \norm [\Group] h^{- \frac {\dim \Group + m} \rho}.
+                \label{eq:kernel_estimate_for_large_m:k_epsilon}
+            \end{align}
+
+            For the second term,
+            let
+            \begin{align*}
+                r &\defeq \min_{\N} \{n \in 2 \N : n > {\frac {m + \dim \Group} {\rho}}\}\\
+                m_1 &\defeq m + r(1 - 2 \rho) - \frac{\dim \Group + m} \rho.
             \end{align*}
 
-            Since $m > -\dim \Group$, we know that
-            \begin{align*}
-                m_1 \leq -m(1 - \frac 1 \rho - \frac 1 \rho) \leq -m < -\dim \Group
-            \end{align*}
-            so that we may apply~\eqref{eq:singularity_of_frequency_localised_kernels},
-            which yields
-            \begin{align*}
-                \sum_{l = 0}^{l_0 - 1} \abs{\kappa_{l, g}(h)} &\leq C \sum_{l = 0}^{l_0 - 1} 2^{l(m - m_1)} \leq C 2^{l_0(m - m_1)}\\
-                &\leq C \norm [\Group] h^{-\frac {\dim \Group + m} \rho}
-            \end{align*}
-            by our choice of $m_1$.
-
-            Now, let us deal with the sum over $l \geq l_0$.
-            In order to be able to apply~\eqref{eq:singularity_of_frequency_localised_kernels} and have a convergent sum,
-            we need
+            Let us prove that they satisfy the following properties:
             \begin{align}
                 \begin{cases}
                     m_1 < -\dim \Group,\\
-                    m - m_1 - \rho r < 0,\\
-                    r(1 - \rho) + m - m_1 = \frac{\dim \Group + m} \rho.
+                    m_1 - m + \rho r \geq 0,\\
+                    m_1 - m + (\rho - 1)r = -\frac{\dim \Group + m} \rho.
                 \end{cases}
                 \label{eq:conditions_to_apply_dyadic_sum_for_large_terms}
             \end{align}
-            To this end,
-            we let
-            \begin{align*}
-                r &\defeq \min_{\N} \{n \in 2 \N : n > {\frac {m + \dim \Group} \rho}\}\\
-                m_1 &\defeq r(1 - \rho) + m - \frac{\dim \Group + m} \rho.
-            \end{align*}
 
             The third identify in~\eqref{eq:conditions_to_apply_dyadic_sum_for_large_terms} holds by definition of $m_1$.
             For the second, we observe that
             \begin{align*}
-                m - m_1 - \rho r
-                &= - r + \frac{\dim \Group + m} \rho < 0
+                m_1 - m + \rho r
+                &= r - \frac{\dim \Group + m} \rho \geq 0\\
             \end{align*}
             by definition of $r$.
             Similarly,
             \begin{align*}
-                m - m_1
-                &= r(\rho - 1) + \frac{\dim \Group + m} \rho\\
-                &> (\dim \Group + m) (1 - \frac 1 \rho + \frac 1 \rho)\\
-                &> \dim \Group + m,
+                m_1 - m
+                &= -r \rho(1 - \frac 1 \rho) - \frac{\dim \Group + m} \rho\\
+                &< - (\dim \Group + m) (1 - \frac 1 \rho + \frac 1 \rho)\\
+                &= -\dim \Group - m,
             \end{align*}
             which is equivalent to $m_1 < - \dim \Group$.
             We have thus shown that~\eqref{eq:conditions_to_apply_dyadic_sum_for_large_terms} holds.
 
-            Since we may now use~\eqref{eq:singularity_of_frequency_localised_kernels:2},
+            Therefore,
+            applying Lemma~\ref{lemma:prepare_kernel_estimates_at_the_origin} yields
+            \begin{align}
+                \abs{(\kappa_g - \kappa_{\epsilon, g})(h)}
+                \leq C \norm [\Group] h^{-\frac{\dim \Group + m} \rho},
+                \label{eq:kernel_estimate_for_large_m:remainder}.
+            \end{align}
+
+            Combining~\eqref{eq:kernel_estimate_for_large_m:k_epsilon}
+            and~\eqref{eq:kernel_estimate_for_large_m:remainder},
             we obtain
             \begin{align*}
-                \sum_{l = l_0}^\infty \abs{\kappa_{l, g}(h)}
-                &\leq C \sum_{l = l_0}^\infty 2^{l(m - m_1 - \rho r)} \norm [\Group] h^{-r}\\
-                &\leq C 2^{l_0(m - m_1 - \rho r)} \norm [\Group] h^{-r}\\
-                &\leq C \norm [\Group] h^{m_1 - m + \rho r - r} = C \norm [\Group] h^{-\frac{\dim \Group + m} \rho},
+                \abs {\kappa_g(h)} \leq C \norm [\Group] h^{-\frac {\dim \Group + m} \rho},
             \end{align*}
-            concluding the case when $m > -\dim \Group$.
+            concluding the case $m > -\dim \Group$.
         \item[Case 2: $m = -\dim \Group$.]
             Set $\epsilon \defeq \norm [\Group] h$.
 
@@ -1506,6 +1548,9 @@ which will lead to the proof of parts \ref{item:kernel_estimates:at_origin:posit
                 &\leq C \log \epsilon = C \log \norm [\Group] h,
             \end{align*}
             where the last line was obtained by the Sobolev inequality.
+
+            To estimate $\abs {\kappa_g(h) - \kappa_{\epsilon, g}(h)}$,
+            we use the exact same argument as for the case $m > -\dim \Group$.
     \end{description}
 \end{proof}
 
