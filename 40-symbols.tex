@@ -1007,6 +1007,35 @@ Using \cite[Lemma 4.4]{RuzhanskyTurunenWirth10}, we can show
     \end{description}
 \end{proof}
 
+\begin{corollary}
+    Let $\sigma \in \SymbolClass m {\rho, \delta}$ for $m \in \R$ and $0 \leq \rho, \delta \leq 1$.
+    For each $\epsilon \in (0, 1]$,
+    let
+    \begin{align*}
+        \sigma_\epsilon(g, \lambda) \defeq \sigma(g, \lambda) \eta_\epsilon(\lambda)
+    \end{align*}
+    for each $g \in \Group$ and each $\lambda \in \VectorSpace$.
+
+    The symbol $\sigma_\epsilon$ is smoothing,
+    and satisfies the following estimates.
+    \begin{enumerate}
+        \item For every $m_1 \leq m$ and each $N \in \N$,
+            there exists $C = C_{m, m_1, N, \sigma} \geq 0$ such that
+            \begin{align*}
+                \SymbolSemiNorm {m_1} {\rho, \delta} N {\sigma_\epsilon}
+                \leq C \epsilon^{m_1 - m}
+            \end{align*}
+            holds for every $\epsilon \in (0, 1]$.
+        \item For every $m_1 \geq m$ and each $N \in \N$
+            there exists $C = C_{m, m_1, N, \sigma} \geq 0$ such that
+            \begin{align*}
+                \SymbolSemiNorm {m_1} {\rho, \delta} N {\sigma - \sigma_\epsilon}
+                \leq C \epsilon^{m_1 - m}
+            \end{align*}
+            holds for every $\epsilon \in (0, 1]$.
+    \end{enumerate}
+\end{corollary}
+
 %\begin{corollary}[Littlewood-Paley decomposition]
 %    There exists a sequence $\eta_l \in \SmoothingSymbols$, $l \in \N$ of smoothing symbols satisfying the following properties
 %    \begin{enumerate}
@@ -1459,6 +1488,51 @@ which will lead to the proof of parts \ref{item:kernel_estimates:at_origin:posit
     \end{align*}
     the idea of the proof is to estimate both terms of the right-hand side above separately.
 
+    We observe that for each $\gamma \in \R$,
+    we have
+    \begin{align*}
+        \sigma_\epsilon(g, \lambda) &= \sigma(g, \lambda) \eta_\epsilon(\lambda)\\
+        &= \sigma(g, \lambda) \Rep \lambda \BesselPotential {-m}\\
+        &\qquad \eta_\epsilon(\lambda) \Rep \lambda \BesselPotential {-\gamma}
+        \Rep \lambda \BesselPotential {-\dim \Group + \gamma}.
+    \end{align*}
+
+    If $\gamma < 0$,
+    \begin{align*}
+        \norm [\SchattenClasses 1 {\Lebesgue 2 \CompactGroup}] {\sigma_\epsilon(g, \lambda)}
+        &\leq C \epsilon^{\gamma} \norm [\SchattenClasses 1 {\Lebesgue 2 \CompactGroup}] {\Rep \lambda \BesselPotential {m + \gamma}}\\
+    \end{align*}
+    while if $\gamma = 0$,
+    \begin{align*}
+        \norm [\SchattenClasses 1 {\Lebesgue 2 \CompactGroup}] {\sigma_\epsilon(g, \lambda)}
+        &\leq C \norm [\SchattenClasses 1 {\Lebesgue 2 \CompactGroup}] {\eta_\epsilon(\lambda) \Rep \lambda \BesselPotential {m}}\\
+    \end{align*}
+
+    Integrating the above with respect to $\lambda$
+    and using the inverse Formula yields
+    \begin{align*}
+        \abs{\kappa_{\epsilon, g}(h)}
+        &\leq \int_\VectorSpace \norm [\SchattenClasses 1 {\Lebesgue 2 \CompactGroup}] {\sigma_\epsilon(g, \lambda)} \dd \lambda\\
+        &\leq
+        \begin{cases}
+            C \epsilon^\gamma & \text{if } \gamma < \min\{0, - (\dim \Group + m)\}\\
+            C \log \epsilon & \text{if } \gamma = 0 \text{ and } m = -\dim \Group.
+        \end{cases}
+    \end{align*}
+
+    Using $\norm [\Group] h = \epsilon$,
+    and letting $\gamma = 0$ when $m = -\dim \Group$,
+    the above can be rewritten
+    \begin{align*}
+        \abs{\kappa_{\epsilon, g}(h)}
+        &\leq \int_\VectorSpace \norm [\SchattenClasses 1 {\Lebesgue 2 \CompactGroup}] {\sigma_\epsilon(g, \lambda)} \dd \lambda\\
+        &\leq
+        \begin{cases}
+            C \norm [\Group] h^\gamma & \text{if } m > -\dim \Group \text{ and } \gamma < - (\dim \Group + m)\\
+            C \log \norm [\Group] h & \text{ if } m = -\dim \Group.
+        \end{cases}
+    \end{align*}
+
     \begin{description}
         \item[Case $m > -\dim \Group$].
             Letting
@@ -1526,29 +1600,6 @@ which will lead to the proof of parts \ref{item:kernel_estimates:at_origin:posit
         \item[Case 2: $m = -\dim \Group$.]
             Set $\epsilon \defeq \norm [\Group] h$.
 
-            We observe that
-            \begin{align*}
-                \sigma_\epsilon(g, \lambda) &= \sigma(g, \lambda) \eta_\epsilon(\lambda)\\
-                &= \sigma(g, \lambda) \Rep \lambda \BesselPotential {\dim \Group} \eta_\epsilon(\lambda) \Rep \lambda \BesselPotential {-\dim \Group}.
-            \end{align*}
-
-            It follows then that
-            \begin{align*}
-                \norm [\SchattenClasses 1 {\Lebesgue 2 \CompactGroup}] {\sigma_\epsilon(g, \lambda)}
-                &\leq C \norm [\SchattenClasses 1 {\Lebesgue 2 \CompactGroup}] {\eta_\epsilon(\lambda) \Rep \lambda \BesselPotential {-\dim \Group}}\\
-                &= C \norm [\SchattenClasses 2 {\Lebesgue 2 \CompactGroup}] {\sqrt{\eta_\epsilon}(\lambda) \Rep \lambda \BesselPotential {-\dim \Group / 2}}\\
-            \end{align*}
-
-            Integrating the above with respect to $\lambda$
-            and using the inverse Formula yields
-            \begin{align*}
-                \abs{\kappa_{\epsilon, g}(h)}
-                &\leq \int_\VectorSpace \norm [\SchattenClasses 1 {\Lebesgue 2 \CompactGroup}] {\sigma_\epsilon(g, \lambda)} \dd \lambda\\
-                &\leq C \norm [\LebesgueDual 2 \Group] {\sqrt{\eta_\epsilon} \Rep \lambda \BesselPotential {\dim \Group / 2}}\\
-                &\leq C \log \epsilon = C \log \norm [\Group] h,
-            \end{align*}
-            where the last line was obtained by the Sobolev inequality.
-
             To estimate $\abs {\kappa_g(h) - \kappa_{\epsilon, g}(h)}$,
             we use the exact same argument as for the case $m > -\dim \Group$.
     \end{description}
@@ -1559,6 +1610,8 @@ which will lead to the proof of parts \ref{item:kernel_estimates:at_origin:posit
 \subsection{Adjoint formula}
 
 \subsection{Composition formula}
+
+First, we show that $\SmoothingOperators$ is stable under composition.
 
 \begin{lemma}
     Let $\sigma_1, \sigma_2 \in \SmoothingSymbols$
@@ -1580,6 +1633,8 @@ which will lead to the proof of parts \ref{item:kernel_estimates:at_origin:posit
     \end{align*}
     holds for all $g \in \Group$ and $\lambda \in \VectorSpace$.
 \end{lemma}
+\begin{proof}
+\end{proof}
 
 \begin{lemma}
     Let $m_1, m_2 \in \R$ and suppose $\rho, \delta \in \R$ are chosen such that $1 \geq \rho > \delta \geq 0$.
