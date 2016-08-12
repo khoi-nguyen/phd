@@ -1634,13 +1634,37 @@ which will lead to the proof of parts \ref{item:kernel_estimates:at_origin:posit
             Let us now treat the different cases.
             \begin{description}
                 \item[$\rho = 1$ and $m > -\dim \Group$]
-                \item[$\rho < 1$ and $m > -\dim \Group$]
-                \item[$m = -\dim \Group$]
-                    In this case, $r = 2$ and this choosing $0 \leq \gamma < 2$ yields
+                    Choose $\tilde \gamma \defeq \gamma - r$
+                    so that $-r \leq \tilde \gamma < -(\dim \Group + m)$.
+                    Clearly, we have
                     \begin{align*}
                         \abs{(\kappa_g - \kappa_{g, \epsilon})(h)}
-                        \leq \norm [\Group] h^{\gamma - r}
+                        \leq \norm [\Group] h^{\tilde \gamma}.
                     \end{align*}
+                \item[$\rho < 1$ and $m > -\dim \Group$]
+                    Pick $\gamma$ as follows:
+                    \begin{align*}
+                        \gamma - r = -\frac{\dim \Group + m} \rho.
+                    \end{align*}
+                    We check that
+                    \begin{align*}
+                        \gamma = r - \frac {\dim \Group + m} \rho > 0,
+                    \end{align*}
+                    and similarly,
+                    \begin{align*}
+                        \gamma - \rho r &= r(1 - \rho) - \frac {\dim \Group + m} \rho\\
+                        &= -\rho r(1 - \frac 1 \rho) - (\dim \Group + m) \frac 1 \rho\\
+                        &< -(\dim \Group + m)(1 - \frac 1 \rho + \frac 1 \rho),
+                    \end{align*}
+                    which can be rewritten as $\gamma < \rho r - (\dim \Group + m)$.
+                    Note that we could not have obtained the strict inequality aboe
+                    had we not assumed that $\rho < 1$.
+                    We can thus apply~\eqref{eq:estimate_on_the_remainder} to obtain
+                    \begin{align*}
+                        \abs{(\kappa_g - \kappa_{g, \epsilon})(h)}
+                        \leq \norm [\Group] h^{-\frac {\dim \Group + m} \rho}
+                    \end{align*}
+                \item[$m = -\dim \Group$]
             \end{description}
     \end{description}
 \end{proof}
