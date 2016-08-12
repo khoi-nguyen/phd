@@ -1495,120 +1495,153 @@ which will lead to the proof of parts \ref{item:kernel_estimates:at_origin:posit
     \end{align*}
     the idea of the proof is to estimate both terms of the right-hand side above separately.
 
-    We observe that for each $\gamma \in \R$,
-    we have
-    \begin{align*}
-        \sigma_\epsilon(g, \lambda) &= \sigma(g, \lambda) \eta_\epsilon(\lambda)\\
-        &= \sigma(g, \lambda) \Rep \lambda \BesselPotential {-m}\\
-        &\qquad \eta_\epsilon(\lambda) \Rep \lambda \BesselPotential {-\gamma}
-        \Rep \lambda \BesselPotential {-\dim \Group + \gamma}.
-    \end{align*}
-
-    If $\gamma < 0$,
-    \begin{align*}
-        \norm [\SchattenClasses 1 {\Lebesgue 2 \CompactGroup}] {\sigma_\epsilon(g, \lambda)}
-        &\leq C \epsilon^{\gamma} \norm [\SchattenClasses 1 {\Lebesgue 2 \CompactGroup}] {\Rep \lambda \BesselPotential {m + \gamma}}\\
-    \end{align*}
-    while if $\gamma = 0$,
-    \begin{align*}
-        \norm [\SchattenClasses 1 {\Lebesgue 2 \CompactGroup}] {\sigma_\epsilon(g, \lambda)}
-        &\leq C \norm [\SchattenClasses 1 {\Lebesgue 2 \CompactGroup}] {\eta_\epsilon(\lambda) \Rep \lambda \BesselPotential {m}}\\
-    \end{align*}
-
-    Integrating the above with respect to $\lambda$
-    and using the inverse Formula yields
-    \begin{align*}
-        \abs{\kappa_{\epsilon, g}(h)}
-        &\leq \int_\VectorSpace \norm [\SchattenClasses 1 {\Lebesgue 2 \CompactGroup}] {\sigma_\epsilon(g, \lambda)} \dd \lambda\\
-        &\leq
-        \begin{cases}
-            C \epsilon^\gamma & \text{if } \gamma < \min\{0, - (\dim \Group + m)\}\\
-            C \log \epsilon & \text{if } \gamma = 0 \text{ and } m = -\dim \Group.
-        \end{cases}
-    \end{align*}
-
-    Using $\norm [\Group] h = \epsilon$,
-    and letting $\gamma = 0$ when $m = -\dim \Group$,
-    the above can be rewritten
-    \begin{align*}
-        \abs{\kappa_{\epsilon, g}(h)}
-        &\leq \int_\VectorSpace \norm [\SchattenClasses 1 {\Lebesgue 2 \CompactGroup}] {\sigma_\epsilon(g, \lambda)} \dd \lambda\\
-        &\leq
-        \begin{cases}
-            C \norm [\Group] h^\gamma & \text{if } m > -\dim \Group \text{ and } \gamma < - (\dim \Group + m)\\
-            C \log \norm [\Group] h & \text{ if } m = -\dim \Group.
-        \end{cases}
-    \end{align*}
-
     \begin{description}
-        \item[Case $m > -\dim \Group$].
-            Letting
+        \item[Estimates on $\kappa_\epsilon$]
+            We observe that for each $\gamma \in \R$,
+            we have
             \begin{align*}
-                m_1 = m \left(1 - \frac 1 \rho\right) - \frac {\dim \Group} \rho > - \dim \Group
-            \end{align*}
-            so that $m_1 - m = -(\dim \Group + m)/\rho < 0$.
-            Applying Part~\ref{item:prepare_kernel_estimates_at_the_origin:k_epsilon} of
-            Lemma~\ref{lemma:prepare_kernel_estimates_at_the_origin},
-            we get
-            \begin{align}
-                \abs{\kappa_\epsilon(h)} \leq C \norm [\Group] h^{- \frac {\dim \Group + m} \rho}.
-                \label{eq:kernel_estimate_for_large_m:k_epsilon}
-            \end{align}
-
-            For the second term,
-            let
-            \begin{align*}
-                r &\defeq \min_{\N} \{n \in 2 \N : n > {\frac {m + \dim \Group} {\rho}}\}\\
-                m_1 &\defeq m + r(1 - 2 \rho) - \frac{\dim \Group + m} \rho.
+                \sigma_\epsilon(g, \lambda)
+                &= \sigma(g, \lambda) \Rep \lambda \BesselPotential {-m}\\
+                &\qquad \eta_\epsilon(\lambda) \Rep \lambda \BesselPotential {-\gamma}
+                \Rep \lambda \BesselPotential {-\dim \Group + \gamma}.
             \end{align*}
 
-            Let us prove that they satisfy the following properties:
-            \begin{align}
-                \begin{cases}
-                    m_1 < -\dim \Group,\\
-                    m_1 - m + \rho r \geq 0,\\
-                    m_1 - m + (\rho - 1)r = -\frac{\dim \Group + m} \rho.
-                \end{cases}
-                \label{eq:conditions_to_apply_dyadic_sum_for_large_terms}
-            \end{align}
-
-            The third identify in~\eqref{eq:conditions_to_apply_dyadic_sum_for_large_terms} holds by definition of $m_1$.
-            For the second, we observe that
-            \begin{align*}
-                m_1 - m + \rho r
-                &= r - \frac{\dim \Group + m} \rho \geq 0\\
-            \end{align*}
-            by definition of $r$.
-            Similarly,
-            \begin{align*}
-                m_1 - m
-                &= -r \rho(1 - \frac 1 \rho) - \frac{\dim \Group + m} \rho\\
-                &< - (\dim \Group + m) (1 - \frac 1 \rho + \frac 1 \rho)\\
-                &= -\dim \Group - m,
-            \end{align*}
-            which is equivalent to $m_1 < - \dim \Group$.
-            We have thus shown that~\eqref{eq:conditions_to_apply_dyadic_sum_for_large_terms} holds.
-
-            Therefore,
-            applying Lemma~\ref{lemma:prepare_kernel_estimates_at_the_origin} yields
-            \begin{align}
-                \abs{(\kappa_g - \kappa_{\epsilon, g})(h)}
-                \leq C \norm [\Group] h^{-\frac{\dim \Group + m} \rho},
-                \label{eq:kernel_estimate_for_large_m:remainder}.
-            \end{align}
-
-            Combining~\eqref{eq:kernel_estimate_for_large_m:k_epsilon}
-            and~\eqref{eq:kernel_estimate_for_large_m:remainder},
+            Using the Holder inequality on Schatten classes,
+            together with Theorem~\ref{theorem:generalised_Littlewood-Paley_decomposition},
             we obtain
             \begin{align*}
-                \abs {\kappa_g(h)} \leq C \norm [\Group] h^{-\frac {\dim \Group + m} \rho},
+                &\norm [\SchattenClasses 1 {\Lebesgue 2 \CompactGroup}] {\sigma_\epsilon(g, \lambda)}\\
+                &\quad \leq C
+                \begin{cases}
+                    \epsilon^{\gamma} \norm [\SchattenClasses 1 {\Lebesgue 2 \CompactGroup}] {\Rep \lambda \BesselPotential {m + \gamma}} & \text{if } \gamma < 0\\
+                    \norm [\SchattenClasses 1 {\Lebesgue 2 \CompactGroup}] {\eta_\epsilon(\lambda) \Rep \lambda \BesselPotential {m}} & \text{if } \gamma = 0
+                \end{cases}
             \end{align*}
-            concluding the case $m > -\dim \Group$.
-        \item[Case 2: $m = -\dim \Group$.]
-            Set $\epsilon \defeq \norm [\Group] h$.
 
-            To estimate $\abs {\kappa_g(h) - \kappa_{\epsilon, g}(h)}$,
-            we use the exact same argument as for the case $m > -\dim \Group$.
+            The idea is now to pick a suitable $\gamma \leq 0$ and obtain an estimate on the kernel via
+            \begin{align}
+                \abs{\kappa_{\epsilon, g}(h)}
+                &\leq \int_\VectorSpace \norm [\SchattenClasses 1 {\Lebesgue 2 \CompactGroup}] {\sigma_\epsilon(g, \lambda)} \dd \lambda \notag\\
+                &\leq C
+                \begin{cases}
+                    \epsilon^{\gamma} & \text{if } \gamma < \min \{0, -(\dim \Group + m)\}\\
+                    \log \epsilon & \text{if } \gamma = 0, m = -\dim \Group,
+                \end{cases}
+                \label{eq:estimate_on_the_smoothened_kernel}
+            \end{align}
+            where the last line was obtained by the Sobolev inequality (Proposition~\ref{proposition:Sobolev_embedding}).
+
+            The idea is now to pick a suitable $\gamma \leq 0$ and obtain an estimate on the kernel via~\eqref{eq:estimate_on_the_smoothened_kernel}.
+            Keeping in mind that $\epsilon = \norm [\Group] h$,
+            let us now treat the different cases separately.
+            \begin{description}
+                \item[$\rho = 1$ and $m > -\dim \Group$.] We pick $\gamma < -(\dim \Group + m)$ to obtain
+                    \begin{align*}
+                        \abs {\kappa_{\epsilon, g}(h)}
+                        &\leq C \norm [\Group] h^\gamma.
+                    \end{align*}
+                \item[$\rho < 1$ and $m > -\dim \Group$.]
+                    We pick
+                    \begin{align*}
+                        \gamma \defeq -\frac {\dim \Group + m} \rho,
+                    \end{align*}
+                    and check that $\gamma < 0$ by the condition on $m$ and
+                    $\gamma < -(\dim \Group + m)$ by our condition on $\rho$.
+
+                    Therefore, \eqref{eq:estimate_on_the_smoothened_kernel} yields
+                    \begin{align*}
+                        \abs {\kappa_{\epsilon, g}(h)}
+                        \leq C \norm [\Group] h^{-\frac {\dim \Group + m} {\rho}}.
+                    \end{align*}
+
+                    Note that we could get a better estimate here,
+                    but we choose not to do so,
+                    because in this setting our choice of $\gamma$ will turn out to be appropriate when estimating $\kappa_g - \kappa_{g, \epsilon}$.
+                \item[$m = -\dim \Group$]
+                    Letting $\gamma = 0$ in \eqref{eq:estimate_on_the_smoothened_kernel} yields
+                    \begin{align*}
+                        \abs {\kappa_{\epsilon, g}(h)}
+                        \leq C \log \norm [\Group] h.
+                    \end{align*}
+            \end{description}
+
+        \item[Estimate on $\kappa_g - \kappa_{g, \epsilon}$].
+            By the Leibniz rule,
+            we have
+            \begin{align*}
+                \DifferenceOperator \alpha (\sigma - \sigma_\epsilon)
+                &= \lcsum{\abs {\alpha_1} + \abs {\alpha_2} = \abs \alpha}
+                \DifferenceOperator {\alpha_1} \sigma \DifferenceOperator {\alpha_2} \eta_\lambda\\
+                &= \lcsum{\abs {\alpha_1} + \abs {\alpha_2} = \abs \alpha}
+                I_{1, \alpha_1} I_{2, \alpha_2, \gamma} I_{3, \gamma},
+            \end{align*}
+            where
+            \begin{align*}
+                I_{1, \alpha_1} &\defeq \DifferenceOperator {\alpha_1} \sigma(g, \lambda) \Rep \lambda \BesselPotential {-m + \rho \abs {\alpha_1}}\\
+                I_{2, \alpha_2, \gamma} &\defeq \Rep \lambda \BesselPotential {m - \rho \abs {\alpha_1}} \DifferenceOperatorOrder {\alpha_2} (\Id {\Lebesgue 2 \CompactGroup} - \eta_\epsilon(\lambda))\\
+                &\qquad \qquad\Rep \lambda \BesselPotential {-\gamma + \rho \abs {\alpha_2} - m + \rho \abs {\alpha_1})}\\
+                I_{3, \gamma} &\defeq \Rep \lambda \BesselPotential {\gamma + m - \rho \abs \alpha}
+            \end{align*}
+
+            Since $\sigma \in \SymbolClass m {\rho, \delta}$,
+            $\norm [\Lin {\Lebesgue 2 \CompactGroup}] {I_{1, \alpha_1}}$ is bounded uniformly in $\alpha_1$,
+            while
+            \begin{align*}
+                \norm [\Lin {\Lebesgue 2 \CompactGroup}] {I_{2, \alpha_2, \gamma}}
+                \leq C \epsilon^\gamma
+            \end{align*}
+            holds for every $\gamma \geq 0$ by Theorem~\ref{theorem:generalised_Littlewood-Paley_decomposition}.
+            Therefore, for every $\gamma \geq 0$, we have
+            \begin{align*}
+                &\norm [\SchattenClasses 1 {\Lebesgue 2 \CompactGroup}] {\DifferenceOperator \alpha (\sigma - \sigma_\epsilon)(g, \lambda)}\\
+                & \qquad \leq C \epsilon^\gamma
+                \norm [\SchattenClasses 1 {\Lebesgue 2 \CompactGroup}] {\Rep \lambda \BesselPotential {\gamma + m - \rho \abs \alpha}},
+            \end{align*}
+            where the Schatten norm on the right hand side is not necessarily finite.
+
+            Integrating the above with respect to $\lambda \in \VectorSpace$,
+            we obtain
+            \begin{align*}
+                \abs {(q^\alpha(\kappa_g - \kappa_{g, \epsilon}))(h)}
+                \leq C \epsilon^\gamma
+            \end{align*}
+            provided that $\gamma \geq 0$ and $\gamma + m - \rho \abs \alpha < -\dim \Group$.
+            Observe that those two conditions can be summarised by the inequality
+            \begin{align*}
+                0 \leq \gamma < \rho \abs \alpha - (\dim \Group + m).
+            \end{align*}
+
+            Since for every $r \in 2 \N$, we have
+            \begin{align*}
+                \norm [\Group] h^r \abs{(\kappa_g - \kappa_{g, \epsilon})(h)}
+                &\leq C \sum_{\abs \alpha = r} \abs{q^\alpha(h) (\kappa_g - \kappa_{g, \epsilon})(h)},
+            \end{align*}
+            we have so far shown, keeping in mind that $\epsilon = \norm [\Group] h$ that
+            \begin{align}
+                \abs{(\kappa_g - \kappa_{g, \epsilon})(h)}
+                &\leq C \norm [\Group] h^{\gamma - r}
+                \label{eq:estimate_on_the_remainder}
+            \end{align}
+            provided $0 \leq \gamma < \rho r - (\dim \Group + m)$.
+
+            We observe that the best estimate is achieved when
+            \begin{align*}
+                r \defeq \min \{n \in 2 \N : n > \frac{\dim \Group + m} \rho \}
+            \end{align*}
+            because it should be as small as possible,
+            but also the condition on $\gamma$ must be possible.
+
+            Let us now treat the different cases.
+            \begin{description}
+                \item[$\rho = 1$ and $m > -\dim \Group$]
+                \item[$\rho < 1$ and $m > -\dim \Group$]
+                \item[$m = -\dim \Group$]
+                    In this case, $r = 2$ and this choosing $0 \leq \gamma < 2$ yields
+                    \begin{align*}
+                        \abs{(\kappa_g - \kappa_{g, \epsilon})(h)}
+                        \leq \norm [\Group] h^{\gamma - r}
+                    \end{align*}
+            \end{description}
     \end{description}
 \end{proof}
 
