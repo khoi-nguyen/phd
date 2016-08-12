@@ -1495,6 +1495,11 @@ which will lead to the proof of parts \ref{item:kernel_estimates:at_origin:posit
     \end{align*}
     the idea of the proof is to estimate both terms of the right-hand side above separately.
 
+    As we have shown earlier in REF,
+    we can get a bound on the kernel provided the order of its associated symbol is strictly less than $-\dim \Group$.
+    For $\kappa_\epsilon$, this will be easy since $\sigma_\epsilon$ is smoothing;
+    for $\kappa_g - \kappa_{g, \epsilon}$, we will have to use difference operators.
+
     \begin{description}
         \item[Estimates on $\kappa_\epsilon$]
             We observe that for each $\gamma \in \R$,
@@ -1503,20 +1508,21 @@ which will lead to the proof of parts \ref{item:kernel_estimates:at_origin:posit
                 \sigma_\epsilon(g, \lambda)
                 &= \sigma(g, \lambda) \Rep \lambda \BesselPotential {-m}\\
                 &\qquad \eta_\epsilon(\lambda) \Rep \lambda \BesselPotential {-\gamma}
-                \Rep \lambda \BesselPotential {-\dim \Group + \gamma}.
+                \Rep \lambda \BesselPotential {-m + \gamma}.
             \end{align*}
 
             Using the Holder inequality on Schatten classes,
             together with Theorem~\ref{theorem:generalised_Littlewood-Paley_decomposition},
             we obtain
-            \begin{align*}
-                &\norm [\SchattenClasses 1 {\Lebesgue 2 \CompactGroup}] {\sigma_\epsilon(g, \lambda)}\\
+            \begin{align}
+                &\norm [\SchattenClasses 1 {\Lebesgue 2 \CompactGroup}] {\sigma_\epsilon(g, \lambda)} \notag\\
                 &\quad \leq C
                 \begin{cases}
                     \epsilon^{\gamma} \norm [\SchattenClasses 1 {\Lebesgue 2 \CompactGroup}] {\Rep \lambda \BesselPotential {m + \gamma}} & \text{if } \gamma < 0\\
                     \norm [\SchattenClasses 1 {\Lebesgue 2 \CompactGroup}] {\eta_\epsilon(\lambda) \Rep \lambda \BesselPotential {m}} & \text{if } \gamma = 0
                 \end{cases}
-            \end{align*}
+                \label{eq:estimate_on_the_schatten_norm_of_sigma_epsilon}
+            \end{align}
 
             The idea is now to pick a suitable $\gamma \leq 0$ and obtain an estimate on the kernel via
             \begin{align}
@@ -1566,6 +1572,12 @@ which will lead to the proof of parts \ref{item:kernel_estimates:at_origin:posit
             \end{description}
 
         \item[Estimate on $\kappa_g - \kappa_{g, \epsilon}$].
+            The strategy of the proof is the same,
+            but slightly more delicate.
+            As $\gamma$ needs to be positive to apply Theorem~\ref{theorem:generalised_Littlewood-Paley_decomposition},
+            we will need to apply difference operators so that $m$ would be replaced by $m - \rho \abs \alpha$,
+            thus making it possible for $\gamma + m - \rho \abs \alpha$ to be small enough.
+
             By the Leibniz rule,
             we have
             \begin{align*}
@@ -1664,9 +1676,9 @@ which will lead to the proof of parts \ref{item:kernel_estimates:at_origin:posit
                         \abs{(\kappa_g - \kappa_{g, \epsilon})(h)}
                         \leq \norm [\Group] h^{-\frac {\dim \Group + m} \rho}
                     \end{align*}
-                \item[$m = -\dim \Group$]
             \end{description}
     \end{description}
+    The kernel estimates now follow from the triangle inequality.
 \end{proof}
 
 \section{Adjoint and composition formulas}
