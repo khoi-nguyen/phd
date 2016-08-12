@@ -1465,17 +1465,19 @@ which will lead to the proof of parts \ref{item:kernel_estimates:at_origin:posit
     Let $\rho, \delta \in \R$ be such that $1 \geq \rho \geq \delta \geq 0$
     and assume further that $\rho > 0$.
     Suppose that $\sigma \in \SymbolClass{m}{\rho, \delta}$,
-    and $\kappa \in \SmoothFunctions {\Group, \TemperedDistributions \Group}$ is its associated kernel.
+    and $\kappa \in \SmoothFunctions {\Group, \TemperedDistributions \Group}$ denotes its associated kernel.
     \begin{enumerate}
         \item
-            If $m > - \dim \Group$, there exists $C \geq 0$ such that for every $g, h \in \Group$ with $h \neq 0$, we have
+            If $\rho < 1$, there exists $C \geq 0$ such that for every $g, h \in \Group$ with $h \neq 0$, we have
             \begin{align*}
                 \abs{\kappa_g(h)} \leq C \norm [\Group] h^{- \frac{\dim \Group + m}{\rho}}.
             \end{align*}
         \item
-            If $m = -\dim \Group$, there exists $C \geq 0$ such that for every $g, h \in \Group$ with $h \neq 0$, we have
+            If $\rho = 1$,
+            then for every $\gamma < -(\dim \Group + m)$,
+            there exists $C \geq 0$ such that for every $g, h \in \Group$ with $h \neq 0$, we have
             \begin{align*}
-                \abs{\kappa_g(h)} \leq C \log \norm [\Group] h.
+                \abs{\kappa_g(h)} \leq C \norm [\Group] h^{-\gamma}.
             \end{align*}
     \end{enumerate}
 \end{theorem}
