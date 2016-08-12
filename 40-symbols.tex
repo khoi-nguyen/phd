@@ -1416,6 +1416,10 @@ which will lead to the proof of parts \ref{item:kernel_estimates:at_origin:posit
     For $\kappa_\epsilon$, this will be easy since $\sigma_\epsilon$ is smoothing;
     for $\kappa_g - \kappa_{g, \epsilon}$, we will have to use difference operators.
 
+    Note that the case $m = -\dim \Group$ is a simple consequences of the other estimates,
+    and the inclusion $\SymbolClass m {\rho, \delta} \subset \SymbolClass {m'} {\rho, \delta}$ when $m \leq m'$.
+    We can therefore assume without loss of generality that $m > -\dim \Group$.
+
     \begin{description}
         \item[Estimates on $\kappa_\epsilon$]
             We observe that for each $\gamma \in \R$,
@@ -1431,27 +1435,21 @@ which will lead to the proof of parts \ref{item:kernel_estimates:at_origin:posit
             together with Theorem~\ref{theorem:generalised_Littlewood-Paley_decomposition},
             we obtain
             \begin{align}
-                &\norm [\SchattenClasses 1 {\Lebesgue 2 \CompactGroup}] {\sigma_\epsilon(g, \lambda)} \notag\\
-                &\quad \leq C
-                \begin{cases}
-                    \epsilon^{\gamma} \norm [\SchattenClasses 1 {\Lebesgue 2 \CompactGroup}] {\Rep \lambda \BesselPotential {m + \gamma}} & \text{if } \gamma < 0\\
-                    \norm [\SchattenClasses 1 {\Lebesgue 2 \CompactGroup}] {\eta_\epsilon(\lambda) \Rep \lambda \BesselPotential {m}} & \text{if } \gamma = 0
-                \end{cases}
+                \norm [\SchattenClasses 1 {\Lebesgue 2 \CompactGroup}] {\sigma_\epsilon(g, \lambda)} \leq C
+                \epsilon^{\gamma} \norm [\SchattenClasses 1 {\Lebesgue 2 \CompactGroup}] {\Rep \lambda \BesselPotential {m + \gamma}}
                 \label{eq:estimate_on_the_schatten_norm_of_sigma_epsilon}
             \end{align}
+            for every $\gamma \leq 0$.
 
-            The idea is now to pick a suitable $\gamma \leq 0$ and obtain an estimate on the kernel via
+            The idea is now to pick $\gamma < \min \{0, -(\dim \Group + m)\}$, so that
             \begin{align}
                 \abs{\kappa_{\epsilon, g}(h)}
-                &\leq \int_\VectorSpace \norm [\SchattenClasses 1 {\Lebesgue 2 \CompactGroup}] {\sigma_\epsilon(g, \lambda)} \dd \lambda \notag\\
-                &\leq C
-                \begin{cases}
-                    \epsilon^{\gamma} & \text{if } \gamma < \min \{0, -(\dim \Group + m)\}\\
-                    \log \epsilon & \text{if } \gamma = 0, m = -\dim \Group,
-                \end{cases}
+                \leq \int_\VectorSpace \norm [\SchattenClasses 1 {\Lebesgue 2 \CompactGroup}] {\sigma_\epsilon(g, \lambda)} \dd \lambda
+                \leq C
+                \epsilon^{\gamma},
                 \label{eq:estimate_on_the_smoothened_kernel}
             \end{align}
-            where the last line was obtained by the Sobolev inequality (Proposition~\ref{proposition:Sobolev_embedding}).
+            where the last inequality was obtained by the Sobolev inequality (Proposition~\ref{proposition:Sobolev_embedding}).
 
             The idea is now to pick a suitable $\gamma \leq 0$ and obtain an estimate on the kernel via~\eqref{eq:estimate_on_the_smoothened_kernel}.
             Keeping in mind that $\epsilon = \norm [\Group] h$,
@@ -1597,7 +1595,35 @@ which will lead to the proof of parts \ref{item:kernel_estimates:at_origin:posit
     The kernel estimates now follow from the triangle inequality.
 \end{proof}
 
-\begin{remark}[Kernel estimate when $m = -\dim \Group$]
+\begin{remark}[Kernel estimates when $m = -\dim \Group$]
+    We might wonder whether it is possible to obtain better estimates for the case $m = -\dim \Group$
+    than the ones they inherit from the symbol classes inclusion.
+
+    Let $h \in \Group$ be such that $\epsilon \defeq \norm [\Group] h$
+    Writing
+    \begin{align*}
+        \sigma_\epsilon(g, \lambda)
+        = \sigma(g, \lambda) \Rep \lambda \BesselPotential {-m} \eta_\epsilon(\lambda) \Rep \lambda \BesselPotential {m},
+    \end{align*}
+    we see that
+    \begin{align*}
+        \abs {\kappa_{\epsilon, g}}
+        &\leq C \int_\VectorSpace \norm [\SchattenClasses 1 {\Lebesgue 2 \CompactGroup}] {\eta_\epsilon(\lambda) \Rep \lambda \BesselPotential m}\\
+        &\leq C \log \epsilon = C \log \norm [\Group] h,
+    \end{align*}
+    which is better than what Theorem~\ref{theorem:kernel_estimates:at_origin} gives us.
+
+    Unfortunately,
+    $\kappa_g - \kappa_{\epsilon, g}$ cannot be estimated by $\log \epsilon$
+    as the Schatten norm
+    \begin{align*}
+        \norm [\SchattenClasses 1 {\Lebesgue 2 \CompactGroup}] {(\Id {\Lebesgue 2 \CompactGroup} - \eta_\epsilon(\lambda)) \Rep \lambda \BesselPotential m}
+    \end{align*}
+    is not integrable.
+    This is due to the fact that $\Id {\Lebesgue 2 \CompactGroup} - \eta_\epsilon$ does not cut off the high frequencies of the Laplacian unlike $\eta_\epsilon$.
+
+    % TODO: Research
+    Can it be be possible that it is uniformly bounded in $\epsilon$?
 \end{remark}
 
 \section{Adjoint and composition formulas}
