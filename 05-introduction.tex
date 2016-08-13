@@ -129,3 +129,20 @@ In addition to the fact that it is one of the simplest groups on which symbolic 
 it also appears naturally in applications in fields such as biology and robotics.
 In fact, those fields have started using the Fourier Transform on $\Group$ as a mean to solve convolution and partial differential equations,
 like the paper \cite{ChirikjianKyatkin00} shows.
+
+Our aim is to show the following.
+
+\begin{theorem}[Pseudo-differential calculus on the motion group]
+    Suppose that $G$ is the smallest subgroup of affine transformations of the Euclidean space
+    which contains both translations and rotations.
+
+    We can define a collection $(\OperatorClass m {})_{m \in \R}$
+    of sets of operators
+    which satisfies the following properties.
+    \begin{enumerate}
+        \item If $X$ is a left-invariant vector field on $\Group$,
+            then $X \in \OperatorClass 1 {}$.
+        \item For every $m \in \R$, $\OperatorClass m {}$ is stable under taking the \emph{adjoint}.
+        \item If $T_1 \in \OperatorClass {m_1} {}$ and $T_2 \in \OperatorClass {m_2} {}$, then the \emph{composition} $T_1 \circ T_2$ belongs to $\OperatorClass {m_1 + m_1} {}$.
+    \end{enumerate}
+\end{theorem}
