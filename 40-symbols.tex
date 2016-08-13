@@ -1605,7 +1605,7 @@ which will lead to the proof of parts \ref{item:kernel_estimates:at_origin:posit
     We might wonder whether it is possible to obtain better estimates for the case $m = -\dim \Group$
     than the ones they inherit from the symbol classes inclusion.
 
-    Let $h \in \Group$ be such that $\epsilon \defeq \norm [\Group] h$
+    Let $h \in \Group$ be such that $\epsilon \defeq \norm [\Group] h \in (0, 1]$
     Writing
     \begin{align*}
         \sigma_\epsilon(g, \lambda)
@@ -1620,16 +1620,13 @@ which will lead to the proof of parts \ref{item:kernel_estimates:at_origin:posit
     which is better than what Theorem~\ref{theorem:kernel_estimates:at_origin} gives us.
 
     Unfortunately,
-    $\kappa_g - \kappa_{\epsilon, g}$ cannot be estimated by $\log \epsilon$
-    as the Schatten norm
+    a similar estimate cannot be achieved for $\kappa_g - \kappa_{\epsilon, g}$.
+    This can be seen by setting
     \begin{align*}
-        \norm [\SchattenClasses 1 {\Lebesgue 2 \CompactGroup}] {(\Id {\Lebesgue 2 \CompactGroup} - \eta_\epsilon(\lambda)) \Rep \lambda \BesselPotential m}
+        \sigma(g, \lambda) \defeq \Rep \lambda \BesselPotential {-\dim \Group}
     \end{align*}
-    is not integrable.
-    This is due to the fact that $\Id {\Lebesgue 2 \CompactGroup} - \eta_\epsilon$ does not cut off the high frequencies of the Laplacian unlike $\eta_\epsilon$.
-
-    % TODO: Research
-    Can it be be possible that it is uniformly bounded in $\epsilon$?
+    and observing that
+    $\abs {\kappa_g - \kappa_{\epsilon, g}}$ could not be bounded.
 \end{remark}
 
 \section{Adjoint and composition formulas}
