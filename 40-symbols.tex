@@ -792,20 +792,26 @@ Using \cite[Lemma 4.4]{RuzhanskyTurunenWirth10}, we can show
         \chi(\lambda) = 1 \  \text{if}\  \norm[\VectorSpace]{\lambda} \leq 1, \quad \text{and} \quad
         \chi(\lambda) \equiv 0 \ \text{if}\  \norm[\VectorSpace]{\lambda} \geq 2.
     \end{align*}
-    We shall also write $\chi_r = \chi(r \dummy)$.
+
+    For every $\tau \in \dualGroup \CompactGroup$ and every $\epsilon \in (0, 1]$,
+    we let
+    \begin{align*}
+        \chi_{\epsilon, \tau}(\lambda)
+        \defeq \chi(\epsilon(\JapaneseBracket \CompactGroup \tau^2 + \norm \lambda^2)^{\frac 1 2})
+    \end{align*}
 
     Then, for each $\epsilon \in (0, 1]$,
     we define
     \begin{align*}
         \eta_\epsilon(\lambda)
-        \defeq \sum_{\JapaneseBracket \CompactGroup \tau \leq \epsilon^{-1}} \chi_{\epsilon^2 \JapaneseBracket \CompactGroup \tau}(\lambda) \Id {V_\tau},
+        \defeq \sum_{\tau \in \dualGroup \CompactGroup} \chi_{\epsilon, \tau}(\lambda) \Id {V_\tau},
     \end{align*}
     where in the above $V_\tau \defeq \Span \{\tau_{ij} : 1 \leq i, j \leq \dimRep \tau\}$.
 
     We check that
     \begin{align*}
         \lim_{\epsilon \to 0} \eta_\epsilon(\lambda)
-        &= \lim_{\epsilon \to 0} \sum_{\JapaneseBracket \CompactGroup \tau \leq \epsilon^{-1}} \chi_{\epsilon^2 \JapaneseBracket \CompactGroup \tau} (\lambda) \Id {V_\tau}\\
+        &= \lim_{\epsilon \to 0} \sum_{\tau \in \dualGroup \CompactGroup} \chi_{\epsilon, \tau} (\lambda) \Id {V_\tau}\\
         &= \sum_{\tau \in \dualGroup \CompactGroup} \Id {V_\tau}
         = \Id {\Lebesgue 2 \CompactGroup}
     \end{align*}
@@ -817,12 +823,12 @@ Using \cite[Lemma 4.4]{RuzhanskyTurunenWirth10}, we can show
             we know that the kernel is given by
             \begin{align}
                 \kappa_\epsilon(x, k)
-                = \sum_{\JapaneseBracket \CompactGroup \tau \leq \epsilon^{-1}}
+                = \sum_{\tau \in \dualGroup \CompactGroup}
                 \int_\VectorSpace
-                \tr \left(\chi_{\epsilon^2 \JapaneseBracket \CompactGroup \tau} (\lambda) \eval {\Rep \lambda(x, k)} {V_\tau}\right) \dd \lambda \notag\\
-                = \sum_{\JapaneseBracket \CompactGroup \tau \leq \epsilon^{-1}}
+                \tr \left(\chi_{\epsilon, \tau} (\lambda) \eval {\Rep \lambda(x, k)} {V_\tau}\right) \dd \lambda \notag\\
+                = \sum_{\tau \in \dualGroup \CompactGroup}
                 \tr \left(\int_\VectorSpace
-                \chi_{\epsilon^2 \JapaneseBracket \CompactGroup \tau} (\lambda) \eval {\Rep \lambda(x, k)} {V_\tau}\right) \dd \lambda,
+                \chi_{\epsilon, \tau} (\lambda) \eval {\Rep \lambda(x, k)} {V_\tau}\right) \dd \lambda,
                 \label{eq:Littlewood-Paley:computing_kernel}
             \end{align}
             where we are allowed to permutate integral and trace because the support of $\xi$ is compact
@@ -832,17 +838,17 @@ Using \cite[Lemma 4.4]{RuzhanskyTurunenWirth10}, we can show
             we obtain that
             for each $F \in \Lebesgue 2 \CompactGroup$ and each $u \in \CompactGroup$,
             \begin{align*}
-                &\left(\int_\VectorSpace \chi_{\epsilon^2 \JapaneseBracket \CompactGroup \tau} (\lambda) \eval {\Rep \lambda(x, k)} {V_\tau} \dd \lambda\right) F(u)\\
-                &\quad = \int_\VectorSpace \chi_{\epsilon^2 \JapaneseBracket \CompactGroup \tau u} (\lambda) \eval {\Rep {u \lambda}(x, k)} {V_\tau} F(u) \dd \lambda\\
-                &\quad = \left(\int_\VectorSpace \chi_{\epsilon^2 \JapaneseBracket \CompactGroup \tau} (\lambda) \e^{\i \turn \ip \lambda x} \eval {\RightRegularRepresentation(k)} {V_\tau}\right) F(u)\\
-                &\quad = \InverseFourier [\R^n] \chi_{\epsilon^2 \JapaneseBracket \CompactGroup \tau}(x) \eval {\RightRegularRepresentation(k)} {V_\tau} F(u)
+                &\left(\int_\VectorSpace \chi_{\epsilon, \tau} (\lambda) \eval {\Rep \lambda(x, k)} {V_\tau} \dd \lambda\right) F(u)\\
+                &\quad = \int_\VectorSpace \chi_{\epsilon, \tau u} (\lambda) \eval {\Rep {u \lambda}(x, k)} {V_\tau} F(u) \dd \lambda\\
+                &\quad = \left(\int_\VectorSpace \chi_{\epsilon, \tau} (\lambda) \e^{\i \turn \ip \lambda x} \eval {\RightRegularRepresentation(k)} {V_\tau}\right) F(u)\\
+                &\quad = \InverseFourier [\R^n] \chi_{\epsilon, \tau}(x) \eval {\RightRegularRepresentation(k)} {V_\tau} F(u)
             \end{align*}
             Taking the trace on both sides of the above,
             and keeping in mind that $\eval {\RightRegularRepresentation(k)} {V_\tau} \simeq \tau$,
             we get
             \begin{align*}
-                &\tr \left(\int_\VectorSpace \chi_{\epsilon^2 \JapaneseBracket \CompactGroup \tau} (\lambda) \eval {\Rep \lambda(x, k)} {V_\tau} \dd \lambda\right)\\
-                &\quad = \InverseFourier [\R^n] \chi_{\epsilon^2 \JapaneseBracket \CompactGroup \tau}(x) \chi_\tau(k),
+                &\tr \left(\int_\VectorSpace \chi_{\epsilon, \tau} (\lambda) \eval {\Rep \lambda(x, k)} {V_\tau} \dd \lambda\right)\\
+                &\quad = \InverseFourier [\R^n] \chi_{\epsilon, \tau}(x) \chi_\tau(k),
             \end{align*}
             where $\chi_\tau \defeq \tr \tau$ is the character of $\tau$.
 
@@ -850,8 +856,8 @@ Using \cite[Lemma 4.4]{RuzhanskyTurunenWirth10}, we can show
             we obtain
             \begin{align}
                 \kappa_\epsilon(x, k)
-                = \sum_{\JapaneseBracket \CompactGroup \tau \leq \epsilon^{-1}}
-                \InverseFourier [\R^n] \chi_{\epsilon^2 \JapaneseBracket \CompactGroup \tau}(x) \chi_\tau(k).
+                = \sum_{\tau \in \dualGroup \CompactGroup}
+                \InverseFourier [\R^n] \chi_{\epsilon, \tau}(x) \chi_\tau(k).
                 \label{eq:Littlewood-Paley:kernel}
             \end{align}
         \item [Step 2] Computing $\DifferenceOperatorOrder \alpha \eta_\epsilon$.
@@ -868,20 +874,20 @@ Using \cite[Lemma 4.4]{RuzhanskyTurunenWirth10}, we can show
             we can multiply by $q^\alpha$ and take the Fourier Transform to obtain
             \begin{align*}
                 &\DifferenceOperatorOrder \alpha \eta_\epsilon(\lambda) F(u)\\
-                &= \sum_{\JapaneseBracket \CompactGroup \tau \leq \epsilon^{-1}} \int_\Group
-                q^{\alpha_1}((x, k)^{-1}) \InverseFourier [\R^n] \chi_{\epsilon^2 \JapaneseBracket \CompactGroup \tau}(x) \e^{\i \turn \ip \lambda {u x}}\\
+                &= \sum_{\tau \in \dualGroup \CompactGroup} \int_\Group
+                q^{\alpha_1}((x, k)^{-1}) \InverseFourier [\R^n] \chi_{\epsilon, \tau}(x) \e^{\i \turn \ip \lambda {u x}}\\
                 & \qquad \qquad \qquad (q^{\alpha_2} \chi_\tau)(k^{-1}) F(u k) \dd (x, k)
             \end{align*}
             Note that to obtain the above,
-            we used the fact that $\InverseFourier [\R^n] \chi_{\epsilon^2 \JapaneseBracket \CompactGroup \tau}$ is invariant under rotations.
+            we used the fact that $\InverseFourier [\R^n] \chi_{\epsilon, \tau}$ is invariant under rotations.
 
             Using our choice of difference operators and grouping the terms depending on
             wether they depend on $x$ or on $k$,
             we obtain
             \begin{align*}
                 \DifferenceOperatorOrder \alpha \eta_\epsilon(\lambda) F(u)
-                &= \sum_{\JapaneseBracket \CompactGroup \tau \leq \epsilon^{-1}}
-                \int_\VectorSpace x^{\alpha_1} \InverseFourier [\R^n] \chi_{\epsilon^2 \JapaneseBracket \CompactGroup \tau}(x) \e^{\i \turn \ip \lambda {u x}} \dd x\\
+                &= \sum_{\tau \in \dualGroup \CompactGroup}
+                \int_\VectorSpace x^{\alpha_1} \InverseFourier [\R^n] \chi_{\epsilon, \tau}(x) \e^{\i \turn \ip \lambda {u x}} \dd x\\
                 & \qquad \qquad \times \int_\CompactGroup (q^{\alpha_2} \chi_\tau)(k^{-1}) F(u k) \dd k.
             \end{align*}
 
@@ -889,15 +895,15 @@ Using \cite[Lemma 4.4]{RuzhanskyTurunenWirth10}, we can show
             we get the formula
             \begin{align*}
                 \DifferenceOperatorOrder \alpha \eta_\epsilon(\lambda) F(u)
-                &= \sum_{\JapaneseBracket \CompactGroup \tau \leq \epsilon^{-1}}
-                \iD {x^{\alpha_1} } \chi_{\epsilon^2 \JapaneseBracket \CompactGroup \tau}(u^{-1} \lambda)
+                &= \sum_{\tau \in \dualGroup \CompactGroup}
+                \iD {x^{\alpha_1} } \chi_{\epsilon, \tau}(u^{-1} \lambda)
                 \DifferenceOperatorOrder [\CompactGroup] {\alpha_2} \Fourier [\CompactGroup] \chi_\tau F(u),
             \end{align*}
             which can be rewritten more elegantly as follows
             \begin{align}
                 \DifferenceOperatorOrder \alpha \eta_\epsilon(\lambda) F(u)
-                = \bigoplus_{\JapaneseBracket \CompactGroup \tau \leq \epsilon^{-1}}
-                \iD {x^{\alpha_1} } \chi_{\epsilon^2 \JapaneseBracket \CompactGroup \tau}(u^{-1} \lambda)
+                = \bigoplus_{\tau \in \dualGroup \CompactGroup}
+                \iD {x^{\alpha_1} } \chi_{\epsilon, \tau}(u^{-1} \lambda)
                 \eval {\DifferenceOperatorOrder [\CompactGroup] {\alpha_2} \Id {\Lebesgue 2 \CompactGroup}} {V_\tau} F(u).
                 \label{eq:Littlewood-Paley:difference_operators}
             \end{align}
@@ -968,12 +974,12 @@ Using \cite[Lemma 4.4]{RuzhanskyTurunenWirth10}, we can show
             Clearly,
             \begin{align*}
                 \DifferenceOperatorOrder \alpha \eta_\epsilon(\lambda) F(u)
-                &= \sum_{\JapaneseBracket \CompactGroup \tau \leq \epsilon^{-1}}
-                \iD {x^{\alpha_1} } (1 - \chi_{\epsilon^2 \JapaneseBracket \CompactGroup \tau})(u^{-1} \lambda)
+                &= \sum_{\tau \in \dualGroup \CompactGroup}
+                \iD {x^{\alpha_1} } (1 - \chi_{\epsilon, \tau})(u^{-1} \lambda)
                 \DifferenceOperatorOrder [\CompactGroup] {\alpha_2} \Fourier [\CompactGroup] \chi_\tau F(u),
             \end{align*}
 
-            Since $1 - \chi_{\epsilon^2 \JapaneseBracket \CompactGroup \tau}$ vanishes only when $\JapaneseBracket \CompactGroup \tau \norm \lambda \geq c \epsilon^{-2}$,
+            Since $1 - \chi_{\epsilon, \tau}$ vanishes only when $\JapaneseBracket \CompactGroup \tau \norm \lambda \geq c \epsilon^{-2}$,
             we can deduce that the range of~\eqref{eq:Littlewood-Paley:central_operator} is contained in
             \begin{align*}
                 R_\epsilon(\lambda) \defeq \bigoplus \{V_\tau : \JapaneseBracket \CompactGroup \tau \norm \lambda \geq c_\alpha \epsilon^{-2} \}.
