@@ -904,7 +904,7 @@ Using \cite[Lemma 4.4]{RuzhanskyTurunenWirth10}, we can show
                 \DifferenceOperatorOrder \alpha \eta_\epsilon(\lambda) F(u)
                 = \bigoplus_{\tau \in \dualGroup \CompactGroup}
                 \iD {x^{\alpha_1} } \chi_{\epsilon, \tau}(u^{-1} \lambda)
-                \eval {\DifferenceOperatorOrder [\CompactGroup] {\alpha_2} \Id {\Lebesgue 2 \CompactGroup}} {V_\tau} F(u).
+                \DifferenceOperatorOrder [\CompactGroup] {\alpha_2} \Id {V_\tau} F(u).
                 \label{eq:Littlewood-Paley:difference_operators}
             \end{align}
 
@@ -915,6 +915,53 @@ Using \cite[Lemma 4.4]{RuzhanskyTurunenWirth10}, we can show
                     \DifferenceOperatorOrder \alpha \eta_\epsilon(\lambda)
                     \Rep \lambda \BesselPotential {-\gamma}
                 } \leq C_{\alpha, \gamma}.
+            \end{align*}
+
+            From~\eqref{eq:Littlewood-Paley:difference_operators},
+            we deduce that
+            \begin{align*}
+                \norm [\Lin {\Lebesgue 2 \CompactGroup}] {%
+                    \DifferenceOperatorOrder \alpha \eta_\epsilon(\lambda)
+                    \Rep \lambda \BesselPotential {\rho \abs \alpha}
+                }
+                \leq C_\alpha
+            \end{align*}
+            holds if and only if
+            \begin{align*}
+                \norm [\Lin {\Lebesgue 2 \CompactGroup}] {%
+                    \iD {x^{\alpha_1} } \chi_{\epsilon, \tau}(u^{-1} \lambda)
+                    \DifferenceOperatorOrder {\alpha_2} \Id {V_\tau}
+                    } \leq C_\alpha (\JapaneseBracket \CompactGroup \tau + \norm {\turn \lambda})^{-\rho \abs {\alpha}}.
+            \end{align*}
+
+            By the chain rule,
+            we have
+            \begin{align*}
+                \iD {x^{\alpha_1} } &\chi_{\epsilon, \tau}(u^{-1} \lambda)\\
+                &= \epsilon^{\alpha_1} \lcsum{n \leq \abs {\alpha_1}}
+                \D*{n}[\chi]{r^n}(\epsilon (\JapaneseBracket \CompactGroup \tau^2 + \norm {\turn \lambda}^2)^{\frac 1 2})
+                \iD {x^{\alpha_1} } (\JapaneseBracket \CompactGroup \tau^2 + \norm {\turn \lambda}^2)^{\frac 1 2}.
+            \end{align*}
+
+            We now check that \cite[Lemma A.10]{Fischer2015} implies that
+            \begin{align*}
+                &\norm [\Lebesgue 2 \CompactGroup] {%
+                    \DifferenceOperatorOrder {\alpha_2} \left(%
+                        \D*{n}[\chi]{r^n}(\epsilon (\JapaneseBracket \CompactGroup \tau^2 + \norm {\turn \lambda}^2)^{\frac 1 2})
+                        \Id {V_\tau}
+                    \right)
+                }\\
+                &\qquad \leq
+                C (\JapaneseBracket \CompactGroup \tau + \norm {\turn \lambda}^2)^{-\rho \abs \alpha_2}.
+            \end{align*}
+
+            Combinig the last two equations,
+            we get
+            \begin{align*}
+                \norm [\Lin {\Lebesgue 2 \CompactGroup}] {%
+                    \iD {x^{\alpha_1} } \chi_{\epsilon, \tau}(u^{-1} \lambda)
+                    \DifferenceOperatorOrder {\alpha_2} \Id {V_\tau}
+                    } \leq C_\alpha (\JapaneseBracket \CompactGroup \tau + \norm {\turn \lambda})^{-\rho \abs {\alpha}}.
             \end{align*}
 
         \item [Step 4a] Prove~\ref{item:generalised_Littlewood-Paley_decomposition:negative_m}.
