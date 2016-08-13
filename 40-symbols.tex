@@ -908,7 +908,14 @@ Using \cite[Lemma 4.4]{RuzhanskyTurunenWirth10}, we can show
                 \label{eq:Littlewood-Paley:difference_operators}
             \end{align}
 
-        \item [Step 3] We show that there exists $C = C_{\alpha, \gamma} \geq 0$ which does \emph{not} depend on $\epsilon$ or $\lambda$ such that
+        \item [Step 3a] If $F \in V_\tau$ for some $\tau \in \dualGroup \CompactGroup$,
+            then there exists $c_\alpha, C_\alpha \geq 0$ such that
+            \begin{align*}
+                \DifferenceOperatorOrder \alpha \eta_\epsilon(\lambda) F
+                \subset \bigoplus_{c_\alpha \leq \JapaneseBracket \CompactGroup \tau^{-1} \JapaneseBracket \CompactGroup \mu \leq C_\alpha} V_{\mu}
+            \end{align*}
+
+        \item [Step 3b] We show that there exists $C = C_{\alpha, \gamma} \geq 0$ which does \emph{not} depend on $\epsilon$ or $\lambda$ such that
             \begin{align*}
                 \norm [\Lin {\Lebesgue 2 \CompactGroup}] {%
                     \Rep \lambda \BesselPotential {\rho \abs \alpha + \gamma}
