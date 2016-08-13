@@ -1120,10 +1120,17 @@ Using \cite[Lemma 4.4]{RuzhanskyTurunenWirth10}, we can show
 
 \begin{corollary}
     Let $\sigma \in \SymbolClass m {\rho, \delta}$ for $m \in \R$ and $0 \leq \rho, \delta \leq 1$.
-    For each $\epsilon \in (0, 1]$,
-    let
+    Fix a cut-off function $\chi \in \SmoothFunctions \Group$ satisfying
     \begin{align*}
-        \sigma_\epsilon(g, \lambda) \defeq \sigma(g, \lambda) \eta_\epsilon(\lambda)
+        \chi(x, k) =
+        \begin{cases}
+            1 & \text{if } \norm x \leq 1\\
+            0 & \text{if } \norm x \geq 2
+        \end{cases},
+    \end{align*}
+    which allows us, for each $\epsilon \in (0, 1]$ to define
+    \begin{align*}
+        \sigma_\epsilon(x, k; \lambda) \defeq \chi(\epsilon x, k) \sigma(x, k; \lambda) \eta_\epsilon(\lambda)
     \end{align*}
     for each $g \in \Group$ and each $\lambda \in \VectorSpace$.
 
