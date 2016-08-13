@@ -962,14 +962,65 @@ Using \cite[Lemma 4.4]{RuzhanskyTurunenWirth10}, we can show
                 C (\JapaneseBracket \CompactGroup \tau + \norm {\turn \lambda}^2)^{-\rho \abs \alpha_2}.
             \end{align*}
 
-            Combinig the last two equations,
+            Combining the last two equations,
             we get
-            \begin{align*}
+            \begin{align}
                 \norm [\Lin {\Lebesgue 2 \CompactGroup}] {%
                     \iD {x^{\alpha_1} } \chi_{\epsilon, \tau}(u^{-1} \lambda)
                     \DifferenceOperatorOrder {\alpha_2} \Id {V_\tau}
                     } \leq C_\alpha (\JapaneseBracket \CompactGroup \tau + \norm {\turn \lambda})^{-\rho \abs {\alpha}}.
+                \label{eq:eta_epsilon_symbol_norm_for_gamma_0}
+            \end{align}
+
+            To conclude,
+            observe first that
+            \begin{align*}
+                &\norm [\Lin {\Lebesgue 2 \CompactGroup}] {%
+                    \Rep \lambda \BesselPotential {\gamma + \rho \abs \alpha}
+                    \DifferenceOperatorOrder \alpha \eta_\epsilon
+                    \Rep \lambda \BesselPotential {-\gamma}
+                }\\
+                &\leq C
+                \sup_{\tau \in \dualGroup \CompactGroup}
+                \norm [\Lin {\Lebesgue 2 \CompactGroup}] {%
+                    \Rep \lambda \BesselPotential {\gamma + \rho \abs \alpha}
+                    \eval {\DifferenceOperatorOrder \alpha \eta_\epsilon (\lambda)} {V_\tau}
+                }
+                (1 + \JapaneseBracket \CompactGroup \tau + \norm \lambda)^{-\gamma}.
             \end{align*}
+
+            By Step 3a,
+            \begin{align*}
+                \eval {%
+                    \Rep \lambda \BesselPotential {\gamma + \rho \abs \alpha}
+                    } {\DifferenceOperatorOrder \alpha \eta_\epsilon(V_\tau)}
+                    \asymp
+                    (1 + \JapaneseBracket \CompactGroup \tau + \norm \lambda)^{\gamma + \rho \alpha} \Id {\DifferenceOperatorOrder \alpha \eta_\epsilon(V_\tau)}
+            \end{align*}
+            which,
+            if injected into the above calculation, yields
+            \begin{align*}
+                &\norm [\Lin {\Lebesgue 2 \CompactGroup}] {%
+                    \Rep \lambda \BesselPotential {\gamma + \rho \abs \alpha}
+                    \DifferenceOperatorOrder \alpha \eta_\epsilon (\lambda)
+                    \Rep \lambda \BesselPotential {-\gamma}
+                }\\
+                &\leq C
+                \sup_{\tau \in \dualGroup \CompactGroup}
+                \norm [\Lin {\Lebesgue 2 \CompactGroup}] {%
+                    \DifferenceOperatorOrder \alpha \eta_\epsilon (\lambda)
+                }
+                (1 + \JapaneseBracket \CompactGroup \tau + \norm \lambda)^{\rho \abs \alpha}\\
+                &\leq C
+                \norm [\Lin {\Lebesgue 2 \CompactGroup}] {%
+                    \Rep \lambda \BesselPotential {\rho \abs \alpha}
+                    \DifferenceOperatorOrder \alpha \eta_\epsilon (\lambda)
+                }
+            \end{align*}
+
+            However,
+            the right-hand side of the above is bounded by $C_\alpha$
+            by~\eqref{eq:eta_epsilon_symbol_norm_for_gamma_0}.
 
         \item [Step 4a] Prove~\ref{item:generalised_Littlewood-Paley_decomposition:negative_m}.
 
