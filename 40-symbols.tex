@@ -1803,6 +1803,67 @@ First, we show that $\SmoothingOperators$ is stable under composition.
         \leq C \SymbolSemiNorm m {\rho, \delta} N \sigma.
     \end{align*}
 \end{lemma}
+\begin{proof}
+    We split the above integral like this
+    \begin{align*}
+        \int_\Group \dd h
+        = \int_{\norm [\Group] h \leq 1} \dd h
+        + \int_{\norm [\Group] h \geq 1} \dd h
+    \end{align*}
+
+    \begin{description}
+        \item [Integral on] $\norm [\Group] h \geq 1$
+
+            By Part~\eqref{item:kernel_estimates:at_infinity} of
+            Theorem~\ref{theorem:kernel_estimates},
+            for each $M \in \N$ we can find $N \in \N$ such that
+            \begin{align*}
+                \sup_{\norm [\Group] {h} \geq 1} \abs {\kappa_g(h)}
+                \leq C \SymbolSemiNorm m {\rho, \delta} N \sigma \norm [\Group] h^{-M}.
+            \end{align*}
+
+            Taking $M$ sufficiently large, it implies that
+            \begin{align*}
+                \int_{\norm [\Group] h \geq 1} \norm [\Group] h^\gamma \abs {\kappa_g(h)} \dd h
+                \leq C \SymbolSemiNorm m {\rho, \delta} N \sigma,
+            \end{align*}
+            as required.
+
+        \item [Integral on] $\norm [\Group] h \leq 1$
+
+            If $m \geq -\dim \CompactGroup$,
+            then by Part~\eqref{item:kernel_estimates:at_origin:positive} of Theorem~\ref{theorem:kernel_estimates} implies
+            that if we pick $\tilde \gamma$ satisfying
+            \begin{align}
+                \begin{cases}
+                    \gamma + \dim \Group > \tilde \gamma > \frac {m + \dim \Group} \rho & \text{if } m \geq \dim \Group\\
+                    \tilde \gamma = 0 & \text{if } m < -\dim \Group
+                \end{cases},
+                \label{eq:consequence_of_kernel_estimates:choice_of_tilde_gamma}
+            \end{align}
+            there exists $N \in \N$ such that
+            \begin{align*}
+                \sup_{0 < \norm [\Group] h \leq 1} \abs{\kappa_g(h)}
+                \leq
+                    C \SymbolSemiNorm m {\rho, \delta} N \sigma \norm [\Group] h^{\tilde \gamma}.
+            \end{align*}
+
+            From there, it follows that
+            \begin{align*}
+                \int_{\norm [\Group] h \leq 1} \norm [\Group] h^\gamma \abs {\kappa_g(h)} \dd h \leq
+                C \SymbolSemiNorm m {\rho, \delta} N \sigma
+                \int_{\norm [\Group] h \leq 1}
+                \norm [\Group] h^{\gamma + \tilde \gamma}.
+            \end{align*}
+
+            We conclude the proof by observing that ~\eqref{eq:consequence_of_kernel_estimates:choice_of_tilde_gamma}
+            implies
+            \begin{align*}
+                \gamma + \tilde \gamma > -\dim \Group.
+            \end{align*}
+            which means that the above integral is finite.
+    \end{description}
+\end{proof}
 
 \section{\texorpdfstring{$L^2$}{L2} boundedness}
 
