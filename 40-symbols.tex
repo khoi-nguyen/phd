@@ -1790,6 +1790,20 @@ First, we show that $\SmoothingOperators$ is stable under composition.
     \end{align*}
 \end{lemma}
 
+\begin{lemma}
+    Let $\sigma \in \SymbolClass m {\rho, \delta}$ with $1 \geq \rho \geq \delta \geq 0$ with $\rho \neq 0$,
+    and denote by $\kappa$ its associated kernel.
+    If $\gamma \in \R$ satisfies
+    \begin{align*}
+        \gamma > \max \left\{\frac {m + \dim \Group} \rho, 0\right\} - \dim \Group,
+    \end{align*}
+    then we can find $C \geq 0$ and $N \in \N$ such that
+    \begin{align*}
+        \int_\Group \norm [\Group] h^\gamma \abs {\kappa_g(h)} \dd h
+        \leq C \SymbolSemiNorm m {\rho, \delta} N \sigma.
+    \end{align*}
+\end{lemma}
+
 \section{\texorpdfstring{$L^2$}{L2} boundedness}
 
 The aim of this section is to prove
