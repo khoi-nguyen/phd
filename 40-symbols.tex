@@ -1770,6 +1770,16 @@ First, we show that $\SmoothingOperators$ is stable under composition.
     holds for all $g \in \Group$ and $\lambda \in \VectorSpace$.
 \end{lemma}
 \begin{proof}
+    It should be clear that $\kappa$ is smooth on $\Group \times \Group$.
+    To show that the Fourier transform of $\kappa_g$ is well defined,
+    check that $\kappa_g \in \Lebesgue 1 \CompactGroup$.
+    Indeed,
+    \begin{align*}
+        \int_\Group \abs{\kappa_g(h)} \dd h
+        &\leq \int_\Group \int_\Group \abs {\kappa_{2, g l^{-1}}(h l^{-1}) \kappa_{1, g}(l)} \dd l \dd h\\
+        &\leq \max_{g' \in \Group} \int_\Group \abs {\kappa_{2, g'}(h')} \dd h'
+        \int_\Group \abs{\kappa_{1, g}(l)} \dd l
+    \end{align*}
 \end{proof}
 
 \begin{lemma}
