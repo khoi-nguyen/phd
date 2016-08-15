@@ -248,6 +248,7 @@ Using \cite[Lemma 4.4]{RuzhanskyTurunenWirth10}, we can show
 \end{proof}
 
 \begin{proposition}[Quantisation]
+\label{proposition:quantisation}
     Let $\sigma \in \SymbolClass{m}{\rho, \delta}$,
     and denote by $\kappa$ its associated kernel.
     If $\phi \in \Schwartz\Group$, then for each $g \in \Group$, we have
@@ -1771,6 +1772,7 @@ First, we show that $\SmoothingOperators$ is stable under composition.
     holds for all $g \in \Group$ and $\lambda \in \VectorSpace$.
 \end{lemma}
 \begin{proof}
+    % Check it defines a symbol
     It should be clear that $\kappa$ is smooth on $\Group \times \Group$.
     To show that the Fourier transform of $\kappa_g$ is well defined,
     check that $\kappa_g \in \Lebesgue 1 \CompactGroup$.
@@ -1781,6 +1783,36 @@ First, we show that $\SmoothingOperators$ is stable under composition.
         &\leq \max_{g' \in \Group} \int_\Group \abs {\kappa_{2, g'}(h')} \dd h'
         \int_\Group \abs{\kappa_{1, g}(l)} \dd l
     \end{align*}
+
+    Let us check that $\kappa_g$ is the kernel of $\Op(\sigma_1) \Op(\sigma_2)$.
+    Applying the quantisation formula twice (Proposition~\ref{proposition:quantisation}),
+    we obtain
+    \begin{align*}
+        \Op(\sigma_1) \Op(\sigma_2) \phi(g)
+        &= \int_\Group \Op(\sigma_2) \phi(h) \kappa_1(g, h^{-1} g) \dd h\\
+        &= \int_\Group \int_\Group \phi(l) \kappa_2(h, l^{-1} h) \kappa_1(g, h^{-1} g) \dd l \dd h.
+    \end{align*}
+
+    In the right hand side of the above,
+    we can let $m = h^{-1} g$ to obtain
+    \begin{align*}
+        \Op(\sigma_1) \Op(\sigma_2) \phi(g)
+        &= \int_\Group \phi(l) \int_\Group \kappa_2(g m^{-1}, l^{-1} x m^{-1}) \kappa_1(g, m) \dd m \dd l\\
+        &= \int_\Group \phi(l) \kappa_g(l^{-1} g) \dd l
+        = \conv \phi {\kappa_g}(g),
+    \end{align*}
+    which means that $\Op(\sigma_1) \Op(\sigma_2) = \Op(\sigma)$.
+
+    From there, let us try to obtain a more explicit formula describing $\sigma$.
+    Taking the Fourier Transform,
+    we get
+    \begin{align*}
+        \sigma(g, \lambda)
+        &= \int_\Group \kappa_g(h) \adj{\Rep \lambda(h)} \dd h\\
+        &= \int_\Group \int_\Group \kappa_2(g m^{-1}, h m^{-1}) \kappa_1(x, m) \adj{\Rep \lambda(m)} \adj{\Rep \lambda(h m^{-1})} \dd h \dd m\\
+        &= \int_\Group \kappa_1(g, m) \adj{\Rep \lambda(m)} \sigma_2(g m^{-1}, \lambda) \dd m,
+    \end{align*}
+    concluding the proof.
 \end{proof}
 
 \begin{lemma}
