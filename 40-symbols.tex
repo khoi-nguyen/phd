@@ -1894,10 +1894,11 @@ First, we show that $\SmoothingOperators$ is stable under composition.
 \begin{definition}[Taylor reminder]
     Suppose that $f \in \SmoothFunctions \Group$.
     We shall write
-    \begin{align*}
+    \begin{align}
         \TaylorRemainder f N g(h)
         \defeq f(h) - \sum_{\abs \alpha \leq N} q_\alpha(h^{-1}) \TaylorLeftDifferentialOperator \alpha f(g)
-    \end{align*}
+        \label{eq:definition_of_Taylor_remainder}
+    \end{align}
 \end{definition}
 
 \begin{lemma}
