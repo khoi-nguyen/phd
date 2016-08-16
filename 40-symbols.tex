@@ -53,8 +53,90 @@
 Using \cite[Lemma 4.4]{RuzhanskyTurunenWirth10}, we can show
 
 \begin{lemma}
-    There exists a strongly admissible family $q_1$, \dots, $q_M \in \SmoothFunctions{\Group}$ on $\Group$.
+    There exists a strongly admissible family $q_1$, \dots, $q_M \in \SmoothFunctions{\Group}$ on $\Group$ which satisfies the Leibniz-like property.
 \end{lemma}
+\begin{proof}
+    Denote by $F$ the set of all fundamental representations of $\CompactGroup$,
+    % TODO: add reference for fundamental representations
+    i.e. a finite collection such that for any $\tau \in \dualGroup \CompactGroup$,
+    there exists $\tau_1, \dots, \tau_n \in F$ such that
+    \begin{align*}
+        \tau = \tau_1 \otimes \dots \otimes \tau_n.
+    \end{align*}
+
+    Now,
+    let us define the following smooth functions
+    \begin{align*}
+        q_j(x, k) &\defeq \ip {x} {e_j}, &j = 1, \dots, \dim \VectorSpace\\
+        q^\tau_{m n}(x, k) &\defeq {\left(\tau - \Id {H_\tau}\right)}_{m n},
+        &\tau \in F, \ 1 \leq m, n \leq \dimRep \tau.
+    \end{align*}
+    Now we let
+    \begin{align*}
+        \Delta = \{q_j : 1 \leq j \leq \dim \VectorSpace\}
+        \cup \{q^\tau_{m n} : \tau \in F, \ 1 \leq m, n \leq \dimRep \tau\}
+    \end{align*}
+
+    \begin{description}
+        \item [Strong admissibility]
+            Clearly, every $q \in \Delta$ satisfies $q_j(0) = 0$.
+
+            By \cite[Lemma 5.11]{Fischer2015},
+            we know that
+            \begin{align*}
+                \rank \{\dd q^\tau_{m n}(e) : \tau \in F, \ 1 \leq m, n \leq \dimRep \tau\} = \dim \CompactGroup,
+            \end{align*}
+            so we easily check that
+            \begin{align*}
+                \rank \Delta = \dim \Group.
+            \end{align*}
+
+            By \cite[Lemma 5.11]{Fischer2015},
+            if all $q^\tau_{m n}(x, k)$ vanish, then $k = \Id \VectorSpace$,
+            while if all $q_j(x, k)$ vanish, this means $x = 0_\VectorSpace$.
+            Therefore,
+            \begin{align*}
+                \bigcap_{q \in \Delta} \{q = 0\} = (0_\VectorSpace, \Id \VectorSpace)
+            \end{align*}
+        \item [Leibniz-like formula]
+            Using \cite[Corollary 5.13]{Fischer2015},
+            we only need to show that $q_j$, $j = 1, \dots, \dim \VectorSpace$ satisfy the Leibniz-like preperty.
+            For each $j \in \N$,
+            \begin{align*}
+                q_j((x, k) (y, l))
+                &= \ip {x + k y} {e_j}\\
+                &= q_j(x, k) + q_j(y, l) + \ip {(k - \Id \VectorSpace) y} {e_j}\\
+                &= q_j(x, k) + q_j(y, l) + \ip y {{(k - \Id \VectorSpace)}^{-1} e_j}
+            \end{align*}
+
+            Observing that
+            \begin{align*}
+                \transpose {(k - \Id \VectorSpace)} e_j
+                = \transpose {(k - \Id \VectorSpace)}_{i j} e_i
+                = {(k - \Id \VectorSpace)}_{j i} e_i,
+            \end{align*}
+            we obtain that
+            \begin{align*}
+                q_j((x, k) (y, l))
+                &= q_j(x, k) + q_j(y, l) + \sum_{i = 1}^{\dim \VectorSpace} (k - \Id \VectorSpace)_{j i} \ip y {e_i}\\
+                &= q_j(x, k) + q_j(y, l) + \sum_{i = 1}^{\dim \VectorSpace} (k - \Id \VectorSpace)_{j i} q_i(y, l)
+            \end{align*}
+
+            Defining
+            \begin{align*}
+                \tau(k) \defeq k
+            \end{align*}
+            we observe that $\tau$ is a fundamental representation
+            % TODO: Check it is true
+            and so the above becomes
+            \begin{align*}
+                q_j((x, k) (y, l))
+                &= q_j(x, k) + q_j(y, l) + \sum_{i = 1}^{\dim \VectorSpace} q^{\tau}_{j i}(x, k) q_i(y, l).
+            \end{align*}
+
+            We have thus shown that each $q \in \Delta$ satisfies the Leibniz-like formula.
+    \end{description}
+\end{proof}
 
 \begin{remark}
     From now on, we fix an admissible family $q_1, \dots, q_{\dimDifferenceOperators}$ on $\Group$.
