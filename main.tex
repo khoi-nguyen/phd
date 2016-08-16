@@ -100,7 +100,7 @@
 \newcommand{\Lebesgue}[2]{{L^{#1} (#2)}}
 \newcommand{\LebesgueDual}[3][]{{L^{#2}_{#1} (\dualGroup{#3})}}
 \newcommand{\LeftDifferentialOperatorFirstOrder}[1]{{#1}}
-\newcommand{\LeftDifferentialOperator}[2][]{X^{#2}_{L\if #1\empty \else ; #1 \fi}}
+\newcommand{\LeftDifferentialOperator}[2][]{X^{#2}\if #1\empty \else_{#1 }\fi}
 \newcommand{\LeftDifferentialOperatorOnCompactGroup}[2][]{Y^{#2}_{#1}}
 \newcommand{\LeftRegularRepresentation}[1][\CompactGroup]{\pi^L_{#1}}
 \newcommand{\RightRegularRepresentation}[1][\CompactGroup]{\pi^R_{#1}}
@@ -122,6 +122,7 @@
 \newcommand{\RightQuotient}[2]{{{#1} \slash{} {#2}}}
 \newcommand{\Rep}[2][\Group]{\xi^{#2}_{#1}}
 \newcommand{\RightDifferentialOperatorFirstOrder}[1]{\tilde{#1}}
+\newcommand{\RightDifferentialOperator}[2][]{\tilde X^{#2}\if #1\empty \else_{#1 }\fi}
 \newcommand{\RightLaplacian}[1][\Group]{{\tilde{\mathcal{L}}_{#1}}}
 \newcommand{\Rotation}[1]{\tilde R \left(#1\right)}
 \newcommand{\InverseRotation}[1]{R\left(#1\right)}

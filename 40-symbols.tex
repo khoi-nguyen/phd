@@ -1918,6 +1918,90 @@ First, we show that $\SmoothingOperators$ is stable under composition.
         &\qquad \leq C \SymbolSemiNorm {m_1, R} {\rho, \delta} N {\sigma_1} \SymbolSemiNorm {m_2} {\rho, \delta} N {\sigma_2}
     \end{align*}
 \end{lemma}
+\begin{proof}
+    First, let us assume that $\beta_0 = 0$.
+    We want to estimate
+    \begin{align}
+        \sigma(g, &\lambda) - \sum_{\abs \alpha \leq N} \DifferenceOperatorOrder \alpha \sigma_1(g, \lambda) \TaylorLeftDifferentialOperator \alpha \sigma_2(g, \lambda) \notag\\
+        &= \int_\Group \kappa_{1, g}(h) \adj{\Rep \lambda(h)}
+        \left(\sigma_2(g h^{-1}, \lambda) - \sum_{\abs \alpha \leq N} q_\alpha(h^{-1}) \TaylorLeftDifferentialOperator \alpha \sigma_2(g, \lambda)\right) \dd h \notag\\
+        &= \int_\Group \kappa_{1, g}(h) \adj {\Rep \lambda(h)} \TaylorRemainder {\sigma_2(\dummy, \lambda)} g N (h^{-1}) \dd h,
+        \label{eq:remainder_of_composition_formula}
+    \end{align}
+    where $\TaylorRemainder {\sigma_2(\dummy, \lambda)} g N$ is the analogue of \eqref{eq:definition_of_Taylor_remainder} for symbols.
+
+    Now, we would like to introduce powers of $\Rep \lambda \BesselPotential 1$ near $\sigma_2$,
+    which will allow to estimate the above in terms of the symbol semi-norms of $\sigma_2$.
+    To this end,
+    observe that
+    \begin{align*}
+        \adj{\Rep \lambda(h)}
+        &= \adj{\Rep \lambda(h)} \Rep \lambda \BesselPotential M \Rep \lambda \BesselPotential {-M}\\
+        &= \lcsum{\abs \beta \leq 2 M} \adj{\Rep \lambda(h)} \Rep \lambda(X)^\beta \Rep \lambda \BesselPotential {-M},
+    \end{align*}
+    which, after using $\adj {\Rep \lambda(h)} \Rep \lambda (X)^\beta = (-1)^{\abs \beta} \adj {(\RightDifferentialOperator[h] \beta \Rep \lambda (h))}$, becomes
+    \begin{align*}
+        \adj{\Rep \lambda(h)}
+        &= \lcsum{\abs \beta \leq 2 M} \adj{(\RightDifferentialOperator \beta \Rep \lambda(h))} \Rep \lambda \BesselPotential {-M},
+    \end{align*}
+
+    Therefore,
+    injecting the above into \eqref{eq:remainder_of_composition_formula} and using integration by parts yields
+    \begin{align*}
+        &\sigma(g, \lambda) - \sum_{\abs \alpha \leq N} \DifferenceOperatorOrder \alpha \sigma_1(g, \lambda) \TaylorLeftDifferentialOperator \alpha \sigma_2(g, \lambda)\\
+        &= \lcsum{\abs {\beta_1} + \abs {\beta_2} \leq 2M} \int_\Group \RightDifferentialOperator[h_1 = h] {\beta_1} \kappa_{1, g}(h_1) \adj {\Rep \lambda(h)} \RightDifferentialOperator[h_2 = h] {\beta_2}\TaylorRemainder {\Rep \lambda \BesselPotential {-M} \sigma_2(\dummy, \lambda)} g N (h_2^{-1}) \dd h,
+    \end{align*}
+    Now, observing that
+    \begin{align*}
+        \RightDifferentialOperator[h_2 = h] {\beta_2}\TaylorRemainder {\Rep \lambda \BesselPotential {-M} \sigma_2(\dummy, \lambda)} g N (h_2^{-1})
+        =
+        \TaylorRemainder {\Rep \lambda \BesselPotential {-M} \LeftDifferentialOperator {\beta_2} \sigma_2(\dummy, \lambda)} g {N - \abs {\beta_2}} (h^{-1}),
+    \end{align*}
+    the above becomes
+    \begin{align*}
+        &\sigma(g, \lambda) - \sum_{\abs \alpha \leq N} \DifferenceOperatorOrder \alpha \sigma_1(g, \lambda) \TaylorLeftDifferentialOperator \alpha \sigma_2(g, \lambda)\\
+        &= \lcsum{\abs {\beta_1} + \abs {\beta_2} \leq 2M} \int_\Group \RightDifferentialOperator[h_1 = h] {\beta_1} \kappa_{1, g}(h_1) \adj {\Rep \lambda(h)} \TaylorRemainder {\Rep \lambda \BesselPotential {-M} \LeftDifferentialOperator {\beta_2} \sigma_2(\dummy, \lambda)} g {N - \abs {\beta_2}} (h^{-1}) \dd h.
+    \end{align*}
+
+    Therefore,
+    if we take the operator norm,
+    we obtain
+    \begin{align*}
+        &\norm [\Lin {\Lebesgue 2 \CompactGroup}] {\sigma(g, \lambda) - \sum_{\abs \alpha \leq N} \DifferenceOperatorOrder \alpha \sigma_1(g, \lambda) \TaylorLeftDifferentialOperator \alpha \sigma_2(g, \lambda)}\\
+        &\leq \lcsum{\abs {\beta_1} + \abs {\beta_2} \leq 2M} \int_\Group \abs {\RightDifferentialOperator[h] {\beta_1} \kappa_{1, g}(h)}
+        \norm [\Lin {\Lebesgue 2 \CompactGroup}] {\TaylorRemainder {\Rep \lambda \BesselPotential {-M} \LeftDifferentialOperator {\beta_2} \sigma_2(\dummy, \lambda)} g {N - \abs {\beta_2}} (h^{-1})} \dd h.
+    \end{align*}
+
+    Applying the Taylor Reminder Theorem,
+    we have
+    % TODO: reference
+    \begin{align*}
+        &\norm [\Lin {\Lebesgue 2 \CompactGroup}] {\TaylorRemainder {\Rep \lambda \BesselPotential {-M} \LeftDifferentialOperator {\beta_2} \sigma_2(\dummy, \lambda)} g {N - \abs {\beta_2}} (h^{-1})}\\
+        &\ \leq
+        \sup_{\abs \gamma \leq N - \abs {\beta_2} + 1}
+        \norm [\Group] h^{N - \abs {\beta_2} + 1}
+        \sup_{g_1 \in \Group}
+        \norm [\Lin {\Lebesgue 2 \CompactGroup}] {%
+            \Rep \lambda \BesselPotential {-M}
+            \LeftDifferentialOperator [g_1] {\beta_2 + \gamma} \sigma_2(g_1, \lambda)
+        }\\
+        & \ \leq
+        \sup_{\abs \gamma \leq N - \abs {\beta_2} + 1}
+        \norm [\Group] h^{N - \abs {\beta_2} + 1}
+        \SymbolSemiNorm {-M + \delta(\gamma + \abs {\beta_2})} {\rho, \delta} {0} {\sigma_2}.
+    \end{align*}
+
+    We have thus shown so far that
+    \begin{align*}
+        &\norm [\Lin {\Lebesgue 2 \CompactGroup}] {\sigma(g, \lambda) - \sum_{\abs \alpha \leq N} \DifferenceOperatorOrder \alpha \sigma_1(g, \lambda) \TaylorLeftDifferentialOperator \alpha \sigma_2(g, \lambda)}\\
+        &\leq
+        \lcsum{\abs {\beta_1} + \abs {\beta_2} \leq 2M}
+        \sup_{\abs \gamma \leq N - \abs {\beta_2} + 1}
+        \SymbolSemiNorm {-M + \delta(\gamma + \abs {\beta_2})} {\rho, \delta} {0} {\sigma_2}\\
+        &\qquad \qquad
+        \int_\Group \abs {\RightDifferentialOperator[h] {\beta_1} \kappa_{1, g}(h)} \norm [\Group] h^{N - \abs {\beta_2} + 1} \dd h.
+    \end{align*}
+\end{proof}
 
 \section{\texorpdfstring{$L^2$}{L2} boundedness}
 
