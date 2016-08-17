@@ -1362,7 +1362,6 @@ The above is of course an abuse of notation, as $\norm [\Group] \dummy$ is not a
 
 \begin{theorem}[Kernel estimates]
 \label{theorem:kernel_estimates}
-    % TODO: Adapt statement with Veronique's reply
     Let $\rho, \delta \in \R$ be such that $1 \geq \rho \geq \delta \geq 0$
     and assume further that $\rho > 0$.
     Suppose that $\sigma \in \SymbolClass{m}{\rho, \delta}$,
@@ -1375,14 +1374,16 @@ The above is of course an abuse of notation, as $\norm [\Group] \dummy$ is not a
                 \abs{\kappa_g(h)} \leq C \norm y^{-N}.
             \end{align*}
         \item \label{item:kernel_estimates:at_origin:positive}
-            If $m > - \dim \Group$, there exists $C \geq 0$ such that for every $g, h \in \Group$ with $h \neq 0$, we have
+            If $m > - \dim \Group$ and $\rho < 1$, there exists $C \geq 0$ such that for every $g, h \in \Group$ with $h \neq 0$, we have
             \begin{align*}
                 \abs{\kappa_g(h)} \leq C \norm [\Group] h^{- \frac{\dim \Group + m}{\rho}}.
             \end{align*}
         \item \label{item:kernel_estimates:at_origin:zero}
-            If $m = -\dim \Group$, there exists $C \geq 0$ such that for every $g, h \in \Group$ with $h \neq 0$, we have
+            If $m \geq -\dim \Group$ or $\rho = 1$,
+            then for every $\gamma < -(m + \dim \Group)/\rho$,
+            there exists $C \geq 0$ such that for every $g, h \in \Group$ with $h \neq 0$, we have
             \begin{align*}
-                \abs{\kappa_g(h)} \leq C \log \norm [\Group] h.
+                \abs{\kappa_g(h)} \leq C \norm [\Group] h^\gamma.
             \end{align*}
         \item \label{item:kernel_estimates:at_origin:negative}
             If $m < -\dim \Group$, $\kappa_g$ is continuous on $\Group$ and is bounded
