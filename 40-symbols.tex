@@ -150,6 +150,36 @@ Using \cite[Lemma 4.4]{RuzhanskyTurunenWirth10}, we can show
     \end{align*}
 \end{remark}
 
+\begin{lemma}[Taylor Theorem]
+    Let
+    \begin{align*}
+        \Delta = \{q_1, \dots q_{\dimDifferenceOperators} \in \SmoothFunctions \Group \}
+    \end{align*}
+    be a strongly admissible collection of smooth functions
+    containing $\dim \Group$ elements.
+
+    Define a basis $X_j \in \VectorFields$, $j = 1, \dots, \dim \Group$ such that
+    \begin{align*}
+        X'_j \{q_k(\dummy^{-1})\}(0_\VectorSpace, \Id \VectorSpace) = \Kronecker j k
+    \end{align*}
+    for every $j, k \in \{1, \dots, \dim \Group\}$.
+
+    Let $f \in \Schwartz \Group$.
+    Defining the \emph{Taylor remainder} of $f$ of order $N \in \Group$ at $g \in \Group$ via
+    \begin{align*}
+        \TaylorRemainder f g N(h) \defeq f(g h) - \sum_{\abs \alpha \leq N} q^\alpha(h^{-1}) \TaylorLeftDifferentialOperator \alpha f(g),
+    \end{align*}
+
+    For each $N \in \N$,
+    we can find $C \geq 0$ such that
+    for each $f \in \SmoothFunctions \Group$ and each $g \in \Group$,
+    \begin{align*}
+        \abs {\TaylorRemainder f g N (h)}
+        \leq C \sup_{\abs \alpha \leq N + 1} \abs {\TaylorLeftDifferentialOperator \alpha f(g)} \norm [\Group] h^{N + 1}
+    \end{align*}
+    holds for every $h \in \Group$.
+\end{lemma}
+
 \section{Symbol and operators classes}
 
 \begin{definition}[Symbol classes]
