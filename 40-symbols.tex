@@ -150,26 +150,36 @@ Using \cite[Lemma 4.4]{RuzhanskyTurunenWirth10}, we can show
     \end{align*}
 \end{remark}
 
-\begin{lemma}[Taylor Theorem]
-    Let
+\begin{definition}[Taylor remainder]
+\label{definition:Taylor_remainder}
+    Let $f \in \Schwartz \Group$, $g \in \Group$
+    and fix a strongly admissible collection of smooth functions
     \begin{align*}
         \Delta = \{q_1, \dots q_{\dimDifferenceOperators} \in \SmoothFunctions \Group \}
     \end{align*}
-    be a strongly admissible collection of smooth functions
     containing $\dim \Group$ elements.
-
-    Define a basis $X_j \in \VectorFields$, $j = 1, \dots, \dim \Group$ such that
+    Also, define a basis $X_j \in \VectorFields$, $j = 1, \dots, \dim \Group$ of left-invariant vector fields such that
     \begin{align*}
         X'_j \{q_k(\dummy^{-1})\}(0_\VectorSpace, \Id \VectorSpace) = \Kronecker j k
     \end{align*}
     for every $j, k \in \{1, \dots, \dim \Group\}$.
 
-    Let $f \in \Schwartz \Group$.
-    Defining the \emph{Taylor remainder} of $f$ of order $N \in \Group$ at $g \in \Group$ via
+    We define the \emph{Taylor remainder} of $f$ of order $N$ at $g \in \Group$ via
     \begin{align*}
-        \TaylorRemainder f g N(h) \defeq f(g h) - \sum_{\abs \alpha \leq N} q^\alpha(h^{-1}) \TaylorLeftDifferentialOperator \alpha f(g),
+        \TaylorRemainder f g N(h) \defeq
+        \begin{cases}
+            f(g h) - \sum_{\abs \alpha \leq N} q^\alpha(h^{-1}) \TaylorLeftDifferentialOperator \alpha f(g) & \text{if } N \geq 0\\
+            f(g h) & \text{if } N < 0,
+        \end{cases}
     \end{align*}
+    where in the above
+    \begin{align*}
+        \TaylorLeftDifferentialOperator \alpha \defeq X'_1^{\alpha_1} \dots X'_{\dimDifferenceOperators}^{\alpha_\dimDifferenceOperators}
+    \end{align*}
+\end{definition}
 
+\begin{lemma}[Taylor Theorem]
+    We use the notation of Definition~\ref{definition:Taylor_remainder}.
     For each $N \in \N$,
     we can find $C \geq 0$ such that
     for each $f \in \SmoothFunctions \Group$ and each $g \in \Group$,
