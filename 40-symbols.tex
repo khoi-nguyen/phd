@@ -1036,14 +1036,14 @@ Using \cite[Lemma 4.4]{RuzhanskyTurunenWirth10}, we can show
             \begin{align*}
                 \DifferenceOperatorOrder \alpha \eta_\epsilon(\lambda) F(u)
                 &= \sum_{\tau \in \dualGroup \CompactGroup}
-                \iD {x^{\alpha_1} } \chi_{\epsilon, \tau}(u^{-1} \lambda)
+                \iD {\lambda^{\alpha_1} } \chi_{\epsilon, \tau}(u^{-1} \lambda)
                 \DifferenceOperatorOrder [\CompactGroup] {\alpha_2} \Fourier [\CompactGroup] \chi_\tau F(u),
             \end{align*}
             which can be rewritten more elegantly as follows
             \begin{align}
                 \DifferenceOperatorOrder \alpha \eta_\epsilon(\lambda) F(u)
                 = \bigoplus_{\tau \in \dualGroup \CompactGroup}
-                \iD {x^{\alpha_1} } \chi_{\epsilon, \tau}(u^{-1} \lambda)
+                \iD {\lambda^{\alpha_1} } \chi_{\epsilon, \tau}(u^{-1} \lambda)
                 \DifferenceOperatorOrder [\CompactGroup] {\alpha_2} \Id {V_\tau} F(u).
                 \label{eq:Littlewood-Paley:difference_operators}
             \end{align}
@@ -1076,7 +1076,7 @@ Using \cite[Lemma 4.4]{RuzhanskyTurunenWirth10}, we can show
             holds if and only if
             \begin{align*}
                 \norm [\Lin {\Lebesgue 2 \CompactGroup}] {%
-                    \iD {x^{\alpha_1} } \chi_{\epsilon, \tau}(u^{-1} \lambda)
+                    \iD {\lambda^{\alpha_1} } \chi_{\epsilon, \tau}(u^{-1} \lambda)
                     \DifferenceOperatorOrder {\alpha_2} \Id {V_\tau}
                     } \leq C_\alpha (\JapaneseBracket \CompactGroup \tau + \norm {\turn \lambda})^{-\rho \abs {\alpha}}.
             \end{align*}
@@ -1084,10 +1084,10 @@ Using \cite[Lemma 4.4]{RuzhanskyTurunenWirth10}, we can show
             By the chain rule,
             we have
             \begin{align*}
-                \iD {x^{\alpha_1} } &\chi_{\epsilon, \tau}(u^{-1} \lambda)\\
+                \iD {\lambda^{\alpha_1} } &\chi_{\epsilon, \tau}(u^{-1} \lambda)\\
                 &= \epsilon^{\alpha_1} \lcsum{n \leq \abs {\alpha_1}}
                 \D*{n}[\chi]{r^n}(\epsilon (\JapaneseBracket \CompactGroup \tau^2 + \norm {\turn \lambda}^2)^{\frac 1 2})
-                \iD {x^{\alpha_1} } (\JapaneseBracket \CompactGroup \tau^2 + \norm {\turn \lambda}^2)^{\frac 1 2}.
+                \iD {\lambda^{\alpha_1} } (\JapaneseBracket \CompactGroup \tau^2 + \norm {\turn \lambda}^2)^{\frac 1 2}.
             \end{align*}
 
             We now check that \cite[Lemma A.10]{Fischer2015} implies that
@@ -1106,7 +1106,7 @@ Using \cite[Lemma 4.4]{RuzhanskyTurunenWirth10}, we can show
             we get
             \begin{align}
                 \norm [\Lin {\Lebesgue 2 \CompactGroup}] {%
-                    \iD {x^{\alpha_1} } \chi_{\epsilon, \tau}(u^{-1} \lambda)
+                    \iD {\lambda^{\alpha_1} } \chi_{\epsilon, \tau}(u^{-1} \lambda)
                     \DifferenceOperatorOrder {\alpha_2} \Id {V_\tau}
                     } \leq C_\alpha (\JapaneseBracket \CompactGroup \tau + \norm {\turn \lambda})^{-\rho \abs {\alpha}}.
                 \label{eq:eta_epsilon_symbol_norm_for_gamma_0}
@@ -1220,7 +1220,7 @@ Using \cite[Lemma 4.4]{RuzhanskyTurunenWirth10}, we can show
             \begin{align*}
                 \DifferenceOperatorOrder \alpha \eta_\epsilon(\lambda) F(u)
                 &= \sum_{\tau \in \dualGroup \CompactGroup}
-                \iD {x^{\alpha_1} } (1 - \chi_{\epsilon, \tau})(u^{-1} \lambda)
+                \iD {\lambda^{\alpha_1} } (1 - \chi_{\epsilon, \tau})(u^{-1} \lambda)
                 \DifferenceOperatorOrder [\CompactGroup] {\alpha_2} \Fourier [\CompactGroup] \chi_\tau F(u),
             \end{align*}
 
