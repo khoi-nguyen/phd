@@ -907,23 +907,38 @@ Using \cite[Lemma 4.4]{RuzhanskyTurunenWirth10}, we can show
 
 \begin{theorem}
 \label{theorem:generalised_Littlewood-Paley_decomposition}
-    There exists a family $(\eta_\epsilon)_{0 < \epsilon \leq 1} \subset \SmoothingSymbols$ of smoothing symbols
-    such that the following properties hold.
+    Let $\chi \in \SmoothFunctions {\R^+}$ be a positive bounded smooth function.
+
+    For each $\epsilon \in (0, 1]$,
+    we let
+    \begin{align*}
+        \eta_\epsilon(\lambda)
+        \defeq
+        \bigoplus_{\tau \in \dualGroup \CompactGroup} \chi(\epsilon(\JapaneseBracket \CompactGroup \tau^2 + \norm {\turn \lambda}^2)^{\frac 1 2}) \Id {V_\tau},
+    \end{align*}
+    where $V_\tau \defeq \Span \{\tau_{i j} \in \Lebesgue 2 \CompactGroup : 1 \leq i, j \leq \dimRep \tau\}$.
+
+    For each $\epsilon \in (0, 1]$,
+    $\eta_\epsilon$ is a symbol in $\SymbolClass 0 {1, 0}$,
+    and the following properties hold.
+
     \begin{enumerate}
         \item \label{item:generalised_Littlewood-Paley_decomposition:negative_m}
-            For each $m \leq 0$ and each $N \in \N$,
-            there exists $C_{m, N} \geq 0$ such that for every $\epsilon \in (0, 1]$,
-            we have
+            If $\chi$ has compact support, then $\eta_\epsilon \in \SmoothingSymbols$ for each $\epsilon \in (0, 1]$.
+            Moreover, for each $m \leq 0$ and each $N \in \N$,
+            there exists $C_{m, N} \geq 0$ such that
             \begin{align*}
-                \SymbolSemiNorm m {\rho, \delta} N {\eta_\epsilon} \leq C_{m, N} \epsilon^m.
+                \SymbolSemiNorm m {\rho, \delta} N {\eta_\epsilon} \leq C_{m, N} \epsilon^m
             \end{align*}
+            for every $\epsilon \in (0, 1]$.
         \item \label{item:generalised_Littlewood-Paley_decomposition:positive_m}
-            For each $m \geq 0$ and each $N \in \N$,
-            there exists $C_{m, N} \geq 0$ such that for every $\epsilon \in (0, 1]$,
-            we have
+            If there exists $c > 0$ such that $\chi$ vanishes on $[0, c]$,
+            then for each $m \geq 0$ and each $N \in \N$,
+            there exists $C_{c, m, N} \geq 0$ such that
             \begin{align*}
-                \SymbolSemiNorm m {\rho, \delta} N {\Id {\Lebesgue 2 \CompactGroup} - \eta_\epsilon} \leq C_{m, N} \epsilon^m
+                \SymbolSemiNorm m {\rho, \delta} N {\eta_\epsilon} \leq C_{c, m, N} \epsilon^m
             \end{align*}
+            for every $\epsilon \in (0, 1]$.
     \end{enumerate}
 \end{theorem}
 \begin{proof}
