@@ -264,6 +264,40 @@ Using \cite[Lemma 4.4]{RuzhanskyTurunenWirth10}, we can show
     \end{align*}
     then $\SymbolClass {m_1} {\rho_1, \delta_1} \subset \SymbolClass {m_2} {\rho_2, \delta_2}$.
 \end{lemma}
+\begin{proof}
+    Let $\sigma \in \SymbolClass {m_1} {\rho_1, \delta_1}$,
+    and fix $\alpha \in \N^{\dimDifferenceOperators}$, $\beta \in \N^{\dim \Group}$ and $\gamma \in \R$.
+
+    It is clear that
+    \begin{align*}
+        \Rep{\lambda} \BesselPotential{\rho_2 \abs\alpha - m_2 - \delta_2 \abs\beta + \gamma}
+        \LeftDifferentialOperator{\beta} \DifferenceOperatorOrder{\alpha} \sigma(g, \lambda)
+        \Rep{\lambda} \BesselPotential{-\gamma}
+        = I_1 I_2,
+    \end{align*}
+    where
+    \begin{align*}
+        I_1 &\defeq \Rep \lambda \BesselPotential {m_1 - m_2 + (\rho_2 - \rho_1) \abs \alpha + (\delta_1 - \delta_2) \abs \beta}\\
+        I_2 &\defeq \Rep{\lambda} \BesselPotential{\rho_1 \abs\alpha - m_1 - \delta_1 \abs\beta + \gamma}
+        \LeftDifferentialOperator{\beta} \DifferenceOperatorOrder{\alpha} \sigma(g, \lambda)
+        \Rep{\lambda} \BesselPotential{-\gamma}
+    \end{align*}
+
+    Because of our assumption,
+    it is clear that
+    \begin{align*}
+        m_1 - m_2 + (\rho_2 - \rho_1) \abs \alpha + (\delta_1 - \delta_2) \abs \beta \leq 0
+    \end{align*}
+    so that $I_1$ satisfies
+    \begin{align*}
+        \norm [\Lin {\Lebesgue 2 \CompactGroup}] {I_1}
+        \leq 1.
+    \end{align*}
+
+    By our assumption on $\sigma$,
+    it is clear that $I_2$ is bounded on $\Lebesgue 2 \Group$ uniformly in $g \in \Group$ and $\lambda \in \Group$,
+    so that the same holds for $I_1 I_2$.
+\end{proof}
 
 \begin{definition}[Smoothing symbols]
 \label{definition:smoothing_symbols}
