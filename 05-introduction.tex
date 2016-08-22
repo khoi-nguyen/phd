@@ -37,14 +37,17 @@ as this formula can be used to construct approximate inverses to a suitable clas
 
 Laurent Schwartz's \emph{Kernel Theorem} and his extension of the \emph{Fourier transform} allows us to extend the concept of characteristic polynomials far beyond the class of ordinary differential operators.
 The resulting concept, called the \emph{symbol} of an operator,
-is formally defined by taking the Fourier transform of the convolution kernel,
-i.e.\ if $T$ is formally given by
+is formally defined by taking the Fourier transform of the convolution kernel.
+More precisely,
+by the \emph{Schwartz Kernel Theorem},
+$T$ is formally given by
 \begin{align*}
-    T \phi(x) \defeq \conv \phi {\kappa_x}(x),
+    T \phi(x) = \int_{\R^n} \phi(y) \kappa(x, x - y) \dd y
 \end{align*}
-then we define its symbol via
+in the sense of distributions,
+and we can thus define its \emph{symbol} via
 \begin{align*}
-    \sigma(x, \xi) \defeq \Fourier \kappa_x(\xi).
+    \sigma(x, \xi) \defeq \Fourier \{\kappa(x, \dummy)\}(\xi).
 \end{align*}
 
 Interestingly, the formula~\eqref{eq:composition_formula_for_characteristic_polynomials} still holds in a certain sense for smooth symbols.
