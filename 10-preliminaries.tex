@@ -575,6 +575,47 @@ leading to the following definition.
             \end{align*}
     \end{enumerate}
 \end{proposition}
+\begin{proof}
+    Let us prove each of those claims separately.
+
+    \begin{enumerate}
+        \item
+            Let $g \in \Group$.
+            To obtain the first identity,
+            let us observe that
+            \begin{align*}
+                \Fourier \{f(\dummy g)\}(\xi)
+                &= \int_\Group f(h g) \adj{\xi(h)} \dd h\\
+                &= \int_\Group f(h) \adj{\xi(h g^{-1})} \dd h,
+            \end{align*}
+            where we used the invariance of the Haar measure under the group action.
+            Continuing the above calculation,
+            we obtain
+            \begin{align*}
+                \Fourier \{f(\dummy g)\}(\xi)
+                = \int_\Group f(h) \xi(g) \adj{\xi(h)} \dd h
+                = \xi(g) \Fourier f(\xi),
+            \end{align*}
+            which is what we wanted to show.
+
+            Let us proceed similarly for the left-translation.
+            Let us observe that this time
+            \begin{align*}
+                \Fourier \{f(g \dummy)\}(\xi)
+                &= \int_\Group f(g h) \adj{\xi(h)} \dd h\\
+                &= \int_\Group f(h) \adj{\xi(g^{-1} h)} \dd h,
+            \end{align*}
+            where we again used the invariance of the Haar measure under the group action.
+            Continuing the above calculation,
+            we now obtain
+            \begin{align*}
+                \Fourier \{f(g \dummy)\}(\xi)
+                = \int_\Group f(h) \adj{\xi(h)} \xi(g) \dd h
+                = \Fourier f(\xi) \xi(g),
+            \end{align*}
+            which is what we wanted to show.
+    \end{enumerate}
+\end{proof}
 
 \begin{proposition}
     There exists a measure $\Plancherel\Group$ on $\dualGroup\Group$ such that the following property holds:
