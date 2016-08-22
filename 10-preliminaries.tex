@@ -614,6 +614,24 @@ leading to the following definition.
                 = \Fourier f(\xi) \xi(g),
             \end{align*}
             which is what we wanted to show.
+        \item
+            By Ref, %TODO Add reference
+            $\conv {f_1} {f_2} \in \Lebesgue 1 \Group$.
+            Therefore,
+            we can compute its Fourier Transform,
+            yielding
+            \begin{align*}
+                \Fourier \{\conv {f_1} {f_2}\}(\xi)
+                &= \int_\Group \int_\Group f_1(h) f_2(h^{-1} g) \adj{\xi(g)} \dd g
+            \end{align*}
+
+            Using $\adj{\xi(g)} = \adj{(\xi(h) \xi(h^{-1} g))} = \adj{\xi(h^{-1} g)} \adj{\xi(h)}$ in the above,
+            we obtain
+            \begin{align*}
+                \Fourier \{\conv {f_1} {f_2}\}(\xi)
+                &= \int_\Group \int_\Group f_2(h^{-1} g) \adj{\xi(h^{-1} g)} \dd g f_1(h) \adj{\xi(h)} \dd h\\
+                &= \Fourier f_2(\xi) \Fourier f_1(\xi).
+            \end{align*}
     \end{enumerate}
 \end{proof}
 
