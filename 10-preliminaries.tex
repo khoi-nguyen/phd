@@ -559,12 +559,14 @@ leading to the following definition.
 \section{Fourier Transform}
 
 \begin{definition}[Fourier coefficient]
+\label{definition:Fourier_coefficient}
     Let $\xi \in \dualGroup\Group$.
     If $f \in \Lebesgue{1}{\Group}$,
     we define the \emph{Fourier coefficient of $f$ at $\xi$}, $\Fourier f(\xi)$, via
-    \begin{align*}
+    \begin{align}
         \Fourier f(\xi) \defeq \int_\Group f(g) \adj{\xi(g)} \dd g.
-    \end{align*}
+        \label{eq:definition_of_Fourier_coefficient}
+    \end{align}
 
     The map
     \begin{align*}
