@@ -566,7 +566,7 @@ leading to the following definition.
                 \Fourier \{\conv{f_1}{f_2}\}(\xi)
                 = \Fourier f_2(\xi) \Fourier f_1(\xi).
             \end{align*}
-        \item If $f \in \SmoothFunctions\Group \cap \Lebesgue 1 \Group$ and $X \in \LieAlgebra$,
+        \item If $f \in \Schwartz\Group \cap \Lebesgue 1 \Group$ and $X \in \LieAlgebra$,
             \begin{align*}
                 \Fourier \{\LeftDifferentialOperatorFirstOrder{X} f\}(\xi)
                 = \xi(X) \Fourier f(\xi), \quad
@@ -631,6 +631,54 @@ leading to the following definition.
                 \Fourier \{\conv {f_1} {f_2}\}(\xi)
                 &= \int_\Group \int_\Group f_2(h^{-1} g) \adj{\xi(h^{-1} g)} \dd g f_1(h) \adj{\xi(h)} \dd h\\
                 &= \Fourier f_2(\xi) \Fourier f_1(\xi).
+            \end{align*}
+        \item
+            Let $X \in \LieAlgebra$.
+            Using integration by parts,
+            we get
+            \begin{align*}
+                \Fourier \{\LeftDifferentialOperatorFirstOrder X f\}(\xi)
+                = \int_\Group \LeftDifferentialOperatorFirstOrder X f(g) \adj{\xi(g)} \dd g
+                = -\int_\Group f(g) \LeftDifferentialOperatorFirstOrder X \adj{\xi(g)} \dd g.
+            \end{align*}
+
+            Now,
+            we know that
+            \begin{align*}
+                \LeftDifferentialOperatorFirstOrder X \adj{\xi(g)}
+                &= \eval {\D* 1 t} {t = 0} \adj{\xi(g \exp_\Group(t X))}
+                = \eval {\D* 1 t} {t = 0} \adj{\xi(\exp_\Group(t X))} \adj{\xi(g)}\\
+                &= - \eval {\D* 1 t} {t = 0} \xi(\exp_\Group(t X)) \adj{\xi(g)},
+            \end{align*}
+            which implies that
+            \begin{align*}
+                \LeftDifferentialOperatorFirstOrder X \adj{\xi(g)}
+                &= - \xi(X) \adj{\xi(g)}.
+            \end{align*}
+
+            Substituing the above into the Fourier transform above,
+            we obtain
+            \begin{align*}
+                \Fourier \{\LeftDifferentialOperatorFirstOrder X f\}(\xi)
+                = \int_\Group f(g) \xi(X) \adj{\xi(g)} \dd g
+                = \xi(X) \Fourier f(\xi).
+            \end{align*}.
+
+            Let us now turn our attention to the case of the right-invariant vector fields.
+            In this case,
+            \begin{align*}
+                \RightDifferentialOperatorFirstOrder X \adj{\xi(g)}
+                &= \eval {\D* 1 t} {t = 0} \adj{\xi(\exp_\Group(t X) g)}
+                = \eval {\D* 1 t} {t = 0} \adj{\xi(g)} \adj{\xi(\exp_\Group(t X))}\\
+                &= - \adj{\xi(g)} \xi(X)
+            \end{align*}
+            which allows us to conclude that
+            \begin{align*}
+                \Fourier \{\RightDifferentialOperatorFirstOrder X f\}(\xi)
+                &= \int_\Group \RightDifferentialOperatorFirstOrder X f(g) \adj{\xi(g)} \dd g
+                = -\int_\Group f(g) \RightDifferentialOperatorFirstOrder X \adj{\xi(g)} \dd g\\
+                &= \int_\Group f(g) \adj{\xi(g)} \xi(X) \dd g
+                = \Fourier f(\xi) \xi(X).
             \end{align*}
     \end{enumerate}
 \end{proof}
