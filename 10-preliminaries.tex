@@ -492,6 +492,39 @@ Naturally, every integration on $\Group$ is performed with respect to a Haar mea
     \end{align}
 \end{definition}
 
+\begin{proposition}
+\label{proposition:integrability_of_the_convolution_of_two_L1_functions}
+    Let $f_1, f_2 \in \Lebesgue 1 \Group$.
+    The convolution of $f_1$ and $f_2$, $\conv {f_1} {f_2}$,
+    belongs to $\Lebesgue 1 \Group$.
+    Moreover, we have
+    \begin{align*}
+        \norm [\Lebesgue 1 \Group] {\conv {f_1} {f_2}}
+        \leq
+        \norm [\Lebesgue 1 \Group] {f_1}
+        \norm [\Lebesgue 1 \Group] {f_2}.
+    \end{align*}
+\end{proposition}
+\begin{proof}
+    By the positivity of the integral,
+    we get
+    \begin{align*}
+        \int_\Group \abs {\int_\Group f_1(h) f_2(h^{-1} g) \dd h} \dd g
+        \leq \int_\Group \int_\Group \abs{f_1(h)} \abs{f_2(h^{-1} g)} \dd h \dd g
+    \end{align*}
+
+    By the Fubini-Tonelli Theorem,
+    we can change the order of integration above
+    and therefore substitute $g$ for $h g$,
+    which yields
+    \begin{align*}
+        \int_\Group \abs {\int_\Group f_1(h) f_2(h^{-1} g) \dd h} \dd g
+        &\leq \int_\Group \int_\Group \abs{f_1(h)} \abs{f_2(g)} \dd g \dd h\\
+        &\leq \norm [\Lebesgue 1 \Group] {f_1} \norm [\Lebesgue 1 \Group] {f_2},
+    \end{align*}
+    concluding the prood.
+\end{proof}
+
 \subsection{Convolutions of distributions}
 
 Suppose that $\kappa, \phi \in \Schwartz \Group$.
