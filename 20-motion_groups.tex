@@ -1692,6 +1692,23 @@ is to show that it belongs to a Sobolev space $\Sobolev s$ for a sufficiently la
     concluding the proof.
 \end{proof}
 
+\begin{corollary}
+    Let $s > \dim \Group / 2 + k$, where $k \in \N$.
+    If $f \in \Sobolev s$,
+    then $f \in \Class k$.
+\end{corollary}
+\begin{proof}
+    Let $\alpha \in \N^{\dim \Group}$ be such that $\abs \alpha \leq k$.
+    By %TODO: Add reference,
+    $\LeftDifferentialOperator \alpha f \in \Sobolev {s - \abs \alpha}$.
+
+    Applying Proposition~\ref{proposition:general_Fourier_inverse_formula},
+    we obtain that $\LeftDifferentialOperator \alpha f$ is continuous.
+    
+    We conclude that $f \in \Class k$ by observing that $\alpha$ is arbitrary.
+    % TODO reference for characterisation of class k.
+\end{proof}
+
 \subsection{Fourier Transform of distributions}
 
 For the sequel, we need to be able to take the Fourier Transform of certain distributions.
