@@ -1523,6 +1523,7 @@ A classical strategy to show that a distribution is a continuous function
 is to show that it belongs to a Sobolev space $\Sobolev s$ for a sufficiently large $s \in \R$.
 
 \begin{lemma}
+\label{lemma:integrability_of_the_Schatten_class_of_the_Bessel_potential}
     Let $s > \dim \Group$.
     The map
     \begin{align*}
@@ -1583,6 +1584,17 @@ is to show that it belongs to a Sobolev space $\Sobolev s$ for a sufficiently la
         \norm[\ContinuousFunctions\Group]{\tilde{f}} \leq C \norm[\Sobolev{s}]{f}.
     \end{align*}
 \end{proposition}
+\begin{proof}
+    Let $s > \dim \Group / 2$.
+    By Lemma~\ref{lemma:integrability_of_the_Schatten_class_of_the_Bessel_potential} and Proposition~\ref{proposition:Plancherel_formula},
+    $\BesselPotentialKernel s \in \Lebesgue 2 \Group$.
+    Therefore,
+    \begin{align*}
+        f = \conv {\BesselPotential {-s} f} {\BesselPotentialKernel s},
+    \end{align*}
+    can be written as the convolution of two functions in $\Lebesgue 2 \Group$.
+    The conclusion now follows from Proposition~\ref{proposition:integrability_of_the_convolution_of_two_L1_functions}.
+\end{proof}
 
 \begin{lemma}
 \label{lemma:preparation_for_general_inverse_formula}
