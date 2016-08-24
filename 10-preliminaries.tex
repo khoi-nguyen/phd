@@ -534,6 +534,31 @@ Naturally, every integration on $\Group$ is performed with respect to a Haar mea
     concluding the prood.
 \end{proof}
 
+\begin{lemma}
+    Let $f_1, f_2 \in \Lebesgue 2 \Group$.
+    The map
+    \begin{align*}
+        f \defeq \conv {f_1} {f_2}
+    \end{align*}
+    is continuous.
+\end{lemma}
+\begin{proof}
+    Let $g \in \Group$.
+    For each $h \in \Group$,
+    we have
+    \begin{align*}
+        \abs {f(h) - f(g)} &\leq \abs {\int_\Group f_1(h l^{-1}) f_2(l) \dd l}\\
+        &\leq \norm [\Lebesgue 2 \Group] {f_1} \norm [\Lebesgue 2 \Group] {f_2(h \dummy) - f_2(g \dummy)}.
+    \end{align*}
+
+    By %TODO Add reference,
+    \begin{align*}
+        \lim_{h \to g} \norm [\Lebesgue 2 \Group] {f_2(h \dummy) - f_2(g \dummy)} = 0,
+    \end{align*}
+    showing that $f$ is continuous at $g$.
+    We conclude the proof by observing that $g$ is arbitrary.
+\end{proof}
+
 \subsection{Convolutions of distributions}
 
 Suppose that $\kappa, \phi \in \Schwartz \Group$.
