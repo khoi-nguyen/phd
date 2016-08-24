@@ -1521,6 +1521,45 @@ where in the above $\hat f(\lambda, t) \defeq \Fourier [\MotionGroup 2] f(\lambd
         \norm[\ContinuousFunctions\Group]{\tilde{f}} \leq C \norm[\Sobolev{s}]{f}.
     \end{align*}
 \end{proposition}
+\begin{proof}
+    For each $s \in \R$, we let
+    \begin{align*}
+        I(s) \defeq \int_\VectorSpace \tr(\Rep \lambda \BesselPotential {-s}) \dd \lambda.
+    \end{align*}
+    Now, fix $s > \dim \Group$, and let us show that $I(s)$ is finite.
+
+    It is clear that
+    \begin{align*}
+        I(s) \asymp \int_\VectorSpace \sum_{\tau \in \dualGroup \CompactGroup} \dimRep \tau (\norm \lambda + \JapaneseBracket \CompactGroup \tau)^{-s} \dd \lambda,
+    \end{align*}
+    which, after integrating via polar coordinates, yields
+    \begin{align*}
+        I(s) \asymp \int_{\R^+} \sum_{\tau \in \dualGroup \CompactGroup} \dimRep \tau (r + \JapaneseBracket \CompactGroup \tau)^{-s} r^{\dim \VectorSpace - 1} \dd r.
+    \end{align*}
+
+    Now, substituting $r$ for $r - \JapaneseBracket \CompactGroup \tau$,
+    we obtain
+    \begin{align*}
+        I(s) &\asymp \int_{\JapaneseBracket \CompactGroup \tau}^{+\infty} \sum_{\tau \in \dualGroup \CompactGroup} \dimRep \tau r^{-s} (r - \JapaneseBracket \CompactGroup \tau)^{\dim \VectorSpace - 1} \dd r\\
+        &\asymp \int_{\JapaneseBracket \CompactGroup \tau}^{+\infty} \sum_{\tau \in \dualGroup \CompactGroup} \sum_{k = 0}^{\dim \VectorSpace - 1} \dimRep \tau r^{-s + k} \JapaneseBracket \CompactGroup \tau^{\dim \VectorSpace - k - 1} \dd r.
+    \end{align*}
+
+    Since $s > \dim \Group$,
+    we can check that
+    \begin{align*}
+        \int_{\JapaneseBracket \CompactGroup \tau}^{+\infty} r^{-s + k} \dd r \approx \JapaneseBracket \CompactGroup \tau^{-s + k + 1},
+    \end{align*}
+    which would imply that
+    \begin{align*}
+        I(s)
+        &\asymp \sum_{\tau \in \dualGroup \CompactGroup} \dimRep \tau \JapaneseBracket \CompactGroup \tau^{-s + \dim \VectorSpace},
+    \end{align*}
+    However, \cite[Lemma 6.3]{Fischer2015}
+    \begin{align*}
+        -s + \dim \VectorSpace < -\dim \CompactGroup,
+    \end{align*}
+    or more simply if and only if $s > \dim \Group$.
+\end{proof}
 
 \begin{lemma}
 \label{lemma:preparation_for_general_inverse_formula}
