@@ -1506,6 +1506,17 @@ where in the above $\hat f(\lambda, t) \defeq \Fourier [\MotionGroup 2] f(\lambd
     We define the \emph{Sobolev space of order $s$} to be the completion of $\Schwartz\Group$ with the norm $\norm[\Sobolev{s}]{\dummy}$.
 \end{definition}
 
+\begin{proposition}
+\label{proposition:elementary_properties_of_Sobolev_spaces}
+    Let $s \in \R$.
+    The Sobolev space of order $s$, $\Sobolev s$, satisfies the following properties.
+    \begin{itemize}
+        \item If $\alpha \in \N^{\dim \Group}$, then $\LeftDifferentialOperator \alpha f \in \Sobolev {s - \abs \alpha}$
+            for each $f \in \Sobolev s$.
+        \item If $s' \geq s$, then $\Sobolev s \subset \Sobolev {s'}$.
+    \end{itemize}
+\end{proposition}
+
 \subsubsection{Sobolev embeddings}
 
 A classical strategy to show that a distribution is a continuous function
