@@ -1522,19 +1522,14 @@ where in the above $\hat f(\lambda, t) \defeq \Fourier [\MotionGroup 2] f(\lambd
 A classical strategy to show that a distribution is a continuous function
 is to show that it belongs to a Sobolev space $\Sobolev s$ for a sufficiently large $s \in \R$.
 
-\begin{proposition}[Sobolev embedding]
-\label{proposition:Sobolev_embedding}
-    If $s > \dim \Group / 2$, then we have the following continuous inclusion
+\begin{lemma}
+    Let $s > \dim \Group$.
+    The map
     \begin{align*}
-        \Sobolev{s} \subset \ContinuousFunctions\Group \cap \Lebesgue{\infty}{\Group}.
+        \lambda \in \VectorSpace \mapsto \norm [\SchattenClasses 1 {\Lebesgue 2 \CompactGroup}] {\Rep \lambda \BesselPotential {-s}}
     \end{align*}
-    More precisely, there exists $C \geq 0$ such that the following property holds:
-    for every $f \in \Sobolev{s}$,
-    there exists a continuous function $\tilde{f} \in \ContinuousFunctions\Group$ such that $f = \tilde{f}$ almost everywhere and
-    \begin{align*}
-        \norm[\ContinuousFunctions\Group]{\tilde{f}} \leq C \norm[\Sobolev{s}]{f}.
-    \end{align*}
-\end{proposition}
+    is finite almost everywhere and integrable over $\VectorSpace$.
+\end{lemma}
 \begin{proof}
     For each $s \in \R$, we let
     \begin{align*}
@@ -1574,6 +1569,20 @@ is to show that it belongs to a Sobolev space $\Sobolev s$ for a sufficiently la
     \end{align*}
     or more simply if and only if $s > \dim \Group$.
 \end{proof}
+
+\begin{proposition}[Sobolev embedding]
+\label{proposition:Sobolev_embedding}
+    If $s > \dim \Group / 2$, then we have the following continuous inclusion
+    \begin{align*}
+        \Sobolev{s} \subset \ContinuousFunctions\Group \cap \Lebesgue{\infty}{\Group}.
+    \end{align*}
+    More precisely, there exists $C \geq 0$ such that the following property holds:
+    for every $f \in \Sobolev{s}$,
+    there exists a continuous function $\tilde{f} \in \ContinuousFunctions\Group$ such that $f = \tilde{f}$ almost everywhere and
+    \begin{align*}
+        \norm[\ContinuousFunctions\Group]{\tilde{f}} \leq C \norm[\Sobolev{s}]{f}.
+    \end{align*}
+\end{proposition}
 
 \begin{lemma}
 \label{lemma:preparation_for_general_inverse_formula}
