@@ -1312,6 +1312,22 @@ Therefore, an idea would be to cut off those high frequencies.
     \end{description}
 \end{proof}
 
+\begin{corollary}[Littlewood-Paley decomposition]
+    Let $\sigma \in \SymbolClass m {\rho, \delta}$.
+    There exists a sequence $(\sigma_l)_{l \in \N} \subset \SmoothingSymbols$
+    such that
+    \begin{align*}
+        \sigma = \sum_{l = 0}^{+\infty} \sigma_l.
+    \end{align*}
+
+    Moreover, for each $m \in \R$,
+    there exists $C \geq 0$ such that
+    \begin{align*}
+        \SymbolSemiNorm m {\rho, \delta} N {\sigma_l} \leq C 2^{-l m}
+    \end{align*}
+    holds for each $l \in \N$.
+\end{corollary}
+
 \begin{corollary}
     Let $\sigma \in \SymbolClass m {\rho, \delta}$ for $m \in \R$ and $0 \leq \rho, \delta \leq 1$.
     Fix a cut-off function $\chi \in \SmoothFunctions \Group$ satisfying
