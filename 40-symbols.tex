@@ -1988,6 +1988,112 @@ and we need to find out whether it converges in a satisfactory sense for our pur
     when~\eqref{eq:asymptotic_sum_of_symbols} holds for each $N \in \N$.
 \end{definition}
 
+\begin{proof}[Proof of Proposition~\ref{proposition:asymptotic_sum_of_symbols}]
+    First, choose a cut-off function $\chi \in \SmoothFunctions {\R^+}$ such that
+    \begin{align*}
+        \chi(r) =
+        \begin{cases}
+            0 & \text{if } r \leq \frac 1 2\\
+            1 & \text{if } r \geq 1
+        \end{cases}
+    \end{align*}
+    Using Theorem~\ref{theorem:generalised_Littlewood-Paley_decomposition},
+    for each $l \in \N$ we can find $C_l \geq 0$ and $N_l \in \N$ such that
+    \begin{align*}
+        \SymbolSemiNorm {m_0} {\rho, \delta} l {\sigma_j \eta^\chi_\epsilon}
+        \leq C_l \SymbolSemiNorm {m_0} {\rho, \delta} {N_l} {\sigma_j}
+        \epsilon^{m_0 - m_j}
+    \end{align*}
+    for each $0 < \epsilon \leq 1$ and each $j \in \N$.
+    Without loss of generality,
+    we assume that $N_l \geq l$.
+
+    Choosing a decreasing sequence of sufficiently small $\epsilon_j > 0$, $j \in \N$
+    so that the right-hand side of the above satisfies
+    \begin{align*}
+        C_j \SymbolSemiNorm {m_0} {\rho, \delta} {N_j} {\sigma_j} \epsilon_j^{m_0 - m_j}
+        \leq 2^{-j},
+    \end{align*}
+    we now obtain that the symbols
+    \begin{align*}
+        \tilde \sigma_j \defeq \sigma_j \eta^\chi_{\epsilon_j}
+    \end{align*}
+    satisfy the estimate
+    \begin{align}
+        \SymbolSemiNorm {m_0} {\rho, \delta} j {\tilde \sigma_j}
+        \leq 2^{-j}.
+        \label{eq:dyadic_decay_in_asymptotic_sum_of_modified_symbols}
+    \end{align}
+
+    Fix $l \in \N$.
+    we have
+    \begin{align}
+        \sum_{j = 0}^\infty \SymbolSemiNorm {m_0} {\rho, \delta} l {\tilde \sigma_j}
+        &\leq \sum_{j = 0}^l \SymbolSemiNorm {m_0} {\rho, \delta} l {\tilde \sigma_j}
+        + \sum_{j = l + 1}^{+\infty} \SymbolSemiNorm {m_0} {\rho, \delta} {j} {\tilde \sigma_j} \notag\\
+        &\leq \sum_{j = 0}^l \SymbolSemiNorm {m_0} {\rho, \delta} l {\tilde \sigma_j}
+        + \sum_{j = l + 1}^{+\infty} 2^{-j} < + \infty,
+        \label{eq:convergence_of_asymptotic_sum_of_modified_symbols}
+    \end{align}
+    where the last line was obtained by applying~\eqref{eq:dyadic_decay_in_asymptotic_sum_of_modified_symbols}.
+    As $\SymbolClass {m_0} {\rho, \delta}$ is a Fr\'echet space,
+    it follows from REF that the sum
+    \begin{align*}
+        \sum_{j = 0}^{+\infty} \tilde \sigma_j
+    \end{align*}
+    converges to some $\sigma \in \SymbolClass {m_0} {\rho, \delta}$.
+
+    For each $N \in \N$,
+    applying~\eqref{eq:convergence_of_asymptotic_sum_of_modified_symbols} to the sequence $\tilde \sigma'_j \defeq \tilde \sigma_{j + N + 1}$,
+    we have thus shown that
+    \begin{align}
+        \sum_{j = N + 1}^{+\infty} \tilde \sigma_j
+        \in \SymbolClass {m_{N + 1}} {\rho, \delta}.
+        \label{eq:remander_of_asymptotic_sum_of_modified_symbols}
+    \end{align}
+
+    By Theorem~\ref{theorem:generalised_Littlewood-Paley_decomposition},
+    it follows that
+    \begin{align}
+        (\Id {\Lebesgue 2 \CompactGroup} - \eta^\chi_{\epsilon_j})
+        = \eta^{1 - \chi}_{\epsilon_j} \in \SmoothingSymbols,
+        \label{eq:smoothing_part_of_asymptotic_sum}
+    \end{align}
+    since $1 - \chi$ has compact support.
+    Therefore,
+    it follows that for each $N \in \N$,
+    we have
+    \begin{align*}
+        \sigma - \sum_{j = 0}^N \sigma_j
+        &= \sum_{j = 0}^{+\infty} \sigma_j \eta^\chi_{\epsilon_j} - \sum_{j = 0}^N \sigma_j\\
+        &= \sum_{j = 0}^N \sigma_j (\eta^{\chi}_{\epsilon_j} - \Id {\Lebesgue 2 \CompactGroup}) + \sum_{j = N + 1}^{+\infty} \tilde \sigma_j,
+    \end{align*}
+    which, if combined with~\ref{eq:remander_of_asymptotic_sum_of_modified_symbols}
+    and~\ref{eq:smoothing_part_of_asymptotic_sum},
+    means that
+    \begin{align*}
+        \sigma - \sum_{j = 0}^N \sigma_j
+        \in \SymbolClass {m_{N + 1}} {\rho, \delta}.
+    \end{align*}
+    We have thus shown~\eqref{eq:asymptotic_sum_of_symbols}.
+
+    Let us now check the uniqueness of $\sigma$ modulo $\SmoothingSymbols$.
+    To this end,
+    assume that $\tau$ also satisfies~\eqref{eq:asymptotic_sum_of_symbols}
+    and fix $N \in \N$.
+    It is clear that
+    \begin{align*}
+        \sigma - \tau
+        = \left(\sigma - \sum_{j = 0}^N \sigma_j\right) -
+        \left(\tau - \sum_{j = 0}^N \sigma_j\right)
+        \in \SymbolClass {m_{N + 1}} {\rho, \delta}.
+    \end{align*}
+
+    As $N$ is arbitrary
+    and $m_{N + 1}$ decreases to $-\infty$ as $N \to +\infty$,
+    it follows that $\sigma - \tau \in \SmoothingSymbols$.
+\end{proof}
+
 \subsection{Adjoint formula}
 
 \subsection{Composition formula}
