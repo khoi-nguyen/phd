@@ -1955,6 +1955,39 @@ which will lead to the proof of parts \ref{item:kernel_estimates:at_origin:posit
 
 \section{Adjoint and composition formulas}
 
+\section{Asymptotic sums of symbols}
+
+More complex operations on operators
+like composition and adjunction
+cannot be written in terms of symbols without using a Taylor development on the kernel side.
+This yields an infinite sum of symbols,
+and we need to find out whether it converges in a satisfactory sense for our purposes.
+
+\begin{proposition}[Asymptotic sum]
+\label{proposition:asymptotic_sum_of_symbols}
+    Given $1 \geq \rho \geq \delta \geq 0$,
+    let $(\sigma_j)_{j \in \N}$ be a sequence of symbols such that $\sigma_j \in \SymbolClass {m_j}$,
+    where $(m_j)_{j \in \N}$ is a \emph{strictly decreasing} sequence of real numbers.
+
+    There exists a symbol $\sigma \in \SymbolClass {m_0} {\rho, \delta}$
+    such that
+    \begin{align}
+        \sigma - \sum_{j = 0}^N \sigma_j \in \SymbolClass {m_{N + 1}} {\rho, \delta}
+        \label{eq:asymptotic_sum_of_symbols}
+    \end{align}
+    for each $N \in \N$.
+    Moreover, $\sigma$ is unique modulo $\SmoothingSymbols$.
+\end{proposition}
+
+\begin{definition}[Asymptotic sum]
+    With the notation of Proposition~\ref{proposition:asymptotic_sum_of_symbols},
+    we shall write
+    \begin{align*}
+        \sigma \sim \sum_{j = 0}^{+\infty} \sigma_j
+    \end{align*}
+    when~\eqref{eq:asymptotic_sum_of_symbols} holds for each $N \in \N$.
+\end{definition}
+
 \subsection{Adjoint formula}
 
 \subsection{Composition formula}
