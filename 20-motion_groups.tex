@@ -1512,11 +1512,75 @@ where in the above $\hat f(\lambda, t) \defeq \Fourier [\MotionGroup 2] f(\lambd
     The Sobolev space of order $s$, $\Sobolev s$, satisfies the following properties.
     \begin{itemize}
         \item If $s = 0$, then $\Sobolev s = \Lebesgue 2 \Group$.
-        \item If $s' \leq s$, then $\Sobolev s \subset \Sobolev {s'}$.
+        \item If $s' \leq s$, then $\Sobolev s \subset \Sobolev {s'}$,
+            and the inclusion is continuous.
         \item If $\alpha \in \N^{\dim \Group}$, then $\LeftDifferentialOperator \alpha f \in \Sobolev {s - \abs \alpha}$
-            for each $f \in \Sobolev s$.
+            for each $f \in \Sobolev s$,
+            and the map
+            \begin{align*}
+                \LeftDifferentialOperator \alpha : \Sobolev s \to \Sobolev {s - \abs \alpha}
+            \end{align*}
+            is continuous.
     \end{itemize}
 \end{proposition}
+\begin{proof}
+    Let us show all three properties separately.
+    \begin{itemize}
+        \item
+            Suppose $s = 0$.
+            It is straightforward to check that
+            \begin{align*}
+                \norm [\Sobolev 0] \dummy = \norm [\Lebesgue 2 \Group] \dummy
+            \end{align*}
+            by applying the Plancherel formula (Proposition~\ref{proposition:Plancherel_formula}).
+            Since $\Schwartz \Group$ is dense in $\Lebesgue 2 \Group$
+            and $\Lebesgue 2 \Group$ is complete, %TODO: references
+            we then conclude that $\Sobolev 0 = \Lebesgue 2 \Group$.
+        \item
+            Suppose that $s' \leq s$.
+            If $\phi \in \Schwartz \Group$,
+            it should be clear that
+            \begin{align*}
+                \norm [\Sobolev {s'}] \phi
+                &\leq \norm [\Lin {\Lebesgue 2 \CompactGroup}] {\Rep \lambda \BesselPotential {s' - s}} \norm [\LebesgueDual 2 \Group] {\Rep \lambda \BesselPotential s \phi}\\
+                &\leq \norm [\LebesgueDual 2 \Group] {\Rep \lambda \BesselPotential s \phi} = \norm [\Sobolev s] \phi.
+            \end{align*}
+
+            By a classical density argument
+            % TODO: more precise reference
+            (see e.g.\ \cite{Willem2013}),
+            it follows that the map
+            \begin{align*}
+                I : (\Schwartz \Group, \norm [\Lebesgue 2 s] {\dummy}) \to \Sobolev {s'} : \phi \mapsto \phi
+            \end{align*}
+            can be continuously extended onto its closure,
+            yielding the required inclusion.
+        \item
+            Let $\alpha \in \N^{\dim \Group}$.
+            If $\phi \in \Schwartz \Group$,
+            \begin{align*}
+                \norm [\Sobolev {s - \abs \alpha}] {\LeftDifferentialOperator \alpha \phi}
+                &\leq \norm [\Lin {\Lebesgue 2 \CompactGroup}] {I_{s, \alpha}} \norm [\LebesgueDual 2 \Group] {\Rep \lambda \BesselPotential s \phi},
+            \end{align*}
+            where
+            \begin{align*}
+                I_{s, \alpha} \defeq \Rep \lambda \BesselPotential {s - \abs \alpha} \Rep \lambda (X)^\alpha \Rep \lambda \BesselPotential{-s}
+            \end{align*}
+
+            One easily checks that $\norm [\Lin{\Lebesgue 2 \CompactGroup}] {I_{s, \alpha}} < \infty$,
+            so that a density argument tells us yields the existence of a unique continuous extension of
+            \begin{align*}
+                \LeftDifferentialOperator \alpha : \Sobolev s \to \Sobolev {s - \abs \alpha}.
+            \end{align*}
+
+            Naturally, because the canonical inclusion
+            \begin{align*}
+                \Sobolev s \hookrightarrow \TemperedDistributions \Group
+            \end{align*}
+            is continuous,
+            the above extended map $\LeftDifferentialOperator \alpha$ is the same as the corresponding distributional derivative.
+    \end{itemize}
+\end{proof}
 
 \subsubsection{Sobolev embeddings}
 
