@@ -2369,6 +2369,70 @@ First, we show that $\SmoothingOperators$ is stable under composition.
         \norm [\Lin {\Lebesgue 2 \Group}] {\Op(\sigma)} \leq ?
     \end{align*}
 \end{proposition}
+\begin{proof}
+    First, let us observe that for each $g_0 \in \Group$, we have
+    \begin{align*}
+        \sup_{g \in \Group} \abs {T f(g_0 g)}
+        &\leq \int_\Group \abs{f(g_0 g h^{-1}) \kappa_{g_0 g}(h)} \dd h\\
+        &\leq \norm [\Lebesgue 2 \Group] {(1 + \norm [\Group] \dummy^2)^{-N} f(g_0 \dummy)} \norm [\Lebesgue 2 \Group] {(1 + \norm [\Group] \dummy^2)^N \kappa_{g_0 g}},
+    \end{align*}
+    where the last line was obtained by the Cauchy-Schwartz inequality.
+
+    Integrating the above with respect to $g$ over $\Ball [\Group] {g_0} 1$,
+    we obtain
+    \begin{align}
+        \int_{\Ball [\Group] {g_0} 1} \abs {T f(g)}^2 \dd g
+        &= \int_{\Ball [\Group] e 1} \abs {T f(g_0 g)}^2 \dd g\notag\\
+        &\leq C \SymbolSemiNorm m {\rho, \sigma} ? \sigma^2
+        \norm [\Lebesgue 2 \Group] {(1 + \norm [\Group] \dummy^2)^{-N} f(g_0 \dummy)}^2.
+        \label{eq:integral_of_Tf_on_ball_of_radius_1}
+    \end{align}
+
+    To conclude the proof,
+    we shall integrate each side of the above with respect to $g_0 \in \Group$.
+
+    For the left-hand side,
+    a simple application of the Fubini-Tonnelli Theorem yields
+    \begin{align*}
+        \int_\Group \int_{\Ball [\Group] {g_0} 1} \abs {T f(g)}^2 \dd g \dd g_0
+        &= \int_\Group \int_\Group 1_{\norm [\Group] {g_0^{-1} g} \leq 1} \abs {T f(g)}^2 \dd g_0 \dd g\\
+        &= \int_\Group \int_\Group 1_{\norm [\Group] {g_0^{-1} g} \leq 1} \abs {T f(g)}^2 \dd g_0 \dd g,
+    \end{align*}
+    so that the change of variable $h = g_0^{-1} g$ yields
+    \begin{align}
+        \int_\Group \int_{\Ball [\Group] {g_0} 1} \abs {T f(g)}^2 \dd g \dd g_0
+        = C \norm [\Lebesgue 2 \Group] {T f}^2.
+        \label{eq:left_hand_side_of_ball_integral_for_L2_boundedness}
+    \end{align}
+
+    Now, integrating the right-hand side of~\eqref{eq:integral_of_Tf_on_ball_of_radius_1},
+    we obtain
+    \begin{align*}
+        \int_\Group &\norm [\Lebesgue 2 \Group] {(1 + \norm [\Group] \dummy^2)^{-N} f(g_0 \dummy)}^2 \dd g_0\\
+        &\quad = \int_\Group \int_\Group \abs{(1 + \norm [\Group] g^2)^{-N} f(g_0 g)}^2 \dd g \dd g_0\\
+        &\quad = \norm [\Lebesgue 2 \Group] f^2 \int_\Group (1 + \norm [\Group] g^2)^{-2 N} \dd g.
+    \end{align*}
+
+    Choosing $N$ sufficiently large,
+    we therefore get that
+    \begin{align}
+        \int_\Group &\norm [\Lebesgue 2 \Group] {(1 + \norm [\Group] \dummy^2)^{-N} f(g_0 \dummy)}^2 \dd g_0
+        \leq C \norm [\Lebesgue 2 \Group] f^2
+        \label{eq:right_hand_side_of_ball_integral_for_L2_boundedness}
+    \end{align}
+
+    Therefore,
+    using~\eqref{eq:right_hand_side_of_ball_integral_for_L2_boundedness}
+    and~\eqref{eq:left_hand_side_of_ball_integral_for_L2_boundedness}
+    in~\eqref{eq:integral_of_Tf_on_ball_of_radius_1},
+    we obtain
+    \begin{align*}
+        \norm [\Lebesgue 2 \Group] {T f}^2
+        &\leq C \SymbolSemiNorm m {\rho, \sigma} ? \sigma^2
+        \norm [\Lebesgue 2 \Group] {(1 + \norm [\Group] \dummy^2)^{-N} f(g_0 \dummy)}^2,
+    \end{align*}
+    which concludes the proof.
+\end{proof}
 
 The aim of this subsection is to prove
 that symbols of order $0$ induce bounded operators in $\Lebesgue 2 \Group$
