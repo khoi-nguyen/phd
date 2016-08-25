@@ -2258,37 +2258,66 @@ First, we show that $\SmoothingOperators$ is stable under composition.
     \end{align*}
 \end{lemma}
 \begin{proof}
-    First, let us assume that $\beta_0 = 0$.
+    For each $N \in \N$,
+    let us define
+    \begin{align*}
+        \tau_N(g, \lambda) \defeq
+        \sigma(g, \lambda) - \sum_{\abs \alpha \leq N} \DifferenceOperatorOrder \alpha \sigma_1(g, \lambda) \TaylorLeftDifferentialOperator \alpha \sigma_2(g, \lambda)
+    \end{align*}
     We want to estimate
     \begin{align}
-        \sigma(g, &\lambda) - \sum_{\abs \alpha \leq N} \DifferenceOperatorOrder \alpha \sigma_1(g, \lambda) \TaylorLeftDifferentialOperator \alpha \sigma_2(g, \lambda) \notag\\
+        &\tau_N(g, \lambda) \notag\\
         &= \int_\Group \kappa_{1, g}(h) \adj{\Rep \lambda(h)}
         \left(\sigma_2(g h^{-1}, \lambda) - \sum_{\abs \alpha \leq N} q_\alpha(h^{-1}) \TaylorLeftDifferentialOperator \alpha \sigma_2(g, \lambda)\right) \dd h \notag\\
-        &= \int_\Group \kappa_{1, g}(h) \adj {\Rep \lambda(h)} \TaylorRemainder {\sigma_2(\dummy, \lambda)} g N (h^{-1}) \dd h,
+        &= \int_\Group \kappa_{1, g}(h) \adj {\Rep \lambda(h)} \TaylorRemainder {\sigma_2(g \dummy, \lambda)} {e_\Group} N (h^{-1}) \dd h.
         \label{eq:remainder_of_composition_formula}
     \end{align}
-    where $\TaylorRemainder {\sigma_2(\dummy, \lambda)} g N$ is the analogue of \eqref{eq:definition_of_Taylor_remainder} for symbols.
+
+    Let $\alpha_0 \in \N^{\dimDifferenceOperators}$ and $\beta_0 \in \N^{\dim \Group}$.
+    Applying the Leibniz-like rule for difference operators
+    and the Leibniz rule for left-invariant differential operators,
+    we obtain
+    \begin{align*}
+        &\LeftDifferentialOperator {\beta_0} \DifferenceOperatorOrder {\alpha_0} \tau_N(g, \lambda) =\\
+        &\sum_{%
+            \substack{%
+                \abs{\alpha_0} \leq \abs{\alpha_{01}} + \abs{\alpha_{02}} \leq 2 \abs{\alpha_0}\\
+                \beta_{01} + \beta_{02} = \beta_0
+            }
+        }
+        \int_\Group q^{\alpha_{01}}(h) \LeftDifferentialOperator [g] {\beta_{01}} \kappa_{1, g}(h) \adj{\Rep \lambda(h)}
+        \TaylorRemainder {\DifferenceOperatorOrder {\alpha_{02}} \LeftDifferentialOperator [g_2 = g] {\beta_{02}}\sigma_2(g_2 \dummy, \lambda)} {e_\Group} N (h^{-1}) \dd h.
+    \end{align*}
 
     Now, we would like to introduce powers of $\Rep \lambda \BesselPotential 1$ near $\sigma_2$,
     which will allow to estimate the above in terms of the symbol semi-norms of $\sigma_2$.
     To this end,
-    observe that
+    observe that if $M \in 2 \N$,
     \begin{align*}
         \adj{\Rep \lambda(h)}
         &= \adj{\Rep \lambda(h)} \Rep \lambda \BesselPotential M \Rep \lambda \BesselPotential {-M}\\
-        &= \lcsum{\abs \beta \leq 2 M} \adj{\Rep \lambda(h)} \Rep \lambda(X)^\beta \Rep \lambda \BesselPotential {-M},
+        &= \lcsum{\abs \beta \leq M} \adj{\Rep \lambda(h)} \Rep \lambda(X)^\beta \Rep \lambda \BesselPotential {-M},
     \end{align*}
     which, after using $\adj {\Rep \lambda(h)} \Rep \lambda (X)^\beta = (-1)^{\abs \beta} \adj {(\RightDifferentialOperator[h] \beta \Rep \lambda (h))}$, becomes
     \begin{align*}
         \adj{\Rep \lambda(h)}
-        &= \lcsum{\abs \beta \leq 2 M} \adj{(\RightDifferentialOperator \beta \Rep \lambda(h))} \Rep \lambda \BesselPotential {-M},
+        &= \lcsum{\abs \beta \leq M} \adj{(\RightDifferentialOperator \beta \Rep \lambda(h))} \Rep \lambda \BesselPotential {-M},
     \end{align*}
 
     Therefore,
     injecting the above into \eqref{eq:remainder_of_composition_formula} and using integration by parts yields
     \begin{align*}
-        &\sigma(g, \lambda) - \sum_{\abs \alpha \leq N} \DifferenceOperatorOrder \alpha \sigma_1(g, \lambda) \TaylorLeftDifferentialOperator \alpha \sigma_2(g, \lambda)\\
-        &= \lcsum{\abs {\beta_1} + \abs {\beta_2} \leq 2M} \int_\Group \RightDifferentialOperator[h_1 = h] {\beta_1} \kappa_{1, g}(h_1) \adj {\Rep \lambda(h)} \RightDifferentialOperator[h_2 = h] {\beta_2}\TaylorRemainder {\Rep \lambda \BesselPotential {-M} \sigma_2(\dummy, \lambda)} g N (h_2^{-1}) \dd h,
+        &\LeftDifferentialOperator {\beta_0} \DifferenceOperatorOrder {\alpha_0} \tau_N(g, \lambda) =\\
+        &\quad \lcsum{%
+            \substack{%
+                \abs{\alpha_0} \leq \abs{\alpha_{01}} + \abs{\alpha_{02}} \leq 2 \abs{\alpha_0}\\
+                \beta_{01} + \beta_{02} = \beta_0\\
+                \abs {\beta_1} + \abs {\beta_2} \leq M
+            }
+        }
+        \int_\Group \RightDifferentialOperator[h_1 = h] {\beta_1} (\LeftDifferentialOperator [g] {\beta_{01}} q^{\alpha_{01}} \kappa_{1, g})(h_1) \adj {\Rep \lambda(h)}\\
+        &\quad \times
+        \RightDifferentialOperator[h_2 = h] {\beta_2} \TaylorRemainder {\Rep \lambda \BesselPotential {-M} \DifferenceOperatorOrder {\alpha_{02}} \LeftDifferentialOperator [g_2 = g] {\beta_{02}} \sigma_2(g \dummy, \lambda)} {e_\Group} N (h_2^{-1}) \dd h,
     \end{align*}
     Now, observing that
     \begin{align*}
