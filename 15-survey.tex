@@ -76,7 +76,7 @@ that the above could be generalised for general groups by considering the action
 \emph{before} applying the Fourier Transform.
 
 \begin{definition}[Difference operator, \cite{RuzhanskyTurunen10}]
-    Let $q \in \SmoothFunctions \CompactGroup$ be such that $q(e_\Group) = 0$.
+    Let $q \in \SmoothFunctions \CompactGroup$ be such that $q(e_\CompactGroup) = 0$.
     The \emph{difference operator associated with $q$} is the operator
     \begin{align*}
         \DifferenceOperator [\CompactGroup] q \Fourier [\CompactGroup] f
@@ -95,7 +95,7 @@ We now need to identify a suitable family of smooth functions.
         \{q_1, \dots, q_m \in \SmoothFunctions \CompactGroup\}
     \end{align*}
     is said to be \emph{admissible}
-    if $\dd q_j(e) \neq 0$ and
+    if $\dd q_j(e_\CompactGroup) \neq 0$ and
     \begin{align*}
         \rank(\dd q_1(e_\CompactGroup), \dots, q_m(e_\CompactGroup))
         = \dim \CompactGroup.
