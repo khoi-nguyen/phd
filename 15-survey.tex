@@ -87,6 +87,27 @@ that the above could be generalised for general groups by considering the action
     then we shall say that $q$ is a difference operator of \emph{order} $k$.
 \end{definition}
 
+We now need to identify a suitable family of smooth functions.
+
+\begin{definition}[Admissibility]
+    A collection of smooth functions
+    \begin{align*}
+        \{q_1, \dots, q_m \in \SmoothFunctions \CompactGroup\}
+    \end{align*}
+    is said to be \emph{admissible}
+    if $\dd q_j(e) \neq 0$ and
+    \begin{align*}
+        \rank(\dd q_1(e_\CompactGroup), \dots, q_m(e_\CompactGroup))
+        = \dim \CompactGroup.
+    \end{align*}
+
+    Moreover, if
+    \begin{align*}
+        \bigcap_{j = 1}^m \{q_j = 0\} = \{e_\CompactGroup\},
+    \end{align*}
+    we shall say that the collection is \emph{strongly admissible}.
+\end{definition}
+
 \subsubsection{Symbols}
 
 \begin{definition}[Symbol classes on $\CompactGroup$]
