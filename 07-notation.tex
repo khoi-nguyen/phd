@@ -2,28 +2,55 @@
 
 \section*{Positive and negative}
 
-%The author of this document wishes to stress upon the fact
-%that he did try very hard to get used to the English notation,
-%but using \emph{non-negative} and \emph{non-positive}
-%is the straw that broke the camel's back.
-%
-%Therefore,
-%as controversial as it may be,
-%we shall follow the \emph{French} usage according to which
-%$0$ is both \emph{positive} and \emph{negative},
-%while any real number is both \emph{less than} and \emph{greater than} itself.
-%
-%\begin{aquote}{Laurent Schwartz, \cite[p.~17]{Schwartz1981}}
-%    Notons que nous rompons ici avec l'usage ant\'erieurement acquis
-%    en appelant inf\'erieur ce qu'on appelait inf\'erieur ou \'egal,
-%    et strictement inf\'erieur ce qu'on appelait inf\'erieur.
-%    La raison d'\^etre de ces changements,
-%    pleinement justifi\'es par la suite,
-%    est que la notion la plus g\'en\'eralement utilis\'ee est $\leq$,
-%    et qu'il est bon qu'elle ait l'appelation la plus courte.
-%    On devra toujours utiliser $\leq$ plut\^ot que $<$,
-%    toutes les fois que cela sera possible;
-%    quand on \'ecrira une in\'egalit\'e stricte avec $<$,
-%    ce sera pour avertir le lecteur qu'il y a un point d\'elicat,
-%    et que l'in\'egalit\'e large $\leq$ ne conviendrait pas.
-%\end{aquote}
+In this document, we shall use the following conventions.
+
+\begin{itemize}
+    \item $0$ is both \emph{``positive''} and \emph{``negative''}.
+    \item $\N, \R^+, \R^-$ contain $0$.
+    \item Any number is both \emph{``greater than''} and \emph{``less than''} itself.
+    \item We shall use strict inequalities only
+        when the corresponding non-strict inequalities are not suitable.
+\end{itemize}
+
+We shall do this to ensure that
+when a strict inequality is necessary (i.e. $< +\infty$ or $> 0$),
+it gets the emphasis it deserves.
+This is why we shall always insist on writing \emph{``strictly positive''} or \emph{``strictly greater than''} when we require the strict inequality.
+To make it less verbose,
+we give the non-strict meaning to \emph{``greater or less than''}.
+
+Note that the above conventions originated from Laurent Schwartz's \citetitle{Schwartz1981} (\cite{Schwartz1981})
+and have now become standard in Francophone literature.
+
+\begin{aquote}{Laurent Schwartz, \cite[p.~17]{Schwartz1981}}
+    Notons que nous rompons ici avec l'usage ant\'erieurement acquis
+    en appelant inf\'erieur ce qu'on appelait inf\'erieur ou \'egal,
+    et strictement inf\'erieur ce qu'on appelait inf\'erieur.
+    La raison d'\^etre de ces changements,
+    pleinement justifi\'es par la suite,
+    est que la notion la plus g\'en\'eralement utilis\'ee est $\leq$,
+    et qu'il est bon qu'elle ait l'appelation la plus courte.
+    On devra toujours utiliser $\leq$ plut\^ot que $<$,
+    toutes les fois que cela sera possible;
+    quand on \'ecrira une in\'egalit\'e stricte avec $<$,
+    ce sera pour avertir le lecteur qu'il y a un point d\'elicat,
+    et que l'in\'egalit\'e large $\leq$ ne conviendrait pas.
+    \footnote{%
+        \emph{Translation:}
+        Let us observe that we break from traditional usage
+        by saying ``less than'' instead of ``less than or equal to'',
+        and ``strictly less than'' instead of ``less than''.
+        The reason for these changes,
+        completely justified hereafter,
+        is that $\leq$ is the more widely used notion
+        and should therefore have the shortest name.
+        We shall always use $\leq$ rather than $<$
+        every time we can;
+        when we use the strict inequality with $<$,
+        it will be to warn the reader that there is a subtlety
+        and that the non-strict inequality is not suitable.
+    }
+\end{aquote}
+
+Naturally, the same terminology applies to operators and matrices.
+The operator $0$ is \emph{``positive definite''} but not \emph{``strictly positive definite''}.
