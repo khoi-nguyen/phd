@@ -22,11 +22,11 @@ must decrease appropriately when we apply certain linear operators to it.
 \begin{definition}
 \label{definition:admissibility_of_difference_operators}
 \index{difference operators!admissibility}
-    A finite collection $q_1$, \dots, $q_M \in \SmoothFunctions{\Group}$ of smooth functions is said to be \emph{admissible}
-    if $\dd q_j(e) \neq 0$ for each $j \in \{1, \dots, M\}$
+    A finite collection $q_1$, \cdots, $q_M \in \SmoothFunctions{\Group}$ of smooth functions is said to be \emph{admissible}
+    if $\dd q_j(e) \neq 0$ for each $j \in \{1, \cdots, M\}$
     and if
     \begin{align*}
-        \rank(\dd q_1(e), \dots, \dd q_m(e)) = \dim \Group.
+        \rank(\dd q_1(e), \cdots, \dd q_m(e)) = \dim \Group.
     \end{align*}
 
     Moreover, if
@@ -43,10 +43,10 @@ must decrease appropriately when we apply certain linear operators to it.
 \label{definition:Leibniz-like_property_for_smooth_functions}
     We shall say that an admissible collection
     \begin{align*}
-        q_1, \dots q_{\dimDifferenceOperators} \in \SmoothFunctions \CompactGroup
+        q_1, \cdots q_{\dimDifferenceOperators} \in \SmoothFunctions \CompactGroup
     \end{align*}
     satisfies the \emph{Leibniz-like} property
-    if for each $j = 1, \dots, \dimDifferenceOperators$,
+    if for each $j = 1, \cdots, \dimDifferenceOperators$,
     \begin{align*}
         q_j(g h) = q_j(g) + q_j(h) + \sum_{1 \leq k, l \leq \dimDifferenceOperators} c^j_{k, l} q_k(g) q_l(h)
     \end{align*}
@@ -56,15 +56,15 @@ must decrease appropriately when we apply certain linear operators to it.
 Using \cite[Lemma 4.4]{RuzhanskyTurunenWirth10}, we can show
 
 \begin{lemma}
-    There exists a strongly admissible family $q_1$, \dots, $q_M \in \SmoothFunctions{\Group}$ on $\Group$ which satisfies the Leibniz-like property.
+    There exists a strongly admissible family $q_1$, \cdots, $q_M \in \SmoothFunctions{\Group}$ on $\Group$ which satisfies the Leibniz-like property.
 \end{lemma}
 \begin{proof}
     Denote by $F$ the set of all fundamental representations of $\CompactGroup$,
     % TODO: add reference for fundamental representations
     i.e. a finite collection such that for any $\tau \in \dualGroup \CompactGroup$,
-    there exists $\tau_1, \dots, \tau_n \in F$ such that
+    there exists $\tau_1, \cdots, \tau_n \in F$ such that
     \begin{align*}
-        \tau = \tau_1 \otimes \dots \otimes \tau_n.
+        \tau = \tau_1 \otimes \cdots \otimes \tau_n.
     \end{align*}
     % Ask Veronique if it's necessary
     We also assume $F$ contains the identity representation.
@@ -72,7 +72,7 @@ Using \cite[Lemma 4.4]{RuzhanskyTurunenWirth10}, we can show
     Now,
     let us define the following smooth functions
     \begin{align*}
-        q_j(x, k) &\defeq \ip {x} {e_j}, &j = 1, \dots, \dim \VectorSpace\\
+        q_j(x, k) &\defeq \ip {x} {e_j}, &j = 1, \cdots, \dim \VectorSpace\\
         q^\tau_{m n}(x, k) &\defeq {\left(\tau - \Id {H_\tau}\right)}_{m n},
         &\tau \in F, \ 1 \leq m, n \leq \dimRep \tau.
     \end{align*}
@@ -105,7 +105,7 @@ Using \cite[Lemma 4.4]{RuzhanskyTurunenWirth10}, we can show
             \end{align*}
         \item [Leibniz-like formula]
             Using \cite[Corollary 5.13]{Fischer2015},
-            we only need to show that $q_j$, $j = 1, \dots, \dim \VectorSpace$ satisfy the Leibniz-like preperty.
+            we only need to show that $q_j$, $j = 1, \cdots, \dim \VectorSpace$ satisfy the Leibniz-like preperty.
             For each $j \in \N$,
             \begin{align*}
                 q_j((x, k) (y, l))
@@ -142,7 +142,7 @@ Using \cite[Lemma 4.4]{RuzhanskyTurunenWirth10}, we can show
 \end{proof}
 
 \begin{remark}
-    From now on, we fix an admissible family $q_1, \dots, q_{\dimDifferenceOperators}$ on $\Group$.
+    From now on, we fix an admissible family $q_1, \cdots, q_{\dimDifferenceOperators}$ on $\Group$.
     Given $\alpha \in \N^{\dimDifferenceOperators}$, we let
     \begin{align*}
         q^\alpha = \prod_{j = 1}^{\dimDifferenceOperators} q_j^{\alpha_j}.
@@ -158,14 +158,14 @@ Using \cite[Lemma 4.4]{RuzhanskyTurunenWirth10}, we can show
     Let $f \in \Schwartz \Group$, $g \in \Group$
     and fix a strongly admissible collection of smooth functions
     \begin{align*}
-        \Delta = \{q_1, \dots q_{\dimDifferenceOperators} \in \SmoothFunctions \Group \}
+        \Delta = \{q_1, \cdots q_{\dimDifferenceOperators} \in \SmoothFunctions \Group \}
     \end{align*}
     containing $\dim \Group$ elements.
-    Also, define a basis $X_j \in \VectorFields$, $j = 1, \dots, \dim \Group$ of left-invariant vector fields such that
+    Also, define a basis $X_j \in \VectorFields$, $j = 1, \cdots, \dim \Group$ of left-invariant vector fields such that
     \begin{align*}
         X'_j \{q_k(\dummy^{-1})\}(0_\VectorSpace, \Id \VectorSpace) = \Kronecker j k
     \end{align*}
-    for every $j, k \in \{1, \dots, \dim \Group\}$.
+    for every $j, k \in \{1, \cdots, \dim \Group\}$.
 
     We define the \emph{Taylor remainder} of $f$ of order $N$ at $g \in \Group$ via
     \begin{align*}
@@ -177,7 +177,7 @@ Using \cite[Lemma 4.4]{RuzhanskyTurunenWirth10}, we can show
     \end{align*}
     where in the above
     \begin{align*}
-        \TaylorLeftDifferentialOperator \alpha \defeq X_1^{\prime \alpha_1} \dots X_{\dimDifferenceOperators}^{\prime \alpha_{\dimDifferenceOperators}}
+        \TaylorLeftDifferentialOperator \alpha \defeq X_1^{\prime \alpha_1} \cdots X_{\dimDifferenceOperators}^{\prime \alpha_{\dimDifferenceOperators}}
     \end{align*}
 \end{definition}
 
@@ -927,7 +927,7 @@ Using \cite[Lemma 4.4]{RuzhanskyTurunenWirth10}, we can show
 \begin{lemma}
 \label{lemma:left_regular_representation_of_polynomials}
     Let $P \in \SmoothFunctions{\dualGroup{\VectorSpace}}$ be a polynomial.
-    We can find functions $q_i \in \Polynomials{\CompactGroup}$, $f_i \in \Lebesgue{2}{\dualGroup{\VectorSpace}}$, $i = 1, \dots, N$ such that
+    We can find functions $q_i \in \Polynomials{\CompactGroup}$, $f_i \in \Lebesgue{2}{\dualGroup{\VectorSpace}}$, $i = 1, \cdots, N$ such that
     \begin{align*}
         P(k \lambda) = \sum_{i = 1}^N q_i(k) f_i(\lambda)
     \end{align*}
@@ -1059,7 +1059,7 @@ Therefore, an idea would be to cut off those high frequencies.
             % Conditions on polynomials
             First, select a strongly admissible family of operators such that
             \begin{align*}
-                q_j((x, k)^{-1}) = x_j, \quad j = 1, \dots, \dim \VectorSpace
+                q_j((x, k)^{-1}) = x_j, \quad j = 1, \cdots, \dim \VectorSpace
             \end{align*}
             and $q_j$ does not depend on $x$ for $j > \dim \VectorSpace$.
 
@@ -1699,7 +1699,7 @@ This means that $\kappa_g$ can only have singularities at the common zeros
     \bigcap_{j = 1}^{\dimDifferenceOperators} \{ q_j = 0 \} = (0_\VectorSpace, \Id \VectorSpace),
 \end{align*}
 which happens to simply be the origin
-as the family $\{q_j : j = 1, \dots, \dimDifferenceOperators\}$ was chosen to be \emph{strongly admissible}.
+as the family $\{q_j : j = 1, \cdots, \dimDifferenceOperators\}$ was chosen to be \emph{strongly admissible}.
 
 The aim of this subsection is therefore to study the strength of the only singularity that a kernel can have,
 which will lead to the proof of parts \ref{item:kernel_estimates:at_origin:positive} and \ref{item:kernel_estimates:at_origin:zero} of Theorem~\ref{theorem:kernel_estimates}.

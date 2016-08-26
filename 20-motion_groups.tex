@@ -269,7 +269,7 @@ and a diffeomorphism to a subgroup of $\GeneralLinear n$.
 \end{definition}
 
 \begin{proposition}
-    Fix an orthonormal basis $e_1, \dots, e_n$ of $\VectorSpace$,
+    Fix an orthonormal basis $e_1, \cdots, e_n$ of $\VectorSpace$,
     and consider the map
     \begin{align*}
         \Phi : \Group \to \GeneralLinear{n + 1} : (x, k) \mapsto
@@ -282,7 +282,7 @@ and a diffeomorphism to a subgroup of $\GeneralLinear n$.
     \begin{align*}
         {\tilde k}_{ij} = \ip {k e_j} {e_i} \text{ and } {\tilde x}_i = \ip x {e_i}
     \end{align*}
-    for all $i, j \in \{1, \dots, n\}$.
+    for all $i, j \in \{1, \cdots, n\}$.
 
     The following properties hold:
     \begin{enumerate}
@@ -527,17 +527,17 @@ and a diffeomorphism to a subgroup of $\GeneralLinear n$.
         \LieAlgebra \defeq \R^n \oplus \SkewSymmetric {\R^n}.
     \end{align*}
 
-    For each pair of distinct $i, j \in \{1, \dots, n\}$,
+    For each pair of distinct $i, j \in \{1, \cdots, n\}$,
     we let $E_{ij}$ be the only matrix satisfying
     \begin{align*}
         E_{ij} e_k = \Kronecker i j e_j - \Kronecker j k e_i
     \end{align*}
-    for each $k \in \{1, \dots, n\}$.
+    for each $k \in \{1, \cdots, n\}$.
 
     A basis of $\LieAlgebra$ can now be given by
     \begin{align*}
-        X_i &\defeq e_i \oplus 0_{\SquareMatrices n}, &\quad &i = 1, \dots, n\\
-        X_{ij} &\defeq 0_{\R^n} \oplus E_{ij}, &\quad &i,j \in \{1, \dots, n\} \text{ with } i < j,
+        X_i &\defeq e_i \oplus 0_{\SquareMatrices n}, &\quad &i = 1, \cdots, n\\
+        X_{ij} &\defeq 0_{\R^n} \oplus E_{ij}, &\quad &i,j \in \{1, \cdots, n\} \text{ with } i < j,
     \end{align*}
     and these vectors satisfy the following commutation relations
     \begin{align*}
@@ -583,7 +583,7 @@ where $\mathfrak a$ is \emph{abelian} and $\mathfrak s$ is \emph{semisimple}.
 In particular, we can naturally define an inner product $\ip[\LieAlgebra]\dummy\dummy$ on $\LieAlgebra$ via the Killing form of $\mathfrak s$.
 
 From now on,
-$X_1, \dots, X_{\dim \Group}$ will denote a basis such that
+$X_1, \cdots, X_{\dim \Group}$ will denote a basis such that
 \begin{enumerate}
     \item the collection is orthonormal with respect to $\ip[\LieAlgebra]\dummy\dummy$;
     \item If $1 \leq j \leq \dim \VectorSpace$, then $X_j \in \VectorSpace$,
@@ -595,7 +595,7 @@ $X_1, \dots, X_{\dim \Group}$ will denote a basis such that
     We define the left-invariant differential operator $\LeftDifferentialOperator{\alpha}$ via
     \begin{align*}
         \LeftDifferentialOperator{\alpha} =
-        \LeftDifferentialOperatorFirstOrder{X_1}^{\alpha_1} \dots
+        \LeftDifferentialOperatorFirstOrder{X_1}^{\alpha_1} \cdots
         \LeftDifferentialOperatorFirstOrder{X_{\dim \Group}}^{\alpha_{\dim \Group}}
     \end{align*}
 \end{definition}
@@ -619,7 +619,7 @@ $X_1, \dots, X_{\dim \Group}$ will denote a basis such that
 \begin{proof}
     Let $(x, k) \in \Group$.
     By INSERT PROPOSITION OR THEOREM??? ,
-    we check that for each $j \in \{1, \dots, \dim \VectorSpace\}$,
+    we check that for each $j \in \{1, \cdots, \dim \VectorSpace\}$,
     \begin{align*}
         \LeftDifferentialOperatorFirstOrder{X_j} \LeftDifferentialOperatorFirstOrder{X_j} f(x, k)
         &= \LeftDifferentialOperatorFirstOrder{X_j} \ip{k^{-1} \grad f(x, k)}{e_j}\\
@@ -729,7 +729,7 @@ However, as we shall see later, the Fourier Transform on $\Group$ can be written
 %and denote by $\IsotropySubgroup{\CompactGroup}{\lambda}$ its isotropy subgroup.
 %
 %Let $\tau \in \dualGroup{\IsotropySubgroup{\CompactGroup}{\lambda}}$ and denote by $\dimRep{\tau}$ its dimension.
-%For $q = 1, \dots, \dimRep{\tau}$, let
+%For $q = 1, \cdots, \dimRep{\tau}$, let
 %\begin{align}
 %    P^\tau_q F(u) \defeq \dimRep{\tau} \int_\IsotropySubgroup{\CompactGroup}{\lambda} \conj{\tau_{qq}(m)} F(u m) \dd m,
 %    \quad F \in \Lebesgue{2}{\CompactGroup}, u \in \CompactGroup.
@@ -754,7 +754,7 @@ However, as we shall see later, the Fourier Transform on $\Group$ can be written
 %In fact, we shall see that the $P^\tau_q$ are \emph{orthogonal projections}.
 %
 %\begin{lemma}
-%    Let $\mu, \tau \in \dualGroup{\IsotropySubgroup{\CompactGroup}{\lambda}}$, $q \in \{1, \dots, \dimRep{\tau}\}$ and $m, n \in \{1, \dots, \dimRep{\tau} \}$.
+%    Let $\mu, \tau \in \dualGroup{\IsotropySubgroup{\CompactGroup}{\lambda}}$, $q \in \{1, \cdots, \dimRep{\tau}\}$ and $m, n \in \{1, \cdots, \dimRep{\tau} \}$.
 %    If $f \in \Lebesgue{2}{\RightQuotient{\CompactGroup}{\IsotropySubgroup{\CompactGroup}{\lambda}}}$, then
 %    \begin{align*}
 %        P^\mu_q (f \otimes \tau_{m n}) = \Kronecker{\mu}{\tau} \Kronecker{n}{q} (f \otimes \tau_{m n}).
@@ -767,11 +767,11 @@ However, as we shall see later, the Fourier Transform on $\Group$ can be written
 %                \Hilbert{\mu}{q} =
 %                    \Lebesgue{2}{\RightQuotient{\CompactGroup}{\IsotropySubgroup{\CompactGroup}{\lambda}}}
 %                    \otimes
-%                    \Span \{\mu_{p q} : p = 1, \dots, \dimRep{\mu}\};
+%                    \Span \{\mu_{p q} : p = 1, \cdots, \dimRep{\mu}\};
 %            \end{align*}
 %        \item The Hilbert spaces
 %            \begin{align*}
-%                \{\Hilbert{\tau}{q} : \tau \in \dualGroup{\IsotropySubgroup{\CompactGroup}{\lambda}}, q = 1, \dots, \dimRep{\tau} \}
+%                \{\Hilbert{\tau}{q} : \tau \in \dualGroup{\IsotropySubgroup{\CompactGroup}{\lambda}}, q = 1, \cdots, \dimRep{\tau} \}
 %            \end{align*}
 %            are mutually orthogonal;
 %        \item We have the decomposition
@@ -840,7 +840,7 @@ However, as we shall see later, the Fourier Transform on $\Group$ can be written
 %                \lambda' = k \lambda \quad \text{and} \quad \EquivalenceClass{\dualGroup{\IsotropySubgroup{\CompactGroup}{\lambda}}}{\tau} = \EquivalenceClass{\dualGroup{\IsotropySubgroup{\CompactGroup}{\lambda}}}{\tau'(k \dummy k^{-1})}
 %            \end{align*}
 %            for some $k \in \CompactGroup$.
-%            In particular, if $q_1, q_2 \in \{1, \dots, \dimRep\tau\}$,
+%            In particular, if $q_1, q_2 \in \{1, \cdots, \dimRep\tau\}$,
 %            then $(\Hilbert{\tau}{q_1}, \Rep{\lambda})$ and $(\Hilbert{\tau}{q_2}, \Rep{\lambda})$ are equivalent.
 %    \end{enumerate}
 %\end{proposition}
@@ -863,7 +863,7 @@ However, as we shall see later, the Fourier Transform on $\Group$ can be written
 %    satisfying the following properties.
 %    \begin{enumerate}
 %        \item For each $\lambda \in \dualGroup\VectorSpace$,
-%            each $\tau \in \dualGroup{\IsotropySubgroup{\CompactGroup}{\lambda}}$, and each $q \in \{1, \dots, \dimRep \tau\}$, we have
+%            each $\tau \in \dualGroup{\IsotropySubgroup{\CompactGroup}{\lambda}}$, and each $q \in \{1, \cdots, \dimRep \tau\}$, we have
 %            \begin{align*}
 %                \sigma(\lambda) \SmoothVectors{\Hilbert{\tau}{q}} \subset \SmoothVectors{\Hilbert{\tau}{q}}
 %            \end{align*}
@@ -896,7 +896,7 @@ However, as we shall see later, the Fourier Transform on $\Group$ can be written
 
 \begin{proposition}[Infinitesimal representations]
 \label{proposition:infinitesimal_representations_of_differential_operators}
-    Let $\lambda \in \VectorSpace$ and let $j \in \{1, \dots, \dim \Group\}$.
+    Let $\lambda \in \VectorSpace$ and let $j \in \{1, \cdots, \dim \Group\}$.
     Fix also $F \in \SmoothFunctions \CompactGroup$ and $u \in \CompactGroup$.
     The infinitesimal representation of $X_j$ has the following expression:
     \begin{enumerate}
@@ -914,7 +914,7 @@ However, as we shall see later, the Fourier Transform on $\Group$ can be written
 \begin{proof}
     Let $F \in \SmoothFunctions \CompactGroup$ and $u \in \CompactGroup$.
     \begin{enumerate}
-        \item Fix $j \in \{1, \dots, \dim \VectorSpace\}$.
+        \item Fix $j \in \{1, \cdots, \dim \VectorSpace\}$.
             Since $\exp_\Group(t X_j) = (t e_j, \Id{\VectorSpace})$,
             it follows that
             \begin{align*}
@@ -1865,7 +1865,7 @@ To this end, we follow the ideas of \cite{FischerRuzhansky16}.
 \section{Taylor formula}
 
 \begin{proposition}[Taylor remainder]
-    There exists an admissible collection of smooth functions $q_1, \dots, q_M \in \SmoothFunctions\Group$
+    There exists an admissible collection of smooth functions $q_1, \cdots, q_M \in \SmoothFunctions\Group$
     and a collection $\{\TaylorLeftDifferentialOperator{\alpha}\}_{\alpha \in \N^M}$ of left-invariant differential operators satisfying the following properties:
     \begin{enumerate}
         \item for each $\alpha \in \N^M$, $\TaylorLeftDifferentialOperator\alpha$'s order is less than $\abs\alpha$;
@@ -1917,8 +1917,8 @@ To this end, we follow the ideas of \cite{FischerRuzhansky16}.
         q_j(x, k) &= -\ip{x}{k e_i}, \quad &1 \leq &j \leq \dim \VectorSpace\\
         q_j(x, k) &= \ip[\R^N]{\iota(k^{-1}) - \iota(e)}{e_{j}}, \quad &\dim \VectorSpace < &j \leq \dim \VectorSpace + D
     \end{align*}
-    where $e_1$, \dots, $e_{\dim V}$ is an orthonormal basis of $\VectorSpace$
-    and $e_{\dim V + 1}$, \dots, $e_{\dim \VectorSpace + D}$ is an orthonormal basis of $\R^D$.
+    where $e_1$, \cdots, $e_{\dim V}$ is an orthonormal basis of $\VectorSpace$
+    and $e_{\dim V + 1}$, \cdots, $e_{\dim \VectorSpace + D}$ is an orthonormal basis of $\R^D$.
     Moreover, we know that for each $\alpha = (\alpha_1, \alpha_2)$,
     there exists a left-invariant differential operator $\TaylorLeftDifferentialOperator{\alpha}$ of order at most $\abs\alpha$ such that
     \begin{align*}
