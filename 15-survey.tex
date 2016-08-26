@@ -76,12 +76,15 @@ that the above could be generalised for general groups by considering the action
 \emph{before} applying the Fourier Transform.
 
 \begin{definition}[Difference operator, \cite{RuzhanskyTurunen10}]
-    Let $q \in \SmoothFunctions \Group$ be such that $q(e_\Group) = 0$.
+    Let $q \in \SmoothFunctions \CompactGroup$ be such that $q(e_\Group) = 0$.
     The \emph{difference operator associated with $q$} is the operator
     \begin{align*}
         \DifferenceOperator [\CompactGroup] q \Fourier [\CompactGroup] f
         \defeq \Fourier [\CompactGroup] \{q f\}
     \end{align*}
+
+    If $q$ vanishes at order $k$,
+    then we shall say that $q$ is a difference operator of \emph{order} $k$.
 \end{definition}
 
 \subsubsection{Symbols}
