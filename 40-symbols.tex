@@ -2319,25 +2319,39 @@ First, we show that $\SmoothingOperators$ is stable under composition.
         &\quad \times
         \RightDifferentialOperator[h_2 = h] {\beta_2} \TaylorRemainder {\Rep \lambda \BesselPotential {-M} \DifferenceOperatorOrder {\alpha_{02}} \LeftDifferentialOperator [g_2 = g] {\beta_{02}} \sigma_2(g \dummy, \lambda)} {e_\Group} N (h_2^{-1}) \dd h,
     \end{align*}
-    Now, observing that
-    \begin{align*}
-        \RightDifferentialOperator[h_2 = h] {\beta_2}\TaylorRemainder {\Rep \lambda \BesselPotential {-M} \sigma_2(\dummy, \lambda)} g N (h_2^{-1})
-        =
-        \TaylorRemainder {\Rep \lambda \BesselPotential {-M} \LeftDifferentialOperator {\beta_2} \sigma_2(\dummy, \lambda)} g {N - \abs {\beta_2}} (h^{-1}),
-    \end{align*}
+    Now, using REFERENCE, %TODO add reference
     the above becomes
     \begin{align*}
-        &\sigma(g, \lambda) - \sum_{\abs \alpha \leq N} \DifferenceOperatorOrder \alpha \sigma_1(g, \lambda) \TaylorLeftDifferentialOperator \alpha \sigma_2(g, \lambda)\\
-        &= \lcsum{\abs {\beta_1} + \abs {\beta_2} \leq 2M} \int_\Group \RightDifferentialOperator[h_1 = h] {\beta_1} \kappa_{1, g}(h_1) \adj {\Rep \lambda(h)} \TaylorRemainder {\Rep \lambda \BesselPotential {-M} \LeftDifferentialOperator {\beta_2} \sigma_2(\dummy, \lambda)} g {N - \abs {\beta_2}} (h^{-1}) \dd h.
+        &\LeftDifferentialOperator {\beta_0} \DifferenceOperatorOrder {\alpha_0} \tau_N(g, \lambda) =\\
+        &\quad \lcsum{%
+            \substack{%
+                \abs{\alpha_0} \leq \abs{\alpha_{01}} + \abs{\alpha_{02}} \leq 2 \abs{\alpha_0}\\
+                \beta_{01} + \beta_{02} = \beta_0\\
+                \abs {\beta_1} + \abs {\beta_2} \leq M
+            }
+        }
+        \int_\Group \RightDifferentialOperator[h_1 = h] {\beta_1} (\LeftDifferentialOperator [g] {\beta_{01}} q^{\alpha_{01}} \kappa_{1, g})(h_1) \adj {\Rep \lambda(h)}\\
+        &\quad \times
+        \TaylorRemainder {\Rep \lambda \BesselPotential {-M} \DifferenceOperatorOrder {\alpha_{02}} \LeftDifferentialOperator [g_2 = g] {\beta_{02}} \LeftDifferentialOperator {\beta_2} \sigma_2(g \dummy, \lambda)} {e_\Group} {N - \abs {\beta_2}} (h_2^{-1}) \dd h.
     \end{align*}
 
     Therefore,
     if we take the operator norm,
     we obtain
     \begin{align*}
-        &\norm [\Lin {\Lebesgue 2 \CompactGroup}] {\sigma(g, \lambda) - \sum_{\abs \alpha \leq N} \DifferenceOperatorOrder \alpha \sigma_1(g, \lambda) \TaylorLeftDifferentialOperator \alpha \sigma_2(g, \lambda)}\\
-        &\leq \lcsum{\abs {\beta_1} + \abs {\beta_2} \leq 2M} \int_\Group \abs {\RightDifferentialOperator[h] {\beta_1} \kappa_{1, g}(h)}
-        \norm [\Lin {\Lebesgue 2 \CompactGroup}] {\TaylorRemainder {\Rep \lambda \BesselPotential {-M} \LeftDifferentialOperator {\beta_2} \sigma_2(\dummy, \lambda)} g {N - \abs {\beta_2}} (h^{-1})} \dd h.
+        &\norm [\Lin {\Lebesgue 2 \CompactGroup}] {\LeftDifferentialOperator {\beta_0} \DifferenceOperatorOrder {\alpha_0} \tau_n(g, \lambda)}\\
+        &\quad \lcsum{%
+            \substack{%
+                \abs{\alpha_0} \leq \abs{\alpha_{01}} + \abs{\alpha_{02}} \leq 2 \abs{\alpha_0}\\
+                \beta_{01} + \beta_{02} = \beta_0\\
+                \abs {\beta_1} + \abs {\beta_2} \leq M
+            }
+        }
+        \int_\Group \abs {\RightDifferentialOperator[h_1 = h] {\beta_1} (\LeftDifferentialOperator [g] {\beta_{01}} q^{\alpha_{01}} \kappa_{1, g})(h_1)}\\
+        &\quad \times
+        \norm [\Lin {\Lebesgue 2 \CompactGroup}] {%
+            \TaylorRemainder {\Rep \lambda \BesselPotential {-M} \DifferenceOperatorOrder {\alpha_{02}} \LeftDifferentialOperator [g_2 = g] {\beta_{02}} \LeftDifferentialOperator {\beta_2} \sigma_2(g \dummy, \lambda)} {e_\Group} {N - \abs {\beta_2}} (h_2^{-1})
+        } \dd h.
     \end{align*}
 
     Applying the Taylor Reminder Theorem,
