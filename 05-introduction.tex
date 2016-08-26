@@ -110,18 +110,20 @@ that shows the power of symbolic calculus.
     \begin{itemize}
         \item The equivalence class $\sigma_1 \circ \sigma_2$ belongs to $\SymbolClass [\R^n] {m_1 + m_2} {\rho, \delta}$ modulo $\SmoothingSymbols [\R^n]$.
         \item The equivalence class $\sigma^{(*)}$ belongs to $\SymbolClass [\R^n] m {\rho, \delta}$ modulo $\SmoothingSymbols [\R^n]$.
-        \item If $\sigma$ is \emph{elliptic},
+        \item
+            There exists $\sigma^{(-1)} \in \SymbolClass [\R^n] {-m} {\rho, \delta}$ such that
+            \begin{align*}
+                \sigma \circ \sigma^{(-1)} = 1 \quad \text{mod } \SmoothingSymbols [R^n]
+            \end{align*}
+            if and only if $\sigma$ is \emph{elliptic},
             i.e. there exists $c \geq 0$ and $d > 0$ such that
             \begin{align*}
                 \abs {\sigma(x, \xi)} \geq c \abs \xi^m
             \end{align*}
-            for each $x \in \R^n$ and each $\xi \in \R^n$ satisfying $\norm [\R^n] \xi \geq d$,
-            then there exists $\sigma^{(-1)} \in \SymbolClass [\R^n] {-m} {\rho, \delta}$ such that
-            \begin{align*}
-                \sigma \circ \sigma^{(-1)} = 1 \quad \text{mod } \SmoothingSymbols [R^n]
-            \end{align*}
+            for each $x \in \R^n$ and each $\xi \in \R^n$ satisfying $\norm [\R^n] \xi \geq d$.
     \end{itemize}
 \end{theorem}
+% rewrite with iff
 
 \subsection{Quantisation and pseudo-differential calculus}
 
