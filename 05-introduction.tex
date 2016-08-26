@@ -29,6 +29,102 @@ while the adjoint of $T \defeq T_1$ arises from
 \end{align}
 where in the above $\sigma \defeq \sigma_1$.
 
+\subsection{Symbolic point of view}
+
+We observe that
+the terms appearing in the sums~\eqref{eq:composition_formula_for_characteristic_polynomials} or~\eqref{eq:adjunction_formula_for_characteristic_polynomials} make sense for smooth functions $\sigma \in \SmoothFunctions {\R^n \times \R^n}$ that are not necessarily characteristic polynomials.
+A natural question is thus the following:
+can we attach each smooth function $\sigma \in \SmoothFunctions {\R^n \times \R^n}$ to a different, more general linear operator,
+in such a way that both~\eqref{eq:composition_formula_for_characteristic_polynomials} and~\eqref{eq:adjunction_formula_for_characteristic_polynomials} hold?
+If the answer is affirmative,
+we shall see that
+\eqref{eq:composition_formula_for_characteristic_polynomials} is a handy tool to construct approximate inverse to a suitable class of operators,
+justifying our approach.
+
+Moreover,
+the \emph{order} of a differential operator is more easily generalised on the ``characteristic polynomial'' side.
+Naively, we could say that $\sigma \in \SmoothFunctions {\R^n \times \R^n}$ is of order $m \in \R$ if
+\begin{align*}
+    \sup_{(x, \xi) \in \R^n \times \R^n} \abs {\sigma(x, \xi)} \leq C (1 + \abs \xi)^m.
+\end{align*}
+However,
+the following properties would arise.
+\begin{enumerate}
+    \item How do we define the convergence of the sums~\eqref{eq:composition_formula_for_characteristic_polynomials} and~\eqref{eq:adjunction_formula_for_characteristic_polynomials}?
+    \item Is it true that adjunction, as in~\eqref{eq:adjunction_formula_for_characteristic_polynomials}, preserves the order?
+    \item Does the composition of two functions $\sigma_1$, $\sigma_2$ of order $m_1$ and $m_2$ according to~\eqref{eq:composition_formula_for_characteristic_polynomials} yield a $\sigma$ of order $m_1 + m_2$?
+\end{enumerate}
+
+It appears that all three issues can be solved by requiring
+that the ``order'' of the terms in~\eqref{eq:adjunction_formula_for_characteristic_polynomials} and~\eqref{eq:composition_formula_for_characteristic_polynomials} strictly decreases as $\abs \alpha$ increases.
+We are therefore led to the following definition.
+\begin{definition}[Symbol classes]
+    Assume $0 \leq \delta \leq \rho \leq 1$.
+    We shall say that $\sigma \in \SmoothFunctions {\R^n \times \R^n}$ is a \emph{symbol of order $m$}
+    if for each $\alpha, \beta \in \N^n$,
+    there exists $C \geq 0$ such that
+    \begin{align*}
+        \sup_{(x, \xi) \in \R^n \times \R^n} \abs {\iD{\xi^\alpha} \iD{x^\beta}\sigma(x, \xi)} \leq C (1 + \abs \xi)^{m - \rho \abs \alpha + \delta \abs \beta}.
+    \end{align*}
+
+    The class of such symbols will be denoted by $\SymbolClass [\R^n] m {\rho, \delta}$.
+    Moreover, we let
+    \begin{align*}
+        \SmoothingSymbols [\R^n] \defeq \bigcap_{m \in \R} \SymbolClass [\R^n] m {\rho, \delta}
+    \end{align*}
+    and call its elements \emph{smoothing symbols}.
+\end{definition}
+
+In order to make sense of infinite sums of symbols,
+we shall use the following result,
+which is proved in~\cite[Proposition~2.5.33]{RuzhanskyTurunen10}.
+
+\begin{lemma}[Asymptotic sum of symbols]
+    Given a sequence $\sigma_j \in \SymbolClass [\R^n] {m_j} {\rho, \delta}$, $j \in \N$ such that $(m_j)_{j \in \N}$ is a \emph{strictly decreasing} sequence of real numbers,
+    there exists a unique symbol $\sigma \in \SymbolClass [\R^n] {m_0} {\rho, \delta}$ modulo $\SmoothingSymbols [\R^n]$ such that
+    \begin{align*}
+        \sigma - \sum_{j = 0}^N \sigma_j \in \SymbolClass {m_{N + 1}} {\rho, \delta},
+    \end{align*}
+    in which case we write
+    \begin{align*}
+        \sigma \sim \sum_{j = 0}^{+\infty} \sigma_j.
+    \end{align*}
+\end{lemma}
+
+We are now ready to state the result
+that shows the power of symbolic calculus.
+
+\begin{theorem}[Symbolic calculus]
+    Let three symbols
+    $\sigma \in \SymbolClass m {\rho, \delta}$,
+    $\sigma_1 \in \SymbolClass {m_1} {\rho, \delta}$,
+    $\sigma_2 \in \SymbolClass {m_2} {\rho, \delta}$.
+    We let
+    \begin{align*}
+        \sigma^{(*)}(x, \xi) &\sim \sum_{\alpha \in \N^n} \frac 1 {\alpha!} \iD{\xi^\alpha} \iD{x^\alpha} \adj{\sigma(x, \xi)}\\
+        (\sigma_1 \circ \sigma_2)(x, \xi) &\sim \sum_{\alpha \in \N^n} \frac 1 {\alpha!} \iD{\xi^\alpha} \sigma_1(x, \xi) \iD{x^\alpha} \sigma_2(x, \xi),
+    \end{align*}
+    where the left-hand sides are thus defined modulo $\SmoothingSymbols [\R^n]$.
+
+    The following properties hold.
+    \begin{itemize}
+        \item The equivalence class $\sigma_1 \circ \sigma_2$ belongs to $\SymbolClass [\R^n] {m_1 + m_2} {\rho, \delta}$ modulo $\SmoothingSymbols [\R^n]$.
+        \item The equivalence class $\sigma^{(*)}$ belongs to $\SymbolClass [\R^n] m {\rho, \delta}$ modulo $\SmoothingSymbols [\R^n]$.
+        \item If $\sigma$ is \emph{elliptic},
+            i.e. there exists $c \geq 0$ and $d > 0$ such that
+            \begin{align*}
+                \abs {\sigma(x, \xi)} \geq c \abs \xi^m
+            \end{align*}
+            for each $x \in \R^n$ and each $\xi \in \R^n$ satisfying $\norm [\R^n] \xi \geq d$,
+            then there exists $\sigma^{(-1)} \in \SymbolClass [\R^n] {-m} {\rho, \delta}$ such that
+            \begin{align*}
+                \sigma \circ \sigma^{(-1)} = 1 \quad \text{mod } \SmoothingSymbols [R^n]
+            \end{align*}
+    \end{itemize}
+\end{theorem}
+
+\subsection{Quantisation and pseudo-differential calculus}
+
 Importantly,
 \eqref{eq:composition_formula_for_characteristic_polynomials} means that
 composition is reduced to summing and multiplying smooth functions,
