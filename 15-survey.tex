@@ -66,6 +66,26 @@ for $f_1, f_2 \in \Lebesgue 2 \CompactGroup$.
 
 \subsection{Symbolic calculus}
 
+\subsubsection{Difference operators}
+
+The success of our symbolic approach relies on successfully replacing difference operators on $\T^n$
+and derivatives in frequency for $\R^n$.
+
+It was observed for the first time in~\cite{RuzhanskyTurunen10}
+that the above could be generalised for general groups by considering the action of a well-chosen family of smooth functions
+\emph{before} applying the Fourier Transform.
+
+\begin{definition}[Difference operator, \cite{RuzhanskyTurunen10}]
+    Let $q \in \SmoothFunctions \Group$ be such that $q(e_\Group) = 0$.
+    The \emph{difference operator associated with $q$} is the operator
+    \begin{align*}
+        \DifferenceOperator [\CompactGroup] q \Fourier [\CompactGroup] f
+        \defeq \Fourier [\CompactGroup] \{q f\}
+    \end{align*}
+\end{definition}
+
+\subsubsection{Symbols}
+
 \begin{definition}[Symbol classes on $\CompactGroup$]
     Let $m \in \R$ and fix $\rho, \delta \in \R$ such that $1 \geq \rho \geq \delta \geq 0$.
     We shall say that
