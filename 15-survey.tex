@@ -79,9 +79,19 @@ for $f_1, f_2 \in \Lebesgue 2 \CompactGroup$.
             For each $\tau \in \dualGroup \CompactGroup$ and each $k \in \CompactGroup$,
             the map $\sigma(k)$ leaves the space
             \begin{align*}
-                V_\tau \defeq \{\tau_{ij} : 1 \leq i, j \leq \dimRep \tau\}
+                V_{i, \tau} \defeq \{\tau_{ij} : 1 \leq j \leq \dimRep \tau\}
             \end{align*}
-            invariant.
+            invariant for each $i = 1, \dots, \dimRep \tau$.
+            Moreover, for each $i, i' \in \{1, \dots, \dimRep \tau\}$,
+            we have
+            \begin{align*}
+                \eval \sigma {V_{i, \tau}} = R_{i i'} \circ \eval \sigma {V_{i', \tau}} \circ R_{i' i},
+            \end{align*}
+            where $R^\tau_{i i'} : V_{i', \tau} \to V_{i, \tau}$ is a linear transformation determined by
+            \begin{align*}
+                R^\tau_{i i'} \tau_{i' j} = \tau_{i j},
+            \end{align*}
+            and naturally $R^\tau_{i' i} = (R^\tau_{i i'})^{-1}$.
         \item Our map $\sigma$ satisfies
             \begin{align*}
                 \sup_{k \in \CompactGroup}
@@ -90,7 +100,7 @@ for $f_1, f_2 \in \Lebesgue 2 \CompactGroup$.
                     \LeftDifferentialOperator \beta \DifferenceOperatorOrder [\CompactGroup] \alpha \sigma(k)
                 } < \infty
             \end{align*}
-            for every $\beta \in \N^{\dim \VectorSpace}$ and every $\alpha$.
+            for every $\beta \in \N^{\dim \CompactGroup}$ and every $\dimDifferenceOperators$.
             % TODO: specify set for alpha
     \end{enumerate}
 \end{definition}
