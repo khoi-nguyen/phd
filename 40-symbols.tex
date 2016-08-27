@@ -19,6 +19,108 @@ must decrease appropriately when we apply certain linear operators to it.
     we shall say that $\DifferenceOperator{q}$ is a \emph{difference operator of order $k$}.
 \end{definition}
 
+Observe that difference operators decrease the order of characteristic polynomials.
+
+\begin{lemma}[Difference operators on characteristic polynomials]
+\label{lemma:difference_operators_on_characteristic_polynomials}
+    Let $q \in \SmoothFunctions \Group$.
+    For every $\alpha \in \N^{\dim \Group}$,
+    we have the formula
+    \begin{align*}
+        \DifferenceOperator q \Rep \lambda(\LeftDifferentialOperator \alpha)
+        =
+        \sum_{\beta \leq \alpha} \binom \alpha \beta
+        (-1)^{\abs \beta}
+        \LeftDifferentialOperator \beta q(e_\Group)
+        \Rep \lambda(\LeftDifferentialOperator {\alpha - \beta}).
+    \end{align*}
+
+    In particular,
+    if $\DifferenceOperator q$ is a difference operator of order $k$,
+    then $\DifferenceOperator q \Rep \lambda(\LeftDifferentialOperator \alpha)$ is the characteristic polynomial of a differential operator with order $\abs \alpha - k$.
+\end{lemma}
+\begin{proof}
+    By definition of difference operator,
+    we have
+    \begin{align*}
+        \DifferenceOperator q \Rep \lambda(\LeftDifferentialOperator \alpha)
+        = (-1)^\alpha \Fourier \{q \LeftDifferentialOperator \alpha \delta_{e_\Group}\}
+    \end{align*}
+
+    Let $H \in \Schwartz {\dualGroup \Group}$ and write
+    \begin{align*}
+        h \defeq \iota \circ \InverseFourier H.
+    \end{align*}
+    Using the definition of Fourier transform on distributions,
+    we know that
+    \begin{align}
+        \dualBracket [\dualGroup \Group] {%
+            \Fourier \{ q \LeftDifferentialOperator \alpha \delta_{e_\Group} \}
+        } H
+        =
+        \dualBracket [\Group] {%
+            q \LeftDifferentialOperator \alpha \delta_{e_\Group}
+        } h
+        =
+        (-1)^{\abs \alpha}
+        \dualBracket [\Group] {\delta_{e_\Group}} {\LeftDifferentialOperator \alpha (qh)}
+        \label{eq:difference_operator_of_X_alpha}
+    \end{align}
+
+    Using the Leibniz rule,
+    we know that
+    \begin{align*}
+        \dualBracket [\Group] {\delta_{e_\Group}} {\LeftDifferentialOperator \alpha (qh)}
+        &=
+        \sum_{\beta \leq \alpha} \binom \alpha \beta
+        \dualBracket [\Group] {\delta_{e_\Group}} {\LeftDifferentialOperator \beta q \LeftDifferentialOperator {\alpha - \beta} h}\\
+        &=
+        \sum_{\beta \leq \alpha} \binom \alpha \beta
+        \LeftDifferentialOperator \beta q(e_\Group)
+        \dualBracket [\Group] {\delta_{e_\Group}} {\LeftDifferentialOperator {\alpha - \beta} h},
+    \end{align*}
+    which, after using the definition of distributional derivative,
+    becomes
+    \begin{align*}
+        \dualBracket [\Group] {\delta_{e_\Group}} {\LeftDifferentialOperator \alpha (qh)}
+        &=
+        \sum_{\beta \leq \alpha} \binom \alpha \beta
+        (-1)^{\abs {\alpha - \beta}}
+        \LeftDifferentialOperator \beta q(e_\Group)
+        \dualBracket [\Group] {\LeftDifferentialOperator {\alpha - \beta} \delta_{e_\Group}} {h}.
+    \end{align*}
+
+    Recognising the definition of distributional Fourier transform again,
+    we obtain
+    \begin{align*}
+        \dualBracket [\Group] {\delta_{e_\Group}} {\LeftDifferentialOperator \alpha (qh)}
+        &=
+        \sum_{\beta \leq \alpha} \binom \alpha \beta
+        (-1)^{\abs {\alpha - \beta}}
+        \LeftDifferentialOperator \beta q(e_\Group)
+        \dualBracket [\dualGroup \Group] {\Fourier\{\LeftDifferentialOperator {\alpha - \beta} \delta_{e_\Group}\}} {H}\\
+        &=
+        \sum_{\beta \leq \alpha} \binom \alpha \beta
+        (-1)^{\abs {\alpha - \beta}}
+        \LeftDifferentialOperator \beta q(e_\Group)
+        \dualBracket [\dualGroup \Group] {\Rep \lambda(\LeftDifferentialOperator {\alpha - \beta})} {H}.
+    \end{align*}
+
+    Combining the above with~\eqref{eq:difference_operator_of_X_alpha},
+    we obtain that
+    \begin{align*}
+        \dualBracket [\dualGroup \Group] {\DifferenceOperator q \Rep \lambda (\LeftDifferentialOperator \alpha)} {H}
+        &=
+        \sum_{\beta \leq \alpha} \binom \alpha \beta
+        (-1)^{\abs \beta}
+        \LeftDifferentialOperator \beta q(e_\Group)
+        \dualBracket [\dualGroup \Group] {\Rep \lambda(\LeftDifferentialOperator {\alpha - \beta})} {H}.
+    \end{align*}
+
+    Since $H$ is arbitrary,
+    we obtain the desired formula.
+\end{proof}
+
 \begin{definition}
 \label{definition:admissibility_of_difference_operators}
 \index{difference operators!admissibility}
