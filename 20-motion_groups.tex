@@ -767,6 +767,7 @@ a few comments are necessary.
 \end{proof}
 
 \subsubsection{Representations on $\GroupDirect$}
+\label{subsubsection:representations_on_the_direct_product}
 
 Provided that we also group the representations on $\GroupDirect$,
 the representations of $\GroupDirect$ and $\Group$ can seem formally very similar.
@@ -790,7 +791,7 @@ the representation above is equivalent to the following.
     Let $\lambda \in \VectorSpace$.
     We define a unitary representation $\Rep{\lambda} \in \Hom(\Group, \End(\Lebesgue{2}{\CompactGroup}))$ of $\Group$ via
     \begin{align*}
-        \Rep{\lambda} (x, k) F(u) \defeq \e^{\i \turn \ip \lambda x} F(u k),
+        \Rep [\GroupDirect] {\lambda} (x, k) F(u) \defeq \e^{\i \turn \ip \lambda x} F(u k),
     \end{align*}
     where $(x, k) \in \CompactGroup$, $F \in \Lebesgue{2}{\CompactGroup}$ and $u \in \CompactGroup$.
 \end{definition}
@@ -1336,6 +1337,62 @@ they provide the most elementary example of Fourier transform of distributions t
     \end{align*}
     where the last equality was obained by Proposition~\ref{proposition:elementary_properties_of_the_Fourier_transform}.
 \end{proof}
+
+\subsubsection{The direct product case}
+
+In view of Subsubsection~\ref{subsubsection:representations_on_the_direct_product},
+let us compare the Plancherel formulas.
+
+Given $f \in \Lebesgue 1 {\GroupDirect}$ and $\lambda \in \VectorSpace$,
+we let
+\begin{align*}
+    \Fourier [\GroupDirect] f(\lambda)
+    &\defeq \int_{\GroupDirect} f(x, k) \adj{\Rep [\GroupDirect] \lambda(x, k)} \dd (x, k),\\
+    \Fourier [\GroupDirect] f(\lambda, \tau)
+    &\defeq \int_{\GroupDirect} f(x, k) \e^{\i \turn \ip \lambda x} \adj{\tau(k)} \dd (x, k).
+\end{align*}
+Note that $\dd (x, k)$ is also the Haar measure of $\Group$.
+Moreover,
+it is clear that
+\begin{align}
+    \Fourier [\GroupDirect] f(\lambda)
+    \sim \bigoplus_{\tau \in \dualGroup \CompactGroup} \left(\Fourier [\GroupDirect] f(\lambda, \tau)\right)^{\otimes \dimRep \tau}
+    \label{eq:relation_between_both_Fourier_transforms_on_the_direct_product}
+\end{align}
+
+The Plancherel formula therefore takes the following form.
+
+\begin{proposition}[Plancherel formula on $\GroupDirect$]
+    Let $f \in \Lebesgue{1}{\GroupDirect} \cap \Lebesgue{2}{\GroupDirect}$.
+    The following formula holds
+    \begin{align}
+        \int_{\GroupDirect} \abs{f}^2 \dd g = \int_\VectorSpace \norm[\HilbertSchmidt{\Lebesgue{2}{\CompactGroup}}]{\Fourier [\GroupDirect] {f}(\lambda)}^2 \dd \lambda.
+    \end{align}
+\end{proposition}
+\begin{proof}
+    Using the ``classical'' Plancherel Theorem on $\GroupDirect$,
+    we obtain
+    \begin{align*}
+        \int_{\GroupDirect} \abs f^2 \dd g
+        = \int_\VectorSpace \sum_{\tau \in \dualGroup \CompactGroup} \dimRep \tau \norm [\HilbertSchmidt {\mathcal H_\tau}] {\Fourier [\GroupDirect] f(\lambda, \tau)}^2 \dd \lambda.
+    \end{align*}
+
+    Using~\eqref{eq:relation_between_both_Fourier_transforms_on_the_direct_product},
+    it is clear that
+    \begin{align*}
+        \norm [\HilbertSchmidt {\Lebesgue 2 \CompactGroup}] {\Fourier [\GroupDirect] f(\lambda)}^2
+        = \sum_{\tau \in \dualGroup \CompactGroup} \dimRep \tau \norm [\HilbertSchmidt {\mathcal H_\tau}] {\Fourier [\GroupDirect] f(\lambda, \tau)}^2,
+    \end{align*}
+    and we conclude easily.
+\end{proof}
+
+Naturally,
+with an identical proof,
+this means that the \emph{inverse formula} takes the form
+\begin{align*}
+    f(g) = \int_{\GroupDirect} \tr(\Rep [\GroupDirect] \lambda(g) \Fourier [\GroupDirect] f(\lambda)) \dd \lambda,
+\end{align*}
+where $f \in \Schwartz \GroupDirect$ and $g \in \GroupDirect$.
 
 \section{Applications to engineering}
 
