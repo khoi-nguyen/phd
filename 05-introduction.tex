@@ -151,7 +151,11 @@ we easily check that the following map $\Op [\R^n]$
     \label{eq:intro:Euclidean:quantisation}
 \end{align}
 not only \emph{does} send a characteristic polynomial to its corresponding partial differential operator\footnote{%
-    This is
+    More precisely,
+    it sends a characteristic polynomial $\sigma(x, \xi) = \sum_{\alpha \in \N^n} c_\alpha(x) \xi^\alpha$ onto
+    \begin{align*}
+        \Op [\R^n](\sigma) \defeq \sum_{\alpha \in \N^n} (i \turn)^{-\abs \alpha} c_\alpha(x) \iD {x^\alpha}.
+    \end{align*}
 },
 but also is far more general in scope.
 The process of associating an operator with a symbol is known as \emph{quantisation}.
