@@ -2,13 +2,22 @@
 
 \section{The Euclidean case}
 
-In the Euclidean setting,
-it is a known fact that constant-coefficient differential operators act like their characteristic polynomials on the Fourier Transform side.
-Moreover, composing or inverting such operators can be done by multiplication or inversion of their associated polynomials.
-Similarly, taking the adjoint can equally be expressed in terms of polynomials.
+Given a partial differential operator
+\begin{align*}
+    T = \sum_{\abs \alpha \leq N} c_\alpha(x) \iD{x^\alpha}
+\end{align*}
+with smooth coefficients,
+let us recall that its \emph{characteristic polynomial} is given by the smooth map
+\begin{align*}
+    \sigma(x, \xi) \defeq \sum_{\abs \alpha \leq N} c_\alpha(x) \xi^\alpha.
+\end{align*}
 
-Although the above properties do not hold for differential operators with smooth, non-constant, coefficients,
-the composition, inversion and adjunction of such operators can still be written solely in terms of their characteristic polynomials.
+Substituing $\iD{{x_i} }$ for $\xi_i$ might, formally speaking, seem like a trivial and insignificant change,
+it is however good to keep in mind
+that smooth functions have their own operations and structures
+which could provide us with a different perspective.
+
+Note that the composition and adjunction of such operators can be written in terms of their characteristic polynomials.
 As an example,
 if $T_1$ and $T_2$ are two operators arising from the polynomials $\sigma_1(x, \xi)$ and $\sigma_2(x, \xi)$ via
 \begin{align*}
