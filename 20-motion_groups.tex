@@ -659,8 +659,43 @@ and introduce the following unitary, albeit reducible, representations.
     where $(x, k) \in \CompactGroup$, $F \in \Lebesgue{2}{\CompactGroup}$ and $u \in \CompactGroup$.
 \end{definition}
 
-Unfortunately, the above representation is often reducible.
-However, as we shall see later, the Fourier Transform on $\Group$ can be written exclusively with those representations.
+At this stage,
+a few comments are necessary.
+
+\begin{itemize}
+    \item
+        If $\lambda = 0$ in~\eqref{eq:reducible_representations_on_the_motion_groups},
+        then our unitary representation takes the form
+        \begin{align*}
+            \Rep \lambda(x, k) = \RightRegularRepresentation(k)
+            \sim \bigoplus_{\tau \in \dualGroup \CompactGroup} \tau^{\otimes \dimRep \tau},
+        \end{align*}
+        and is thus always reducible.
+    \item
+        If $\lambda \neq 0$,
+        then our representation defined in~\eqref{eq:reducible_representations_on_the_motion_groups} is irreducible if and only if $\CompactGroup$ is \emph{abelian}.
+        This can be deduced easily from its decomposition into irreducible representations (see~\cite{Kumahara73}).
+    \item
+        For each $k \in \CompactGroup$ and each $\lambda \in \VectorSpace$,
+        the representations $\Rep \lambda$ and $\Rep {k \lambda}$
+        are equivalent (see Lemma~\ref{lemma:invariance_property}).
+        Again,
+        we choose to work with them all the same
+        because they will yield a more elegant Plancherel formula,
+        but will allow us to always be able to differentiate with respect to $\lambda$.
+    \item
+        In the literature (see~\cite{Ito52,Kumahara73,Kumahara76,Vilenkin95}),
+        the representations are usually defined via
+        \begin{align*}
+            \Rep{\lambda} (x, k) F(u) \defeq \e^{\i \ip \lambda {u^{-1} x}} F(k^{-1} u).
+        \end{align*}
+        The choice was made consciously for technical reasons.
+        Like for the Euclidean case, the $\turn$ factor will ensure that the Fourier transform is \emph{unitary}
+        (see Proposition~\ref{proposition:Plancherel_formula})
+        while the choice to put $k$ on the right of $u$
+        was made because right-regular representations are more convenient when working with the Peter-Weyl basis of $\Lebesgue 2 \CompactGroup$.
+\end{itemize}
+
 
 \begin{example}[$2$-dimensional Euclidean motion group]
     Let $\lambda \in \R^2$.
@@ -685,6 +720,7 @@ However, as we shall see later, the Fourier Transform on $\Group$ can be written
 \end{example}
 
 \begin{lemma}[Invariance property]
+\label{lemma:invariance_property}
     Let $\lambda \in \VectorSpace$.
     For each $k \in \CompactGroup$, we have
     \begin{align*}
