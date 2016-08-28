@@ -121,10 +121,40 @@ Observe that difference operators decrease the order of characteristic polynomia
     we obtain the desired formula.
 \end{proof}
 
+We can provide an explicit formula for a suitably chosen family of difference operators.
+
+\begin{lemma}
+    Let $f \in \Schwartz \Group$.
+    Suppose that for each $j \in \N$,
+    we let
+    \begin{align*}
+        q_j((x, k)^{-1}) = x_j,
+        \quad (x, k) \in \Group,
+    \end{align*}
+    and assume that $q \in \SmoothFunctions \Group$ is a function which does not depend on $x \in \VectorSpace$ but only on $k \in \CompactGroup$.
+
+    We have the following formulas.
+    \begin{enumerate}
+        \item For each $j \in \{1, \cdots, \dim \VectorSpace\}$,
+            and each $F \in \Lebesgue 2 \CompactGroup$,
+            we have
+            \begin{align*}
+                \DifferenceOperator {q_j} \Fourier \phi(\lambda) F(u) = \frac 1 {i \turn} \eval {\D* 1 t} {t = 0} \Fourier \phi(\lambda + t u e_j) F(u)
+            \end{align*}
+        \item
+    \end{enumerate}
+\end{lemma}
+\begin{proof}
+    By
+    \begin{align*}
+        \Fourier \{q_j f\}(\lambda)
+    \end{align*}
+\end{proof}
+
 \begin{definition}
 \label{definition:admissibility_of_difference_operators}
 \index{difference operators!admissibility}
-    A finite collection $q_1$, \cdots, $q_M \in \SmoothFunctions{\Group}$ of smooth functions is said to be \emph{admissible}
+    A finite collection $q_1$, \dots, $q_M \in \SmoothFunctions{\Group}$ of smooth functions is said to be \emph{admissible}
     if $\dd q_j(e) \neq 0$ for each $j \in \{1, \cdots, M\}$
     and if
     \begin{align*}
@@ -158,7 +188,7 @@ Observe that difference operators decrease the order of characteristic polynomia
 Using \cite[Lemma 4.4]{RuzhanskyTurunenWirth10}, we can show
 
 \begin{lemma}
-    There exists a strongly admissible family $q_1$, \cdots, $q_M \in \SmoothFunctions{\Group}$ on $\Group$ which satisfies the Leibniz-like property.
+    There exists a strongly admissible family $q_1$, \dots, $q_M \in \SmoothFunctions{\Group}$ on $\Group$ which satisfies the Leibniz-like property.
 \end{lemma}
 \begin{proof}
     Denote by $F$ the set of all fundamental representations of $\CompactGroup$,
