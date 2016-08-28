@@ -141,6 +141,30 @@ provided we could associate our symbols with an operator,
 in a way that generalises the association of a characteristic polynomial with its corresponding differential operator.
 Moreover, we will want $\sigma^{(*)}$ and $\sigma_1 \circ \sigma_2$ to correspond to the adjunction and composition of operators respectively.
 
+As our functions $\sigma$ are now much more general,
+the substitution of $\xi$ for $\iD x$ will of course not work.
+However, taking advantage of the \emph{global} group structure of $\R^n$,
+we easily check that the following map $\Op [\R^n]$
+\begin{align}
+    \Op [\R^n] (\sigma) \phi(x)
+    &\defeq \int_{\R^n} \e^{\i \turn \ip [\R^n] x \xi} \sigma(x, \xi) \Fourier [\R^n] \phi(\xi) \dd \xi
+    \label{eq:intro:Euclidean:quantisation}
+\end{align}
+not only \emph{does} send a characteristic polynomial to its corresponding partial differential operator\footnote{%
+    This is
+},
+but also is far more general in scope.
+The process of associating an operator with a symbol is known as \emph{quantisation}.
+
+We are thus naturally led to the following definition.
+\begin{definition}[Operator classes]
+    We shall say that a map $T : \Schwartz {\R^n} \to \Schwartz {\R^n}$ is of \emph{order $m$ and type $(\rho, \delta)$} if
+    \begin{align*}
+        T \in \OperatorClass m {\rho, \delta}
+        \defeq \Op [\R^n] \left(\SymbolClass m {\rho, \delta}\right).
+    \end{align*}
+\end{definition}
+
 Laurent Schwartz's \emph{Kernel Theorem} and his extension of the \emph{Fourier transform} allows us to extend the concept of characteristic polynomials far beyond the class of ordinary differential operators.
 The resulting concept, called the \emph{symbol} of an operator,
 is formally defined by taking the Fourier transform of the convolution kernel.
