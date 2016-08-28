@@ -1456,18 +1456,17 @@ where in the above $\hat f(\lambda, t) \defeq \Fourier [\MotionGroup 2] f(\lambd
 \end{align}
 
 \begin{example}[$h \equiv C$]
-    % TODO: Check exponential map is well defined
     In the case where $h \equiv C$ does not depend on time,
     the solution of~\eqref{eq:Fokker-Planck_phase_noise:Fourier_side} is given by
     \begin{align*}
-        \hat f(\lambda; t) = \exp_{\Lebesgue 2 \T}(t A(\lambda)),
+        \hat f(\lambda; t) = \e^{t A(\lambda)},
     \end{align*}
     where $A(\lambda) \defeq A(\lambda, t)$ was defined in~\eqref{eq:Fokker-Planck_phase_noise:linear_operator}.
 
     Applying the inverse Fourier transform to the above,
     we obtain that the solution of~\eqref{eq:Fokker-Planck_phase_noise} is given by
     \begin{align*}
-        f(y, s; t) = \int_\VectorSpace \tr\left( \Rep [\MotionGroup 2] \lambda (y, s) \exp_{\Lebesgue 2 \T}(t A(\lambda)) \right) \dd \lambda.
+        f(y, s; t) = \int_\VectorSpace \tr\left( \Rep [\MotionGroup 2] \lambda (y, s) \e^{t A(\lambda)} \right) \dd \lambda.
     \end{align*}
 \end{example}
 
