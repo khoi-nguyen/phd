@@ -766,6 +766,35 @@ a few comments are necessary.
     \end{align*}
 \end{proof}
 
+\subsubsection{Representations on $\GroupDirect$}
+
+Provided that we also group the representations on $\GroupDirect$,
+the representations of $\GroupDirect$ and $\Group$ can seem formally very similar.
+
+Indeed,
+first observe that
+the unitary dual is given by
+\begin{align*}
+    \dualGroup {\GroupDirect} =
+    \left\{\e^{\i \turn \ip \lambda \dummy} \otimes \tau : \lambda \in \VectorSpace, \tau \in \dualGroup \Group \right\}
+\end{align*}
+which, if we group the representations of $\CompactGroup$, becomes
+\begin{align*}
+    \e^{\i \turn \ip \lambda \dummy} \otimes \left(\bigoplus_{\tau \in \dualGroup \CompactGroup} \tau^{\otimes \dimRep \tau}\right)
+\end{align*}
+
+Using the Peter-Weyl Theorem (Theorem~\ref{theorem:Peter-Weyl_theorem}),
+the representation above is equivalent to the following.
+
+\begin{definition}
+    Let $\lambda \in \VectorSpace$.
+    We define a unitary representation $\Rep{\lambda} \in \Hom(\Group, \End(\Lebesgue{2}{\CompactGroup}))$ of $\Group$ via
+    \begin{align*}
+        \Rep{\lambda} (x, k) F(u) \defeq \e^{\i \turn \ip \lambda x} F(u k),
+    \end{align*}
+    where $(x, k) \in \CompactGroup$, $F \in \Lebesgue{2}{\CompactGroup}$ and $u \in \CompactGroup$.
+\end{definition}
+
 %\subsection{Unitary dual}
 %
 %Our description of the unitary dual comes from \cite{Kumahara73},
