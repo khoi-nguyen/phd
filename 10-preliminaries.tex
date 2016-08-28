@@ -296,6 +296,32 @@ From now on,
 everytime we integrate on a Euclidean space,
 we do so with respect to the Lebesgue measure.
 
+Given a locally compact topological group $\Group$,
+we denote by $\mathcal M(\Group)$ the set of all complex-valued functions
+that are measurable with respect to a chosen Haar measure.
+
+\begin{definition}[Lebesgue spaces]
+    Let $G \in \Group$ be a locally compact group
+    and assume that $1 \leq p \leq \infty$.
+    \begin{itemize}
+        \item
+            If $p < +\infty$,
+            we let
+            \begin{align*}
+                \Lebesgue p \Group
+                \defeq
+                \left\{f \in \mathcal M(\Group) : \int_\Group \abs f^p \dd g < \infty\right\}
+            \end{align*}
+        \item
+            If $p = \infty$,
+            \begin{align*}
+                \Lebesgue {\infty} \Group
+                \defeq
+                \left\{f \in \mathcal M(\Group) : \esssup \abs f < \infty\right\}.
+            \end{align*}
+    \end{itemize}
+\end{definition}
+
 \section{Representation Theory}
 
 To generalise the Fourier Transform to other Lie groups,
