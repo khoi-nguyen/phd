@@ -623,6 +623,41 @@ the resulting symbol classes would be identical.
         \norm [\Lin {\Lebesgue 2 \Group}] {\Rep \lambda \BesselPotential s \DifferenceOperator q \sigma(\lambda)}.
     \end{align*}
 \end{lemma}
+\begin{proof}
+    Let $T$ and $T'$ be the operators defined via
+    \begin{align*}
+        T \phi(g) \defeq \int_\Group \phi(h) (q \kappa)(h^{-1} g) \dd h,\\
+        T' \phi(g) \defeq \int_\Group \phi(h) (q' \kappa)(h^{-1} g) \dd h,
+    \end{align*}
+    where the integrals are interpreted distributionaly,
+    $\phi \in \Schwartz \Group$ and $g \in \Group$.
+
+    Using our assumption,
+    it follows that after letting
+    \begin{align*}
+        \psi_g(h) = \frac {q'} q(h^{-1} g),
+    \end{align*}
+    we obtain
+    \begin{align*}
+        T' \phi(g) = \int_\Group \phi(h) \psi_g(h) (q \kappa)(h^{-1} g) \dd h = T(\phi \psi_g)(g).
+    \end{align*}
+
+    \begin{align*}
+        \norm [\Lebesgue 2 \Group] {T' \phi}^2
+        &\leq \int_\Group \sup_{g_1 \in \Group} \abs{T (\phi \psi_{g_1})(g)}^2 \dd g\\
+        &\leq \int_\Group \int_\Group \abs{T (\phi \BesselPotential \gamma_{g_1} \psi_{g_1})(g)}^2 \dd g_1 \dd g
+    \end{align*}
+
+    Using Fubini's theorem
+    and the fact that $T \in \Lin{\Lebesgue 2 \Group, \Sobolev s}$,
+    we obtain
+    \begin{align*}
+        \norm [\Lebesgue 2 \Group] {T' \phi}^2
+        &\leq \int_\Group \int_\Group \abs{T (\phi \BesselPotential \gamma_{g_1} \psi_{g_1})(g)}^2 \dd g \dd g_1\\
+        &\leq \norm [\Lin {\Lebesgue 2 \Group, \Sobolev s}] {T} \int_\Group \norm [\Sobolev s] {\phi \BesselPotential \gamma_{g_1} \psi_{g_1}}^2 \dd g_1
+    \end{align*}
+    % TODO Conclude
+\end{proof}
 
 \section{Link with the H\"ormander classes}
 
