@@ -610,20 +610,16 @@ the resulting symbol classes would be identical.
 
 \begin{lemma}
     Let $q, q' \in \SmoothFunctions \Group$ be two smooth functions such that $q / q'$ extends smoothly to a function in $\SmoothFunctions \Group$.
-    It follows that
+    It follows that if
     \begin{align*}
         \norm [\Lin {\Lebesgue 2 \Group}] {\Rep \lambda \BesselPotential s \DifferenceOperator q \sigma(\lambda)}
         < \infty
     \end{align*}
-    if and only if
+    for a certain $s \in \R$ and a map $\sigma \in \Fourier(\TemperedDistributions \Group)$,
+    then there exists $C = C_{q, q', s} \geq 0$ such that
     \begin{align*}
-        \norm [\Lin {\Lebesgue 2 \Group}] {\Rep \lambda \BesselPotential s \DifferenceOperator q \sigma(\lambda)}
-        < \infty,
-    \end{align*}
-    in which case
-    \begin{align*}
-        \norm [\Lin {\Lebesgue 2 \Group}] {\Rep \lambda \BesselPotential s \DifferenceOperator q \sigma(\lambda)}
-        \asymp_{s, q, q'}
+        \norm [\Lin {\Lebesgue 2 \Group}] {\Rep \lambda \BesselPotential s \DifferenceOperator {q'} \sigma(\lambda)}
+        \leq C
         \norm [\Lin {\Lebesgue 2 \Group}] {\Rep \lambda \BesselPotential s \DifferenceOperator q \sigma(\lambda)}.
     \end{align*}
 \end{lemma}
