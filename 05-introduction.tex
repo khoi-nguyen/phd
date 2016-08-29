@@ -176,6 +176,20 @@ We are thus naturally led to the following definition.
     we shall say that $T$ is a \emph{smoothing operator}.
 \end{definition}
 
+We need to check the above define an appropriate notion of order.
+Ideally, we would like to answer the following questions in the affirmative.
+
+\begin{itemize}
+    \item Does the composition of two operators of order $m_1$ and $m_2$ yield an operator of order $m_1 + m_2$?
+    \item Does taking the adjoint preserve the order?
+    \item Does the order control the loss of derivatives?
+        By this, we mean that if $T \in \OperatorClass m {\rho, \delta}$,
+        is it true that $T$ extends to a continuous map
+        \begin{align*}
+            T : \Sobolev [\R^n] s \to \Sobolev [\R^n] {s - m}?
+        \end{align*}
+\end{itemize}
+
 Laurent Schwartz's \emph{Kernel Theorem} and his extension of the \emph{Fourier transform} allows us to extend the concept of characteristic polynomials far beyond the class of ordinary differential operators.
 The resulting concept, called the \emph{symbol} of an operator,
 is formally defined by taking the Fourier transform of the convolution kernel.
