@@ -190,53 +190,42 @@ Ideally, we would like to answer the following questions in the affirmative.
         \end{align*}
 \end{itemize}
 
-Laurent Schwartz's \emph{Kernel Theorem} and his extension of the \emph{Fourier transform} allows us to extend the concept of characteristic polynomials far beyond the class of ordinary differential operators.
-The resulting concept, called the \emph{symbol} of an operator,
-is formally defined by taking the Fourier transform of the convolution kernel.
-More precisely,
-by the \emph{Schwartz Kernel Theorem},
-$T$ is formally given by
-\begin{align*}
-    T \phi(x) = \int_{\R^n} \phi(y) \kappa(x, x - y) \dd y
-\end{align*}
-in the sense of distributions,
-and we can thus define its \emph{symbol} via
-\begin{align*}
-    \sigma(x, \xi) \defeq \Fourier \{\kappa(x, \dummy)\}(\xi).
-\end{align*}
+The above questions are the object of the following result.
+\begin{theorem}
+    Assume that $1 \geq \rho > \delta \geq 0$.
+    \begin{enumerate}
+        \item If $T \in \SmoothingOperators [\R^n]$,
+            then it extends continuously to a map
+            \begin{align*}
+                T : \TemperedDistributions {\R^n} \to \SmoothFunctions {\R^n}.
+            \end{align*}
+        \item If $T_1 = \Op [\R^n] (\sigma_1) \in \OperatorClass {m_1} {\rho, \delta}$ and $T_2 = \Op [\R^n] (\sigma_2) \in \OperatorClass {m_2} {\rho, \delta}$,
+            then we have
+            \begin{align*}
+                T_1 \circ T_2
+                = \Op [\R^n] (\sigma_1 \circ \sigma_2)
+                \quad \text{ mod }\ \SmoothingOperators [\R^n].
+            \end{align*}
 
-Interestingly, the formula~\eqref{eq:composition_formula_for_characteristic_polynomials} still holds in a certain sense for smooth symbols.
-The \emph{order} of a characteristic polynomial can therefore be extended onto smooth symbols as follows:
-we shall say that $\sigma \in \SmoothFunctions {\R^n \times \R^n}$ is of order $m \in \R$
-if the following holds
-\begin{align*}
-    \abs {\iD{\xi^\alpha, \xi^\beta} \sigma(x, \xi)} \leq C_{\alpha, \beta} (1 + \abs \xi)^{m - \abs \alpha}.
-\end{align*}
-Naturally, the condition on the derivatives is motivated by~\eqref{eq:composition_formula_for_characteristic_polynomials} and the fact that
-if $\sigma_1$ and $\sigma_2$ are two symbols of order $m_1$ and $m_2 \in \R$ respectively,
-the composition of their associated operators should yield a symbol of order $m_1 + m_2$.
-We shall say that an operator associated with a symbol of order $m$ is also of order $m$.
+            In particular,
+            the composition of an operator in $\OperatorClass [\R^n] {m_1} {\rho, \delta}$
+            with an operator in $\OperatorClass [\R^n] {m_2} {\rho, \delta}$
+            yields an operator in $\OperatorClass [\R^n] {m_1 + m_2} {\rho, \delta}$.
+        \item If $T = \Op(\sigma) \in \OperatorClass [\R^n] m {\rho, \delta}$,
+            then its adjoint satisfies
+            \begin{align*}
+                \adj T
+                = \Op [\R^n] (\sigma^{(*)})
+                \quad \text{ mod }\ \SmoothingOperators [\R^n].
+            \end{align*}
 
-Denoting the set of operators of order $m \in \R$ by $\OperatorClass [\R^n] m {1, 0}$,
-we obtain the following important collection of results:
-\begin{enumerate}
-    \item
-        If $T_1 \in \OperatorClass [\R^n] {m_1} {1, 0}$
-        and $T_2 \in \OperatorClass [\R^n] {m_2} {1, 0}$,
-        then $T_1 \circ T_2$
-    \item
-        The set $\OperatorClass [\R^n] m {1, 0}$ is stable under taking the adjoint.
-    \item
-        If $T \in \OperatorClass m {\rho, \delta}$ is uniformly elliptic,
-        its inverse belongs to $T^{-1} \in \OperatorClass {-m} {\rho, \delta}$
-    \item
-        If $T \in \OperatorClass [\R^n] m {1, 0}$,
-        then $T$ extends continuously to a bounded operator
-        \begin{align*}
-            T : \Sobolev [\R^n] s \to \Sobolev [\R^n] {s - m},
-        \end{align*}
-        where in the above $\Sobolev [\R^n] s$ denotes the Sobolev space of order $s \in \R$.
-\end{enumerate}
+            In particular,
+            $\OperatorClass [\R^n] m {\rho, \delta}$ is stable under taking the adjoint.
+        \item $T = \Op [\R^n] (\sigma) \in \OperatorClass [\R^n] m {\rho, \delta}$
+            has an inverse modulo $\SmoothingOperators [\R^n]$
+            if and only if $\sigma$ is \emph{elliptic}.
+    \end{enumerate}
+\end{theorem}
 
 \section{Generalisation to other Lie groups}
 
