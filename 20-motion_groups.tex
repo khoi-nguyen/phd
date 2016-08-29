@@ -1481,6 +1481,10 @@ where in the above $\hat f(\lambda, t) \defeq \Fourier [\MotionGroup 2] f(\lambd
 
 \section{Fourier Transform of distributions}
 
+Perhaps surprisingly,
+the image of the $\Schwartz \Group$ via the Fourier transform
+was explicitely described in~\cite[p.~4]{EguchiMasaakiKumahara80}.
+
 \begin{definition}[Image of the Schwartz space]
     We shall denote by $\Schwartz{\dualGroup\Group}$
     the set of all functions $F \in \SmoothFunctions{\VectorSpace, \Lin{\Lebesgue{2}\CompactGroup}}$ such that:
@@ -1507,10 +1511,19 @@ where in the above $\hat f(\lambda, t) \defeq \Fourier [\MotionGroup 2] f(\lambd
     \end{enumerate}
 \end{definition}
 
+One easily checks the following result.
+
 \begin{lemma}
     The space $\Schwartz{\dualGroup\Group}$ is a Fr\'echet space
     whose topology is given by the seminorms $\seminorm[\Schwartz{\dualGroup\Group}]{N}{\dummy}$, $N \in \N$.
 \end{lemma}
+
+\begin{theorem}[\cite{EguchiMasaakiKumahara80}]
+    The Fourier Transform is a topological isomorphism
+    \begin{align*}
+        \Fourier : \Schwartz \Group \to \Schwartz {\dualGroup \Group}
+    \end{align*}
+\end{theorem}
 
 \begin{proposition}[Fourier transform and duality]
     Let $f \in \Schwartz\Group$, and $H \in \Schwartz{\dualGroup\Group}$.
