@@ -2860,4 +2860,29 @@ The crucial part of the proof is therefore to show that~\eqref{eq:symbol_to_prov
     \end{description}
 \end{proof}
 
+\subsection{Calder\'on-Zygmund theory}
+
+\begin{definition}[Calder\'on-Zygmund kernel]
+    We shall say that a measurable map
+    \begin{align*}
+        \kappa : (\Group \times \Group) \setminus \{(g, g) : g \in \Group\} \to \C
+    \end{align*}
+    is a \emph{Calder\'on-Zygmund kernel}
+    if there exists $\gamma \in (0, 1]$,
+    $C \geq 0$ and $A \geq 0$ such that the estimates
+    \begin{align*}
+        \abs {\kappa(g, h)} &\leq A \norm [\Group] {h^{-1} g}^{-\dim \Group} &\\
+        \abs {\kappa(g, h) - \kappa(g', h)} &\leq A \frac {\norm [\Group] {g^{-1} g'}^{\gamma}} {\norm [\Group] {h^{-1} g}^{\dim \Group + \gamma}}
+        &\text{ if } \norm [\Group] {g^{-1} g'} \leq \frac {\norm [\Group] {h^{-1} g}} 2\\
+        \abs {\kappa(g, h) - \kappa(g, h')} &\leq A \frac {\norm [\Group] {h^{-1} h'}^{\gamma}} {\norm [\Group] {h^{-1} g}^{\dim \Group + \gamma}}
+        &\text{ if } \norm [\Group] {h^{-1} h'} \leq \frac {\norm [\Group] {h^{-1} g}} 2
+    \end{align*}
+    hold for every $g, g', h, h' \in \Group$ satisfying
+    \begin{align*}
+        g \neq h, \quad
+        g' \neq h, \quad
+        g \neq h'.
+    \end{align*}
+\end{definition}
+
 \section{Applications to partial differential equations}
