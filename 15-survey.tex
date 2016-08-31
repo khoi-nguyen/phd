@@ -175,5 +175,35 @@ that kernels associated with symbols only have singularities at the origin (for 
         \leq C \epsilon^m
     \end{align*}
 \end{lemma}
+\begin{proof}
+    By the definition of Fourier transform,
+    we obtain that
+    Observe that for each $\gamma > \dim \Group$,
+    we have
+    \begin{align*}
+        &\norm [\ContinuousFunctions \CompactGroup] {\LeftDifferentialOperator \beta \kappa_\epsilon(\tau)}\\
+        &\leq \sum_{\JapaneseBracket \CompactGroup \tau \leq \epsilon^{-1}}
+        \dimRep \tau
+        \norm [\Lin {V_\tau}] {\tau(\LeftDifferentialOperator \beta) \eta_\epsilon \tau \BesselPotential [\CompactGroup] {\gamma - \beta}}
+        \norm [\SchattenClasses 1 {V_\tau}] {\tau \BesselPotential [\CompactGroup] {-\gamma}}\\
+        &\leq C \epsilon^{-\gamma - \abs \beta},
+    \end{align*}
+    where the last line was obtained by the Sobolev Inequality on compact groups.
+    Letting $\gamma \to \dim \Group$,
+    we therefore obtain
+    \begin{align*}
+        \norm [\ContinuousFunctions \CompactGroup] {\LeftDifferentialOperator \beta \kappa_\epsilon(k)}
+        \leq C \epsilon^{-\dim \CompactGroup - \abs \beta}.
+    \end{align*}
+
+    Let now $q \in \SmoothFunctions \CompactGroup$ be a smooth function vanishing up to order $a$.
+    \begin{align*}
+        I_1 &\defeq
+        \int_{\norm [\CompactGroup] k \leq \epsilon} \abs {q(k) \LeftDifferentialOperator \beta \kappa_\epsilon(k)} \dd k\\
+        &\leq \left(\int_{\norm [\CompactGroup] k \leq \epsilon} \abs {q(k)} \dd k\right)
+        \epsilon^{-\dim \CompactGroup - \abs \beta}\\
+        &\leq C \epsilon^{a - \abs \beta}
+    \end{align*}
+\end{proof}
 
 \section{The graded case}
