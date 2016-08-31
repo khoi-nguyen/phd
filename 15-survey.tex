@@ -154,4 +154,26 @@ that kernels associated with symbols only have singularities at the origin (for 
     \end{enumerate}
 \end{definition}
 
+\subsubsection{Kernel estimates}
+
+\begin{lemma}
+    Let $\epsilon \in (0, 1]$.
+    The map
+    \begin{align*}
+        \kappa_\epsilon : \CompactGroup \to \C :
+        \kappa \mapsto \kappa_\epsilon(k)
+        \defeq \sum_{\JapaneseBracket \CompactGroup \tau \leq \epsilon^{-1}}
+        \dimRep \tau \Character \tau(k).
+    \end{align*}
+    The resulting symbol $\eta_\epsilon \defeq \Fourier [\CompactGroup] \kappa_\epsilon$ belongs to $\SmoothingSymbols [\CompactGroup]$.
+
+    Moreover,
+    for each $m \in \R$,
+    there exists $C \geq 0$
+    \begin{align*}
+        \SymbolSemiNorm [\CompactGroup] m {1, 0} N {\eta_\epsilon}
+        \leq C \epsilon^m
+    \end{align*}
+\end{lemma}
+
 \section{The graded case}
