@@ -177,8 +177,24 @@ that kernels associated with symbols only have singularities at the origin (for 
 \end{lemma}
 \begin{proof}
     By the definition of Fourier transform,
-    we obtain that
-    Observe that for each $\gamma > \dim \Group$,
+    we know that
+    \begin{align*}
+        \tau(\LeftDifferentialOperator \beta) \eta_\epsilon(\tau) =
+        \begin{cases}
+            \tau(\LeftDifferentialOperator \beta) & \text{if } \JapaneseBracket \CompactGroup \tau \leq \epsilon^{-1}\\
+            0 & \text{otherwise},
+        \end{cases}
+    \end{align*}
+    which implies that
+    \begin{align*}
+        \sup_{\tau \in \dualGroup \CompactGroup}
+        \norm [\Lin {V_\tau}] {\tau(\LeftDifferentialOperator \beta) \eta_\epsilon \tau \BesselPotential [\CompactGroup] {\gamma - \beta}}
+        \leq \epsilon^\gamma,
+    \end{align*}
+    provided that $\gamma \geq 0$.
+
+    Therefore,
+    for each $\gamma > \dim \Group$,
     we have
     \begin{align*}
         &\norm [\ContinuousFunctions \CompactGroup] {\LeftDifferentialOperator \beta \kappa_\epsilon(\tau)}\\
@@ -204,6 +220,28 @@ that kernels associated with symbols only have singularities at the origin (for 
         \epsilon^{-\dim \CompactGroup - \abs \beta}\\
         &\leq C \epsilon^{a - \abs \beta}
     \end{align*}
+\end{proof}
+
+\begin{lemma}
+    Let $\epsilon \in (0, 1]$.
+    The map
+    \begin{align*}
+        \kappa_\epsilon : \Group \to \C :
+        \kappa \mapsto \kappa_\epsilon(x, k)
+        \defeq \sum_{\tau \in \CompactGroup}
+        \dimRep \tau \Character \tau(k).
+    \end{align*}
+    The resulting symbol $\eta_\epsilon \defeq \Fourier [\CompactGroup] \kappa_\epsilon$ belongs to $\SmoothingSymbols [\CompactGroup]$.
+
+    Moreover,
+    for each $m \in \R$,
+    there exists $C \geq 0$
+    \begin{align*}
+        \SymbolSemiNorm [\CompactGroup] m {1, 0} N {\eta_\epsilon}
+        \leq C \epsilon^m
+    \end{align*}
+\end{lemma}
+\begin{proof}
 \end{proof}
 
 \section{The graded case}
