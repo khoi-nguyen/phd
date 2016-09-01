@@ -1,5 +1,4 @@
 \chapter{Survey}
-
 \section{The compact case}
 
 In this section,
@@ -226,7 +225,8 @@ that kernels associated with symbols only have singularities at the origin (for 
 \section{Kernel estimates on groups with polynomial growth}
 
 \begin{lemma}
-    Let $q \in \SmoothFunctions \Group$ which vanishes up to order $a \in \N$.
+\label{lemma:estimate_on_heat_kernel}
+    Let $q \in \SmoothFunctions \Group$ which vanishes up to order $a \in \N$ at $e_\Group$.
     If $\beta \in \N^{\dim \Group}$,
     then there exists $C \geq 0$ such that
     \begin{align}
@@ -285,6 +285,58 @@ that kernels associated with symbols only have singularities at the origin (for 
         = \sum_{j = 0}^{+\infty} I_j \leq C_q t^{\frac{a - \abs \beta} 2},
     \end{align*}
     concluding the proof.
+\end{proof}
+
+\begin{proposition}
+    Let $m \in \R$ and suppose that $q \in \SmoothFunctions \Group$ is a smooth function vanising up to order $a$ at the origin $e_\Group$.
+    The map
+    \begin{align*}
+        \phi \in \Schwartz \Group \mapsto \conv \phi {(q h_t)}
+    \end{align*}
+    extends to a bounded map
+    \begin{align*}
+        T_{q h_t} : \Lebesgue 2 \Group \to \Sobolev {m - a}
+    \end{align*}
+    which satisfies
+    \begin{align*}
+        \norm [\Lin{\Lebesgue 2 \Group, \Sobolev {m - a}}] {T_{q h_t}}
+        \leq t^{\frac m 2}
+    \end{align*}
+\end{proposition}
+\begin{proof}
+    Let $N \in \N$.
+    By Lemma~\ref{lemma:estimate_on_heat_kernel},
+    it is clear that after applying the Leibniz rule,
+    we have
+    \begin{align*}
+        \int_\Group &\abs {(1 - \Laplacian)^N \{q h_t\}(x)} \dd x\\
+        &\leq \sum_{\abs{\beta_1 + \beta_2} \leq 2N} \int_\Group \abs {\LeftDifferentialOperator {\beta_1} q(x) \LeftDifferentialOperator {\beta_2} h_t(x)} \dd x\\
+        &\leq \sum_{\abs{\beta_1 + \beta_2} \leq 2N} t^{\frac {a - \abs {\beta_1} - \abs{\beta_2}} 2},
+    \end{align*}
+    since $\LeftDifferentialOperator {\beta_1}$ vanishes up to order $a - \abs {\beta_1}$.
+    Continuing the above calculation,
+    one gets
+    \begin{align*}
+        \int_\Group \abs {(1 - \Laplacian)^N \{q h_t\}(x)} \dd x
+        \leq C_{q, N} \sum_{\abs{\beta_1 + \beta_2} \leq 2N} t^{\frac {a - \abs {\beta_1} - \abs{\beta_2}} 2}
+        \leq C_{q, N} t^{\frac a 2 - N}.
+    \end{align*}
+
+    By the properties of interpolation and duality of Sobolev spaces,
+    we may replace $2N$ by any real number,
+    in particular by $m - a$.
+    With this substitution,
+    we obtain that
+    \begin{align*}
+        \int_\Group \abs {\BesselPotential {m - a} \{q h_t\}(x)} \dd x
+        \leq C_{q, N} t^{\frac m 2},
+    \end{align*}
+    from which it follows that
+    \begin{align*}
+        \norm [\Lin {\Lebesgue 2 \Group, \Sobolev {m - a}}] {T_{q h_t}}
+        \leq \int_\Group \abs {\BesselPotential {m - a} \{q h_t\}(x)} \dd x
+        \leq t^{\frac m 2}
+    \end{align*}
 \end{proof}
 
 \section{The graded case}
