@@ -600,6 +600,32 @@ Using \cite[Lemma 4.4]{RuzhanskyTurunenWirth10}, we can show
     as the right-hand side is exactly $\Op(\sigma) \phi(g)$.
 \end{proof}
 
+\section{Functional calculus}
+
+The main of this somehow technical section is to show
+that $\Rep \lambda \BesselPotential m$ is a symbol in $\SymbolClass m {1, 0}$.
+This is greatly simplified by the fact that $\Laplacian [\VectorSpace]$ is scalar,
+allowing us to deduce our result from the functional calculus on $\CompactGroup$.
+
+\begin{lemma}
+    Define the symbol
+    \begin{align*}
+        \sigma^\lambda(\tau) \defeq \JapaneseBracket \VectorSpace \lambda^2 \Id \tau - \tau(\Laplacian [\CompactGroup]).
+    \end{align*}
+
+    The symbol $\sigma$ satisfies the following estimate.
+    For each $\alpha \in \N^{\dimDifferenceOperators}$
+    \begin{align*}
+        \norm [\Lin{V_\tau}] {
+            \DifferenceOperatorOrder [\CompactGroup] \alpha
+            (\sigma^\lambda - z \Id {V_\tau})^{-1}
+            } \leq
+            C_\alpha
+            (\abs z^{\frac 1 2} + \JapaneseBracket \VectorSpace \lambda + \JapaneseBracket \CompactGroup \tau)^{-2}
+            (\JapaneseBracket \VectorSpace \lambda + \JapaneseBracket \CompactGroup \tau)^{-\abs \alpha}
+    \end{align*}
+\end{lemma}
+
 \section{Independence on the family of difference operators}
 
 Note that in Definition~\ref{definition:symbol_classes},
