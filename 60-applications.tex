@@ -2,4 +2,36 @@
 
 \section{Construction of parametrices}
 
+Let $\chi \in \SmoothFunctions {\R^+, [0, 1]}$ be such that
+\begin{align*}
+    \chi(r) =
+    \begin{cases}
+        1 & \text{if } r \geq 1\\
+        0 & \text{if } r \leq \frac 1 2.
+    \end{cases}
+\end{align*}
+
+Now, given $\Lambda \geq 0$,
+we define the symbol
+\begin{align*}
+    \psi_\Lambda(\lambda)
+    \defeq \sum_{\tau \in \dualGroup \CompactGroup}
+    \chi(\Lambda(\JapaneseBracket \VectorSpace \lambda + \JapaneseBracket \CompactGroup \lambda)) \Id {\Span \{\tau_{i j} : 1 \leq i, j \leq \dimRep \tau\}}.
+\end{align*}
+
+\begin{definition}[Ellipticity]
+\label{definition:ellipticity}
+    Let $\sigma \in \SymbolClass m {\rho, \delta}$
+    We shall say that that $\sigma$ is \emph{elliptic} and of \emph{elliptic order} $m$
+    if there exists $\Lambda \geq 0$ such that the following property holds:
+    for each $\gamma \in \R$,
+    there exists $C \geq 0$ such that
+    \begin{align*}
+        \norm [\Lebesgue 2 \CompactGroup] {\Rep \lambda \BesselPotential \gamma \sigma(g, \lambda) \psi_\Lambda(\lambda) u}
+        \geq C
+        \norm [\Lebesgue 2 \CompactGroup] {\Rep \lambda \BesselPotential {\gamma + m} \psi_\Lambda(\lambda) u}
+    \end{align*}
+    holds for every $g \in \Group$ and every $\lambda \in \Group$.
+\end{definition}
+
 \section{Functional calculus}
