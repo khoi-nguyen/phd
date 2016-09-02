@@ -608,6 +608,25 @@ We now need to show that,
 had we chosen a different family,
 the resulting symbol classes would be identical.
 
+\begin{proposition}
+    Assume that $1 \geq \rho > \delta \geq 0$.
+    Let $q' \in \SmoothFunctions \Group$ be a function which vanishes up to order $a$ at $e_\Group$.
+    If $\sigma \in \SymbolClass m {\rho, \delta}$,
+    then $\DifferenceOperator {q'} \sigma$ belongs to $\SymbolClass {m - \rho \abs \alpha} {\rho, \delta}$.
+\end{proposition}
+\begin{proof}
+    Using a Taylor development at the origin,
+    we know that for each $N \geq a$
+    \begin{align*}
+        q'(g) = \sum_{a \leq \abs \alpha \leq N} \TaylorLeftDifferentialOperator \alpha q'(e_\Group) q^\alpha(g) + \TaylorRemainder {q'} N {e_\Group}(g),
+    \end{align*}
+    where we used the fact that $q'$ vanishes up to order $a$.
+
+    Using the Taylor remainder theorem,
+    it follows that $\TaylorRemainder {q'} N {e_\Group}$ has a zero of order $N + 1$ at the origin $e_\Group$.
+    % TODO Ask Michael how to conclude
+\end{proof}
+
 \begin{lemma}
     Let $q, q' \in \SmoothFunctions \Group$ be two smooth functions such that $q / q'$ extends smoothly to a function in $\SmoothFunctions \Group$.
     It follows that if
