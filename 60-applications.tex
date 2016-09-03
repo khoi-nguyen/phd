@@ -179,6 +179,22 @@ we define the symbol
         } \leq C,
     \end{align*}
     where $C$ does not depend on $g$ or $\lambda$.
+
+    Let us now work with difference operators.
+    The ideas are the same,
+    but the proof is slightly trickier
+    because we have a \emph{Leibniz-like} rule instead of the classical Leibniz rule.
+
+    Applying the Leibniz-like rule to~\eqref{eq:identity_satisfied_by_inverse_of_symbol},
+    we obtain
+    \begin{align*}
+        \DifferenceOperator j \psi_\Lambda(\lambda)
+        =
+        &\DifferenceOperator j \sigma_\Lambda(g, \lambda)^{-1} \sigma(g, \lambda) \psi_\Lambda(\lambda)
+        + \sigma_\Lambda(g, \lambda)^{-1} \DifferenceOperator j (\sigma(g, \lambda) \psi_\Lambda(\lambda))\\
+        &+ \sum_{1 \leq k, l \leq \dimDifferenceOperators} c_j^{k l} \DifferenceOperator k \sigma_\Lambda(g, \lambda)^{-1} \DifferenceOperator l (\sigma(g, \lambda) \psi_\Lambda).
+    \end{align*}
+    % TODO: finish
 \end{proof}
 
 \begin{theorem}[Existence of left parametrices]
