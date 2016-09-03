@@ -40,8 +40,8 @@ to prove the kernel estimates.
         \item If $q \in \SmoothFunctions {\Group}$ vanishes up to order $a \in \N$,
             then for each $s \in \R$ there exists $C \geq 0$ such that
             \begin{align}
-                \norm [\KernelsSobolev s {s - m}] {q h_t}
-                \leq C t^{m - \rho a}
+                \norm [\KernelsSobolev s {s - m + \rho a}] {q h_t}
+                \leq C t^{\frac m 2}
                 \label{eq:kernel_estimates:heat_kernel_condition}
             \end{align}
             holds for every $0 < t \leq 1$.
@@ -85,10 +85,51 @@ to prove the kernel estimates.
         s - \frac m 2 = -\frac {m + n} {2 \rho},
     \end{align*}
     we obtain
-    \begin{align*}
+    \begin{align}
         \abs {\kappa_t(g)}
         \leq C \norm [\Sobolev {\frac m 2 -\frac {m + n} {2 \rho}}] \kappa \norm [\Group] g^{- \frac {m + n} \rho}.
+        \label{eq:kernel_estimates:estimate_on_kappa_t}
+    \end{align}
+
+    Now, let us treat the remainder $\kappa - \kappa_t$.
+    Fix $\alpha \in \N^{\dimDifferenceOperators}$.
+    Choosing $s < -n/2$,
+    we can again apply the Sobolev inequality to obtain
+    \begin{align*}
+        &\abs {q^\alpha (\kappa - \kappa_t)(g)}\\
+        &\leq \norm [\Sobolev {-s}] {q^\alpha(\conv \kappa {(\delta_{e_\Group} - \kappa_t)})}\\
+        &\leq \sum_{\abs \alpha \leq \abs {\alpha_1} + \abs {\alpha_2} \leq C \abs \alpha}
+        \norm [\Sobolev {-s}] {\conv {q^{\alpha_1} \kappa} {q^{\alpha_2} (\delta_{e_\Group} - \kappa_t)}}\\
+        &\leq \sum_{\abs \alpha \leq \abs {\alpha_1} + \abs {\alpha_2} \leq C \abs \alpha}
+        \norm [\KernelsSobolev {s - m + \rho \abs {\alpha_1}} {-s}] {q^{\alpha_2}(\delta_{e_\Group} - \kappa_t)}
+        \norm [\Sobolev {s - m + \rho \abs {\alpha_1}}] {q^{\alpha_1} \kappa}
     \end{align*}
+
+    Applying~\eqref{eq:kernel_estimates:heat_kernel_condition} to the above
+    and keeping in mind that $\abs {\alpha_1} + \abs {\alpha_2} \geq \abs \alpha$,
+    it follows that
+    \begin{align*}
+        \abs {q^\alpha (\kappa - \kappa_t)(g)}
+        \leq C t^{\frac {2s - m + \rho \abs \alpha} 2}
+        = C \norm [\Group] g^{2s - m + \rho \abs \alpha}
+    \end{align*}
+
+    Using the fact that
+    \begin{align*}
+        \norm [\Group] g^{2 r}
+        \leq \sum_{\abs \alpha = 2r} q^\alpha(g),
+    \end{align*}
+    we then obtain
+    \begin{align*}
+        \abs {\kappa - \kappa_t(g)}
+        \leq C \norm [\Group] g^{2s - m + 2 (\rho - 1) r}.
+    \end{align*}
+
+    Observing that we may choose $s < -n/2$ so that
+    \begin{align*}
+        2s - m + 2 (\rho - 1) r = - \frac {m + n} \rho,
+    \end{align*}
+    we conclude the proof.
 \end{proof}
 
 \section{Calder\'on-Zygmund property}
