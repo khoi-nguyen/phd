@@ -39,23 +39,56 @@ to prove the kernel estimates.
         \item As $t$ tend to $0$, $h_t$ converges to $\delta_{e_\Group}$.
         \item If $q \in \SmoothFunctions {\Group}$ vanishes up to order $a \in \N$,
             then for each $s \in \R$ there exists $C \geq 0$ such that
-            \begin{align*}
+            \begin{align}
                 \norm [\KernelsSobolev s {s - m}] {q h_t}
                 \leq C t^{m - \rho a}
-            \end{align*}
+                \label{eq:kernel_estimates:heat_kernel_condition}
+            \end{align}
             holds for every $0 < t \leq 1$.
     \end{itemize}
 
     If $\kappa \in \TemperedDistributions \Group$ satisfies
-    \begin{align*}
+    \begin{align}
         q \kappa \in \Sobolev \gamma,
         \quad \gamma < -\frac n 2 -m + \rho a
-    \end{align*}
+        \label{eq:kernel_estimates:assumption_on_the_kernel}
+    \end{align}
     whenever $q$ vanishes up to order $a$ and $m > -n$,
     then
     \begin{align*}
         \abs{\kappa(g)} \leq C \norm [\Group] h^{-\frac{m + n} \rho}.
     \end{align*}
 \end{theorem}
+\begin{proof}
+    Fix $g \in \Group \setminus \{e_\Group\}$,
+    and let $t \defeq \norm [\Group] g^2$.
+
+    Let us write $\kappa_t \defeq \conv \kappa {h_t}$.
+    By the Sobolev inequality,
+    we know that for each $s < -n/2$
+    \begin{align*}
+        \norm [\ContinuousFunctions \Group] {\kappa_t}
+        \leq \norm [\Sobolev {-s}] {\conv \kappa {h_t}}
+        \leq \norm [\KernelsSobolev {s - m} {-s}] {h_t}
+        \norm [\Sobolev {s - m}] \kappa,
+    \end{align*}
+    where the right-hand side is finite by~\eqref{eq:kernel_estimates:assumption_on_the_kernel}.
+    Using~\eqref{eq:kernel_estimates:heat_kernel_condition},
+    we then obtain
+    \begin{align*}
+        \norm [\ContinuousFunctions \Group] {\kappa_t}
+        \leq C t^{s - \frac m 2} \norm [\Sobolev {s - m}] \kappa
+    \end{align*}
+
+    Observing we may choose $s < -n/2$ so that
+    \begin{align*}
+        s - \frac m 2 = -\frac {m + n} {2 \rho},
+    \end{align*}
+    we obtain
+    \begin{align*}
+        \abs {\kappa_t(g)}
+        \leq C \norm [\Sobolev {\frac m 2 -\frac {m + n} {2 \rho}}] \kappa \norm [\Group] g^{- \frac {m + n} \rho}.
+    \end{align*}
+\end{proof}
 
 \section{Calder\'on-Zygmund property}
