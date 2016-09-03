@@ -26,13 +26,158 @@ we define the symbol
     if there exists $\Lambda \geq 0$ such that the following property holds:
     for each $\gamma \in \R$,
     there exists $C \geq 0$ such that
-    \begin{align*}
+    \begin{align}
         \norm [\Lebesgue 2 \CompactGroup] {\Rep \lambda \BesselPotential \gamma \sigma(g, \lambda) \psi_\Lambda(\lambda) F}
         \geq C
         \norm [\Lebesgue 2 \CompactGroup] {\Rep \lambda \BesselPotential {\gamma + m} \psi_\Lambda(\lambda) F}
-    \end{align*}
+        \label{eq:definition_of_ellipticity}
+    \end{align}
     holds for every $g \in \Group$, $\lambda \in \Group$
     and every $F \in \Lebesgue 2 \CompactGroup$.
 \end{definition}
+
+\begin{lemma}[Inverse of an elliptic symbol]
+    Let $\sigma \in \SymbolClass m {\rho, \delta}$ be an elliptic symbol of elliptic order $m$,
+    with $\Lambda \geq 0$ given by Definition~\ref{definition:ellipticity}.
+
+    For any $F \in \SmoothFunctions \CompactGroup$,
+    let
+    \begin{align*}
+        \sigma_\Lambda(g, \lambda)^{-1} \left(\sigma(g, \lambda) \psi_\Lambda(\lambda) F\right) \defeq \psi_\Lambda F.
+    \end{align*}
+    and consider the unique extension of $\sigma_\Lambda(g, \lambda)$ onto $\SmoothFunctions \CompactGroup$ which satisfies
+    \begin{align*}
+        \eval {%
+            \sigma_\Lambda(g, \lambda)^{-1}
+            } {(\Image \{\sigma(g, \lambda) \psi_\Lambda\})^\perp} = 0.
+    \end{align*}
+
+    The map $\sigma_\Lambda$ is well-defined,
+    and is a symbol in $\SymbolClass {-m} {\rho, \delta}$.
+\end{lemma}
+\begin{proof}
+    Suppose that $F_1, F_2 \in \SmoothFunctions \CompactGroup$ are such that
+    \begin{align*}
+        \sigma(g, \lambda) \psi_\Lambda F_1
+        = \sigma(g, \lambda) \psi_\Lambda F_2.
+    \end{align*}
+    By definition of ellipticity,
+    it follows that
+    \begin{align*}
+        \norm [\Lebesgue 2 \CompactGroup] {\psi_\Lambda (F_1 - F_2)}
+        &\leq C
+        \norm [\Lebesgue 2 \CompactGroup] {\Rep \lambda \BesselPotential {-m} \sigma(g, \lambda) \psi_\Lambda(\lambda) (F_1 - F_2)}\\
+        &= 0,
+    \end{align*}
+    so that the map is indeed well-defined.
+
+    Let us now check it is of order $-m$.
+    In order to do so,
+    let us first observe that
+    \begin{align}
+        \psi_\Lambda = \sigma_\Lambda(g, \lambda)^{-1} \sigma(g, \lambda) \psi_\Lambda.
+        \label{eq:identity_satisfied_by_inverse_of_symbol}
+    \end{align}
+    Letting $G \defeq \sigma(g, \lambda) \psi_\Lambda F$ with $F \in \SmoothFunctions \CompactGroup$,
+    it is clear that by~\eqref{eq:identity_satisfied_by_inverse_of_symbol} we have
+    \begin{align*}
+        \norm [\Lebesgue 2 \CompactGroup] {\Rep \lambda \BesselPotential m \sigma_\Lambda(g, \lambda)^{-1} G}
+        &=
+        \norm [\Lebesgue 2 \CompactGroup] {\Rep \lambda \BesselPotential m \psi_\Lambda F}\\
+        &\leq C
+        \norm [\Lebesgue 2 \CompactGroup] {\sigma(g, \lambda) \psi_\Lambda F}\\
+    \end{align*}
+    where the second line was obtained
+    by using~\eqref{eq:definition_of_ellipticity} with $\gamma = 0$.
+    Using $G = \sigma(g, \lambda) \psi_\Lambda F$ in the right-hand side of the above,
+    we obtain that
+    \begin{align*}
+        \sup_{g \in \Group}
+        \esssup_{\lambda \in \VectorSpace}
+        \norm [\Lin {\Lebesgue 2 \CompactGroup}] {\Rep \lambda \BesselPotential {m - \delta \abs {\beta_0}} \LeftDifferentialOperator {\beta_0} \sigma_\Lambda(g, \lambda)^{-1}}
+        < \infty,
+    \end{align*}
+    for $\beta_0 = 0$,
+    since $G$ is arbitrary and $\sigma_\Lambda(g, \lambda)^{-1}$ vanishes on the orthogonal of $\Image \{\sigma(g, \lambda) \psi_\Lambda\}$.
+    Let us show it also holds for $\beta_0$ of higher order.
+
+    By the Leibniz rule,
+    we have
+    \begin{align*}
+        0 =
+        \LeftDifferentialOperator {\beta_0} \psi_\Lambda
+        =
+        \sum_{\beta_0 = \beta_1 + \beta_2}
+        \left(
+        \LeftDifferentialOperator {\beta_1} \sigma_\Lambda(g, \lambda)^{-1}
+        \LeftDifferentialOperator {\beta_2} (\sigma(g, \lambda) \psi_\Lambda)\right),
+    \end{align*}
+    which implies that
+    \begin{align*}
+        \LeftDifferentialOperator {\beta_0} \sigma_{\Lambda}(g, \lambda)^{-1} \sigma(g, \lambda) \psi_\Lambda
+        = -
+        \sum_{\substack{
+            \beta_0 = \beta_1 + \beta_2\\
+            \abs {\beta_1} < \abs {\beta_0}}
+        }
+        \left(
+        \LeftDifferentialOperator {\beta_1} \sigma_\Lambda(g, \lambda)^{-1}
+        \LeftDifferentialOperator {\beta_2} (\sigma(g, \lambda) \psi_\Lambda)\right).
+    \end{align*}
+
+    Letting $G = \sigma(g, \lambda) \psi_\Lambda F$ like above,
+    it should be clear that by the induction hypothesis we have
+    \begin{align*}
+        &\norm [\Lebesgue 2 \CompactGroup] {%
+            \Rep \lambda \BesselPotential {m - \delta \abs {\beta_0}}
+            \LeftDifferentialOperator {\beta_0} \sigma_\Lambda(g, \lambda)^{-1} G
+        }\\
+        &\leq
+        \sum_{\substack{
+            \beta_0 = \beta_1 + \beta_2\\
+            \abs {\beta_1} < \abs {\beta_0}}
+        }
+        \norm [\Lebesgue 2 \CompactGroup] {%
+            \Rep \lambda \BesselPotential {m - \delta \abs {\beta_0}}
+            \left(
+            \LeftDifferentialOperator {\beta_1} \sigma_\Lambda(g, \lambda)^{-1}
+            \LeftDifferentialOperator {\beta_2} (\sigma(g, \lambda) \psi_\Lambda)\right) F
+        }\\
+        &\leq
+        \sum_{\substack{
+            \beta_0 = \beta_1 + \beta_2\\
+            \abs {\beta_1} < \abs {\beta_0}}
+        }
+        \norm [\Lin {\Lebesgue 2 \CompactGroup}] {%
+            \Rep \lambda \BesselPotential {m - \delta \abs {\beta_0}}
+            \LeftDifferentialOperator {\beta_1} \sigma_\Lambda(g, \lambda)^{-1}
+            \Rep \lambda \BesselPotential {\delta \abs {\beta_2}}
+        }\\
+        & \qquad\qquad
+        \norm [\Lin {\Lebesgue 2 \CompactGroup}] {%
+            \Rep \lambda \BesselPotential {-\delta \abs {\beta_2}}
+            \LeftDifferentialOperator {\beta_2} \sigma(g, \lambda)
+            \Rep \lambda \BesselPotential {-m}
+        }\\
+        & \qquad\qquad
+        \norm [\Lebesgue 2 \CompactGroup] {\Rep \lambda \BesselPotential {m} \psi_\Lambda F}.
+    \end{align*}
+
+    Using ellipticity again,
+    we know that
+    \begin{align*}
+        \norm [\Lebesgue 2 \CompactGroup] {\Rep \lambda \BesselPotential {m} \psi_\Lambda F}
+        &\leq C \norm [\Lebesgue 2 \CompactGroup] {\sigma(g, \lambda) \psi_\Lambda F} = C \norm [\Lebesgue 2 \CompactGroup] {G},
+    \end{align*}
+    which if plugged into the calculation above,
+    yields
+    \begin{align*}
+        \norm [\Lin {\Lebesgue 2 \CompactGroup}] {%
+            \Rep \lambda \BesselPotential {m - \delta \abs {\beta_0}}
+            \LeftDifferentialOperator {\beta_0} \sigma_\Lambda(g, \lambda)^{-1}
+        } \leq C,
+    \end{align*}
+    where $C$ does not depend on $g$ or $\lambda$.
+\end{proof}
 
 \section{Functional calculus}
