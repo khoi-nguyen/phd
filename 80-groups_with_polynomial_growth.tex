@@ -26,4 +26,36 @@ This implies that $\Group$ is unimodular.
 
 \section{Kernel estimates}
 
+First,
+let us lower the requirement that we need a Littlewood-Paley decomposition
+to prove the kernel estimates.
+
+\begin{theorem}[Kernel estimates at the origin]
+    Assume that $1 \geq \rho \geq \delta \geq 0$ with $\rho \neq 0$.
+
+    Suppose there exists a family $(h_t)_{t \in (0, 1]} \subset \Schwartz \Group$
+    satisfying the following properties.
+    \begin{itemize}
+        \item As $t$ tend to $0$, $h_t$ converges to $\delta_{e_\Group}$.
+        \item If $q \in \SmoothFunctions {\Group}$ vanishes up to order $a \in \N$,
+            then for each $s \in \R$ there exists $C \geq 0$ such that
+            \begin{align*}
+                \norm [\KernelsSobolev s {s - m}] {q h_t}
+                \leq C t^{m - \rho a}
+            \end{align*}
+            holds for every $0 < t \leq 1$.
+    \end{itemize}
+
+    If $\kappa \in \TemperedDistributions \Group$ satisfies
+    \begin{align*}
+        q \kappa \in \Sobolev \gamma,
+        \quad \gamma < -\frac n 2 -m + \rho a
+    \end{align*}
+    whenever $q$ vanishes up to order $a$ and $m > -n$,
+    then
+    \begin{align*}
+        \abs{\kappa(g)} \leq C \norm [\Group] h^{-\frac{m + n} \rho}.
+    \end{align*}
+\end{theorem}
+
 \section{Calder\'on-Zygmund property}
