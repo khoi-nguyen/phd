@@ -148,18 +148,36 @@ to prove the kernel estimates.
 \begin{theorem}[Kernel estimates at the origin]
     Assume that $1 \geq \rho \geq \delta \geq 0$ with $\rho \neq 0$.
 
-    Suppose there exists a family $(h_t)_{t \in (0, 1]} \subset \Schwartz \Group$
-    satisfying the following properties.
+    Suppose that $\Group$ satisfies the following assumptions.
     \begin{itemize}
-        \item As $t$ tend to $0$, $h_t$ converges to $\delta_{e_\Group}$ in $\TemperedDistributions$.
-        \item If $q \in \SmoothFunctions {\Group}$ vanishes up to order $a \in \N$,
-            then for each $s \in \R$ there exists $C \geq 0$ such that
-            \begin{align}
-                \norm [\KernelsSobolev s {s - m + \rho a}] {q h_t}
-                \leq C t^{\frac m 2}
-                \label{eq:kernel_estimates:heat_kernel_condition}
-            \end{align}
-            holds for every $0 < t \leq 1$.
+        \item
+            There exists a family $(h_t)_{t \in (0, 1]} \subset \Schwartz \Group$
+            satisfying the following properties.
+            \begin{itemize}
+                \item As $t$ tend to $0$, $h_t$ converges to $\delta_{e_\Group}$ in $\TemperedDistributions \Group$.
+                \item If $q \in \SmoothFunctions {\Group}$ vanishes up to order $a \in \N$,
+                    then for each $s \in \R$ there exists $C \geq 0$ such that
+                    \begin{align}
+                        \norm [\KernelsSobolev s {s - m + \rho a}] {q h_t}
+                        \leq C t^{\frac m 2}
+                        \label{eq:kernel_estimates:heat_kernel_condition}
+                    \end{align}
+                    holds for every $0 < t \leq 1$.
+            \end{itemize}
+        \item There exists $n \in \N$ such that for each $s > n/2$,
+            we have a continuous inclusion
+            \begin{align*}
+                \Sobolev \gamma \to \ContinuousFunctions \Group.
+            \end{align*}
+        \item There exists an admissible family $q_1, \dots, q_{\dimDifferenceOperators} \in \SmoothFunctions \Group$, a positive constant $C \geq 0$ and $p \in \N$ such that
+            \begin{align*}
+                \norm [\Group] h^{p r} \leq \sum_{\abs \alpha = pr} q^\alpha(h)
+            \end{align*}
+            and such that the following \emph{Leibniz-like} formula holds
+            \begin{align*}
+                q^\alpha(x y) = \sum_{\abs \alpha \leq \abs {\alpha_1} + \abs {\alpha_2} \leq C \abs \alpha}
+                c_{\alpha_1, \alpha_2} q^{\alpha_1}(x) q^{\alpha_2}(y).
+            \end{align*}
     \end{itemize}
 
     If $\kappa \in \TemperedDistributions \Group$ satisfies
