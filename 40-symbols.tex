@@ -2537,7 +2537,7 @@ First, we show that $\SmoothingOperators$ is stable under composition.
         }
         \int_\Group \RightDifferentialOperator[h_1 = h] {\beta_1} (\LeftDifferentialOperator [g] {\beta_{01}} q^{\alpha_{01}} \kappa_{1, g})(h_1) \adj {\Rep \lambda(h)}\\
         &\quad \times
-        \RightDifferentialOperator[h_2 = h] {\beta_2} \TaylorRemainder {\Rep \lambda \BesselPotential {-M} \LeftDifferentialOperator [g_2 = g] {\beta_{02}} \DifferenceOperatorOrder {\alpha_{02}} \sigma_2(g \dummy, \lambda)} {e_\Group} N (h_2^{-1}) \dd h,
+        \RightDifferentialOperator[h_2 = h] {\beta_2} \TaylorRemainder {\Rep \lambda \BesselPotential {-M} \LeftDifferentialOperator [g_2 = g] {\beta_{02}} \DifferenceOperatorOrder {\alpha_{02}} \sigma_2(g_2 \dummy, \lambda)} {e_\Group} N (h_2^{-1}) \dd h,
     \end{align*}
     Now, using REFERENCE, %TODO add reference
     the above becomes
@@ -2552,7 +2552,7 @@ First, we show that $\SmoothingOperators$ is stable under composition.
         }
         \int_\Group \RightDifferentialOperator[h_1 = h] {\beta_1} (\LeftDifferentialOperator [g] {\beta_{01}} q^{\alpha_{01}} \kappa_{1, g})(h_1) \adj {\Rep \lambda(h)}\\
         &\quad \times
-        \TaylorRemainder {\Rep \lambda \BesselPotential {-M} \LeftDifferentialOperator [g_2 = g] {\beta_{02}} \LeftDifferentialOperator {\beta_2} \DifferenceOperatorOrder {\alpha_{02}} \sigma_2(g \dummy, \lambda)} {e_\Group} {N - \abs {\beta_2}} (h_2^{-1}) \dd h.
+        \TaylorRemainder {\Rep \lambda \BesselPotential {-M} \LeftDifferentialOperator [g_2 = g] {\beta_{02}} \LeftDifferentialOperator {\beta_2} \DifferenceOperatorOrder {\alpha_{02}} \sigma_2(g_2 \dummy, \lambda)} {e_\Group} {N - \abs {\beta_2}} (h_2^{-1}) \dd h.
     \end{align*}
 
     Therefore,
@@ -2570,22 +2570,26 @@ First, we show that $\SmoothingOperators$ is stable under composition.
         \int_\Group \abs {\RightDifferentialOperator[h_1 = h] {\beta_1} (\LeftDifferentialOperator [g] {\beta_{01}} q^{\alpha_{01}} \kappa_{1, g})(h_1)}\\
         &\quad \times
         \norm [\Lin {\Lebesgue 2 \CompactGroup}] {%
-            \TaylorRemainder {\Rep \lambda \BesselPotential {-M} \LeftDifferentialOperator [g_2 = g] {\beta_{02}} \LeftDifferentialOperator {\beta_2} \DifferenceOperatorOrder {\alpha_{02}} \sigma_2(g \dummy, \lambda)} {e_\Group} {N - \abs {\beta_2}} (h_2^{-1})
+            \TaylorRemainder {\Rep \lambda \BesselPotential {-M} \LeftDifferentialOperator [g_2 = g] {\beta_{02}} \LeftDifferentialOperator {\beta_2} \DifferenceOperatorOrder {\alpha_{02}} \sigma_2(g_2 \dummy, \lambda)} {e_\Group} {N - \abs {\beta_2}} (h_2^{-1})
         } \dd h.
     \end{align*}
 
-    Applying the Taylor Reminder Theorem,
+    Applying the Taylor Remainder Theorem,
     we have
     % TODO: reference
     \begin{align*}
-        &\norm [\Lin {\Lebesgue 2 \CompactGroup}] {\TaylorRemainder {\Rep \lambda \BesselPotential {-M} \LeftDifferentialOperator {\beta_2} \sigma_2(\dummy, \lambda)} g {N - \abs {\beta_2}} (h^{-1})}\\
+        &\norm [\Lin {\Lebesgue 2 \CompactGroup}] {\TaylorRemainder {\Rep \lambda \BesselPotential {-M} \LeftDifferentialOperator [g_2 = g] {\beta_{02}} \LeftDifferentialOperator {\beta_2} \DifferenceOperatorOrder {\alpha_{02}} \sigma_2(g_2 \dummy, \lambda)} g {N - \abs {\beta_2}} (h^{-1})}\\
         &\ \leq
         \sup_{\abs \gamma \leq N - \abs {\beta_2} + 1}
         \norm [\Group] h^{N - \abs {\beta_2} + 1}
         \sup_{g_1 \in \Group}
         \norm [\Lin {\Lebesgue 2 \CompactGroup}] {%
             \Rep \lambda \BesselPotential {-M}
-            \LeftDifferentialOperator [g_1] {\beta_2 + \gamma} \sigma_2(g_1, \lambda)
+            \LeftDifferentialOperator [g_1] {\gamma}
+            \LeftDifferentialOperator [g_2 = g] {\beta_{02}}
+            \LeftDifferentialOperator [g_1] {\beta_2}
+            \DifferenceOperatorOrder {\alpha_{02}}
+            \sigma_2(g_2 g_1, \lambda)
         }\\
         & \ \leq
         \sup_{\abs \gamma \leq N - \abs {\beta_2} + 1}
