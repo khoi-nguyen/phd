@@ -89,17 +89,9 @@ This implies that $\Group$ is unimodular.
 
 \begin{proposition}
     Let $m \in \R$ and suppose that $q \in \SmoothFunctions \Group$ is a smooth function vanising up to order $a$ at the origin $e_\Group$.
-    The map
+    The distribution $q h_t$ satisfies
     \begin{align*}
-        \phi \in \Schwartz \Group \mapsto \conv \phi {(q h_t)}
-    \end{align*}
-    extends to a bounded map
-    \begin{align*}
-        T_{q h_t} : \Lebesgue 2 \Group \to \Sobolev {m - a}
-    \end{align*}
-    which satisfies
-    \begin{align*}
-        \norm [\Lin{\Lebesgue 2 \Group, \Sobolev {m - a}}] {T_{q h_t}}
+        \norm [\KernelsSobolev 0 {m - a}] {q h_t}
         \leq t^{\frac m 2}
     \end{align*}
 \end{proposition}
@@ -133,9 +125,9 @@ This implies that $\Group$ is unimodular.
     \end{align*}
     from which it follows that
     \begin{align*}
-        \norm [\Lin {\Lebesgue 2 \Group, \Sobolev {m - a}}] {T_{q h_t}}
+        \norm [\KernelsSobolev 0 {m - a}] {q h_t}
         \leq \int_\Group \abs {\BesselPotential {m - a} \{q h_t\}(x)} \dd x
-        \leq t^{\frac m 2}
+        \leq t^{\frac m 2}.
     \end{align*}
 \end{proof}
 
