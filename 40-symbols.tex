@@ -2506,7 +2506,7 @@ First, we show that $\SmoothingOperators$ is stable under composition.
             }
         }
         \int_\Group q^{\alpha_{01}}(h) \LeftDifferentialOperator [g] {\beta_{01}} \kappa_{1, g}(h) \adj{\Rep \lambda(h)}
-        \TaylorRemainder {\DifferenceOperatorOrder {\alpha_{02}} \LeftDifferentialOperator [g_2 = g] {\beta_{02}}\sigma_2(g_2 \dummy, \lambda)} {e_\Group} N (h^{-1}) \dd h.
+        \TaylorRemainder {\LeftDifferentialOperator [g_2 = g] {\beta_{02}} \DifferenceOperatorOrder {\alpha_{02}} \sigma_2(g_2 \dummy, \lambda)} {e_\Group} N (h^{-1}) \dd h.
     \end{align*}
 
     Now, we would like to introduce powers of $\Rep \lambda \BesselPotential 1$ near $\sigma_2$,
@@ -2537,7 +2537,7 @@ First, we show that $\SmoothingOperators$ is stable under composition.
         }
         \int_\Group \RightDifferentialOperator[h_1 = h] {\beta_1} (\LeftDifferentialOperator [g] {\beta_{01}} q^{\alpha_{01}} \kappa_{1, g})(h_1) \adj {\Rep \lambda(h)}\\
         &\quad \times
-        \RightDifferentialOperator[h_2 = h] {\beta_2} \TaylorRemainder {\Rep \lambda \BesselPotential {-M} \DifferenceOperatorOrder {\alpha_{02}} \LeftDifferentialOperator [g_2 = g] {\beta_{02}} \sigma_2(g \dummy, \lambda)} {e_\Group} N (h_2^{-1}) \dd h,
+        \RightDifferentialOperator[h_2 = h] {\beta_2} \TaylorRemainder {\Rep \lambda \BesselPotential {-M} \LeftDifferentialOperator [g_2 = g] {\beta_{02}} \DifferenceOperatorOrder {\alpha_{02}} \sigma_2(g \dummy, \lambda)} {e_\Group} N (h_2^{-1}) \dd h,
     \end{align*}
     Now, using REFERENCE, %TODO add reference
     the above becomes
@@ -2552,7 +2552,7 @@ First, we show that $\SmoothingOperators$ is stable under composition.
         }
         \int_\Group \RightDifferentialOperator[h_1 = h] {\beta_1} (\LeftDifferentialOperator [g] {\beta_{01}} q^{\alpha_{01}} \kappa_{1, g})(h_1) \adj {\Rep \lambda(h)}\\
         &\quad \times
-        \TaylorRemainder {\Rep \lambda \BesselPotential {-M} \DifferenceOperatorOrder {\alpha_{02}} \LeftDifferentialOperator [g_2 = g] {\beta_{02}} \LeftDifferentialOperator {\beta_2} \sigma_2(g \dummy, \lambda)} {e_\Group} {N - \abs {\beta_2}} (h_2^{-1}) \dd h.
+        \TaylorRemainder {\Rep \lambda \BesselPotential {-M} \LeftDifferentialOperator [g_2 = g] {\beta_{02}} \LeftDifferentialOperator {\beta_2} \DifferenceOperatorOrder {\alpha_{02}} \sigma_2(g \dummy, \lambda)} {e_\Group} {N - \abs {\beta_2}} (h_2^{-1}) \dd h.
     \end{align*}
 
     Therefore,
@@ -2570,7 +2570,7 @@ First, we show that $\SmoothingOperators$ is stable under composition.
         \int_\Group \abs {\RightDifferentialOperator[h_1 = h] {\beta_1} (\LeftDifferentialOperator [g] {\beta_{01}} q^{\alpha_{01}} \kappa_{1, g})(h_1)}\\
         &\quad \times
         \norm [\Lin {\Lebesgue 2 \CompactGroup}] {%
-            \TaylorRemainder {\Rep \lambda \BesselPotential {-M} \DifferenceOperatorOrder {\alpha_{02}} \LeftDifferentialOperator [g_2 = g] {\beta_{02}} \LeftDifferentialOperator {\beta_2} \sigma_2(g \dummy, \lambda)} {e_\Group} {N - \abs {\beta_2}} (h_2^{-1})
+            \TaylorRemainder {\Rep \lambda \BesselPotential {-M} \LeftDifferentialOperator [g_2 = g] {\beta_{02}} \LeftDifferentialOperator {\beta_2} \DifferenceOperatorOrder {\alpha_{02}} \sigma_2(g \dummy, \lambda)} {e_\Group} {N - \abs {\beta_2}} (h_2^{-1})
         } \dd h.
     \end{align*}
 
