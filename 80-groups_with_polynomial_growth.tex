@@ -151,7 +151,7 @@ to prove the kernel estimates.
     Suppose there exists a family $(h_t)_{t \in (0, 1]} \subset \Schwartz \Group$
     satisfying the following properties.
     \begin{itemize}
-        \item As $t$ tend to $0$, $h_t$ converges to $\delta_{e_\Group}$ in $\Kernels$.
+        \item As $t$ tend to $0$, $h_t$ converges to $\delta_{e_\Group}$ in $\TemperedDistributions$.
         \item If $q \in \SmoothFunctions {\Group}$ vanishes up to order $a \in \N$,
             then for each $s \in \R$ there exists $C \geq 0$ such that
             \begin{align}
@@ -220,31 +220,67 @@ to prove the kernel estimates.
         \norm [\Sobolev {s - m + \rho \abs {\alpha_1}}] {q^{\alpha_1} \kappa}
     \end{align*}
 
-    Applying~\eqref{eq:kernel_estimates:heat_kernel_condition} to the above
+    Observe that by~\eqref{eq:kernel_estimates:heat_kernel_condition}
     and keeping in mind that $\abs {\alpha_1} + \abs {\alpha_2} \geq \abs \alpha$,
-    it follows that
     \begin{align*}
-        \abs {q^\alpha (\kappa - \kappa_t)(g)}
-        \leq C t^{\frac {2s - m + \rho \abs \alpha} 2}
-        = C \norm [\Group] g^{2s - m + \rho \abs \alpha}
+        \norm [\KernelsSobolev {s - m + \rho \abs {\alpha_1}} {-s}] {q^{\alpha_2} (h_{\epsilon} - h_t)}
+        \leq C (\epsilon^{\frac{2s - m + \rho \abs \alpha} 2} + t^{\frac{2s - m + \rho \abs \alpha} 2}),
     \end{align*}
+    and thus letting $\epsilon \to 0$ yields
+    \begin{align*}
+        \norm [\KernelsSobolev {s - m + \rho \abs {\alpha_1}} {-s}] {q^{\alpha_2} (\delta_{e_\Group} - h_t)}
+        \leq C t^{\frac {2s - m + \rho \abs \alpha} 2}
+        = C \norm [\Group] g^{2s - m + \rho \abs \alpha},
+    \end{align*}
+    provided $2s - m + \rho \abs {\alpha} > 0$
+    (which we shall assume henceforth).
 
     Using the fact that
     \begin{align*}
-        \norm [\Group] g^{2 r}
-        \leq \sum_{\abs \alpha = 2r} q^\alpha(g),
+        \norm [\Group] g^{p r}
+        \leq \sum_{\abs \alpha = p r} q^\alpha(g),
     \end{align*}
     we then obtain
-    \begin{align*}
+    \begin{align}
         \abs {\kappa - \kappa_t(g)}
-        \leq C \norm [\Group] g^{2s - m + 2 (\rho - 1) r}.
+        \leq C \norm [\Group] g^{2s - m + p r(\rho - 1)}
+        \quad
+        \text{if }
+        m - \rho p r < 2s < -n.
+        \label{eq:kernel_estimate_with_choice_of_s}
+    \end{align}
+
+    Observing that the above estimate is optimal when $r$ is as small as possible,
+    we are led to define
+    \begin{align*}
+        r \defeq \min \{q \in \N : m - \rho p q < -n \Longleftrightarrow q > \frac{m + n} {\rho p}\}
     \end{align*}
 
-    Observing that we may choose $s < -n/2$ so that
+    Now, choose $s \in \R$ so that
+    \begin{align}
+        2s - m + p r (\rho - 1) = - \frac {m + n} \rho
+        \label{eq:kernel_estimates:choice_of_s}
+    \end{align}
+    We check that
     \begin{align*}
-        2s - m + 2 (\rho - 1) r = - \frac {m + n} \rho,
+        m - 2s &= p r (\rho - 1) + \frac {m + n} \rho,\\
+        &> m + n
     \end{align*}
-    we conclude the proof.
+    which implies that $2 s < -n$.
+    Similarly,
+    we check that
+    \begin{align*}
+        m - \rho p r = 2s + \frac {m + n} \rho - p r
+        < 2 s.
+    \end{align*}
+
+    We have shown that our choice of $s$ in~\eqref{eq:kernel_estimates:choice_of_s} satisfies~\eqref{eq:kernel_estimate_with_choice_of_s},
+    so that we have
+    \begin{align*}
+        \abs {\kappa - \kappa_t(g)}
+        \leq C \norm [\Group] g^{-\frac{m + n} \rho},
+    \end{align*}
+    concluding the proof.
 \end{proof}
 
 \section{Calder\'on-Zygmund property}
