@@ -611,6 +611,25 @@ However, the proof of the composition and adjunction formulas rely on the fact t
 
 This section mainly borrows its ideas from~\cite{RuzhanskyWirth14}.
 
+\begin{definition}[Parameter-dependent ellipticity, \cite{RuzhanskyWirth14}]
+    Let $\sigma \in \SymbolClass m {\rho, \delta}$ with $m > 0$.
+    Given a subset $\Lambda \subset \C$,
+    we shall say that $\sigma$ is \emph{parameter-elliptic} with respect to $\Lambda$ if
+    \begin{align*}
+        I_1(m, m + \gamma_1)
+        I_2(\gamma_2)
+        (\sigma(g, \lambda) - z \Id {\Lebesgue 2 \CompactGroup})^{-1}
+        I_2(-\gamma_2)
+        I_2(m, -\gamma_2)
+    \end{align*}
+    is bounded on $\Lebesgue 2 \CompactGroup$ uniformly in $g \in \Group$ and $\lambda \in \VectorSpace$,
+    where
+    \begin{align*}
+        I_1(m, \gamma) &\defeq (\abs z^{\frac 1 m} + \Rep \lambda \BesselPotential 1)^\gamma,\\
+        I_2(\gamma) &\defeq \Rep \lambda \BesselPotential \gamma.
+    \end{align*}
+\end{definition}
+
 \section{Independence on the family of difference operators}
 
 Note that in Definition~\ref{definition:symbol_classes},
