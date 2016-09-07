@@ -1220,531 +1220,531 @@ the resulting symbol classes would be identical.
 %    which by definition means that $\tilde \sigma \in \SymbolClass [\GroupDirect] {m'} {\rho, \delta'}$.
 %\end{proof}
 
-\section{Littlewood-Paley decomposition}
-
-\begin{lemma}
-\label{lemma:derivatives_of_radial_functions}
-    Let $\alpha \in \N^n$,
-    and fix a radial function $\chi \in \SmoothFunctions{\R^n}$.
-    If $\alpha \in \N^n$, then
-    \begin{align}
-        \D{\abs \alpha}[\chi]{x^\alpha}(x)
-        = \sum_{r = 1}^{C_\alpha} f_r(\norm[\R^n]{x}) P_r(x),
-    \end{align}
-    where $P_r$ is a polynomial depending only on $\alpha$.
-
-    Moreover, if $\supp \chi$ is compact
-    and if there exists $\delta > 0$ such that the radial derivative $\D{\abs \alpha}[\chi]{\lambda}$ vanishes on on $\Ball[\R^n]{0}{\delta}$,
-    then we have
-    \begin{align*}
-        \sup_r \sup_{\lambda \in \R^+} \abs{f_r} < \infty
-    \end{align*}
-\end{lemma}
-\begin{proof}
-    Using the chain rule, we know that for a purely radial function $f$
-    \begin{align}
-        \D{1}[f]{{x_i} } = \D{1}[\lambda]{{x_i} } \D{1}[f]{\lambda} = \frac{\D{1}[f]{\lambda}}{\norm[\R^n]{x}} x_i.
-    \end{align}
-
-    We know proceed to show the claim by induction on $\alpha$.
-    The result is clearly true when $\abs{\alpha} = 0$.
-    If we assume it is true for some $\alpha \in \N^n$, then by the above,
-    \begin{align}
-        \D{\abs \alpha + 1}[\chi]{{x_i} , x^\alpha}(x)
-        &= \D{1}{{x_i} } \sum_{r = 1}^{C_\alpha} f_r(\norm[\R^n]{x}) P_r(x)\\
-        &= \sum_{r = 1}^{C_\alpha} \frac{\D{1}[f_r]{\lambda}}{\norm[\R^n]{x}}(\norm[\R^n]{x}) x_i P_r(x)
-        + \sum_{r = 1}^{C_\alpha} f_r(\norm[\R^n]{x}) \D{1}[P_r]{{x_i} }(x),
-    \end{align}
-    which concludes the proof.
-\end{proof}
-
-\begin{lemma}
-\label{lemma:left_regular_representation_of_polynomials}
-    Let $P \in \SmoothFunctions{\dualGroup{\VectorSpace}}$ be a polynomial.
-    We can find functions $q_i \in \Polynomials{\CompactGroup}$, $f_i \in \Lebesgue{2}{\dualGroup{\VectorSpace}}$, $i = 1, \cdots, N$ such that
-    \begin{align*}
-        P(k \lambda) = \sum_{i = 1}^N q_i(k) f_i(\lambda)
-    \end{align*}
-    for each $k \in \CompactGroup$ and each $\lambda \in \dualGroup{\VectorSpace}$.
-
-    Moreover, the $q_i$ satisfy the bound
-    \begin{align*}
-        \sup_i \sup_\CompactGroup \abs{q_i} < \infty.
-    \end{align*}
-\end{lemma}
-
-The singularities of the kernel associated with a smooth symbol
-arise from the behaviour of the latter at high frequencies,
-as illustrated by the Euclidean or compact case.
-Therefore, an idea would be to cut off those high frequencies.
-
-\begin{theorem}
-\label{theorem:generalised_Littlewood-Paley_decomposition}
-    Let $\chi \in \SmoothFunctions {\R^+}$ be a positive bounded smooth function.
-
-    For each $\epsilon \in (0, 1]$,
-    we let
-    \begin{align*}
-        \eta_\epsilon(\lambda)
-        \defeq
-        \bigoplus_{\tau \in \dualGroup \CompactGroup} \chi(\epsilon(\JapaneseBracket \CompactGroup \tau^2 + \norm {\turn \lambda}^2)^{\frac 1 2}) \Id {V_\tau},
-    \end{align*}
-    where $V_\tau \defeq \Span \{\tau_{i j} \in \Lebesgue 2 \CompactGroup : 1 \leq i, j \leq \dimRep \tau\}$.
-
-    For each $\epsilon \in (0, 1]$,
-    $\eta_\epsilon$ is a symbol in $\SymbolClass 0 {1, 0}$,
-    and the following properties hold.
-
-    \begin{enumerate}
-        \item \label{item:generalised_Littlewood-Paley_decomposition:negative_m}
-            If $\chi$ has compact support, then $\eta_\epsilon \in \SmoothingSymbols$ for each $\epsilon \in (0, 1]$.
-            Moreover, for each $m \leq 0$ and each $N \in \N$,
-            there exists $C_{m, N} \geq 0$ such that
-            \begin{align*}
-                \SymbolSemiNorm m {\rho, \delta} N {\eta_\epsilon} \leq C_{m, N} \epsilon^m
-            \end{align*}
-            for every $\epsilon \in (0, 1]$.
-        \item \label{item:generalised_Littlewood-Paley_decomposition:positive_m}
-            If there exists $c > 0$ such that $\chi$ vanishes on $[0, c]$,
-            then for each $m \geq 0$ and each $N \in \N$,
-            there exists $C_{c, m, N} \geq 0$ such that
-            \begin{align*}
-                \SymbolSemiNorm m {\rho, \delta} N {\eta_\epsilon} \leq C_{c, m, N} \epsilon^m
-            \end{align*}
-            for every $\epsilon \in (0, 1]$.
-    \end{enumerate}
-\end{theorem}
-\begin{proof}
-    First, let us find a smooth real function $\chi \in \SmoothFunctions \R$ such that
-    \begin{align*}
-        \chi(r) = 1 \  \text{if}\  \abs r \leq 1, \quad \text{and} \quad
-        \chi(r) = 0 \ \text{if}\  \abs r \geq 2.
-    \end{align*}
-
-    For every $\tau \in \dualGroup \CompactGroup$ and every $\epsilon \in (0, 1]$,
-    we let
-    \begin{align*}
-        \chi_{\epsilon, \tau}(\lambda)
-        \defeq \chi(\epsilon(\JapaneseBracket \CompactGroup \tau^2 + \norm \lambda^2)^{\frac 1 2})
-    \end{align*}
-
-    Then, for each $\epsilon \in (0, 1]$,
-    we define
-    \begin{align*}
-        \eta_\epsilon(\lambda)
-        \defeq \sum_{\tau \in \dualGroup \CompactGroup} \chi_{\epsilon, \tau}(\lambda) \Id {V_\tau},
-    \end{align*}
-    where in the above $V_\tau \defeq \Span \{\tau_{ij} : 1 \leq i, j \leq \dimRep \tau\}$.
-
-    We check that
-    \begin{align*}
-        \lim_{\epsilon \to 0} \eta_\epsilon(\lambda)
-        &= \lim_{\epsilon \to 0} \sum_{\tau \in \dualGroup \CompactGroup} \chi_{\epsilon, \tau} (\lambda) \Id {V_\tau}\\
-        &= \sum_{\tau \in \dualGroup \CompactGroup} \Id {V_\tau}
-        = \Id {\Lebesgue 2 \CompactGroup}
-    \end{align*}
-
-    \begin{description}
-        \item [Step 1] Computing the associated kernel $\kappa_\epsilon$.
-
-            By applying the inverse Fourier Transform (Proposition~\ref{proposition:inverse_Fourier_Transform}),
-            we know that the kernel is given by
-            \begin{align}
-                \kappa_\epsilon(x, k)
-                = \sum_{\tau \in \dualGroup \CompactGroup}
-                \int_\VectorSpace
-                \tr \left(\chi_{\epsilon, \tau} (\lambda) \eval {\Rep \lambda(x, k)} {V_\tau}\right) \dd \lambda \notag\\
-                = \sum_{\tau \in \dualGroup \CompactGroup}
-                \tr \left(\int_\VectorSpace
-                \chi_{\epsilon, \tau} (\lambda) \eval {\Rep \lambda(x, k)} {V_\tau}\right) \dd \lambda,
-                \label{eq:Littlewood-Paley:computing_kernel}
-            \end{align}
-            where we are allowed to permutate integral and trace because the support of $\xi$ is compact
-            and the operator $\eval {\Rep \lambda(x, k)} {V_\tau}$ is finite-dimensional.
-
-            Using the invariance of $\chi$ under rotations,
-            we obtain that
-            for each $F \in \Lebesgue 2 \CompactGroup$ and each $u \in \CompactGroup$,
-            \begin{align*}
-                &\left(\int_\VectorSpace \chi_{\epsilon, \tau} (\lambda) \eval {\Rep \lambda(x, k)} {V_\tau} \dd \lambda\right) F(u)\\
-                &\quad = \int_\VectorSpace \chi_{\epsilon, \tau u} (\lambda) \eval {\Rep {u \lambda}(x, k)} {V_\tau} F(u) \dd \lambda\\
-                &\quad = \left(\int_\VectorSpace \chi_{\epsilon, \tau} (\lambda) \e^{\i \turn \ip \lambda x} \eval {\RightRegularRepresentation(k)} {V_\tau}\right) F(u)\\
-                &\quad = \InverseFourier [\R^n] \chi_{\epsilon, \tau}(x) \eval {\RightRegularRepresentation(k)} {V_\tau} F(u)
-            \end{align*}
-            Taking the trace on both sides of the above,
-            and keeping in mind that $\eval {\RightRegularRepresentation(k)} {V_\tau} \simeq \tau$,
-            we get
-            \begin{align*}
-                &\tr \left(\int_\VectorSpace \chi_{\epsilon, \tau} (\lambda) \eval {\Rep \lambda(x, k)} {V_\tau} \dd \lambda\right)\\
-                &\quad = \InverseFourier [\R^n] \chi_{\epsilon, \tau}(x) \chi_\tau(k),
-            \end{align*}
-            where $\chi_\tau \defeq \tr \tau$ is the character of $\tau$.
-
-            Injecting the above in~\eqref{eq:Littlewood-Paley:computing_kernel},
-            we obtain
-            \begin{align}
-                \kappa_\epsilon(x, k)
-                = \sum_{\tau \in \dualGroup \CompactGroup}
-                \InverseFourier [\R^n] \chi_{\epsilon, \tau}(x) \chi_\tau(k).
-                \label{eq:Littlewood-Paley:kernel}
-            \end{align}
-        \item [Step 2] Computing $\DifferenceOperatorOrder \alpha \eta_\epsilon$.
-
-            % Conditions on polynomials
-            First, select a strongly admissible family of operators such that
-            \begin{align*}
-                q_j((x, k)^{-1}) = x_j, \quad j = 1, \cdots, \dim \VectorSpace
-            \end{align*}
-            and $q_j$ does not depend on $x$ for $j > \dim \VectorSpace$.
-
-            Fix $\alpha = \alpha_1 + \alpha_2 \in \N^{\dimDifferenceOperators}$ with $\alpha_1 \in \N^{\dim \VectorSpace}$.
-            Using~\eqref{eq:Littlewood-Paley:kernel},
-            we can multiply by $q^\alpha$ and take the Fourier Transform to obtain
-            \begin{align*}
-                &\DifferenceOperatorOrder \alpha \eta_\epsilon(\lambda) F(u)\\
-                &= \sum_{\tau \in \dualGroup \CompactGroup} \int_\Group
-                q^{\alpha_1}((x, k)^{-1}) \InverseFourier [\R^n] \chi_{\epsilon, \tau}(x) \e^{\i \turn \ip \lambda {u x}}\\
-                & \qquad \qquad \qquad (q^{\alpha_2} \chi_\tau)(k^{-1}) F(u k) \dd (x, k)
-            \end{align*}
-            Note that to obtain the above,
-            we used the fact that $\InverseFourier [\R^n] \chi_{\epsilon, \tau}$ is invariant under rotations.
-
-            Using our choice of difference operators and grouping the terms depending on
-            wether they depend on $x$ or on $k$,
-            we obtain
-            \begin{align*}
-                \DifferenceOperatorOrder \alpha \eta_\epsilon(\lambda) F(u)
-                &= \sum_{\tau \in \dualGroup \CompactGroup}
-                \int_\VectorSpace x^{\alpha_1} \InverseFourier [\R^n] \chi_{\epsilon, \tau}(x) \e^{\i \turn \ip \lambda {u x}} \dd x\\
-                & \qquad \qquad \times \int_\CompactGroup (q^{\alpha_2} \chi_\tau)(k^{-1}) F(u k) \dd k.
-            \end{align*}
-
-            Recognising that the integral on $\CompactGroup$ can be seen as a Fourier Transform on $\CompactGroup$,
-            we get the formula
-            \begin{align*}
-                \DifferenceOperatorOrder \alpha \eta_\epsilon(\lambda) F(u)
-                &= \sum_{\tau \in \dualGroup \CompactGroup}
-                \iD {\lambda^{\alpha_1} } \chi_{\epsilon, \tau}(u^{-1} \lambda)
-                \DifferenceOperatorOrder [\CompactGroup] {\alpha_2} \Fourier [\CompactGroup] \chi_\tau F(u),
-            \end{align*}
-            which can be rewritten more elegantly as follows
-            \begin{align}
-                \DifferenceOperatorOrder \alpha \eta_\epsilon(\lambda) F(u)
-                = \bigoplus_{\tau \in \dualGroup \CompactGroup}
-                \iD {\lambda^{\alpha_1} } \chi_{\epsilon, \tau}(u^{-1} \lambda)
-                \DifferenceOperatorOrder [\CompactGroup] {\alpha_2} \Id {V_\tau} F(u).
-                \label{eq:Littlewood-Paley:difference_operators}
-            \end{align}
-
-        \item [Step 3a] If $F \in V_\tau$ for some $\tau \in \dualGroup \CompactGroup$,
-            then there exists $c_\alpha, C_\alpha \geq 0$ such that
-            \begin{align*}
-                \DifferenceOperatorOrder \alpha \eta_\epsilon(\lambda) F
-                \subset \bigoplus_{c_\alpha \leq \JapaneseBracket \CompactGroup \tau^{-1} \JapaneseBracket \CompactGroup \mu \leq C_\alpha} V_{\mu}
-            \end{align*}
-
-        \item [Step 3b] We show that there exists $C = C_{\alpha, \gamma} \geq 0$ which does \emph{not} depend on $\epsilon$ or $\lambda$ such that
-            \begin{align*}
-                \norm [\Lin {\Lebesgue 2 \CompactGroup}] {%
-                    \Rep \lambda \BesselPotential {\rho \abs \alpha + \gamma}
-                    \DifferenceOperatorOrder \alpha \eta_\epsilon(\lambda)
-                    \Rep \lambda \BesselPotential {-\gamma}
-                } \leq C_{\alpha, \gamma}.
-            \end{align*}
-
-            From~\eqref{eq:Littlewood-Paley:difference_operators},
-            we deduce that
-            \begin{align*}
-                \norm [\Lin {\Lebesgue 2 \CompactGroup}] {%
-                    \DifferenceOperatorOrder \alpha \eta_\epsilon(\lambda)
-                    \Rep \lambda \BesselPotential {\rho \abs \alpha}
-                }
-                \leq C_\alpha
-            \end{align*}
-            holds if and only if
-            \begin{align*}
-                \norm [\Lin {\Lebesgue 2 \CompactGroup}] {%
-                    \iD {\lambda^{\alpha_1} } \chi_{\epsilon, \tau}(u^{-1} \lambda)
-                    \DifferenceOperatorOrder {\alpha_2} \Id {V_\tau}
-                    } \leq C_\alpha (\JapaneseBracket \CompactGroup \tau + \norm {\turn \lambda})^{-\rho \abs {\alpha}}.
-            \end{align*}
-
-            By the chain rule,
-            we have
-            \begin{align*}
-                \iD {\lambda^{\alpha_1} } &\chi_{\epsilon, \tau}(u^{-1} \lambda)\\
-                &= \epsilon^{\alpha_1} \lcsum{n \leq \abs {\alpha_1}}
-                \D*{n}[\chi]{r^n}(\epsilon (\JapaneseBracket \CompactGroup \tau^2 + \norm {\turn \lambda}^2)^{\frac 1 2})
-                \iD {\lambda^{\alpha_1} } (\JapaneseBracket \CompactGroup \tau^2 + \norm {\turn \lambda}^2)^{\frac 1 2}.
-            \end{align*}
-
-            We now check that \cite[Lemma A.10]{Fischer2015} implies that
-            \begin{align*}
-                &\norm [\Lebesgue 2 \CompactGroup] {%
-                    \DifferenceOperatorOrder {\alpha_2} \left(%
-                        \D*{n}[\chi]{r^n}(\epsilon (\JapaneseBracket \CompactGroup \tau^2 + \norm {\turn \lambda}^2)^{\frac 1 2})
-                        \Id {V_\tau}
-                    \right)
-                }\\
-                &\qquad \leq
-                C (\JapaneseBracket \CompactGroup \tau + \norm {\turn \lambda}^2)^{-\rho \abs \alpha_2}.
-            \end{align*}
-
-            Combining the last two equations,
-            we get
-            \begin{align}
-                \norm [\Lin {\Lebesgue 2 \CompactGroup}] {%
-                    \iD {\lambda^{\alpha_1} } \chi_{\epsilon, \tau}(u^{-1} \lambda)
-                    \DifferenceOperatorOrder {\alpha_2} \Id {V_\tau}
-                    } \leq C_\alpha (\JapaneseBracket \CompactGroup \tau + \norm {\turn \lambda})^{-\rho \abs {\alpha}}.
-                \label{eq:eta_epsilon_symbol_norm_for_gamma_0}
-            \end{align}
-
-            To conclude,
-            observe first that
-            \begin{align*}
-                &\norm [\Lin {\Lebesgue 2 \CompactGroup}] {%
-                    \Rep \lambda \BesselPotential {\gamma + \rho \abs \alpha}
-                    \DifferenceOperatorOrder \alpha \eta_\epsilon
-                    \Rep \lambda \BesselPotential {-\gamma}
-                }\\
-                &\leq C
-                \sup_{\tau \in \dualGroup \CompactGroup}
-                \norm [\Lin {\Lebesgue 2 \CompactGroup}] {%
-                    \Rep \lambda \BesselPotential {\gamma + \rho \abs \alpha}
-                    \eval {\DifferenceOperatorOrder \alpha \eta_\epsilon (\lambda)} {V_\tau}
-                }
-                (1 + \JapaneseBracket \CompactGroup \tau + \norm \lambda)^{-\gamma}.
-            \end{align*}
-
-            By Step 3a,
-            \begin{align*}
-                \eval {%
-                    \Rep \lambda \BesselPotential {\gamma + \rho \abs \alpha}
-                    } {\DifferenceOperatorOrder \alpha \eta_\epsilon(V_\tau)}
-                    \asymp
-                    (1 + \JapaneseBracket \CompactGroup \tau + \norm \lambda)^{\gamma + \rho \alpha} \Id {\DifferenceOperatorOrder \alpha \eta_\epsilon(V_\tau)}
-            \end{align*}
-            which,
-            if injected into the above calculation, yields
-            \begin{align*}
-                &\norm [\Lin {\Lebesgue 2 \CompactGroup}] {%
-                    \Rep \lambda \BesselPotential {\gamma + \rho \abs \alpha}
-                    \DifferenceOperatorOrder \alpha \eta_\epsilon (\lambda)
-                    \Rep \lambda \BesselPotential {-\gamma}
-                }\\
-                &\leq C
-                \sup_{\tau \in \dualGroup \CompactGroup}
-                \norm [\Lin {\Lebesgue 2 \CompactGroup}] {%
-                    \DifferenceOperatorOrder \alpha \eta_\epsilon (\lambda)
-                }
-                (1 + \JapaneseBracket \CompactGroup \tau + \norm \lambda)^{\rho \abs \alpha}\\
-                &\leq C
-                \norm [\Lin {\Lebesgue 2 \CompactGroup}] {%
-                    \Rep \lambda \BesselPotential {\rho \abs \alpha}
-                    \DifferenceOperatorOrder \alpha \eta_\epsilon (\lambda)
-                }
-            \end{align*}
-
-            However,
-            the right-hand side of the above is bounded by $C_\alpha$
-            by~\eqref{eq:eta_epsilon_symbol_norm_for_gamma_0}.
-
-        \item [Step 4a] Prove~\ref{item:generalised_Littlewood-Paley_decomposition:negative_m}.
-
-            Let $m \leq 0$.
-
-            From~\eqref{eq:Littlewood-Paley:difference_operators} and Lemma~\ref{lemma:left_regular_representation_of_polynomials},
-            % TODO: Make lemmas more relevant
-            we know that the range of the operator
-            \begin{align}
-                \Rep \lambda \BesselPotential {\rho \abs \alpha + \gamma}
-                \DifferenceOperatorOrder \alpha \eta_\epsilon(\lambda)
-                \Rep \lambda \BesselPotential {-\gamma}
-                \label{eq:Littlewood-Paley:central_operator}
-            \end{align}
-            is finite-dimensional,
-            and is actually contained in
-            \begin{align*}
-                R_\epsilon(\lambda) =
-                \bigoplus \{V_\tau : \norm \lambda \leq C_\alpha \epsilon^{-1} \text{ and } \JapaneseBracket \CompactGroup \tau \leq C_\alpha \epsilon^{-1} \}
-            \end{align*}
-            for some $c_\alpha, C_\alpha \geq 0$ depending only on $\alpha$.
-            As a result,
-            we can define the operator
-            \begin{align*}
-                L_\epsilon(\lambda) \defeq
-                \eval {\Rep \lambda \BesselPotential 1} {R_\epsilon(\lambda)}
-            \end{align*}
-            and be certain that $L_\epsilon(\lambda)$ and $\Rep \lambda \BesselPotential 1$ coincide on the range of~\eqref{eq:Littlewood-Paley:central_operator}
-            for every $\lambda \in \VectorSpace$.
-
-            Moreover,
-            it is clear that from the way we constructed $L_\epsilon(\lambda)$ that
-            \begin{align*}
-                \norm [\Lin {\Lebesgue 2 \CompactGroup}] {L_\epsilon(\lambda)} \leq C_\alpha \epsilon^{-1}.
-            \end{align*}
-            Therefore,
-            \begin{align*}
-                &\norm [\Lin {\Lebesgue 2 \CompactGroup}] {%
-                    \Rep \lambda \BesselPotential {-m + \rho \abs\alpha + \gamma}
-                    \DifferenceOperatorOrder \alpha \eta_\epsilon(\lambda)
-                    \Rep \lambda \BesselPotential {-\gamma}
-                }\\
-                &\quad \leq \norm [\Lin {\Lebesgue 2 \CompactGroup}] {%
-                    L_\epsilon(\lambda)^{-m}
-                    \Rep \lambda \BesselPotential {\rho \abs \alpha + \gamma}
-                    \DifferenceOperatorOrder \alpha \eta_\epsilon(\lambda)
-                    \Rep \lambda \BesselPotential {-\gamma}
-                }\\
-                &\quad \leq C_{\alpha, \gamma, m} \epsilon^{m},
-            \end{align*}
-            which concludes the proof of~\ref{item:generalised_Littlewood-Paley_decomposition:negative_m}
-
-        \item [Step 4b] Prove~\ref{item:generalised_Littlewood-Paley_decomposition:positive_m}
-
-            Let $m \geq 0$.
-            Clearly,
-            \begin{align*}
-                \DifferenceOperatorOrder \alpha \eta_\epsilon(\lambda) F(u)
-                &= \sum_{\tau \in \dualGroup \CompactGroup}
-                \iD {\lambda^{\alpha_1} } (1 - \chi_{\epsilon, \tau})(u^{-1} \lambda)
-                \DifferenceOperatorOrder [\CompactGroup] {\alpha_2} \Fourier [\CompactGroup] \chi_\tau F(u),
-            \end{align*}
-
-            Since $1 - \chi_{\epsilon, \tau}$ vanishes only when $\JapaneseBracket \CompactGroup \tau \norm \lambda \geq c \epsilon^{-2}$,
-            we can deduce that the range of~\eqref{eq:Littlewood-Paley:central_operator} is contained in
-            \begin{align*}
-                R_\epsilon(\lambda) \defeq \bigoplus \{V_\tau : \JapaneseBracket \CompactGroup \tau \norm \lambda \geq c_\alpha \epsilon^{-2} \}.
-            \end{align*}
-
-            Now, if we define the operator
-            \begin{align*}
-                L_\epsilon(\lambda) \defeq \eval {\Rep \lambda \BesselPotential 1} {R_\epsilon(\lambda)} \bigoplus c_\alpha \epsilon^{-1} \Id {\R_\epsilon(\lambda)^\perp},
-            \end{align*}
-            then by construction our operator satisfies
-            \begin{align*}
-                \norm [\Lin {\Lebesgue 2 \CompactGroup}] {L_\epsilon(\lambda)} \geq \epsilon^{-1}.
-            \end{align*}
-
-            Therefore,
-            \begin{align*}
-                &\norm [\Lin {\Lebesgue 2 \CompactGroup}] {%
-                    \Rep \lambda \BesselPotential {-m + \rho \abs\alpha + \gamma}
-                    \DifferenceOperatorOrder \alpha \eta_\epsilon(\lambda)
-                    \Rep \lambda \BesselPotential {-\gamma}
-                }\\
-                &\quad \leq \norm [\Lin {\Lebesgue 2 \CompactGroup}] {%
-                    L_\epsilon(\lambda)^{-m}
-                    \Rep \lambda \BesselPotential {\rho \abs \alpha + \gamma}
-                    \DifferenceOperatorOrder \alpha \eta_\epsilon(\lambda)
-                    \Rep \lambda \BesselPotential {-\gamma}
-                }\\
-                &\quad \leq C_{\alpha, \gamma, m} \epsilon^{m},
-            \end{align*}
-            which concludes the proof of~\ref{item:generalised_Littlewood-Paley_decomposition:positive_m}
-    \end{description}
-\end{proof}
-
-\begin{corollary}[Littlewood-Paley decomposition]
-    Let $\sigma \in \SymbolClass m {\rho, \delta}$.
-    There exists a sequence $(\sigma_l)_{l \in \N} \subset \SmoothingSymbols$
-    such that
-    \begin{align*}
-        \sigma = \sum_{l = 0}^{+\infty} \sigma_l.
-    \end{align*}
-
-    Moreover, for each $m \in \R$,
-    there exists $C \geq 0$ such that
-    \begin{align*}
-        \SymbolSemiNorm m {\rho, \delta} N {\sigma_l} \leq C 2^{-l m}
-    \end{align*}
-    holds for each $l \in \N$.
-\end{corollary}
-
-\begin{corollary}
-    Let $\sigma \in \SymbolClass m {\rho, \delta}$ for $m \in \R$ and $0 \leq \rho, \delta \leq 1$.
-    Fix a cut-off function $\chi \in \SmoothFunctions \Group$ satisfying
-    \begin{align*}
-        \chi(x, k) =
-        \begin{cases}
-            1 & \text{if } \norm x \leq 1\\
-            0 & \text{if } \norm x \geq 2
-        \end{cases},
-    \end{align*}
-    which allows us, for each $\epsilon \in (0, 1]$ to define
-    \begin{align*}
-        \sigma_\epsilon(x, k; \lambda) \defeq \chi(\epsilon x, k) \sigma(x, k; \lambda) \eta_\epsilon(\lambda)
-    \end{align*}
-    for each $g \in \Group$ and each $\lambda \in \VectorSpace$.
-
-    The symbol $\sigma_\epsilon$ is smoothing,
-    and satisfies the following estimates.
-    \begin{enumerate}
-        \item For every $m_1 \leq m$ and each $N \in \N$,
-            there exists $C = C_{m, m_1, N, \sigma} \geq 0$ such that
-            \begin{align*}
-                \SymbolSemiNorm {m_1} {\rho, \delta} N {\sigma_\epsilon}
-                \leq C \epsilon^{m_1 - m}
-            \end{align*}
-            holds for every $\epsilon \in (0, 1]$.
-        \item For every $m_1 \geq m$ and each $N \in \N$
-            there exists $C = C_{m, m_1, N, \sigma} \geq 0$ such that
-            \begin{align*}
-                \SymbolSemiNorm {m_1} {\rho, \delta} N {\sigma - \sigma_\epsilon}
-                \leq C \epsilon^{m_1 - m}
-            \end{align*}
-            holds for every $\epsilon \in (0, 1]$.
-    \end{enumerate}
-\end{corollary}
-
-%\begin{corollary}[Littlewood-Paley decomposition]
-%    There exists a sequence $\eta_l \in \SmoothingSymbols$, $l \in \N$ of smoothing symbols satisfying the following properties
-%    \begin{enumerate}
-%        \item the semi-norms decay in the following way
-%            \begin{align}
-%                \SymbolSemiNorm{m}{\rho, \delta} N {\eta_l} \leq C 2^{-lm}
-%            \end{align}
-%        \item the associated kernels $\kappa_l$ satisfy
-%            \begin{align*}
-%                \sum_{l = 0}^\infty \kappa_l = \DiracDelta{e_\Group}
-%            \end{align*}
-%            in the sense of distributions.
-%    \end{enumerate}
-%\end{corollary}
+%\section{Littlewood-Paley decomposition}
+%
+%\begin{lemma}
+%\label{lemma:derivatives_of_radial_functions}
+%    Let $\alpha \in \N^n$,
+%    and fix a radial function $\chi \in \SmoothFunctions{\R^n}$.
+%    If $\alpha \in \N^n$, then
+%    \begin{align}
+%        \D{\abs \alpha}[\chi]{x^\alpha}(x)
+%        = \sum_{r = 1}^{C_\alpha} f_r(\norm[\R^n]{x}) P_r(x),
+%    \end{align}
+%    where $P_r$ is a polynomial depending only on $\alpha$.
+%
+%    Moreover, if $\supp \chi$ is compact
+%    and if there exists $\delta > 0$ such that the radial derivative $\D{\abs \alpha}[\chi]{\lambda}$ vanishes on on $\Ball[\R^n]{0}{\delta}$,
+%    then we have
+%    \begin{align*}
+%        \sup_r \sup_{\lambda \in \R^+} \abs{f_r} < \infty
+%    \end{align*}
+%\end{lemma}
 %\begin{proof}
-%    Let $\eta'_\epsilon$, $\epsilon \in (0, 1]$ be the family given by Theorem~\ref{theorem:generalised_Littlewood-Paley_decomposition}.
-%    For each $l \in \N$,
+%    Using the chain rule, we know that for a purely radial function $f$
+%    \begin{align}
+%        \D{1}[f]{{x_i} } = \D{1}[\lambda]{{x_i} } \D{1}[f]{\lambda} = \frac{\D{1}[f]{\lambda}}{\norm[\R^n]{x}} x_i.
+%    \end{align}
+%
+%    We know proceed to show the claim by induction on $\alpha$.
+%    The result is clearly true when $\abs{\alpha} = 0$.
+%    If we assume it is true for some $\alpha \in \N^n$, then by the above,
+%    \begin{align}
+%        \D{\abs \alpha + 1}[\chi]{{x_i} , x^\alpha}(x)
+%        &= \D{1}{{x_i} } \sum_{r = 1}^{C_\alpha} f_r(\norm[\R^n]{x}) P_r(x)\\
+%        &= \sum_{r = 1}^{C_\alpha} \frac{\D{1}[f_r]{\lambda}}{\norm[\R^n]{x}}(\norm[\R^n]{x}) x_i P_r(x)
+%        + \sum_{r = 1}^{C_\alpha} f_r(\norm[\R^n]{x}) \D{1}[P_r]{{x_i} }(x),
+%    \end{align}
+%    which concludes the proof.
+%\end{proof}
+%
+%\begin{lemma}
+%\label{lemma:left_regular_representation_of_polynomials}
+%    Let $P \in \SmoothFunctions{\dualGroup{\VectorSpace}}$ be a polynomial.
+%    We can find functions $q_i \in \Polynomials{\CompactGroup}$, $f_i \in \Lebesgue{2}{\dualGroup{\VectorSpace}}$, $i = 1, \cdots, N$ such that
+%    \begin{align*}
+%        P(k \lambda) = \sum_{i = 1}^N q_i(k) f_i(\lambda)
+%    \end{align*}
+%    for each $k \in \CompactGroup$ and each $\lambda \in \dualGroup{\VectorSpace}$.
+%
+%    Moreover, the $q_i$ satisfy the bound
+%    \begin{align*}
+%        \sup_i \sup_\CompactGroup \abs{q_i} < \infty.
+%    \end{align*}
+%\end{lemma}
+%
+%The singularities of the kernel associated with a smooth symbol
+%arise from the behaviour of the latter at high frequencies,
+%as illustrated by the Euclidean or compact case.
+%Therefore, an idea would be to cut off those high frequencies.
+%
+%\begin{theorem}
+%\label{theorem:generalised_Littlewood-Paley_decomposition}
+%    Let $\chi \in \SmoothFunctions {\R^+}$ be a positive bounded smooth function.
+%
+%    For each $\epsilon \in (0, 1]$,
+%    we let
+%    \begin{align*}
+%        \eta_\epsilon(\lambda)
+%        \defeq
+%        \bigoplus_{\tau \in \dualGroup \CompactGroup} \chi(\epsilon(\JapaneseBracket \CompactGroup \tau^2 + \norm {\turn \lambda}^2)^{\frac 1 2}) \Id {V_\tau},
+%    \end{align*}
+%    where $V_\tau \defeq \Span \{\tau_{i j} \in \Lebesgue 2 \CompactGroup : 1 \leq i, j \leq \dimRep \tau\}$.
+%
+%    For each $\epsilon \in (0, 1]$,
+%    $\eta_\epsilon$ is a symbol in $\SymbolClass 0 {1, 0}$,
+%    and the following properties hold.
+%
+%    \begin{enumerate}
+%        \item \label{item:generalised_Littlewood-Paley_decomposition:negative_m}
+%            If $\chi$ has compact support, then $\eta_\epsilon \in \SmoothingSymbols$ for each $\epsilon \in (0, 1]$.
+%            Moreover, for each $m \leq 0$ and each $N \in \N$,
+%            there exists $C_{m, N} \geq 0$ such that
+%            \begin{align*}
+%                \SymbolSemiNorm m {\rho, \delta} N {\eta_\epsilon} \leq C_{m, N} \epsilon^m
+%            \end{align*}
+%            for every $\epsilon \in (0, 1]$.
+%        \item \label{item:generalised_Littlewood-Paley_decomposition:positive_m}
+%            If there exists $c > 0$ such that $\chi$ vanishes on $[0, c]$,
+%            then for each $m \geq 0$ and each $N \in \N$,
+%            there exists $C_{c, m, N} \geq 0$ such that
+%            \begin{align*}
+%                \SymbolSemiNorm m {\rho, \delta} N {\eta_\epsilon} \leq C_{c, m, N} \epsilon^m
+%            \end{align*}
+%            for every $\epsilon \in (0, 1]$.
+%    \end{enumerate}
+%\end{theorem}
+%\begin{proof}
+%    First, let us find a smooth real function $\chi \in \SmoothFunctions \R$ such that
+%    \begin{align*}
+%        \chi(r) = 1 \  \text{if}\  \abs r \leq 1, \quad \text{and} \quad
+%        \chi(r) = 0 \ \text{if}\  \abs r \geq 2.
+%    \end{align*}
+%
+%    For every $\tau \in \dualGroup \CompactGroup$ and every $\epsilon \in (0, 1]$,
+%    we let
+%    \begin{align*}
+%        \chi_{\epsilon, \tau}(\lambda)
+%        \defeq \chi(\epsilon(\JapaneseBracket \CompactGroup \tau^2 + \norm \lambda^2)^{\frac 1 2})
+%    \end{align*}
+%
+%    Then, for each $\epsilon \in (0, 1]$,
 %    we define
 %    \begin{align*}
-%        \begin{cases}
-%            \eta_0 \defeq \eta'_1\\
-%            \eta_l \defeq \eta'_{2^{-l}} - \eta'_{2^{-l + 1}}
-%        \end{cases}
+%        \eta_\epsilon(\lambda)
+%        \defeq \sum_{\tau \in \dualGroup \CompactGroup} \chi_{\epsilon, \tau}(\lambda) \Id {V_\tau},
 %    \end{align*}
-%    For $l \geq 1$,
-%    we have
-%    \begin{align*}
-%        &\norm [\Lin {\Lebesgue 2 \Group}] {%
-%        \Rep \lambda \BesselPotential {-m + \rho \abs \alpha + \gamma}
-%        \DifferenceOperatorOrder \alpha \left( \eta'_{2^{-l}} - \eta'_{2^{-l + 1}} \right)
-%        \Rep \lambda \BesselPotential {-\gamma}
-%        }\\
-%        & \qquad \leq C_{\alpha, \gamma, m} (1 + 2^{-m}) 2^{-l m}\\
-%        & \qquad \leq C_{\alpha, \gamma, m} 2^{-l m},
-%    \end{align*}
-%    while the case $l = 1$ follows directly from Theorem~\ref{theorem:generalised_Littlewood-Paley_decomposition}.
+%    where in the above $V_\tau \defeq \Span \{\tau_{ij} : 1 \leq i, j \leq \dimRep \tau\}$.
 %
-%    The second claim follows from the fact that
+%    We check that
 %    \begin{align*}
-%        \sum_{l = 0}^{L} \eta_l
-%        &= \eta'_1 + \sum_{l = 1}^{L} \eta_l
-%        = \eta'_{2^{-1}} + \sum_{l = 2}^{L} \eta_l\\
-%        &= \eta'_{2^{-L + 1}} + \eta_L
-%        = \eta'_{2^{-L}}
+%        \lim_{\epsilon \to 0} \eta_\epsilon(\lambda)
+%        &= \lim_{\epsilon \to 0} \sum_{\tau \in \dualGroup \CompactGroup} \chi_{\epsilon, \tau} (\lambda) \Id {V_\tau}\\
+%        &= \sum_{\tau \in \dualGroup \CompactGroup} \Id {V_\tau}
+%        = \Id {\Lebesgue 2 \CompactGroup}
 %    \end{align*}
-%    and Theorem~\ref{theorem:generalised_Littlewood-Paley_decomposition}.
+%
+%    \begin{description}
+%        \item [Step 1] Computing the associated kernel $\kappa_\epsilon$.
+%
+%            By applying the inverse Fourier Transform (Proposition~\ref{proposition:inverse_Fourier_Transform}),
+%            we know that the kernel is given by
+%            \begin{align}
+%                \kappa_\epsilon(x, k)
+%                = \sum_{\tau \in \dualGroup \CompactGroup}
+%                \int_\VectorSpace
+%                \tr \left(\chi_{\epsilon, \tau} (\lambda) \eval {\Rep \lambda(x, k)} {V_\tau}\right) \dd \lambda \notag\\
+%                = \sum_{\tau \in \dualGroup \CompactGroup}
+%                \tr \left(\int_\VectorSpace
+%                \chi_{\epsilon, \tau} (\lambda) \eval {\Rep \lambda(x, k)} {V_\tau}\right) \dd \lambda,
+%                \label{eq:Littlewood-Paley:computing_kernel}
+%            \end{align}
+%            where we are allowed to permutate integral and trace because the support of $\xi$ is compact
+%            and the operator $\eval {\Rep \lambda(x, k)} {V_\tau}$ is finite-dimensional.
+%
+%            Using the invariance of $\chi$ under rotations,
+%            we obtain that
+%            for each $F \in \Lebesgue 2 \CompactGroup$ and each $u \in \CompactGroup$,
+%            \begin{align*}
+%                &\left(\int_\VectorSpace \chi_{\epsilon, \tau} (\lambda) \eval {\Rep \lambda(x, k)} {V_\tau} \dd \lambda\right) F(u)\\
+%                &\quad = \int_\VectorSpace \chi_{\epsilon, \tau u} (\lambda) \eval {\Rep {u \lambda}(x, k)} {V_\tau} F(u) \dd \lambda\\
+%                &\quad = \left(\int_\VectorSpace \chi_{\epsilon, \tau} (\lambda) \e^{\i \turn \ip \lambda x} \eval {\RightRegularRepresentation(k)} {V_\tau}\right) F(u)\\
+%                &\quad = \InverseFourier [\R^n] \chi_{\epsilon, \tau}(x) \eval {\RightRegularRepresentation(k)} {V_\tau} F(u)
+%            \end{align*}
+%            Taking the trace on both sides of the above,
+%            and keeping in mind that $\eval {\RightRegularRepresentation(k)} {V_\tau} \simeq \tau$,
+%            we get
+%            \begin{align*}
+%                &\tr \left(\int_\VectorSpace \chi_{\epsilon, \tau} (\lambda) \eval {\Rep \lambda(x, k)} {V_\tau} \dd \lambda\right)\\
+%                &\quad = \InverseFourier [\R^n] \chi_{\epsilon, \tau}(x) \chi_\tau(k),
+%            \end{align*}
+%            where $\chi_\tau \defeq \tr \tau$ is the character of $\tau$.
+%
+%            Injecting the above in~\eqref{eq:Littlewood-Paley:computing_kernel},
+%            we obtain
+%            \begin{align}
+%                \kappa_\epsilon(x, k)
+%                = \sum_{\tau \in \dualGroup \CompactGroup}
+%                \InverseFourier [\R^n] \chi_{\epsilon, \tau}(x) \chi_\tau(k).
+%                \label{eq:Littlewood-Paley:kernel}
+%            \end{align}
+%        \item [Step 2] Computing $\DifferenceOperatorOrder \alpha \eta_\epsilon$.
+%
+%            % Conditions on polynomials
+%            First, select a strongly admissible family of operators such that
+%            \begin{align*}
+%                q_j((x, k)^{-1}) = x_j, \quad j = 1, \cdots, \dim \VectorSpace
+%            \end{align*}
+%            and $q_j$ does not depend on $x$ for $j > \dim \VectorSpace$.
+%
+%            Fix $\alpha = \alpha_1 + \alpha_2 \in \N^{\dimDifferenceOperators}$ with $\alpha_1 \in \N^{\dim \VectorSpace}$.
+%            Using~\eqref{eq:Littlewood-Paley:kernel},
+%            we can multiply by $q^\alpha$ and take the Fourier Transform to obtain
+%            \begin{align*}
+%                &\DifferenceOperatorOrder \alpha \eta_\epsilon(\lambda) F(u)\\
+%                &= \sum_{\tau \in \dualGroup \CompactGroup} \int_\Group
+%                q^{\alpha_1}((x, k)^{-1}) \InverseFourier [\R^n] \chi_{\epsilon, \tau}(x) \e^{\i \turn \ip \lambda {u x}}\\
+%                & \qquad \qquad \qquad (q^{\alpha_2} \chi_\tau)(k^{-1}) F(u k) \dd (x, k)
+%            \end{align*}
+%            Note that to obtain the above,
+%            we used the fact that $\InverseFourier [\R^n] \chi_{\epsilon, \tau}$ is invariant under rotations.
+%
+%            Using our choice of difference operators and grouping the terms depending on
+%            wether they depend on $x$ or on $k$,
+%            we obtain
+%            \begin{align*}
+%                \DifferenceOperatorOrder \alpha \eta_\epsilon(\lambda) F(u)
+%                &= \sum_{\tau \in \dualGroup \CompactGroup}
+%                \int_\VectorSpace x^{\alpha_1} \InverseFourier [\R^n] \chi_{\epsilon, \tau}(x) \e^{\i \turn \ip \lambda {u x}} \dd x\\
+%                & \qquad \qquad \times \int_\CompactGroup (q^{\alpha_2} \chi_\tau)(k^{-1}) F(u k) \dd k.
+%            \end{align*}
+%
+%            Recognising that the integral on $\CompactGroup$ can be seen as a Fourier Transform on $\CompactGroup$,
+%            we get the formula
+%            \begin{align*}
+%                \DifferenceOperatorOrder \alpha \eta_\epsilon(\lambda) F(u)
+%                &= \sum_{\tau \in \dualGroup \CompactGroup}
+%                \iD {\lambda^{\alpha_1} } \chi_{\epsilon, \tau}(u^{-1} \lambda)
+%                \DifferenceOperatorOrder [\CompactGroup] {\alpha_2} \Fourier [\CompactGroup] \chi_\tau F(u),
+%            \end{align*}
+%            which can be rewritten more elegantly as follows
+%            \begin{align}
+%                \DifferenceOperatorOrder \alpha \eta_\epsilon(\lambda) F(u)
+%                = \bigoplus_{\tau \in \dualGroup \CompactGroup}
+%                \iD {\lambda^{\alpha_1} } \chi_{\epsilon, \tau}(u^{-1} \lambda)
+%                \DifferenceOperatorOrder [\CompactGroup] {\alpha_2} \Id {V_\tau} F(u).
+%                \label{eq:Littlewood-Paley:difference_operators}
+%            \end{align}
+%
+%        \item [Step 3a] If $F \in V_\tau$ for some $\tau \in \dualGroup \CompactGroup$,
+%            then there exists $c_\alpha, C_\alpha \geq 0$ such that
+%            \begin{align*}
+%                \DifferenceOperatorOrder \alpha \eta_\epsilon(\lambda) F
+%                \subset \bigoplus_{c_\alpha \leq \JapaneseBracket \CompactGroup \tau^{-1} \JapaneseBracket \CompactGroup \mu \leq C_\alpha} V_{\mu}
+%            \end{align*}
+%
+%        \item [Step 3b] We show that there exists $C = C_{\alpha, \gamma} \geq 0$ which does \emph{not} depend on $\epsilon$ or $\lambda$ such that
+%            \begin{align*}
+%                \norm [\Lin {\Lebesgue 2 \CompactGroup}] {%
+%                    \Rep \lambda \BesselPotential {\rho \abs \alpha + \gamma}
+%                    \DifferenceOperatorOrder \alpha \eta_\epsilon(\lambda)
+%                    \Rep \lambda \BesselPotential {-\gamma}
+%                } \leq C_{\alpha, \gamma}.
+%            \end{align*}
+%
+%            From~\eqref{eq:Littlewood-Paley:difference_operators},
+%            we deduce that
+%            \begin{align*}
+%                \norm [\Lin {\Lebesgue 2 \CompactGroup}] {%
+%                    \DifferenceOperatorOrder \alpha \eta_\epsilon(\lambda)
+%                    \Rep \lambda \BesselPotential {\rho \abs \alpha}
+%                }
+%                \leq C_\alpha
+%            \end{align*}
+%            holds if and only if
+%            \begin{align*}
+%                \norm [\Lin {\Lebesgue 2 \CompactGroup}] {%
+%                    \iD {\lambda^{\alpha_1} } \chi_{\epsilon, \tau}(u^{-1} \lambda)
+%                    \DifferenceOperatorOrder {\alpha_2} \Id {V_\tau}
+%                    } \leq C_\alpha (\JapaneseBracket \CompactGroup \tau + \norm {\turn \lambda})^{-\rho \abs {\alpha}}.
+%            \end{align*}
+%
+%            By the chain rule,
+%            we have
+%            \begin{align*}
+%                \iD {\lambda^{\alpha_1} } &\chi_{\epsilon, \tau}(u^{-1} \lambda)\\
+%                &= \epsilon^{\alpha_1} \lcsum{n \leq \abs {\alpha_1}}
+%                \D*{n}[\chi]{r^n}(\epsilon (\JapaneseBracket \CompactGroup \tau^2 + \norm {\turn \lambda}^2)^{\frac 1 2})
+%                \iD {\lambda^{\alpha_1} } (\JapaneseBracket \CompactGroup \tau^2 + \norm {\turn \lambda}^2)^{\frac 1 2}.
+%            \end{align*}
+%
+%            We now check that \cite[Lemma A.10]{Fischer2015} implies that
+%            \begin{align*}
+%                &\norm [\Lebesgue 2 \CompactGroup] {%
+%                    \DifferenceOperatorOrder {\alpha_2} \left(%
+%                        \D*{n}[\chi]{r^n}(\epsilon (\JapaneseBracket \CompactGroup \tau^2 + \norm {\turn \lambda}^2)^{\frac 1 2})
+%                        \Id {V_\tau}
+%                    \right)
+%                }\\
+%                &\qquad \leq
+%                C (\JapaneseBracket \CompactGroup \tau + \norm {\turn \lambda}^2)^{-\rho \abs \alpha_2}.
+%            \end{align*}
+%
+%            Combining the last two equations,
+%            we get
+%            \begin{align}
+%                \norm [\Lin {\Lebesgue 2 \CompactGroup}] {%
+%                    \iD {\lambda^{\alpha_1} } \chi_{\epsilon, \tau}(u^{-1} \lambda)
+%                    \DifferenceOperatorOrder {\alpha_2} \Id {V_\tau}
+%                    } \leq C_\alpha (\JapaneseBracket \CompactGroup \tau + \norm {\turn \lambda})^{-\rho \abs {\alpha}}.
+%                \label{eq:eta_epsilon_symbol_norm_for_gamma_0}
+%            \end{align}
+%
+%            To conclude,
+%            observe first that
+%            \begin{align*}
+%                &\norm [\Lin {\Lebesgue 2 \CompactGroup}] {%
+%                    \Rep \lambda \BesselPotential {\gamma + \rho \abs \alpha}
+%                    \DifferenceOperatorOrder \alpha \eta_\epsilon
+%                    \Rep \lambda \BesselPotential {-\gamma}
+%                }\\
+%                &\leq C
+%                \sup_{\tau \in \dualGroup \CompactGroup}
+%                \norm [\Lin {\Lebesgue 2 \CompactGroup}] {%
+%                    \Rep \lambda \BesselPotential {\gamma + \rho \abs \alpha}
+%                    \eval {\DifferenceOperatorOrder \alpha \eta_\epsilon (\lambda)} {V_\tau}
+%                }
+%                (1 + \JapaneseBracket \CompactGroup \tau + \norm \lambda)^{-\gamma}.
+%            \end{align*}
+%
+%            By Step 3a,
+%            \begin{align*}
+%                \eval {%
+%                    \Rep \lambda \BesselPotential {\gamma + \rho \abs \alpha}
+%                    } {\DifferenceOperatorOrder \alpha \eta_\epsilon(V_\tau)}
+%                    \asymp
+%                    (1 + \JapaneseBracket \CompactGroup \tau + \norm \lambda)^{\gamma + \rho \alpha} \Id {\DifferenceOperatorOrder \alpha \eta_\epsilon(V_\tau)}
+%            \end{align*}
+%            which,
+%            if injected into the above calculation, yields
+%            \begin{align*}
+%                &\norm [\Lin {\Lebesgue 2 \CompactGroup}] {%
+%                    \Rep \lambda \BesselPotential {\gamma + \rho \abs \alpha}
+%                    \DifferenceOperatorOrder \alpha \eta_\epsilon (\lambda)
+%                    \Rep \lambda \BesselPotential {-\gamma}
+%                }\\
+%                &\leq C
+%                \sup_{\tau \in \dualGroup \CompactGroup}
+%                \norm [\Lin {\Lebesgue 2 \CompactGroup}] {%
+%                    \DifferenceOperatorOrder \alpha \eta_\epsilon (\lambda)
+%                }
+%                (1 + \JapaneseBracket \CompactGroup \tau + \norm \lambda)^{\rho \abs \alpha}\\
+%                &\leq C
+%                \norm [\Lin {\Lebesgue 2 \CompactGroup}] {%
+%                    \Rep \lambda \BesselPotential {\rho \abs \alpha}
+%                    \DifferenceOperatorOrder \alpha \eta_\epsilon (\lambda)
+%                }
+%            \end{align*}
+%
+%            However,
+%            the right-hand side of the above is bounded by $C_\alpha$
+%            by~\eqref{eq:eta_epsilon_symbol_norm_for_gamma_0}.
+%
+%        \item [Step 4a] Prove~\ref{item:generalised_Littlewood-Paley_decomposition:negative_m}.
+%
+%            Let $m \leq 0$.
+%
+%            From~\eqref{eq:Littlewood-Paley:difference_operators} and Lemma~\ref{lemma:left_regular_representation_of_polynomials},
+%            % TODO: Make lemmas more relevant
+%            we know that the range of the operator
+%            \begin{align}
+%                \Rep \lambda \BesselPotential {\rho \abs \alpha + \gamma}
+%                \DifferenceOperatorOrder \alpha \eta_\epsilon(\lambda)
+%                \Rep \lambda \BesselPotential {-\gamma}
+%                \label{eq:Littlewood-Paley:central_operator}
+%            \end{align}
+%            is finite-dimensional,
+%            and is actually contained in
+%            \begin{align*}
+%                R_\epsilon(\lambda) =
+%                \bigoplus \{V_\tau : \norm \lambda \leq C_\alpha \epsilon^{-1} \text{ and } \JapaneseBracket \CompactGroup \tau \leq C_\alpha \epsilon^{-1} \}
+%            \end{align*}
+%            for some $c_\alpha, C_\alpha \geq 0$ depending only on $\alpha$.
+%            As a result,
+%            we can define the operator
+%            \begin{align*}
+%                L_\epsilon(\lambda) \defeq
+%                \eval {\Rep \lambda \BesselPotential 1} {R_\epsilon(\lambda)}
+%            \end{align*}
+%            and be certain that $L_\epsilon(\lambda)$ and $\Rep \lambda \BesselPotential 1$ coincide on the range of~\eqref{eq:Littlewood-Paley:central_operator}
+%            for every $\lambda \in \VectorSpace$.
+%
+%            Moreover,
+%            it is clear that from the way we constructed $L_\epsilon(\lambda)$ that
+%            \begin{align*}
+%                \norm [\Lin {\Lebesgue 2 \CompactGroup}] {L_\epsilon(\lambda)} \leq C_\alpha \epsilon^{-1}.
+%            \end{align*}
+%            Therefore,
+%            \begin{align*}
+%                &\norm [\Lin {\Lebesgue 2 \CompactGroup}] {%
+%                    \Rep \lambda \BesselPotential {-m + \rho \abs\alpha + \gamma}
+%                    \DifferenceOperatorOrder \alpha \eta_\epsilon(\lambda)
+%                    \Rep \lambda \BesselPotential {-\gamma}
+%                }\\
+%                &\quad \leq \norm [\Lin {\Lebesgue 2 \CompactGroup}] {%
+%                    L_\epsilon(\lambda)^{-m}
+%                    \Rep \lambda \BesselPotential {\rho \abs \alpha + \gamma}
+%                    \DifferenceOperatorOrder \alpha \eta_\epsilon(\lambda)
+%                    \Rep \lambda \BesselPotential {-\gamma}
+%                }\\
+%                &\quad \leq C_{\alpha, \gamma, m} \epsilon^{m},
+%            \end{align*}
+%            which concludes the proof of~\ref{item:generalised_Littlewood-Paley_decomposition:negative_m}
+%
+%        \item [Step 4b] Prove~\ref{item:generalised_Littlewood-Paley_decomposition:positive_m}
+%
+%            Let $m \geq 0$.
+%            Clearly,
+%            \begin{align*}
+%                \DifferenceOperatorOrder \alpha \eta_\epsilon(\lambda) F(u)
+%                &= \sum_{\tau \in \dualGroup \CompactGroup}
+%                \iD {\lambda^{\alpha_1} } (1 - \chi_{\epsilon, \tau})(u^{-1} \lambda)
+%                \DifferenceOperatorOrder [\CompactGroup] {\alpha_2} \Fourier [\CompactGroup] \chi_\tau F(u),
+%            \end{align*}
+%
+%            Since $1 - \chi_{\epsilon, \tau}$ vanishes only when $\JapaneseBracket \CompactGroup \tau \norm \lambda \geq c \epsilon^{-2}$,
+%            we can deduce that the range of~\eqref{eq:Littlewood-Paley:central_operator} is contained in
+%            \begin{align*}
+%                R_\epsilon(\lambda) \defeq \bigoplus \{V_\tau : \JapaneseBracket \CompactGroup \tau \norm \lambda \geq c_\alpha \epsilon^{-2} \}.
+%            \end{align*}
+%
+%            Now, if we define the operator
+%            \begin{align*}
+%                L_\epsilon(\lambda) \defeq \eval {\Rep \lambda \BesselPotential 1} {R_\epsilon(\lambda)} \bigoplus c_\alpha \epsilon^{-1} \Id {\R_\epsilon(\lambda)^\perp},
+%            \end{align*}
+%            then by construction our operator satisfies
+%            \begin{align*}
+%                \norm [\Lin {\Lebesgue 2 \CompactGroup}] {L_\epsilon(\lambda)} \geq \epsilon^{-1}.
+%            \end{align*}
+%
+%            Therefore,
+%            \begin{align*}
+%                &\norm [\Lin {\Lebesgue 2 \CompactGroup}] {%
+%                    \Rep \lambda \BesselPotential {-m + \rho \abs\alpha + \gamma}
+%                    \DifferenceOperatorOrder \alpha \eta_\epsilon(\lambda)
+%                    \Rep \lambda \BesselPotential {-\gamma}
+%                }\\
+%                &\quad \leq \norm [\Lin {\Lebesgue 2 \CompactGroup}] {%
+%                    L_\epsilon(\lambda)^{-m}
+%                    \Rep \lambda \BesselPotential {\rho \abs \alpha + \gamma}
+%                    \DifferenceOperatorOrder \alpha \eta_\epsilon(\lambda)
+%                    \Rep \lambda \BesselPotential {-\gamma}
+%                }\\
+%                &\quad \leq C_{\alpha, \gamma, m} \epsilon^{m},
+%            \end{align*}
+%            which concludes the proof of~\ref{item:generalised_Littlewood-Paley_decomposition:positive_m}
+%    \end{description}
 %\end{proof}
+%
+%\begin{corollary}[Littlewood-Paley decomposition]
+%    Let $\sigma \in \SymbolClass m {\rho, \delta}$.
+%    There exists a sequence $(\sigma_l)_{l \in \N} \subset \SmoothingSymbols$
+%    such that
+%    \begin{align*}
+%        \sigma = \sum_{l = 0}^{+\infty} \sigma_l.
+%    \end{align*}
+%
+%    Moreover, for each $m \in \R$,
+%    there exists $C \geq 0$ such that
+%    \begin{align*}
+%        \SymbolSemiNorm m {\rho, \delta} N {\sigma_l} \leq C 2^{-l m}
+%    \end{align*}
+%    holds for each $l \in \N$.
+%\end{corollary}
+%
+%\begin{corollary}
+%    Let $\sigma \in \SymbolClass m {\rho, \delta}$ for $m \in \R$ and $0 \leq \rho, \delta \leq 1$.
+%    Fix a cut-off function $\chi \in \SmoothFunctions \Group$ satisfying
+%    \begin{align*}
+%        \chi(x, k) =
+%        \begin{cases}
+%            1 & \text{if } \norm x \leq 1\\
+%            0 & \text{if } \norm x \geq 2
+%        \end{cases},
+%    \end{align*}
+%    which allows us, for each $\epsilon \in (0, 1]$ to define
+%    \begin{align*}
+%        \sigma_\epsilon(x, k; \lambda) \defeq \chi(\epsilon x, k) \sigma(x, k; \lambda) \eta_\epsilon(\lambda)
+%    \end{align*}
+%    for each $g \in \Group$ and each $\lambda \in \VectorSpace$.
+%
+%    The symbol $\sigma_\epsilon$ is smoothing,
+%    and satisfies the following estimates.
+%    \begin{enumerate}
+%        \item For every $m_1 \leq m$ and each $N \in \N$,
+%            there exists $C = C_{m, m_1, N, \sigma} \geq 0$ such that
+%            \begin{align*}
+%                \SymbolSemiNorm {m_1} {\rho, \delta} N {\sigma_\epsilon}
+%                \leq C \epsilon^{m_1 - m}
+%            \end{align*}
+%            holds for every $\epsilon \in (0, 1]$.
+%        \item For every $m_1 \geq m$ and each $N \in \N$
+%            there exists $C = C_{m, m_1, N, \sigma} \geq 0$ such that
+%            \begin{align*}
+%                \SymbolSemiNorm {m_1} {\rho, \delta} N {\sigma - \sigma_\epsilon}
+%                \leq C \epsilon^{m_1 - m}
+%            \end{align*}
+%            holds for every $\epsilon \in (0, 1]$.
+%    \end{enumerate}
+%\end{corollary}
+%
+%%\begin{corollary}[Littlewood-Paley decomposition]
+%%    There exists a sequence $\eta_l \in \SmoothingSymbols$, $l \in \N$ of smoothing symbols satisfying the following properties
+%%    \begin{enumerate}
+%%        \item the semi-norms decay in the following way
+%%            \begin{align}
+%%                \SymbolSemiNorm{m}{\rho, \delta} N {\eta_l} \leq C 2^{-lm}
+%%            \end{align}
+%%        \item the associated kernels $\kappa_l$ satisfy
+%%            \begin{align*}
+%%                \sum_{l = 0}^\infty \kappa_l = \DiracDelta{e_\Group}
+%%            \end{align*}
+%%            in the sense of distributions.
+%%    \end{enumerate}
+%%\end{corollary}
+%%\begin{proof}
+%%    Let $\eta'_\epsilon$, $\epsilon \in (0, 1]$ be the family given by Theorem~\ref{theorem:generalised_Littlewood-Paley_decomposition}.
+%%    For each $l \in \N$,
+%%    we define
+%%    \begin{align*}
+%%        \begin{cases}
+%%            \eta_0 \defeq \eta'_1\\
+%%            \eta_l \defeq \eta'_{2^{-l}} - \eta'_{2^{-l + 1}}
+%%        \end{cases}
+%%    \end{align*}
+%%    For $l \geq 1$,
+%%    we have
+%%    \begin{align*}
+%%        &\norm [\Lin {\Lebesgue 2 \Group}] {%
+%%        \Rep \lambda \BesselPotential {-m + \rho \abs \alpha + \gamma}
+%%        \DifferenceOperatorOrder \alpha \left( \eta'_{2^{-l}} - \eta'_{2^{-l + 1}} \right)
+%%        \Rep \lambda \BesselPotential {-\gamma}
+%%        }\\
+%%        & \qquad \leq C_{\alpha, \gamma, m} (1 + 2^{-m}) 2^{-l m}\\
+%%        & \qquad \leq C_{\alpha, \gamma, m} 2^{-l m},
+%%    \end{align*}
+%%    while the case $l = 1$ follows directly from Theorem~\ref{theorem:generalised_Littlewood-Paley_decomposition}.
+%%
+%%    The second claim follows from the fact that
+%%    \begin{align*}
+%%        \sum_{l = 0}^{L} \eta_l
+%%        &= \eta'_1 + \sum_{l = 1}^{L} \eta_l
+%%        = \eta'_{2^{-1}} + \sum_{l = 2}^{L} \eta_l\\
+%%        &= \eta'_{2^{-L + 1}} + \eta_L
+%%        = \eta'_{2^{-L}}
+%%    \end{align*}
+%%    and Theorem~\ref{theorem:generalised_Littlewood-Paley_decomposition}.
+%%\end{proof}
 
 \section{Kernel estimates}
 
