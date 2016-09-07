@@ -792,433 +792,433 @@ the resulting symbol classes would be identical.
     % TODO Conclude
 \end{proof}
 
-\section{Link with the H\"ormander classes}
-
-\begin{definition}[Rotation of symbols]
-    Let $\tilde \sigma \in \SymbolClass[\GroupDirect]{m}{\rho, \delta}$.
-    We define the operator
-    \begin{align*}
-        \Rotation {\tilde \sigma} : \SmoothFunctions \CompactGroup \to \SmoothFunctions \CompactGroup
-    \end{align*}
-    via the formula
-    \begin{align*}
-        \Rotation {\tilde \sigma}(x, k; \lambda) F(u) \defeq \tilde \sigma(x, k; k u^{-1} \lambda) F(u),
-    \end{align*}
-    where $x, \lambda \in \VectorSpace$, $k, u \in \CompactGroup$, and $F \in \SmoothFunctions \CompactGroup$.
-
-    Similarly, given $\sigma \in \SymbolClass m {\rho, \delta}$,
-    we define the operator
-    \begin{align*}
-        \InverseRotation \sigma : \SmoothFunctions \CompactGroup \to \SmoothFunctions \CompactGroup
-    \end{align*}
-    via the formula
-    \begin{align*}
-        \InverseRotation \sigma (x, k; \lambda) F(u) \defeq \sigma(x, k; u k^{-1} \lambda) F(u),
-    \end{align*}
-    where again $x, \lambda \in \VectorSpace$, $k, u \in \CompactGroup$, and $F \in \SmoothFunctions \CompactGroup$.
-\end{definition}
-
-\begin{lemma}
-\label{lemma:Y_derivative_on_lambda_variable_of_symbols}
-    Let $Y \in \LieAlgebraCompactGroup$, $\sigma \in \SymbolClass m {\rho, \delta}$, $\tilde \sigma \in \SymbolClass[\GroupDirect] m {\rho, \delta}$.
-    We have the following expression
-    \begin{align*}
-        \LeftDifferentialOperatorFirstOrder Y_l \sigma(x, k; l \lambda)
-        &= \sum_{j = 1}^{\dim \VectorSpace} \DifferenceOperator{j} \sigma(x, k; l \lambda) \Rep {l Y \lambda} (X_j)\\
-        \LeftDifferentialOperatorFirstOrder Y_l \tilde \sigma(x, k; l \lambda)
-        &= \sum_{j = 1}^{\dim \VectorSpace} \DifferenceOperator[\VectorSpace]{j} \tilde \sigma(x, k; l \lambda) \Rep[\GroupDirect] {l Y \lambda} (\partial_j),
-    \end{align*}
-    where $(x, k) \in \GroupDirect$, $\lambda \in \VectorSpace$ and $l \in \CompactGroup$.
-\end{lemma}
-\begin{proof}
-    By definition, we know that
-    \begin{align*}
-        \LeftDifferentialOperatorFirstOrder Y_l \sigma(x, k; l \lambda)
-        &= \eval{\D*{1}{t}}{t = 0} \sigma(x, k; l \exp_\CompactGroup (t Y) \lambda),
-    \end{align*}
-    which after applying the chain rule, becomes
-    \begin{align}
-        &\LeftDifferentialOperatorFirstOrder Y_l \sigma(x, k; l \lambda) \notag\\
-        &\quad = \sum_{j = 1}^{\dim \VectorSpace} \eval{\D*{1}{s}}{s = 0} \sigma(x, k; l \lambda + s u e_j) \eval{\D*{1}{t}}{t = 0} \ip {l \exp_\CompactGroup (t Y) \lambda} {u e_j}.
-        \label{eq:k_differentiation_of_lambda_variable_in_symbol}
-    \end{align}
-
-    Now, we observe that
-    \begin{align*}
-        \eval{\D*{1}{t}}{t = 0} \ip {l \exp_\CompactGroup (t Y) \lambda} {u e_j}
-        = \ip {l Y \lambda} {u e_j} = \frac{1}{\i \turn} \Rep {l Y \lambda} (X_j),
-    \end{align*}
-    while at the same time
-    \begin{align*}
-        \eval{\D*{1}{s}}{s = 0} \sigma(x, k; l \lambda + s u e_j)
-        = \i \turn \DifferenceOperator{j} \sigma(x, k; l \lambda).
-    \end{align*}
-
-    Therefore, it follows that~\eqref{eq:k_differentiation_of_lambda_variable_in_symbol} becomes
-    \begin{align*}
-        \LeftDifferentialOperatorFirstOrder Y_l \sigma(x, k; l \lambda)
-        = \sum_{j = 1}^{\dim \VectorSpace} \DifferenceOperator{j} \sigma(x, k; l \lambda) \Rep {l Y \lambda} (X_j).
-    \end{align*}
-
-    Now, we turn to the case of symbols on the direct product.
-    Again, we start with
-    \begin{align*}
-        \LeftDifferentialOperatorFirstOrder Y_l \tilde \sigma(x, k; l \lambda)
-        &= \eval{\D*{1}{t}}{t = 0} \tilde \sigma(x, k; l \exp_\CompactGroup (t Y) \lambda).
-    \end{align*}
-    Applying the chain rule, we obtain
-    \begin{align}
-        \LeftDifferentialOperatorFirstOrder Y_l \tilde \sigma(x, k; l \lambda)
-        &= \sum_{j = 1}^{\dim \VectorSpace} \eval{\D*{1}{s}}{s = 0} \tilde \sigma(x, k; l \lambda + s e_j) \eval{\D*{1}{t}}{t = 0} \ip {l \exp_\CompactGroup (t Y) \lambda} {e_j}.
-        \label{eq:k_differentiation_of_lambda_variable_in_symbol_2}
-    \end{align}
-
-    By definition, it is clear that
-    \begin{align*}
-        \DifferenceOperator[\VectorSpace]{j} \tilde \sigma(x, k; l \lambda) = \frac 1 {\i \turn} \D{1}[\tilde \sigma]{{\lambda_j} } (x, k, l \lambda),
-    \end{align*}
-    while
-    \begin{align*}
-        \eval{\D*{1}{t}}{t = 0} \ip {l \exp_\CompactGroup (t Y) \lambda} {e_j}
-        &= \ip {l Y \lambda} {e_j}
-        = \frac{1}{\i \turn} \Rep[\GroupDirect] {l Y \lambda} (\partial_j).
-    \end{align*}
-
-    Therefore, it follows that \eqref{eq:k_differentiation_of_lambda_variable_in_symbol_2} becomes
-    \begin{align}
-        \LeftDifferentialOperatorFirstOrder Y_l \tilde \sigma(x, k; l \lambda)
-        &= \sum_{j = 1}^{\dim \VectorSpace} \DifferenceOperator[\VectorSpace]{j} \tilde \sigma(x, k; l \lambda) \Rep[\GroupDirect] {l Y \lambda} (\partial_j).
-    \end{align}
-\end{proof}
-
-\begin{lemma}
-\label{lemma:link_between_symbols}
-    Let $\sigma$ and $\tilde \sigma$ be symbols on $\Group$ and $\GroupDirect$ respectively be such that
-    \begin{align*}
-        \Op[\Group] (\sigma) = \Op[\GroupDirect] (\tilde \sigma).
-    \end{align*}
-    \begin{enumerate}
-        \item
-            \label{item:action_of_difference_operators}
-            If $q \in \SmoothFunctions \Group$,
-            then defining $\tilde q(y, l) = q(l y, l)$ yields
-            \begin{align*}
-                \DifferenceOperator{q} \sigma = \Rotation {\DifferenceOperator[\GroupDirect]{\tilde q} \tilde \sigma}
-                \quad \text{and} \quad
-                \DifferenceOperator[\GroupDirect]{\tilde q} \tilde \sigma = \InverseRotation {\DifferenceOperator{q} \sigma}.
-            \end{align*}
-            In particular, $\sigma = \Rotation {\tilde \sigma}$ and $\tilde \sigma = \InverseRotation \sigma$.
-        \item
-            \label{item:action_of_Euclidean_derivative}
-            If $X \in \LieAlgebra \cap \VectorSpace$, then
-            \begin{align*}
-                \LeftDifferentialOperatorFirstOrder{X} \sigma
-                = \Rotation {\LeftDifferentialOperatorFirstOrder{X} \tilde \sigma}
-                \quad \text{and} \quad
-                \LeftDifferentialOperatorFirstOrder{X} \tilde \sigma
-                = \InverseRotation {\LeftDifferentialOperatorFirstOrder{X} \sigma}.
-            \end{align*}
-        \item
-            \label{item:action_of_K-derivative}
-            If $Y \in \LieAlgebraCompactGroup$, we have
-            \begin{align*}
-                \LeftDifferentialOperatorFirstOrder{Y} \sigma(x, k; \lambda)
-                &= \Rotation {
-                    \LeftDifferentialOperatorFirstOrder{Y} \tilde \sigma
-                    + \sum_{j = 1}^{\dim \VectorSpace} (\DifferenceOperator[\VectorSpace]{j} \tilde \sigma) \Rep[\GroupDirect] {k Y k^{-1} \lambda} (\partial_j)
-                }(x, k; \lambda)\\
-                \LeftDifferentialOperatorFirstOrder Y \tilde \sigma(x, k; \lambda)
-                &= \InverseRotation {\LeftDifferentialOperatorFirstOrder Y \sigma
-                - \sum_{j = 1}^{\dim \VectorSpace} \DifferenceOperator{j} \sigma \ \Rep \lambda (Y^t X_j)
-                }(x, k; \lambda).
-            \end{align*}
-    \end{enumerate}
-\end{lemma}
-\begin{proof}
-    Let us write $T = \Op (\sigma)$.
-    It follows that by
-    % TODO: Reference both quantisations
-    \begin{align*}
-        T \phi(x, k)
-        &= \int_{\GroupDirect} \phi(y, l) {\tilde \kappa}_{x, k}(x - y, l^{-1} k) \dd (y, l)\\
-        &= \int_{\GroupDirect} \phi(y, l) {\kappa}_{x, k}({(y, l)}^{-1} (x, k)) \dd (y, l)
-    \end{align*}
-    in the sense of distributions.
-    Therefore, it follows that we have
-    \begin{align}
-        {\tilde \kappa}_{x, k}(x - y, l^{-1} k) =
-        {\kappa}_{x, k}({(y, l)}^{-1} (x, k)),
-        \label{eq:link_between_the_kernels}
-    \end{align}
-    again in the sense of distributions.
-
-    \begin{enumerate}
-        \item
-            Suppose first that $\sigma \in \SymbolClass m {\rho, \delta}$ for $m < -\dim \Group$
-            so that its kernel $\kappa_{x, k} \in \Schwartz \Group$ by Theorem~\ref{theorem:kernel_estimates}.
-
-            By definition, $\DifferenceOperator{q} \sigma(x, k; \lambda)$ is equal to
-            \begin{align*}
-                &\quad \int_\Group q((y, l)^{-1}) \kappa_{x, k}((y, l)^{-1}) \e^{\i \turn \ip {u^{-1} \lambda} y} \RightRegularRepresentation(l) \dd (y, l)\\
-                &= \int_\Group q((y, l)^{-1} (x, k)) \kappa_{x, k}((y, l)^{-1} (x, k))\\
-                &\qquad \qquad \e^{\i \turn \ip {u^{-1} \lambda} {k^{-1} (y - x)}} \RightRegularRepresentation(k^{-1} l) \dd (y, l)
-            \end{align*}
-            where we substituted $(y, l)$ for $(x, k)^{-1} (y, l)$ to obtain the last line.
-
-            Using
-            \begin{align*}
-                (y, l)^{-1} (x, k) = (l^{-1}(x - y), l^{-1} k)
-            \end{align*}
-            and~\eqref{eq:link_between_the_kernels},
-            if follows that $\DifferenceOperator{q} \sigma(x, k; \lambda)$ becomes
-            \begin{align*}
-                \int_\Group q(l^{-1}(x - y), l^{-1} k) \tilde \kappa_{x, k}(x - y, l^{-1} k) \e^{\i \turn \ip {k u^{-1} \lambda} {(y - x)}} \RightRegularRepresentation(k^{-1} l) \dd (y, l).
-            \end{align*}
-
-            We can now substitute $y$ for $y + x$ and $l$ for $k l$ to obtain that
-            \begin{align*}
-                &\DifferenceOperator{q} \sigma(x, k; \lambda) F(u) =\\
-                &\quad \int_\Group q(-l^{-1} y, l^{-1}) \tilde \kappa_{x, k}(-y, l^{-1}) \e^{\i \turn \ip {k u^{-1} \lambda} y} \RightRegularRepresentation(l) \dd (y, l) F(u)
-            \end{align*}
-            which we recognise to be exactly $\DifferenceOperator {\tilde q} \tilde \sigma(x, k, k u^{-1} \lambda) F(u)$.
-            Therefore, we have shown that
-            \begin{align*}
-                \DifferenceOperator{q} \sigma(x, k; \lambda) F(u)
-                = \DifferenceOperator {\tilde q} \tilde \sigma(x, k, k u^{-1} \lambda) F(u),
-            \end{align*}
-            or in other words $\DifferenceOperator q \sigma = \Rotation {\DifferenceOperator[\GroupDirect] {\tilde q} \tilde \sigma}$.
-
-            Now, suppose that $m \geq -\dim \Group$.
-            Setting
-            \begin{align*}
-                \gamma \defeq -\dim \Group - 1 - m.
-            \end{align*}
-            Since $\Rep \lambda \BesselPotential \gamma \sigma$ is a symbol of order $< -\dim \Group$,
-            then by the adove, we have
-            \begin{align*}
-                \Rep \lambda \BesselPotential \gamma \sigma
-                = \Rotation {\Rep \lambda \BesselPotential \gamma \tilde \sigma}
-                = \Rep \lambda \BesselPotential \gamma \Rotation {\tilde \sigma},
-            \end{align*}
-            or in other words $\sigma = \Rotation {\tilde \sigma}$.
-            % TODO Conclude for difference operators
-
-            The other identity is proven by observing that $\InverseRotation \dummy$ is the inverse of $\Rotation \dummy$.
-        \item
-            This identity follows easily from the previous point.
-        \item
-            Applying $\LeftDifferentialOperatorFirstOrder Y$ on both sides of $\sigma = \Rotation {\tilde \sigma}$,
-            we obtain
-            \begin{align}
-                \LeftDifferentialOperatorFirstOrder Y_k \sigma(x, k; \lambda)
-                &= \LeftDifferentialOperatorFirstOrder Y_{k' = k} \tilde \sigma(x, k'; k u^{-1} \lambda) + \LeftDifferentialOperatorFirstOrder Y_{k' = k} \tilde \sigma(x, k; k' u^{-1} \lambda)\\
-                &= \Rotation {\LeftDifferentialOperatorFirstOrder Y \tilde \sigma}(x, k; \lambda) + \LeftDifferentialOperatorFirstOrder Y_{k' = k} \tilde \sigma(x, k; k' u^{-1} \lambda).
-                \label{eq:Y_derivative_of_rotated_symbol_on_direct_product}
-            \end{align}
-
-            The second term on the right-hand side can be computed via Lemma \ref{lemma:Y_derivative_on_lambda_variable_of_symbols} to be
-            \begin{align*}
-                \LeftDifferentialOperatorFirstOrder Y_{k' = k} \tilde \sigma(x, k; k' u^{-1} \lambda)
-                &= \sum_{j = 1}^{\dim \VectorSpace} \DifferenceOperator[\VectorSpace]{j} \tilde \sigma(x, k; k u^{-1} \lambda) \Rep[\GroupDirect]{k Y u^{-1} \lambda} (\partial_j)\\
-                &= \sum_{j = 1}^{\dim \VectorSpace} \DifferenceOperator[\VectorSpace]{j} \tilde \sigma(x, k; k u^{-1} \lambda) \Rep[\GroupDirect]{k Y k^{-1} (k u^{-1} \lambda)} (\partial_j)\\
-                &= \sum_{j = 1}^{\dim \VectorSpace} \Rotation {\DifferenceOperator[\VectorSpace]{j} \tilde \sigma} (x, k; \lambda) \Rotation {\Rep[\GroupDirect]{k Y k^{-1} \lambda} (\partial_j)}.
-            \end{align*}
-
-            Plugging the above into \eqref{eq:Y_derivative_of_rotated_symbol_on_direct_product}, we obtain
-            \begin{align*}
-                \LeftDifferentialOperatorFirstOrder Y \sigma(x, k; \lambda)
-                &= \Rotation {\LeftDifferentialOperatorFirstOrder Y \tilde \sigma}(x, k; \lambda)
-                + \sum_{j = 1}^{\dim \VectorSpace} \Rotation {\DifferenceOperator[\VectorSpace]{j} \tilde \sigma \ \Rep[\GroupDirect]{k Y k^{-1} \lambda} (\partial_j)}(x, k; \lambda)\\
-                &= \Rotation {\LeftDifferentialOperatorFirstOrder Y \tilde \sigma
-                    + \sum_{j = 1}^{\dim \VectorSpace} \DifferenceOperator[\VectorSpace]{j} \tilde \sigma \ \Rep[\GroupDirect]{k Y k^{-1} \lambda} (\partial_j)
-                }(x, k; \lambda),
-            \end{align*}
-            which is what we wanted to show.
-
-            To show the second identity,
-            we apply $\LeftDifferentialOperatorFirstOrder Y$ on both sides of $\tilde \sigma = \InverseRotation {\sigma}$ to obtain
-            \begin{align*}
-                \LeftDifferentialOperatorFirstOrder Y_k \tilde \sigma(x, k; \lambda)
-                = \LeftDifferentialOperatorFirstOrder Y_{k' = k} \sigma(x, k'; u k^{-1} \lambda) + \LeftDifferentialOperatorFirstOrder Y_{k' = k} \sigma(x, k; u {k'}^{-1} \lambda) \notag\\
-                = \InverseRotation {\LeftDifferentialOperatorFirstOrder Y \sigma}(x, k; \lambda) - \LeftDifferentialOperatorFirstOrder Y_{u} \tilde \sigma(x, k; u k^{-1} \lambda).
-                \label{eq:Y_derivative_of_rotated_symbol_on_semi-direct_product}
-            \end{align*}
-
-            Using Lemma~\ref{lemma:Y_derivative_on_lambda_variable_of_symbols} again to compute the second term of the right-hand side,
-            \begin{align*}
-                \LeftDifferentialOperatorFirstOrder Y_u \tilde \sigma(x, k; u k^{-1} \lambda)
-                &= \sum_{j = 1}^{\dim \VectorSpace} \DifferenceOperator{j} \sigma (x, k; u k^{-1} \lambda) \Rep {u Y k \lambda} (X_j)\\
-                &= \sum_{j = 1}^{\dim \VectorSpace} \DifferenceOperator{j} \sigma (x, k; u k^{-1} \lambda) \Rep {u Y u^{-1} u k \lambda} (X_j)\\
-                &= \sum_{j = 1}^{\dim \VectorSpace} \InverseRotation {\DifferenceOperator{j} \sigma \Rep {u Y u^{-1} \lambda} (X_j)}.
-            \end{align*}
-
-            Observing that in the above,
-            \begin{align*}
-                \Rep {u Y u^{-1} \lambda} (X_j)
-                = \i \turn \ip {u Y u^{-1} \lambda} {u X_j}
-                = \i \turn \ip {\lambda} {u Y^t X_j}
-                = \Rep \lambda (Y^t X_j)
-            \end{align*}
-            so that \eqref{eq:Y_derivative_of_rotated_symbol_on_direct_product} becomes
-            \begin{align*}
-                \LeftDifferentialOperatorFirstOrder Y_k \tilde \sigma(x, k; \lambda)
-                = \InverseRotation {\LeftDifferentialOperatorFirstOrder Y \sigma
-                - \sum_{j = 1}^{\dim \VectorSpace} \DifferenceOperator{j} \sigma \ \Rep \lambda (Y^t X_j)
-                }(x, k; \lambda),
-            \end{align*}
-            concluding the proof.
-    \end{enumerate}
-\end{proof}
-
-\begin{lemma}
-\label{lemma:inclusion_in_zero_class}
-    Let $m \defeq \frac {-\dim \CompactGroup} 2 (1 - \rho)$.
-    % TODO: Can we prove the result for $m = 0$ or improve?
-    \begin{enumerate}
-        \item
-            If $\sigma \in \SymbolClass m {\rho, \delta}$,
-            then $\tilde \sigma = \InverseRotation \sigma$ satisfies
-            \begin{align*}
-                \sup_{(x, k) \in \Group} \esssup_{\lambda \in \VectorSpace}
-                \norm [\Lin {\Lebesgue 2 \CompactGroup}] {\tilde \sigma(x, k; \lambda)} < \infty.
-            \end{align*}
-        \item
-            If $\tilde \sigma \in \SymbolClass [\GroupDirect] m {\rho, \delta}$,
-            then $\sigma = \Rotation {\tilde \sigma}$ satisfies
-            \begin{align*}
-                \sup_{(x, k) \in \Group} \esssup_{\lambda \in \VectorSpace}
-                \norm [\Lin {\Lebesgue 2 \CompactGroup}] {\sigma(x, k; \lambda)} < \infty.
-            \end{align*}
-    \end{enumerate}
-\end{lemma}
-\begin{proof}
-    Let $F \in \Lebesgue 2 \CompactGroup$ and $u \in \CompactGroup$.
-    By the Sobolev Inequality,
-    we know that
-    \begin{align*}
-        \int_\CompactGroup \sup_{v \in \CompactGroup} \abs {\sigma(x, k; v \lambda) F(u)}^2 \dd u
-        \leq C \sum_{\beta} \int_\CompactGroup \int_\CompactGroup \abs{Y^\beta_v \sigma(x, k; v \lambda) F(u)}^2 \dd v \dd u
-    \end{align*}
-    Using Lemma~\ref{lemma:Y_derivative_on_lambda_variable_of_symbols},
-    we know that each $Y^\beta_v \sigma \in \SymbolClass {m + \abs \beta (1 - \rho)} {\rho, \delta} \subset \SymbolClass 0 {\rho, \delta}$ so that the above becomes
-    \begin{align*}
-        \sup_{(x, k) \in \Group} \esssup_{\lambda \in \VectorSpace}
-        \int_\CompactGroup \sup_{v \in \CompactGroup} \abs {\sigma(x, k; v \lambda) F(u)}^2 \dd u
-        \leq C \norm [\Lebesgue 2 \CompactGroup] {F}^2.
-    \end{align*}
-
-    From the above inequality, we easily derive that
-    \begin{align*}
-        \sup_{(x, k) \in \Group}& \esssup_{\lambda \in \VectorSpace} \norm [\Lebesgue 2 \CompactGroup] {\tilde \sigma(x, k; \lambda) F}^2\\
-        &= \sup_{(x, k) \in \Group} \esssup_{\lambda \in \VectorSpace} \int_\CompactGroup \abs {\sigma(x, k; u k^{-1} \lambda) F(u)}^2 \dd u\\
-        &\leq \sup_{(x, k) \in \Group} \esssup_{\lambda \in \VectorSpace} \int_\CompactGroup \sup_{v \in \CompactGroup} \abs {\sigma(x, k; v \lambda) F(u)}^2 \dd u\\
-        &\leq C \norm [\Lebesgue 2 \CompactGroup] {F}^2,
-    \end{align*}
-    which concludes the proof.
-
-    The second bound is obtained with an identical argument.
-\end{proof}
-
-\begin{theorem}
-    Let $\delta' = \max \{\delta, 1 - \rho\}$ and $m' = m + \frac {\dim \CompactGroup} 2 (1 - \rho)$.
-
-    \begin{enumerate}
-        \item
-            For each $\sigma \in \SymbolClass m {\rho, \delta}$,
-            the symbol $\tilde \sigma = \InverseRotation \sigma$ belongs to $\SymbolClass [\GroupDirect] {m'} {\rho, \delta'}$
-            and satisfies
-            \begin{align*}
-                \Op[\Group] (\sigma) = \Op[\GroupDirect] (\tilde \sigma).
-            \end{align*}
-        \item
-            Reciprocally, for each $\tilde \sigma \in \SymbolClass [\GroupDirect] m {\rho, \delta}$,
-            the symbol $\sigma = \Rotation {\tilde \sigma}$ belongs to $\SymbolClass {m'} {\rho, \delta'}$
-            and satisfies
-            \begin{align*}
-                \Op[\GroupDirect] (\tilde \sigma) = \Op[\Group] (\sigma).
-            \end{align*}
-    \end{enumerate}
-
-    In particular, if $\rho = 1$, the symbol classes coincide
-    \begin{align*}
-        \SymbolClass m {1, \delta} = \SymbolClass [\GroupDirect] m {1, \delta}.
-    \end{align*}
-\end{theorem}
-\begin{proof}
-    Let us prove the first claim,
-    as the proof of the second uses an identical argument.
-
-    Let $\sigma \in \SymbolClass m {\rho, \delta}$,
-    and write $\tilde \sigma \defeq \InverseRotation \sigma$.
-
-    \begin{claim}
-        Given $\tilde{q} \in \CompactGroup$ and $\beta \in \N^{\dim \Group}$,
-        there exists a symbol $\tau \in \SymbolClass {m - \rho \order(q) + \delta' \abs \beta} {\rho, \delta'}$ such that
-        \begin{align*}
-            \DifferenceOperator [\GroupDirect] {\tilde q} X^\beta \tilde \sigma = \InverseRotation \tau.
-        \end{align*}
-    \end{claim}
-    \begin{proof}[Proof of the claim]
-        Let us prove the claim by induction on $\abs \beta$.
-        The initial case $\beta = 0$ follows easily from Lemma~\ref{lemma:link_between_symbols} (\ref{item:action_of_difference_operators})
-        and the inclusion
-        \begin{align*}
-            \SymbolClass {m - \rho \order(q)} {\rho, \delta} \subset \SymbolClass {m - \rho \order(q)} {\rho, \delta'}.
-        \end{align*}
-
-        Now, let us assume the claim holds for a certain $\beta$,
-        so that there exists $\tau \in \SymbolClass {m - \rho \order(q) + \delta' \abs \beta} {\rho, \delta'}$ such that
-        \begin{align*}
-            \DifferenceOperator [\GroupDirect] {\tilde q} X^\beta \tilde \sigma = \InverseRotation \tau.
-        \end{align*}
-
-        If $X \in \LieAlgebra \cap \VectorSpace$,
-        then by (\ref{item:action_of_Euclidean_derivative}) of Lemma~\ref{lemma:link_between_symbols} we have
-        \begin{align*}
-            \DifferenceOperator [\GroupDirect] {\tilde q} X X^\beta \tilde \sigma = \InverseRotation {X \tau},
-        \end{align*}
-        where $X \tau \in \SymbolClass {m - \rho \order(q) + \delta' (\abs \beta + 1)} {\rho, \delta'}$.
-
-        If $X \in \LieAlgebraCompactGroup$,
-        then by (\ref{item:action_of_K-derivative}) of Lemma~\ref{lemma:link_between_symbols} we have
-        \begin{align*}
-            \DifferenceOperator [\GroupDirect] {\tilde q} X X^\beta \tilde \sigma = \InverseRotation {X \tau - \sum_{j = 1}^{\dim \VectorSpace} \DifferenceOperator{j} \tau \ \Rep {\lambda} (X^t X_j) }
-        \end{align*}
-        where $X \tau - \sum_{j = 1}^{\dim \VectorSpace} \DifferenceOperator{j} \tau \ \Rep {\lambda} (X^t X_j) \in \SymbolClass {m - \rho \order(q) + \delta' (\abs \beta + 1)} {\rho, \delta'}$.
-        To see this,
-        we observe the condition $\delta' \geq 1 - \rho$ implies that $X \tau$ is the term with higher order.
-
-        Either way, this concludes the induction, and thus the proof of the claim.
-    \end{proof}
-
-    By our claim,
-    there exists a symbol $\tau \in \SymbolClass {m - \rho \order(q) + \delta' \abs \beta} {\rho, \delta'}$ such that
-    \begin{align*}
-        \DifferenceOperator [\GroupDirect] {\tilde q} X^\beta \tilde \sigma = \InverseRotation \tau.
-    \end{align*}
-
-    Note that the above implies that
-    \begin{align*}
-        \Rep[\GroupDirect] \lambda \BesselPotential{-m' + \rho \order(q) - \delta' \abs \beta + \gamma} \DifferenceOperator [\GroupDirect] {\tilde q} X^\beta \tilde \sigma(x, k; \lambda) \Rep [\GroupDirect] \lambda \BesselPotential{-\gamma}\\
-        = \InverseRotation {\Rep \lambda \BesselPotential{-m' + \rho \order(q) - \delta' \abs \beta + \gamma} \tau \Rep \lambda \BesselPotential{-\gamma}} (x, k; \lambda).
-    \end{align*}
-
-    Since the operator inside $\InverseRotation \dummy$ on the second line belongs to
-    \begin{align*}
-        \SymbolClass {-\frac {\dim \CompactGroup} 2 (1 - \rho) } {\rho, \delta'},
-    \end{align*}
-    then Lemma~\ref{lemma:inclusion_in_zero_class} implies that
-    \begin{align*}
-        &\sup_{g \in \GroupDirect} \esssup_{\lambda \in \VectorSpace}\\
-        &\quad
-        \norm [\Lin {\Lebesgue 2 \CompactGroup}] {%
-            \Rep[\GroupDirect] \lambda \BesselPotential{-m' + \rho \abs \alpha  - \delta' \abs \beta} \DifferenceOperator [\GroupDirect] {\tilde q} X^\beta \tilde \sigma(x, k; \lambda) \Rep [\GroupDirect] \lambda
-        }
-        % TODO: show the direct product doesn't require the gamma trick
-    \end{align*}
-    is finite,
-    which by definition means that $\tilde \sigma \in \SymbolClass [\GroupDirect] {m'} {\rho, \delta'}$.
-\end{proof}
+%\section{Link with the H\"ormander classes}
+%
+%\begin{definition}[Rotation of symbols]
+%    Let $\tilde \sigma \in \SymbolClass[\GroupDirect]{m}{\rho, \delta}$.
+%    We define the operator
+%    \begin{align*}
+%        \Rotation {\tilde \sigma} : \SmoothFunctions \CompactGroup \to \SmoothFunctions \CompactGroup
+%    \end{align*}
+%    via the formula
+%    \begin{align*}
+%        \Rotation {\tilde \sigma}(x, k; \lambda) F(u) \defeq \tilde \sigma(x, k; k u^{-1} \lambda) F(u),
+%    \end{align*}
+%    where $x, \lambda \in \VectorSpace$, $k, u \in \CompactGroup$, and $F \in \SmoothFunctions \CompactGroup$.
+%
+%    Similarly, given $\sigma \in \SymbolClass m {\rho, \delta}$,
+%    we define the operator
+%    \begin{align*}
+%        \InverseRotation \sigma : \SmoothFunctions \CompactGroup \to \SmoothFunctions \CompactGroup
+%    \end{align*}
+%    via the formula
+%    \begin{align*}
+%        \InverseRotation \sigma (x, k; \lambda) F(u) \defeq \sigma(x, k; u k^{-1} \lambda) F(u),
+%    \end{align*}
+%    where again $x, \lambda \in \VectorSpace$, $k, u \in \CompactGroup$, and $F \in \SmoothFunctions \CompactGroup$.
+%\end{definition}
+%
+%\begin{lemma}
+%\label{lemma:Y_derivative_on_lambda_variable_of_symbols}
+%    Let $Y \in \LieAlgebraCompactGroup$, $\sigma \in \SymbolClass m {\rho, \delta}$, $\tilde \sigma \in \SymbolClass[\GroupDirect] m {\rho, \delta}$.
+%    We have the following expression
+%    \begin{align*}
+%        \LeftDifferentialOperatorFirstOrder Y_l \sigma(x, k; l \lambda)
+%        &= \sum_{j = 1}^{\dim \VectorSpace} \DifferenceOperator{j} \sigma(x, k; l \lambda) \Rep {l Y \lambda} (X_j)\\
+%        \LeftDifferentialOperatorFirstOrder Y_l \tilde \sigma(x, k; l \lambda)
+%        &= \sum_{j = 1}^{\dim \VectorSpace} \DifferenceOperator[\VectorSpace]{j} \tilde \sigma(x, k; l \lambda) \Rep[\GroupDirect] {l Y \lambda} (\partial_j),
+%    \end{align*}
+%    where $(x, k) \in \GroupDirect$, $\lambda \in \VectorSpace$ and $l \in \CompactGroup$.
+%\end{lemma}
+%\begin{proof}
+%    By definition, we know that
+%    \begin{align*}
+%        \LeftDifferentialOperatorFirstOrder Y_l \sigma(x, k; l \lambda)
+%        &= \eval{\D*{1}{t}}{t = 0} \sigma(x, k; l \exp_\CompactGroup (t Y) \lambda),
+%    \end{align*}
+%    which after applying the chain rule, becomes
+%    \begin{align}
+%        &\LeftDifferentialOperatorFirstOrder Y_l \sigma(x, k; l \lambda) \notag\\
+%        &\quad = \sum_{j = 1}^{\dim \VectorSpace} \eval{\D*{1}{s}}{s = 0} \sigma(x, k; l \lambda + s u e_j) \eval{\D*{1}{t}}{t = 0} \ip {l \exp_\CompactGroup (t Y) \lambda} {u e_j}.
+%        \label{eq:k_differentiation_of_lambda_variable_in_symbol}
+%    \end{align}
+%
+%    Now, we observe that
+%    \begin{align*}
+%        \eval{\D*{1}{t}}{t = 0} \ip {l \exp_\CompactGroup (t Y) \lambda} {u e_j}
+%        = \ip {l Y \lambda} {u e_j} = \frac{1}{\i \turn} \Rep {l Y \lambda} (X_j),
+%    \end{align*}
+%    while at the same time
+%    \begin{align*}
+%        \eval{\D*{1}{s}}{s = 0} \sigma(x, k; l \lambda + s u e_j)
+%        = \i \turn \DifferenceOperator{j} \sigma(x, k; l \lambda).
+%    \end{align*}
+%
+%    Therefore, it follows that~\eqref{eq:k_differentiation_of_lambda_variable_in_symbol} becomes
+%    \begin{align*}
+%        \LeftDifferentialOperatorFirstOrder Y_l \sigma(x, k; l \lambda)
+%        = \sum_{j = 1}^{\dim \VectorSpace} \DifferenceOperator{j} \sigma(x, k; l \lambda) \Rep {l Y \lambda} (X_j).
+%    \end{align*}
+%
+%    Now, we turn to the case of symbols on the direct product.
+%    Again, we start with
+%    \begin{align*}
+%        \LeftDifferentialOperatorFirstOrder Y_l \tilde \sigma(x, k; l \lambda)
+%        &= \eval{\D*{1}{t}}{t = 0} \tilde \sigma(x, k; l \exp_\CompactGroup (t Y) \lambda).
+%    \end{align*}
+%    Applying the chain rule, we obtain
+%    \begin{align}
+%        \LeftDifferentialOperatorFirstOrder Y_l \tilde \sigma(x, k; l \lambda)
+%        &= \sum_{j = 1}^{\dim \VectorSpace} \eval{\D*{1}{s}}{s = 0} \tilde \sigma(x, k; l \lambda + s e_j) \eval{\D*{1}{t}}{t = 0} \ip {l \exp_\CompactGroup (t Y) \lambda} {e_j}.
+%        \label{eq:k_differentiation_of_lambda_variable_in_symbol_2}
+%    \end{align}
+%
+%    By definition, it is clear that
+%    \begin{align*}
+%        \DifferenceOperator[\VectorSpace]{j} \tilde \sigma(x, k; l \lambda) = \frac 1 {\i \turn} \D{1}[\tilde \sigma]{{\lambda_j} } (x, k, l \lambda),
+%    \end{align*}
+%    while
+%    \begin{align*}
+%        \eval{\D*{1}{t}}{t = 0} \ip {l \exp_\CompactGroup (t Y) \lambda} {e_j}
+%        &= \ip {l Y \lambda} {e_j}
+%        = \frac{1}{\i \turn} \Rep[\GroupDirect] {l Y \lambda} (\partial_j).
+%    \end{align*}
+%
+%    Therefore, it follows that \eqref{eq:k_differentiation_of_lambda_variable_in_symbol_2} becomes
+%    \begin{align}
+%        \LeftDifferentialOperatorFirstOrder Y_l \tilde \sigma(x, k; l \lambda)
+%        &= \sum_{j = 1}^{\dim \VectorSpace} \DifferenceOperator[\VectorSpace]{j} \tilde \sigma(x, k; l \lambda) \Rep[\GroupDirect] {l Y \lambda} (\partial_j).
+%    \end{align}
+%\end{proof}
+%
+%\begin{lemma}
+%\label{lemma:link_between_symbols}
+%    Let $\sigma$ and $\tilde \sigma$ be symbols on $\Group$ and $\GroupDirect$ respectively be such that
+%    \begin{align*}
+%        \Op[\Group] (\sigma) = \Op[\GroupDirect] (\tilde \sigma).
+%    \end{align*}
+%    \begin{enumerate}
+%        \item
+%            \label{item:action_of_difference_operators}
+%            If $q \in \SmoothFunctions \Group$,
+%            then defining $\tilde q(y, l) = q(l y, l)$ yields
+%            \begin{align*}
+%                \DifferenceOperator{q} \sigma = \Rotation {\DifferenceOperator[\GroupDirect]{\tilde q} \tilde \sigma}
+%                \quad \text{and} \quad
+%                \DifferenceOperator[\GroupDirect]{\tilde q} \tilde \sigma = \InverseRotation {\DifferenceOperator{q} \sigma}.
+%            \end{align*}
+%            In particular, $\sigma = \Rotation {\tilde \sigma}$ and $\tilde \sigma = \InverseRotation \sigma$.
+%        \item
+%            \label{item:action_of_Euclidean_derivative}
+%            If $X \in \LieAlgebra \cap \VectorSpace$, then
+%            \begin{align*}
+%                \LeftDifferentialOperatorFirstOrder{X} \sigma
+%                = \Rotation {\LeftDifferentialOperatorFirstOrder{X} \tilde \sigma}
+%                \quad \text{and} \quad
+%                \LeftDifferentialOperatorFirstOrder{X} \tilde \sigma
+%                = \InverseRotation {\LeftDifferentialOperatorFirstOrder{X} \sigma}.
+%            \end{align*}
+%        \item
+%            \label{item:action_of_K-derivative}
+%            If $Y \in \LieAlgebraCompactGroup$, we have
+%            \begin{align*}
+%                \LeftDifferentialOperatorFirstOrder{Y} \sigma(x, k; \lambda)
+%                &= \Rotation {
+%                    \LeftDifferentialOperatorFirstOrder{Y} \tilde \sigma
+%                    + \sum_{j = 1}^{\dim \VectorSpace} (\DifferenceOperator[\VectorSpace]{j} \tilde \sigma) \Rep[\GroupDirect] {k Y k^{-1} \lambda} (\partial_j)
+%                }(x, k; \lambda)\\
+%                \LeftDifferentialOperatorFirstOrder Y \tilde \sigma(x, k; \lambda)
+%                &= \InverseRotation {\LeftDifferentialOperatorFirstOrder Y \sigma
+%                - \sum_{j = 1}^{\dim \VectorSpace} \DifferenceOperator{j} \sigma \ \Rep \lambda (Y^t X_j)
+%                }(x, k; \lambda).
+%            \end{align*}
+%    \end{enumerate}
+%\end{lemma}
+%\begin{proof}
+%    Let us write $T = \Op (\sigma)$.
+%    It follows that by
+%    % TODO: Reference both quantisations
+%    \begin{align*}
+%        T \phi(x, k)
+%        &= \int_{\GroupDirect} \phi(y, l) {\tilde \kappa}_{x, k}(x - y, l^{-1} k) \dd (y, l)\\
+%        &= \int_{\GroupDirect} \phi(y, l) {\kappa}_{x, k}({(y, l)}^{-1} (x, k)) \dd (y, l)
+%    \end{align*}
+%    in the sense of distributions.
+%    Therefore, it follows that we have
+%    \begin{align}
+%        {\tilde \kappa}_{x, k}(x - y, l^{-1} k) =
+%        {\kappa}_{x, k}({(y, l)}^{-1} (x, k)),
+%        \label{eq:link_between_the_kernels}
+%    \end{align}
+%    again in the sense of distributions.
+%
+%    \begin{enumerate}
+%        \item
+%            Suppose first that $\sigma \in \SymbolClass m {\rho, \delta}$ for $m < -\dim \Group$
+%            so that its kernel $\kappa_{x, k} \in \Schwartz \Group$ by Theorem~\ref{theorem:kernel_estimates}.
+%
+%            By definition, $\DifferenceOperator{q} \sigma(x, k; \lambda)$ is equal to
+%            \begin{align*}
+%                &\quad \int_\Group q((y, l)^{-1}) \kappa_{x, k}((y, l)^{-1}) \e^{\i \turn \ip {u^{-1} \lambda} y} \RightRegularRepresentation(l) \dd (y, l)\\
+%                &= \int_\Group q((y, l)^{-1} (x, k)) \kappa_{x, k}((y, l)^{-1} (x, k))\\
+%                &\qquad \qquad \e^{\i \turn \ip {u^{-1} \lambda} {k^{-1} (y - x)}} \RightRegularRepresentation(k^{-1} l) \dd (y, l)
+%            \end{align*}
+%            where we substituted $(y, l)$ for $(x, k)^{-1} (y, l)$ to obtain the last line.
+%
+%            Using
+%            \begin{align*}
+%                (y, l)^{-1} (x, k) = (l^{-1}(x - y), l^{-1} k)
+%            \end{align*}
+%            and~\eqref{eq:link_between_the_kernels},
+%            if follows that $\DifferenceOperator{q} \sigma(x, k; \lambda)$ becomes
+%            \begin{align*}
+%                \int_\Group q(l^{-1}(x - y), l^{-1} k) \tilde \kappa_{x, k}(x - y, l^{-1} k) \e^{\i \turn \ip {k u^{-1} \lambda} {(y - x)}} \RightRegularRepresentation(k^{-1} l) \dd (y, l).
+%            \end{align*}
+%
+%            We can now substitute $y$ for $y + x$ and $l$ for $k l$ to obtain that
+%            \begin{align*}
+%                &\DifferenceOperator{q} \sigma(x, k; \lambda) F(u) =\\
+%                &\quad \int_\Group q(-l^{-1} y, l^{-1}) \tilde \kappa_{x, k}(-y, l^{-1}) \e^{\i \turn \ip {k u^{-1} \lambda} y} \RightRegularRepresentation(l) \dd (y, l) F(u)
+%            \end{align*}
+%            which we recognise to be exactly $\DifferenceOperator {\tilde q} \tilde \sigma(x, k, k u^{-1} \lambda) F(u)$.
+%            Therefore, we have shown that
+%            \begin{align*}
+%                \DifferenceOperator{q} \sigma(x, k; \lambda) F(u)
+%                = \DifferenceOperator {\tilde q} \tilde \sigma(x, k, k u^{-1} \lambda) F(u),
+%            \end{align*}
+%            or in other words $\DifferenceOperator q \sigma = \Rotation {\DifferenceOperator[\GroupDirect] {\tilde q} \tilde \sigma}$.
+%
+%            Now, suppose that $m \geq -\dim \Group$.
+%            Setting
+%            \begin{align*}
+%                \gamma \defeq -\dim \Group - 1 - m.
+%            \end{align*}
+%            Since $\Rep \lambda \BesselPotential \gamma \sigma$ is a symbol of order $< -\dim \Group$,
+%            then by the adove, we have
+%            \begin{align*}
+%                \Rep \lambda \BesselPotential \gamma \sigma
+%                = \Rotation {\Rep \lambda \BesselPotential \gamma \tilde \sigma}
+%                = \Rep \lambda \BesselPotential \gamma \Rotation {\tilde \sigma},
+%            \end{align*}
+%            or in other words $\sigma = \Rotation {\tilde \sigma}$.
+%            % TODO Conclude for difference operators
+%
+%            The other identity is proven by observing that $\InverseRotation \dummy$ is the inverse of $\Rotation \dummy$.
+%        \item
+%            This identity follows easily from the previous point.
+%        \item
+%            Applying $\LeftDifferentialOperatorFirstOrder Y$ on both sides of $\sigma = \Rotation {\tilde \sigma}$,
+%            we obtain
+%            \begin{align}
+%                \LeftDifferentialOperatorFirstOrder Y_k \sigma(x, k; \lambda)
+%                &= \LeftDifferentialOperatorFirstOrder Y_{k' = k} \tilde \sigma(x, k'; k u^{-1} \lambda) + \LeftDifferentialOperatorFirstOrder Y_{k' = k} \tilde \sigma(x, k; k' u^{-1} \lambda)\\
+%                &= \Rotation {\LeftDifferentialOperatorFirstOrder Y \tilde \sigma}(x, k; \lambda) + \LeftDifferentialOperatorFirstOrder Y_{k' = k} \tilde \sigma(x, k; k' u^{-1} \lambda).
+%                \label{eq:Y_derivative_of_rotated_symbol_on_direct_product}
+%            \end{align}
+%
+%            The second term on the right-hand side can be computed via Lemma \ref{lemma:Y_derivative_on_lambda_variable_of_symbols} to be
+%            \begin{align*}
+%                \LeftDifferentialOperatorFirstOrder Y_{k' = k} \tilde \sigma(x, k; k' u^{-1} \lambda)
+%                &= \sum_{j = 1}^{\dim \VectorSpace} \DifferenceOperator[\VectorSpace]{j} \tilde \sigma(x, k; k u^{-1} \lambda) \Rep[\GroupDirect]{k Y u^{-1} \lambda} (\partial_j)\\
+%                &= \sum_{j = 1}^{\dim \VectorSpace} \DifferenceOperator[\VectorSpace]{j} \tilde \sigma(x, k; k u^{-1} \lambda) \Rep[\GroupDirect]{k Y k^{-1} (k u^{-1} \lambda)} (\partial_j)\\
+%                &= \sum_{j = 1}^{\dim \VectorSpace} \Rotation {\DifferenceOperator[\VectorSpace]{j} \tilde \sigma} (x, k; \lambda) \Rotation {\Rep[\GroupDirect]{k Y k^{-1} \lambda} (\partial_j)}.
+%            \end{align*}
+%
+%            Plugging the above into \eqref{eq:Y_derivative_of_rotated_symbol_on_direct_product}, we obtain
+%            \begin{align*}
+%                \LeftDifferentialOperatorFirstOrder Y \sigma(x, k; \lambda)
+%                &= \Rotation {\LeftDifferentialOperatorFirstOrder Y \tilde \sigma}(x, k; \lambda)
+%                + \sum_{j = 1}^{\dim \VectorSpace} \Rotation {\DifferenceOperator[\VectorSpace]{j} \tilde \sigma \ \Rep[\GroupDirect]{k Y k^{-1} \lambda} (\partial_j)}(x, k; \lambda)\\
+%                &= \Rotation {\LeftDifferentialOperatorFirstOrder Y \tilde \sigma
+%                    + \sum_{j = 1}^{\dim \VectorSpace} \DifferenceOperator[\VectorSpace]{j} \tilde \sigma \ \Rep[\GroupDirect]{k Y k^{-1} \lambda} (\partial_j)
+%                }(x, k; \lambda),
+%            \end{align*}
+%            which is what we wanted to show.
+%
+%            To show the second identity,
+%            we apply $\LeftDifferentialOperatorFirstOrder Y$ on both sides of $\tilde \sigma = \InverseRotation {\sigma}$ to obtain
+%            \begin{align*}
+%                \LeftDifferentialOperatorFirstOrder Y_k \tilde \sigma(x, k; \lambda)
+%                = \LeftDifferentialOperatorFirstOrder Y_{k' = k} \sigma(x, k'; u k^{-1} \lambda) + \LeftDifferentialOperatorFirstOrder Y_{k' = k} \sigma(x, k; u {k'}^{-1} \lambda) \notag\\
+%                = \InverseRotation {\LeftDifferentialOperatorFirstOrder Y \sigma}(x, k; \lambda) - \LeftDifferentialOperatorFirstOrder Y_{u} \tilde \sigma(x, k; u k^{-1} \lambda).
+%                \label{eq:Y_derivative_of_rotated_symbol_on_semi-direct_product}
+%            \end{align*}
+%
+%            Using Lemma~\ref{lemma:Y_derivative_on_lambda_variable_of_symbols} again to compute the second term of the right-hand side,
+%            \begin{align*}
+%                \LeftDifferentialOperatorFirstOrder Y_u \tilde \sigma(x, k; u k^{-1} \lambda)
+%                &= \sum_{j = 1}^{\dim \VectorSpace} \DifferenceOperator{j} \sigma (x, k; u k^{-1} \lambda) \Rep {u Y k \lambda} (X_j)\\
+%                &= \sum_{j = 1}^{\dim \VectorSpace} \DifferenceOperator{j} \sigma (x, k; u k^{-1} \lambda) \Rep {u Y u^{-1} u k \lambda} (X_j)\\
+%                &= \sum_{j = 1}^{\dim \VectorSpace} \InverseRotation {\DifferenceOperator{j} \sigma \Rep {u Y u^{-1} \lambda} (X_j)}.
+%            \end{align*}
+%
+%            Observing that in the above,
+%            \begin{align*}
+%                \Rep {u Y u^{-1} \lambda} (X_j)
+%                = \i \turn \ip {u Y u^{-1} \lambda} {u X_j}
+%                = \i \turn \ip {\lambda} {u Y^t X_j}
+%                = \Rep \lambda (Y^t X_j)
+%            \end{align*}
+%            so that \eqref{eq:Y_derivative_of_rotated_symbol_on_direct_product} becomes
+%            \begin{align*}
+%                \LeftDifferentialOperatorFirstOrder Y_k \tilde \sigma(x, k; \lambda)
+%                = \InverseRotation {\LeftDifferentialOperatorFirstOrder Y \sigma
+%                - \sum_{j = 1}^{\dim \VectorSpace} \DifferenceOperator{j} \sigma \ \Rep \lambda (Y^t X_j)
+%                }(x, k; \lambda),
+%            \end{align*}
+%            concluding the proof.
+%    \end{enumerate}
+%\end{proof}
+%
+%\begin{lemma}
+%\label{lemma:inclusion_in_zero_class}
+%    Let $m \defeq \frac {-\dim \CompactGroup} 2 (1 - \rho)$.
+%    % TODO: Can we prove the result for $m = 0$ or improve?
+%    \begin{enumerate}
+%        \item
+%            If $\sigma \in \SymbolClass m {\rho, \delta}$,
+%            then $\tilde \sigma = \InverseRotation \sigma$ satisfies
+%            \begin{align*}
+%                \sup_{(x, k) \in \Group} \esssup_{\lambda \in \VectorSpace}
+%                \norm [\Lin {\Lebesgue 2 \CompactGroup}] {\tilde \sigma(x, k; \lambda)} < \infty.
+%            \end{align*}
+%        \item
+%            If $\tilde \sigma \in \SymbolClass [\GroupDirect] m {\rho, \delta}$,
+%            then $\sigma = \Rotation {\tilde \sigma}$ satisfies
+%            \begin{align*}
+%                \sup_{(x, k) \in \Group} \esssup_{\lambda \in \VectorSpace}
+%                \norm [\Lin {\Lebesgue 2 \CompactGroup}] {\sigma(x, k; \lambda)} < \infty.
+%            \end{align*}
+%    \end{enumerate}
+%\end{lemma}
+%\begin{proof}
+%    Let $F \in \Lebesgue 2 \CompactGroup$ and $u \in \CompactGroup$.
+%    By the Sobolev Inequality,
+%    we know that
+%    \begin{align*}
+%        \int_\CompactGroup \sup_{v \in \CompactGroup} \abs {\sigma(x, k; v \lambda) F(u)}^2 \dd u
+%        \leq C \sum_{\beta} \int_\CompactGroup \int_\CompactGroup \abs{Y^\beta_v \sigma(x, k; v \lambda) F(u)}^2 \dd v \dd u
+%    \end{align*}
+%    Using Lemma~\ref{lemma:Y_derivative_on_lambda_variable_of_symbols},
+%    we know that each $Y^\beta_v \sigma \in \SymbolClass {m + \abs \beta (1 - \rho)} {\rho, \delta} \subset \SymbolClass 0 {\rho, \delta}$ so that the above becomes
+%    \begin{align*}
+%        \sup_{(x, k) \in \Group} \esssup_{\lambda \in \VectorSpace}
+%        \int_\CompactGroup \sup_{v \in \CompactGroup} \abs {\sigma(x, k; v \lambda) F(u)}^2 \dd u
+%        \leq C \norm [\Lebesgue 2 \CompactGroup] {F}^2.
+%    \end{align*}
+%
+%    From the above inequality, we easily derive that
+%    \begin{align*}
+%        \sup_{(x, k) \in \Group}& \esssup_{\lambda \in \VectorSpace} \norm [\Lebesgue 2 \CompactGroup] {\tilde \sigma(x, k; \lambda) F}^2\\
+%        &= \sup_{(x, k) \in \Group} \esssup_{\lambda \in \VectorSpace} \int_\CompactGroup \abs {\sigma(x, k; u k^{-1} \lambda) F(u)}^2 \dd u\\
+%        &\leq \sup_{(x, k) \in \Group} \esssup_{\lambda \in \VectorSpace} \int_\CompactGroup \sup_{v \in \CompactGroup} \abs {\sigma(x, k; v \lambda) F(u)}^2 \dd u\\
+%        &\leq C \norm [\Lebesgue 2 \CompactGroup] {F}^2,
+%    \end{align*}
+%    which concludes the proof.
+%
+%    The second bound is obtained with an identical argument.
+%\end{proof}
+%
+%\begin{theorem}
+%    Let $\delta' = \max \{\delta, 1 - \rho\}$ and $m' = m + \frac {\dim \CompactGroup} 2 (1 - \rho)$.
+%
+%    \begin{enumerate}
+%        \item
+%            For each $\sigma \in \SymbolClass m {\rho, \delta}$,
+%            the symbol $\tilde \sigma = \InverseRotation \sigma$ belongs to $\SymbolClass [\GroupDirect] {m'} {\rho, \delta'}$
+%            and satisfies
+%            \begin{align*}
+%                \Op[\Group] (\sigma) = \Op[\GroupDirect] (\tilde \sigma).
+%            \end{align*}
+%        \item
+%            Reciprocally, for each $\tilde \sigma \in \SymbolClass [\GroupDirect] m {\rho, \delta}$,
+%            the symbol $\sigma = \Rotation {\tilde \sigma}$ belongs to $\SymbolClass {m'} {\rho, \delta'}$
+%            and satisfies
+%            \begin{align*}
+%                \Op[\GroupDirect] (\tilde \sigma) = \Op[\Group] (\sigma).
+%            \end{align*}
+%    \end{enumerate}
+%
+%    In particular, if $\rho = 1$, the symbol classes coincide
+%    \begin{align*}
+%        \SymbolClass m {1, \delta} = \SymbolClass [\GroupDirect] m {1, \delta}.
+%    \end{align*}
+%\end{theorem}
+%\begin{proof}
+%    Let us prove the first claim,
+%    as the proof of the second uses an identical argument.
+%
+%    Let $\sigma \in \SymbolClass m {\rho, \delta}$,
+%    and write $\tilde \sigma \defeq \InverseRotation \sigma$.
+%
+%    \begin{claim}
+%        Given $\tilde{q} \in \CompactGroup$ and $\beta \in \N^{\dim \Group}$,
+%        there exists a symbol $\tau \in \SymbolClass {m - \rho \order(q) + \delta' \abs \beta} {\rho, \delta'}$ such that
+%        \begin{align*}
+%            \DifferenceOperator [\GroupDirect] {\tilde q} X^\beta \tilde \sigma = \InverseRotation \tau.
+%        \end{align*}
+%    \end{claim}
+%    \begin{proof}[Proof of the claim]
+%        Let us prove the claim by induction on $\abs \beta$.
+%        The initial case $\beta = 0$ follows easily from Lemma~\ref{lemma:link_between_symbols} (\ref{item:action_of_difference_operators})
+%        and the inclusion
+%        \begin{align*}
+%            \SymbolClass {m - \rho \order(q)} {\rho, \delta} \subset \SymbolClass {m - \rho \order(q)} {\rho, \delta'}.
+%        \end{align*}
+%
+%        Now, let us assume the claim holds for a certain $\beta$,
+%        so that there exists $\tau \in \SymbolClass {m - \rho \order(q) + \delta' \abs \beta} {\rho, \delta'}$ such that
+%        \begin{align*}
+%            \DifferenceOperator [\GroupDirect] {\tilde q} X^\beta \tilde \sigma = \InverseRotation \tau.
+%        \end{align*}
+%
+%        If $X \in \LieAlgebra \cap \VectorSpace$,
+%        then by (\ref{item:action_of_Euclidean_derivative}) of Lemma~\ref{lemma:link_between_symbols} we have
+%        \begin{align*}
+%            \DifferenceOperator [\GroupDirect] {\tilde q} X X^\beta \tilde \sigma = \InverseRotation {X \tau},
+%        \end{align*}
+%        where $X \tau \in \SymbolClass {m - \rho \order(q) + \delta' (\abs \beta + 1)} {\rho, \delta'}$.
+%
+%        If $X \in \LieAlgebraCompactGroup$,
+%        then by (\ref{item:action_of_K-derivative}) of Lemma~\ref{lemma:link_between_symbols} we have
+%        \begin{align*}
+%            \DifferenceOperator [\GroupDirect] {\tilde q} X X^\beta \tilde \sigma = \InverseRotation {X \tau - \sum_{j = 1}^{\dim \VectorSpace} \DifferenceOperator{j} \tau \ \Rep {\lambda} (X^t X_j) }
+%        \end{align*}
+%        where $X \tau - \sum_{j = 1}^{\dim \VectorSpace} \DifferenceOperator{j} \tau \ \Rep {\lambda} (X^t X_j) \in \SymbolClass {m - \rho \order(q) + \delta' (\abs \beta + 1)} {\rho, \delta'}$.
+%        To see this,
+%        we observe the condition $\delta' \geq 1 - \rho$ implies that $X \tau$ is the term with higher order.
+%
+%        Either way, this concludes the induction, and thus the proof of the claim.
+%    \end{proof}
+%
+%    By our claim,
+%    there exists a symbol $\tau \in \SymbolClass {m - \rho \order(q) + \delta' \abs \beta} {\rho, \delta'}$ such that
+%    \begin{align*}
+%        \DifferenceOperator [\GroupDirect] {\tilde q} X^\beta \tilde \sigma = \InverseRotation \tau.
+%    \end{align*}
+%
+%    Note that the above implies that
+%    \begin{align*}
+%        \Rep[\GroupDirect] \lambda \BesselPotential{-m' + \rho \order(q) - \delta' \abs \beta + \gamma} \DifferenceOperator [\GroupDirect] {\tilde q} X^\beta \tilde \sigma(x, k; \lambda) \Rep [\GroupDirect] \lambda \BesselPotential{-\gamma}\\
+%        = \InverseRotation {\Rep \lambda \BesselPotential{-m' + \rho \order(q) - \delta' \abs \beta + \gamma} \tau \Rep \lambda \BesselPotential{-\gamma}} (x, k; \lambda).
+%    \end{align*}
+%
+%    Since the operator inside $\InverseRotation \dummy$ on the second line belongs to
+%    \begin{align*}
+%        \SymbolClass {-\frac {\dim \CompactGroup} 2 (1 - \rho) } {\rho, \delta'},
+%    \end{align*}
+%    then Lemma~\ref{lemma:inclusion_in_zero_class} implies that
+%    \begin{align*}
+%        &\sup_{g \in \GroupDirect} \esssup_{\lambda \in \VectorSpace}\\
+%        &\quad
+%        \norm [\Lin {\Lebesgue 2 \CompactGroup}] {%
+%            \Rep[\GroupDirect] \lambda \BesselPotential{-m' + \rho \abs \alpha  - \delta' \abs \beta} \DifferenceOperator [\GroupDirect] {\tilde q} X^\beta \tilde \sigma(x, k; \lambda) \Rep [\GroupDirect] \lambda
+%        }
+%        % TODO: show the direct product doesn't require the gamma trick
+%    \end{align*}
+%    is finite,
+%    which by definition means that $\tilde \sigma \in \SymbolClass [\GroupDirect] {m'} {\rho, \delta'}$.
+%\end{proof}
 
 \section{Littlewood-Paley decomposition}
 
