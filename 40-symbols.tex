@@ -674,6 +674,28 @@ This section mainly borrows its ideas from~\cite{RuzhanskyWirth14}.
     We proceed inductively in a very similar manner for difference operators of higher order.
 \end{proof}
 
+We are now ready to state our main result.
+\begin{theorem}[\cite{RuzhanskyWirth14}]
+    Assume $0 \leq \delta < \delta \leq 1$.
+    Let $\sigma \in \SymbolClass m {\rho, \delta}$ be a symbol of strictly positive order,
+    parameter-elliptic with respect to a sector $\Lambda \subset \C$.
+    If $F$ is analytic in $\C \setminus \{z \in \C : d_\C(z, \Lambda) \leq \epsilon\}$ for some $\epsilon > 0$
+    and satisfies
+    \begin{align*}
+        \abs {F(z)} \leq C \abs z^s
+    \end{align*}
+    for some $s < 0$.
+
+    In this case,
+    \begin{align*}
+        F(\sigma)(g, \lambda)
+        = \frac 1 {\i \turn} \oint_{\partial \Lambda} F(z) (\sigma(g, \lambda) - z \Id {\Lebesgue 2 \CompactGroup})^{-1} \dd z
+    \end{align*}
+    and $F(\sigma)$ defines a symbol in $\SymbolClass {s m} {\rho, \delta}$.
+    If we have not shown the composition formula,
+    we can only show the result for a symbol $\sigma$ which does not depend on $g \in \Group$.
+\end{theorem}
+
 \section{Independence on the family of difference operators}
 
 Note that in Definition~\ref{definition:symbol_classes},
