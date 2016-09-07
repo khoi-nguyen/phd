@@ -846,7 +846,30 @@ The following result is central in our analysis
         \leq C_{N, n, s} t^{s + n}.
     \end{align*}
 
-    The result follows, since $s < 0$ and $n \in \N$ are arbitrary.
+    The first estimate follows, since $s < 0$ and $n \in \N$ are arbitrary.
+
+    Now let $m \geq 0$ and let us check the second symbolic estimate.
+    To this end,
+    we let
+    \begin{align*}
+        G(z) \defeq z^{-\frac m 2} (1 - \e^z)
+    \end{align*}
+    and observe that $\abs {G(z)} \leq z^{-m/4}$.
+    Arguing like before,
+    we obtain
+    \begin{align*}
+        \SymbolSemiNorm {-m/2} {\rho, \delta} N {G(t \Rep \lambda (\Laplacian))}
+        \leq t^{-m/4}
+    \end{align*}
+
+    We can now conclude by Corollary
+    \begin{align*}
+        \SymbolSemiNorm {m} {\rho, \delta } N {\Id {\Lebesgue 2 \CompactGroup} - \eta_t}
+        &\leq
+        \SymbolSemiNorm {-m/2} {\rho, \delta} {N'} {G(t \Rep \lambda (\Laplacian))}
+        \SymbolSemiNorm {m} {\rho, \delta} {N'} {\left(t \Rep \lambda (\Laplacian)\right)^{m/2}}\\
+        &\leq C t^{-\frac m 4 + \frac m 2} = C t^\frac m 2.
+    \end{align*}
 \end{proof}
 
 \section{Independence on the family of difference operators}
