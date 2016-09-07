@@ -625,10 +625,11 @@ This section mainly borrows its ideas from~\cite{RuzhanskyWirth14}.
     \end{align*}
     is bounded on $\Lebesgue 2 \CompactGroup$ uniformly in $g \in \Group$, $\lambda \in \VectorSpace$ and $z \in \lambda$,
     where
-    \begin{align*}
+    \begin{align}
         I_1(m, \gamma) &\defeq (\abs z^{\frac 1 m} + \Rep \lambda \BesselPotential 1)^\gamma,\\
         I_2(\gamma) &\defeq \Rep \lambda \BesselPotential \gamma.
-    \end{align*}
+        \label{eq:operators_for_parameter-ellipticity}
+    \end{align}
 \end{definition}
 
 \begin{example}
@@ -640,6 +641,23 @@ This section mainly borrows its ideas from~\cite{RuzhanskyWirth14}.
         \item The symbol $\Rep \lambda (\Laplacian)$ is parameter-elliptic of order $2$ with respect to any sector which does not contain the line $\R^-$.
     \end{itemize}
 \end{example}
+
+\begin{lemma}[\cite{RuzhanskyWirth14, Theorem 3.1. (1)}]
+    Let $\sigma \in \SymbolClass m {\rho, \delta}$ be a symbol which does not depend on $g \in \Group$,
+    with $m > 0$ and $\rho > 0$.
+    If $\sigma$ is parameter-elliptic with respect to $\lambda \in \Lambda$, then
+    for each $\alpha \in \N^{\dimDifferenceOperators}$, $\gamma_1, \gamma_2 \in \R$,
+    we have
+    \begin{align*}
+        I_1(m, m + \gamma_1)
+        I_2(\gamma_2 + \rho \abs \alpha)
+        \DifferenceOperatorOrder \alpha (\sigma(\lambda) - z \Id {\Lebesgue 2 \CompactGroup})^{-1}
+        I_2(-\gamma_2)
+        I_1(m, -\gamma_1)
+    \end{align*}
+    uniformly in $\lambda \in \VectorSpace$, and $z \in \C$.
+    In the above, $I_1$ and $I_2$ are defined like in~\eqref{eq:operators_for_parameter-ellipticity}.
+\end{lemma}
 
 \section{Independence on the family of difference operators}
 
