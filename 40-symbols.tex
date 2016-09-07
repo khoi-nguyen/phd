@@ -697,21 +697,70 @@ We are now ready to state our main result.
 \end{theorem}
 \begin{proof}
     Let us first assume that $-1 < s < 0$ and fix $\gamma \in \R$.
-    It is clear that
+    By the Helffer-Sj\"ostrand formula,
     \begin{align*}
-        \norm [\Lin {\Lebesgue 2 \CompactGroup}] {%
-            \Rep \lambda \BesselPotential {-s m + \rho \abs \alpha - \delta \abs \beta + \gamma}
+        &\abs {%
             \LeftDifferentialOperator \beta \DifferenceOperator \alpha
-            F(\sigma)(g, \lambda)
-            \Rep \lambda \BesselPotential {-\gamma}
+            F(\sigma)(g, \lambda)_{\mu_{m n}, \nu_{p q}}
         }\\
-        \leq C \oint_{\partial \Lambda} \abs {F(z)}
-        \norm [\Lin {\Lebesgue 2 \CompactGroup}] {%
-            \Rep \lambda \BesselPotential {-s m + \rho \abs \alpha - \delta \abs \beta}
+        &\ \leq C \oint_{\partial \Lambda} \abs {F(z)}
+        \abs {%
             \LeftDifferentialOperator \beta \DifferenceOperator \alpha
-            (\sigma(g, \lambda) - \Id {\Lebesgue 2 \CompactGroup})^{-1}
-        }\\
+            (\sigma(g, \lambda) - \Id {\Lebesgue 2 \CompactGroup})^{-1}_{\mu_{m n}, \nu_{p q}}
+        } \abs {\dd z}.
     \end{align*}
+
+    Using parameter-ellipticity,
+    we obtain
+    \begin{align*}
+        \abs {%
+            \LeftDifferentialOperator \beta \DifferenceOperator \alpha
+            (\sigma(g, \lambda) - \Id {\Lebesgue 2 \CompactGroup})^{-1}_{\mu_{m n}, \nu_{p q}}
+        }
+        \leq
+        C
+        (z^{\frac 1 m} + \norm [\VectorSpace] \lambda + \JapaneseBracket \CompactGroup \mu)^{-m}
+        L(\alpha, \beta, \gamma)
+    \end{align*}
+    where
+    \begin{align*}
+        L(\alpha, \beta, \gamma) \defeq
+        (\norm [\VectorSpace] \lambda + \JapaneseBracket \CompactGroup \mu)^{-\rho \abs \alpha + \delta \abs \beta + \gamma}
+        (\norm [\VectorSpace] \lambda + \JapaneseBracket \CompactGroup \nu)^{-\gamma}.
+    \end{align*}
+
+    Therefore,
+    \begin{align*}
+        &\abs {%
+            \LeftDifferentialOperator \beta \DifferenceOperator \alpha
+            F(\sigma)(g, \lambda)_{\mu_{m n}, \nu_{p q}}
+        }\\
+        &\ \leq C \oint_{\partial \Lambda}
+        \abs \lambda^s
+        (\abs z^{\frac 1 m} + \norm [\VectorSpace] \lambda + \JapaneseBracket \CompactGroup \mu)^{-m} L(\alpha, \beta, \gamma) \abs {\dd z}.
+    \end{align*}
+
+    It is clear that the above can be estimated by
+    \begin{align*}
+        \int_{\R^+} r^s (r^{\frac 1 m} + \norm \lambda + \JapaneseBracket \CompactGroup \mu) \ddr
+        &\leq \int_{\R^+} ((\norm \lambda + \JapaneseBracket \CompactGroup \mu)^m r)^s (1 + r^{\frac 1 m})^{-m} \dd r\\
+        &\leq (\norm \lambda + \JapaneseBracket \CompactGroup \mu)^{m s},
+    \end{align*}
+    where the inequality on the first line was obtained by substituting $r$ for $(\norm \lambda + \JapaneseBracket \CompactGroup \mu)^m r$,
+    and the integrability of $r^s$ is guaranteed by $-1 < s < 0$.
+
+    Going back to our original calculation,
+    we then obtain that
+    \begin{align*}
+        &\abs {%
+            \LeftDifferentialOperator \beta \DifferenceOperator \alpha
+            F(\sigma)(g, \lambda)_{\mu_{m n}, \nu_{p q}}
+        }\\
+        &\ \leq C
+        (\norm \lambda + \JapaneseBracket \CompactGroup \mu)^{m s}
+        L(\alpha, \beta, \gamma),
+    \end{align*}
+    which by definition means that $F(\sigma) \in \SymbolClass {m s} {\rho, \delta}$.
 \end{proof}
 
 \section{Independence on the family of difference operators}
