@@ -674,6 +674,19 @@ This section mainly borrows its ideas from~\cite{RuzhanskyWirth14}.
     We proceed inductively in a very similar manner for difference operators of higher order.
 \end{proof}
 
+\begin{definition}[Sector]
+    Let $\Lambda \subset \C$.
+    We shall say that $\Lambda$ is a \emph{sector} if
+    \begin{align*}
+        \Lambda
+        = \Lambda(\theta_1, \theta_2)
+        \defeq \{r \e^{\i \theta} \in \C : r \geq 0, \theta_1 \leq \theta \leq \theta_2\}
+    \end{align*}
+    for some $\theta_1 \leq \theta_2$.
+\end{definition}
+
+It follows from elementary complex analysis that there exists a determination of $\log$ on the complement of a sector.
+
 We are now ready to state our main result.
 \begin{theorem}[\cite{RuzhanskyWirth14}]
 \label{theorem:functional_calculus}
