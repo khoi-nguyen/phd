@@ -676,6 +676,7 @@ This section mainly borrows its ideas from~\cite{RuzhanskyWirth14}.
 
 We are now ready to state our main result.
 \begin{theorem}[\cite{RuzhanskyWirth14}]
+\label{theorem:functional_calculus}
     Assume $0 \leq \delta < \delta \leq 1$.
     Let $\sigma \in \SymbolClass m {\rho, \delta}$ be a symbol of strictly positive order,
     parameter-elliptic with respect to a sector $\Lambda \subset \C$.
@@ -796,6 +797,57 @@ We are now ready to state our main result.
     \end{align*}
     defines a symbol in $\SymbolClass \gamma {\rho, \delta}$.
 \end{corollary}
+
+The following result is central in our analysis
+
+\begin{theorem}
+    For each $t \in (0, 1]$,
+    we let
+    \begin{align*}
+        \eta_t(\lambda) \defeq \e^{t \Rep \lambda (\Laplacian)}
+    \end{align*}
+    for each $\lambda \in \VectorSpace$.
+    This defines a smoothing symbol in $\SmoothingSymbols$.
+    Moreover, for each $m \in \R$ and each $N \in \N$,
+    there exists $C \geq 0$ such that
+    \begin{align*}
+        \SymbolSemiNorm m {\rho, \delta} N \sigma \leq C t^\frac m 2
+    \end{align*}
+
+    If $m \geq 0$,
+    then for each $N \in \N$
+    there exists $C \geq 0$ such that
+    \begin{align*}
+        \SymbolSemiNorm m {\rho, \delta} N {\Id {\Lebesgue 2 \CompactGroup} - \sigma} \leq C t^\frac m 2
+    \end{align*}
+\end{theorem}
+\begin{proof}
+    Let $s < 0$ and $n \in \N$.
+    Let $F_n(z) = {\e^{z}} / {z^n}$.
+    We observe that since
+    \begin{align*}
+        \abs {F_n(z)} \leq C \abs z^s,
+    \end{align*}
+    Theorem~\ref{theorem:functional_calculus} implies that
+    \begin{align*}
+        \SymbolSemiNorm {2 s} {\rho, \delta} N {F_n(t \Rep \lambda (\Laplacian))}
+        \leq C_{N, n, s} t^s.
+    \end{align*}
+
+    From there,
+    it follows that
+    \begin{align*}
+        \e^{t \Rep \lambda (\Laplacian)}
+        = F_n(t \Rep \lambda (\Laplacian)) (t \Rep \lambda \Laplacian)^n,
+    \end{align*}
+    which implies in turn that
+    \begin{align*}
+        \SymbolSemiNorm {2 (s + n)} {\rho, \delta} N {e^{t \Rep \lambda (\Laplacian)}}
+        \leq C_{N, n, s} t^{s + n}.
+    \end{align*}
+
+    The result follows, since $s < 0$ and $n \in \N$ are arbitrary.
+\end{proof}
 
 \section{Independence on the family of difference operators}
 
