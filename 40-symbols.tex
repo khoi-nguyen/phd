@@ -835,11 +835,12 @@ The following result is central in our analysis
     \end{align*}
 \end{theorem}
 \begin{proof}
-    Let $m < 0$ and write $F(z) = {\e^{z}}$.
+    Let $m < 0$ and write $F_t(z) = {\e^{t z}}$.
     We observe that since
     \begin{align*}
-        \abs {F(z)} \leq C \abs z^\frac m 2,
+        \abs {F_t(z)} \leq C \abs \abs {t z}^\frac m 2,
     \end{align*}
+    where $C$ does not depend on $t$.
     Theorem~\ref{theorem:functional_calculus} implies that
     \begin{align*}
         \SymbolSemiNorm {m} {\rho, \delta} N {\eta_t}
