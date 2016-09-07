@@ -658,6 +658,21 @@ This section mainly borrows its ideas from~\cite{RuzhanskyWirth14}.
     uniformly in $\lambda \in \VectorSpace$, and $z \in \C$.
     In the above, $I_1$ and $I_2$ are defined like in~\eqref{eq:operators_for_parameter-ellipticity}.
 \end{lemma}
+\begin{proof}[Sketch proof]
+    The proof in the compact case (cf~\cite{RuzhanskyWirth14}) relies mainly on a \emph{Leibniz-like} rule.
+    We apply a difference operator on
+    \begin{align*}
+        I = (\sigma(\lambda) - z \Id {\Lebesgue 2 \CompactGroup}) (\sigma(\lambda) - z \Id {\Lebesgue 2 \CompactGroup})^{-1}
+    \end{align*}
+    and apply the Leibniz-like rule on the right hand side.
+
+    A similar Leibniz-like rule holds on the motion group.
+    Moreover, our definition of parameter-ellipticity ensures that for the purposes of evaluating a norm $\norm [\Lin {\Lebesgue 2 \Group}] \dummy$,
+    we can reorder a product of $I_1(m, \gamma_1)$, $I_2(\gamma_2)$ and the resolvant $(\sigma - \Id {\Lebesgue 2 \CompactGroup})^{-1}$ however we like,
+    exactly like on the compact group.
+
+    We proceed inductively in a very similar manner for difference operators of higher order.
+\end{proof}
 
 \section{Independence on the family of difference operators}
 
