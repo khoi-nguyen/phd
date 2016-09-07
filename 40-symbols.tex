@@ -695,6 +695,24 @@ We are now ready to state our main result.
     If we have not shown the composition formula,
     we can only show the result for a symbol $\sigma$ which does not depend on $g \in \Group$.
 \end{theorem}
+\begin{proof}
+    Let us first assume that $-1 < s < 0$ and fix $\gamma \in \R$.
+    It is clear that
+    \begin{align*}
+        \norm [\Lin {\Lebesgue 2 \CompactGroup}] {%
+            \Rep \lambda \BesselPotential {-s m + \rho \abs \alpha - \delta \abs \beta + \gamma}
+            \LeftDifferentialOperator \beta \DifferenceOperator \alpha
+            F(\sigma)(g, \lambda)
+            \Rep \lambda \BesselPotential {-\gamma}
+        }\\
+        \leq C \oint_{\partial \Lambda} \abs {F(z)}
+        \norm [\Lin {\Lebesgue 2 \CompactGroup}] {%
+            \Rep \lambda \BesselPotential {-s m + \rho \abs \alpha - \delta \abs \beta}
+            \LeftDifferentialOperator \beta \DifferenceOperator \alpha
+            (\sigma(g, \lambda) - \Id {\Lebesgue 2 \CompactGroup})^{-1}
+        }\\
+    \end{align*}
+\end{proof}
 
 \section{Independence on the family of difference operators}
 
