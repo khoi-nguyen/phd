@@ -761,6 +761,31 @@ We are now ready to state our main result.
         L(\alpha, \beta, \gamma),
     \end{align*}
     which by definition means that $F(\sigma) \in \SymbolClass {m s} {\rho, \delta}$.
+
+    Naturally, if $s \leq -1$, the decay of $F$ is even better, so naturally the integral converges.
+    We are thus only concerned with the symbol class estimates.
+    Note that we have a determination of the logarithm on our contour,
+    so we can define
+    \begin{align*}
+        G(z) \defeq F(z)^{\frac 1 {\Floor{-s} + 1}}
+    \end{align*}
+    and observe that
+    \begin{align*}
+        \abs {G(z)} \leq C \abs z^{\frac s {\Floor {-s} + 1}},
+        \quad
+        -1 < \frac s {\Floor {-s} + 1} < 0.
+    \end{align*}
+
+    By the first part of the proof,
+    $G(\sigma) \in \SymbolClass {\frac {m s} {\Floor {-s} +1}} {\rho, \delta}$.
+    We can now conclude by observing that
+    \begin{align*}
+        F(\sigma) = G(\sigma)^{\Floor {-s} + 1} \in \SymbolClass {m s} {\rho, \delta},
+    \end{align*}
+    where the inclusion in the symbol class above can only be obtained
+    if the symbol is independent on $g$.
+    When we have obtained the composition formula,
+    note that this will hold for any symbol $\sigma$ satisfying the assumptions of the proof.
 \end{proof}
 
 \section{Independence on the family of difference operators}
