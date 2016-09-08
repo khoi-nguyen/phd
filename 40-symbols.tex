@@ -860,8 +860,27 @@ We are now ready to state our main result.
     \begin{align*}
         \lambda \in \VectorSpace \mapsto \Rep \lambda \BesselPotential \gamma
     \end{align*}
-    defines a symbol in $\SymbolClass \gamma {\rho, \delta}$.
+    defines a symbol in $\SymbolClass \gamma {1, 0}$.
 \end{corollary}
+\begin{proof}
+    Since $F(z) = z^s$ with $s < 0$ is holomorphic
+    and $\BesselPotentialSquared {}$ is parameter elliptic with respect to $\Lambda \defeq \R^-$,
+    we know that
+    \begin{align*}
+        \BesselPotentialSquared {s} \in \SymbolClass {2 s} {1, 0},
+    \end{align*}
+    concluding the proof for $\gamma < 0$.
+
+    If $\gamma \geq 0$,
+    we let $N \in \N$ be sufficiently large so that
+    \begin{align*}
+        s \defeq \gamma - 2N < 0,
+    \end{align*}
+    and conclude that
+    \begin{align*}
+        \BesselPotential \gamma = \BesselPotential s \BesselPotentialSquared N \in \SymbolClass \gamma {1, 0}.
+    \end{align*}
+\end{proof}
 
 The following result is central in our analysis
 
