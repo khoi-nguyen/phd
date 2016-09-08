@@ -3340,5 +3340,48 @@ The crucial part of the proof is therefore to show that~\eqref{eq:symbol_to_prov
     for some $A \geq 0$,
     then $\kappa$ is a Calder\'on-Zygmund.
 \end{lemma}
+\begin{proof}
+    Clearly, the first inequality is satisfied.
+
+    Using the second inequality in our assumption,
+    \begin{align*}
+        \sup_{\norm [\Group] z \leq \norm [\Group] {g^{-1} g'}} \abs {(X_j)_{g_1 = g z} \kappa(g_1, h)}
+        \leq A
+        \sup_{\norm [\Group] z \leq \norm [\Group] {g^{-1} g'}} \abs {h^{-1} g z}^{-\dim \Group - 1}.
+    \end{align*}
+
+    Assume now that $2 \norm [\Group] {g^{-1} g'} \leq \norm [\Group] {h^{-1} g}$.
+    It follows that
+    \begin{align*}
+        \norm [\Group] z \leq \frac 1 2 \norm [\Group] {h^{-1} g}
+    \end{align*}
+    Since $\norm [\Group] \dummy$ satisfies a triangle inequality,
+    it also satisfies a reverse triangle inequality,
+    \begin{align*}
+        \norm [\Group] {h^{-1} g z}
+        \geq
+        \norm [\Group] {h^{-1} g}
+        -
+        \norm [\Group] {z}
+        \geq
+        \frac 1 2 \norm [\Group] {h^{-1} g}.
+    \end{align*}
+
+    Using the second inequality in our assumption,
+    \begin{align*}
+        \sup_{\norm [\Group] z \leq \norm [\Group] {g^{-1} g'}} \abs {(X_j)_{g_1 = g z} \kappa(g_1, h)}
+        \leq C \norm [\Group] {h^{-1} g}^{-\dim \Group - 1}
+    \end{align*}
+
+    By the Taylor Remainder theorem,
+    we conclude that
+    \begin{align*}
+        \abs {\kappa(g', h) - \kappa(g, h)}
+        \leq C \norm [\Group] {g^{-1} g'} 
+        \norm [\Group] {h^{-1} g}^{-\dim \Group - 1}.
+    \end{align*}
+
+    The proof of the third inequality is proved similarly.
+\end{proof}
 
 \section{Applications to partial differential equations}
