@@ -959,6 +959,43 @@ The following result is central in our analysis.
     \end{align*}
 \end{proof}
 
+\section{Approximation of symbols}
+
+\begin{proposition}
+    Assume that $1 \geq \rho \geq \delta \geq 0$.
+    Let $\sigma \in \SymbolClass m {\rho, \delta}$.
+    We can construct a family $(\sigma_\epsilon)_{\epsilon \in (0, 1]} \subset \SmoothingSymbols$ satisfying the following properties.
+    \begin{enumerate}
+        \item For each $\epsilon \in (0, 1]$,
+            $\sigma_\epsilon(g, \lambda)$ has compact support in $g \in \Group$.
+            In particular, its associated kernel
+            \begin{align*}
+                \Group \times \Group : (g, h) \mapsto \kappa_{\epsilon, g}(h)
+            \end{align*}
+            belongs to $\Schwartz {\Group \times \Group}$ and is also compactly supported in $g \in \Group$.
+        \item If $m_1 > m$, then for each $N \in \N$ there exists $C \geq 0$ and $N' \in \N$ such that
+            \begin{align*}
+                \SymbolSemiNorm {m_1} {\rho, \delta} N {\sigma - \sigma_\epsilon}
+                \leq C \SymbolSemiNorm m {\rho, \delta} {N'} \sigma
+                \epsilon^\frac {\max \{m_1 - m, 8\}} 2
+            \end{align*}
+            for each $\epsilon \in (0, 1]$.
+        \item If $m_1 < m$, then for each $N \in \N$ there exists $C \geq 0$ and $N' \in \N$ such that
+            \begin{align*}
+                \SymbolSemiNorm {m_1} {\rho, \delta} N {\sigma_\epsilon}
+                \leq C \SymbolSemiNorm m {\rho, \delta} {N'} \sigma
+                \epsilon^\frac {m_1 - m} 2.
+            \end{align*}
+            for each $\epsilon \in (0, 1]$.
+        \item If $\phi \in \Schwartz \Group$,
+            then $\Op(\sigma_\epsilon) \phi \in \SmoothFunctions \Group$ and
+            \begin{align*}
+                \lim_{\epsilon \to 0} \sup_{g \in C} \abs{\Op(\sigma_\epsilon) \phi(g) - \Op(\sigma) \phi(g)} = 0
+            \end{align*}
+            for every compact subset $C \subset \Group$.
+    \end{enumerate}
+\end{proposition}
+
 \section{Independence on the family of difference operators}
 
 Note that in Definition~\ref{definition:symbol_classes},
