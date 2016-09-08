@@ -847,10 +847,15 @@ The following result is central in our analysis
     \end{align*}
 \end{theorem}
 \begin{proof}
+    In this proof, we consider the sector $\Lambda \defeq \R^-$,
+    and observe that $\Rep \Lambda \Laplacian$ is parameter elliptic with respect to $\Lambda$.
+    We also let $\Gamma$ be the boundary of $\Lambda \cup \{z \in \C : \abs z \leq \epsilon\}$.
+
     Let $m < 0$ and write $F_t(z) = {\e^{t z}}$.
     We observe that since
     \begin{align*}
         \abs {F_t(z)} \leq C \abs {t z}^\frac m 2,
+        \quad z \in \Gamma.
     \end{align*}
     where $C$ does not depend on $t$.
     Theorem~\ref{theorem:functional_calculus} with~\eqref{eq:functional_calculus:bound_on_seminorm} imply that
@@ -865,7 +870,7 @@ The following result is central in our analysis
     \begin{align*}
         G_t(z) \defeq (t z)^{-\frac m 2} (1 - \e^{t z})
     \end{align*}
-    and observe that $\abs {G_t(z)} \leq C \abs {t z}^{-m/4}$ where $C$ does not depend on $t \in (0, 1]$,
+    and observe that $\abs {G_t(z)} \leq C \abs {t z}^{-m/4}$ on $\Gamma$ where $C$ does not depend on $t \in (0, 1]$,
     because
     \begin{align*}
         \lim_{z \to 0} \frac {G_1(z)}{z^{-m / 4}}
