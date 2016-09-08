@@ -636,33 +636,51 @@ we need to identify a class of symbols whose resolvant might give us appropriate
 We are thus led to the following definition.
 
 \begin{definition}[Parameter-dependent ellipticity, \cite{RuzhanskyWirth14}]
+\label{definition:parameter-ellipticity}
     Let $\sigma \in \SymbolClass m {\rho, \delta}$ with $m > 0$.
     Given a subset $\Lambda \subset \C$,
     we shall say that $\sigma$ is \emph{parameter-elliptic} with respect to $\Lambda$
-    if for each $\gamma_1, \gamma_2 \in \R$,
-    \begin{align*}
-        I_1(m, m + \gamma_1)
-        I_2(\gamma_2)
-        (\sigma(g, \lambda) - z \Id {\Lebesgue 2 \CompactGroup})^{-1}
-        I_2(-\gamma_2)
-        I_1(m, -\gamma_1)
-    \end{align*}
-    is bounded on $\Lebesgue 2 \CompactGroup$ uniformly in $g \in \Group$, $\lambda \in \VectorSpace$ and $z \in \lambda$,
-    where
-    \begin{align}
-        I_1(m, \gamma) &\defeq (\abs z^{\frac 1 m} + \Rep \lambda \BesselPotential 1)^\gamma,\\
-        I_2(\gamma) &\defeq \Rep \lambda \BesselPotential \gamma.
-        \label{eq:operators_for_parameter-ellipticity}
-    \end{align}
+    if the following properties hold.
+    \begin{enumerate}
+        \item For each $z \in \Lambda$ and each $(g, \lambda) \in \Group \times \VectorSpace$,
+            the operator
+            \begin{align*}
+                \sigma(g, \lambda) - z \Id {\Lebesgue 2 \CompactGroup}
+            \end{align*}
+            is invertible.
+        \item
+            For each $\gamma_1, \gamma_2 \in \R$,
+            the operator
+            \begin{align*}
+                I_1(m, m + \gamma_1)
+                I_2(\gamma_2)
+                (\sigma(g, \lambda) - z \Id {\Lebesgue 2 \CompactGroup})^{-1}
+                I_2(-\gamma_2)
+                I_1(m, -\gamma_1)
+            \end{align*}
+            is bounded on $\Lebesgue 2 \CompactGroup$ uniformly in $g \in \Group$, $\lambda \in \VectorSpace$ and $z \in \lambda$,
+            where
+            \begin{align}
+                I_1(m, \gamma) &\defeq (\abs z^{\frac 1 m} + \Rep \lambda \BesselPotential 1)^\gamma,\\
+                I_2(\gamma) &\defeq \Rep \lambda \BesselPotential \gamma.
+                \label{eq:operators_for_parameter-ellipticity}
+            \end{align}
+    \end{enumerate}
 \end{definition}
+
+The definition above had to be adapted from the compact case
+to take into account that our left-invariant Laplacian is \emph{not} right-invariant.
+It makes it somehow difficult to check parameter-ellipticity,
+but as we shall mainly be concerned with diagonal symbol,
+this is a price we are willing to pay.
 
 \begin{example}
     In this section,
     we shall mainly focus on the following examples.
 
     \begin{itemize}
-        \item The symbol $\Rep \lambda \BesselPotential 2$ is parameter-elliptic of order $2$ with respect to any sector which does not contain the line $\R^+$.
-        \item The symbol $\Rep \lambda (\Laplacian)$ is parameter-elliptic of order $2$ with respect to any sector which does not contain the line $\R^-$.
+        \item The symbol $\Rep \lambda \BesselPotential 2$ is parameter-elliptic of order $2$ with respect to $\R^-$.
+        \item The symbol $\Rep \lambda (\Laplacian)$ is parameter-elliptic of order $2$ with respect to $\R^+$.
     \end{itemize}
 \end{example}
 
