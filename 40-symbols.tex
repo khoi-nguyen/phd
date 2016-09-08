@@ -853,7 +853,7 @@ The following result is central in our analysis
         \abs {F_t(z)} \leq C \abs {t z}^\frac m 2,
     \end{align*}
     where $C$ does not depend on $t$.
-    Theorem~\ref{theorem:functional_calculus} implies that
+    Theorem~\ref{theorem:functional_calculus} with~\eqref{eq:functional_calculus:bound_on_seminorm} imply that
     \begin{align*}
         \SymbolSemiNorm {m} {\rho, \delta} N {\eta_t}
         \leq C_{N, n, s} t^{\frac m 2}.
@@ -872,7 +872,7 @@ The following result is central in our analysis
         = \lim_{z \to 0} \frac {1 - \e^{t z}} {z^{m / 4}}
     \end{align*}
     exists and is finite by our condition on $m$.
-    Arguing like before,
+    Using Theorem~\ref{theorem:functional_calculus} with~\eqref{eq:functional_calculus:bound_on_seminorm},
     we obtain
     \begin{align*}
         \SymbolSemiNorm {-m/2} {\rho, \delta} N {G_t(\Rep \lambda (\Laplacian))}
