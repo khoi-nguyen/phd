@@ -892,18 +892,23 @@ The following result is central in our analysis.
     \end{align*}
     for each $\lambda \in \VectorSpace$.
     This defines a smoothing symbol in $\SmoothingSymbols$.
-    Moreover, for each $m < 0$ and each $N \in \N$,
-    there exists $C \geq 0$ such that
-    \begin{align*}
-        \SymbolSemiNorm m {\rho, \delta} N {\eta_t} \leq C t^\frac m 2
-    \end{align*}
+    Moreover, we have the following symbol class estimates.
+    \begin{itemize}
+        \item
+            For each $m < 0$ and each $N \in \N$,
+            there exists $C \geq 0$ such that
+            \begin{align*}
+                \SymbolSemiNorm m {\rho, \delta} N {\eta_t} \leq C t^\frac m 2
+            \end{align*}
+        \item
+            If $0 < m \leq 8$,
+            then for each $N \in \N$
+            there exists $C \geq 0$ such that
+            \begin{align*}
+                \SymbolSemiNorm m {\rho, \delta} N {\Id {\Lebesgue 2 \CompactGroup} - \eta_t} \leq C t^\frac m 2
+            \end{align*}
+    \end{itemize}
 
-    If $0 < m \leq 8$,
-    then for each $N \in \N$
-    there exists $C \geq 0$ such that
-    \begin{align*}
-        \SymbolSemiNorm m {\rho, \delta} N {\Id {\Lebesgue 2 \CompactGroup} - \eta_t} \leq C t^\frac m 2
-    \end{align*}
 \end{theorem}
 \begin{proof}
     In this proof, we consider the sector $\Lambda \defeq \R^-$,
