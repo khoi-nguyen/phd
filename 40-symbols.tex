@@ -876,7 +876,7 @@ The following result is central in our analysis
     For each $t \in (0, 1]$,
     we let
     \begin{align*}
-        \eta_t(\lambda) \defeq \e^{t \Rep \lambda (\Laplacian)}
+        \eta_t(\lambda) \defeq \e^{-t^2 \Rep \lambda \BesselPotentialSquared 2}
     \end{align*}
     for each $\lambda \in \VectorSpace$.
     This defines a smoothing symbol in $\SmoothingSymbols$.
@@ -886,7 +886,7 @@ The following result is central in our analysis
         \SymbolSemiNorm m {\rho, \delta} N {\eta_t} \leq C t^\frac m 2
     \end{align*}
 
-    If $0 < m \leq 4$,
+    If $0 < m \leq 8$,
     then for each $N \in \N$
     there exists $C \geq 0$ such that
     \begin{align*}
@@ -895,10 +895,10 @@ The following result is central in our analysis
 \end{theorem}
 \begin{proof}
     In this proof, we consider the sector $\Lambda \defeq \R^-$,
-    and observe that $\Rep \Lambda \Laplacian$ is parameter elliptic with respect to $\Lambda$.
+    and observe that $\Rep \Lambda \BesselPotentialSquared {}$ is parameter elliptic with respect to $\Lambda$.
     We also let $\Gamma$ be the boundary of $\Lambda \cup \{z \in \C : \abs z \leq \epsilon\}$.
 
-    Let $m < 0$ and write $F_t(z) = {\e^{t z}}$.
+    Let $m < 0$ and write $F_t(z) = {\e^{-(t z)^2}}$.
     We observe that since
     \begin{align*}
         \abs {F_t(z)} \leq C \abs {t z}^\frac m 2,
@@ -911,17 +911,17 @@ The following result is central in our analysis
         \leq C_{N, n, s} t^{\frac m 2}.
     \end{align*}
 
-    Now let $0 < m \leq 4$ and let us check the second symbolic estimate.
+    Now let $0 < m \leq 8$ and let us check the second symbolic estimate.
     To this end,
     we let
     \begin{align*}
-        G_t(z) \defeq (t z)^{-\frac m 2} (1 - \e^{t z})
+        G_t(z) \defeq (t z)^{-\frac m 2} (1 - \e^{-(t z)^2})
     \end{align*}
     and observe that $\abs {G_t(z)} \leq C \abs {t z}^{-m/4}$ on $\Gamma$ where $C$ does not depend on $t \in (0, 1]$,
     because
     \begin{align*}
         \lim_{z \to 0} \frac {G_1(z)}{z^{-m / 4}}
-        = \lim_{z \to 0} \frac {1 - \e^{t z}} {z^{m / 4}}
+        = \lim_{z \to 0} \frac {1 - \e^{-z^2}} {z^{m / 4}}
     \end{align*}
     exists and is finite by our condition on $m$.
     Using Theorem~\ref{theorem:functional_calculus} with~\eqref{eq:functional_calculus:bound_on_seminorm},
@@ -933,10 +933,10 @@ The following result is central in our analysis
 
     We can now conclude by Corollary~\ref{corollary:powers_of_the_Laplacian} that
     \begin{align*}
-        \SymbolSemiNorm {m} {\rho, \delta } N {\Id {\Lebesgue 2 \CompactGroup} - \eta_t}
+        &\SymbolSemiNorm {m} {\rho, \delta } N {\Id {\Lebesgue 2 \CompactGroup} - \eta_t}\\
         &\leq
-        \SymbolSemiNorm {-m/2} {\rho, \delta} {N'} {G_t(\Rep \lambda (\Laplacian))}
-        \SymbolSemiNorm {m} {\rho, \delta} {N'} {\left(t \Rep \lambda (\Laplacian)\right)^{m/2}}\\
+        \SymbolSemiNorm {-m/2} {\rho, \delta} {N'} {G_t(\Rep \lambda \BesselPotentialSquared {})}
+        \SymbolSemiNorm {m} {\rho, \delta} {N'} {\left(t \Rep \lambda \BesselPotentialSquared {}\right)^{m/2}}\\
         &\leq C t^{-\frac m 4 + \frac m 2} = C t^\frac m 2.
     \end{align*}
 \end{proof}
