@@ -671,7 +671,7 @@ We are thus led to the following definition.
 The definition above had to be adapted from the compact case
 to take into account that our left-invariant Laplacian is \emph{not} right-invariant.
 It makes it somehow difficult to check parameter-ellipticity,
-but as we shall mainly be concerned with diagonal symbol,
+but as we shall mainly be concerned with diagonal symbols,
 this is a price we are willing to pay.
 
 \begin{example}
@@ -684,37 +684,44 @@ this is a price we are willing to pay.
     \end{itemize}
 \end{example}
 
-\begin{lemma}[\cite{RuzhanskyWirth14, Theorem 3.1. (1)}]
+\begin{lemma}[\cite{RuzhanskyWirth14}, Theorem 3.1. (1)]
     Let $\sigma \in \SymbolClass m {\rho, \delta}$ be a symbol which does not depend on $g \in \Group$,
     with $m > 0$ and $\rho > 0$.
-    If $\sigma$ is parameter-elliptic with respect to $\lambda \in \Lambda$, then
-    for each $\alpha \in \N^{\dimDifferenceOperators}$, $\gamma_1, \gamma_2 \in \R$,
-    we have
+
+    If $\sigma$ is parameter-elliptic with respect to $\Lambda$, then
+    for each $\alpha \in \N^{\dimDifferenceOperators}$, $\beta \in \N^{\dim \Group}$, and $\gamma_1, \gamma_2 \in \R$,
+    the operator
     \begin{align*}
-        I_1(m, m + \gamma_1)
-        I_2(\gamma_2 + \rho \abs \alpha)
+        &I_1(m, m + \gamma_1)
+        I_2(\gamma_2 + \rho \abs \alpha - \delta \abs \beta)\\
+        &\quad
+        \LeftDifferentialOperator \beta
         \DifferenceOperatorOrder \alpha (\sigma(\lambda) - z \Id {\Lebesgue 2 \CompactGroup})^{-1}
         I_2(-\gamma_2)
         I_1(m, -\gamma_1)
     \end{align*}
-    uniformly in $\lambda \in \VectorSpace$, and $z \in \C$.
+    is bounded in $\Lebesgue 2 \CompactGroup$ uniformly in $g \in \Group$, $\lambda \in \VectorSpace$ and $z \in \Lambda$.
+
     In the above, $I_1$ and $I_2$ are defined like in~\eqref{eq:operators_for_parameter-ellipticity}.
 \end{lemma}
 \begin{proof}[Sketch proof]
-    The proof in the compact case (cf~\cite{RuzhanskyWirth14}) relies mainly on a \emph{Leibniz-like} rule.
-    We apply a difference operator on
+    The proof in the compact case (cf~\cite[Theorem 3.1. (1)]{RuzhanskyWirth14}) relies mainly on the \emph{Leibniz-like} rule for difference operators
+    and the Leibniz rule for left-invariant differential operators.
+
+    To prove the result, we apply difference operators and differential operators to
     \begin{align*}
         I = (\sigma(\lambda) - z \Id {\Lebesgue 2 \CompactGroup}) (\sigma(\lambda) - z \Id {\Lebesgue 2 \CompactGroup})^{-1}
     \end{align*}
-    and apply the Leibniz-like rule on the right hand side.
+    and use the respective Leibniz rules on the right hand side.
 
-    A similar Leibniz-like rule holds on the motion group.
+    The proof in~\cite{RuzhanskyWirth14} holds because a similar Leibniz-like rule holds on the motion group.
     Moreover, our definition of parameter-ellipticity ensures that for the purposes of evaluating a norm $\norm [\Lin {\Lebesgue 2 \Group}] \dummy$,
     we can reorder a product of $I_1(m, \gamma_1)$, $I_2(\gamma_2)$ and the resolvant $(\sigma - \Id {\Lebesgue 2 \CompactGroup})^{-1}$ however we like,
     exactly like on the compact group.
-
-    We proceed inductively in a very similar manner for difference operators of higher order.
 \end{proof}
+
+We introduce the following notion of \emph{sector},
+whose boundary will provide a good contour for~\eqref{eq:Cauchy_integral_formula_for_operators}.
 
 \begin{definition}[Sector]
     Let $\Lambda \subset \C$.
@@ -728,6 +735,13 @@ this is a price we are willing to pay.
 \end{definition}
 
 It follows from elementary complex analysis that there exists a determination of $\log$ on the complement of a sector.
+As a result,
+we can define
+\begin{align*}
+    z^s \defeq \exp (s \log z),
+    \quad z \in \C \setminus \Lambda
+\end{align*}
+for each $s \in \C$.
 
 We are now ready to state our main result.
 \begin{theorem}[\cite{RuzhanskyWirth14}]
