@@ -600,16 +600,26 @@ Using \cite[Lemma 4.4]{RuzhanskyTurunenWirth10}, we can show
     as the right-hand side is exactly $\Op(\sigma) \phi(g)$.
 \end{proof}
 
-\section{Functional calculus}
+\section{Holomorphic functional calculus}
 
-The aim of this section is to show a result which will be essential hereafter.
-Essentially, we wish to show that for a well-behaved symbol $\sigma \in \SymbolClass m {\rho, \delta}$,
-its powers $\sigma^s$, $s \in \R$ define a symbol in $\SymbolClass {s m} {\rho, \delta}$.
+The aim of this section is to show two results concerning functions of symbols which will be essential hereafter.
 
-The result would be significantly more general with the calculus at our disposal.
-However, the proof of the composition and adjunction formulas rely on the fact that $\Rep \lambda \BesselPotential \gamma$ is a symbol of order $\gamma$.
+First, we wish to show that for a well-behaved symbol $\sigma \in \SymbolClass m {\rho, \delta}$,
+its powers $\sigma^s$, $s \in \R$ define symbols in $\SymbolClass {s m} {\rho, \delta}$.
 
-This section mainly borrows its ideas from~\cite{RuzhanskyWirth14}.
+Secondly, we would like to show that $\SmoothingSymbols$ is dense in $\SymbolClass m {\rho, \delta}$.
+To this end, we want to create a family of smoothing symbols $\eta_t$, $t \in (0, 1]$, in the hope
+that $\sigma \eta_t$ converges to $\sigma$ as $t$ goes to $0$ in a suitable symbol class.
+We will prove that
+\begin{align}
+    \eta_t(\lambda) \defeq \e^{t \Rep \lambda \Laplacian},
+    \quad \lambda \in \VectorSpace
+    \label{eq:candidate_to_approximate_identity}
+\end{align}
+
+The results presented herein would be significantly more general with the calculus at our disposal.
+However, the proof of the composition and adjunction formulas rely on the fact that $\Rep \lambda \BesselPotential \gamma$ is a symbol of order $\gamma$
+and on good estimates on~\eqref{eq:candidate_to_approximate_identity}.
 
 \begin{definition}[Parameter-dependent ellipticity, \cite{RuzhanskyWirth14}]
     Let $\sigma \in \SymbolClass m {\rho, \delta}$ with $m > 0$.
