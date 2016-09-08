@@ -607,7 +607,8 @@ The aim of this section is to show two results concerning functions of symbols w
 First, we wish to show that for a well-behaved symbol $\sigma \in \SymbolClass m {\rho, \delta}$,
 its powers $\sigma^s$, $s \in \R$ define symbols in $\SymbolClass {s m} {\rho, \delta}$.
 
-Secondly, we would like to show that $\SmoothingSymbols$ is dense in $\SymbolClass m {\rho, \delta}$.
+Secondly, we would like to show that $\SmoothingSymbols$ is dense in $\SymbolClass m {\rho, \delta}$,
+a result whose importance can be compared to that of other density results in analysis.
 To this end, we want to create a family of smoothing symbols $\eta_t$, $t \in (0, 1]$, in the hope
 that $\sigma \eta_t$ converges to $\sigma$ as $t$ goes to $0$ in a suitable symbol class.
 The compact case~\cite{Fischer2015} suggests that the following
@@ -621,6 +622,18 @@ is the best candidate.
 The results presented herein would be significantly more general with the calculus at our disposal.
 However, the proof of the composition and adjunction formulas rely on the fact that $\Rep \lambda \BesselPotential \gamma$ is a symbol of order $\gamma$
 and on good estimates on~\eqref{eq:candidate_to_approximate_identity}.
+
+The main idea of this section is to follow~\cite{RuzhanskyWirth14},
+which uses the following version of the \emph{Cauchy integral formula}
+\begin{align}
+    F(\sigma) = \int_\Gamma F(z) (\sigma - z\Id{\Lebesgue 2 \CompactGroup})^{-1} \dd z.
+    \label{eq:Cauchy_integral_formula_for_operators}
+\end{align}
+This allows us to carry out our computations on the resolvant.
+
+In order to successfully apply~\eqref{eq:Cauchy_integral_formula_for_operators},
+we need to identify a class of symbols whose resolvant might give us appropriate bounds.
+We are thus led to the following definition.
 
 \begin{definition}[Parameter-dependent ellipticity, \cite{RuzhanskyWirth14}]
     Let $\sigma \in \SymbolClass m {\rho, \delta}$ with $m > 0$.
