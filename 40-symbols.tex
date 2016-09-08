@@ -3326,4 +3326,19 @@ The crucial part of the proof is therefore to show that~\eqref{eq:symbol_to_prov
     \end{align*}
 \end{definition}
 
+\begin{lemma}
+    If the map
+    \begin{align*}
+        \kappa : (\Group \times \Group) \setminus \{(g, g) : g \in \Group\} \to \C
+    \end{align*}
+    is continuously differentiable on its domain and satisfies
+    \begin{align*}
+        \abs {\kappa(g, h)} &\leq A \norm [\Group] {h^{-1} g}^{-\dim \Group}\\
+        \abs {\LeftDifferentialOperatorFirstOrder {X_j}_g \kappa(g, h)} &\leq A \norm [\Group] {h^{-1} g}^{-\dim \Group - 1}\\
+        \abs {\LeftDifferentialOperatorFirstOrder {X_j}_h \kappa(g, h)} &\leq A \norm [\Group] {h^{-1} g}^{-\dim \Group - 1}
+    \end{align*}
+    for some $A \geq 0$,
+    then $\kappa$ is a Calder\'on-Zygmund.
+\end{lemma}
+
 \section{Applications to partial differential equations}
