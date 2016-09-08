@@ -481,6 +481,7 @@ Using \cite[Lemma 4.4]{RuzhanskyTurunenWirth10}, we can show
 % TODO: Move because kernels are a prerequisites.
 
 \begin{proposition}
+\label{proposition:first_properties_of_symbol_classes}
     Suppose that $\rho, \delta \in \R$ satisfy $1 \geq \rho \geq \delta \geq 0$.
     Given $m, m_1, m_2 \in \R$,
     choose three symbols $\sigma \in \SymbolClass m {\rho, \delta}$,
@@ -510,7 +511,9 @@ Using \cite[Lemma 4.4]{RuzhanskyTurunenWirth10}, we can show
                 \adj \kappa_g(h) \defeq \conj {\kappa_g(h^{-1})},
             \end{align*}
             where the above is interpreted in the sense of distributions.
-        \item The pointwise composition
+        \item
+            \label{item:properties_of_symbols:pointwise_composition}
+            The pointwise composition
             \begin{align*}
                 (g, \lambda) \mapsto \sigma_1(g, \lambda) \sigma_2(g, \lambda)
             \end{align*}
@@ -987,14 +990,25 @@ The following result is central in our analysis.
                 \epsilon^\frac {m_1 - m} 2.
             \end{align*}
             for each $\epsilon \in (0, 1]$.
-        \item If $\phi \in \Schwartz \Group$,
-            then $\Op(\sigma_\epsilon) \phi \in \SmoothFunctions \Group$ and
-            \begin{align*}
-                \lim_{\epsilon \to 0} \sup_{g \in C} \abs{\Op(\sigma_\epsilon) \phi(g) - \Op(\sigma) \phi(g)} = 0
-            \end{align*}
-            for every compact subset $C \subset \Group$.
     \end{enumerate}
 \end{proposition}
+\begin{proof}
+    Let $\chi \in \SmoothFunctions {\R^+, [0, 1]}$ be a function with compact support
+    which satisfies $\chi(r) = 1$ for $\abs r \leq 1$.
+    Let $\epsilon \in (0, 1]$.
+    We let
+    \begin{align*}
+        \sigma_\epsilon(g, \lambda)
+        \defeq \chi(\epsilon \norm [\Group] g^2) \sigma(g, \lambda) \eta_\epsilon(\lambda),
+    \end{align*}
+    where $\eta_\epsilon$ was defined in Theorem~\ref{theorem:generalised_Littlewood-Paley_decomposition}.
+    It should be clear that the first property holds by our definition of $\chi_\epsilon$
+    and the fact that the symbols $\eta_\epsilon$ are smoothing (Theorem~\ref{theorem:generalised_Littlewood-Paley_decomposition}).
+
+    Similarly,
+    the second and third point hold by Theorem~\ref{theorem:generalised_Littlewood-Paley_decomposition}
+    and Part~\ref{item:properties_of_symbols:pointwise_composition} of Proposition~\ref{proposition:first_properties_of_symbol_classes}.
+\end{proof}
 
 \section{Independence on the family of difference operators}
 
