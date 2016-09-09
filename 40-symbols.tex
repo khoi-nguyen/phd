@@ -924,7 +924,7 @@ The following result is central in our analysis.
                 \SymbolSemiNorm m {\rho, \delta} N {\eta_t} \leq C t^\frac m 2
             \end{align*}
         \item
-            If $0 < m \leq 8$,
+            If $0 \leq m \leq 8$,
             then for each $N \in \N$
             there exists $C \geq 0$ such that
             \begin{align*}
@@ -968,7 +968,7 @@ The following result is central in our analysis.
     we obtain
     \begin{align*}
         \SymbolSemiNorm {-m/2} {\rho, \delta} N {G_t(\Rep \lambda (\Laplacian))}
-        \leq t^{-m/4}
+        \leq C t^{-m/4}
     \end{align*}
 
     We can now conclude by Corollary~\ref{corollary:powers_of_the_Laplacian} that
@@ -978,6 +978,32 @@ The following result is central in our analysis.
         \SymbolSemiNorm {-m/2} {\rho, \delta} {N'} {G_t(\Rep \lambda \BesselPotentialSquared {})}
         \SymbolSemiNorm {m} {\rho, \delta} {N'} {\left(t \Rep \lambda \BesselPotentialSquared {}\right)^{m/2}}\\
         &\leq C t^{-\frac m 4 + \frac m 2} = C t^\frac m 2.
+    \end{align*}
+
+    Now, assume that $m = 0$.
+    It is clear that
+    \begin{align*}
+        G_t(z) = (t z)^{-1} (1 - \e^{-(t z)^2})
+    \end{align*}
+    It is clear that
+    \begin{align*}
+        \abs {G_t(z)} \leq C \abs {t z}^{-1}
+    \end{align*}
+    where C does not depend on $t$.
+    Using Theorem~\ref{theorem:functional_calculus} with~\eqref{eq:functional_calculus:bound_on_seminorm},
+    we obtain
+    \begin{align*}
+        \SymbolSemiNorm {-2} {\rho, \delta} N {G_t(\Rep \lambda (\Laplacian))}
+        \leq C t^{-1}.
+    \end{align*}
+
+    We can now conclude like before that
+    \begin{align*}
+        &\SymbolSemiNorm {0} {\rho, \delta } N {\Id {\Lebesgue 2 \CompactGroup} - \eta_t}\\
+        &\leq
+        \SymbolSemiNorm {-2} {\rho, \delta} {N'} {G_t(\Rep \lambda \BesselPotentialSquared {})}
+        \SymbolSemiNorm {2} {\rho, \delta} {N'} {t \Rep \lambda \BesselPotentialSquared {}}\\
+        &\leq C t^{-1 + 1} = C
     \end{align*}
 \end{proof}
 
@@ -996,7 +1022,7 @@ The following result is central in our analysis.
                 \Group \times \Group : (g, h) \mapsto \kappa_{\epsilon, g}(h)
             \end{align*}
             belongs to $\Schwartz {\Group \times \Group}$ and is also compactly supported in $g \in \Group$.
-        \item If $m_1 > m$, then for each $N \in \N$ there exists $C \geq 0$ and $N' \in \N$ such that
+        \item If $m_1 \geq m$, then for each $N \in \N$ there exists $C \geq 0$ and $N' \in \N$ such that
             \begin{align*}
                 \SymbolSemiNorm {m_1} {\rho, \delta} N {\sigma - \sigma_\epsilon}
                 \leq C \SymbolSemiNorm m {\rho, \delta} {N'} \sigma
