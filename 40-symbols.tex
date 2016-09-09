@@ -692,9 +692,9 @@ this is a price we are willing to pay.
 
 \begin{lemma}[\cite{RuzhanskyWirth14}, Theorem 3.1. (1)]
     Let $\sigma \in \SymbolClass m {\rho, \delta}$ be a symbol which does not depend on $g \in \Group$,
-    with $m > 0$ and $\rho > 0$.
+    with $m \geq 0$ and $\rho > 0$.
 
-    If $\sigma$ is parameter-elliptic with respect to $\Lambda$, then
+    If $m > 0$ and $\sigma$ is parameter-elliptic with respect to $\Lambda$, then
     for each $\alpha \in \N^{\dimDifferenceOperators}$, $\beta \in \N^{\dim \Group}$, and $\gamma_1, \gamma_2 \in \R$,
     the operator
     \begin{align*}
@@ -707,6 +707,9 @@ this is a price we are willing to pay.
         I_1(m, -\gamma_1)
     \end{align*}
     is bounded in $\Lebesgue 2 \CompactGroup$ uniformly in $g \in \Group$, $\lambda \in \VectorSpace$ and $z \in \Lambda$.
+
+    If $m = 0$,
+    the resolvant $\sigma - z \Id {\Lebesgue 2 \CompactGroup}$ is a symbol in $\SymbolClass 0 {\rho, \delta}$.
 
     In the above, $I_1$ and $I_2$ are defined like in~\eqref{eq:operators_for_parameter-ellipticity}.
 \end{lemma}
