@@ -3173,7 +3173,26 @@ The crucial part of the proof is therefore to show that~\eqref{eq:symbol_to_prov
     also belongs to $\SymbolClass 0 {\rho, \delta}$.
 \end{lemma}
 \begin{proof}
-    % TODO Show parameter-ellipticity
+    It is clear that the spectrum of $\sigma$ is contained in $[c, c^{-1}] \subset \R$ for some $c > 0$.
+    Therefore, for each $z \in \R^{-}$,
+    \begin{align*}
+        \norm [\Lin {\Lebesgue 2 \CompactGroup}] {(\sigma(g, \lambda) - z \Id {\Lebesgue 2 \CompactGroup})^{-1}}
+        \leq (c + \abs z)^{-1}
+        \leq C(1 + \abs z)^{-1}.
+    \end{align*}
+
+    By the composition formula,
+    it follows that for each $\gamma \in \R$,
+    \begin{align*}
+        &\norm [\Lin {\Lebesgue 2 \CompactGroup}] {
+            \Rep \lambda \BesselPotential \gamma
+            (\sigma(g, \lambda) - z \Id {\Lebesgue 2 \CompactGroup})^{-1}
+            \Rep \lambda \BesselPotential {-\gamma}
+        }\\
+        &\qquad \leq C(1 + \abs z)^{-1}
+    \end{align*}
+    which means that $\sigma$ is parameter-elliptic with order $0$.
+
     Since $\sigma$ is parameter-elliptic with respect to $\R^-$,
     we can apply Theorem~\ref{theorem:functional_calculus} with $F = z^{-\frac 1 2}$,
     which yields that $F(\sigma) \in \SymbolClass {0} {\rho, \delta}$.
