@@ -3158,68 +3158,30 @@ that $\sigma_S \in \SymbolClass 0 {\rho, \delta}$.
 The crucial part of the proof is therefore to show that~\eqref{eq:symbol_to_prove_L2_boundedness} is a symbol of order $0$.
 
 \begin{lemma}
-\label{lemma:inverse_of_square_root_of_a_symbol_of_order_zero}
+\label{lemma:square_root_of_a_symbol_of_order_zero}
     Let $\rho, \delta \in \R$ be such that $1 \geq \rho > \delta \geq 0$.
-    If $\sigma \in \SymbolClass 0 {\rho, \delta}$ is \emph{positive definite} and \emph{elliptic},
-    then the map
+    If $\sigma \in \SymbolClass 0 {\rho, \delta}$ is \emph{positive definite},
+    invertible,
+    and its inverse satisfies
     \begin{align*}
-        \tilde \sigma(x, k; \lambda)
-        \defeq \int_{\Gamma} z^{-\frac 1 2} (\sigma(x, k; \lambda) - z \Id {\Lebesgue 2 \CompactGroup})^{-1} \dd z
-        % TODO specify what \gamma is
+        \sup_{g \in \Group} \esssup_{\lambda \in \VectorSpace} \norm [\Lin {\Lebesgue 2 \Group}] {\sigma(g, \lambda)^{-1}} < \infty.
     \end{align*}
-    also belongs to $\SymbolClass 0 {\rho, \delta}$.
-\end{lemma}
-\begin{proof}
-    To shorten the notation,
-    we write
-    \begin{align*}
-        R(z, \sigma)(x, k; \lambda) \defeq (\sigma(x, k; \lambda) - z \Id {\Lebesgue 2 \CompactGroup})^{-1}
-    \end{align*}
-
-    Let us now prove the following claim.
-
-    \begin{claim}
-        For every $\beta \in \N^{\dim \Group}$, and each $\alpha$
-        % TODO: specify set for \alpha
-        \begin{align}
-            &\norm [\Lin {\Lebesgue 2 \CompactGroup}] {\Rep \lambda \BesselPotential {\rho \abs \alpha - \delta \abs \beta} \LeftDifferentialOperator \beta \DifferenceOperatorOrder \alpha R(z, \sigma)(x, k; \lambda)} \notag\\
-            &\qquad \leq C_{\alpha, \beta} (1 + \abs z)^{-1}.
-            \label{eq:estimates_on_the_resolvent}
-        \end{align}
-    \end{claim}
-    \begin{proof}[Proof of the claim]
-        First let us prove the claim for $\abs \alpha = \abs \beta = 0$.
-    \end{proof}
-
-    Using~\eqref{eq:estimates_on_the_resolvent},
-    we can show that
-    \begin{align*}
-        &\norm [\Lin {\Lebesgue 2 \Group}] {\Rep \lambda \BesselPotential {\rho \abs \alpha - \delta \abs \beta} \LeftDifferentialOperator \beta \DifferenceOperatorOrder \alpha \tilde \sigma(x, k; \lambda)}\\
-        &\quad \leq C_{\alpha, \beta} \int_\Gamma \abs z^{-\frac 1 2} (1 + \abs z)^{-1} \abs{\dd z} < +\infty,
-    \end{align*}
-    showing that $\tilde \sigma$ belongs to $\SymbolClass 0 {\rho, \delta}$.
-\end{proof}
-
-\begin{corollary}
-\label{corollary:square_root_of_a_symbol_of_order_zero}
-    Let $\rho, \delta \in \R$ be such that $1 \geq \rho > \delta \geq 0$.
-    If $\sigma \in \SymbolClass 0 {\rho, \delta}$ is \emph{positive definite} and \emph{elliptic},
     then its \emph{square root}
     \begin{align*}
         (x, k; \lambda) \in \Group \times \VectorSpace \mapsto \sqrt{\sigma(x, k; \lambda)}
     \end{align*}
     also belongs to $\SymbolClass 0 {\rho, \delta}$.
-\end{corollary}
+\end{lemma}
 \begin{proof}
-    Let $\tilde \sigma$ be the symbol defined in Lemma~\ref{lemma:inverse_of_square_root_of_a_symbol_of_order_zero}.
-    By the Helffer-Sjostrand formula,
-    % TODO Reference for Helffer-Sjostrand
-    we get
+    % TODO Show parameter-ellipticity
+    Since $\sigma$ is parameter-elliptic with respect to $\R^-$,
+    we can apply Theorem~\ref{theorem:functional_calculus} with $F = z^{-\frac 1 2}$,
+    which yields that $F(\sigma) \in \SymbolClass {0} {\rho, \delta}$.
+    By the calculus,
+    we conclude that
     \begin{align*}
-        \sqrt{\sigma(x, k; \lambda)} = \tilde \sigma(x, k; \lambda) \sigma(x, k; \lambda),
+        \sqrt \sigma = F(\sigma) \sigma \in \SymbolClass 0 {\rho, \delta}$.
     \end{align*}
-    which must be in $\SymbolClass 0 {\rho, \delta}$,
-    since $\tilde \sigma, \sigma \in \SymbolClass 0 {\rho, \delta}$ by Lemma~\ref{lemma:inclusion_in_zero_class}.
 \end{proof}
 
 \begin{proposition}[$L^2$ boundedness]
@@ -3264,7 +3226,7 @@ The crucial part of the proof is therefore to show that~\eqref{eq:symbol_to_prov
                 4 C^2 \Id {\Lebesgue 2 \CompactGroup} - \adj \sigma \sigma
             \end{align*}
             is an operator of order $0$,
-            and so by Corollary~\ref{corollary:square_root_of_a_symbol_of_order_zero}, the symbol
+            and so by Lemma~\ref{lemma:square_root_of_a_symbol_of_order_zero}, the symbol
             \begin{align*}
                 \sigma_S \defeq \sqrt{4 C^2 \Id {\Lebesgue 2 \CompactGroup} - \adj \sigma \sigma}
             \end{align*}
