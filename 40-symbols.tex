@@ -3327,6 +3327,7 @@ The crucial part of the proof is therefore to show that~\eqref{eq:symbol_to_prov
 \end{definition}
 
 \begin{lemma}
+\label{lemma:Calderon-Zygmund_criteria}
     If the map
     \begin{align*}
         \kappa : (\Group \times \Group) \setminus \{(g, g) : g \in \Group\} \to \C
@@ -3382,6 +3383,51 @@ The crucial part of the proof is therefore to show that~\eqref{eq:symbol_to_prov
     \end{align*}
 
     The proof of the third inequality is proved similarly.
+\end{proof}
+
+\begin{proposition}
+    Assume that $T \in \OperatorClass 0 {1, 0}$.
+    The operator $T$ is Calder\'on-Zygmund.
+    In particular, for each $1 < p \leq 2$,
+    the map $T$ extends to a bounded map
+    \begin{align*}
+        T : \Lebesgue p \Group \to \Lebesgue p \Group.
+    \end{align*}
+\end{proposition}
+\begin{proof}
+    Let $\tilde \kappa(g, h) \defeq \kappa_g(h^{-1} g)$.
+    It follows that for each $\phi \in \Schwartz \Group$
+    \begin{align*}
+        T \phi(g) = \int_{\Group} \phi(h) \tilde \kappa(g, h) \dd h,
+    \end{align*}
+    for each $g \in \Group$,
+    where the right-hand side is interpreted in the sense of distributions.
+
+    By the kernel estimates,
+    we have
+    \begin{align*}
+        \abs {\tilde \kappa(g, h)} \leq \abs {\kappa_g(h^{-1} g)} \leq C \norm [\Group] {h^{-1} g}^{-\dim \Group}
+    \end{align*}
+
+    Fix $j \in \{1, \dots, \dim \Group\}$.
+    Using the kernel estimates (Theorem~\ref{theorem:kernel_estimates}),
+    it follows that
+    \begin{align*}
+        &\abs {(\LeftDifferentialOperatorFirstOrder {X_j})_{g} \tilde \kappa(g, h)}\\
+        &\quad \leq
+        \abs {(X_j)_{g_1 = g} \kappa_{g_1}(h^{-1} g)}
+        + \abs {(X_j)_{g_2 = g} \kappa_{g}(h^{-1} g_2)}\\
+        &\quad \leq
+        C \norm [\Group] {h^{-1} g}^{-\dim \Group - 1}
+    \end{align*}
+    and similarly
+    \begin{align*}
+        \abs {(\LeftDifferentialOperatorFirstOrder {X_j})_{h} \tilde \kappa(g, h)}
+        \leq \abs {(X_j)_{g} \kappa_{g}(h^{-1} g)}
+        \leq C \norm [\Group] {h^{-1} g}^{-\dim \Group - 1}.
+    \end{align*}
+
+    We therefore obtain the conclusion by applying Lemma~\ref{lemma:Calderon-Zygmund_criteria}.
 \end{proof}
 
 \section{Applications to partial differential equations}
