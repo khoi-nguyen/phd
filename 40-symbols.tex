@@ -662,6 +662,22 @@ We are thus led to the following definition.
                 \label{eq:operators_for_parameter-ellipticity}
             \end{align}
     \end{enumerate}
+
+    If $m = 0$,
+    we shall say that $\sigma$ is \emph{parameter-elliptic} with respect to $\Lambda$ if
+    \begin{align*}
+        \sigma(g, \lambda) - z \Id {\Lebesgue 2 \CompactGroup}
+    \end{align*}
+    is invertible and satisfies
+    \begin{align*}
+        &\norm [\Lin {\Lebesgue 2 \CompactGroup}] {
+            \Rep \lambda \BesselPotential \gamma
+            (\sigma(g, \lambda) - z \Id {\Lebesgue 2 \CompactGroup})^{-1}
+            \Rep \lambda \BesselPotential {-\gamma}
+        }\\
+        &\qquad \leq C(1 + \abs z)^{-1}
+    \end{align*}
+    uniformly in $z \in \Lambda$ and $(g, \lambda) \in \Group \times \VectorSpace$.
 \end{definition}
 
 The definition above had to be adapted from the compact case
