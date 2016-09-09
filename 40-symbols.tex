@@ -603,6 +603,35 @@ Using \cite[Lemma 4.4]{RuzhanskyTurunenWirth10}, we can show
     as the right-hand side is exactly $\Op(\sigma) \phi(g)$.
 \end{proof}
 
+Before we are able to describe smoothing operators,
+we need to recall a property of convolution by tempered distributions.
+For a proof, see e.g.~\cite[Lemma 3.1.55]{FischerRuzhansky16} which can be easily adapted to our case.
+
+\begin{lemma}
+    Let $f \in \TemperedDistributions \Group$.
+    There exists $N \in \N$ and $C \geq 0$ such that
+    \begin{align*}
+        \abs {(\conv \phi f)(g)}
+        \leq
+        C
+        \seminorm [\TemperedDistributions \Group] N f
+        (1 + \norm [\Group] g)^N
+        \seminorm [\Schwartz \Group] N \phi
+    \end{align*}
+\end{lemma}
+
+\begin{proposition}
+    Let $T \in \SmoothingOperators$.
+    Its convolution kernel
+    \begin{align*}
+        (g, h) \mapsto \kappa_g(h)
+    \end{align*}
+    is smooth on $\Group \times \Group$ and given a fixed $g \in \Group$, $\kappa_g(\dummy) \in \Schwartz \Group$.
+
+    As a result,
+    the operator $T$ extends to a continuous mapping from $\TemperedDistributions \Group$ to $\SmoothFunctions \Group$.
+\end{proposition}
+
 \section{Holomorphic functional calculus}
 
 The aim of this section is to show two results concerning functions of symbols which will be essential hereafter.
