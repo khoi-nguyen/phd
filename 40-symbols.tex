@@ -908,10 +908,10 @@ The following result is central in our analysis.
 
 \begin{theorem}
 \label{theorem:generalised_Littlewood-Paley_decomposition}
-    For each $t \in (0, 1]$,
+    For each $\epsilon \in (0, 1]$,
     we let
     \begin{align*}
-        \eta_t(\lambda) \defeq \e^{-t^2 \Rep \lambda \BesselPotentialSquared 2}
+        \eta_\epsilon(\lambda) \defeq \e^{-\epsilon^2 \Rep \lambda \BesselPotentialSquared 2}
     \end{align*}
     for each $\lambda \in \VectorSpace$.
     This defines a smoothing symbol in $\SmoothingSymbols$.
@@ -921,14 +921,14 @@ The following result is central in our analysis.
             For each $m < 0$ and each $N \in \N$,
             there exists $C \geq 0$ such that
             \begin{align*}
-                \SymbolSemiNorm m {\rho, \delta} N {\eta_t} \leq C t^\frac m 2
+                \SymbolSemiNorm m {\rho, \delta} N {\eta_\epsilon} \leq C \epsilon^\frac m 2
             \end{align*}
         \item
             If $0 \leq m \leq 8$,
             then for each $N \in \N$
             there exists $C \geq 0$ such that
             \begin{align*}
-                \SymbolSemiNorm m {\rho, \delta} N {\Id {\Lebesgue 2 \CompactGroup} - \eta_t} \leq C t^\frac m 2
+                \SymbolSemiNorm m {\rho, \delta} N {\Id {\Lebesgue 2 \CompactGroup} - \eta_\epsilon} \leq C \epsilon^\frac m 2
             \end{align*}
     \end{itemize}
 
@@ -936,28 +936,28 @@ The following result is central in our analysis.
 \begin{proof}
     In this proof, we consider the sector $\Lambda \defeq \R^-$,
     and observe that $\Rep \lambda \BesselPotentialSquared {}$ is parameter elliptic with respect to $\Lambda$.
-    We also let $\Gamma$ be the boundary of $\Lambda \cup \{z \in \C : \abs z \leq \epsilon\}$.
+    We also let $\Gamma$ be the boundary of $\Lambda \cup \{z \in \C : \abs z \leq \delta\}$ with $0 < \delta \leq 1 / 2$.
 
-    Let $m < 0$ and write $F_t(z) = {\e^{-(t z)^2}}$.
+    Let $m < 0$ and write $F_\epsilon(z) = {\e^{-(\epsilon z)^2}}$.
     We observe that since
     \begin{align*}
-        \abs {F_t(z)} \leq C \abs {t z}^\frac m 2,
+        \abs {F_\epsilon(z)} \leq C \abs {\epsilon z}^\frac m 2,
         \quad z \in \Gamma.
     \end{align*}
-    where $C$ does not depend on $t$.
+    where $C$ does not depend on $\epsilon$.
     Theorem~\ref{theorem:functional_calculus} with~\eqref{eq:functional_calculus:bound_on_seminorm} imply that
     \begin{align*}
-        \SymbolSemiNorm {m} {\rho, \delta} N {\eta_t}
-        \leq C_{N, n, s} t^{\frac m 2}.
+        \SymbolSemiNorm {m} {\rho, \delta} N {\eta_\epsilon}
+        \leq C_{N, n, s} \epsilon^{\frac m 2}.
     \end{align*}
 
     Now let $0 < m \leq 8$ and let us check the second symbolic estimate.
     To this end,
     we let
     \begin{align*}
-        G_t(z) \defeq (t z)^{-\frac m 2} (1 - \e^{-(t z)^2})
+        G_\epsilon(z) \defeq (\epsilon z)^{-\frac m 2} (1 - \e^{-(\epsilon z)^2})
     \end{align*}
-    and observe that $\abs {G_t(z)} \leq C \abs {t z}^{-m/4}$ on $\Gamma$ where $C$ does not depend on $t \in (0, 1]$,
+    and observe that $\abs {G_\epsilon(z)} \leq C \abs {\epsilon z}^{-m/4}$ on $\Gamma$ where $C$ does not depend on $\epsilon \in (0, 1]$,
     because
     \begin{align*}
         \lim_{z \to 0} \frac {G_1(z)}{z^{-m / 4}}
@@ -967,43 +967,43 @@ The following result is central in our analysis.
     Using Theorem~\ref{theorem:functional_calculus} with~\eqref{eq:functional_calculus:bound_on_seminorm},
     we obtain
     \begin{align*}
-        \SymbolSemiNorm {-m/2} {\rho, \delta} N {G_t(\Rep \lambda (\Laplacian))}
-        \leq C t^{-m/4}
+        \SymbolSemiNorm {-m/2} {\rho, \delta} N {G_\epsilon(\Rep \lambda (\Laplacian))}
+        \leq C \epsilon^{-m/4}
     \end{align*}
 
     We can now conclude by Corollary~\ref{corollary:powers_of_the_Laplacian} that
     \begin{align*}
-        &\SymbolSemiNorm {m} {\rho, \delta } N {\Id {\Lebesgue 2 \CompactGroup} - \eta_t}\\
+        &\SymbolSemiNorm {m} {\rho, \delta } N {\Id {\Lebesgue 2 \CompactGroup} - \eta_\epsilon}\\
         &\leq
-        \SymbolSemiNorm {-m/2} {\rho, \delta} {N'} {G_t(\Rep \lambda \BesselPotentialSquared {})}
-        \SymbolSemiNorm {m} {\rho, \delta} {N'} {\left(t \Rep \lambda \BesselPotentialSquared {}\right)^{m/2}}\\
-        &\leq C t^{-\frac m 4 + \frac m 2} = C t^\frac m 2.
+        \SymbolSemiNorm {-m/2} {\rho, \delta} {N'} {G_\epsilon(\Rep \lambda \BesselPotentialSquared {})}
+        \SymbolSemiNorm {m} {\rho, \delta} {N'} {\left(\epsilon \Rep \lambda \BesselPotentialSquared {}\right)^{m/2}}\\
+        &\leq C \epsilon^{-\frac m 4 + \frac m 2} = C \epsilon^\frac m 2.
     \end{align*}
 
     Now, assume that $m = 0$.
     It is clear that
     \begin{align*}
-        G_t(z) = (t z)^{-1} (1 - \e^{-(t z)^2})
+        G_\epsilon(z) = (\epsilon z)^{-1} (1 - \e^{-(\epsilon z)^2})
     \end{align*}
     It is clear that
     \begin{align*}
-        \abs {G_t(z)} \leq C \abs {t z}^{-1}
+        \abs {G_\epsilon(z)} \leq C \abs {\epsilon z}^{-1}
     \end{align*}
-    where C does not depend on $t$.
+    where C does not depend on $\epsilon$.
     Using Theorem~\ref{theorem:functional_calculus} with~\eqref{eq:functional_calculus:bound_on_seminorm},
     we obtain
     \begin{align*}
-        \SymbolSemiNorm {-2} {\rho, \delta} N {G_t(\Rep \lambda (\Laplacian))}
-        \leq C t^{-1}.
+        \SymbolSemiNorm {-2} {\rho, \delta} N {G_\epsilon(\Rep \lambda (\Laplacian))}
+        \leq C \epsilon^{-1}.
     \end{align*}
 
     We can now conclude like before that
     \begin{align*}
-        &\SymbolSemiNorm {0} {\rho, \delta } N {\Id {\Lebesgue 2 \CompactGroup} - \eta_t}\\
+        &\SymbolSemiNorm {0} {\rho, \delta } N {\Id {\Lebesgue 2 \CompactGroup} - \eta_\epsilon}\\
         &\leq
-        \SymbolSemiNorm {-2} {\rho, \delta} {N'} {G_t(\Rep \lambda \BesselPotentialSquared {})}
-        \SymbolSemiNorm {2} {\rho, \delta} {N'} {t \Rep \lambda \BesselPotentialSquared {}}\\
-        &\leq C t^{-1 + 1} = C
+        \SymbolSemiNorm {-2} {\rho, \delta} {N'} {G_\epsilon(\Rep \lambda \BesselPotentialSquared {})}
+        \SymbolSemiNorm {2} {\rho, \delta} {N'} {\epsilon \Rep \lambda \BesselPotentialSquared {}}\\
+        &\leq C \epsilon^{-1 + 1} = C
     \end{align*}
 \end{proof}
 
