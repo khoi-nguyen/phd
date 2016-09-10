@@ -634,6 +634,18 @@ For a proof, see e.g.~\cite[Lemma 3.1.55]{FischerRuzhansky16} which can be easil
 \end{proposition}
 \begin{proof}
     The smoothness of the kernel and Schwartz decay in the second variable follow directly from the kernel estimates (Theorem~\ref{theorem:kernel_estimates}).
+    In particular,
+    for each $\beta \in \N^{\dim \Group}$ and each $N \in \N$,
+    we have
+    \begin{align}
+        \sup_{g \in \Group}
+        \seminorm [\Schwartz \Group] N {\LeftDifferentialOperator [g] \beta \kappa_g}
+        \leq
+        C
+        \SymbolSemiNorm m {\rho, \delta} {N'} {\sigma}
+        \label{eq:bound_on_Schwartz_seminorm_of_smoothing_kernel}
+    \end{align}
+    for some $N \in \N$.
 
     Fix $\beta \in \N^n$.
     Using the Leibniz rule for left-invariant differential operators,
@@ -674,7 +686,7 @@ For a proof, see e.g.~\cite[Lemma 3.1.55]{FischerRuzhansky16} which can be easil
         \seminorm [\Schwartz \Group] {N'} {\LeftDifferentialOperator [g_2 = g] {\beta_2} \kappa_{g_2}}.
     \end{align*}
 
-    Using the above,
+    Using the above together with~\eqref{eq:bound_on_Schwartz_seminorm_of_smoothing_kernel},
     we conclude easily that $T$ is continuous from $\TemperedDistributions \Group$ to $\SmoothFunctions \Group$.
 \end{proof}
 
