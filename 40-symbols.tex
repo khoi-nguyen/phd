@@ -608,6 +608,7 @@ we need to recall a property of convolution by tempered distributions.
 For a proof, see e.g.~\cite[Lemma 3.1.55]{FischerRuzhansky16} which can be easily adapted to our case.
 
 \begin{lemma}
+\label{lemma:continuity_of_convolutions}
     Let $f \in \TemperedDistributions \Group$.
     There exists $N \in \N$ and $C \geq 0$ such that
     \begin{align*}
@@ -631,6 +632,51 @@ For a proof, see e.g.~\cite[Lemma 3.1.55]{FischerRuzhansky16} which can be easil
     As a result,
     the operator $T$ extends to a continuous mapping from $\TemperedDistributions \Group$ to $\SmoothFunctions \Group$.
 \end{proposition}
+\begin{proof}
+    The smoothness of the kernel and Schwartz decay in the second variable follow directly from the kernel estimates (Theorem~\ref{theorem:kernel_estimates}).
+
+    Fix $\beta \in \N^n$.
+    Using the Leibniz rule for left-invariant differential operators,
+    we check that
+    \begin{align*}
+        \LeftDifferentialOperator \beta (T f)(g)
+        = \lcsum{\beta = \beta_1 + \beta_2}
+        \LeftDifferentialOperator [g_1 = g] {\beta_1}
+        (\conv f {\LeftDifferentialOperator [g_2 = g] {\beta_2} \kappa_{g_2}})(g_1)
+    \end{align*}
+
+    Passing from left-invariant vector fields to their right-invariant counterpart,
+    we obtain
+    \begin{align*}
+        \abs {\LeftDifferentialOperator \beta (T f)(g)}
+        \leq
+        C
+        \lcsum{\beta = \beta_1 + \beta_2}
+        (1 + \norm [\Group] g)^{\abs \beta_1}
+        \abs {(\conv {\RightDifferentialOperator [g_1 = g] {\beta_1} f} {\LeftDifferentialOperator [g_2 = g] {\beta_2} \kappa_{g_2}})(g_1)}.
+    \end{align*}
+
+    Using Lemma~\ref{lemma:continuity_of_convolutions} and the continuity of $\LeftDifferentialOperator {\beta_1}$ on $\TemperedDistributions \Group$,
+    we have
+    \begin{align*}
+        &\abs {\LeftDifferentialOperator \beta (T f)(g)}\\
+        &\leq
+        C
+        \lcsum{\beta = \beta_1 + \beta_2}
+        (1 + \norm [\Group] g)^{\abs \beta_1 + N}
+        \seminorm [\TemperedDistributions \Group] N {\RightDifferentialOperator [g_1 = g] {\beta_1} f}
+        \seminorm [\TemperedDistributions \Group] N {\LeftDifferentialOperator [g_2 = g] {\beta_2} \kappa_{g_2}}\\
+        &\leq
+        C
+        \lcsum{\beta = \beta_1 + \beta_2}
+        (1 + \norm [\Group] g)^{N'}
+        \seminorm [\TemperedDistributions \Group] {N'} f
+        \seminorm [\Schwartz \Group] {N'} {\LeftDifferentialOperator [g_2 = g] {\beta_2} \kappa_{g_2}}.
+    \end{align*}
+
+    Using the above,
+    we conclude easily that $T$ is continuous from $\TemperedDistributions \Group$ to $\SmoothFunctions \Group$.
+\end{proof}
 
 \section{Holomorphic functional calculus}
 
