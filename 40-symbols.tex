@@ -2864,49 +2864,6 @@ and we need to find out whether it converges in a satisfactory sense for our pur
     it follows that $\sigma - \tau \in \SmoothingSymbols$.
 \end{proof}
 
-\subsection{Adjunction formula}
-
-\begin{lemma}
-    Let $\sigma \in \SmoothingSymbols$ and denote by $\kappa$ its associated kernel.
-    We let
-    \begin{align*}
-        \kappa_g^{(*)}(h) \defeq \conj \kappa_{g h^{-1}}(h^{-1}).
-    \end{align*}
-    Then $\kappa^{(*)}$ is smooth on $\Group \times \Group$ and the map
-    \begin{align*}
-        g \in \Group \mapsto \kappa_g^{(*)}(\dummy) \in \Schwartz \Group
-    \end{align*}
-    is smooth.
-    Moreover,
-    the map
-    \begin{align*}
-        \sigma^{(*)}(g, \lambda)
-        \defeq \Fourier \kappa_g^{(*)}(\lambda),
-        \quad (g, \lambda) \in \Group \times \VectorSpace.
-    \end{align*}
-    defines a smoothing symbol which satisfies
-    \begin{align*}
-        \adj {\Op(\sigma)}
-        = \Op(\sigma^{(*)}).
-    \end{align*}
-\end{lemma}
-
-\begin{lemma}
-    Assume that $1 \geq \rho > \delta \geq 0$.
-    For each $\beta_0$ and each $M \in \N$,
-    there exists $C \geq 0$ and an $N \in \N$ such that for any $\sigma \in \SmoothingSymbols$,
-    \begin{align*}
-        &\norm [\Lin {\Lebesgue 2 \Group}] {%
-        \LeftDifferentialOperator [g] {\beta_0} (
-            \sigma^{(*)}(g,\lambda)
-            - \sum_{\abs \alpha \leq N} \DifferenceOperatorOrder \alpha \LeftDifferentialOperator \alpha \adj \sigma(g, \lambda))
-            \Rep \lambda \BesselPotential M
-        }\\
-        &\quad \leq C \SymbolSemiNorm m {\rho, \delta} N \sigma
-    \end{align*}
-    holds for every $(g, \lambda) \in \Group \times \VectorSpace$.
-\end{lemma}
-
 \subsection{Composition formula}
 
 First, we show that $\SmoothingOperators$ is stable under composition.
@@ -3221,6 +3178,49 @@ First, we show that $\SmoothingOperators$ is stable under composition.
         -\dim \Group - m_1 - \delta \abs {\beta_0} + \rho \dim \Group
     \end{align*}
 \end{proof}
+
+\subsection{Adjunction formula}
+
+\begin{lemma}
+    Let $\sigma \in \SmoothingSymbols$ and denote by $\kappa$ its associated kernel.
+    We let
+    \begin{align*}
+        \kappa_g^{(*)}(h) \defeq \conj \kappa_{g h^{-1}}(h^{-1}).
+    \end{align*}
+    Then $\kappa^{(*)}$ is smooth on $\Group \times \Group$ and the map
+    \begin{align*}
+        g \in \Group \mapsto \kappa_g^{(*)}(\dummy) \in \Schwartz \Group
+    \end{align*}
+    is smooth.
+    Moreover,
+    the map
+    \begin{align*}
+        \sigma^{(*)}(g, \lambda)
+        \defeq \Fourier \kappa_g^{(*)}(\lambda),
+        \quad (g, \lambda) \in \Group \times \VectorSpace.
+    \end{align*}
+    defines a smoothing symbol which satisfies
+    \begin{align*}
+        \adj {\Op(\sigma)}
+        = \Op(\sigma^{(*)}).
+    \end{align*}
+\end{lemma}
+
+\begin{lemma}
+    Assume that $1 \geq \rho > \delta \geq 0$.
+    For each $\beta_0$ and each $M \in \N$,
+    there exists $C \geq 0$ and an $N \in \N$ such that for any $\sigma \in \SmoothingSymbols$,
+    \begin{align*}
+        &\norm [\Lin {\Lebesgue 2 \Group}] {%
+        \LeftDifferentialOperator [g] {\beta_0} (
+            \sigma^{(*)}(g,\lambda)
+            - \sum_{\abs \alpha \leq N} \DifferenceOperatorOrder \alpha \LeftDifferentialOperator \alpha \adj \sigma(g, \lambda))
+            \Rep \lambda \BesselPotential M
+        }\\
+        &\quad \leq C \SymbolSemiNorm m {\rho, \delta} N \sigma
+    \end{align*}
+    holds for every $(g, \lambda) \in \Group \times \VectorSpace$.
+\end{lemma}
 
 \section{\texorpdfstring{$L^p$}{Lp} boundedness}
 
