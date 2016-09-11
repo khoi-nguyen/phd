@@ -778,6 +778,7 @@ this is a price we are willing to pay.
 \end{example}
 
 \begin{lemma}[\cite{RuzhanskyWirth14}, Theorem 3.1. (1)]
+\label{lemma:fall_in_order_for_parameter-elliptic_symbols}
     Let $\sigma \in \SymbolClass m {\rho, \delta}$ be a symbol which does not depend on $g \in \Group$,
     with $m \geq 0$ and $\rho > 0$.
 
@@ -871,7 +872,21 @@ We are now ready to state our main result.
     we can only show the result for a symbol $\sigma$ which does not depend on $g \in \Group$.
 \end{theorem}
 \begin{proof}
-    Let us first assume that $-1 < s < 0$ and fix $\gamma \in \R$.
+    Let us first assume that $-1 < s < 0$
+    and fix $\alpha \in \N^{\dimDifferenceOperators}$, $\beta \in \N^{\dim \Group}$ and $\gamma \in \R$.
+    We shall show that
+    \begin{align*}
+        \Rep \lambda \BesselPotential {-sm + \rho \abs \alpha - \delta \abs \beta + \gamma}
+        F(\sigma)(g, \lambda)
+        \Rep \lambda \BesselPotential {-\gamma}
+    \end{align*}
+    is bounded on $\Lin {\Lebesgue 2 \CompactGroup}$ uniformly in $(g, \lambda) \in \Group \times \VectorSpace$.
+    For technical convenience,
+    we shall check the boundedness in the Peter-Weyl basis of $\Lebesgue 2 \CompactGroup$.
+    Therefore, we also fix $\mu, \nu \in \dualGroup \CompactGroup$,
+    and integers $m, n, p, q \in \N$ such that
+    $1 \leq m, n \leq \dimRep \mu$, $1 \leq p, q \leq \dimRep \nu$.
+
     By the Helffer-Sj\"ostrand formula,
     \begin{align*}
         &\abs {%
@@ -885,7 +900,7 @@ We are now ready to state our main result.
         } \abs {\dd z}.
     \end{align*}
 
-    Using parameter-ellipticity,
+    Using parameter-ellipticity and Lemma~\ref{lemma:fall_in_order_for_parameter-elliptic_symbols},
     we obtain
     \begin{align*}
         \abs {%
@@ -895,11 +910,11 @@ We are now ready to state our main result.
         \leq
         C
         (z^{\frac 1 m} + \norm [\VectorSpace] \lambda + \JapaneseBracket \CompactGroup \mu)^{-m}
-        L(\alpha, \beta, \gamma)
+        L_{\mu \nu}(\alpha, \beta, \gamma)
     \end{align*}
     where
     \begin{align*}
-        L(\alpha, \beta, \gamma) \defeq
+        L_{\mu \nu}(\alpha, \beta, \gamma) \defeq
         (\norm [\VectorSpace] \lambda + \JapaneseBracket \CompactGroup \mu)^{-\rho \abs \alpha + \delta \abs \beta + \gamma}
         (\norm [\VectorSpace] \lambda + \JapaneseBracket \CompactGroup \nu)^{-\gamma}.
     \end{align*}
@@ -911,13 +926,13 @@ We are now ready to state our main result.
             F(\sigma)(g, \lambda)_{\mu_{m n}, \nu_{p q}}
         }\\
         &\ \leq C \oint_{\partial \Lambda}
-        \abs \lambda^s
-        (\abs z^{\frac 1 m} + \norm [\VectorSpace] \lambda + \JapaneseBracket \CompactGroup \mu)^{-m} L(\alpha, \beta, \gamma) \abs {\dd z}.
+        \abs z^s
+        (\abs z^{\frac 1 m} + \norm [\VectorSpace] \lambda + \JapaneseBracket \CompactGroup \mu)^{-m} L_{\mu \nu}(\alpha, \beta, \gamma) \abs {\dd z}.
     \end{align*}
 
     It is clear that the above can be estimated by
     \begin{align*}
-        \int_{\R^+} r^s (r^{\frac 1 m} + \norm \lambda + \JapaneseBracket \CompactGroup \mu) \ddr
+        \int_{\R^+} r^s (r^{\frac 1 m} + \norm \lambda + \JapaneseBracket \CompactGroup \mu) \dd r
         &\leq \int_{\R^+} ((\norm \lambda + \JapaneseBracket \CompactGroup \mu)^m r)^s (1 + r^{\frac 1 m})^{-m} \dd r\\
         &\leq (\norm \lambda + \JapaneseBracket \CompactGroup \mu)^{m s},
     \end{align*}
@@ -933,12 +948,13 @@ We are now ready to state our main result.
         }\\
         &\ \leq C
         (\norm \lambda + \JapaneseBracket \CompactGroup \mu)^{m s}
-        L(\alpha, \beta, \gamma),
+        L_{\mu \nu}(\alpha, \beta, \gamma),
     \end{align*}
     which by definition means that $F(\sigma) \in \SymbolClass {m s} {\rho, \delta}$.
 
     Suppose now that $s < -1$.
     Note that we have a determination of the logarithm on our contour,
+    % TODO: not true!
     so we can define
     \begin{align*}
         G(z) \defeq F(z)^{\frac 1 {\Floor{-s} + 1}}
@@ -972,7 +988,8 @@ We are now ready to state our main result.
     defines a symbol in $\SymbolClass \gamma {1, 0}$.
 \end{corollary}
 \begin{proof}
-    Since $F(z) = z^s$ with $s < 0$ is holomorphic
+    Since $F(z) = z^s$ with $s < 0$ is holomorphic in $\C \setminus \Gamma$,
+    where we use the same notation as Theorem~\ref{theorem:functional_calculus}.
     and $\BesselPotentialSquared {}$ is parameter elliptic with respect to $\Lambda \defeq \R^-$,
     we know that
     \begin{align*}
