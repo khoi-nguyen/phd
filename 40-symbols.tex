@@ -3179,6 +3179,22 @@ First, we show that $\SmoothingOperators$ is stable under composition.
     \end{align*}
 \end{proof}
 
+\begin{proposition}
+    Assume that $1 \geq \rho > \delta \geq 0$.
+    For each $m_1, m_2 \in \R$, and each $M, N \in \N$,
+    there exists $C > 0$ and $M' \in \N$ such that
+    \begin{align*}
+        &\SymbolSemiNorm {m_1 + m_2 - N (\rho - \delta), R} {\rho, \delta} M {%
+        (\sigma_1 \circ \sigma_2)(g, \lambda)
+        - \sum_{\abs \alpha \leq N} \DifferenceOperatorOrder \alpha \sigma_1(g, \lambda) \LeftDifferentialOperator \alpha \sigma_2(g, \lambda)
+        }\\
+        &\qquad \leq C
+        \SymbolSemiNorm {m_1, R} {\rho, \delta} {M'} {\sigma_1}
+        \SymbolSemiNorm {m_2} {\rho, \delta} {M'} {\sigma_2}
+    \end{align*}
+    holds for every $\sigma_1, \sigma_2 \in \SmoothingSymbols$.
+\end{proposition}
+
 \subsection{Adjunction formula}
 
 \begin{lemma}
