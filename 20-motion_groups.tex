@@ -655,6 +655,33 @@ $X_1, \cdots, X_{\dim \Group}$ will denote a basis such that
             and $\RightDifferentialOperatorFirstOrder Y_k$ is the right-invariant vector field on the manifold $\CompactGroup$ acting exclusively on the variable $k \in \CompactGroup$.
     \end{itemize}
 \end{proposition}
+\begin{proof}
+    Fix $(x, k) \in \Group$, $\phi \in \SmoothFunctions \Group$ and
+    let us check both of the claims separately.
+
+    \begin{itemize}
+        \item
+            Using the fact that $\exp_\Group(t X) = (t X, \Id {\VectorSpace})$,
+            we obtain
+            \begin{align*}
+                \RightDifferentialOperatorFirstOrder X \phi(x, k)
+                = \eval {\D* 1 t} {t = 0} \phi( (t X, \Id \VectorSpace) (x, k) )
+                = \eval {\D* 1 t} {t = 0} \phi(x + tX, k),
+            \end{align*}
+            from which the conclusion follows easily.
+        \item
+            Using the fact that $\exp_\Group(t Y) = (0_\VectorSpace, \exp_\CompactGroup(t Y)$,
+            we obtain
+            \begin{align*}
+                \RightDifferentialOperatorFirstOrder Y \phi(x, k)
+                &= \eval {\D* 1 t} {t = 0} \phi( (0_\VectorSpace, \exp_\CompactGroup(t Y)) (x, k) )\\
+                &= \eval {\D* 1 t} {t = 0} \phi(\exp_\CompactGroup(t Y) x, \exp_\CompactGroup(t Y) k)\\
+                &= \sum_{j = 1}^{\dim \VectorSpace} (Y x)_j \D 1 [\phi] {x_j} (x, k)
+                + \RightDifferentialOperatorFirstOrder Y_k \phi(x, k)
+            \end{align*}
+            as required.
+    \end{itemize}
+\end{proof}
 
 \section{Unitary representations}
 
