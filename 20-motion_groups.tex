@@ -683,6 +683,26 @@ $X_1, \cdots, X_{\dim \Group}$ will denote a basis such that
     \end{itemize}
 \end{proof}
 
+\begin{corollary}
+    Let $j \in \{1, \dots, \dim \Group\}$.
+    \begin{itemize}
+        \item
+            If $j \leq \dim \VectorSpace$, then we have
+            \begin{align*}
+                \RightDifferentialOperatorFirstOrder X_j
+                = \sum_{i = 1}^{\dim \VectorSpace} \ip {k e_i} {e_j} \LeftDifferentialOperatorFirstOrder X_i.
+            \end{align*}
+        \item
+            If $j > \dim \VectorSpace$,
+            \begin{align*}
+                \RightDifferentialOperatorFirstOrder Y
+                = \sum_{i, j = 1}^{\dim \VectorSpace} (Y x)_j \ip {k e_i} {e_j} \LeftDifferentialOperatorFirstOrder X_i
+                + \RightDifferentialOperatorFirstOrder Y_k \phi(x, k)
+            \end{align*}
+            where $\RightDifferentialOperatorFirstOrder Y_k$ is the right-invariant vector field on the manifold $\CompactGroup$ acting exclusively on the variable $k \in \CompactGroup$.
+    \end{itemize}
+\end{corollary}
+
 \section{Unitary representations}
 
 The unitary dual of $\Group$ was first described in~\cite{Mackey51,Mackey52},
