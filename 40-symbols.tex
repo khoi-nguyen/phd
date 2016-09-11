@@ -988,9 +988,11 @@ We are now ready to state our main result.
     defines a symbol in $\SymbolClass \gamma {1, 0}$.
 \end{corollary}
 \begin{proof}
-    Since $F(z) = z^s$ with $s < 0$ is holomorphic in $\C \setminus \Gamma$,
-    where we use the same notation as Theorem~\ref{theorem:functional_calculus}.
-    and $\BesselPotentialSquared {}$ is parameter elliptic with respect to $\Lambda \defeq \R^-$,
+    Since $F(z) = z^s$ with $s < 0$ is holomorphic in $\C \setminus \Lambda$, where
+    \begin{align*}
+        \Lambda \defeq \Lambda(\frac {\turn} 3, \frac {4 \pi} 3)
+    \end{align*}
+    and $\BesselPotentialSquared {}$ is parameter elliptic with respect to $\Lambda$,
     we know that
     \begin{align*}
         \BesselPotentialSquared {s} \in \SymbolClass {2 s} {1, 0},
@@ -1038,7 +1040,10 @@ The following result is central in our analysis.
 
 \end{theorem}
 \begin{proof}
-    In this proof, we consider the sector $\Lambda \defeq \R^-$,
+    In this proof, we consider the following sector
+    \begin{align*}
+        \Lambda \defeq \Lambda(\frac {\turn} 3, \frac {4 \pi} 3)
+    \end{align*}
     and observe that $\Rep \lambda \BesselPotentialSquared {}$ is parameter elliptic with respect to $\Lambda$.
     We also let $\Gamma$ be the boundary of $\Lambda \cup \{z \in \C : \abs z \leq \delta\}$ with $0 < \delta \leq 1 / 2$.
 
