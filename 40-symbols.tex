@@ -3180,6 +3180,7 @@ First, we show that $\SmoothingOperators$ is stable under composition.
 \end{proof}
 
 \begin{proposition}
+\label{proposition:composition_formula}
     Assume that $1 \geq \rho > \delta \geq 0$.
     For each $m_1, m_2 \in \R$, and each $M, N \in \N$,
     there exists $C > 0$ and $M' \in \N$ such that
@@ -3317,6 +3318,52 @@ First, we show that $\SmoothingOperators$ is stable under composition.
     \end{align*}
     yield the same topology on $\SymbolClass m {\rho, \delta}$.
 \end{theorem}
+\begin{proof}
+    Let $N \in \N$ and $\sigma \in \SmoothingSymbols$.
+
+    It is clear by definition of $\SymbolClass m {\rho, \delta}$-topology
+    that there exists $c_N \geq 0$ such that
+    \begin{align}
+        \SymbolSemiNorm m {\rho, \delta} {N} \sigma
+        \leq \max_{\abs \gamma \leq c_{N}} \SymbolSemiNorm {m + \gamma, R} {\rho, \delta} {N'} {\Rep \lambda \BesselPotential \gamma \sigma}.
+        \label{eq:equivalence_of_symbol_classes_definitions:crude_inequality}
+    \end{align}
+
+    By Proposition~\ref{proposition:composition_formula} and Corollary~\ref{corollary:powers_of_the_Laplacian},
+    we know that
+    \begin{align*}
+        \sup_{\abs \gamma \leq c_N} \SymbolSemiNorm {m + \gamma, R} {\rho, \delta} N {\Rep \lambda \BesselPotential \gamma \sigma}
+    \end{align*}
+    is finite.
+
+    Since taking the adjoint is continuous in the $\SymbolClass {m, R} {\rho, \delta}$-topology,
+    we have
+    \begin{align*}
+        \SymbolSemiNorm {m + \gamma, R} {\rho, \delta} N {\Rep \lambda \BesselPotential \gamma \sigma}
+        &\leq C
+        \SymbolSemiNorm {m + \gamma, R} {\rho, \delta} {N'} {\adj \sigma \Rep \lambda \BesselPotential \gamma}\\
+        &\leq C
+        \SymbolSemiNorm {m, R} {\rho, \delta} {N''} {\adj \sigma}
+        = C \SymbolSemiNorm {m, R} {\rho, \delta} {N'''} {\sigma},
+    \end{align*}
+    which,
+    if combined with~\eqref{eq:equivalence_of_symbol_classes_definitions:crude_inequality},
+    yields that for every $N \in \N$,
+    there exists $N' \in \N$ such that
+    \begin{align*}
+        \SymbolSemiNorm m {\rho, \delta} {N} \sigma
+        \leq C \SymbolSemiNorm {m, R} {\rho, \delta} {N'} {\sigma}.
+    \end{align*}
+
+    Since it is very clear that
+    \begin{align*}
+        \SymbolSemiNorm {m, R} {\rho, \delta} {N} {\sigma}
+        \leq \SymbolSemiNorm m {\rho, \delta} {N} \sigma,
+    \end{align*}
+    It follows that the seminorms $\SymbolSemiNorm {m, R} {\rho, \delta} N \dummy, N \in \N$ define the same topology as $\SymbolSemiNorm m {\rho, \delta} N \dummy, N \in \N$.
+    As $\SymbolClass m {\rho, \delta}$ is the completion of $\SmoothingSymbols$ with respect to the family $\SymbolSemiNorm m {\rho, \delta} N \dummy$, $N \in \N$ of seminorms,
+    the conclusion follows easily.
+\end{proof}
 
 \section{\texorpdfstring{$L^p$}{Lp} boundedness}
 
