@@ -3372,6 +3372,31 @@ This will allow us to conclude the proof that our collection of operators $\Oper
     the conclusion follows easily.
 \end{proof}
 
+Naturally,
+the following statement holds with an identical proof.
+
+\begin{theorem}
+    Assume that $1 \geq \rho > \delta \geq 0$ and fix $m \in \R$.
+    A symbol $\sigma$ is in $\SymbolClass m {\rho, \delta}$ if and only if
+    \begin{align*}
+        \sup_{g \in \Group} \esssup_{\lambda \in \VectorSpace}
+        \norm [\Lin {\Lebesgue 2 \CompactGroup}] {%
+            \Rep \lambda \BesselPotential {-m + \rho \abs \alpha - \delta \abs \beta}
+            \LeftDifferentialOperator \beta
+            \DifferenceOperatorOrder \alpha
+            \sigma(g, \lambda)
+        } < \infty.
+    \end{align*}
+
+    Moreover,
+    the semi-norms
+    \begin{align*}
+        &\sigma \in \SymbolClass m {\rho, \delta} \mapsto \SymbolSemiNorm m {\rho, \delta} N \sigma\\
+        &\sigma \in \SymbolClass {m} {\rho, \delta} \mapsto \SymbolSemiNorm {m, L} {\rho, \delta} N \sigma
+    \end{align*}
+    yield the same topology on $\SymbolClass m {\rho, \delta}$.
+\end{theorem}
+
 \section{\texorpdfstring{$L^p$}{Lp} boundedness}
 
 \subsection{\texorpdfstring{$L^2$}{L2} boundedness}
