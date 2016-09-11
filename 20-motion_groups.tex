@@ -634,6 +634,28 @@ $X_1, \cdots, X_{\dim \Group}$ will denote a basis such that
     \end{align*}
 \end{proof}
 
+\begin{proposition}
+    Let $X \in \LieAlgebra$.
+    \begin{itemize}
+        \item
+            If $X \in \VectorSpace$, then its associated right-invariant vector field acts on $\SmoothFunctions \Group$ via
+            \begin{align*}
+                \RightDifferentialOperatorFirstOrder X \phi(x, k)
+                = \ip {\grad \phi(x, k)} X,
+            \end{align*}
+            where in the above $(x, k) \in \Group$ and $\phi \in \SmoothFunctions \Group$.
+        \item
+            If $Y \in \LieAlgebraCompactGroup$, then its associated right-invariant vector field acts on $\SmoothFunctions \Group$ via
+            \begin{align*}
+                \RightDifferentialOperatorFirstOrder Y \phi(x, k)
+                = \sum_{j = 1}^{\dim \VectorSpace} (Y x)_j \D 1 [\phi] {x_j} (x, k)
+                + \RightDifferentialOperatorFirstOrder Y_k \phi(x, k)
+            \end{align*}
+            where in the above $(x, k) \in \Group$, $\phi \in \SmoothFunctions \Group$,
+            and $\RightDifferentialOperatorFirstOrder Y_k$ is the right-invariant vector field on the manifold $\CompactGroup$ acting exclusively on the variable $k \in \CompactGroup$.
+    \end{itemize}
+\end{proposition}
+
 \section{Unitary representations}
 
 The unitary dual of $\Group$ was first described in~\cite{Mackey51,Mackey52},
