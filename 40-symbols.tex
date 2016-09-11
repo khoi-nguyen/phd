@@ -3397,6 +3397,37 @@ the following statement holds with an identical proof.
     yield the same topology on $\SymbolClass m {\rho, \delta}$.
 \end{theorem}
 
+\subsection{Pseudo-differential calculus}
+
+We are now able to finish the proof of the \emph{adjunction} and \emph{composition} formulas.
+
+\begin{theorem}[Composition formula]
+\label{theorem:composition_formula}
+    Assume that $1 \geq \rho > \delta \geq 0$.
+    Given $m_1, m_2 \in \R$,
+    we let
+    $\sigma_1 \in \SymbolClass {m_1} {\rho, \delta}$,
+    $\sigma_2 \in \SymbolClass {m_2} {\rho, \delta}$.
+
+    There exists $\sigma \in \SymbolClass {m_1 + m_2} {\rho, \delta}$ such that
+    \begin{align*}
+        \Op (\sigma) = \Op(\sigma_1) \circ \Op(\sigma_2)
+    \end{align*}
+    Moreover,
+    $\sigma$ is given modulo $\SmoothingSymbols$ by the asymptotic sum
+    \begin{align*}
+        \sigma \sim
+        \sum_{\alpha \in \N^{\dimDifferenceOperators}} \DifferenceOperatorOrder \alpha \sigma_1 \ \TaylorLeftDifferentialOperator \alpha \sigma_2.
+    \end{align*}
+    More precisely,
+    we have
+    \begin{align*}
+        \sigma
+        - \sum_{\abs \alpha \leq N} \DifferenceOperatorOrder \alpha \sigma_1 \ \TaylorLeftDifferentialOperator \alpha \sigma_2 \in \SymbolClass {m - (\rho - \delta) N} {\rho, \delta}
+    \end{align*}
+    for each $N \in \N$.
+\end{theorem}
+
 \section{\texorpdfstring{$L^p$}{Lp} boundedness}
 
 \subsection{\texorpdfstring{$L^2$}{L2} boundedness}
