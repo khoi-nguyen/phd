@@ -3263,6 +3263,30 @@ First, we show that $\SmoothingOperators$ is stable under composition.
     % TODO: finish the proof.
 \end{proof}
 
+\subsection{Simplification of symbol classes definition}
+
+\begin{theorem}
+    Assume that $1 \geq \rho > \delta \geq 0$ and fix $m \in \R$.
+    A symbol $\sigma$ is in $\SymbolClass m {\rho, \delta}$ if and only if
+    \begin{align*}
+        \sup_{g \in \Group} \esssup_{\lambda \in \VectorSpace}
+        \norm [\Lin {\Lebesgue 2 \CompactGroup}] {%
+            \LeftDifferentialOperator \beta
+            \DifferenceOperatorOrder \alpha
+            \sigma(g, \lambda)
+            \Rep \lambda \BesselPotential {-m + \rho \abs \alpha - \delta \abs \beta}
+        } < \infty.
+    \end{align*}
+
+    Moreover,
+    the semi-norms
+    \begin{align*}
+        &\sigma \in \SymbolClass m {\rho, \delta} \mapsto \SymbolSemiNorm m {\rho, \delta} N \sigma\\
+        &\sigma \in \SymbolClass {m} {\rho, \delta} \mapsto \SymbolSemiNorm {m, R} {\rho, \delta} N \sigma
+    \end{align*}
+    yield the same topology on $\SymbolClass m {\rho, \delta}$.
+\end{theorem}
+
 \section{\texorpdfstring{$L^p$}{Lp} boundedness}
 
 \subsection{\texorpdfstring{$L^2$}{L2} boundedness}
