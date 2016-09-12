@@ -3434,13 +3434,16 @@ We are now able to finish the proof of the \emph{adjunction} and \emph{compositi
     for each $M, N \in \N$,
     we can find $M' \in \N$ such that
     \begin{align*}
-        &\SymbolSemiNorm {m_1 + m_2 - N (\rho - \delta), R} {\rho, \delta} M {%
-        (\sigma_1 \circ \sigma_2)(g, \lambda)
-        - \sum_{\abs \alpha \leq N} \DifferenceOperatorOrder \alpha \sigma_1(g, \lambda) \LeftDifferentialOperator \alpha \sigma_2(g, \lambda)
+        &\SymbolSemiNorm {m_1 + m_2 + 2 \eta - N (\rho - \delta), R} {\rho, \delta} M {%
+        (\sigma_{1, \epsilon} \circ \sigma_{2, \epsilon})(g, \lambda)
+        - \sum_{\abs \alpha \leq N} \DifferenceOperatorOrder \alpha \sigma_{1, \epsilon}(g, \lambda) \LeftDifferentialOperator \alpha \sigma_{2, \epsilon}(g, \lambda)
         }\\
         &\qquad \leq C
-        \SymbolSemiNorm {m_1, R} {\rho, \delta} {M'} {\sigma_{1, \epsilon}}
-        \SymbolSemiNorm {m_2} {\rho, \delta} {M'} {\sigma_{2, \epsilon}}
+        \SymbolSemiNorm {m_1 + \eta, R} {\rho, \delta} {M'} {\sigma_{1, \epsilon}}
+        \SymbolSemiNorm {m_2 + \eta} {\rho, \delta} {M'} {\sigma_{2, \epsilon}}\\
+        &\qquad \leq C \epsilon^{2 \eta}
+        \SymbolSemiNorm {m_1, R} {\rho, \delta} {M'} {\sigma_1}
+        \SymbolSemiNorm {m_2} {\rho, \delta} {M'} {\sigma_2}\\
     \end{align*}
 \end{proof}
 
