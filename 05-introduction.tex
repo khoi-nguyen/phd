@@ -9,10 +9,10 @@ Given a partial differential operator
 with smooth coefficients,
 let us recall that its \emph{characteristic polynomial} is given by the smooth map
 \begin{align*}
-    \sigma(x, \xi) \defeq \sum_{\abs \alpha \leq N} c_\alpha(x) \xi^\alpha.
+    \sigma(x, \xi) \defeq \sum_{\abs \alpha \leq N} c_\alpha(x) (\i \turn \xi)^\alpha.
 \end{align*}
 
-Substituing $\iD{{x_i} }$ for $\xi_i$ might, formally speaking, seem like a trivial and insignificant change,
+Substituing $\iD{{x_i} }$ for $\i \turn \xi_i$ might, formally speaking, seem like a trivial and insignificant change,
 it is however good to keep in mind
 that smooth functions have their own operations and structures
 which could provide us with a different perspective.
@@ -21,19 +21,19 @@ Note that the composition and adjunction of such operators can be written in ter
 As an example,
 if $T_1$ and $T_2$ are two operators arising from the polynomials $\sigma_1(x, \xi)$ and $\sigma_2(x, \xi)$ via
 \begin{align*}
-    T_1 \defeq \sum_{\abs \alpha \leq N} \frac 1 {\alpha!} \iD{\xi^\alpha} \sigma_1(x, 0) \iD{x^\alpha}
+    T_1 \defeq \sum_{\abs \alpha \leq N} \frac {(\i \turn)^{-\abs \alpha}} {\alpha!} \iD{\xi^\alpha} \sigma_1(x, 0) \iD{x^\alpha}
     \quad
-    T_2 \defeq \sum_{\abs \alpha \leq N} \frac 1 {\alpha!} \iD{\xi^\alpha} \sigma_2(x, 0) \iD{x^\alpha},
+    T_2 \defeq \sum_{\abs \alpha \leq N} \frac {(\i \turn)^{-\abs \alpha}} {\alpha!} \iD{\xi^\alpha} \sigma_2(x, 0) \iD{x^\alpha},
 \end{align*}
 then it follows from an elementary computation
 that the characteristic polynomial of $T_1 \circ T_2$ is given by the finite sum
 \begin{align}
-    (\sigma_1 \circ \sigma_2)(x, \xi) = \sum_{\alpha \in \N^n} \frac 1 {\alpha!} \iD{\xi^\alpha} \sigma_1(x, \xi) \iD{x^\alpha} \sigma_2(x, \xi)
+    (\sigma_1 \circ \sigma_2)(x, \xi) = \sum_{\alpha \in \N^n} \frac {(\i \turn)^{-\abs \alpha}} {\alpha!} \iD{\xi^\alpha} \sigma_1(x, \xi) \iD{x^\alpha} \sigma_2(x, \xi)
     \label{eq:composition_formula_for_characteristic_polynomials},
 \end{align}
 while the adjoint of $T \defeq T_1$ arises from
 \begin{align}
-    \sigma^{(*)}(x, \xi) = \sum_{\alpha \in \N^n} \frac 1 {\alpha!} \iD{\xi^\alpha} \iD{x^\alpha} \adj{\sigma(x, \xi)},
+    \sigma^{(*)}(x, \xi) = \sum_{\alpha \in \N^n} \frac {(\i \turn)^{-\abs \alpha}} {\alpha!} \iD{\xi^\alpha} \iD{x^\alpha} \adj{\sigma(x, \xi)},
     \label{eq:adjunction_formula_for_characteristic_polynomials}
 \end{align}
 where in the above $\sigma \defeq \sigma_1$.
@@ -110,8 +110,8 @@ that shows the power of symbolic calculus.
     $\sigma_2 \in \SymbolClass {m_2} {\rho, \delta}$.
     We let
     \begin{align*}
-        \sigma^{(*)}(x, \xi) &\sim \sum_{\alpha \in \N^n} \frac 1 {\alpha!} \iD{\xi^\alpha} \iD{x^\alpha} \adj{\sigma(x, \xi)}\\
-        (\sigma_1 \circ \sigma_2)(x, \xi) &\sim \sum_{\alpha \in \N^n} \frac 1 {\alpha!} \iD{\xi^\alpha} \sigma_1(x, \xi) \iD{x^\alpha} \sigma_2(x, \xi),
+        \sigma^{(*)}(x, \xi) &\sim \sum_{\alpha \in \N^n} \frac {(\i \turn)^{-\abs \alpha}} {\alpha!} \iD{\xi^\alpha} \iD{x^\alpha} \adj{\sigma(x, \xi)}\\
+        (\sigma_1 \circ \sigma_2)(x, \xi) &\sim \sum_{\alpha \in \N^n} \frac {(\i \turn)^{-\abs \alpha}} {\alpha!} \iD{\xi^\alpha} \sigma_1(x, \xi) \iD{x^\alpha} \sigma_2(x, \xi),
     \end{align*}
     where the left-hand sides are thus defined modulo $\SmoothingSymbols [\R^n]$.
 
@@ -150,13 +150,7 @@ we easily check that the following map $\Op [\R^n]$
     &\defeq \int_{\R^n} \e^{\i \turn \ip [\R^n] x \xi} \sigma(x, \xi) \Fourier [\R^n] \phi(\xi) \dd \xi
     \label{eq:intro:Euclidean:quantisation}
 \end{align}
-not only \emph{does} send a characteristic polynomial to its corresponding partial differential operator\footnote{%
-    More precisely,
-    it sends a characteristic polynomial $\sigma(x, \xi) = \sum_{\alpha \in \N^n} c_\alpha(x) \xi^\alpha$ onto
-    \begin{align*}
-        \Op [\R^n](\sigma) \defeq \sum_{\alpha \in \N^n} (i \turn)^{-\abs \alpha} c_\alpha(x) \iD {x^\alpha}.
-    \end{align*}
-},
+not only \emph{does} send a characteristic polynomial to its corresponding partial differential operator
 but also is far more general in scope.
 The process of associating an operator with a symbol is known as \emph{quantisation}.
 
