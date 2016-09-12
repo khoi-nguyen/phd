@@ -262,8 +262,18 @@ As the first non-specific case,
 a difficulty that arises is how to replace $\DifferenceOperatorOrder [\T^n] \alpha$ and $\iD{\xi^\alpha}$
 in~\eqref{eq:composition_formula_for_characteristic_polynomials} and~\eqref{eq:composition_formula_for_discrete_characteristic_polynomials} respectively.
 
-It was observed in~\cite{RuzhanskyTurunen10}
-that we could generalise the above operators
+It was observed for the first time in~\cite{RuzhanskyTurunen10}
+that we could generalise the above operators by considering
+\begin{align*}
+    \DifferenceOperator q \Fourier f
+    \defeq \Fourier \{q f\},
+\end{align*}
+where $q \in \SmoothFunctions \Group$ is a smooth function on our group vanishing at the identify $e_\Group$.
+It is clear that
+\begin{align*}
+    \DifferenceOperator [\R^n] {x_j} &= \iD{\xi^\alpha}\\
+    \DifferenceOperator [\T^n] {\e^{\i \turn x_j} - 1} &= \DifferenceOperatorOrder [\T^n] {e_j}
+\end{align*}
 
 \subsection{Graded Lie groups}
 
