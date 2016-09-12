@@ -3427,6 +3427,22 @@ We are now able to finish the proof of the \emph{adjunction} and \emph{compositi
     \end{align*}
     for each $N \in \N$.
 \end{theorem}
+\begin{proof}
+    Fix $\epsilon \in (0, 1]$.
+    and denote by $\sigma_{1, \epsilon}, \sigma_{2, \epsilon} \in \SmoothingSymbols$ the symbols given by Proposition~\ref{proposition:approximation_of_symbols}.
+    By Proposition~\ref{proposition:composition_formula},
+    for each $M, N \in \N$,
+    we can find $M' \in \N$ such that
+    \begin{align*}
+        &\SymbolSemiNorm {m_1 + m_2 - N (\rho - \delta), R} {\rho, \delta} M {%
+        (\sigma_1 \circ \sigma_2)(g, \lambda)
+        - \sum_{\abs \alpha \leq N} \DifferenceOperatorOrder \alpha \sigma_1(g, \lambda) \LeftDifferentialOperator \alpha \sigma_2(g, \lambda)
+        }\\
+        &\qquad \leq C
+        \SymbolSemiNorm {m_1, R} {\rho, \delta} {M'} {\sigma_{1, \epsilon}}
+        \SymbolSemiNorm {m_2} {\rho, \delta} {M'} {\sigma_{2, \epsilon}}
+    \end{align*}
+\end{proof}
 
 \section{\texorpdfstring{$L^p$}{Lp} boundedness}
 
