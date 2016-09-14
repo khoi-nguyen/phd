@@ -1,5 +1,24 @@
 \chapter{Introduction}
 
+\section{Symbolic calculus}
+
+\begin{definition}[Symbol classes]
+    Assume $0 \leq \delta < \rho \leq 1$.
+    We shall say that $\sigma \in \SmoothFunctions {\R^n \times \R^n}$ is a \emph{symbol of order $m$}
+    if for each $\alpha, \beta \in \N^n$,
+    there exists $C \geq 0$ such that
+    \begin{align*}
+        \sup_{(x, \xi) \in \R^n \times \R^n} \abs {\iD{\xi^\alpha} \iD{x^\beta}\sigma(x, \xi)} \leq C (1 + \abs \xi)^{m - \rho \abs \alpha + \delta \abs \beta}.
+    \end{align*}
+
+    The class of such symbols will be denoted by $\SymbolClass [\R^n] m {\rho, \delta}$.
+    Moreover, we let
+    \begin{align*}
+        \SmoothingSymbols [\R^n] \defeq \bigcap_{m \in \R} \SymbolClass [\R^n] m {\rho, \delta}
+    \end{align*}
+    and call its elements \emph{smoothing symbols}.
+\end{definition}
+
 \section{The Euclidean case}
 
 Given a partial differential operator
