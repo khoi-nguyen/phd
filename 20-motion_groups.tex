@@ -2101,10 +2101,15 @@ To this end, we follow the ideas of \cite{FischerRuzhansky16}.
 
 \section{Taylor formula}
 
-We fix an arbitrary basis
+From now on,
+we let $q_1, \dots, q_{\dim \Group} \in \SmoothFunctions \Group$
+be a strongly admissible family.
+
+Moreover, we fix a basis $X_1, \dots, X_{\dim \Group} \in \LieAlgebra$ such that
 \begin{align*}
-    \Span \{X_1, \dots, X_{\dim \Group}\} = \LieAlgebra.
+    \LeftDifferentialOperatorFirstOrder {X_j} q_k(\dummy^{-1})(e_\Group) = \Kronecker j k
 \end{align*}
+for each $j, k \in \{1, \dots, \dim \Group\}$.
 
 \begin{definition}[Distance to the origin]
     Let $g = (x, k) \in \Group$.
