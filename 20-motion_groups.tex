@@ -2101,6 +2101,16 @@ To this end, we follow the ideas of \cite{FischerRuzhansky16}.
 
 \section{Taylor formula}
 
+\begin{definition}[Distance to the origin]
+    Let $g = (x, k) \in \Group$.
+    We define the \emph{distance} of $g$ to the identity $e_\Group$ via
+    \begin{align*}
+        \norm [\Group] g^2
+        \defeq
+        \norm x^2 + \dist [\CompactGroup] k {e_\CompactGroup}^2.
+    \end{align*}
+\end{definition}
+
 \begin{proposition}[Taylor remainder]
     There exists an admissible collection of smooth functions $q_1, \cdots, q_M \in \SmoothFunctions\Group$
     and a collection $\{\TaylorLeftDifferentialOperator{\alpha}\}_{\alpha \in \N^M}$ of left-invariant differential operators satisfying the following properties:
