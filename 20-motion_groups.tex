@@ -2139,3 +2139,18 @@ for each $j, k \in \{1, \dots, \dim \Group\}$.
         \end{cases}
     \end{align*}
 \end{definition}
+
+\begin{proposition}[Taylor's theorem]
+    Let $f \in \SmoothFunctions \Group$ and $g \in \Group$.
+    For every $N \in \Group$,
+    there exists $C \geq 0$ such that
+    \begin{align*}
+        \abs {\TaylorRemainder f g N (h)}
+        \leq
+        C \norm [\Group] h^{N + 1}
+        \sup_{\norm [\Group] z \leq \eta^{N + 1} \norm [\Group] h}
+        \sum_{\abs \alpha = N + 1}
+        \abs {\TaylorLeftDifferentialOperator \alpha f(g z)}.
+    \end{align*}
+    for every $h \in \Group$.
+\end{proposition}
