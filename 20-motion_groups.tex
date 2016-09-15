@@ -2121,11 +2121,21 @@ for each $j, k \in \{1, \dots, \dim \Group\}$.
     \end{align*}
 \end{definition}
 
-\begin{definition}[Taylor development]
+\begin{definition}[Taylor development and remainder]
     Let $f \in \Group$ and $g \in \Group$.
     For each $N \in \N$,
     we define the \emph{Taylor development of $f$ at $g$} of order $N$ to be
     \begin{align*}
         \sum_{\abs \alpha \leq N} q^\alpha(h^{-1}) \LeftDifferentialOperator \alpha f(g).
+    \end{align*}
+
+    Moreover,
+    we define the \emph{Taylor remainder} of $f$ of order $N$ at $g \in \Group$ via
+    \begin{align*}
+        \TaylorRemainder f g N(h) \defeq
+        \begin{cases}
+            f(g h) - \sum_{\abs \alpha \leq N} q^\alpha(h^{-1}) \TaylorLeftDifferentialOperator \alpha f(g) & \text{if } N \geq 0\\
+            f(g h) & \text{if } N < 0
+        \end{cases}
     \end{align*}
 \end{definition}
