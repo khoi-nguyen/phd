@@ -2121,6 +2121,15 @@ for each $j, k \in \{1, \dots, \dim \Group\}$.
     \end{align*}
 \end{definition}
 
+\begin{definition}[Taylor development]
+    Let $f \in \Group$ and $g \in \Group$.
+    For each $N \in \N$,
+    we define the \emph{Taylor development of $f$ at $g$} of order $N$ to be
+    \begin{align*}
+        \sum_{\abs \alpha \leq N} q^\alpha(h^{-1}) \LeftDifferentialOperator \alpha f(g).
+    \end{align*}
+\end{definition}
+
 \begin{proposition}[Taylor remainder]
     There exists an admissible collection of smooth functions $q_1, \cdots, q_M \in \SmoothFunctions\Group$
     and a collection $\{\TaylorLeftDifferentialOperator{\alpha}\}_{\alpha \in \N^M}$ of left-invariant differential operators satisfying the following properties:
