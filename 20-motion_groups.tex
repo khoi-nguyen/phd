@@ -2149,7 +2149,7 @@ for each $j, k \in \{1, \dots, \dim \Group\}$.
         \leq
         C \norm [\Group] h^{N + 1}
         \sum_{\abs \alpha = N + 1}
-        \sup_{\norm [\Group] z \leq \eta^{N + 1} \norm [\Group] h}
+        \sup_{\norm [\Group] z \leq \norm [\Group] h}
         \abs {\TaylorLeftDifferentialOperator \alpha f(g z)}.
     \end{align*}
     for every $h \in \Group$.
@@ -2191,4 +2191,17 @@ for each $j, k \in \{1, \dots, \dim \Group\}$.
         \abs {\LeftDifferentialOperatorFirstOrder {X_j} f(gz)},
     \end{align*}
     concluding the proof for the case $N = 0$.
+
+    Applying the case $N = 0$ to the function $\TaylorRemainder f g N$ at $e_\Group$,
+    we obtain
+    \begin{align*}
+        \abs {\TaylorRemainder f g N (h)}
+        &= \abs {\TaylorRemainder f g N (h) - \TaylorRemainder f g N (e_\Group)}\\
+        &\leq
+        \norm [\Group] h
+        \sum_{j = 1}^{\Group}
+        \sup_{\norm [\Group] z \leq \norm [\Group] h}
+        \abs {\TaylorRemainder {\LeftDifferentialOperatorFirstOrder {X_j} f} g {N - 1}(z)},
+    \end{align*}
+    which allows us to conclude by a simple inclusion.
 \end{proof}
