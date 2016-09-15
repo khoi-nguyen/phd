@@ -2154,3 +2154,41 @@ for each $j, k \in \{1, \dots, \dim \Group\}$.
     \end{align*}
     for every $h \in \Group$.
 \end{proposition}
+\begin{proof}
+    First, let us prove the case $N = 0$.
+    Clearly,
+    \begin{align*}
+        \TaylorRemainder f {(x, k)} 0 (y, l)
+        &= f(x + ky, k l) - f(x, k)\\
+        &=
+        (f(x + ky, k l) - f(x + ky, k))
+        + (f(x + ky, k) - f(x, k))
+    \end{align*}
+    so that the triangle inequality combined
+    with Taylor's theorem for $\VectorSpace$ and $\CompactGroup$ yields
+    \begin{align*}
+        \abs {\TaylorRemainder f {(x, k)} 0 (y, l)}
+        &\leq
+        \norm [\CompactGroup] l
+        \sum_{j = \dim \VectorSpace + 1}^{\dim \Group}
+        \sup_{\norm [\CompactGroup] m \leq \norm [\CompactGroup] l}
+        \abs {\LeftDifferentialOperatorFirstOrder {X_j} f(x + k y, k m)}\\
+        &\quad +
+        \norm {y}
+        \sum_{j = 1}^{\dim \VectorSpace}
+        \sup_{\norm {z} \leq \norm {y}}
+        \abs {\LeftDifferentialOperatorFirstOrder {X_j} f(x + z, k)}.
+    \end{align*}
+
+    From there,
+    it follows that
+    \begin{align*}
+        \abs {\TaylorRemainder f g 0 (h)}
+        \leq
+        \norm [\Group] h
+        \sum_{j = 1}^{\Group}
+        \sup_{\norm [\Group] z \leq \norm [\Group] h}
+        \abs {\LeftDifferentialOperatorFirstOrder {X_j} f(gz)},
+    \end{align*}
+    concluding the proof for the case $N = 0$.
+\end{proof}
