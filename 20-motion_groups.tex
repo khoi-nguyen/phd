@@ -2143,6 +2143,20 @@ for each $j, k \in \{1, \dots, \dim \Group\}$.
     \end{align*}
 \end{definition}
 
+\begin{lemma}
+\label{lemma:derivative_of_Taylor_polynomial_and_remainder}
+    Let $N \in \N$, $\beta \in \N^{\dim \Group}$.
+    For each $f \in \SmoothFunctions \Group$,
+    we have
+    \begin{align*}
+        \TaylorLeftDifferentialOperator \beta \TaylorPolynomial f g N
+        = \TaylorPolynomial {\TaylorLeftDifferentialOperator \beta f} g {N - \abs \beta},
+        \quad
+        \TaylorLeftDifferentialOperator \beta \TaylorRemainder f g N
+        = \TaylorRemainder {\TaylorLeftDifferentialOperator \beta f} g {N - \abs \beta}.
+    \end{align*}
+\end{lemma}
+
 \begin{proposition}[Taylor's theorem]
 \label{proposition:Taylor_theorem}
     Let $f \in \SmoothFunctions \Group$ and $g \in \Group$.
