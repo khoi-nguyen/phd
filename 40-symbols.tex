@@ -1096,11 +1096,11 @@ The following result is central in our analysis.
     \end{align*}
 
     Now, assume that $m = 0$.
-    It is clear that
+    Defining
     \begin{align*}
         G_\epsilon(z) = (\epsilon z)^{-1} (1 - \e^{-(\epsilon z)^2})
     \end{align*}
-    It is clear that
+    it is clear that
     \begin{align*}
         \abs {G_\epsilon(z)} \leq C \abs {\epsilon z}^{-1}
     \end{align*}
@@ -1137,13 +1137,6 @@ The following result is central in our analysis.
                 \Group \times \Group : (g, h) \mapsto \kappa_{\epsilon, g}(h)
             \end{align*}
             belongs to $\Schwartz {\Group \times \Group}$ and is also compactly supported in $g \in \Group$.
-        \item If $m_1 \geq m$, then for each $N \in \N$ there exists $C \geq 0$ and $N' \in \N$ such that
-            \begin{align*}
-                \SymbolSemiNorm {m_1} {\rho, \delta} N {\sigma - \sigma_\epsilon}
-                \leq C \SymbolSemiNorm m {\rho, \delta} {N'} \sigma
-                \epsilon^\frac {\max \{m_1 - m, 8\}} 2
-            \end{align*}
-            for each $\epsilon \in (0, 1]$.
         \item If $m_1 < m$, then for each $N \in \N$ there exists $C \geq 0$ and $N' \in \N$ such that
             \begin{align*}
                 \SymbolSemiNorm {m_1} {\rho, \delta} N {\sigma_\epsilon}
@@ -1151,7 +1144,16 @@ The following result is central in our analysis.
                 \epsilon^\frac {m_1 - m} 2.
             \end{align*}
             for each $\epsilon \in (0, 1]$.
+        \item If $m_1 \geq m$, then for each $N \in \N$ there exists $C \geq 0$ and $N' \in \N$ such that
+            \begin{align*}
+                \SymbolSemiNorm {m_1} {\rho, \delta} N {\sigma - \sigma_\epsilon}
+                \leq C \SymbolSemiNorm m {\rho, \delta} {N'} \sigma
+                \epsilon^\frac {\max \{m_1 - m, 8\}} 2
+            \end{align*}
+            for each $\epsilon \in (0, 1]$.
     \end{enumerate}
+
+    In particular, if $m_1 > m$, $\sigma_\epsilon$ converges to $\sigma$ in $\SymbolClass m_1 {\rho, \delta}$ as $\epsilon \to 0$.
 \end{proposition}
 \begin{proof}
     Let $\chi \in \SmoothFunctions {\R^+, [0, 1]}$ be a function with compact support
