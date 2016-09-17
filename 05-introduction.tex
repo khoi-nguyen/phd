@@ -33,10 +33,12 @@ the analogue of~\eqref{eq:composition_formula_for_characteristic_polynomials} is
     \sigma(x, \xi)
     &= \int_{\R^n} \e^{\i \turn \ip [\R^n] x \eta} \sigma_1(x, \xi + \eta) \Fourier [\R^n] \sigma_2(\eta, \xi) \dd \eta \notag\\
     &\sim \sum_{\abs \alpha \leq N} \frac {(\i \turn)^{-\abs \alpha}} {\alpha!} \iD{\xi^\alpha} \sigma_1(x, \xi) \iD{x^\alpha} \sigma_2(x, \xi),
+    \label{eq:asymptotic_sum_for_composition}
 \end{align}
 where the second line was obtained by a Taylor development of $\sigma_1$.
 Unfortunately,
-the above also means that we shall have to resort to \emph{approximate calculations}.
+as we cannot guarantee that~\eqref{eq:asymptotic_sum_for_composition} will converge as $N \to \infty$,
+the above also means that we shall have to resort to defining \emph{approximate limits}.
 
 \begin{definition}[Symbol classes]
     Assume $0 \leq \delta < \rho \leq 1$.
