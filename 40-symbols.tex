@@ -970,10 +970,21 @@ We are now ready to state our main result.
     \end{align*}
 
     By the first part of the proof,
-    $G(\sigma) \in \SymbolClass {\frac {m s} {\Floor {-s} +1}} {\rho, \delta}$.
+    $G(\sigma) \in \SymbolClass {\frac {m s} {\Floor {-s} +1}} {\rho, \delta}$ and
+    \begin{align*}
+        \SymbolSemiNorm {\frac {m s} {\Floor {-s} + 1}} {\rho, \delta} N {G(\sigma)}
+        \leq C
+        \sup_{z \in \Gamma} \frac {\abs {G(z)}} {\abs z^{\frac s {\Floor {-s} + 1}}}.
+    \end{align*}
     We can now conclude by observing that
     \begin{align*}
         F(\sigma) = G(\sigma)^{\Floor {-s} + 1} \in \SymbolClass {m s} {\rho, \delta},
+    \end{align*}
+    and
+    \begin{align*}
+        \SymbolSemiNorm {m s} {\rho, \delta} N {F(\sigma)}
+        \leq C
+        \sup_{z \in \Gamma} \frac {\abs {F(z)}} {\abs z^s}.
     \end{align*}
     where the inclusion in the symbol class above can only be obtained
     if the symbol is independent on $g$.
