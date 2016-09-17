@@ -2128,7 +2128,7 @@ for each $j, k \in \{1, \dots, \dim \Group\}$.
     \begin{align*}
         \TaylorPolynomial f g N(h)
         \defeq
-        \sum_{\abs \alpha \leq N} q^\alpha(h^{-1}) \LeftDifferentialOperator \alpha f(g),
+        \sum_{\abs \alpha \leq N} \frac 1 {\alpha!} q^\alpha(h^{-1}) \LeftDifferentialOperator \alpha f(g),
     \end{align*}
     where $h \in \Group$.
 
@@ -2137,7 +2137,7 @@ for each $j, k \in \{1, \dots, \dim \Group\}$.
     \begin{align*}
         \TaylorRemainder f g N(h) \defeq
         \begin{cases}
-            f(g h) - \sum_{\abs \alpha \leq N} q^\alpha(h^{-1}) \TaylorLeftDifferentialOperator \alpha f(g) & \text{if } N \geq 0\\
+            f(g h) - \sum_{\abs \alpha \leq N} \frac 1 {\alpha!} q^\alpha(h^{-1}) \TaylorLeftDifferentialOperator \alpha f(g) & \text{if } N \geq 0\\
             f(g h) & \text{if } N < 0.
         \end{cases}
     \end{align*}
