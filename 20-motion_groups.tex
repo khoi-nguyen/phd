@@ -2101,6 +2101,23 @@ To this end, we follow the ideas of \cite{FischerRuzhansky16}.
 
 \section{Taylor formula}
 
+\begin{definition}
+\label{definition:admissibility_of_polynomials}
+\index{polynomials!admissibility}
+    A finite collection $q_1$, \dots, $q_M \in \SmoothFunctions{\Group}$ of smooth functions is said to be \emph{admissible}
+    if $\dd q_j(e) \neq 0$ for each $j \in \{1, \cdots, M\}$
+    and if
+    \begin{align*}
+        \rank(\dd q_1(e), \cdots, \dd q_m(e)) = \dim \Group.
+    \end{align*}
+
+    Moreover, if
+    \begin{align*}
+        \bigcap_{j = 1}^M \{ q_j = 0 \} = \{e\},
+    \end{align*}
+    we shall say that the collection is \emph{strongly admissible}.
+\end{definition}
+
 From now on,
 we let $q_1, \dots, q_{\dim \Group} \in \SmoothFunctions \Group$
 be a strongly admissible family.
