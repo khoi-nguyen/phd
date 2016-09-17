@@ -3004,19 +3004,21 @@ First, we show that $\SmoothingOperators$ is stable under composition.
         \TaylorRemainder {\LeftDifferentialOperator [g_2 = g] {\beta_{02}} \DifferenceOperatorOrder {\alpha_{02}} \sigma_2(g_2 \dummy, \lambda)} {e_\Group} N (h^{-1}) \dd h.
     \end{align*}
 
-    Now, we would like to introduce powers of $\Rep \lambda \BesselPotential 1$ near $\sigma_2$,
+    Now, we would like to introduce powers of $\Rep \lambda \BesselPotentialSquared {}$ near $\sigma_2$,
     which will allow to estimate the above in terms of the symbol semi-norms of $\sigma_2$.
     To this end,
-    observe that if $M \in 2 \N$,
+    observe that if $M \in \N$,
     \begin{align*}
         \adj{\Rep \lambda(h)}
-        &= \adj{\Rep \lambda(h)} \Rep \lambda \BesselPotential M \Rep \lambda \BesselPotential {-M}\\
-        &= \lcsum{\abs \beta \leq M} \adj{\Rep \lambda(h)} \Rep \lambda(X)^\beta \Rep \lambda \BesselPotential {-M},
+        &= \adj{\Rep \lambda(h)} \Rep \lambda \BesselPotentialSquared M \Rep \lambda \BesselPotentialSquared {-M}\\
+        &= \lcsum{\abs \beta \leq 2 M} \adj{\Rep \lambda(h)} \Rep \lambda(X)^\beta \Rep \lambda \BesselPotentialSquared {-M},
     \end{align*}
     which, after using $\adj {\Rep \lambda(h)} \Rep \lambda (X)^\beta = (-1)^{\abs \beta} \adj {(\RightDifferentialOperator[h] \beta \Rep \lambda (h))}$, becomes
     \begin{align*}
         \adj{\Rep \lambda(h)}
-        &= \lcsum{\abs \beta \leq M} \adj{(\RightDifferentialOperator \beta \Rep \lambda(h))} \Rep \lambda \BesselPotential {-M},
+        &=
+        \lcsum{\abs \beta \leq 2 M}
+        \adj{(\RightDifferentialOperator \beta \Rep \lambda(h))} \Rep \lambda \BesselPotentialSquared {-M},
     \end{align*}
 
     Therefore,
@@ -3027,12 +3029,12 @@ First, we show that $\SmoothingOperators$ is stable under composition.
             \substack{%
                 \abs{\alpha_0} \leq \abs{\alpha_{01}} + \abs{\alpha_{02}} \leq 2 \abs{\alpha_0}\\
                 \beta_{01} + \beta_{02} = \beta_0\\
-                \abs {\beta_1} + \abs {\beta_2} \leq M
+                \abs {\beta_1} + \abs {\beta_2} \leq 2 M
             }
         }
         \int_\Group \RightDifferentialOperator[h_1 = h] {\beta_1} (\LeftDifferentialOperator [g] {\beta_{01}} q^{\alpha_{01}} \kappa_{1, g})(h_1) \adj {\Rep \lambda(h)}\\
         &\quad \times
-        \RightDifferentialOperator[h_2 = h] {\beta_2} \TaylorRemainder {\Rep \lambda \BesselPotential {-M} \LeftDifferentialOperator [g_2 = g] {\beta_{02}} \DifferenceOperatorOrder {\alpha_{02}} \sigma_2(g_2 \dummy, \lambda)} {e_\Group} N (h_2^{-1}) \dd h,
+        \RightDifferentialOperator[h_2 = h] {\beta_2} \TaylorRemainder {\Rep \lambda \BesselPotentialSquared {-M} \LeftDifferentialOperator [g_2 = g] {\beta_{02}} \DifferenceOperatorOrder {\alpha_{02}} \sigma_2(g_2 \dummy, \lambda)} {e_\Group} N (h_2^{-1}) \dd h,
     \end{align*}
     Now, using REFERENCE, %TODO add reference
     the above becomes
@@ -3042,12 +3044,12 @@ First, we show that $\SmoothingOperators$ is stable under composition.
             \substack{%
                 \abs{\alpha_0} \leq \abs{\alpha_{01}} + \abs{\alpha_{02}} \leq 2 \abs{\alpha_0}\\
                 \beta_{01} + \beta_{02} = \beta_0\\
-                \abs {\beta_1} + \abs {\beta_2} \leq M
+                \abs {\beta_1} + \abs {\beta_2} \leq 2 M
             }
         }
         \int_\Group \RightDifferentialOperator[h_1 = h] {\beta_1} (\LeftDifferentialOperator [g] {\beta_{01}} q^{\alpha_{01}} \kappa_{1, g})(h_1) \adj {\Rep \lambda(h)}\\
         &\quad \times
-        \TaylorRemainder {\Rep \lambda \BesselPotential {-M} \LeftDifferentialOperator [g_2 = g] {\beta_{02}} \LeftDifferentialOperator {\beta_2} \DifferenceOperatorOrder {\alpha_{02}} \sigma_2(g_2 \dummy, \lambda)} {e_\Group} {N - \abs {\beta_2}} (h_2^{-1}) \dd h.
+        \TaylorRemainder {\Rep \lambda \BesselPotentialSquared {-M} \LeftDifferentialOperator [g_2 = g] {\beta_{02}} \LeftDifferentialOperator {\beta_2} \DifferenceOperatorOrder {\alpha_{02}} \sigma_2(g_2 \dummy, \lambda)} {e_\Group} {N - \abs {\beta_2}} (h_2^{-1}) \dd h.
     \end{align*}
 
     Therefore,
@@ -3059,13 +3061,13 @@ First, we show that $\SmoothingOperators$ is stable under composition.
             \substack{%
                 \abs{\alpha_0} \leq \abs{\alpha_{01}} + \abs{\alpha_{02}} \leq 2 \abs{\alpha_0}\\
                 \beta_{01} + \beta_{02} = \beta_0\\
-                \abs {\beta_1} + \abs {\beta_2} \leq M
+                \abs {\beta_1} + \abs {\beta_2} \leq 2 M
             }
         }
         \int_\Group \abs {\RightDifferentialOperator[h_1 = h] {\beta_1} (\LeftDifferentialOperator [g] {\beta_{01}} q^{\alpha_{01}} \kappa_{1, g})(h_1)}\\
         &\quad \times
         \norm [\Lin {\Lebesgue 2 \CompactGroup}] {%
-            \TaylorRemainder {\Rep \lambda \BesselPotential {-M} \LeftDifferentialOperator [g_2 = g] {\beta_{02}} \LeftDifferentialOperator {\beta_2} \DifferenceOperatorOrder {\alpha_{02}} \sigma_2(g_2 \dummy, \lambda)} {e_\Group} {N - \abs {\beta_2}} (h_2^{-1})
+            \TaylorRemainder {\Rep \lambda \BesselPotentialSquared {-M} \LeftDifferentialOperator [g_2 = g] {\beta_{02}} \LeftDifferentialOperator {\beta_2} \DifferenceOperatorOrder {\alpha_{02}} \sigma_2(g_2 \dummy, \lambda)} {e_\Group} {N - \abs {\beta_2}} (h_2^{-1})
         } \dd h.
     \end{align*}
 
@@ -3073,18 +3075,18 @@ First, we show that $\SmoothingOperators$ is stable under composition.
     we have
     % TODO: reference
     \begin{align*}
-        &\norm [\Lin {\Lebesgue 2 \CompactGroup}] {\TaylorRemainder {\Rep \lambda \BesselPotential {-M} \LeftDifferentialOperator [g_2 = g] {\beta_{02}} \LeftDifferentialOperator {\beta_2} \DifferenceOperatorOrder {\alpha_{02}} \sigma_2(g_2 \dummy, \lambda)} g {N - \abs {\beta_2}} (h^{-1})}\\
+        &\norm [\Lin {\Lebesgue 2 \CompactGroup}] {\TaylorRemainder {\Rep \lambda \BesselPotentialSquared {-M} \LeftDifferentialOperator [g_2 = g] {\beta_{02}} \LeftDifferentialOperator {\beta_2} \DifferenceOperatorOrder {\alpha_{02}} \sigma_2(g_2 \dummy, \lambda)} g {N - \abs {\beta_2}} (h^{-1})}\\
         &\ \leq
         \sup_{\abs \gamma \leq N - \abs {\beta_2} + 1}
         \norm [\Group] h^{N - \abs {\beta_2} + 1}
-        S(M, \gamma, \beta_{02}, \beta_2, \alpha_{02}),
+        S(h, M, \gamma, \beta_{02}, \beta_2, \alpha_{02}),
     \end{align*}
     where
     \begin{align*}
-        S(M, &\gamma, \beta_{02}, \beta_2, \alpha_{02}) \defeq
-        \sup_{g_1 \in \Group}\\
+        S(h, M, &\gamma, \beta_{02}, \beta_2, \alpha_{02}) \defeq
+        \sup_{\norm [\Group] {g_1} \leq \eta \norm [\Group] h}\\
         &\norm [\Lin {\Lebesgue 2 \CompactGroup}] {%
-            \Rep \lambda \BesselPotential {-M}
+            \Rep \lambda \BesselPotentialSquared {-M}
             \LeftDifferentialOperator [g_1] {\gamma}
             \LeftDifferentialOperator [g_2 = g] {\beta_{02}}
             \LeftDifferentialOperator [g_1] {\beta_2}
