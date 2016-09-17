@@ -154,21 +154,8 @@ We can provide an explicit formula for a suitably chosen family of difference op
 \begin{definition}
 \label{definition:admissibility_of_difference_operators}
 \index{difference operators!admissibility}
-    A finite collection $q_1$, \dots, $q_M \in \SmoothFunctions{\Group}$ of smooth functions is said to be \emph{admissible}
-    if $\dd q_j(e) \neq 0$ for each $j \in \{1, \cdots, M\}$
-    and if
-    \begin{align*}
-        \rank(\dd q_1(e), \cdots, \dd q_m(e)) = \dim \Group.
-    \end{align*}
-
-    Moreover, if
-    \begin{align*}
-        \bigcap_{j = 1}^M \{ q_j = 0 \} = \{e\},
-    \end{align*}
-    we shall say that the collection is \emph{strongly admissible}.
-
     A collection of \emph{difference operators} is called \emph{(strongly) admissible}
-    if the associated smooth functions form a \emph{(strongly) admissible} collection.
+    if the associated smooth functions form a \emph{(strongly) admissible} collection in the sense of Definition~\ref{definition:admissibility_of_polynomials}.
 \end{definition}
 
 \begin{definition}
@@ -284,46 +271,6 @@ Using \cite[Lemma 4.4]{RuzhanskyTurunenWirth10}, we can show
         \Group \to \C : g \mapsto q^\alpha(g^{-1}).
     \end{align*}
 \end{remark}
-
-\begin{definition}[Taylor remainder]
-\label{definition:Taylor_remainder}
-    Let $f \in \Schwartz \Group$, $g \in \Group$
-    and fix a strongly admissible collection of smooth functions
-    \begin{align*}
-        \Delta = \{q_1, \cdots q_{\dimDifferenceOperators} \in \SmoothFunctions \Group \}
-    \end{align*}
-    containing $\dim \Group$ elements.
-    Also, define a basis $X_j \in \VectorFields$, $j = 1, \cdots, \dim \Group$ of left-invariant vector fields such that
-    \begin{align*}
-        X'_j \{q_k(\dummy^{-1})\}(0_\VectorSpace, \Id \VectorSpace) = \Kronecker j k
-    \end{align*}
-    for every $j, k \in \{1, \cdots, \dim \Group\}$.
-
-    We define the \emph{Taylor remainder} of $f$ of order $N$ at $g \in \Group$ via
-    \begin{align*}
-        \TaylorRemainder f g N(h) \defeq
-        \begin{cases}
-            f(g h) - \sum_{\abs \alpha \leq N} q^\alpha(h^{-1}) \TaylorLeftDifferentialOperator \alpha f(g) & \text{if } N \geq 0\\
-            f(g h) & \text{if } N < 0,
-        \end{cases}
-    \end{align*}
-    where in the above
-    \begin{align*}
-        \TaylorLeftDifferentialOperator \alpha \defeq X_1^{\prime \alpha_1} \cdots X_{\dimDifferenceOperators}^{\prime \alpha_{\dimDifferenceOperators}}
-    \end{align*}
-\end{definition}
-
-\begin{lemma}[Taylor Theorem]
-    We use the notation of Definition~\ref{definition:Taylor_remainder}.
-    For each $N \in \N$,
-    we can find $C \geq 0$ such that
-    for each $f \in \SmoothFunctions \Group$ and each $g \in \Group$,
-    \begin{align*}
-        \abs {\TaylorRemainder f g N (h)}
-        \leq C \sup_{\abs \alpha \leq N + 1} \abs {\TaylorLeftDifferentialOperator \alpha f(g)} \norm [\Group] h^{N + 1}
-    \end{align*}
-    holds for every $h \in \Group$.
-\end{lemma}
 
 \section{Symbol and operators classes}
 

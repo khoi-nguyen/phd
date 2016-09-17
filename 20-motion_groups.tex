@@ -2101,78 +2101,92 @@ To this end, we follow the ideas of \cite{FischerRuzhansky16}.
 
 \section{Taylor formula}
 
-\begin{proposition}[Taylor remainder]
-    There exists an admissible collection of smooth functions $q_1, \cdots, q_M \in \SmoothFunctions\Group$
-    and a collection $\{\TaylorLeftDifferentialOperator{\alpha}\}_{\alpha \in \N^M}$ of left-invariant differential operators satisfying the following properties:
-    \begin{enumerate}
-        \item for each $\alpha \in \N^M$, $\TaylorLeftDifferentialOperator\alpha$'s order is less than $\abs\alpha$;
-        \item if $f \in \SmoothFunctions\Group$ and $(x, k) \in \Group$,
-            we have the following Taylor development
-            \begin{align*}
-                f(x, k) &= \sum_{\abs\alpha \leq N} \frac{1}{\alpha!} q^\alpha({(x, k)}^{-1}) \TaylorLeftDifferentialOperator\alpha f(0, e) + \BigO(h(x, k)^N),
-            \end{align*}
-            where $h : \Group \to \R^+$ denotes the geodesic distance to the identity.
-    \end{enumerate}
+\begin{definition}
+\label{definition:admissibility_of_polynomials}
+\index{polynomials!admissibility}
+    A finite collection $q_1$, \dots, $q_M \in \SmoothFunctions{\Group}$ of smooth functions is said to be \emph{admissible}
+    if $\dd q_j(e) \neq 0$ for each $j \in \{1, \cdots, M\}$
+    and if
+    \begin{align*}
+        \rank(\dd q_1(e), \cdots, \dd q_m(e)) = \dim \Group.
+    \end{align*}
+
+    Moreover, if
+    \begin{align*}
+        \bigcap_{j = 1}^M \{ q_j = 0 \} = \{e\},
+    \end{align*}
+    we shall say that the collection is \emph{strongly admissible}.
+\end{definition}
+
+From now on,
+we let $q_1, \dots, q_{\dim \Group} \in \SmoothFunctions \Group$
+be a strongly admissible family.
+
+Moreover, we fix a basis $X_1, \dots, X_{\dim \Group} \in \LieAlgebra$ such that
+\begin{align*}
+    \LeftDifferentialOperatorFirstOrder {X_j} q_k(\dummy^{-1})(e_\Group) = \Kronecker j k
+\end{align*}
+for each $j, k \in \{1, \dots, \dim \Group\}$.
+
+\begin{definition}[Distance to the origin]
+    Let $g = (x, k) \in \Group$.
+    We define the \emph{distance} of $g$ to the identity $e_\Group$ via
+    \begin{align*}
+        \norm [\Group] g^2
+        \defeq
+        \norm x^2 + \dist [\CompactGroup] k {e_\CompactGroup}^2.
+    \end{align*}
+\end{definition}
+
+\begin{definition}[Taylor development and remainder]
+    Let $f \in \Group$ and $g \in \Group$.
+    For each $N \in \N$,
+    we define the \emph{Taylor development of $f$ at $g$} of order $N$ to be
+    \begin{align*}
+        \TaylorPolynomial f g N(h)
+        \defeq
+        \sum_{\abs \alpha \leq N} \frac 1 {\alpha!} q^\alpha(h^{-1}) \LeftDifferentialOperator \alpha f(g),
+    \end{align*}
+    where $h \in \Group$.
+
+    Moreover,
+    we define the \emph{Taylor remainder} of $f$ of order $N$ at $g \in \Group$ via
+    \begin{align*}
+        \TaylorRemainder f g N(h) \defeq
+        \begin{cases}
+            f(g h) - \sum_{\abs \alpha \leq N} \frac 1 {\alpha!} q^\alpha(h^{-1}) \TaylorLeftDifferentialOperator \alpha f(g) & \text{if } N \geq 0\\
+            f(g h) & \text{if } N < 0.
+        \end{cases}
+    \end{align*}
+\end{definition}
+
+\begin{lemma}
+\label{lemma:derivative_of_Taylor_polynomial_and_remainder}
+    Let $N \in \N$, $\beta \in \N^{\dim \Group}$.
+    For each $f \in \SmoothFunctions \Group$,
+    we have
+    \begin{align*}
+        \TaylorLeftDifferentialOperator \beta \TaylorPolynomial f g N (e_\Group)
+        = \TaylorPolynomial {\TaylorLeftDifferentialOperator \beta f} g {N - \abs \beta} (e_\Group),
+        \quad
+        \TaylorLeftDifferentialOperator \beta \TaylorRemainder f g N (e_\Group)
+        = \TaylorRemainder {\TaylorLeftDifferentialOperator \beta f} g {N - \abs \beta} (e_\Group).
+    \end{align*}
+\end{lemma}
+
+\begin{proposition}[Taylor's theorem]
+\label{proposition:Taylor_theorem}
+    Let $f \in \SmoothFunctions \Group$ and $g \in \Group$.
+    There exists $\eta \geq 1$ satisfying the following property:
+    for every $N \in \Group$,
+    there exists $C \geq 0$ such that
+    \begin{align*}
+        \abs {\TaylorRemainder f g N (h)}
+        \leq
+        C \norm [\Group] h^{N + 1}
+        \sup_{\abs \alpha \leq N + 1}
+        \sup_{\norm [\Group] z \leq \eta \norm [\Group] h}
+        \abs {\TaylorLeftDifferentialOperator \alpha f(g z)}.
+    \end{align*}
+    for every $h \in \Group$.
 \end{proposition}
-\begin{proof}
-    Let $f \in \SmoothFunctions\Group$.
-    Choose an embedding
-    \begin{align*}
-        \iota : \CompactGroup \to \R^D.
-    \end{align*}
-
-    By INSERT REFERENCE, there exists an open neighbourhood $O \subset \R^D$ containing $\iota(\CompactGroup)$
-    such that an orthogonal projection $p : O \to \iota(\CompactGroup)$ is defined and smooth.
-    We can therefore extend $f$ onto $O$ via:
-    \begin{align*}
-        F : \VectorSpace \times O : (x, y) \mapsto f(x, (\iota^{-1} \circ p)(y)).
-    \end{align*}
-
-    By the Taylor Theorem on $\VectorSpace \times O$ at $(0, \iota(e))$, we get
-    \begin{align*}
-        F(x, y) =
-        \sum_{\substack{\alpha = (\alpha_1, \alpha_2)\\ \abs\alpha \leq N}}
-            \frac{1}{\alpha!}
-            &x^{\alpha_1} {(y - \iota(e))}^{\alpha_2}
-            \D{\abs \alpha}[F]{x^{\alpha_1}, y^{\alpha_2}}(0, \iota(e))\\
-            &+ \BigO\left((\norm{x} + \norm[\R^N]{y - \iota(e)})^N\right).
-    \end{align*}
-    In particular, denoting by $h(g)$ the geodesic distance between $g \in \Group$ and $e \in \Group$,
-    we observe that
-    \begin{align}
-        f(x, k) =
-        \sum_{\substack{\alpha = \alpha_1 + \alpha_2\\ \abs\alpha \leq N}}
-            \frac{1}{\alpha!}
-            x^{\alpha_1} {(\iota(k) - \iota(e))}^{\alpha_2}
-            \D{\abs \alpha}[F]{x^{\alpha_1}, y^{\alpha_2}}(0, \iota(e))
-            + \BigO\left({h(x, k)}^N\right).
-        \label{proposition:Taylor_remainder_theorem:Taylor_development}
-    \end{align}
-
-    Now, let
-    \begin{align*}
-        q_j(x, k) &= -\ip{x}{k e_i}, \quad &1 \leq &j \leq \dim \VectorSpace\\
-        q_j(x, k) &= \ip[\R^N]{\iota(k^{-1}) - \iota(e)}{e_{j}}, \quad &\dim \VectorSpace < &j \leq \dim \VectorSpace + D
-    \end{align*}
-    where $e_1$, \dots, $e_{\dim V}$ is an orthonormal basis of $\VectorSpace$
-    and $e_{\dim V + 1}$, \dots, $e_{\dim \VectorSpace + D}$ is an orthonormal basis of $\R^D$.
-    Moreover, we know that for each $\alpha = (\alpha_1, \alpha_2)$,
-    there exists a left-invariant differential operator $\TaylorLeftDifferentialOperator{\alpha}$ of order at most $\abs\alpha$ such that
-    \begin{align*}
-        \TaylorLeftDifferentialOperator{\alpha} f(e) = \D{\abs \alpha}[F]{x^{\alpha_1}, y^{\alpha_2}}(0, \iota(e)),
-    \end{align*}
-    since $F$ doesn't locally vary in the directions perpendicular to the tangent plane of $\iota(\CompactGroup)$.
-
-    Now, let us check that if $\alpha = (\alpha_1, \alpha_2)$, then
-    \begin{align*}
-        q^\alpha({(x, k)}^{-1})
-        = q^\alpha(-k^{-1} x, k^{-1})
-        = x^{\alpha_1} {(\iota(k) - \iota(e))}^{\alpha_2}.
-    \end{align*}
-
-    It follows that~\eqref{proposition:Taylor_remainder_theorem:Taylor_development} becomes
-    \begin{align*}
-        f(x, k) &= \sum_{\abs\alpha \leq N} \frac{1}{\alpha!} q^\alpha({(x, k)}^{-1}) \TaylorLeftDifferentialOperator\alpha f(0, e) + \BigO(h(x, k)^N),
-    \end{align*}
-    which concludes our proof.
-\end{proof}
