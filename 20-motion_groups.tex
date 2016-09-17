@@ -2158,7 +2158,6 @@ for each $j, k \in \{1, \dots, \dim \Group\}$.
 \end{lemma}
 
 \begin{proposition}[Taylor's theorem]
-\label{proposition:Taylor_theorem}
     Let $f \in \SmoothFunctions \Group$ and $g \in \Group$.
     For every $N \in \Group$,
     there exists $C \geq 0$ such that
@@ -2223,3 +2222,20 @@ for each $j, k \in \{1, \dots, \dim \Group\}$.
     \end{align*}
     which allows us to conclude by a simple inclusion.
 \end{proof}
+
+\begin{proposition}
+\label{proposition:Taylor_theorem}
+    Let $f \in \SmoothFunctions \Group$ and $g \in \Group$.
+    There exists $\eta \geq 1$ satisfying the following property:
+    for every $N \in \Group$,
+    there exists $C \geq 0$ such that
+    \begin{align*}
+        \abs {\TaylorRemainder f g N (h)}
+        \leq
+        C \norm [\Group] h^{N + 1}
+        \sup_{\abs \alpha \leq N + 1}
+        \sup_{\norm [\Group] z \leq \eta \norm [\Group] h}
+        \abs {\TaylorLeftDifferentialOperator \alpha f(g z)}.
+    \end{align*}
+    for every $h \in \Group$.
+\end{proposition}
