@@ -57,6 +57,36 @@ the above also means that we shall have to resort to defining \emph{approximate 
     and call its elements \emph{smoothing symbols}.
 \end{definition}
 
+\begin{theorem}[Symbolic calculus]
+    Let three symbols
+    $\sigma \in \SymbolClass m {\rho, \delta}$,
+    $\sigma_1 \in \SymbolClass {m_1} {\rho, \delta}$,
+    $\sigma_2 \in \SymbolClass {m_2} {\rho, \delta}$.
+    We let
+    \begin{align*}
+        \sigma^{(*)}(x, \xi) &\sim \sum_{\alpha \in \N^n} \frac {(\i \turn)^{-\abs \alpha}} {\alpha!} \iD{\xi^\alpha} \iD{x^\alpha} \adj{\sigma(x, \xi)}\\
+        (\sigma_1 \circ \sigma_2)(x, \xi) &\sim \sum_{\alpha \in \N^n} \frac {(\i \turn)^{-\abs \alpha}} {\alpha!} \iD{\xi^\alpha} \sigma_1(x, \xi) \iD{x^\alpha} \sigma_2(x, \xi),
+    \end{align*}
+    where the left-hand sides are thus defined modulo $\SmoothingSymbols [\R^n]$.
+
+    The following properties hold.
+    \begin{itemize}
+        \item The equivalence class $\sigma_1 \circ \sigma_2$ belongs to $\SymbolClass [\R^n] {m_1 + m_2} {\rho, \delta}$ modulo $\SmoothingSymbols [\R^n]$.
+        \item The equivalence class $\sigma^{(*)}$ belongs to $\SymbolClass [\R^n] m {\rho, \delta}$ modulo $\SmoothingSymbols [\R^n]$.
+        \item
+            There exists $\sigma^{(-1)} \in \SymbolClass [\R^n] {-m} {\rho, \delta}$ such that
+            \begin{align*}
+                \sigma \circ \sigma^{(-1)} = 1 \quad \text{mod } \SmoothingSymbols [R^n]
+            \end{align*}
+            if and only if $\sigma$ is \emph{elliptic},
+            i.e. there exists $c \geq 0$ and $d \geq 0$ such that
+            \begin{align*}
+                \abs {\sigma(x, \xi)} \geq c \abs \xi^m
+            \end{align*}
+            for each $x \in \R^n$ and each $\xi \in \R^n$ satisfying $\norm [\R^n] \xi \geq d$.
+    \end{itemize}
+\end{theorem}
+
 \section{The Euclidean case}
 
 Given a partial differential operator
