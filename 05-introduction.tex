@@ -2,6 +2,42 @@
 
 \section{Symbolic calculus}
 
+It is known and elementary fact that
+the composition of differential operators with smooth coefficients on $\R^n$ can be computed on the Fourier Transform side.
+More precisely,
+if $\sigma_1$ and $\sigma_2$ are two characteristic polynomials,
+the composition of the underlying operators arise from the polynomial
+\begin{align}
+    \sum_{\alpha \in \N^n} \frac {(\i \turn)^{-\abs \alpha}} {\alpha!} \iD{\xi^\alpha} \sigma_1(x, \xi) \iD{x^\alpha} \sigma_2(x, \xi)
+    \label{eq:composition_formula_for_characteristic_polynomials}.
+\end{align}
+In particular,
+this formula can be used to construct approximate inverses to differential operators with smooth coefficients.
+
+Laurent Schwartz's works allow us to extend the notion of \emph{characteristic polynomial} far beyond the class of differential operators.
+The resulting concept,
+called the \emph{symbol} of an operator,
+is formally defined in the following way:
+if $\kappa$ is the convolution kernel of $T$, i.e.\
+\begin{align*}
+    T \phi(x) = (\conv \phi {\kappa(x, \dummy)})(x),
+\end{align*}
+then the symbol of $T$ is defined via
+\begin{align*}
+    \sigma(x, \xi) = \Fourier [\R^n] \{\kappa(x, \dummy)\}(\xi).
+\end{align*}
+
+More importantly,
+the analogue of~\eqref{eq:composition_formula_for_characteristic_polynomials} is
+\begin{align}
+    \sigma(x, \xi)
+    &= \int_{\R^n} \e^{\i \turn \ip [\R^n] x \eta} \sigma_1(x, \xi + \eta) \Fourier [\R^n] \sigma_2(\eta, \xi) \dd \eta \notag\\
+    &\sim \sum_{\abs \alpha \leq N} \frac {(\i \turn)^{-\abs \alpha}} {\alpha!} \iD{\xi^\alpha} \sigma_1(x, \xi) \iD{x^\alpha} \sigma_2(x, \xi),
+\end{align}
+where the second line was obtained by a Taylor development of $\sigma_1$.
+Unfortunately,
+the above also means that we shall have to resort to \emph{approximate calculations}.
+
 \begin{definition}[Symbol classes]
     Assume $0 \leq \delta < \rho \leq 1$.
     We shall say that $\sigma \in \SmoothFunctions {\R^n \times \R^n}$ is a \emph{symbol of order $m$}
