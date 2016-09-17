@@ -704,7 +704,26 @@ $X_1, \cdots, X_{\dim \Group}$ will denote a basis such that
 \end{corollary}
 
 \begin{corollary}
-    Let $\beta \in \N^{\dim \Group}$.
+\label{corollary:from_right_to_left-invariant_differential_operators}
+    For each $\beta \in \N^{\dim \Group}$,
+    we can find smooth functions $p^\beta_\alpha \in \SmoothFunctions \Group$ such that
+    \begin{align*}
+        \RightDifferentialOperator [g] \beta
+        =
+        \sum_{\abs \alpha \leq N}
+        p^\beta_\alpha(g)
+        \LeftDifferentialOperator [g] \alpha
+    \end{align*}
+    holds for each $g \in \Group$.
+
+    Moreover,
+    there exists $C_\beta \geq 0$ such that
+    \begin{align*}
+        \sup_{\abs \alpha \leq N}
+        \abs {p^\beta_\alpha(x, k)}
+        \leq C_{\beta} (1 + \norm x)^{\abs \beta}
+    \end{align*}
+    for each $(x, k) \in \Group$.
 \end{corollary}
 
 \section{Unitary representations}
