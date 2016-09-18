@@ -3789,4 +3789,302 @@ The crucial part of the proof is therefore to show that~\eqref{eq:symbol_to_prov
 %    that being Calderon-Zygmund means $\tilde \kappa$ satisfies the assumptions of~\cite[Theorem A.4.4]{FischerRuzhansky16}.
 %\end{proof}
 
-\section{Applications to partial differential equations}
+\section{Construction of parametrices}
+
+Given $\Lambda \geq 0$,
+we let
+\begin{align*}
+    E_\lambda(\Lambda)
+    \defeq
+    \begin{cases}
+        \Id {\Lebesgue 2 \CompactGroup} & \text{if } \lambda \geq \Lambda\\
+        0 & \text{otherwise}
+    \end{cases}
+\end{align*}
+
+\begin{definition}[Ellipticity]
+\label{definition:ellipticity}
+    Let $\sigma \in \SymbolClass m {\rho, \delta}$
+    We shall say that that $\sigma$ is \emph{elliptic} and of \emph{elliptic order} $m$
+    if there exists $\Lambda \geq 0$ such that the following property holds:
+    for each $\gamma \in \R$,
+    there exists $C \geq 0$ such that
+    \begin{align}
+        \norm [\Lebesgue 2 \CompactGroup] {\Rep \lambda \BesselPotential \gamma \sigma(g, \lambda) F}
+        \geq C
+        \norm [\Lebesgue 2 \CompactGroup] {\Rep \lambda \BesselPotential {\gamma + m} F}
+        \label{eq:definition_of_ellipticity}
+    \end{align}
+    holds for every $F \in E_\lambda(\Lambda) \SmoothFunctions \CompactGroup$
+    and every $(g, \lambda) \in \Group \times \VectorSpace$.
+\end{definition}
+
+\begin{lemma}[Inverse of an elliptic symbol]
+\label{lemma:inverse_of_elliptic_symbol}
+    Let $\sigma \in \SymbolClass m {\rho, \delta}$ be an elliptic symbol of elliptic order $m$,
+    with $\Lambda \geq 0$ given by Definition~\ref{definition:ellipticity}.
+
+    For any $F \in E_\lambda(\Lambda) \SmoothFunctions \CompactGroup$,
+    let
+    \begin{align*}
+        E_\lambda(\Lambda) \sigma(g, \lambda)^{-1} \left(\sigma(g, \lambda) F\right) \defeq F.
+    \end{align*}
+    and consider the unique extension of $E_\lambda(\Lambda) \sigma(g, \lambda)^{-1}$ onto $\SmoothFunctions \CompactGroup$ which satisfies
+    \begin{align*}
+        \eval {%
+            E_\lambda(\Lambda) \sigma(g, \lambda)^{-1}
+            } {(\sigma(g, \lambda) E_\lambda(\Lambda))^\perp} = 0.
+    \end{align*}
+
+    The map $E_\lambda(\Lambda) \sigma(g, \lambda)^{-1}$ is well-defined.
+    Moreover,
+    for each $\lambda \in \R$,
+    we have
+    \begin{align}
+        \norm [\Lin {\Lebesgue 2 \CompactGroup}] {%
+            \Rep \lambda \BesselPotential {m + \gamma}
+            E_\lambda(\Lambda) \sigma(g, \lambda)^{-1}
+            \Rep \lambda \BesselPotential {-\gamma}
+        }
+        < \infty
+        \label{eq:boundedness_of_E_lambda_Lambda_sigma_inverse}
+    \end{align}
+\end{lemma}
+\begin{proof}
+    Suppose that $F_1, F_2 \in E_\lambda(\Lambda) \SmoothFunctions \CompactGroup$ are such that
+    \begin{align*}
+        \sigma(g, \lambda) F_1
+        = \sigma(g, \lambda) F_2.
+    \end{align*}
+    By definition of ellipticity with $\gamma \defeq - m$,
+    it follows that
+    \begin{align*}
+        \norm [\Lebesgue 2 \CompactGroup] {F_1 - F_2}
+        &\leq C
+        \norm [\Lebesgue 2 \CompactGroup] {\Rep \lambda \BesselPotential {-m} \sigma(g, \lambda) (F_1 - F_2)}\\
+        &= 0,
+    \end{align*}
+    so that the map is indeed well-defined.
+
+    Now, given $\gamma \in \R$,
+    we easily check by ellipticity that
+    \begin{align*}
+        &\norm [\Lebesgue 2 \CompactGroup] {\Rep \lambda \BesselPotential {m + \gamma} E_\lambda(\Lambda) \sigma(g, \lambda)^{-1} F}\\
+        &\quad \leq C
+        \norm [\Lebesgue 2 \CompactGroup] {\Rep \lambda \BesselPotential {\gamma} \sigma(g, \lambda) E_\lambda(\Lambda) \sigma(g, \lambda)^{-1} F}\\
+        &\quad \leq C
+        \norm [\Lebesgue 2 \CompactGroup] {\Rep \lambda \BesselPotential {\gamma} F},
+    \end{align*}
+    which shows~\eqref{eq:boundedness_of_E_lambda_Lambda_sigma_inverse}.
+\end{proof}
+
+\begin{proposition}[Inverse of an elliptic symbol]
+\label{proposition:inverse_of_elliptic_symbol}
+    Assume that $1 \geq \rho > \delta \geq 0$.
+    Suppose that $\sigma \in \SymbolClass m {\rho, \delta}$ is a symbol which is $(\Lambda, m)$-elliptic.
+
+    Let $\chi \in \SmoothFunctions {\R^+, [0, 1]}$ be such that
+    \begin{align*}
+        \chi_\Lambda(r) =
+        \begin{cases}
+            1 & \text{if } r \geq \Lambda_2\\
+            0 & \text{if } r \leq \Lambda_1,
+        \end{cases}
+    \end{align*}
+    for some $\Lambda < \Lambda_1 < \Lambda_2$,
+    and define the symbol
+    \begin{align*}
+        \psi_\Lambda(\lambda)
+        \defeq \sum_{\tau \in \dualGroup \CompactGroup}
+        \chi_\Lambda(\JapaneseBracket \VectorSpace \lambda + \JapaneseBracket \CompactGroup \lambda) \Id {\Span \{\tau_{i j} : 1 \leq i, j \leq \dimRep \tau\}}.
+    \end{align*}
+
+    The map
+    \begin{align*}
+        \sigma_\Lambda^{-1}(g, \lambda)
+        \defeq \psi_\Lambda E_\lambda(\Lambda_1) \sigma(g, \lambda)^{-1}
+    \end{align*}
+    defines a symbol of $\SymbolClass {-m} {\rho, \delta}$.
+\end{proposition}
+\begin{proof}
+    Let us first observe that
+    \begin{align}
+        \psi_\Lambda = \sigma^{-1}_\Lambda(g, \lambda) \sigma(g, \lambda).
+        \label{eq:identity_satisfied_by_inverse_of_symbol}
+    \end{align}
+
+    Since $\psi_\Lambda$ commutes with the powers of $\Rep \lambda \BesselPotentialSquared {}$,
+    \begin{align*}
+        &\norm [\Lin {\Lebesgue 2 \CompactGroup}] {\Rep \lambda \BesselPotential m \sigma_\Lambda(g, \lambda)^{-1}}\\
+        &\quad \leq
+        \norm [\Lin {\Lebesgue 2 \CompactGroup}] {\psi_\Lambda}
+        \norm [\Lin {\Lebesgue 2 \CompactGroup}] {\Rep \lambda \BesselPotential m E_\lambda(\Lambda) \sigma(g, \lambda)^{-1}}
+        < \infty
+    \end{align*}
+    where the finiteness is given by Lemma~\ref{lemma:inverse_of_elliptic_symbol}.
+
+    We have thus shown that
+    \begin{align*}
+        \sup_{g \in \Group}
+        \esssup_{\lambda \in \VectorSpace}
+        \norm [\Lin {\Lebesgue 2 \CompactGroup}] {\Rep \lambda \BesselPotential {m - \delta \abs {\beta_0}} \LeftDifferentialOperator {\beta_0} \sigma_\Lambda(g, \lambda)^{-1}}
+        < \infty,
+    \end{align*}
+    for $\beta_0 = 0$.
+    Let us show it also holds for $\beta_0$ of higher order.
+
+    By the Leibniz rule,
+    we have
+    \begin{align*}
+        0 =
+        \LeftDifferentialOperator {\beta_0} \psi_\Lambda
+        =
+        \sum_{\beta_0 = \beta_1 + \beta_2}
+        \left(
+        \LeftDifferentialOperator {\beta_1} \sigma_\Lambda(g, \lambda)^{-1}
+        \LeftDifferentialOperator {\beta_2} \sigma(g, \lambda)\right),
+    \end{align*}
+    which implies that
+    \begin{align*}
+        \LeftDifferentialOperator {\beta_0} \sigma_{\Lambda}(g, \lambda)^{-1} \sigma(g, \lambda)
+        = -
+        \sum_{\substack{
+            \beta_0 = \beta_1 + \beta_2\\
+            \abs {\beta_1} < \abs {\beta_0}}
+        }
+        \left(
+        \LeftDifferentialOperator {\beta_1} \sigma_\Lambda(g, \lambda)^{-1}
+        \LeftDifferentialOperator {\beta_2} \sigma(g, \lambda) \right).
+    \end{align*}
+    Since $\sigma(g, \lambda)$ is invertible on $E_\lambda(\Lambda_1) \SmoothFunctions \CompactGroup$,
+    we obtain
+    \begin{align*}
+        &\LeftDifferentialOperator {\beta_0} \sigma_{\Lambda}(g, \lambda)^{-1}\\
+        &\quad
+        = -
+        \sum_{\substack{
+            \beta_0 = \beta_1 + \beta_2\\
+            \abs {\beta_1} < \abs {\beta_0}}
+        }
+        \left(
+        \LeftDifferentialOperator {\beta_1} \sigma_\Lambda(g, \lambda)^{-1}
+        \LeftDifferentialOperator {\beta_2} \sigma(g, \lambda) \right)
+        E(\Lambda_1) \sigma^{-1}(g, \lambda),
+    \end{align*}
+    which allows us to conclude by induction and Lemma~\ref{lemma:inverse_of_elliptic_symbol}.
+
+    Let us now work with difference operators.
+    The ideas are the same,
+    but the proof is slightly trickier
+    because we have a \emph{Leibniz-like} rule instead of the classical Leibniz rule.
+
+    Applying the Leibniz-like rule to~\eqref{eq:identity_satisfied_by_inverse_of_symbol},
+    we obtain
+    \begin{align*}
+        \DifferenceOperator j \psi_\Lambda(\lambda)
+        =
+        &\DifferenceOperator j \sigma_\Lambda(g, \lambda)^{-1} \sigma(g, \lambda)
+        + \sigma_\Lambda(g, \lambda)^{-1} \DifferenceOperator j \sigma(g, \lambda) \\
+        &+ \sum_{1 \leq k, l \leq \dimDifferenceOperators} c_j^{k l} \DifferenceOperator k \sigma_\Lambda(g, \lambda)^{-1} \DifferenceOperator l \sigma(g, \lambda).
+    \end{align*}
+    Reorganising the terms above,
+    and using the fact that $\sigma$ is invertible on $E_\lambda(\Lambda_1) \SmoothFunctions \CompactGroup$,
+    we obtain
+    \begin{align}
+        &\DifferenceOperator j \sigma_\Lambda(g, \lambda)^{-1}
+        + \sum_{1 \leq k, l \leq \dimDifferenceOperators} c_j^{k l} \DifferenceOperator k \sigma_\Lambda(g, \lambda)^{-1} \DifferenceOperator l \sigma(g, \lambda) E_\lambda(\Lambda_1) \sigma^{-1}(g, \lambda) \notag\\
+        &=
+        \DifferenceOperator j \psi_\Lambda(\lambda) E_\lambda(\Lambda_1) \sigma^{-1}(g, \lambda)
+        - \sigma_\Lambda(g, \lambda)^{-1} \DifferenceOperator j \sigma(g, \lambda) E_\lambda(\Lambda_1) \sigma^{-1}(g, \lambda).
+        \label{eq:system_of_equations_of_difference_operators}
+    \end{align}
+
+    If $R(g, \lambda)$ is the second line of the above,
+    we check easily that
+    \begin{align*}
+        \norm [\Lin {\Lebesgue 2 \CompactGroup}] {%
+            \Rep \lambda \BesselPotential {m + \rho + \gamma}
+            R(g, \lambda)
+            \Rep \lambda \BesselPotential {-\gamma}
+        } < \infty,
+    \end{align*}
+    we can therefore deduce that
+    \begin{align*}
+        \norm [\Lin {\Lebesgue 2 \CompactGroup}] {%
+            \Rep \lambda \BesselPotential {m + \rho + \gamma}
+            \DifferenceOperator j \sigma_\Lambda(g, \lambda)^{-1}
+            \Rep \lambda \BesselPotential {-\gamma}
+        } < \infty,
+    \end{align*}
+    by considering the equations~\eqref{eq:system_of_equations_of_difference_operators} for all $j$ simultaneously.
+    Applying $\DifferenceOperatorOrder \alpha$ to~\eqref{eq:identity_satisfied_by_inverse_of_symbol},
+    we can deduce inductively by arguing like above that
+    \begin{align*}
+        \norm [\Lin {\Lebesgue 2 \CompactGroup}] {%
+            \Rep \lambda \BesselPotential {m + \rho \abs \alpha + \gamma}
+            \DifferenceOperatorOrder \alpha \sigma_\Lambda(g, \lambda)^{-1}
+            \Rep \lambda \BesselPotential {-\gamma}
+        } < \infty.
+    \end{align*}
+
+    The general case can be deduced similarly by applying $\LeftDifferentialOperator \beta \DifferenceOperatorOrder \alpha$ to~\eqref{eq:identity_satisfied_by_inverse_of_symbol}.
+\end{proof}
+
+\begin{theorem}[Existence of left parametrices]
+    Let $A \in \OperatorClass m {\rho, \delta}$ be an $m$-elliptic operator of order $m$ with $1 \geq \rho > \delta \geq 0$.
+    The exists an operator $B \in \OperatorClass {-m} {\rho, \delta}$ which satisfies
+    \begin{align*}
+        B A = \Id {\Schwartz \Group} \qquad \text{mod} \quad \SmoothingOperators
+    \end{align*}
+\end{theorem}
+\begin{proof}
+    Since $A = \Op(\sigma)$ is elliptic,
+    we know that $\sigma_\Lambda(g, \lambda)^{-1} \in \SymbolClass {-m} {\rho, \delta}$ and
+    \begin{align*}
+        \sigma_\Lambda(g, \lambda)^{-1} \sigma(g, \lambda)
+        &= \psi_\Lambda - \sigma_\Lambda(g, \lambda)^{-1} \sigma(g, \lambda) (\Id {\Lebesgue 2 \CompactGroup} - \psi_\Lambda)\\
+        &= \psi_\Lambda \quad \text{mod} \quad \SmoothingSymbols,\\
+        &= \Id {\Lebesgue 2 \CompactGroup} \quad \text{mod} \quad \SmoothingSymbols,
+    \end{align*}
+    since $\Id {\Lebesgue 2 \CompactGroup} - \psi_\Lambda$ is smoothing.
+
+    Therefore,
+    letting $B_0 \defeq \Op(\sigma_\Lambda(g, \lambda)^{-1})$ yields
+    \begin{align*}
+        B_0 A = \Id {\Schwartz \Group} - E_0 \quad \text{where } E_0 = \Op(e_0) \in \OperatorClass {-(\rho - \delta)} {\rho, \delta}
+    \end{align*}
+    by the composition formula.
+    Suppose by induction that we have defined $B_j$ and $E_j = \Op(e_j)$ for $j = 0, \dots, k$ such that
+    \begin{align*}
+        (B_0 + \dots + B_k) A = I - E_k \quad \text{where } E_k = \Op(e_k) \in \OperatorClass {-(k + 1)(\rho - \delta)} {\rho, \delta}
+    \end{align*}
+
+    Letting $B_{k + 1} \defeq \Op(E_k \sigma_\Lambda(g, \lambda)^{-1})$,
+    we obtain
+    \begin{align*}
+        (B_0 + \dots + B_{k + 1}) A = I - E_k + B_{k + 1} A = I - E_{k + 1}
+    \end{align*}
+    where $E_{k + 1} \defeq E_k - B_{k + 1} A$ is an operator in $\OperatorClass {-(k + 2)(\rho - \delta)} {\rho - \delta}$,
+    again by the composition formula.
+
+    Since the order of $B_k$ strictly decreases as $k$ strictly increases,
+    it follows that
+    \begin{align*}
+        B \sim \sum_{k = 0}^{+\infty} B_k
+    \end{align*}
+    defines an operator in $\OperatorClass {-m} {\rho, \delta}$.
+    Moreover,
+    for each $N \in \N$ we have
+    \begin{align*}
+        B A - I + E_{N}
+        =
+        (B - \sum_{k = 0}^N B_k) A \in \OperatorClass {-(N + 1) (\rho - \delta)  + m} {\rho, \delta},
+    \end{align*}
+    with $E_N \in \OperatorClass {-(N + 1)(\rho - \delta)} {\rho, \delta}$.
+    Letting $N \to \infty$ on both sides of the above,
+    we obtain that
+    \begin{align*}
+        B A - I \in \SmoothingOperators,
+    \end{align*}
+    concluding the proof.
+\end{proof}
