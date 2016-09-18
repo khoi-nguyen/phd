@@ -52,16 +52,16 @@ we let
     Let $\sigma \in \SymbolClass m {\rho, \delta}$ be an elliptic symbol of elliptic order $m$,
     with $\Lambda \geq 0$ given by Definition~\ref{definition:ellipticity}.
 
-    For any $F \in \SmoothFunctions \CompactGroup$,
+    For any $F \in E_\lambda(\Lambda) \SmoothFunctions \CompactGroup$,
     let
     \begin{align*}
-        E_\lambda(\Lambda) \sigma(g, \lambda)^{-1} \left(\sigma(g, \lambda) F\right) \defeq E_\lambda(\Lambda) F.
+        E_\lambda(\Lambda) \sigma(g, \lambda)^{-1} \left(\sigma(g, \lambda) F\right) \defeq F.
     \end{align*}
     and consider the unique extension of $E_\lambda(\Lambda) \sigma(g, \lambda)^{-1}$ onto $\SmoothFunctions \CompactGroup$ which satisfies
     \begin{align*}
         \eval {%
             E_\lambda(\Lambda) \sigma(g, \lambda)^{-1}
-            } {(\Image \{\sigma(g, \lambda))^\perp} = 0.
+            } {(\sigma(g, \lambda) E_\lambda(\Lambda))^\perp} = 0.
     \end{align*}
 
     The map $E_\lambda(\Lambda) \sigma(g, \lambda)^{-1}$ is well-defined.
@@ -78,20 +78,30 @@ we let
     \end{align*}
 \end{lemma}
 \begin{proof}
-    Suppose that $F_1, F_2 \in \SmoothFunctions \CompactGroup$ are such that
+    Suppose that $F_1, F_2 \in E_\lambda(\Lambda) \SmoothFunctions \CompactGroup$ are such that
     \begin{align*}
-        \sigma(g, \lambda) \psi_\Lambda F_1
-        = \sigma(g, \lambda) \psi_\Lambda F_2.
+        \sigma(g, \lambda) F_1
+        = \sigma(g, \lambda) F_2.
     \end{align*}
-    By definition of ellipticity,
+    By definition of ellipticity with $\gamma \defeq - m$,
     it follows that
     \begin{align*}
-        \norm [\Lebesgue 2 \CompactGroup] {\psi_\Lambda (F_1 - F_2)}
+        \norm [\Lebesgue 2 \CompactGroup] {F_1 - F_2}
         &\leq C
-        \norm [\Lebesgue 2 \CompactGroup] {\Rep \lambda \BesselPotential {-m} \sigma(g, \lambda) \psi_\Lambda(\lambda) (F_1 - F_2)}\\
+        \norm [\Lebesgue 2 \CompactGroup] {\Rep \lambda \BesselPotential {-m} \sigma(g, \lambda) (F_1 - F_2)}\\
         &= 0,
     \end{align*}
     so that the map is indeed well-defined.
+
+    Now, given $\lambda \in \R$,
+    we easily check by ellipticity that
+    \begin{align*}
+        &\norm [\Lebesgue 2 \CompactGroup] {\Rep \lambda \BesselPotential {m + \gamma} E_\lambda(\Lambda) \sigma(g, \lambda)^{-1} F}\\
+        &\quad \leq C
+        \norm [\Lebesgue 2 \CompactGroup] {\Rep \lambda \BesselPotential {\gamma} \sigma(g, \lambda) E_\lambda(\Lambda) \sigma(g, \lambda)^{-1} F}\\
+        &\quad \leq C
+        \norm [\Lebesgue 2 \CompactGroup] {\Rep \lambda \BesselPotential {\gamma} F}
+    \end{align*}
 \end{proof}
 
 \begin{proof}
