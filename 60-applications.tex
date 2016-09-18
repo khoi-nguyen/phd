@@ -68,14 +68,15 @@ we let
     Moreover,
     for each $\lambda \in \R$,
     we have
-    \begin{align*}
+    \begin{align}
         \norm [\Lin {\Lebesgue 2 \CompactGroup}] {%
             \Rep \lambda \BesselPotential {m + \gamma}
             E_\lambda(\Lambda) \sigma(g, \lambda)^{-1}
             \Rep \lambda \BesselPotential {-\gamma}
         }
         < \infty
-    \end{align*}
+        \label{eq:boundedness_of_E_lambda_Lambda_sigma_inverse}
+    \end{align}
 \end{lemma}
 \begin{proof}
     Suppose that $F_1, F_2 \in E_\lambda(\Lambda) \SmoothFunctions \CompactGroup$ are such that
@@ -93,15 +94,16 @@ we let
     \end{align*}
     so that the map is indeed well-defined.
 
-    Now, given $\lambda \in \R$,
+    Now, given $\gamma \in \R$,
     we easily check by ellipticity that
     \begin{align*}
         &\norm [\Lebesgue 2 \CompactGroup] {\Rep \lambda \BesselPotential {m + \gamma} E_\lambda(\Lambda) \sigma(g, \lambda)^{-1} F}\\
         &\quad \leq C
         \norm [\Lebesgue 2 \CompactGroup] {\Rep \lambda \BesselPotential {\gamma} \sigma(g, \lambda) E_\lambda(\Lambda) \sigma(g, \lambda)^{-1} F}\\
         &\quad \leq C
-        \norm [\Lebesgue 2 \CompactGroup] {\Rep \lambda \BesselPotential {\gamma} F}
+        \norm [\Lebesgue 2 \CompactGroup] {\Rep \lambda \BesselPotential {\gamma} F},
     \end{align*}
+    which shows~\eqref{eq:boundedness_of_E_lambda_Lambda_sigma_inverse}.
 \end{proof}
 
 \begin{proof}
