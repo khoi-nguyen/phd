@@ -2,23 +2,6 @@
 
 \section{Construction of parametrices}
 
-Let $\chi \in \SmoothFunctions {\R^+, [0, 1]}$ be such that
-\begin{align*}
-    \chi(r) =
-    \begin{cases}
-        1 & \text{if } r \geq 1\\
-        0 & \text{if } r \leq \frac 1 2.
-    \end{cases}
-\end{align*}
-
-Now, given $\Lambda \geq 0$,
-we define the symbol
-\begin{align*}
-    \psi_\Lambda(\lambda)
-    \defeq \sum_{\tau \in \dualGroup \CompactGroup}
-    \chi(\Lambda(\JapaneseBracket \VectorSpace \lambda + \JapaneseBracket \CompactGroup \lambda)) \Id {\Span \{\tau_{i j} : 1 \leq i, j \leq \dimRep \tau\}}.
-\end{align*}
-
 Given $\Lambda \geq 0$,
 we let
 \begin{align*}
@@ -106,6 +89,33 @@ we let
     which shows~\eqref{eq:boundedness_of_E_lambda_Lambda_sigma_inverse}.
 \end{proof}
 
+\begin{proposition}
+    Assume that $1 \geq \rho > \delta \geq 0$.
+    Suppose that $\sigma \in \SymbolClass m {\rho, \delta}$ is a symbol which is $(\Lambda, m)$-elliptic.
+
+    Let $\chi \in \SmoothFunctions {\R^+, [0, 1]}$ be such that
+    \begin{align*}
+        \chi_\Lambda(r) =
+        \begin{cases}
+            1 & \text{if } r \geq \Lambda_2\\
+            0 & \text{if } r \leq \Lambda_1,
+        \end{cases}
+    \end{align*}
+    for some $\Lambda < \Lambda_1 < \Lambda_2$,
+    and define the symbol
+    \begin{align*}
+        \psi_\Lambda(\lambda)
+        \defeq \sum_{\tau \in \dualGroup \CompactGroup}
+        \chi_\Lambda(\JapaneseBracket \VectorSpace \lambda + \JapaneseBracket \CompactGroup \lambda) \Id {\Span \{\tau_{i j} : 1 \leq i, j \leq \dimRep \tau\}}.
+    \end{align*}
+
+    The map
+    \begin{align*}
+        (\psi_\Lambda \sigma^{-1})(g, \lambda)
+        \defeq \psi_\Lambda E_\lambda(\Lambda_1) \sigma(g, \lambda)^{-1}
+    \end{align*}
+    defines a symbol of $\SymbolClass {-m} {\rho, \delta}$.
+\end{proposition}
 \begin{proof}
     Let us now check it is of order $-m$.
     In order to do so,
