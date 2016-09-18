@@ -3112,20 +3112,23 @@ First, we show that $\SmoothingOperators$ is stable under composition.
     \end{align}
 
     We have thus shown so far that
-    \begin{align*}
-        &\norm [\Lin {\Lebesgue 2 \CompactGroup}] {\sigma(g, \lambda) - \sum_{\abs \alpha \leq N} \DifferenceOperatorOrder \alpha \sigma_1(g, \lambda) \TaylorLeftDifferentialOperator \alpha \sigma_2(g, \lambda)}\\
+    \begin{align}
+        &\norm [\Lin {\Lebesgue 2 \CompactGroup}] {\sigma(g, \lambda) - \sum_{\abs \alpha \leq N} \DifferenceOperatorOrder \alpha \sigma_1(g, \lambda) \TaylorLeftDifferentialOperator \alpha \sigma_2(g, \lambda)} \notag\\
         &\leq
         \lcsum{\abs {\beta_1} + \abs {\beta_2} \leq 2M}
         \sup_{\abs \gamma \leq N - \abs {\beta_2} + 1}
-        S(M, \gamma, \beta_{02}, \beta_2, \alpha_{02})\\
+        S(M, \gamma, \beta_{02}, \beta_2, \alpha_{02}) \notag\\
         &\qquad \qquad
         \int_\Group \abs {\RightDifferentialOperator[h_1 = h] {\beta_1} (\LeftDifferentialOperator [g] {\beta_{01}} q^{\alpha_{01}} \kappa_{1, g})(h_1)} \norm [\Group] h^{N - \abs {\beta_2} + 1} \dd h.
-    \end{align*}
+        \label{eq:composition_formula:bound_on_the_remainder}
+    \end{align}
 
+    Combining~\eqref{eq:composition_formula:bound_on_S} and~\eqref{eq:composition_formula:bound_on_the_remainder},
+    we obtain that~\eqref{eq:composition_formula:bound_on_the_remainder} is bounded by
     \begin{align*}
         \begin{cases}
-            m_1 - \rho \abs {\alpha_{01}} + \delta \abs {\beta_{01}} + \abs {\beta_1} + \dim \Group < \rho (\dim \Group + N - \abs {\beta_2} + 1)\\
-            -M + \delta(\abs \gamma + \abs {\beta_{02}} + \abs {\beta_2}) - \rho \abs {\alpha_{02}} \leq -m_2.
+            m_1 - \rho \abs {\alpha_{01}} + \delta \abs {\beta_{01}} + \abs {\beta_1} + \dim \Group < \rho (\dim \Group + N - \abs {\beta_2} + 1 + \abs{\beta_{02}})\\
+            -2 M + \delta(\abs \gamma + \abs {\beta'_{02}} + \abs {\beta_2}) - \rho \abs {\alpha_{02}} \leq -m_2.
         \end{cases}
     \end{align*}
     and for that it suffices that
