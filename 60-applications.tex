@@ -55,17 +55,27 @@ we let
     For any $F \in \SmoothFunctions \CompactGroup$,
     let
     \begin{align*}
-        \sigma_\Lambda(g, \lambda)^{-1} \left(\sigma(g, \lambda) \psi_\Lambda(\lambda) F\right) \defeq \psi_\Lambda F.
+        E_\lambda(\Lambda) \sigma(g, \lambda)^{-1} \left(\sigma(g, \lambda) F\right) \defeq E_\lambda(\Lambda) F.
     \end{align*}
-    and consider the unique extension of $\sigma_\Lambda(g, \lambda)$ onto $\SmoothFunctions \CompactGroup$ which satisfies
+    and consider the unique extension of $E_\lambda(\Lambda) \sigma(g, \lambda)^{-1}$ onto $\SmoothFunctions \CompactGroup$ which satisfies
     \begin{align*}
         \eval {%
-            \sigma_\Lambda(g, \lambda)^{-1}
-            } {(\Image \{\sigma(g, \lambda) \psi_\Lambda\})^\perp} = 0.
+            E_\lambda(\Lambda) \sigma(g, \lambda)^{-1}
+            } {(\Image \{\sigma(g, \lambda))^\perp} = 0.
     \end{align*}
 
-    The map $\sigma_\Lambda$ is well-defined,
-    and is a symbol in $\SymbolClass {-m} {\rho, \delta}$.
+    The map $E_\lambda(\Lambda) \sigma(g, \lambda)^{-1}$ is well-defined.
+    Moreover,
+    for each $\lambda \in \R$,
+    we have
+    \begin{align*}
+        \norm [\Lin {\Lebesgue 2 \CompactGroup}] {%
+            \Rep \lambda \BesselPotential {m + \gamma}
+            E_\lambda(\Lambda) \sigma(g, \lambda)^{-1}
+            \Rep \lambda \BesselPotential {-\gamma}
+        }
+        < \infty
+    \end{align*}
 \end{lemma}
 \begin{proof}
     Suppose that $F_1, F_2 \in \SmoothFunctions \CompactGroup$ are such that
