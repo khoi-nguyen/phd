@@ -2960,7 +2960,7 @@ First, we show that $\SmoothingOperators$ is stable under composition.
 \label{lemma:prepare_composition_formula}
     Let $m_1, m_2 \in \R$ and suppose $\rho, \delta \in \R$ are chosen such that $1 \geq \rho > \delta \geq 0$.
 
-    Suppose further that $\beta_0 \in \N^{\dim \Group}$, $N, M \in \N$ are such that
+    Suppose further that $\alpha_0, \beta_0 \in \N^{\dim \Group}$, $N, M \in \N$ are such that
     \begin{align}
         \begin{cases}
             \frac {m_2 + \delta \abs {\beta_{0}}} {1 - \delta} \leq 2 M
@@ -2976,9 +2976,9 @@ First, we show that $\SmoothingOperators$ is stable under composition.
     we have
     \begin{align*}
         &\norm [\Lin {\Lebesgue 2 \CompactGroup}] {%
-            \LeftDifferentialOperator [g]  \beta \left(
+            \LeftDifferentialOperator [g] \beta \DifferenceOperatorOrder {\alpha_0} \left(
                 \sigma_1 \circ \sigma_2(g, \lambda)
-                - \sum_{\abs \alpha \leq M} \sigma_1(g, \lambda) \LeftDifferentialOperator [g] \alpha \sigma_2(x, \lambda)
+                - \sum_{\abs \alpha \leq M} \DifferenceOperatorOrder \alpha \sigma_1(g, \lambda) \TaylorLeftDifferentialOperator \alpha \sigma_2(g, \lambda)
             \right)
         }\\
         &\qquad \leq C \SymbolSemiNorm {m_1, R} {\rho, \delta} P {\sigma_1} \SymbolSemiNorm {m_2} {\rho, \delta} P {\sigma_2}
