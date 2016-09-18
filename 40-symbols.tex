@@ -2881,6 +2881,7 @@ First, we show that $\SmoothingOperators$ is stable under composition.
 \end{proof}
 
 \begin{lemma}
+\label{lemma:integrability_of_kernel}
     Let $\sigma \in \SymbolClass m {\rho, \delta}$ with $1 \geq \rho \geq \delta \geq 0$ with $\rho \neq 0$,
     and denote by $\kappa$ its associated kernel.
     If $\gamma \in \R$ satisfies
@@ -3124,13 +3125,16 @@ First, we show that $\SmoothingOperators$ is stable under composition.
     \end{align}
 
     Combining~\eqref{eq:composition_formula:bound_on_S} and~\eqref{eq:composition_formula:bound_on_the_remainder},
-    we obtain that~\eqref{eq:composition_formula:bound_on_the_remainder} is bounded by
+    we obtain that
+    Lemma~\eqref{lemma:integrability_of_kernel} implies
+    that~\eqref{eq:composition_formula:bound_on_the_remainder} is bounded (up to a constant) by $\SymbolSemiNorm {m_1, R} {\rho, \delta} {N'} {\sigma_1} \SymbolSemiNorm {m_2} {\rho, \delta} {N'} {\sigma_2}$ if both
     \begin{align*}
         \begin{cases}
             m_1 - \rho \abs {\alpha_{01}} + \delta \abs {\beta_{01}} + \abs {\beta_1} + \dim \Group < \rho (\dim \Group + N - \abs {\beta_2} + 1 + \abs{\beta_{02}})\\
             -2 M + \delta(\abs \gamma + \abs {\beta'_{02}} + \abs {\beta_2}) - \rho \abs {\alpha_{02}} \leq -m_2.
         \end{cases}
     \end{align*}
+    hold.
     and for that it suffices that
     \begin{align*}
         \begin{cases}
