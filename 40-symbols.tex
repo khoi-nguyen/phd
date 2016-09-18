@@ -3189,16 +3189,16 @@ First, we show that $\SmoothingOperators$ is stable under composition.
 \begin{proposition}
 \label{proposition:composition_formula}
     Assume that $1 \geq \rho > \delta \geq 0$.
-    For each $m_1, m_2 \in \R$, and each $M, N \in \N$,
-    there exists $C > 0$ and $M' \in \N$ such that
+    For each $m_1, m_2 \in \R$, and each $N_0, P \in \N$,
+    there exists $C > 0$ and $P' \in \N$ such that
     \begin{align*}
-        &\SymbolSemiNorm {m_1 + m_2 - N (\rho - \delta), R} {\rho, \delta} M {%
+        &\SymbolSemiNorm {m_1 + m_2 - N_0 (\rho - \delta), R} {\rho, \delta} P {%
         (\sigma_1 \circ \sigma_2)(g, \lambda)
-        - \sum_{\abs \alpha \leq N} \DifferenceOperatorOrder \alpha \sigma_1(g, \lambda) \LeftDifferentialOperator \alpha \sigma_2(g, \lambda)
+        - \sum_{\abs \alpha \leq N_0} \DifferenceOperatorOrder \alpha \sigma_1(g, \lambda) \LeftDifferentialOperator \alpha \sigma_2(g, \lambda)
         }\\
         &\qquad \leq C
-        \SymbolSemiNorm {m_1, R} {\rho, \delta} {M'} {\sigma_1}
-        \SymbolSemiNorm {m_2} {\rho, \delta} {M'} {\sigma_2}
+        \SymbolSemiNorm {m_1, R} {\rho, \delta} {P'} {\sigma_1}
+        \SymbolSemiNorm {m_2} {\rho, \delta} {P'} {\sigma_2}
     \end{align*}
     holds for every $\sigma_1, \sigma_2 \in \SmoothingSymbols$.
 \end{proposition}
