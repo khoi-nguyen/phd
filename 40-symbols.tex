@@ -3095,6 +3095,22 @@ First, we show that $\SmoothingOperators$ is stable under composition.
         }.
     \end{align*}
 
+    Observing that we can replace $\LeftDifferentialOperator [g_2] {\beta_{02}}$ by $\RightDifferentialOperator [g_1] {\beta_{02}}$ in the above,
+    Corollary~\ref{corollary:from_right_to_left-invariant_differential_operators},
+    \begin{align}
+        &S(h, M, \gamma, \beta_{02}, \beta_2, \alpha_{02})
+        \leq C \norm [\Group] h^{\abs {\beta_{02}}} \notag\\
+        &\ \sum_{\abs {\beta'_{02}} \leq \abs {\beta_{02}}}
+        \sup_{g_1 \in \Group}
+        \norm [\Lin {\Lebesgue 2 \CompactGroup}] {%
+            \Rep \lambda \BesselPotentialSquared {-M}
+            \LeftDifferentialOperator [g_1] {\gamma + \beta'_{02} + \beta_2}
+            \DifferenceOperatorOrder {\alpha_{02}}
+            \sigma_2(g_1, \lambda)
+        }.
+        \label{eq:composition_formula:bound_on_S}
+    \end{align}
+
     We have thus shown so far that
     \begin{align*}
         &\norm [\Lin {\Lebesgue 2 \CompactGroup}] {\sigma(g, \lambda) - \sum_{\abs \alpha \leq N} \DifferenceOperatorOrder \alpha \sigma_1(g, \lambda) \TaylorLeftDifferentialOperator \alpha \sigma_2(g, \lambda)}\\
