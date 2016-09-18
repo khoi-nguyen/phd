@@ -168,60 +168,22 @@ we let
         \LeftDifferentialOperator {\beta_1} \sigma_\Lambda(g, \lambda)^{-1}
         \LeftDifferentialOperator {\beta_2} \sigma(g, \lambda) \right).
     \end{align*}
-
-    Letting $G = \sigma(g, \lambda) \psi_\Lambda F$ like above,
-    it should be clear that by the induction hypothesis we have
+    Since $\sigma(g, \lambda)$ is invertible on $E_\lambda(\Lambda_1) \SmoothFunctions \CompactGroup$,
+    we obtain
     \begin{align*}
-        &\norm [\Lebesgue 2 \CompactGroup] {%
-            \Rep \lambda \BesselPotential {m - \delta \abs {\beta_0}}
-            \LeftDifferentialOperator {\beta_0} \sigma_\Lambda(g, \lambda)^{-1} G
-        }\\
-        &\leq
+        &\LeftDifferentialOperator {\beta_0} \sigma_{\Lambda}(g, \lambda)^{-1}\\
+        &\quad
+        = -
         \sum_{\substack{
             \beta_0 = \beta_1 + \beta_2\\
             \abs {\beta_1} < \abs {\beta_0}}
         }
-        \norm [\Lebesgue 2 \CompactGroup] {%
-            \Rep \lambda \BesselPotential {m - \delta \abs {\beta_0}}
-            \left(
-            \LeftDifferentialOperator {\beta_1} \sigma_\Lambda(g, \lambda)^{-1}
-            \LeftDifferentialOperator {\beta_2} (\sigma(g, \lambda) \psi_\Lambda)\right) F
-        }\\
-        &\leq
-        \sum_{\substack{
-            \beta_0 = \beta_1 + \beta_2\\
-            \abs {\beta_1} < \abs {\beta_0}}
-        }
-        \norm [\Lin {\Lebesgue 2 \CompactGroup}] {%
-            \Rep \lambda \BesselPotential {m - \delta \abs {\beta_0}}
-            \LeftDifferentialOperator {\beta_1} \sigma_\Lambda(g, \lambda)^{-1}
-            \Rep \lambda \BesselPotential {\delta \abs {\beta_2}}
-        }\\
-        & \qquad\qquad
-        \norm [\Lin {\Lebesgue 2 \CompactGroup}] {%
-            \Rep \lambda \BesselPotential {-\delta \abs {\beta_2}}
-            \LeftDifferentialOperator {\beta_2} \sigma(g, \lambda)
-            \Rep \lambda \BesselPotential {-m}
-        }\\
-        & \qquad\qquad
-        \norm [\Lebesgue 2 \CompactGroup] {\Rep \lambda \BesselPotential {m} \psi_\Lambda F}.
+        \left(
+        \LeftDifferentialOperator {\beta_1} \sigma_\Lambda(g, \lambda)^{-1}
+        \LeftDifferentialOperator {\beta_2} \sigma(g, \lambda) \right)
+        E(\Lambda_1) \sigma^{-1}(g, \lambda),
     \end{align*}
-
-    Using ellipticity again,
-    we know that
-    \begin{align*}
-        \norm [\Lebesgue 2 \CompactGroup] {\Rep \lambda \BesselPotential {m} \psi_\Lambda F}
-        &\leq C \norm [\Lebesgue 2 \CompactGroup] {\sigma(g, \lambda) \psi_\Lambda F} = C \norm [\Lebesgue 2 \CompactGroup] {G},
-    \end{align*}
-    which if plugged into the calculation above,
-    yields
-    \begin{align*}
-        \norm [\Lin {\Lebesgue 2 \CompactGroup}] {%
-            \Rep \lambda \BesselPotential {m - \delta \abs {\beta_0}}
-            \LeftDifferentialOperator {\beta_0} \sigma_\Lambda(g, \lambda)^{-1}
-        } \leq C,
-    \end{align*}
-    where $C$ does not depend on $g$ or $\lambda$.
+    which allows us to conclude by induction and Lemma~\ref{lemma:inverse_of_elliptic_symbol}.
 
     Let us now work with difference operators.
     The ideas are the same,
