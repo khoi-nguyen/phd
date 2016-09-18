@@ -195,11 +195,51 @@ we let
     \begin{align*}
         \DifferenceOperator j \psi_\Lambda(\lambda)
         =
-        &\DifferenceOperator j \sigma_\Lambda(g, \lambda)^{-1} \sigma(g, \lambda) \psi_\Lambda(\lambda)
-        + \sigma_\Lambda(g, \lambda)^{-1} \DifferenceOperator j (\sigma(g, \lambda) \psi_\Lambda(\lambda))\\
-        &+ \sum_{1 \leq k, l \leq \dimDifferenceOperators} c_j^{k l} \DifferenceOperator k \sigma_\Lambda(g, \lambda)^{-1} \DifferenceOperator l (\sigma(g, \lambda) \psi_\Lambda).
+        &\DifferenceOperator j \sigma_\Lambda(g, \lambda)^{-1} \sigma(g, \lambda)
+        + \sigma_\Lambda(g, \lambda)^{-1} \DifferenceOperator j \sigma(g, \lambda) \\
+        &+ \sum_{1 \leq k, l \leq \dimDifferenceOperators} c_j^{k l} \DifferenceOperator k \sigma_\Lambda(g, \lambda)^{-1} \DifferenceOperator l \sigma(g, \lambda).
     \end{align*}
-    % TODO: finish
+    Reorganising the terms above,
+    and using the fact that $\sigma$ is invertible on $E_\lambda(\Lambda_1) \SmoothFunctions \CompactGroup$,
+    we obtain
+    \begin{align}
+        &\DifferenceOperator j \sigma_\Lambda(g, \lambda)^{-1}
+        + \sum_{1 \leq k, l \leq \dimDifferenceOperators} c_j^{k l} \DifferenceOperator k \sigma_\Lambda(g, \lambda)^{-1} \DifferenceOperator l \sigma(g, \lambda) E_\lambda(\Lambda_1) \sigma^{-1}(g, \lambda) \notag\\
+        &=
+        \DifferenceOperator j \psi_\Lambda(\lambda) E_\lambda(\Lambda_1) \sigma^{-1}(g, \lambda)
+        - \sigma_\Lambda(g, \lambda)^{-1} \DifferenceOperator j \sigma(g, \lambda) E_\lambda(\Lambda_1) \sigma^{-1}(g, \lambda).
+        \label{eq:system_of_equations_of_difference_operators}
+    \end{align}
+
+    If $R(g, \lambda)$ is the second line of the above,
+    we check easily that
+    \begin{align*}
+        \norm [\Lin {\Lebesgue 2 \CompactGroup}] {%
+            \Rep \lambda \BesselPotential {m + \rho + \gamma}
+            R(g, \lambda)
+            \Rep \lambda \BesselPotential {-\gamma}
+        } < \infty,
+    \end{align*}
+    we can therefore deduce that
+    \begin{align*}
+        \norm [\Lin {\Lebesgue 2 \CompactGroup}] {%
+            \Rep \lambda \BesselPotential {m + \rho + \gamma}
+            \DifferenceOperator j \sigma_\Lambda(g, \lambda)^{-1}
+            \Rep \lambda \BesselPotential {-\gamma}
+        } < \infty,
+    \end{align*}
+    by considering the equations~\eqref{eq:system_of_equations_of_difference_operators} for all $j$ simultaneously.
+    Applying $\DifferenceOperatorOrder \alpha$ to~\eqref{eq:identity_satisfied_by_inverse_of_symbol},
+    we can deduce inductively by arguing like above that
+    \begin{align*}
+        \norm [\Lin {\Lebesgue 2 \CompactGroup}] {%
+            \Rep \lambda \BesselPotential {m + \rho \abs \alpha + \gamma}
+            \DifferenceOperatorOrder \alpha \sigma_\Lambda(g, \lambda)^{-1}
+            \Rep \lambda \BesselPotential {-\gamma}
+        } < \infty.
+    \end{align*}
+
+    The general case can be deduced similarly by applying $\LeftDifferentialOperator \beta \DifferenceOperatorOrder \alpha$ to~\eqref{eq:identity_satisfied_by_inverse_of_symbol}.
 \end{proof}
 
 \begin{theorem}[Existence of left parametrices]
