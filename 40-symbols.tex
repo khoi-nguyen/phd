@@ -3351,7 +3351,26 @@ First, we show that $\SmoothingOperators$ is stable under composition.
         }
         \dd h.
     \end{align*}
-    % TODO: finish the proof.
+
+    Using Proposition~\ref{proposition:Taylor_theorem},
+    we can estimate the remainder via
+    \begin{align*}
+        &\norm [\Lin {\Lebesgue 2 \CompactGroup}] {%
+            \TaylorRemainder {\RightDifferentialOperator [g_2 = h] {\beta_2} \LeftDifferentialOperator [g_1] {\beta_1} \LeftDifferentialOperator {\beta_0} \kappa_{g g_1}^{(*)}(g_2)} {g_1 = e_\Group} {N - \abs {\beta_1}} (h^{-1})
+        }\\
+        &\leq
+        \sum_{\abs \gamma = N - \abs {\beta_1} + 1}
+        \norm [\Group] h^{N - \abs {\beta_1} + 1}
+        \sup_{\norm [\Group] z \leq \eta \norm [\Group] h}
+        \abs {%
+            \LeftDifferentialOperator [h] \gamma
+            \RightDifferentialOperator [h_2 = g] {\beta_2}
+            \LeftDifferentialOperator [g_1] {\beta_1}
+            \LeftDifferentialOperator [g] {\beta_0}
+            \kappa^*_{g g_1}(h_2)
+        }
+    \end{align*}
+    where the last line was obtained by passing from left to right-invariant derivatives with Corollary~\ref{corollary:from_right_to_left-invariant_differential_operators}.
 \end{proof}
 
 \begin{proposition}
