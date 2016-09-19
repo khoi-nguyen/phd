@@ -3332,11 +3332,11 @@ First, we show that $\SmoothingOperators$ is stable under composition.
     \end{align*}
 
     Multiplying both sides by $\Rep \lambda \BesselPotentialSquared M$,
-    and arguing like in,
+    and arguing like in Lemma~\ref{lemma:prepare_composition_formula},
     we obtain
     \begin{align*}
         \LeftDifferentialOperator {\beta_0} &\tau_N (g, \lambda) \Rep \lambda \BesselPotentialSquared M\\
-        &= \sum_{\abs {\beta_1} + \abs {\beta_2} \leq 2M} \int_\Group \TaylorRemainder {\RightDifferentialOperator [g_2 = h] {\beta_2} \LeftDifferentialOperator [g_1] {\beta_1} \LeftDifferentialOperator {\beta_0} \kappa_{g g_1}^{(*)}(g_2)} {g_1 = e_\Group} {N - \abs {\beta_1}} (h^{-1}) \adj{\Rep \lambda (h)} \dd h.
+        &= \sum_{\abs {\beta_1} + \abs {\beta_2} \leq 2M} \int_\Group \TaylorRemainder {\RightDifferentialOperator [h_2 = h] {\beta_2} \LeftDifferentialOperator [g_1] {\beta_1} \LeftDifferentialOperator [g] {\beta_0} \kappa_{g g_1}^{(*)}(h_2)} {g_1 = e_\Group} {N - \abs {\beta_1}} (h^{-1}) \adj{\Rep \lambda (h)} \dd h.
     \end{align*}
 
     Taking the operator norm,
@@ -3347,7 +3347,7 @@ First, we show that $\SmoothingOperators$ is stable under composition.
         }\\
         &\leq \sum_{\abs {\beta_1} + \abs {\beta_2} \leq 2M} \int_\Group
         \norm [\Lin {\Lebesgue 2 \CompactGroup}] {%
-            \TaylorRemainder {\RightDifferentialOperator [g_2 = h] {\beta_2} \LeftDifferentialOperator [g_1] {\beta_1} \LeftDifferentialOperator {\beta_0} \kappa_{g g_1}^{(*)}(g_2)} {g_1 = e_\Group} {N - \abs {\beta_1}} (h^{-1})
+            \TaylorRemainder {\RightDifferentialOperator [h_2 = h] {\beta_2} \LeftDifferentialOperator [g_1] {\beta_1} \LeftDifferentialOperator [g] {\beta_0} \kappa_{g g_1}^{(*)}(h_2)} {g_1 = e_\Group} {N - \abs {\beta_1}} (h^{-1})
         }
         \dd h.
     \end{align*}
@@ -3356,15 +3356,15 @@ First, we show that $\SmoothingOperators$ is stable under composition.
     we can estimate the remainder via
     \begin{align*}
         &\norm [\Lin {\Lebesgue 2 \CompactGroup}] {%
-            \TaylorRemainder {\RightDifferentialOperator [g_2 = h] {\beta_2} \LeftDifferentialOperator [g_1] {\beta_1} \LeftDifferentialOperator {\beta_0} \kappa_{g g_1}^{(*)}(g_2)} {g_1 = e_\Group} {N - \abs {\beta_1}} (h^{-1})
+            \TaylorRemainder {\RightDifferentialOperator [h_2 = h] {\beta_2} \LeftDifferentialOperator [g_1] {\beta_1} \LeftDifferentialOperator [g] {\beta_0} \kappa_{g g_1}^{(*)}(h_2)} {g_1 = e_\Group} {N - \abs {\beta_1}} (h^{-1})
         }\\
         &\leq
         \sum_{\abs \gamma = N - \abs {\beta_1} + 1}
         \norm [\Group] h^{N - \abs {\beta_1} + 1}
         \sup_{\norm [\Group] z \leq \eta \norm [\Group] h}
         \abs {%
-            \LeftDifferentialOperator [h] \gamma
-            \RightDifferentialOperator [h_2 = g] {\beta_2}
+            \LeftDifferentialOperator [z] \gamma
+            \RightDifferentialOperator [h_2 = h] {\beta_2}
             \LeftDifferentialOperator [g_1] {\beta_1}
             \LeftDifferentialOperator [g] {\beta_0}
             \kappa^*_{g g_1}(h_2)
