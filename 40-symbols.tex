@@ -3430,6 +3430,47 @@ First, we show that $\SmoothingOperators$ is stable under composition.
     \end{align*}
     holds for each $\sigma \in \SmoothingSymbols$.
 \end{proposition}
+\begin{proof}
+    Let $N_0 \in \N$, $\beta_0 \in \N^{\dim \Group}$ and $\alpha_0 \in \N^{\dimDifferenceOperators}$.
+    For each $N \in \N$,
+    we write
+    \begin{align*}
+        \tau_N(g, \lambda) \defeq
+        \sigma^{(*)}(g, \lambda)
+        - \sum_{\abs \alpha \leq N} \frac 1 {\alpha!} \DifferenceOperatorOrder \alpha \TaylorLeftDifferentialOperator \alpha \adj \sigma(g, \lambda).
+    \end{align*}
+
+    We shall apply Lemma~\ref{lemma:prepare_adjoint_formula} to the symbol
+    \begin{align*}
+        \tilde \sigma(g, \lambda)
+        = \sigma(g, \lambda)
+        \Rep \lambda \BesselPotential {-m + (\rho - \delta) N_0 + \rho \abs {\alpha_0} - \delta \abs {\beta_0}}
+    \end{align*}
+    which is of order $\tilde m \defeq (\rho - \delta) N_0 + \rho \abs {\alpha_0} - \delta \abs {\beta_0}$.
+    Let $M \in \N$ be the smallest natural number such that
+    \begin{align*}
+        \frac {-\tilde m + (\rho - \delta) N_0 + \delta \abs {\beta_0}} 2 \geq M.
+    \end{align*}
+
+    We now choose $N \geq \max \{N_0, 2M\}$ such that
+    \begin{align*}
+        (\rho - \delta) (N + 1) + \rho (\dim \Group)
+        > \tilde m + 2 M + \delta \abs {\beta_0} + \dim \Group,
+    \end{align*}
+    since it is possible by $\rho > \delta$.
+    By Lemma~\ref{lemma:prepare_adjoint_formula},
+    we obtain that
+    \begin{align*}
+        &\norm [\Lin {\Lebesgue 2 \Group}] {%
+        \LeftDifferentialOperator [g] {\beta_0}
+            \tau_N(g, \lambda)
+            \Rep \lambda \BesselPotential {-m + (\rho - \delta) N_0 + \rho \abs {\alpha_0} - \delta \abs {\beta_0}}
+        }\\
+        &\quad \leq C \SymbolSemiNorm {\tilde m} {\rho, \delta} P {\tilde \sigma}
+        = C \SymbolSemiNorm m {\rho, \delta} P \sigma,
+    \end{align*}
+    concluding our proof.
+\end{proof}
 
 \subsection{Simplification of symbol classes definition}
 
