@@ -3336,7 +3336,7 @@ First, we show that $\SmoothingOperators$ is stable under composition.
     we obtain
     \begin{align*}
         \LeftDifferentialOperator {\beta_0} &\tau_N (g, \lambda) \Rep \lambda \BesselPotentialSquared M\\
-        &= \sum_{\abs {\beta_1} + \abs {\beta_2} \leq 2M} \int_\Group \TaylorRemainder {\RightDifferentialOperator [g_2 = g] {\beta_2} \LeftDifferentialOperator [g_1] {\beta_1} \LeftDifferentialOperator {\beta_0} \kappa_{g g_1}^{(*)}(h)} {g_1 = e_\Group} {N - \abs {\beta_1}} (h^{-1}) \adj{\Rep \lambda (h)} \dd h.
+        &= \sum_{\abs {\beta_1} + \abs {\beta_2} \leq 2M} \int_\Group \TaylorRemainder {\RightDifferentialOperator [g_2 = h] {\beta_2} \LeftDifferentialOperator [g_1] {\beta_1} \LeftDifferentialOperator {\beta_0} \kappa_{g g_1}^{(*)}(g_2)} {g_1 = e_\Group} {N - \abs {\beta_1}} (h^{-1}) \adj{\Rep \lambda (h)} \dd h.
     \end{align*}
 
     Taking the operator norm,
@@ -3347,7 +3347,7 @@ First, we show that $\SmoothingOperators$ is stable under composition.
         }\\
         &\leq \sum_{\abs {\beta_1} + \abs {\beta_2} \leq 2M} \int_\Group
         \norm [\Lin {\Lebesgue 2 \CompactGroup}] {%
-            \TaylorRemainder {\RightDifferentialOperator [g_2 = g] {\beta_2} \LeftDifferentialOperator [g_1] {\beta_1} \LeftDifferentialOperator {\beta_0} \kappa_{g g_1}^{(*)}(h)} {g_1 = e_\Group} {N - \abs {\beta_1}} (h^{-1})
+            \TaylorRemainder {\RightDifferentialOperator [g_2 = h] {\beta_2} \LeftDifferentialOperator [g_1] {\beta_1} \LeftDifferentialOperator {\beta_0} \kappa_{g g_1}^{(*)}(g_2)} {g_1 = e_\Group} {N - \abs {\beta_1}} (h^{-1})
         }
         \dd h.
     \end{align*}
