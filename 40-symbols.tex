@@ -3315,6 +3315,23 @@ First, we show that $\SmoothingOperators$ is stable under composition.
         = \Op(\sigma^{(*)}).
     \end{align*}
 \end{lemma}
+\begin{proof}
+    Let $\phi, \psi \in \Schwartz \Group$ and fix $g \in \Group$.
+    \begin{align*}
+        \ip [\Lebesgue 2 \Group] {\Op(\sigma) \phi} \psi
+        &= \int_\Group \int_\Group \phi(h) \kappa_g(h^{-1} g) \conj \psi(g) \dd g\\
+        &= \int_\Group \int_\Group \phi(h) \conj \kappa^{(*)}_{g (h^{-1} g)^{-1}}((h^{-1} g)^{-1}) \conj \psi(g) \dd g
+    \end{align*}
+    by definition of $\kappa^{(*)}$.
+    Continuing our calculation,
+    we get
+    \begin{align*}
+        \ip [\Lebesgue 2 \Group] {\Op(\sigma) \phi} \psi
+        &= \int_\Group \int_\Group \phi(h) \conj{\kappa^{(*)}_{h}(g^{-1} h) \psi(g)} \dd g\\
+        &= \int_\Group \phi(h) (\conj {\conv \psi {\kappa^{(*)}_h}})(h) \dd h,
+    \end{align*}
+    which shows that $\kappa^{(*)}$ is the right-convolution kernel of the adjoint.
+\end{proof}
 
 \begin{lemma}
 \label{lemma:prepare_adjoint_formula}
