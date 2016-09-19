@@ -3624,6 +3624,31 @@ We are now able to finish the proof of the \emph{adjunction} and \emph{compositi
     \end{align*}
 \end{proof}
 
+\begin{theorem}[Adjunction formula]
+\label{theorem:adjunction_formula}
+    Assume that $1 \geq \rho > \delta \geq 0$.
+    Let
+    $\sigma \in \SymbolClass m {\rho, \delta}$ for some $m \in \R$
+
+    There exists $\tilde \sigma \in \SymbolClass m {\rho, \delta}$ such that
+    \begin{align*}
+        \Op (\tilde \sigma) = \adj {\Op(\sigma)}
+    \end{align*}
+    Moreover,
+    $\tilde \sigma$ is given modulo $\SmoothingSymbols$ by the asymptotic sum
+    \begin{align*}
+        \tilde \sigma \sim
+        \sum_{\alpha \in \N^{\dimDifferenceOperators}} \frac 1 {\alpha!} \DifferenceOperatorOrder \alpha \TaylorLeftDifferentialOperator \alpha \sigma.
+    \end{align*}
+    More precisely,
+    we have
+    \begin{align*}
+        \tilde \sigma
+        - \sum_{\abs \alpha \leq N} \frac 1 {\alpha!} \DifferenceOperatorOrder \alpha \TaylorLeftDifferentialOperator \alpha \sigma \in \SymbolClass {m - (\rho - \delta) N} {\rho, \delta}
+    \end{align*}
+    for each $N \in \N$.
+\end{theorem}
+
 \section{\texorpdfstring{$L^p$}{Lp} boundedness}
 
 \subsection{\texorpdfstring{$L^2$}{L2} boundedness}
