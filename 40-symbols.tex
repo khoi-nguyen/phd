@@ -3365,12 +3365,48 @@ First, we show that $\SmoothingOperators$ is stable under composition.
         \abs {%
             \LeftDifferentialOperator [z] \gamma
             \RightDifferentialOperator [h_2 = h] {\beta_2}
-            \LeftDifferentialOperator [g_1] {\beta_1}
+            \LeftDifferentialOperator [z] {\beta_1}
             \LeftDifferentialOperator [g] {\beta_0}
             \kappa^*_{g g_1}(h_2)
         }
     \end{align*}
-    where the last line was obtained by passing from left to right-invariant derivatives with Corollary~\ref{corollary:from_right_to_left-invariant_differential_operators}.
+    Using $\LeftDifferentialOperator [g] {\beta_0} = \RightDifferentialOperator [z] {\beta_0}$
+    and passing from left to right-invariant derivatives with Corollary~\ref{corollary:from_right_to_left-invariant_differential_operators},
+    \begin{align*}
+        &\norm [\Lin {\Lebesgue 2 \CompactGroup}] {%
+            \TaylorRemainder {\RightDifferentialOperator [h_2 = h] {\beta_2} \LeftDifferentialOperator [g_1] {\beta_1} \LeftDifferentialOperator [g] {\beta_0} \kappa_{g g_1}^{(*)}(h_2)} {g_1 = e_\Group} {N - \abs {\beta_1}} (h^{-1})
+        }\\
+        &\leq
+        \sum_{\abs \gamma = N - \abs {\beta_1} + 1}
+        \norm [\Group] h^{N - \abs {\beta_1} + 1 + \abs {\beta_0}}
+        \sup_{\substack {g_1 \in \Group\\ \beta_0' \leq \abs {\beta_0}}}
+        \abs {%
+        \LeftDifferentialOperator [g_1] {\gamma + \beta_1 + \beta_0'}
+            \RightDifferentialOperator [h_2 = h] {\beta_2}
+            \kappa^*_{g_1}(h_2)
+        },
+    \end{align*}
+    which is integrable,
+    with the integral being bounded by $C \SymbolSemiNorm m {\rho, \delta} P \sigma$
+    provided
+    \begin{align*}
+        m + \abs {\beta_2} + \delta(\gamma + \abs {\beta_1} + \abs {\beta_0'}) + \dim \Group
+        <
+        \rho (N - \abs {\beta_1} + 1 + \abs {\beta_0} + \dim \Group).
+    \end{align*}
+
+    Naturally,
+    the above condition is satisfied when
+    \begin{align*}
+        m + 2 M + \delta(N + 1 + \abs {\beta_0}) + \dim \Group
+        <
+        \rho (N + 1 + \dim \Group)
+    \end{align*}
+    which can be rewritten
+    \begin{align*}
+        (\rho - \delta) (N + 1) + \rho (\dim \Group)
+        > m + 2 M + \delta \abs {\beta_0} + \dim \Group.
+    \end{align*}
 \end{proof}
 
 \begin{proposition}
