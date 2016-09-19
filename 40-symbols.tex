@@ -3298,9 +3298,15 @@ First, we show that $\SmoothingOperators$ is stable under composition.
 \end{lemma}
 
 \begin{lemma}
-    Assume that $1 \geq \rho > \delta \geq 0$.
-    For each $\beta_0$ and each $M \in \N$,
-    there exists $C \geq 0$ and an $N \in \N$ such that for any $\sigma \in \SmoothingSymbols$,
+\label{lemma:prepare_adjoint_formula}
+    Let $m \in \R$ and
+    assume that $1 \geq \rho > \delta \geq 0$.
+    For each $\beta_0 \in \N^{\dim \Group}$ and each $M, N \in \N$ satisfying
+    \begin{align*}
+        (\rho - \delta) (N + 1) + \rho (\dim \Group)
+        > m + 2 M + \delta \abs {\beta_0} + \dim \Group,
+    \end{align*}
+    there exists $C \geq 0$ and $P \in \N$ such that for any $\sigma \in \SmoothingSymbols$,
     \begin{align*}
         &\norm [\Lin {\Lebesgue 2 \Group}] {%
         \LeftDifferentialOperator [g] {\beta_0} (
@@ -3308,7 +3314,7 @@ First, we show that $\SmoothingOperators$ is stable under composition.
             - \sum_{\abs \alpha \leq N} \DifferenceOperatorOrder \alpha \LeftDifferentialOperator \alpha \adj \sigma(g, \lambda))
             \Rep \lambda \BesselPotential M
         }\\
-        &\quad \leq C \SymbolSemiNorm m {\rho, \delta} N \sigma
+        &\quad \leq C \SymbolSemiNorm m {\rho, \delta} P \sigma
     \end{align*}
     holds for every $(g, \lambda) \in \Group \times \VectorSpace$.
 \end{lemma}
@@ -3332,11 +3338,11 @@ First, we show that $\SmoothingOperators$ is stable under composition.
     \end{align*}
 
     Multiplying both sides by $\Rep \lambda \BesselPotentialSquared M$,
-    and arguing like in,
+    and arguing like in Lemma~\ref{lemma:prepare_composition_formula},
     we obtain
     \begin{align*}
         \LeftDifferentialOperator {\beta_0} &\tau_N (g, \lambda) \Rep \lambda \BesselPotentialSquared M\\
-        &= \sum_{\abs {\beta_1} + \abs {\beta_2} \leq 2M} \int_\Group \TaylorRemainder {\RightDifferentialOperator [g_2 = g] {\beta_2} \LeftDifferentialOperator [g_1] {\beta_1} \LeftDifferentialOperator {\beta_0} \kappa_{g g_1}^{(*)}(h)} {g_1 = e_\Group} {N - \abs {\beta_1}} (h^{-1}) \adj{\Rep \lambda (h)} \dd h.
+        &= \sum_{\abs {\beta_1} + \abs {\beta_2} \leq 2M} \int_\Group \TaylorRemainder {\RightDifferentialOperator [h_2 = h] {\beta_2} \LeftDifferentialOperator [g_1] {\beta_1} \LeftDifferentialOperator [g] {\beta_0} \kappa_{g g_1}^{(*)}(h_2)} {g_1 = e_\Group} {N - \abs {\beta_1}} (h^{-1}) \adj{\Rep \lambda (h)} \dd h.
     \end{align*}
 
     Taking the operator norm,
@@ -3347,27 +3353,124 @@ First, we show that $\SmoothingOperators$ is stable under composition.
         }\\
         &\leq \sum_{\abs {\beta_1} + \abs {\beta_2} \leq 2M} \int_\Group
         \norm [\Lin {\Lebesgue 2 \CompactGroup}] {%
-            \TaylorRemainder {\RightDifferentialOperator [g_2 = g] {\beta_2} \LeftDifferentialOperator [g_1] {\beta_1} \LeftDifferentialOperator {\beta_0} \kappa_{g g_1}^{(*)}(h)} {g_1 = e_\Group} {N - \abs {\beta_1}} (h^{-1})
+            \TaylorRemainder {\RightDifferentialOperator [h_2 = h] {\beta_2} \LeftDifferentialOperator [g_1] {\beta_1} \LeftDifferentialOperator [g] {\beta_0} \kappa_{g g_1}^{(*)}(h_2)} {g_1 = e_\Group} {N - \abs {\beta_1}} (h^{-1})
         }
         \dd h.
     \end{align*}
-    % TODO: finish the proof.
+
+    Using Proposition~\ref{proposition:Taylor_theorem},
+    we can estimate the remainder via
+    \begin{align*}
+        &\norm [\Lin {\Lebesgue 2 \CompactGroup}] {%
+            \TaylorRemainder {\RightDifferentialOperator [h_2 = h] {\beta_2} \LeftDifferentialOperator [g_1] {\beta_1} \LeftDifferentialOperator [g] {\beta_0} \kappa_{g g_1}^{(*)}(h_2)} {g_1 = e_\Group} {N - \abs {\beta_1}} (h^{-1})
+        }\\
+        &\leq
+        \sum_{\abs \gamma = N - \abs {\beta_1} + 1}
+        \norm [\Group] h^{N - \abs {\beta_1} + 1}
+        \sup_{\norm [\Group] z \leq \eta \norm [\Group] h}
+        \abs {%
+            \LeftDifferentialOperator [z] \gamma
+            \RightDifferentialOperator [h_2 = h] {\beta_2}
+            \LeftDifferentialOperator [z] {\beta_1}
+            \LeftDifferentialOperator [g] {\beta_0}
+            \kappa^*_{g g_1}(h_2)
+        }
+    \end{align*}
+    Using $\LeftDifferentialOperator [g] {\beta_0} = \RightDifferentialOperator [z] {\beta_0}$
+    and passing from left to right-invariant derivatives with Corollary~\ref{corollary:from_right_to_left-invariant_differential_operators},
+    \begin{align*}
+        &\norm [\Lin {\Lebesgue 2 \CompactGroup}] {%
+            \TaylorRemainder {\RightDifferentialOperator [h_2 = h] {\beta_2} \LeftDifferentialOperator [g_1] {\beta_1} \LeftDifferentialOperator [g] {\beta_0} \kappa_{g g_1}^{(*)}(h_2)} {g_1 = e_\Group} {N - \abs {\beta_1}} (h^{-1})
+        }\\
+        &\leq
+        \sum_{\abs \gamma = N - \abs {\beta_1} + 1}
+        \norm [\Group] h^{N - \abs {\beta_1} + 1 + \abs {\beta_0}}
+        \sup_{\substack {g_1 \in \Group\\ \beta_0' \leq \abs {\beta_0}}}
+        \abs {%
+        \LeftDifferentialOperator [g_1] {\gamma + \beta_1 + \beta_0'}
+            \RightDifferentialOperator [h_2 = h] {\beta_2}
+            \kappa^*_{g_1}(h_2)
+        },
+    \end{align*}
+    which is integrable,
+    with the integral being bounded by $C \SymbolSemiNorm m {\rho, \delta} P \sigma$
+    provided
+    \begin{align*}
+        m + \abs {\beta_2} + \delta(\gamma + \abs {\beta_1} + \abs {\beta_0'}) + \dim \Group
+        <
+        \rho (N - \abs {\beta_1} + 1 + \abs {\beta_0} + \dim \Group).
+    \end{align*}
+
+    Naturally,
+    the above condition is satisfied when
+    \begin{align*}
+        m + 2 M + \delta(N + 1 + \abs {\beta_0}) + \dim \Group
+        <
+        \rho (N + 1 + \dim \Group)
+    \end{align*}
+    which can be rewritten
+    \begin{align*}
+        (\rho - \delta) (N + 1) + \rho (\dim \Group)
+        > m + 2 M + \delta \abs {\beta_0} + \dim \Group.
+    \end{align*}
 \end{proof}
 
 \begin{proposition}
 \label{proposition:adjoint_formula}
     Assume that $1 \geq \rho > \delta \geq 0$.
-    For each $m \in \R$ and each $M, N \in \N$,
-    there exists $C \geq 0$ and $M' \in \N$ such that
+    For each $m \in \R$ and each $P, N_0 \in \N$,
+    there exists $C \geq 0$ and $P' \in \N$ such that
     \begin{align*}
-        \SymbolSemiNorm {m - N (\rho - \delta), R} {\rho, \delta} M {%
+        \SymbolSemiNorm {m - N_0 (\rho - \delta), R} {\rho, \delta} P {%
         \sigma^{(*)}(g, \lambda)
-        - \sum_{\abs \alpha \leq N} \DifferenceOperatorOrder \alpha \LeftDifferentialOperator \alpha \adj \sigma(g, \lambda)
+        - \sum_{\abs \alpha \leq N_0} \frac 1 {\alpha!} \DifferenceOperatorOrder \alpha \TaylorLeftDifferentialOperator \alpha \adj \sigma(g, \lambda)
         } \leq
-        \SymbolSemiNorm m {\rho, \delta} {M'} \sigma
+        C
+        \SymbolSemiNorm m {\rho, \delta} {P'} \sigma
     \end{align*}
     holds for each $\sigma \in \SmoothingSymbols$.
 \end{proposition}
+\begin{proof}
+    Let $N_0 \in \N$, $\beta_0 \in \N^{\dim \Group}$ and $\alpha_0 \in \N^{\dimDifferenceOperators}$.
+    For each $N \in \N$,
+    we write
+    \begin{align*}
+        \tau_N(g, \lambda) \defeq
+        \sigma^{(*)}(g, \lambda)
+        - \sum_{\abs \alpha \leq N} \frac 1 {\alpha!} \DifferenceOperatorOrder \alpha \TaylorLeftDifferentialOperator \alpha \adj \sigma(g, \lambda).
+    \end{align*}
+
+    We shall apply Lemma~\ref{lemma:prepare_adjoint_formula} to the symbol
+    \begin{align*}
+        \tilde \sigma(g, \lambda)
+        = \sigma(g, \lambda)
+        \Rep \lambda \BesselPotential {-m + (\rho - \delta) N_0 + \rho \abs {\alpha_0} - \delta \abs {\beta_0}}
+    \end{align*}
+    which is of order $\tilde m \defeq (\rho - \delta) N_0 + \rho \abs {\alpha_0} - \delta \abs {\beta_0}$.
+    Let $M \in \N$ be the smallest natural number such that
+    \begin{align*}
+        \frac {-\tilde m + (\rho - \delta) N_0 + \delta \abs {\beta_0}} 2 \geq M.
+    \end{align*}
+
+    We now choose $N \geq \max \{N_0, 2M\}$ such that
+    \begin{align*}
+        (\rho - \delta) (N + 1) + \rho (\dim \Group)
+        > \tilde m + 2 M + \delta \abs {\beta_0} + \dim \Group,
+    \end{align*}
+    since it is possible by $\rho > \delta$.
+    By Lemma~\ref{lemma:prepare_adjoint_formula},
+    we obtain that
+    \begin{align*}
+        &\norm [\Lin {\Lebesgue 2 \Group}] {%
+        \LeftDifferentialOperator [g] {\beta_0}
+            \tau_N(g, \lambda)
+            \Rep \lambda \BesselPotential {-m + (\rho - \delta) N_0 + \rho \abs {\alpha_0} - \delta \abs {\beta_0}}
+        }\\
+        &\quad \leq C \SymbolSemiNorm {\tilde m} {\rho, \delta} P {\tilde \sigma}
+        = C \SymbolSemiNorm m {\rho, \delta} P \sigma,
+    \end{align*}
+    concluding our proof.
+\end{proof}
 
 \subsection{Simplification of symbol classes definition}
 
@@ -3520,6 +3623,31 @@ We are now able to finish the proof of the \emph{adjunction} and \emph{compositi
         \SymbolSemiNorm {m_2} {\rho, \delta} {M'} {\sigma_2}\\
     \end{align*}
 \end{proof}
+
+\begin{theorem}[Adjunction formula]
+\label{theorem:adjunction_formula}
+    Assume that $1 \geq \rho > \delta \geq 0$.
+    Let
+    $\sigma \in \SymbolClass m {\rho, \delta}$ for some $m \in \R$
+
+    There exists $\tilde \sigma \in \SymbolClass m {\rho, \delta}$ such that
+    \begin{align*}
+        \Op (\tilde \sigma) = \adj {\Op(\sigma)}
+    \end{align*}
+    Moreover,
+    $\tilde \sigma$ is given modulo $\SmoothingSymbols$ by the asymptotic sum
+    \begin{align*}
+        \tilde \sigma \sim
+        \sum_{\alpha \in \N^{\dimDifferenceOperators}} \frac 1 {\alpha!} \DifferenceOperatorOrder \alpha \TaylorLeftDifferentialOperator \alpha \sigma.
+    \end{align*}
+    More precisely,
+    we have
+    \begin{align*}
+        \tilde \sigma
+        - \sum_{\abs \alpha \leq N} \frac 1 {\alpha!} \DifferenceOperatorOrder \alpha \TaylorLeftDifferentialOperator \alpha \sigma \in \SymbolClass {m - (\rho - \delta) N} {\rho, \delta}
+    \end{align*}
+    for each $N \in \N$.
+\end{theorem}
 
 \section{\texorpdfstring{$L^p$}{Lp} boundedness}
 
