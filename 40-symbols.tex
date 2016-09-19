@@ -3298,9 +3298,14 @@ First, we show that $\SmoothingOperators$ is stable under composition.
 \end{lemma}
 
 \begin{lemma}
-    Assume that $1 \geq \rho > \delta \geq 0$.
-    For each $\beta_0$ and each $M \in \N$,
-    there exists $C \geq 0$ and an $N \in \N$ such that for any $\sigma \in \SmoothingSymbols$,
+    Let $m \in \R$ and
+    assume that $1 \geq \rho > \delta \geq 0$.
+    For each $\beta_0 \in \N^{\dim \Group}$ and each $M, N \in \N$ satisfying
+    \begin{align*}
+        (\rho - \delta) (N + 1) + \rho (\dim \Group)
+        > m + 2 M + \delta \abs {\beta_0} + \dim \Group,
+    \end{align*}
+    there exists $C \geq 0$ and $P \in \N$ such that for any $\sigma \in \SmoothingSymbols$,
     \begin{align*}
         &\norm [\Lin {\Lebesgue 2 \Group}] {%
         \LeftDifferentialOperator [g] {\beta_0} (
@@ -3308,7 +3313,7 @@ First, we show that $\SmoothingOperators$ is stable under composition.
             - \sum_{\abs \alpha \leq N} \DifferenceOperatorOrder \alpha \LeftDifferentialOperator \alpha \adj \sigma(g, \lambda))
             \Rep \lambda \BesselPotential M
         }\\
-        &\quad \leq C \SymbolSemiNorm m {\rho, \delta} N \sigma
+        &\quad \leq C \SymbolSemiNorm m {\rho, \delta} P \sigma
     \end{align*}
     holds for every $(g, \lambda) \in \Group \times \VectorSpace$.
 \end{lemma}
