@@ -8,6 +8,26 @@ each \emph{pseudo-differential operator} arises from a smooth function called \e
 and the symbolic point of view allows us to characterise pseudo-differential operators which admits parametrices,
 and to describe the construction of such parametrices.
 
+Informally,
+given an operator $T$ with convolution kernel $\kappa_x$, i.e.\
+\begin{align*}
+    T \phi(x) = \int_{\R^n} \phi(y) \kappa_x(x - y) \dd x,
+    \phi \in \Schwartz {\R^n}, \ x \in \R^n,
+\end{align*}
+we define its \emph{symbol} via
+\begin{align*}
+    \sigma_T(x, \xi) \defeq \Fourier \{\kappa_x\} (\xi),
+\end{align*}
+and say that $T$ is a pseudo-differential operator of order $m$ and of type $(\rho, \delta)$ if
+\begin{align*}
+    \abs {
+    \iD {x^\beta} \iD {\xi^\alpha} \sigma_T(x, \xi)
+    }
+    < C_{\alpha, \beta}
+    (1 + \norm [\R^n] \xi)^{-m + \rho \abs \alpha - \delta \abs \beta}
+\end{align*}
+for each $\alpha, \beta \in \N^n$.
+
 \section{The Euclidean case}
 
 It is known and elementary fact that
