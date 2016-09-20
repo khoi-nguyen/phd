@@ -723,8 +723,9 @@ this is a price we are willing to pay.
 \begin{example}
     The symbol $\Rep \lambda \BesselPotentialSquared {}$ is parameter-elliptic of order $2$ with respect to
     \begin{align*}
-        \Lambda \defeq \{r \e^{\i \theta} : r \geq 0 \text{ and } \frac {2 \pi} 3 \leq \theta \leq \frac {4 \pi} 3 \} \cup \{z \in \C \abs z \leq \frac 1 2  \}
+        \Lambda \defeq \{r \e^{\i \theta} : r \geq 0 \text{ and } \alpha \leq \theta \leq \beta \} \cup \{z \in \C \abs z \leq \frac 1 2  \}
     \end{align*}
+    with $0 < \alpha < \beta < \turn$.
 \end{example}
 
 \begin{lemma}[\cite{RuzhanskyWirth14}, Theorem 3.1. (1)]
@@ -972,13 +973,14 @@ We are now ready to state our main result.
 \end{proof}
 
 The following result is central in our analysis.
+We show that the Fourier transform of the heat kernel can be used to define a good approximation of the symbol $\Fourier \delta_{e_\Group}$.
 
 \begin{theorem}
 \label{theorem:generalised_Littlewood-Paley_decomposition}
     For each $\epsilon \in (0, 1]$,
     we let
     \begin{align*}
-        \eta_\epsilon(\lambda) \defeq \e^{-\epsilon^2 \Rep \lambda \BesselPotentialSquared 2}
+        \eta_\epsilon(\lambda) \defeq \e^{-\epsilon \Rep \lambda \BesselPotentialSquared {}}
     \end{align*}
     for each $\lambda \in \VectorSpace$.
     This defines a smoothing symbol in $\SmoothingSymbols$.
@@ -991,7 +993,7 @@ The following result is central in our analysis.
                 \SymbolSemiNorm m {\rho, \delta} N {\eta_\epsilon} \leq C \epsilon^\frac m 2
             \end{align*}
         \item
-            If $0 \leq m \leq 8$,
+            If $0 \leq m \leq 4$,
             then for each $N \in \N$
             there exists $C \geq 0$ such that
             \begin{align*}
@@ -999,17 +1001,17 @@ The following result is central in our analysis.
             \end{align*}
     \end{itemize}
 
-    In particular, for each $m > 0$, $\eta_\epsion$ converges to $\Id {\Lebesgue 2 \CompactGroup}$ in $\SymbolClass m {\rho, \delta}$.
+    In particular, for each $m > 0$, $\eta_\epsilon$ converges to $\Id {\Lebesgue 2 \CompactGroup}$ in $\SymbolClass m {\rho, \delta}$ as $\epsilon \go 0$.
 \end{theorem}
 \begin{proof}
     In this proof, we consider the following sector
     \begin{align*}
-        \Lambda \defeq \Lambda(\frac {\turn} 3, \frac {4 \pi} 3)
+        \Lambda \defeq \Lambda(\frac {\pi} 3, \frac {5 \pi} 3)
     \end{align*}
     and observe that $\Rep \lambda \BesselPotentialSquared {}$ is parameter elliptic with respect to $\Lambda$.
-    We also let $\Gamma$ be the boundary of $\Lambda \cup \{z \in \C : \abs z \leq \\frac 1 2\}$.
+    We also let $\Gamma$ be the boundary of $\Lambda \cup \{z \in \C : \abs z \leq \frac 1 2\}$.
 
-    Let $m < 0$ and write $F_\epsilon(z) = {\e^{-(\epsilon z)^2}}$.
+    Let $m < 0$ and write $F_\epsilon(z) = {\e^{-\epsilon z}}$.
     We observe that since $F_\epsilon$ decays faster than any polynomial and does not have a pole at $0$,
     \begin{align*}
         \abs {F_\epsilon(z)} \leq C \abs {\epsilon z}^\frac m 2,
@@ -1022,19 +1024,19 @@ The following result is central in our analysis.
         \leq C_{N, n, s} \epsilon^{\frac m 2}.
     \end{align*}
 
-    Now let $0 < m \leq 8$ and let us check the second symbolic estimate.
+    Now let $0 < m \leq 4$ and let us check the second symbolic estimate.
     To this end,
     we let
     \begin{align*}
-        G_\epsilon(z) \defeq (\epsilon z)^{-\frac m 2} (1 - \e^{-(\epsilon z)^2})
+        G_\epsilon(z) \defeq (\epsilon z)^{-\frac m 2} (1 - \e^{-\epsilon z})
     \end{align*}
     and observe that
-    since $G_1$ vanishes at order $2$ at the origin,
+    since $G_1$ vanishes at order $1$ at the origin,
     $\abs {G_\epsilon(z)} \leq C \abs {\epsilon z}^{-m/4}$ on $\Gamma$ where $C$ does not depend on $\epsilon \in (0, 1]$,
     because
     \begin{align*}
         \lim_{z \to 0} \frac {G_1(z)}{z^{-m / 4}}
-        = \lim_{z \to 0} \frac {1 - \e^{-z^2}} {z^{m / 4}}
+        = \lim_{z \to 0} \frac {1 - \e^{-z}} {z^{m / 4}}
     \end{align*}
     exists and is finite by our condition on $m$.
     Using Theorem~\ref{theorem:functional_calculus} with~\eqref{eq:functional_calculus:bound_on_seminorm},
@@ -1056,7 +1058,7 @@ The following result is central in our analysis.
     Now, assume that $m = 0$.
     Defining
     \begin{align*}
-        G_\epsilon(z) = (\epsilon z)^{-1} (1 - \e^{-(\epsilon z)^2})
+        G_\epsilon(z) = (\epsilon z)^{-1} (1 - \e^{-\epsilon z})
     \end{align*}
     it is clear that
     \begin{align*}
@@ -1076,8 +1078,54 @@ The following result is central in our analysis.
         &\leq
         \SymbolSemiNorm {-2} {\rho, \delta} {N'} {G_\epsilon(\Rep \lambda \BesselPotentialSquared {})}
         \SymbolSemiNorm {2} {\rho, \delta} {N'} {\epsilon \Rep \lambda \BesselPotentialSquared {}}\\
-        &\leq C \epsilon^{-1 + 1} = C
+        &\leq C \epsilon^{-1 + 1} = C.
     \end{align*}
+\end{proof}
+
+\begin{corollary}[Littlewood-Paley decomposition]
+    Let $\epsilon \in (0, 1]$.
+    The symbols
+    \begin{align*}
+        \eta'_{\epsilon, j}(\lambda) \defeq \eta_{2^{-j} \epsilon}(\lambda) - \eta_{2^{-j + 1} \epsilon}(\lambda),
+        \quad j = 1, 2, \dots
+    \end{align*}
+    satisfy the following estimate:
+    for each $m > 0$ and each $N \in \N$, there exists $C \geq 0$ such that
+    \begin{align*}
+        \SymbolSemiNorm m {\rho, \delta} N {\eta'_{\epsilon, j}}
+        \leq C (2^{-j} \epsilon)^\frac {\max \{m, 4\}} 2
+    \end{align*}
+    for each $j > 1$.
+
+    Moreover,
+    we have the following decomposition
+    \begin{align*}
+        \Id {\Lebesgue 2 \CompactGroup} =
+        \eta_\epsilon + \sum_{j = 1}^{+\infty} \eta'_{\epsilon, j},
+    \end{align*}
+    where the convergence on the right-hand side is understood in the strong operator topology.
+\end{corollary}
+\begin{proof}
+    Using the symbol classes inclusions,
+    we can assume without loss of generality that $m \geq 4$.
+    We follow the proof of Theorem~\ref{theorem:generalised_Littlewood-Paley_decomposition} when $0 < m \leq 4$.
+    We consider this time the function
+    \begin{align*}
+        G_\epsilon(z) \defeq (\epsilon z)^{-\frac m 2}
+        (\e^{-\epsilon z/2} - \e^{-\epsilon z}),
+    \end{align*}
+    and conclude like in Theorem~\ref{theorem:generalised_Littlewood-Paley_decomposition} that
+    \begin{align*}
+        \SymbolSemiNorm m {\rho, \delta} N {\eta'_{\epsilon, 1}} \leq \epsilon^\frac m 2.
+    \end{align*}
+
+    For $j > 1$,
+    it suffices to observe that
+    \begin{align*}
+        \eta'_{\epsilon, j}
+        = \eta'_{2^{-j + 1} \epsilon, 1}.
+    \end{align*}
+    This concludes the proof.
 \end{proof}
 
 \section{Approximation of symbols}
@@ -1106,7 +1154,7 @@ The following result is central in our analysis.
             \begin{align*}
                 \SymbolSemiNorm {m_1} {\rho, \delta} N {\sigma - \sigma_\epsilon}
                 \leq C \SymbolSemiNorm m {\rho, \delta} {N'} \sigma
-                \epsilon^\frac {\max \{m_1 - m, 8\}} 2
+                \epsilon^\frac {\max \{m_1 - m, 4\}} 2
             \end{align*}
             for each $\epsilon \in (0, 1]$.
     \end{enumerate}
@@ -2762,7 +2810,7 @@ and we need to find out whether it converges in a satisfactory sense for our pur
     \begin{align*}
         \SymbolSemiNorm {m_0} {\rho, \delta} l {\sigma_j (\Id {\Lebesgue 2 \CompactGroup} - \eta_\epsilon)}
         \leq C_l \SymbolSemiNorm {m_0} {\rho, \delta} {N_l} {\sigma_j}
-        \epsilon^{\frac {\max\{m_0 - m_j, 8\}} 2}
+        \epsilon^{\frac {\max\{m_0 - m_j, 4\}} 2}
     \end{align*}
     for each $0 < \epsilon \leq 1$ and each $j \in \N$.
     Without loss of generality,
@@ -2771,7 +2819,7 @@ and we need to find out whether it converges in a satisfactory sense for our pur
     Choosing a decreasing sequence of sufficiently small $\epsilon_j > 0$, $j \in \N$
     so that the right-hand side of the above satisfies
     \begin{align*}
-        C_j \SymbolSemiNorm {m_0} {\rho, \delta} {N_j} {\sigma_j} \epsilon_j^{\frac {\max \{m_0 - m_j, 8\}} 2}
+        C_j \SymbolSemiNorm {m_0} {\rho, \delta} {N_j} {\sigma_j} \epsilon_j^{\frac {\max \{m_0 - m_j, 4\}} 2}
         \leq 2^{-j},
     \end{align*}
     we now obtain that the symbols
