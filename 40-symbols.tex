@@ -979,7 +979,7 @@ The following result is central in our analysis.
     For each $\epsilon \in (0, 1]$,
     we let
     \begin{align*}
-        \eta_\epsilon(\lambda) \defeq \e^{-\epsilon^2 \Rep \lambda \BesselPotentialSquared 2}
+        \eta_\epsilon(\lambda) \defeq \e^{-\epsilon \Rep \lambda \BesselPotentialSquared {}}
     \end{align*}
     for each $\lambda \in \VectorSpace$.
     This defines a smoothing symbol in $\SmoothingSymbols$.
@@ -992,7 +992,7 @@ The following result is central in our analysis.
                 \SymbolSemiNorm m {\rho, \delta} N {\eta_\epsilon} \leq C \epsilon^\frac m 2
             \end{align*}
         \item
-            If $0 \leq m \leq 8$,
+            If $0 \leq m \leq 4$,
             then for each $N \in \N$
             there exists $C \geq 0$ such that
             \begin{align*}
@@ -1000,17 +1000,17 @@ The following result is central in our analysis.
             \end{align*}
     \end{itemize}
 
-    In particular, for each $m > 0$, $\eta_\epsion$ converges to $\Id {\Lebesgue 2 \CompactGroup}$ in $\SymbolClass m {\rho, \delta}$.
+    In particular, for each $m > 0$, $\eta_\epsilon$ converges to $\Id {\Lebesgue 2 \CompactGroup}$ in $\SymbolClass m {\rho, \delta}$ as $\epsilon \go 0$.
 \end{theorem}
 \begin{proof}
     In this proof, we consider the following sector
     \begin{align*}
-        \Lambda \defeq \Lambda(\frac {\turn} 3, \frac {4 \pi} 3)
+        \Lambda \defeq \Lambda(\frac {\pi} 3, \frac {5 \pi} 3)
     \end{align*}
     and observe that $\Rep \lambda \BesselPotentialSquared {}$ is parameter elliptic with respect to $\Lambda$.
-    We also let $\Gamma$ be the boundary of $\Lambda \cup \{z \in \C : \abs z \leq \\frac 1 2\}$.
+    We also let $\Gamma$ be the boundary of $\Lambda \cup \{z \in \C : \abs z \leq \frac 1 2\}$.
 
-    Let $m < 0$ and write $F_\epsilon(z) = {\e^{-(\epsilon z)^2}}$.
+    Let $m < 0$ and write $F_\epsilon(z) = {\e^{-\epsilon z}}$.
     We observe that since $F_\epsilon$ decays faster than any polynomial and does not have a pole at $0$,
     \begin{align*}
         \abs {F_\epsilon(z)} \leq C \abs {\epsilon z}^\frac m 2,
@@ -1023,19 +1023,19 @@ The following result is central in our analysis.
         \leq C_{N, n, s} \epsilon^{\frac m 2}.
     \end{align*}
 
-    Now let $0 < m \leq 8$ and let us check the second symbolic estimate.
+    Now let $0 < m \leq 4$ and let us check the second symbolic estimate.
     To this end,
     we let
     \begin{align*}
-        G_\epsilon(z) \defeq (\epsilon z)^{-\frac m 2} (1 - \e^{-(\epsilon z)^2})
+        G_\epsilon(z) \defeq (\epsilon z)^{-\frac m 2} (1 - \e^{-\epsilon z})
     \end{align*}
     and observe that
-    since $G_1$ vanishes at order $2$ at the origin,
+    since $G_1$ vanishes at order $1$ at the origin,
     $\abs {G_\epsilon(z)} \leq C \abs {\epsilon z}^{-m/4}$ on $\Gamma$ where $C$ does not depend on $\epsilon \in (0, 1]$,
     because
     \begin{align*}
         \lim_{z \to 0} \frac {G_1(z)}{z^{-m / 4}}
-        = \lim_{z \to 0} \frac {1 - \e^{-z^2}} {z^{m / 4}}
+        = \lim_{z \to 0} \frac {1 - \e^{-z}} {z^{m / 4}}
     \end{align*}
     exists and is finite by our condition on $m$.
     Using Theorem~\ref{theorem:functional_calculus} with~\eqref{eq:functional_calculus:bound_on_seminorm},
@@ -1057,7 +1057,7 @@ The following result is central in our analysis.
     Now, assume that $m = 0$.
     Defining
     \begin{align*}
-        G_\epsilon(z) = (\epsilon z)^{-1} (1 - \e^{-(\epsilon z)^2})
+        G_\epsilon(z) = (\epsilon z)^{-1} (1 - \e^{-\epsilon z})
     \end{align*}
     it is clear that
     \begin{align*}
@@ -1077,7 +1077,7 @@ The following result is central in our analysis.
         &\leq
         \SymbolSemiNorm {-2} {\rho, \delta} {N'} {G_\epsilon(\Rep \lambda \BesselPotentialSquared {})}
         \SymbolSemiNorm {2} {\rho, \delta} {N'} {\epsilon \Rep \lambda \BesselPotentialSquared {}}\\
-        &\leq C \epsilon^{-1 + 1} = C
+        &\leq C \epsilon^{-1 + 1} = C.
     \end{align*}
 \end{proof}
 
