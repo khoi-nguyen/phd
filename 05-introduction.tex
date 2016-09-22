@@ -1,11 +1,32 @@
 \chapter{Introduction}
 
 On $\R^n$,
-the success of \emph{pseudo-differential calculus} resides in the construction of a family of Calder\'on-Zygmund operators stable under adjunction and composition,
-and equipped with an adequate notion of order.
+the success of \emph{pseudo-differential calculus} resides in the construction of
+an algebra of operators satisfying the following properties:
+\begin{enumerate}
+    \item If $k \in \N$, then $\OperatorClass [\R^n] k {\rho, \delta}$ contains derivatives with constant coefficients.
+    \item For each $m \in \R$, $\BesselPotential [\R^n] m \in \OperatorClass m {\rho, \delta}$
+    \item The composition of $T_1 \in \OperatorClass [\R^n] {m_1} {\rho, \delta}$ and $T_2 \in \OperatorClass [\R^n] {m_2} {\rho, \delta}$ is in $\OperatorClass [\R^n] {m_1 + m_2} {\rho, \delta}$;
+    \item $\OperatorClass [\R^n] m {\rho, \delta}$ is stable under taking the adjoint.
+    \item If $T \in \OperatorClass [\R^n] m {\rho, \delta}$,
+        then $T$ extends to a bounded operator
+        \begin{align*}
+            T : \SobolevOrder [\R^n] p s \to \SobolevOrder [\R^n] p {s - m}.
+        \end{align*}
+        for each $s \in \R$.
+\end{enumerate}
+
 More importantly,
-each \emph{pseudo-differential operator} arises from a smooth function called \emph{symbol} via the Fourier Transform,
-and the symbolic point of view allows us to characterise pseudo-differential operators which admit approximate inverses.
+each pseudo-differential arises from a smooth function called \emph{symbol}.
+In fact,
+the process of associating an appropriate smooth function to a pseudo-differential operator,
+called \emph{quantisation},
+generalises the association of a characteristic polynomial to its corresponding differential operator.
+Moreover,
+the composition and adjunction of pseudo-differential operators can be written approximately on the symbolic side,
+with formulas that are formally virtually identical to the rules we obtain with characteristic polynomial for the composition of differential operators.
+As a result,
+we are able to characterise the set of pseudo-differential operators which admit an approximate inverse.
 
 This leads us to wonder whether pseudo-differential calculus could be generalised onto other settings.
 A first direction would be to try to define pseudo-differential operators on manifolds as the operators which are Euclidean pseudo-differential operators in every local coordinate chart.
