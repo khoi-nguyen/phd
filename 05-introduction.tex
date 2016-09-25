@@ -133,3 +133,52 @@ the following \emph{inverse formula}
 \end{align*}
 
 The problem of extending the Fourier transform onto Sobolev spaces was solved in~\cite[Subsection 5.1.1]{FischerRuzhansky16}
+
+\subsection*{Difference operators}
+
+In~\cite{RuzhanskyTurunen10},
+\citeauthor{RuzhanskyTurunen10} introduce the following notion of difference operator
+If $q \in \SmoothFunctions \Group$,
+we define
+\begin{align*}
+    \DifferenceOperator [\Group] q \Fourier f = \Fourier \{q f\}.
+\end{align*}
+
+We need to find a family of functions
+\begin{align*}
+    \Delta \defeq \{q_1, \dots, \q_{\dimDifferenceOperators} \in \SmoothFunctions \Group\}
+\end{align*}
+with respect to which to take difference operators.
+The main requirements are the following.
+\begin{itemize}
+    \item We can use a \emph{Taylor development} at the origin.
+        This is due to the fact that the adjunction and the composition cannot be expressed on the symbolic side without using a Taylor development.
+    \item We have a reasonable \emph{Leibniz rule}.
+        This ensures for example that the order of the composition of two left-invariant pseudo-differential operators is the sum of the orders.
+    \item Ensure our pseudo-differentials of order $0$ are \emph{Calder\'on-Zygmund}.
+        While we can reasonably expect the Plancherel theory to ensure boundedness $\Lebesgue 2 \Group$,
+        we rely on the theory of singular integrals to have the boundedness on $\Lebesgue p \Group$.
+\end{itemize}
+
+The first couple of conditions naturally require that each $q_j$ vanish at $e_\Group$ and that $\{dq_j(e) : 1 \leq j \leq \dimDifferenceOperators\}$ span the tangent space $T_{e_\Group} G$.
+Such a family is called \emph{admissible} in~\cite{RuzhanskyTurunenWirth10} and subsequent literature.
+
+Intuitively,
+our definition of symbol classes will ensure that the regularity of the kernel will increase every time we multiply it by one of the $q_j \in \Delta$,
+exactly like in the Euclidean case.
+In particular,
+this means that our kernels must be smooth outside of
+\begin{align}
+    \bigcap_{q \in \Delta} \{q = 0\},
+    \label{eq:common_zeros_of_difference_operators}
+\end{align}
+while the above set may contain singularities.
+However,
+the Calder\'on-Zygmund theory requires that the singularity be confined to the identity.
+Therefore,
+\cite{RuzhanskyTurunenWirth10} defines $\Delta$ to be \emph{strongly admissible}
+if~\eqref{eq:common_zeros_of_difference_operators} equals $\{e_\Group\}$.
+
+\subsubsection*{The compact case}
+
+\subsubsection*{The graded case}
