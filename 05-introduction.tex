@@ -96,3 +96,38 @@ to develop a global pseudo-differential calculus.
     \item[Step 6.] Obtain kernel estimates.
     \item[Step 7.] Prove the composition and adjunction formulae.
 \end{description}
+
+\subsection{Fourier analysis}
+
+Our first step is to make sure that our group has a sufficiently general Fourier transform,
+so that we can define an analogue of the Euclidean Kohn-Nirenberg quantisation.
+
+On our settings,
+the Fourier transform is defined on $\Lebesgue 1 {\Group, \dd g}$ via
+\begin{align*}
+    \Fourier f(\xi)
+    \defeq \int_\Group f(g) \adj{\xi(g)} \dd g,
+\end{align*}
+where $\dd g$ denotes a \emph{Haar measure},
+$\xi \in \dualGroup \Group$,
+and $\dualGroup \Group$ is the \emph{unitary dual} of $\Group$,
+i.e.\ the set of all equivalence classes of irreducible, strongly continuous and unitary representations of $\Group$.
+
+If $f \in \Lebesgue 1 \Group \cap \Lebesgue 2 \Group$,
+we have the following \emph{Plancherel formula}
+\begin{align*}
+    \int_\Group \abs f^2 \dd g
+    = \int_{\dualGroup \Group}
+    \tr(\Fourier f(\xi) \adj{\Fourier f(\xi)})
+    \dd \mu_{\dualGroup \Group}(\xi),
+\end{align*}
+where $\dd \mu_{\dualGroup \Group}$ denotes the so-called \emph{Plancherel measure},
+while any $f \in \Schwartz \Group$ may be recovered from its Fourier Transform via
+the following \emph{inverse formula}
+\begin{align*}
+    f(g) \defeq
+    \int_{\dualGroup \Group}
+    \tr(\xi(g) \Fourier f(\xi))
+    \dd \mu_{\dualGroup \Group}(\xi),
+    \quad g \in \Group.
+\end{align*}
