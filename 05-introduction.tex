@@ -214,6 +214,40 @@ shows that we have a Leibniz rule if we consider a sum on homogeneous degrees
 As the motion group contains a compact subgroup,
 it should be expected that we shall have the same Leibniz rule as $\CompactGroup$.
 
+\subsection*{Symbol classes}
+
+Very informally,
+we say that $\sigma(g, \xi)$ is a \emph{symbol} if there exists $\kappa \in \SmoothFunctions {\Group, \TemperedDistributions \Group}$ such that
+\begin{align*}
+    \sigma(g, \xi) = \Fourier \{\kappa(g, \dummy)\}(\xi).
+\end{align*}
+The distribution $\kappa$ is called the \emph{kernel associated} wih $\sigma$.
+
+Moreover,
+given $m \in \R$
+we shall say $\sigma \in \SymbolClass m {\rho, \delta}$ if
+\begin{align*}
+    \norm [\mathcal H_\xi] {%
+        \xi \BesselPotential {-m + \rho \abs \alpha - \delta \abs \beta + \gamma}
+        \LeftDifferentialOperator \beta \DifferenceOperatorOrder \alpha \sigma(g, \xi)
+        \xi \BesselPotential {-\gamma}
+    }
+    < \infty
+\end{align*}
+uniformly in $g \in \Group$
+and essentially uniformly in $\xi \in \dualGroup \Group$ (with respect to the Plancherel measure).
+Note that when the Laplacian is central,
+we can assume $\gamma = 0$.
+For the graded case,
+we replace $\Laplacian$ with $\mathcal R$.
+
+And like in the Euclidean case,
+we let
+\begin{align*}
+    \SmoothingSymbols \defeq \cap_{m \in \R} \SymbolClass m {\rho, \delta}
+\end{align*}
+denote the set of \emph{smoothing symbols}.
+
 \subsection*{Functional calculus}
 
 A crucial step of our analysis is to construct a family of smoothing symbols approximating the identity symbol.
