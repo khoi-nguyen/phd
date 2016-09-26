@@ -347,6 +347,9 @@ Let us make a few comments on Definition~\ref{definition:symbol_classes}.
         is due to the \emph{semi-direct} structure,
 \end{itemize}
 
+We can naturally define a collection of seminorms on our symbol classes,
+and check they endow each $\SymbolClass m {\rho, \delta}$ with a structure of \emph{Fr\'echet space}.
+
 \begin{definition}[Symbol semi-norms]
     Let $m \in \R$ and fix $\rho, \delta \in \R$ such that $0 \leq \rho \leq \delta \leq 1$.
     If $\sigma \in \SymbolClass m {\rho, \delta}$,
@@ -368,6 +371,25 @@ Let us make a few comments on Definition~\ref{definition:symbol_classes}.
         \SymbolSemiNorm m {\rho, \delta} N \sigma
         \defeq \sup_{g \in \Group} \sup_{\lambda \in \VectorSpace}
         \SymbolSemiNorm m {\rho, \delta} N {\sigma(g; \lambda)}
+    \end{align*}
+    for each $N \in \N$.
+
+    Similarly,
+    we let
+    \begin{align*}
+        &\SymbolSemiNorm {m, R} {\rho, \delta} N {\sigma(g; \lambda)}
+        \defeq
+        \sup_{\abs \alpha, \abs \beta \leq N}
+        \norm [\Lin{\Lebesgue 2 \CompactGroup}] {%
+            \LeftDifferentialOperator{\beta} \DifferenceOperatorOrder{\alpha} \sigma(g, \lambda)
+            \Rep{\lambda} \BesselPotential{\rho \abs\alpha - m - \delta \abs\beta}
+        }
+    \end{align*}
+    and
+    \begin{align*}
+        \SymbolSemiNorm {m, R} {\rho, \delta} N \sigma
+        \defeq \sup_{g \in \Group} \sup_{\lambda \in \VectorSpace}
+        \SymbolSemiNorm {m, R} {\rho, \delta} N {\sigma(g; \lambda)}
     \end{align*}
     for each $N \in \N$.
 \end{definition}
