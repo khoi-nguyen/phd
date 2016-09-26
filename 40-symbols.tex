@@ -135,36 +135,6 @@ we show that applying difference operators \emph{reduces} the order.
     we obtain the desired formula.
 \end{proof}
 
-We can provide an explicit formula for a suitably chosen family of difference operators.
-
-\begin{lemma}
-    Let $f \in \Schwartz \Group$.
-    Suppose that for each $j \in \N$,
-    we let
-    \begin{align*}
-        q_j((x, k)^{-1}) = x_j,
-        \quad (x, k) \in \Group,
-    \end{align*}
-    and assume that $q \in \SmoothFunctions \Group$ is a function which does not depend on $x \in \VectorSpace$ but only on $k \in \CompactGroup$.
-
-    We have the following formulas.
-    \begin{enumerate}
-        \item For each $j \in \{1, \cdots, \dim \VectorSpace\}$,
-            and each $F \in \Lebesgue 2 \CompactGroup$,
-            we have
-            \begin{align*}
-                \DifferenceOperator {q_j} \Fourier \phi(\lambda) F(u) = \frac 1 {i \turn} \eval {\D* 1 t} {t = 0} \Fourier \phi(\lambda + t u e_j) F(u)
-            \end{align*}
-        \item
-    \end{enumerate}
-\end{lemma}
-\begin{proof}
-    By
-    \begin{align*}
-        \Fourier \{q_j f\}(\lambda)
-    \end{align*}
-\end{proof}
-
 \begin{definition}
 \label{definition:admissibility_of_difference_operators}
 \index{difference operators!admissibility}
