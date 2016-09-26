@@ -394,11 +394,15 @@ and check they endow each $\SymbolClass m {\rho, \delta}$ with a structure of \e
     for each $N \in \N$.
 \end{definition}
 
+Using Lemma~\ref{lemma:difference_operators_on_characteristic_polynomials},
+we show that our symbol classes contain the left-invariant differential calculus.
+
 \begin{example}[Characteristic polynomials]
     Given $m \in \N$,
     the map
     \begin{align*}
-        \sigma(g, \lambda) \defeq \sum_{\abs \alpha \leq m} c_\alpha(g) \Rep \lambda(X)^\alpha
+        \sigma(g, \lambda) \defeq \sum_{\abs \alpha \leq m} c_\alpha(g) \Rep \lambda(X)^\alpha,
+        \quad c_\alpha \in C^\infty_c(\Group)
     \end{align*}
     defines a symbol in $\SymbolClass m {1, 0}$.
 \end{example}
