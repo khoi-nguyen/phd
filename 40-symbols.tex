@@ -3916,6 +3916,7 @@ The crucial part of the proof is therefore to show that~\eqref{eq:symbol_to_prov
 \end{proof}
 
 \begin{proposition}[$L^2$ boundedness]
+\label{proposition:L2_boundedness}
     Let $\rho, \delta \in \R$ be such that $1 \geq \rho > \delta \geq 0$.
     If $\sigma \in \SymbolClass 0 {\rho, \delta}$,
     then its associated operator $T \defeq \Op(\sigma)$ is bounded in $\Lebesgue 2 \Group$,
@@ -3993,6 +3994,19 @@ The crucial part of the proof is therefore to show that~\eqref{eq:symbol_to_prov
             concluding the proof.
     \end{description}
 \end{proof}
+
+\begin{theorem}[Boundedness on Sobolev spaces]
+\label{theorem:L2_boundedness}
+    Let $\rho, \delta \in \R$ be such that $1 \geq \rho > \delta \geq 0$.
+    If $\sigma \in \SymbolClass m {\rho, \delta}$,
+    then its associated operator $T \defeq \Op(\sigma)$ extends to a bounded map
+    between $\Sobolev s$ and $\Sobolev {s - m}$,
+    i.e.\ there exists $C \geq 0$ such that
+    \begin{align*}
+        \norm [\Sobolev {s - m}] {T \phi} \leq C \norm [\Sobolev s] \phi.
+    \end{align*}
+    for every $\phi \in \Schwartz \Group$.
+\end{theorem}
 
 %\subsection{Calder\'on-Zygmund theory}
 %
