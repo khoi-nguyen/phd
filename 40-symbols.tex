@@ -315,6 +315,29 @@ we can now introduce our main definition.
     The set $\SymbolClass{m}{\rho, \delta}$ will be used to denote the set of all symbols of order $m$ and type $(\rho, \delta)$.
 \end{definition}
 
+Let us make a few comments on Definition~\ref{definition:symbol_classes}.
+
+\begin{itemize}
+    \item If $\alpha = \beta = 0$,
+        the \emph{Plancherel theory} (e.g.~\cite[Theorem 1.8.11]{FischerRuzhansky16}) implies that
+        if $\sigma \in \SymbolClass m {\rho, \delta}$ does not depend on $g \in \Group$,
+        then the map
+        \begin{align*}
+            \phi \in \Schwartz \Group \mapsto \conv \phi {\InverseFourier \sigma}
+        \end{align*}
+        extends to a bounded map
+        \begin{align*}
+            \Sobolev s \to \Sobolev {s - m}
+        \end{align*}
+        for each $s \in \R$.
+
+        It is hoped that the estimates for non-zero $\alpha \in \N^{\dimDifferenceOperators}$ and $\beta \in \N^{\dim \Group}$
+        will imply a similar result for a general $\sigma \in \SymbolClassm {\rho, \delta}$.
+        When $\rho > \delta$,
+        this is proved later in Theorem~\ref{theorem:L2_boundedness}.
+    \item
+\end{itemize}
+
 \begin{definition}[Symbol semi-norms]
     Let $m \in \R$ and fix $\rho, \delta \in \R$ such that $0 \leq \rho \leq \delta \leq 1$.
     If $\sigma \in \SymbolClass m {\rho, \delta}$,
