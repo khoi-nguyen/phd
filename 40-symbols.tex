@@ -166,10 +166,16 @@ This, amongst other things, ensures that our collection of symbols form an algeb
     holds for every $g, h \in \Group$.
 \end{definition}
 
-Using \cite[Lemma 4.4]{RuzhanskyTurunenWirth10}, we can show
+We can easily adapt \cite[Lemma 4.4]{RuzhanskyTurunenWirth10} or \cite[Corollay 5.13]{Fischer2015},
+to show the following result.
 
 \begin{lemma}
-    There exists a strongly admissible family $q_1$, \dots, $q_M \in \SmoothFunctions{\Group}$ on $\Group$ which satisfies the Leibniz-like property.
+\label{lemma:choice_of_polynomials}
+    There exists a strongly admissible family $q_1$, \dots, $q_M \in \SmoothFunctions{\Group}$ on $\Group$ which satisfies the Leibniz-like property and such that
+    \begin{align*}
+        q_j(x, k) = x_j
+    \end{align*}
+    for each $j \in \{1, \dots, \dim \VectorSpace\}$.
 \end{lemma}
 \begin{proof}
     Denote by $F$ the set of all fundamental representations of $\CompactGroup$,
