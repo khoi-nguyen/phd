@@ -274,7 +274,7 @@ to show the following result.
     \end{align*}
 \end{remark}
 
-\section{Symbol and operators classes}
+\section{Symbol classes}
 
 Following~\cite{RuzhanskyTurunen10} or~\cite{FischerRuzhansky16},
 we can now introduce our main definition.
@@ -460,6 +460,8 @@ we show that our symbol classes contain the left-invariant differential calculus
     The elements of $\SmoothingSymbols$ will be called \emph{smoothing symbols}.
 \end{definition}
 
+\section{Kernels, quantisation and operator classes}
+
 \begin{definition}[Operator classes]
 \label{definition:operator_classes}
     Let $\sigma \in \SymbolClass{m}{\rho, \delta}$.
@@ -486,56 +488,6 @@ we show that our symbol classes contain the left-invariant differential calculus
     \end{align*}
     is called \emph{smoothing}.
 \end{definition}
-
-\subsection{First properties of symbol classes}
-% TODO: Move because kernels are a prerequisites.
-
-\begin{proposition}
-\label{proposition:first_properties_of_symbol_classes}
-    Suppose that $\rho, \delta \in \R$ satisfy $1 \geq \rho \geq \delta \geq 0$.
-    Given $m, m_1, m_2 \in \R$,
-    choose three symbols $\sigma \in \SymbolClass m {\rho, \delta}$,
-    $\sigma_1 \in \SymbolClass {m_1} {\rho, \delta}$,
-    $\sigma_2 \in \SymbolClass {m_2} {\rho, \delta}$.
-    The kernels of the aforementioned symbols will be denoted by
-    $\kappa$, $\kappa_1$ and $\kappa_2$ respectively.
-
-    The following properties hold.
-    \begin{enumerate}
-        \item For each $\alpha \in \N^{\dimDifferenceOperators}$ and each $\beta \in \N^{\dim \Group}$,
-            \begin{align*}
-                (g, \lambda) \in \Group \times \VectorSpace \mapsto
-                \LeftDifferentialOperator \beta \DifferenceOperator \alpha \sigma(g, \lambda)
-            \end{align*}
-            belongs to $\SymbolClass {m - \rho \abs \alpha + \delta \abs \beta} {\rho, \delta}$,
-            and its kernel is given by
-            \begin{align*}
-                g \in \lambda \mapsto q^\alpha \LeftDifferentialOperator \beta \kappa_g.
-            \end{align*}
-        \item The pointwise adjunction of $\sigma$,
-            \begin{align*}
-                \adj \sigma(g, \lambda) \defeq \adj {\sigma(g, \lambda)},
-            \end{align*}
-            defines a symbol in $\SymbolClass m {\rho, \delta}$ whose kernel is given by
-            \begin{align*}
-                \adj \kappa_g(h) \defeq \conj {\kappa_g(h^{-1})},
-            \end{align*}
-            where the above is interpreted in the sense of distributions.
-        \item
-            \label{item:properties_of_symbols:pointwise_composition}
-            The pointwise composition
-            \begin{align*}
-                (g, \lambda) \mapsto \sigma_1(g, \lambda) \sigma_2(g, \lambda)
-            \end{align*}
-            defines a symbol in $\SymbolClass {m_1 + m_2} {\rho, \delta}$,
-            whose symbol is given by
-            \begin{align*}
-                g \in \Group \mapsto \conv {\kappa_{1, g}} {\kappa_{2, g}}
-            \end{align*}
-    \end{enumerate}
-\end{proposition}
-
-\section{Kernels and quantisation}
 
 \begin{definition}[Kernel of a symbol]
 \label{definition:kernel_of_symbol}
@@ -612,6 +564,53 @@ we show that our symbol classes contain the left-invariant differential calculus
     which concludes the proof,
     as the right-hand side is exactly $\Op(\sigma) \phi(g)$.
 \end{proof}
+
+\subsection{First properties of symbol classes}
+
+\begin{proposition}
+\label{proposition:first_properties_of_symbol_classes}
+    Suppose that $\rho, \delta \in \R$ satisfy $1 \geq \rho \geq \delta \geq 0$.
+    Given $m, m_1, m_2 \in \R$,
+    choose three symbols $\sigma \in \SymbolClass m {\rho, \delta}$,
+    $\sigma_1 \in \SymbolClass {m_1} {\rho, \delta}$,
+    $\sigma_2 \in \SymbolClass {m_2} {\rho, \delta}$.
+    The kernels of the aforementioned symbols will be denoted by
+    $\kappa$, $\kappa_1$ and $\kappa_2$ respectively.
+
+    The following properties hold.
+    \begin{enumerate}
+        \item For each $\alpha \in \N^{\dimDifferenceOperators}$ and each $\beta \in \N^{\dim \Group}$,
+            \begin{align*}
+                (g, \lambda) \in \Group \times \VectorSpace \mapsto
+                \LeftDifferentialOperator \beta \DifferenceOperator \alpha \sigma(g, \lambda)
+            \end{align*}
+            belongs to $\SymbolClass {m - \rho \abs \alpha + \delta \abs \beta} {\rho, \delta}$,
+            and its kernel is given by
+            \begin{align*}
+                g \in \lambda \mapsto q^\alpha \LeftDifferentialOperator \beta \kappa_g.
+            \end{align*}
+        \item The pointwise adjunction of $\sigma$,
+            \begin{align*}
+                \adj \sigma(g, \lambda) \defeq \adj {\sigma(g, \lambda)},
+            \end{align*}
+            defines a symbol in $\SymbolClass m {\rho, \delta}$ whose kernel is given by
+            \begin{align*}
+                \adj \kappa_g(h) \defeq \conj {\kappa_g(h^{-1})},
+            \end{align*}
+            where the above is interpreted in the sense of distributions.
+        \item
+            \label{item:properties_of_symbols:pointwise_composition}
+            The pointwise composition
+            \begin{align*}
+                (g, \lambda) \mapsto \sigma_1(g, \lambda) \sigma_2(g, \lambda)
+            \end{align*}
+            defines a symbol in $\SymbolClass {m_1 + m_2} {\rho, \delta}$,
+            whose symbol is given by
+            \begin{align*}
+                g \in \Group \mapsto \conv {\kappa_{1, g}} {\kappa_{2, g}}
+            \end{align*}
+    \end{enumerate}
+\end{proposition}
 
 Before we are able to describe smoothing operators,
 we need to recall a property of convolution by tempered distributions.
