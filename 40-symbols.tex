@@ -10,7 +10,7 @@ but also the Calder\'on-Zygmund property of pseudo-differential operators of ord
 
 In~\cite{RuzhanskyTurunen10},
 \citeauthor{RuzhanskyTurunen10} introduce the concept of \emph{difference operator}
-to generalise the aforementioned derivatives in Fourier variables
+to generalize the aforementioned derivatives in Fourier variables
 and obtain a pseudo-differential calculus on compact Lie groups.
 
 \begin{definition}
@@ -505,15 +505,15 @@ Such symbols will be called \emph{smoothing symbols}.
 It is a routine check that we can replace $(1, 0)$ in the above definition
 by any $(\rho, \delta) \in [0, 1]^2$ without affecting the resulting set.
 
-\section{Kernels, quantisation and operator classes}
+\section{Kernels, quantization and operator classes}
 
 We have so far defined a notion of symbol which is similar to the Euclidean case in spirit.
-Parts of Definition~\ref{definition:symbol_classes} are directly motivated by the desire to define an analogue of the \emph{Kohn-Nirenberg quantisation}.
+Parts of Definition~\ref{definition:symbol_classes} are directly motivated by the desire to define an analogue of the \emph{Kohn-Nirenberg quantization}.
 
-The process of \emph{quantisation} is the association of a symbol with an operator.
+The process of \emph{quantization} is the association of a symbol with an operator.
 
-\begin{definition}[Quantisation]
-\label{definition:quantisation}
+\begin{definition}[Quantization]
+\label{definition:quantization}
     Let $\sigma \in \SymbolClass{m}{\rho, \delta}$.
     We define the operator $\Op(\sigma)$ via
     \begin{align*}
@@ -594,8 +594,8 @@ The symbol classes were defined partly so that the following result holds.
 We are now ready to show that the \emph{kernel} associated with a symbol
 is in fact the \emph{right-convolution kernel} of its associated pseudo-differential operator.
 
-\begin{proposition}[Quantisation]
-\label{proposition:quantisation}
+\begin{proposition}[Quantization]
+\label{proposition:quantization}
     Let $\sigma \in \SymbolClass{m}{\rho, \delta}$,
     and denote by $\kappa$ its associated kernel.
     If $\phi \in \Schwartz\Group$, then for each $g \in \Group$, we have
@@ -1117,7 +1117,7 @@ The following result is central in our analysis.
 We show that the Fourier transform of the heat kernel can be used to define a good approximation of the symbol $\Fourier \delta_{e_\Group}$.
 
 \begin{theorem}
-\label{theorem:generalised_Littlewood-Paley_decomposition}
+\label{theorem:generalized_Littlewood-Paley_decomposition}
     For each $\epsilon \in (0, 1]$,
     we let
     \begin{align*}
@@ -1249,13 +1249,13 @@ We show that the Fourier transform of the heat kernel can be used to define a go
 %\begin{proof}
 %    Using the symbol classes inclusions,
 %    we can assume without loss of generality that $m \geq 4$.
-%    We follow the proof of Theorem~\ref{theorem:generalised_Littlewood-Paley_decomposition} when $0 < m \leq 4$.
+%    We follow the proof of Theorem~\ref{theorem:generalized_Littlewood-Paley_decomposition} when $0 < m \leq 4$.
 %    We consider this time the function
 %    \begin{align*}
 %        G_\epsilon(z) \defeq (\epsilon z)^{-\frac m 2}
 %        (\e^{-\epsilon z/2} - \e^{-\epsilon z}),
 %    \end{align*}
-%    and conclude like in Theorem~\ref{theorem:generalised_Littlewood-Paley_decomposition} that
+%    and conclude like in Theorem~\ref{theorem:generalized_Littlewood-Paley_decomposition} that
 %    \begin{align*}
 %        \SymbolSemiNorm m {\rho, \delta} N {\eta'_{\epsilon, 1}} \leq \epsilon^\frac m 2.
 %    \end{align*}
@@ -1271,7 +1271,7 @@ We show that the Fourier transform of the heat kernel can be used to define a go
 
 \section{Approximation of symbols}
 
-One of the first applications of Theorem~\ref{theorem:generalised_Littlewood-Paley_decomposition}
+One of the first applications of Theorem~\ref{theorem:generalized_Littlewood-Paley_decomposition}
 is that we can approximate any symbol $\sigma \in \SymbolClass m {\rho, \delta}$ with smoothing symbols,
 and control the convergence in all symbol classes of order $m_1 > m$.
 
@@ -1315,12 +1315,12 @@ and control the convergence in all symbol classes of order $m_1 > m$.
         \sigma_\epsilon(g, \lambda)
         \defeq \chi(\epsilon \norm [\Group] g^2) \sigma(g, \lambda) \eta_\epsilon(\lambda),
     \end{align*}
-    where $\eta_\epsilon$ was defined in Theorem~\ref{theorem:generalised_Littlewood-Paley_decomposition}.
+    where $\eta_\epsilon$ was defined in Theorem~\ref{theorem:generalized_Littlewood-Paley_decomposition}.
     It should be clear that the first property holds by our definition of $\chi_\epsilon$
-    and the fact that the symbols $\eta_\epsilon$ are smoothing (Theorem~\ref{theorem:generalised_Littlewood-Paley_decomposition}).
+    and the fact that the symbols $\eta_\epsilon$ are smoothing (Theorem~\ref{theorem:generalized_Littlewood-Paley_decomposition}).
 
     Similarly,
-    the second and third point hold by Theorem~\ref{theorem:generalised_Littlewood-Paley_decomposition}
+    the second and third point hold by Theorem~\ref{theorem:generalized_Littlewood-Paley_decomposition}
     and Part~\ref{item:properties_of_symbols:pointwise_composition} of Proposition~\ref{proposition:first_properties_of_symbol_classes}.
 \end{proof}
 
@@ -1577,7 +1577,7 @@ We present a short overview of how they will be used.
 %\begin{proof}
 %    Let us write $T = \Op (\sigma)$.
 %    It follows that by
-%    % TODO: Reference both quantisations
+%    % TODO: Reference both quantizations
 %    \begin{align*}
 %        T \phi(x, k)
 %        &= \int_{\GroupDirect} \phi(y, l) {\tilde \kappa}_{x, k}(x - y, l^{-1} k) \dd (y, l)\\
@@ -1620,7 +1620,7 @@ We present a short overview of how they will be used.
 %                &\DifferenceOperator{q} \sigma(x, k; \lambda) F(u) =\\
 %                &\quad \int_\Group q(-l^{-1} y, l^{-1}) \tilde \kappa_{x, k}(-y, l^{-1}) \e^{\i \turn \ip {k u^{-1} \lambda} y} \RightRegularRepresentation(l) \dd (y, l) F(u)
 %            \end{align*}
-%            which we recognise to be exactly $\DifferenceOperator {\tilde q} \tilde \sigma(x, k, k u^{-1} \lambda) F(u)$.
+%            which we recognize to be exactly $\DifferenceOperator {\tilde q} \tilde \sigma(x, k, k u^{-1} \lambda) F(u)$.
 %            Therefore, we have shown that
 %            \begin{align*}
 %                \DifferenceOperator{q} \sigma(x, k; \lambda) F(u)
@@ -1919,7 +1919,7 @@ We present a short overview of how they will be used.
 %Therefore, an idea would be to cut off those high frequencies.
 %
 %\begin{theorem}
-%\label{theorem:generalised_Littlewood-Paley_decomposition}
+%\label{theorem:generalized_Littlewood-Paley_decomposition}
 %    Let $\chi \in \SmoothFunctions {\R^+}$ be a positive bounded smooth function.
 %
 %    For each $\epsilon \in (0, 1]$,
@@ -1936,7 +1936,7 @@ We present a short overview of how they will be used.
 %    and the following properties hold.
 %
 %    \begin{enumerate}
-%        \item \label{item:generalised_Littlewood-Paley_decomposition:negative_m}
+%        \item \label{item:generalized_Littlewood-Paley_decomposition:negative_m}
 %            If $\chi$ has compact support, then $\eta_\epsilon \in \SmoothingSymbols$ for each $\epsilon \in (0, 1]$.
 %            Moreover, for each $m \leq 0$ and each $N \in \N$,
 %            there exists $C_{m, N} \geq 0$ such that
@@ -1944,7 +1944,7 @@ We present a short overview of how they will be used.
 %                \SymbolSemiNorm m {\rho, \delta} N {\eta_\epsilon} \leq C_{m, N} \epsilon^m
 %            \end{align*}
 %            for every $\epsilon \in (0, 1]$.
-%        \item \label{item:generalised_Littlewood-Paley_decomposition:positive_m}
+%        \item \label{item:generalized_Littlewood-Paley_decomposition:positive_m}
 %            If there exists $c > 0$ such that $\chi$ vanishes on $[0, c]$,
 %            then for each $m \geq 0$ and each $N \in \N$,
 %            there exists $C_{c, m, N} \geq 0$ such that
@@ -2190,7 +2190,7 @@ We present a short overview of how they will be used.
 %            the right-hand side of the above is bounded by $C_\alpha$
 %            by~\eqref{eq:eta_epsilon_symbol_norm_for_gamma_0}.
 %
-%        \item [Step 4a] Prove~\ref{item:generalised_Littlewood-Paley_decomposition:negative_m}.
+%        \item [Step 4a] Prove~\ref{item:generalized_Littlewood-Paley_decomposition:negative_m}.
 %
 %            Let $m \leq 0$.
 %
@@ -2239,9 +2239,9 @@ We present a short overview of how they will be used.
 %                }\\
 %                &\quad \leq C_{\alpha, \gamma, m} \epsilon^{m},
 %            \end{align*}
-%            which concludes the proof of~\ref{item:generalised_Littlewood-Paley_decomposition:negative_m}
+%            which concludes the proof of~\ref{item:generalized_Littlewood-Paley_decomposition:negative_m}
 %
-%        \item [Step 4b] Prove~\ref{item:generalised_Littlewood-Paley_decomposition:positive_m}
+%        \item [Step 4b] Prove~\ref{item:generalized_Littlewood-Paley_decomposition:positive_m}
 %
 %            Let $m \geq 0$.
 %            Clearly,
@@ -2282,7 +2282,7 @@ We present a short overview of how they will be used.
 %                }\\
 %                &\quad \leq C_{\alpha, \gamma, m} \epsilon^{m},
 %            \end{align*}
-%            which concludes the proof of~\ref{item:generalised_Littlewood-Paley_decomposition:positive_m}
+%            which concludes the proof of~\ref{item:generalized_Littlewood-Paley_decomposition:positive_m}
 %    \end{description}
 %\end{proof}
 %
@@ -2353,7 +2353,7 @@ We present a short overview of how they will be used.
 %%    \end{enumerate}
 %%\end{corollary}
 %%\begin{proof}
-%%    Let $\eta'_\epsilon$, $\epsilon \in (0, 1]$ be the family given by Theorem~\ref{theorem:generalised_Littlewood-Paley_decomposition}.
+%%    Let $\eta'_\epsilon$, $\epsilon \in (0, 1]$ be the family given by Theorem~\ref{theorem:generalized_Littlewood-Paley_decomposition}.
 %%    For each $l \in \N$,
 %%    we define
 %%    \begin{align*}
@@ -2373,7 +2373,7 @@ We present a short overview of how they will be used.
 %%        & \qquad \leq C_{\alpha, \gamma, m} (1 + 2^{-m}) 2^{-l m}\\
 %%        & \qquad \leq C_{\alpha, \gamma, m} 2^{-l m},
 %%    \end{align*}
-%%    while the case $l = 1$ follows directly from Theorem~\ref{theorem:generalised_Littlewood-Paley_decomposition}.
+%%    while the case $l = 1$ follows directly from Theorem~\ref{theorem:generalized_Littlewood-Paley_decomposition}.
 %%
 %%    The second claim follows from the fact that
 %%    \begin{align*}
@@ -2383,7 +2383,7 @@ We present a short overview of how they will be used.
 %%        &= \eta'_{2^{-L + 1}} + \eta_L
 %%        = \eta'_{2^{-L}}
 %%    \end{align*}
-%%    and Theorem~\ref{theorem:generalised_Littlewood-Paley_decomposition}.
+%%    and Theorem~\ref{theorem:generalized_Littlewood-Paley_decomposition}.
 %%\end{proof}
 
 \section{Kernel estimates}
@@ -2736,7 +2736,7 @@ which will lead to the proof of parts \ref{item:kernel_estimates:at_origin:posit
             \end{align*}
 
             Using the Holder inequality on Schatten classes,
-            together with Theorem~\ref{theorem:generalised_Littlewood-Paley_decomposition},
+            together with Theorem~\ref{theorem:generalized_Littlewood-Paley_decomposition},
             we obtain
             \begin{align}
                 \norm [\SchattenClasses 1 {\Lebesgue 2 \CompactGroup}] {\sigma_\epsilon(g, \lambda)} \leq C
@@ -2792,7 +2792,7 @@ which will lead to the proof of parts \ref{item:kernel_estimates:at_origin:posit
         \item[Estimate on $\kappa_g - \kappa_{g, \epsilon}$].
             The strategy of the proof is the same,
             but slightly more delicate.
-            As $\gamma$ needs to be positive to apply Theorem~\ref{theorem:generalised_Littlewood-Paley_decomposition},
+            As $\gamma$ needs to be positive to apply Theorem~\ref{theorem:generalized_Littlewood-Paley_decomposition},
             we will need to apply difference operators so that $m$ would be replaced by $m - \rho \abs \alpha$,
             thus making it possible for $\gamma + m - \rho \abs \alpha$ to be small enough.
 
@@ -2820,7 +2820,7 @@ which will lead to the proof of parts \ref{item:kernel_estimates:at_origin:posit
                 \norm [\Lin {\Lebesgue 2 \CompactGroup}] {I_{2, \alpha_2, \gamma}}
                 \leq C \epsilon^\gamma
             \end{align*}
-            holds for every $\gamma \geq 0$ by Theorem~\ref{theorem:generalised_Littlewood-Paley_decomposition}.
+            holds for every $\gamma \geq 0$ by Theorem~\ref{theorem:generalized_Littlewood-Paley_decomposition}.
             Therefore, for every $\gamma \geq 0$, we have
             \begin{align*}
                 &\norm [\SchattenClasses 1 {\Lebesgue 2 \CompactGroup}] {\DifferenceOperator \alpha (\sigma - \sigma_\epsilon)(g, \lambda)}\\
@@ -2836,7 +2836,7 @@ which will lead to the proof of parts \ref{item:kernel_estimates:at_origin:posit
                 \leq C \epsilon^\gamma
             \end{align*}
             provided that $\gamma \geq 0$ and $\gamma + m - \rho \abs \alpha < -\dim \Group$.
-            Observe that those two conditions can be summarised by the inequality
+            Observe that those two conditions can be summarized by the inequality
             \begin{align*}
                 0 \leq \gamma < \rho \abs \alpha - (\dim \Group + m).
             \end{align*}
@@ -2981,7 +2981,7 @@ and we need to find out whether it converges in a satisfactory sense for our pur
 \end{definition}
 
 \begin{proof}[Proof of Proposition~\ref{proposition:asymptotic_sum_of_symbols}]
-    Using Theorem~\ref{theorem:generalised_Littlewood-Paley_decomposition},
+    Using Theorem~\ref{theorem:generalized_Littlewood-Paley_decomposition},
     for each $l \in \N$ we can find $C_l \geq 0$ and $N_l \in \N$ such that
     \begin{align*}
         \SymbolSemiNorm {m_0} {\rho, \delta} l {\sigma_j (\Id {\Lebesgue 2 \CompactGroup} - \eta_\epsilon)}
@@ -3045,7 +3045,7 @@ and we need to find out whether it converges in a satisfactory sense for our pur
         &= -\sum_{j = 0}^N \sigma_j \eta_{\epsilon_j} + \sum_{j = N + 1}^{+\infty} \tilde \sigma_j,
     \end{align*}
     which, if combined with~\eqref{eq:remander_of_asymptotic_sum_of_modified_symbols}
-    and Theorem~\ref{theorem:generalised_Littlewood-Paley_decomposition},
+    and Theorem~\ref{theorem:generalized_Littlewood-Paley_decomposition},
     means that
     \begin{align*}
         \sigma - \sum_{j = 0}^N \sigma_j
@@ -3110,7 +3110,7 @@ First, we show that $\SmoothingOperators$ is stable under composition.
     \end{align*}
 
     Let us check that $\kappa_g$ is the kernel of $\Op(\sigma_1) \Op(\sigma_2)$.
-    Applying the quantisation formula twice (Proposition~\ref{proposition:quantisation}),
+    Applying the quantization formula twice (Proposition~\ref{proposition:quantization}),
     we obtain
     \begin{align*}
         \Op(\sigma_1) \Op(\sigma_2) \phi(g)
@@ -3854,7 +3854,7 @@ the following statement holds with an identical proof.
 \subsection{Pseudo-differential calculus}
 
 Exactly like in~\cite{FischerRuzhansky16},
-we can now use Theorem~\ref{theorem:generalised_Littlewood-Paley_decomposition} to extend
+we can now use Theorem~\ref{theorem:generalized_Littlewood-Paley_decomposition} to extend
 Propositions~\ref{proposition:composition_formula} and~\ref{proposition:adjoint_formula}
 to our symbol classes.
 
@@ -3997,7 +3997,7 @@ The aim of this subsection is to prove
 that symbols of order $0$ induce bounded operators in $\Lebesgue 2 \Group$
 when $\rho > \delta$.
 
-These results would naturally generalise to symbols of order $m$ as follows:
+These results would naturally generalize to symbols of order $m$ as follows:
 if $\sigma \in \SymbolClass m {\rho, \delta}$,
 where $\rho, \delta$ satisfy either of the conditions above,
 then $\Op(\sigma)$ extends continuously to a continuous operator
