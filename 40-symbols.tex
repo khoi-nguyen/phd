@@ -535,6 +535,8 @@ associated with the pseudo-differential operator.
     is called the \emph{kernel} of $\sigma$.
 \end{definition}
 
+The symbol classes were defined partly so that the following result holds.
+
 \begin{lemma}
     Let $\sigma \in \SymbolClass m {\rho, \delta}$,
     and denote by $\kappa$ its associated kernel.
@@ -548,8 +550,9 @@ associated with the pseudo-differential operator.
 \end{lemma}
 \begin{proof}
     Let $g \in \Group$ and $\beta \in \N^{\dim \Group}$.
-    By ???, $\kappa_g = \InverseFourier \{\LeftDifferentialOperator \beta \sigma(g, \dummy)\}$ is a tempered distribution.
-    % TODO: Give reference
+    By Proposition~\ref{proposition:image_of_tempered_distributions},
+    $\kappa_g = \InverseFourier \{\LeftDifferentialOperator \beta \sigma(g, \dummy)\}$ is a tempered distribution.
+
     Since the inverse Fourier transform is also continuous,
     the continuity of $\sigma$ in $g$ implies that
     \begin{align*}
