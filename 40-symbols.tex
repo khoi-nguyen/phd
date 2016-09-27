@@ -1320,83 +1320,83 @@ We show that the Fourier transform of the heat kernel can be used to define a go
     and Part~\ref{item:properties_of_symbols:pointwise_composition} of Proposition~\ref{proposition:first_properties_of_symbol_classes}.
 \end{proof}
 
-\section{Independence on the family of difference operators}
-
-Note that in Definition~\ref{definition:symbol_classes},
-we fixed a strongly admissible family of difference operators.
-We now need to show that,
-had we chosen a different family,
-the resulting symbol classes would be identical.
-
-\begin{proposition}
-    Assume that $1 \geq \rho > \delta \geq 0$.
-    Let $q' \in \SmoothFunctions \Group$ be a function which vanishes up to order $a$ at $e_\Group$.
-    If $\sigma \in \SymbolClass m {\rho, \delta}$,
-    then $\DifferenceOperator {q'} \sigma$ belongs to $\SymbolClass {m - \rho \abs \alpha} {\rho, \delta}$.
-\end{proposition}
-\begin{proof}
-    Using a Taylor development at the origin,
-    we know that for each $N \geq a$
-    \begin{align*}
-        q'(g) = \sum_{a \leq \abs \alpha \leq N} \TaylorLeftDifferentialOperator \alpha q'(e_\Group) q^\alpha(g) + \TaylorRemainder {q'} N {e_\Group}(g),
-    \end{align*}
-    where we used the fact that $q'$ vanishes up to order $a$.
-
-    Using the Taylor remainder theorem,
-    it follows that $\TaylorRemainder {q'} N {e_\Group}$ has a zero of order $N + 1$ at the origin $e_\Group$.
-    % TODO Ask Michael how to conclude
-\end{proof}
-
-\begin{lemma}
-    Let $q, q' \in \SmoothFunctions \Group$ be two smooth functions such that $q / q'$ extends smoothly to a function in $\SmoothFunctions \Group$.
-    It follows that if
-    \begin{align*}
-        \norm [\Lin {\Lebesgue 2 \Group}] {\Rep \lambda \BesselPotential s \DifferenceOperator q \sigma(\lambda)}
-        < \infty
-    \end{align*}
-    for a certain $s \in \R$ and a map $\sigma \in \Fourier(\TemperedDistributions \Group)$,
-    then there exists $C = C_{q, q', s} \geq 0$ such that
-    \begin{align*}
-        \norm [\Lin {\Lebesgue 2 \Group}] {\Rep \lambda \BesselPotential s \DifferenceOperator {q'} \sigma(\lambda)}
-        \leq C
-        \norm [\Lin {\Lebesgue 2 \Group}] {\Rep \lambda \BesselPotential s \DifferenceOperator q \sigma(\lambda)}.
-    \end{align*}
-\end{lemma}
-\begin{proof}
-    Let $T$ and $T'$ be the operators defined via
-    \begin{align*}
-        T \phi(g) \defeq \int_\Group \phi(h) (q \kappa)(h^{-1} g) \dd h,\\
-        T' \phi(g) \defeq \int_\Group \phi(h) (q' \kappa)(h^{-1} g) \dd h,
-    \end{align*}
-    where the integrals are interpreted distributionaly,
-    $\phi \in \Schwartz \Group$ and $g \in \Group$.
-
-    Using our assumption,
-    it follows that after letting
-    \begin{align*}
-        \psi_g(h) = \frac {q'} q(h^{-1} g),
-    \end{align*}
-    we obtain
-    \begin{align*}
-        T' \phi(g) = \int_\Group \phi(h) \psi_g(h) (q \kappa)(h^{-1} g) \dd h = T(\phi \psi_g)(g).
-    \end{align*}
-
-    \begin{align*}
-        \norm [\Lebesgue 2 \Group] {T' \phi}^2
-        &\leq \int_\Group \sup_{g_1 \in \Group} \abs{T (\phi \psi_{g_1})(g)}^2 \dd g\\
-        &\leq \int_\Group \int_\Group \abs{T (\phi \BesselPotential \gamma_{g_1} \psi_{g_1})(g)}^2 \dd g_1 \dd g
-    \end{align*}
-
-    Using Fubini's theorem
-    and the fact that $T \in \Lin{\Lebesgue 2 \Group, \Sobolev s}$,
-    we obtain
-    \begin{align*}
-        \norm [\Lebesgue 2 \Group] {T' \phi}^2
-        &\leq \int_\Group \int_\Group \abs{T (\phi \BesselPotential \gamma_{g_1} \psi_{g_1})(g)}^2 \dd g \dd g_1\\
-        &\leq \norm [\Lin {\Lebesgue 2 \Group, \Sobolev s}] {T} \int_\Group \norm [\Sobolev s] {\phi \BesselPotential \gamma_{g_1} \psi_{g_1}}^2 \dd g_1
-    \end{align*}
-    % TODO Conclude
-\end{proof}
+%\section{Independence on the family of difference operators}
+%
+%Note that in Definition~\ref{definition:symbol_classes},
+%we fixed a strongly admissible family of difference operators.
+%We now need to show that,
+%had we chosen a different family,
+%the resulting symbol classes would be identical.
+%
+%\begin{proposition}
+%    Assume that $1 \geq \rho > \delta \geq 0$.
+%    Let $q' \in \SmoothFunctions \Group$ be a function which vanishes up to order $a$ at $e_\Group$.
+%    If $\sigma \in \SymbolClass m {\rho, \delta}$,
+%    then $\DifferenceOperator {q'} \sigma$ belongs to $\SymbolClass {m - \rho \abs \alpha} {\rho, \delta}$.
+%\end{proposition}
+%\begin{proof}
+%    Using a Taylor development at the origin,
+%    we know that for each $N \geq a$
+%    \begin{align*}
+%        q'(g) = \sum_{a \leq \abs \alpha \leq N} \TaylorLeftDifferentialOperator \alpha q'(e_\Group) q^\alpha(g) + \TaylorRemainder {q'} N {e_\Group}(g),
+%    \end{align*}
+%    where we used the fact that $q'$ vanishes up to order $a$.
+%
+%    Using the Taylor remainder theorem,
+%    it follows that $\TaylorRemainder {q'} N {e_\Group}$ has a zero of order $N + 1$ at the origin $e_\Group$.
+%    % TODO Ask Michael how to conclude
+%\end{proof}
+%
+%\begin{lemma}
+%    Let $q, q' \in \SmoothFunctions \Group$ be two smooth functions such that $q / q'$ extends smoothly to a function in $\SmoothFunctions \Group$.
+%    It follows that if
+%    \begin{align*}
+%        \norm [\Lin {\Lebesgue 2 \Group}] {\Rep \lambda \BesselPotential s \DifferenceOperator q \sigma(\lambda)}
+%        < \infty
+%    \end{align*}
+%    for a certain $s \in \R$ and a map $\sigma \in \Fourier(\TemperedDistributions \Group)$,
+%    then there exists $C = C_{q, q', s} \geq 0$ such that
+%    \begin{align*}
+%        \norm [\Lin {\Lebesgue 2 \Group}] {\Rep \lambda \BesselPotential s \DifferenceOperator {q'} \sigma(\lambda)}
+%        \leq C
+%        \norm [\Lin {\Lebesgue 2 \Group}] {\Rep \lambda \BesselPotential s \DifferenceOperator q \sigma(\lambda)}.
+%    \end{align*}
+%\end{lemma}
+%\begin{proof}
+%    Let $T$ and $T'$ be the operators defined via
+%    \begin{align*}
+%        T \phi(g) \defeq \int_\Group \phi(h) (q \kappa)(h^{-1} g) \dd h,\\
+%        T' \phi(g) \defeq \int_\Group \phi(h) (q' \kappa)(h^{-1} g) \dd h,
+%    \end{align*}
+%    where the integrals are interpreted distributionaly,
+%    $\phi \in \Schwartz \Group$ and $g \in \Group$.
+%
+%    Using our assumption,
+%    it follows that after letting
+%    \begin{align*}
+%        \psi_g(h) = \frac {q'} q(h^{-1} g),
+%    \end{align*}
+%    we obtain
+%    \begin{align*}
+%        T' \phi(g) = \int_\Group \phi(h) \psi_g(h) (q \kappa)(h^{-1} g) \dd h = T(\phi \psi_g)(g).
+%    \end{align*}
+%
+%    \begin{align*}
+%        \norm [\Lebesgue 2 \Group] {T' \phi}^2
+%        &\leq \int_\Group \sup_{g_1 \in \Group} \abs{T (\phi \psi_{g_1})(g)}^2 \dd g\\
+%        &\leq \int_\Group \int_\Group \abs{T (\phi \BesselPotential \gamma_{g_1} \psi_{g_1})(g)}^2 \dd g_1 \dd g
+%    \end{align*}
+%
+%    Using Fubini's theorem
+%    and the fact that $T \in \Lin{\Lebesgue 2 \Group, \Sobolev s}$,
+%    we obtain
+%    \begin{align*}
+%        \norm [\Lebesgue 2 \Group] {T' \phi}^2
+%        &\leq \int_\Group \int_\Group \abs{T (\phi \BesselPotential \gamma_{g_1} \psi_{g_1})(g)}^2 \dd g \dd g_1\\
+%        &\leq \norm [\Lin {\Lebesgue 2 \Group, \Sobolev s}] {T} \int_\Group \norm [\Sobolev s] {\phi \BesselPotential \gamma_{g_1} \psi_{g_1}}^2 \dd g_1
+%    \end{align*}
+%    % TODO Conclude
+%\end{proof}
 
 %\section{Link with the H\"ormander classes}
 %
