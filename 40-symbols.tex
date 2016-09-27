@@ -166,6 +166,35 @@ This, amongst other things, ensures that our collection of symbols form an algeb
     holds for every $g, h \in \Group$.
 \end{definition}
 
+It is a routine check to show that the Leibniz-like property for smooth functions
+become the following \emph{Leibniz-like rule} for difference operators.
+
+\begin{lemma}[Leibniz-like rule]
+\label{lemma:Leibniz-like_property_for_difference_operators}
+    Assume that
+    \begin{align*}
+        \Delta \defeq \{q_1, \dots, q_{\dimDifferenceOperators} \SmoothFunctions \Group\}
+    \end{align*}
+    is a collection of admissible of smooth functions satisfying the Leibniz-like property.
+    Writing
+    \begin{align*}
+        q^\alpha \defeq q^{\alpha_1}_1 \dots q^{\alpha_{\dimDifferenceOperators}}_{\dimDifferenceOperators},
+        \quad \DifferenceOperatorOrder {\alpha} \defeq \DifferenceOperator {q^\alpha(\dummy^{-1})}
+    \end{align*}
+    for each $\alpha \in \N^{\dimDifferenceOperators}$,
+    we have
+    \begin{align*}
+        \DifferenceOperatorOrder \alpha
+        (\Fourier f_1 \Fourier f_2)
+        =
+        \sum_{\abs \alpha \leq \abs {\alpha_1} + \abs {\alpha_2} \leq 2 \abs \alpha}
+        c^{\alpha}_{\alpha_1, \alpha_2}
+        \DifferenceOperatorOrder {\alpha_1} \Fourier {f_1} \
+        \DifferenceOperatorOrder {\alpha_2} \Fourier {f_2}
+    \end{align*}
+    for each $f_1, f_2 \in \TemperedDistributions \Group$.
+\end{lemma}
+
 We can easily adapt \cite[Lemma 4.4]{RuzhanskyTurunenWirth10} or \cite[Corollay 5.13]{Fischer2015},
 to show the following result.
 
