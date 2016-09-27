@@ -1271,6 +1271,10 @@ We show that the Fourier transform of the heat kernel can be used to define a go
 
 \section{Approximation of symbols}
 
+One of the first applications of Theorem~\ref{theorem:generalised_Littlewood-Paley_decomposition}
+is that we can approximate any symbol $\sigma \in \SymbolClass m {\rho, \delta}$ with smoothing symbols,
+and control the convergence in all symbol classes of order $m_1 > m$.
+
 \begin{proposition}
 \label{proposition:approximation_of_symbols}
     Assume that $1 \geq \rho \geq \delta \geq 0$.
@@ -1319,6 +1323,36 @@ We show that the Fourier transform of the heat kernel can be used to define a go
     the second and third point hold by Theorem~\ref{theorem:generalised_Littlewood-Paley_decomposition}
     and Part~\ref{item:properties_of_symbols:pointwise_composition} of Proposition~\ref{proposition:first_properties_of_symbol_classes}.
 \end{proof}
+
+Those estimates are crucial in the rest of our analysis.
+We present a short overview of how they will be used.
+
+\begin{itemize}
+    \item
+        If we want to estimate the singularity of the kernel at the origin,
+        we approximate the kernel $\kappa_g$ with $\kappa_{\epsilon, g} \defeq \InverseFourier \sigma_\epsilon(g, \dummy)$
+        and use the bounds provided by Proposition~\ref{proposition:approximation_of_symbols}.
+        For more details, see the proof of Theorem~\ref{theorem:kernel_estimates}.
+    \item
+        We can prove results such as the composition and adjunction formulae first on $\sigma_\epsilon$,
+        a smoothing symbol which has a kernel which is compactly supported in $g \in \Group$.
+        For more details, see Section~\ref{section:adjoint_and_composition_formulae}
+    \item
+        By Proposition~\ref{proposition:approximation_of_symbols},
+        \begin{align*}
+            \sum_{j = 1}^N \sigma_j
+            = \sum_{j = 1}^N (\sigma_j - \sigma_{j, \epsilon_j})
+            \quad \text{modulo } \SmoothingSymbols.
+        \end{align*}
+
+        If for example,
+        the order of $\sigma_j$ decreases as $j \to \infty$ and we choose $\epsilon_j$ carefully,
+        the right-hand side could define a convergent series in $\SymbolClass {m_1} {\rho, \delta}$
+        using the estimates provided by Proposition~\ref{proposition:approximation_of_symbols}.
+
+        The convergence of the so-called \emph{asymptotic sums} is studied in Proposition~\ref{proposition:asymptotic_sum_of_symbols}
+        and is crucial to the construction of parametrices (Theorem~\ref{theorem:construction_of_parametrices}).
+\end{itemize}
 
 %\section{Independence on the family of difference operators}
 %
@@ -2894,6 +2928,7 @@ which will lead to the proof of parts \ref{item:kernel_estimates:at_origin:posit
 \end{remark}
 
 \section{Adjoint and composition formulas}
+\label{section:adjoint_and_composition_formulae}
 
 We are now ready to prove our two main results.
 
@@ -4526,6 +4561,7 @@ we let
 \end{proof}
 
 \begin{theorem}[Existence of left parametrices]
+\label{theorem:construction_of_parametrices}
     Let $A \in \OperatorClass m {\rho, \delta}$ be an $m$-elliptic operator of order $m$ with $1 \geq \rho > \delta \geq 0$.
     The exists an operator $B \in \OperatorClass {-m} {\rho, \delta}$ which satisfies
     \begin{align*}
