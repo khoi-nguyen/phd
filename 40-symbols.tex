@@ -2471,6 +2471,38 @@ The aim of this section is to prove the following result.
     \end{enumerate}
 \end{theorem}
 
+The estimates at the origin in Theorem~\ref{theorem:kernel_estimates} are sufficient to obtain the pseudo-differential calculus but not the Calder\'on-Zygmund property.
+This is due to the fact that our proof will rely exclusively on the \emph{Sobolev inequality}.
+
+The following example illustrates very well the relationship between
+the estimates around the origin of Theorem~\ref{theorem:kernel_estimates}
+and the \emph{Sobolev inequality}.
+Moreover, it shows that the estimates at the origin in Theorem~\ref{theorem:kernel_estimates} are not optimal.
+
+\begin{example}[Bessel potential]
+    Suppose that
+    \begin{align*}
+        \sigma_m(\lambda) \defeq \Rep \lambda \BesselPotential m,
+        \quad
+        \kappa_m(h) \defeq (\InverseFourier \sigma_m)(h)
+    \end{align*}
+    for each $m \in \R$.
+    The Bessel potential is smooth away from the origin and satisfies
+    \begin{align*}
+        \abs {\kappa_m(h)} \leq
+        \begin{cases}
+            C \norm [\Group] h^\gamma & \text{if } m > -\dim \Group \text{ and } \gamma < -(m + \dim \Group)\\
+            C & \text {if } m < -\dim \Group.
+        \end{cases}
+    \end{align*}
+
+    By carrying direct estimates on the \emph{heat kernel} (see~\cite[]{VaropoulosSaloffCosteCoulhon92}),
+    we can show
+    \begin{align*}
+        \abs {\kappa_m(h)} \leq C \norm [\Group] h^{-(m + \dim \Group)} \quad \text{if } m > -\dim \Group.
+    \end{align*}
+\end{example}
+
 \subsection{\texorpdfstring{$L^2$}{L2} estimates for the kernel}
 
 The first step towards establishing estimates on $\sup_{g, h \in \Group} \abs {\kappa_g(h)}$
