@@ -4238,17 +4238,37 @@ The crucial part of the proof is therefore to show that~\eqref{eq:symbol_to_prov
 In order to show $\Lebesgue p \Group$,
 we need to improve the estimates in Theorem~\ref{theorem:kernel_estimates} when $\rho = 1$.
 
+The following lemma is obtained by very simple modification of~\cite[Lemma A.6]{Fischer2015},
+which relies mainly on classical heat kernel estimates valid for Lie group with polynomial growth of the volume,
+and are thus valid on the motion group.
+
+The arguments in~\cite[Lemma A.6]{Fischer2015} are themselves based on~\cite{FurioliMelziVeneruso06, VaropoulosSaloffCosteCoulhon92}.
+
 \begin{lemma}
-    Let $f \in \SmoothFunctions {\R^+}$ be such that $f$ vanishes outside of $[C^{-1}, C]$ for some $C > 0$.
+    Let $f \in \SmoothFunctions {\R^+}$ be such that $f$ vanishes outside of $[C^{-1}, C]$ for some $C > 1$.
     For each $\alpha \in \N^{\dimDifferenceOperators}$ and each $m \in \R$,
     we have
     \begin{align*}
         \norm [\Lebesgue 2 \Group] {
-        \BesselPotential m q^\alpha f(t \Laplacian) \delta_{e_\Group}
+        \LeftDifferentialOperator \beta \{q^\alpha f(t \Laplacian) \delta_{e_\Group}\}
+        }
+        \leq C \sqrt t^{\abs \alpha - \abs \beta - \frac {\dim \Group} 2}.
+    \end{align*}
+\end{lemma}
+
+From there, we can deduce the following corollary.
+
+\begin{corollary}
+    Let $f \in \SmoothFunctions {\R^+}$ be such that $f$ vanishes outside of $[C^{-1}, C]$ for some $C > 1$.
+    For each $\alpha \in \N^{\dimDifferenceOperators}$ and each $m \in \R$,
+    we have
+    \begin{align*}
+        \norm [\Sobolev m] {
+            q^\alpha f(t \Laplacian) \delta_{e_\Group}
         }
         \leq C \sqrt t^{\abs \alpha - m - \frac {\dim \Group} 2}.
     \end{align*}
-\end{lemma}
+\end{corollary}
 
 \subsection{Calder\'on-Zygmund theory}
 
