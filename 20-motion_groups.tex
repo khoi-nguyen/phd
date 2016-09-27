@@ -1495,81 +1495,81 @@ this means that the \emph{inverse formula} takes the form
 \end{align*}
 where $f \in \Schwartz \GroupDirect$ and $g \in \GroupDirect$.
 
-\section{Applications to engineering}
-
-\subsection{Phase-noise Fokker-Planck equation}
-
-Suppose that
-\begin{align*}
-    s : \R^+ \times \Omega \to \R
-\end{align*}
-is a Brownian motion on a probability space $(\Omega, \mathcal F, \mathbb P)$
-that represents the (normalised) phase of a signal
-\begin{align*}
-    x : \R^+ \times \Omega \to \C : (t, \omega) \mapsto x(t) \defeq \e^{\i \turn s(t, \omega)}.
-\end{align*}
-
-Assume further that after going through a bandpass filter,
-the signal $x$ becomes
-\begin{align*}
-    z : \R^+ \times \Omega \to \C : (t, \omega) \mapsto z(t, \omega) \defeq \int_0^t h(t') \e^{\i \turn s(t - t', \omega)} \dd t',
-\end{align*}
-where $h \in \Distributions {\R}$.
-
-[INSERT CITATION] modelises the probability density
-\begin{align*}
-    f : \R^+ \to \TemperedDistributions{\R^2 \times \T} : t \mapsto f(\dummy, t)
-\end{align*}
-of the random variable $(z, s)$ as the solution of
-\begin{align}
-    \begin{cases}
-        \D{1}[f]{t}(y, s; t) &= \left(-h(t) (\cos (\turn s) \D{1}{{y_1} } + \sin(\turn s) \D{1}{{y_2} }) + C \D{2}{s^2}\right) f(y, s; t)\\
-        f(\dummy; 0) &= \DiracDelta{(0_{\R^2}, 0)},
-    \end{cases}
-    \label{eq:Fokker-Planck_phase_noise}
-\end{align}
-where the above equation is interpreted in the sense of distributions.
-
-By Example~\ref{example:Lie_Algebra_of_2-dimensional_Euclidean_motion_group},
-\eqref{eq:Fokker-Planck_phase_noise} can be rewritten
-\begin{align}
-    \begin{cases}
-        \D{1}[f]{t}(y, s; t) &= \left(-h(t) \LeftDifferentialOperatorFirstOrder {X_1}_{(y, s)} + C \LeftDifferentialOperatorFirstOrder {X_3}^2_{(y, s)}\right) f(y, s; t)\\
-        f(\dummy; 0) &= \DiracDelta{(0_{\R^2}, 0)}.
-    \end{cases}
-    \label{eq:Fokker-Planck_phase_noise:left-invariant_operators}
-\end{align}
-
-Applying the Fourier Transform on both sides of the above with respect to $(y, s)$,
-we obtain
-\begin{align}
-    \begin{cases}
-        \D{1}{t} \hat f(\lambda; t) &= A(\lambda, t) \hat f(\lambda; t)\\
-        \hat f(\lambda; 0) &= \Id{\Lebesgue 2 \T},
-    \end{cases}
-    \quad
-    \label{eq:Fokker-Planck_phase_noise:Fourier_side}
-\end{align}
-where in the above $\hat f(\lambda, t) \defeq \Fourier [\MotionGroup 2] f(\lambda, t)$, and
-\begin{align}
-    A(\lambda, t) \defeq \left( -h(t) \Rep [\MotionGroup 2] \lambda (X_1) + C \Rep [\MotionGroup 2] \lambda ({X_3})^2 \right).
-    \label{eq:Fokker-Planck_phase_noise:linear_operator}
-\end{align}
-
-\begin{example}[$h \equiv C$]
-    In the case where $h \equiv C$ does not depend on time,
-    the solution of~\eqref{eq:Fokker-Planck_phase_noise:Fourier_side} is given by
-    \begin{align*}
-        \hat f(\lambda; t) = \e^{t A(\lambda)},
-    \end{align*}
-    where $A(\lambda) \defeq A(\lambda, t)$ was defined in~\eqref{eq:Fokker-Planck_phase_noise:linear_operator}.
-
-    Applying the inverse Fourier transform to the above,
-    we obtain that the solution of~\eqref{eq:Fokker-Planck_phase_noise} is given by
-    \begin{align*}
-        f(y, s; t) = \int_\VectorSpace \tr\left( \Rep [\MotionGroup 2] \lambda (y, s) \e^{t A(\lambda)} \right) \dd \lambda.
-    \end{align*}
-\end{example}
+%\section{Applications to engineering}
+%
+%\subsection{Phase-noise Fokker-Planck equation}
+%
+%suppose that
+%\begin{align*}
+%    s : \R^+ \times \Omega \to \R
+%\end{align*}
+%is a Brownian motion on a probability space $(\Omega, \mathcal F, \mathbb P)$
+%that represents the (normalised) phase of a signal
+%\begin{align*}
+%    x : \R^+ \times \Omega \to \C : (t, \omega) \mapsto x(t) \defeq \e^{\i \turn s(t, \omega)}.
+%\end{align*}
+%
+%assume further that after going through a bandpass filter,
+%the signal $x$ becomes
+%\begin{align*}
+%    z : \R^+ \times \Omega \to \C : (t, \omega) \mapsto z(t, \omega) \defeq \int_0^t h(t') \e^{\i \turn s(t - t', \omega)} \dd t',
+%\end{align*}
+%where $h \in \Distributions {\R}$.
+%
+%[INSERT CITATION] modelises the probability density
+%\begin{align*}
+%    f : \R^+ \to \TemperedDistributions{\R^2 \times \T} : t \mapsto f(\dummy, t)
+%\end{align*}
+%of the random variable $(z, s)$ as the solution of
+%\begin{align}
+%    \begin{cases}
+%        \D{1}[f]{t}(y, s; t) &= \left(-h(t) (\cos (\turn s) \D{1}{{y_1} } + \sin(\turn s) \D{1}{{y_2} }) + C \D{2}{s^2}\right) f(y, s; t)\\
+%        f(\dummy; 0) &= \DiracDelta{(0_{\R^2}, 0)},
+%    \end{cases}
+%    \label{eq:Fokker-Planck_phase_noise}
+%\end{align}
+%where the above equation is interpreted in the sense of distributions.
+%
+%by Example~\ref{example:Lie_Algebra_of_2-dimensional_Euclidean_motion_group},
+%\eqref{eq:Fokker-Planck_phase_noise} can be rewritten
+%\begin{align}
+%    \begin{cases}
+%        \D{1}[f]{t}(y, s; t) &= \left(-h(t) \LeftDifferentialOperatorFirstOrder {X_1}_{(y, s)} + C \LeftDifferentialOperatorFirstOrder {X_3}^2_{(y, s)}\right) f(y, s; t)\\
+%        f(\dummy; 0) &= \DiracDelta{(0_{\R^2}, 0)}.
+%    \end{cases}
+%    \label{eq:Fokker-Planck_phase_noise:left-invariant_operators}
+%\end{align}
+%
+%applying the Fourier Transform on both sides of the above with respect to $(y, s)$,
+%we obtain
+%\begin{align}
+%    \begin{cases}
+%        \D{1}{t} \hat f(\lambda; t) &= A(\lambda, t) \hat f(\lambda; t)\\
+%        \hat f(\lambda; 0) &= \Id{\Lebesgue 2 \T},
+%    \end{cases}
+%    \quad
+%    \label{eq:Fokker-Planck_phase_noise:Fourier_side}
+%\end{align}
+%where in the above $\hat f(\lambda, t) \defeq \Fourier [\MotionGroup 2] f(\lambda, t)$, and
+%\begin{align}
+%    A(\lambda, t) \defeq \left( -h(t) \Rep [\MotionGroup 2] \lambda (X_1) + C \Rep [\MotionGroup 2] \lambda ({X_3})^2 \right).
+%    \label{eq:Fokker-Planck_phase_noise:linear_operator}
+%\end{align}
+%
+%\begin{example}[$h \equiv C$]
+%    In the case where $h \equiv C$ does not depend on time,
+%    the solution of~\eqref{eq:Fokker-Planck_phase_noise:Fourier_side} is given by
+%    \begin{align*}
+%        \hat f(\lambda; t) = \e^{t A(\lambda)},
+%    \end{align*}
+%    where $A(\lambda) \defeq A(\lambda, t)$ was defined in~\eqref{eq:Fokker-Planck_phase_noise:linear_operator}.
+%
+%    Applying the inverse Fourier transform to the above,
+%    we obtain that the solution of~\eqref{eq:Fokker-Planck_phase_noise} is given by
+%    \begin{align*}
+%        f(y, s; t) = \int_\VectorSpace \tr\left( \Rep [\MotionGroup 2] \lambda (y, s) \e^{t A(\lambda)} \right) \dd \lambda.
+%    \end{align*}
+%\end{example}
 
 \section{Fourier Transform of distributions}
 
