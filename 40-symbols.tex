@@ -2411,19 +2411,29 @@ and rely on precise estimates to prove the celebrated \emph{composition and adju
 %It is therefore crucial to study their properties,
 %such as their \emph{singularity} or their \emph{decay} away from the origin.
 
+It is important to note that all the results in this section rely on the reduction of the order
+through the application of difference operators.
+Therefore,
+we shall henceforth assume that $\rho > 0$
+and every result concerning or using kernel estimates will have that assumption.
+
 We shall see that the regularity of the kernel increases
 as the order of the symbol decreases.
-If $\rho > 1$, difference operators decrease the order of the symbol
-or equivalently multiplying kernels by some suitable polynomial increases its regularity.
+Since $\rho > 0$, applying difference operators decreases the order of the symbol
+which can be reformulated equivalently
+by saying that multiplying kernels by some suitable polynomial increases its regularity.
+However, this can only happen if at each $g \in \Group$,
+either the kernel is smooth around that point or the polynomial vanishes at $g$.
 The reader should therefore expect smoothness and Schwartz decay away from the origin,
-as the latter is the only point where we allow our polynomials to all vanish.
+as the latter is the only point where we allow \emph{all} our polynomials to vanish
+(see Definition~\ref{definition:admissibility_of_polynomials}).
 
 Before stating the main result of this section,
 let us define the quantity
 \begin{align*}
-    \norm [\Group] {(x, k)} \defeq \norm {x} + d(k, \Id{\VectorSpace}), \quad (x, k) \in \Group,
+    \norm [\Group] {(x, k)} \defeq \norm {x} + d_\CompactGroup(k, \Id{\VectorSpace}), \quad (x, k) \in \Group,
 \end{align*}
-which represents the distance between $(x, k)$ and the origin.
+where $d_\CompactGroup$ is a left-invariant Riemannian distance on $\CompactGroup$.
 The above is of course an abuse of notation, as $\norm [\Group] \dummy$ is not a norm.
 
 \begin{theorem}[Kernel estimates]
