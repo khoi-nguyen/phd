@@ -351,6 +351,7 @@ We can naturally define a collection of seminorms on our symbol classes,
 and check they endow each $\SymbolClass m {\rho, \delta}$ with a structure of \emph{Fr\'echet space}.
 
 \begin{definition}[Symbol semi-norms]
+\label{definition:symbol_semi-norms}
     Let $m \in \R$ and fix $\rho, \delta \in \R$ such that $0 \leq \rho \leq \delta \leq 1$.
     If $\sigma \in \SymbolClass m {\rho, \delta}$,
     then for each $N \in \N$,
@@ -406,6 +407,9 @@ we show that our symbol classes contain the left-invariant differential calculus
     \end{align*}
     defines a symbol in $\SymbolClass m {1, 0}$.
 \end{example}
+
+Equipped with the topology of seminorms defined in Definition~\ref{definition:symbol_semi-norms},
+we can easily show that the following continuous inclusions.
 
 \begin{lemma}[Inclusion of symbol classes]
     Suppose that $m_1, m_2 \in \R$ and $\rho_1, \rho_2, \delta_1, \delta_2 \in [0, 1]$.
