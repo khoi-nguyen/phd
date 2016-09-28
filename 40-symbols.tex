@@ -4932,3 +4932,20 @@ we let
     \end{align*}
     for each $N \in \R$.
 \end{corollary}
+\begin{proof}
+    By Theorem~\ref{theorem:construction_of_parametrices},
+    there exists a left-parametrix $P \in \OperatorClass {-m} {\rho, \delta}$ such that
+    \begin{align*}
+        P L = \Id {} - R,
+        \quad R \in \SmoothingOperators.
+    \end{align*}
+
+    In particular,
+    by the triangular inequality and Theorem~\ref{theorem:L2_boundedness} applied to $P$ and $R$,
+    \begin{align*}
+        \norm [\Sobolev {s + m}] {u}
+        &\leq \norm [\Sobolev {s + m}] {P L u} + \norm [\Sobolev {s + m}] u\\
+        &\leq C (\norm [\Sobolev s] {P L u} + \norm [\Sobolev {-N}] u),
+    \end{align*}
+    concluding the proof.
+\end{proof}
