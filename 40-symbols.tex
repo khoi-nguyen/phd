@@ -4567,6 +4567,7 @@ We are now ready to improve upon our already established kernel estimates.
 \end{proof}
 
 \begin{proposition}
+\label{proposition:Lp_boundedness}
     Assume that $T \in \OperatorClass 0 {1, 0}$.
     The operator $T$ is Calder\'on-Zygmund.
     In particular, for each $1 < p < \infty$
@@ -4915,7 +4916,8 @@ we let
     concluding the proof.
 \end{proof}
 
-\begin{corollary}[A-priori estimate]
+\begin{corollary}[A-priori estimates]
+\label{corollary:a-priori_estimates}
     Let $m \in \R$ and $1 \geq \rho > \delta \geq 0$.
     If $L \in \OperatorClass m {\rho, \delta}$ is an \emph{elliptic pseudo-differential operator} and
     \begin{align*}
@@ -4948,3 +4950,15 @@ we let
     \end{align*}
     concluding the proof.
 \end{proof}
+
+\begin{remarks}
+    Let us make a few comments on the last results.
+
+    \begin{itemize}
+        \item In Corollary~\ref{corollary:a-priori_estimates},
+            when $L \in \OperatorClass m {1, 0}$ is of type $(1, 0)$,
+            then we may replace $2$ by any $p \in (1, +\infty)$
+            thanks to the Calder\'on-Zygmund theory (Proposition~\ref{proposition:Lp_boundedness}).
+        \item
+    \end{itemize}
+\end{remarks}
