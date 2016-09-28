@@ -4274,6 +4274,7 @@ The arguments in~\cite[Lemma A.6]{Fischer2015} are themselves based on~\cite{Fur
 From there, we can deduce the following corollary.
 
 \begin{corollary}
+\label{corollary:technical_lemma}
     Let $f \in \SmoothFunctions {\R^+}$ be such that $f$ vanishes outside of $[C^{-1}, C]$ for some $C > 1$.
     For each $\alpha \in \N^{\dimDifferenceOperators}$ and each $m \in \R$,
     we have
@@ -4347,6 +4348,121 @@ We are now ready to improve upon our already established kernel estimates.
     \end{align*}
     for every $h \in \Group \setminus \{e_\Group\}$.
 \end{theorem}
+\begin{proof}
+    Let $\chi_0, \chi_1, \dots \in C^\infty_c (\R, [0, 1])$ be such that
+    \begin{align*}
+        \sum_{j = 0}^{+\infty} \chi_j = 1
+        \quad \text{on } \R^+,
+    \end{align*}
+    $\supp \chi_1 \subset [a, b]$ for some $0 < a < b$, and
+    \begin{align*}
+        \chi_j = \chi_1(2^{-j + 1} \dummy),
+        \quad j = 1, \dots
+    \end{align*}
+
+    Treating $\chi_0$ separately and using Corollary~\ref{corollary:technical_lemma},
+    we obtain that
+    \begin{align}
+        \norm [\Sobolev m] {
+        q^\alpha \sqrt {\chi_j}(t \Laplacian) \delta_{e_\Group}
+        }
+        \leq
+        C 2^{-\frac j 2 (\abs \alpha - m - \frac {\dim \Group} 2)}.
+        \label{eq:Littlewood-Paley_bounds}
+    \end{align}
+    where the above is understood to hold only for $m = \abs \alpha = 0$ when $j = 0$.
+
+    Now,
+    let us write
+    \begin{align*}
+        \sigma_j(g, \lambda)
+        \defeq
+        \sigma(g, \lambda)
+        \chi_j(\Rep \lambda \Laplacian),
+        \quad
+        \kappa_{j, g}(h) = \InverseFourier \{\sigma_j(g, \lambda)\}(h)
+    \end{align*}
+    and fix $h \in \Group \setminus \{e_\Group\}$ such that $\norm [\Group] h \leq 1$.
+    Let also $l \in \N$ be such that $\norm [\Group] h^2 \in (2^{-l - 1}, 2^{-l}]$.
+
+    We check that
+    \begin{align*}
+        \sum_{j = 0}^l \abs {\kappa_{j, g}(h)}
+        \leq \sum_{j = 0}^l \int_\VectorSpace
+        \norm [\SchattenClasses 1 {\Lebesgue 2 \CompactGroup}] {\sigma(g, \lambda) \Rep \lambda \BesselPotential {m - m} \chi_j(\Rep \lambda \Laplacian)} \dd \lambda\\
+        \leq C \sum_{j = 0}^l \int_\VectorSpace
+        \norm [\SchattenClasses 2 {\Lebesgue 2 \CompactGroup}] {\Rep \lambda \BesselPotentialSquared {-\frac m 4} \sqrt{\chi_j}(\Rep \lambda \Laplacian)}^2 \dd \lambda
+    \end{align*}
+    so that applying the Plancherel formula yields
+    \begin{align}
+        \sum_{j = 0}^l \abs {\kappa_{j, g}(h)}
+        &\leq C \sum_{j = 0}^l
+        \norm [\Sobolev {-m/2}] {\sqrt{\chi_j}(\Laplacian)}^2 \notag\\
+        &\leq C \sum_{j = 0}^l 2^{- \frac j 2 (m - \dim \Group)}
+        \leq C \norm [\Group] h^{-m - \dim \Group}.
+        \label{eq:first_sum_in_Littlewood-Paley}
+    \end{align}
+
+    The sum for $j > l$ is slightly more delicate and requires the use of difference operators.
+    Given $\alpha \in \N^{\dimDifferenceOperators}$ and $j \in \N$ satisfying $j > l$,
+    we have
+    \begin{align*}
+        \abs {q^\alpha(h) \kappa_{j, g}(h)}
+        &\leq
+        \int_\VectorSpace
+        \norm [\SchattenClasses 1 {\Lebesgue 2 \CompactGroup}] {\DifferenceOperatorOrder {\alpha_1} \sigma(g, \lambda) \DifferenceOperatorOrder {\alpha_2} \chi_j(\Rep \lambda \Laplacian)} \dd \lambda\\
+        &\leq C
+        \int_\VectorSpace
+        \norm [\SchattenClasses 1 {\Lebesgue 2 \CompactGroup}] {\Rep \lambda \BesselPotential {m - \abs {\alpha_1}} \DifferenceOperatorOrder {\alpha_2} \chi_j(\Rep \lambda \Laplacian)} \dd \lambda
+    \end{align*}
+    After using the Leibniz-like rule again,
+    we have
+    \begin{align*}
+        \DifferenceOperatorOrder {\alpha_2} \chi_j
+        = \sum_{\alpha_{21}, \alpha_{22}}
+        \DifferenceOperatorOrder {\alpha_{21}} \sqrt {\chi_j}(\Rep \lambda(\Laplacian))
+        \DifferenceOperatorOrder {\alpha_{22}} \sqrt {\chi_j}(\Rep \lambda(\Laplacian))
+    \end{align*}
+    so that the above calculation becomes
+    \begin{align*}
+        &\abs {q^\alpha(h) \kappa_{j, g}(h)}\\
+        &\leq C
+        \int_\VectorSpace
+        \norm [\SchattenClasses 1 {\Lebesgue 2 \CompactGroup}] {
+            \Rep \lambda \BesselPotential {m - \abs {\alpha_1}}
+            \DifferenceOperatorOrder {\alpha_{21}} \sqrt {\chi_j}(\Rep \lambda \Laplacian)
+            \DifferenceOperatorOrder {\alpha_{22}} \sqrt {\chi_j}(\Rep \lambda \Laplacian)
+        } \dd \lambda\\
+        &\leq C
+        \norm [\Sobolev {m - \abs {\alpha_1}}] {\DifferenceOperatorOrder {\alpha_{21}} \sqrt {\eta_j}(\Rep\lambda (\Laplacian)}
+        \norm [\Lebesgue 2 \Group] {\DifferenceOperatorOrder {\alpha_{22}} \sqrt {\eta_j}(\Rep\lambda (\Laplacian)}.
+    \end{align*}
+
+    Therefore,
+    using the strong admissibility of our difference operators
+    and~\eqref{eq:Littlewood-Paley_bounds},
+    we have shown that for every $a \in 2 \N$,
+    \begin{align*}
+        \norm [\Group] h^{a} \abs {\kappa_{j, g}(h)}
+        &\leq
+        C
+        2^{-\frac j 2 (\abs {\alpha_{21}} - (m - \abs{\alpha_1}) - \dim \Group/2)}
+        2^{-\frac j 2 (\abs {\alpha_{22}} - \dim \Group/2)}\\
+        &\leq C 2^{\frac j 2(m - a + \dim \Group)}.
+    \end{align*}
+
+    Choosing $a \in 2N$ in the above sufficiently large so that $m - a + \dim \Group < 0$,
+    the above implies
+    \begin{align*}
+        \sum_{j = l + 1}^\infty \abs {\kappa_{j, g}(h)}
+        &\leq
+        C \norm [\Group] h^{-a} \sum_{j = l + 1} 2^{\frac j 2(m - a + \dim \Group)}\\
+        &\leq
+        C \norm [\Group] h^{-a} 2^{\frac l 2(m - a + \dim \Group)}
+        = C \norm [\Group] h^{-(m + \dim \Group)},
+    \end{align*}
+    concluding the proof.
+\end{proof}
 
 \subsection{Calder\'on-Zygmund theory}
 
