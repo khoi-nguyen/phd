@@ -2780,13 +2780,14 @@ The \emph{strong admissibility} means that polynomials can constitute a good app
     \end{enumerate}
 \end{theorem}
 \begin{proof}
-    Fix $h \in \Group \setminus \{(0, \Id \VectorSpace)\}$ such that $\epsilon \defeq \norm [\Group] h \leq 1$.
+    Fix $h \in \Group \setminus \{(0, \Id \VectorSpace)\}$ such that $\epsilon \defeq \norm [\Group] h^2 \leq 1$.
     Define the symbol
     \begin{align*}
-        \sigma_\epsilon(g, \lambda) \defeq \sigma(g, \lambda),
+        \sigma_\epsilon(g, \lambda) \defeq \sigma(g, \lambda) \eta_\epsilon(\lambda),
         \quad g \in \Group, \lambda \in \VectorSpace,
     \end{align*}
-    and denote by $\kappa_\epsilon \defeq \InverseFourier \{\sigma(g, \dummy)\}$
+    where $\eta_\epsilon$ is given by Theorem~\ref{theorem:generalized_Littlewood-Paley_decomposition},
+    and denote by $\kappa_\epsilon \defeq \InverseFourier \{\sigma_\epsilon(g, \dummy)\}$
     its associated kernel.
 
     Using
@@ -2798,7 +2799,7 @@ The \emph{strong admissibility} means that polynomials can constitute a good app
     As we have shown earlier in Corollary~\ref{corollary:Sobolev_estimates_on_the_kernel}
     we can get a bound on the kernel provided the order of its associated symbol is strictly less than $-\dim \Group$.
     For $\kappa_\epsilon$, this will be easy since $\sigma_\epsilon$ is smoothing;
-    for $\kappa_g - \kappa_{g, \epsilon}$, we will have to use difference operators.
+    for $\kappa_g - \kappa_{g, \epsilon}$, we will have to use difference operators to lower the order.
 
     Note that the case $m = -\dim \Group$ is a simple consequences of the other estimates,
     and the inclusion $\SymbolClass m {\rho, \delta} \subset \SymbolClass {m'} {\rho, \delta}$ when $m \leq m'$.
@@ -2815,28 +2816,28 @@ The \emph{strong admissibility} means that polynomials can constitute a good app
                 \Rep \lambda \BesselPotential {-m + \gamma}.
             \end{align*}
 
-            Using the Holder inequality on Schatten classes,
+            Using the H\"older inequality on Schatten classes,
             together with Theorem~\ref{theorem:generalized_Littlewood-Paley_decomposition},
             we obtain
             \begin{align}
                 \norm [\SchattenClasses 1 {\Lebesgue 2 \CompactGroup}] {\sigma_\epsilon(g, \lambda)} \leq C
-                \epsilon^{\gamma} \norm [\SchattenClasses 1 {\Lebesgue 2 \CompactGroup}] {\Rep \lambda \BesselPotential {m + \gamma}}
+                \epsilon^{\frac \gamma 2} \norm [\SchattenClasses 1 {\Lebesgue 2 \CompactGroup}] {\Rep \lambda \BesselPotential {m + \gamma}}
                 \label{eq:estimate_on_the_schatten_norm_of_sigma_epsilon}
             \end{align}
-            for every $\gamma \leq 0$.
+            for every $\gamma < 0$.
 
             The idea is now to pick $\gamma < \min \{0, -(\dim \Group + m)\}$, so that
             \begin{align}
                 \abs{\kappa_{\epsilon, g}(h)}
                 \leq \int_\VectorSpace \norm [\SchattenClasses 1 {\Lebesgue 2 \CompactGroup}] {\sigma_\epsilon(g, \lambda)} \dd \lambda
                 \leq C
-                \epsilon^{\gamma},
+                \epsilon^{\frac \gamma 2},
                 \label{eq:estimate_on_the_smoothened_kernel}
             \end{align}
             where the last inequality was obtained by the Sobolev inequality (Proposition~\ref{proposition:Sobolev_embedding}).
 
-            The idea is now to pick a suitable $\gamma \leq 0$ and obtain an estimate on the kernel via~\eqref{eq:estimate_on_the_smoothened_kernel}.
-            Keeping in mind that $\epsilon = \norm [\Group] h$,
+            The idea is now to pick a suitable $\gamma < 0$ and obtain an estimate on the kernel via~\eqref{eq:estimate_on_the_smoothened_kernel}.
+            Keeping in mind that $\epsilon^2 = \norm [\Group] h$,
             let us now treat the different cases separately.
             \begin{description}
                 \item[$\rho = 1$ and $m > -\dim \Group$.] We pick $\gamma < -(\dim \Group + m)$ to obtain
@@ -2861,12 +2862,6 @@ The \emph{strong admissibility} means that polynomials can constitute a good app
                     Note that we could get a better estimate here,
                     but we choose not to do so,
                     because in this setting our choice of $\gamma$ will turn out to be appropriate when estimating $\kappa_g - \kappa_{g, \epsilon}$.
-                \item[$m = -\dim \Group$]
-                    Letting $\gamma = 0$ in \eqref{eq:estimate_on_the_smoothened_kernel} yields
-                    \begin{align*}
-                        \abs {\kappa_{\epsilon, g}(h)}
-                        \leq C \log \norm [\Group] h.
-                    \end{align*}
             \end{description}
 
         \item[Estimate on $\kappa_g - \kappa_{g, \epsilon}$].
@@ -2898,13 +2893,13 @@ The \emph{strong admissibility} means that polynomials can constitute a good app
             while
             \begin{align*}
                 \norm [\Lin {\Lebesgue 2 \CompactGroup}] {I_{2, \alpha_2, \gamma}}
-                \leq C \epsilon^\gamma
+                \leq C \epsilon^\frac \gamma 2
             \end{align*}
             holds for every $\gamma \geq 0$ by Theorem~\ref{theorem:generalized_Littlewood-Paley_decomposition}.
             Therefore, for every $\gamma \geq 0$, we have
             \begin{align*}
                 &\norm [\SchattenClasses 1 {\Lebesgue 2 \CompactGroup}] {\DifferenceOperator \alpha (\sigma - \sigma_\epsilon)(g, \lambda)}\\
-                & \qquad \leq C \epsilon^\gamma
+                & \qquad \leq C \epsilon^\frac \gamma 2
                 \norm [\SchattenClasses 1 {\Lebesgue 2 \CompactGroup}] {\Rep \lambda \BesselPotential {\gamma + m - \rho \abs \alpha}},
             \end{align*}
             where the Schatten norm on the right hand side is not necessarily finite.
@@ -2913,7 +2908,7 @@ The \emph{strong admissibility} means that polynomials can constitute a good app
             we obtain
             \begin{align*}
                 \abs {(q^\alpha(\kappa_g - \kappa_{g, \epsilon}))(h)}
-                \leq C \epsilon^\gamma
+                \leq C \epsilon^\frac \gamma 2
             \end{align*}
             provided that $\gamma \geq 0$ and $\gamma + m - \rho \abs \alpha < -\dim \Group$.
             Observe that those two conditions can be summarized by the inequality
@@ -2926,7 +2921,7 @@ The \emph{strong admissibility} means that polynomials can constitute a good app
                 \norm [\Group] h^r \abs{(\kappa_g - \kappa_{g, \epsilon})(h)}
                 &\leq C \sum_{\abs \alpha = r} \abs{q^\alpha(h) (\kappa_g - \kappa_{g, \epsilon})(h)},
             \end{align*}
-            we have so far shown, keeping in mind that $\epsilon = \norm [\Group] h$ that
+            we have so far shown, keeping in mind that $\epsilon = \norm [\Group] h^2$ that
             \begin{align}
                 \abs{(\kappa_g - \kappa_{g, \epsilon})(h)}
                 &\leq C \norm [\Group] h^{\gamma - r}
