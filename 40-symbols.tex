@@ -4245,6 +4245,7 @@ and are thus valid on the motion group.
 The arguments in~\cite[Lemma A.6]{Fischer2015} are themselves based on~\cite{FurioliMelziVeneruso06, VaropoulosSaloffCosteCoulhon92}.
 
 \begin{lemma}
+\label{lemma:technical_lemma}
     Let $f \in \SmoothFunctions {\R^+}$ be such that $f$ vanishes outside of $[C^{-1}, C]$ for some $C > 1$.
     For each $\alpha \in \N^{\dimDifferenceOperators}$ and each $m \in \R$,
     we have
@@ -4269,6 +4270,56 @@ From there, we can deduce the following corollary.
         \leq C \sqrt t^{\abs \alpha - m - \frac {\dim \Group} 2}.
     \end{align*}
 \end{corollary}
+\begin{proof}
+    Clearly, the result is true when $m \in 2\N$ by Lemma~\ref{lemma:technical_lemma}.
+    The result on $\R^+$ can easily be deduced by interpolation.
+
+    Suppose that $n \in \N$.
+    We let
+    \begin{align*}
+        f_1(\mu) \defeq
+        \begin{cases}
+            \frac {f(\mu)}{\mu^n} & \text{if } \mu \neq 0\\
+            0 & \text{otherwise},
+        \end{cases}
+        \quad \mu \in \R^+.
+    \end{align*}
+
+    Suppose now $m < 0$ and pick $n \in \N$
+    so that $2n - \abs \alpha + m \geq 0$.
+    Clearly,
+    \begin{align*}
+        \norm [\Sobolev m] {
+            q^\alpha f(t \Laplacian) \delta_{e_\Group}
+        }
+        =
+        t^n 
+        \norm [\Sobolev m] {
+            q^\alpha (\Laplacian^n f_1(t \Laplacian) \delta_{e_\Group})
+        }
+    \end{align*}
+
+    Applying the Leibniz rule, we obtain that the right-hand side is bounded by
+    \begin{align*}
+        &C \sum_{(\alpha_1, \alpha_2) \in A}
+        t^n
+        \norm [\Lin {\Sobolev {2 n - \abs {\alpha_1} + m}, \Sobolev m}] {
+            q^{\alpha_1}
+            \Laplacian^n
+        }
+        \norm [\Sobolev {2 n - \abs {\alpha_1} + m}] {
+            q^{\alpha_2} (f_1(t \Laplacian) \delta_{e_\Group})
+        }\\
+        &\leq C
+        \sum_{(\alpha_1, \alpha_2) \in A}
+        t^n t^{\frac {\abs {\alpha_2} - 2 n + \abs {\alpha_1} - m - \dim \Group/2} 2}
+        = C \sqrt t^{\abs \alpha - m - \frac {\dim \Group} 2}
+    \end{align*}
+    where in the above
+    $A \defeq \{(\alpha_1, \alpha_2) \abs \alpha \leq \abs {\alpha_1} + \abs {\alpha_2} \leq 2 \abs \alpha\}$.
+
+    This concludes the proof.
+\end{proof}
 
 \subsection{Calder\'on-Zygmund theory}
 
