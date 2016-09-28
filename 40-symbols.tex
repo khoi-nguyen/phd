@@ -4235,8 +4235,22 @@ The crucial part of the proof is therefore to show that~\eqref{eq:symbol_to_prov
 \subsubsection{Kernel estimates when \texorpdfstring{\rho = 1}{rho = 1}}
 \label{subsubsection:kernel_estimates_revisited}
 
-In order to show $\Lebesgue p \Group$,
+In order to show $\Lebesgue p \Group$ boundedness,
 we need to improve the estimates in Theorem~\ref{theorem:kernel_estimates} when $\rho = 1$.
+In particular, we need to show that if $\kappa$ is the kernel associated with a symbol in $\SymbolClass 0 {1, 0}$,
+we have
+\begin{align*}
+    \abs {\kappa_g(h)} \leq C \norm [\Group] h^{-\dim \Group},
+    \quad h \neq e_\Group,
+\end{align*}
+which is problematic because $-\dim \Group$ is a \emph{critical exponent} because of the Sobolev inequality.
+We therefore need \emph{sharper estimates},
+which can be provided by studying the \emph{heat kernel}.
+
+\begin{remark}
+    The discussion herein does not appear in~\cite{Fischer2015,FischerRuzhansky12,FischerRuzhansky16}
+    but the ideas presented here are based upon V\'eronique Fischer's privately communicated proof in the compact and graded setting.
+\end{remark}
 
 The following lemma is obtained by very simple modification of~\cite[Lemma A.6]{Fischer2015},
 which relies mainly on classical heat kernel estimates valid for Lie group with polynomial growth of the volume,
