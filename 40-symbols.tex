@@ -4339,6 +4339,7 @@ From there, we can deduce the following corollary.
 We are now ready to improve upon our already established kernel estimates.
 
 \begin{theorem}[Kernel estimates when $\rho = 1$]
+\label{theorem:kernel_estimates_revisited}
     Let $\sigma \in \SymbolClass m {1, \delta}$.
     If $m > -\dim \Group$,
     then its associated kernel $\kappa$ satisfies
@@ -4583,7 +4584,7 @@ We are now ready to improve upon our already established kernel estimates.
     for each $g \in \Group$,
     where the right-hand side is interpreted in the sense of distributions.
 
-    By the kernel estimates,
+    By the kernel estimates for $\rho = 1$ (Theorem~\ref{theorem:kernel_estimates_revisited}),
     we have
     \begin{align*}
         \abs {\tilde \kappa(g, h)} \leq \abs {\kappa_g(h^{-1} g)} \leq C \norm [\Group] {h^{-1} g}^{-\dim \Group}
