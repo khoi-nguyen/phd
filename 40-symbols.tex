@@ -4917,18 +4917,17 @@ we let
 
 \begin{corollary}[A-priori estimate]
     Let $m \in \R$ and $1 \geq \rho > \delta \geq 0$.
-    If $L \in \OperatorClass m {\rho, \delta}$ is an \emph{elliptic pseudo-differential operator}
-    and $f \in \Sobolev s$,
-    then the equation
+    If $L \in \OperatorClass m {\rho, \delta}$ is an \emph{elliptic pseudo-differential operator} and
     \begin{align*}
         L u = f
     \end{align*}
-    has a solution $u \in \Sobolev {m + s}$.
+    for some $f \in \Sobolev s$,
+    then $u \in \Sobolev {m + s}$.
 
     Moreover, we have the following \emph{a-priori} estimate
     \begin{align*}
         \norm [\Sobolev {m + s}] {u}
-        \leq C (\norm [\Sobolev {m + s}] {f} + \norm [\Sobolev {-N}] u)
+        \leq C (\norm [\Sobolev s] {f} + \norm [\Sobolev {-N}] u)
     \end{align*}
     for each $N \in \R$.
 \end{corollary}
@@ -4944,8 +4943,8 @@ we let
     by the triangular inequality and Theorem~\ref{theorem:L2_boundedness} applied to $P$ and $R$,
     \begin{align*}
         \norm [\Sobolev {s + m}] {u}
-        &\leq \norm [\Sobolev {s + m}] {P L u} + \norm [\Sobolev {s + m}] u\\
-        &\leq C (\norm [\Sobolev s] {P L u} + \norm [\Sobolev {-N}] u),
+        &\leq \norm [\Sobolev {s + m}] {P L u} + \norm [\Sobolev {s + m}] {R u}\\
+        &\leq C (\norm [\Sobolev s] {L u} + \norm [\Sobolev {-N}] u),
     \end{align*}
     concluding the proof.
 \end{proof}
