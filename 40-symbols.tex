@@ -2637,8 +2637,19 @@ we need only apply Corollary~\ref{corollary:Sobolev_estimates_on_the_kernel} and
 \subsection{Estimates at infinity}
 
 We start by proving Part \ref{item:kernel_estimates:at_infinity} of Theorem~\ref{theorem:kernel_estimates}.
+In the previous subsection,
+we have shown the continuity and boundedness of kernels associated with symbols with sufficiently low order.
 
-\begin{proof}
+Applying difference operators to symbols,
+or equivalenty multiplying the associated kernel by a polynomial,
+reduces the order,
+thereby improving our chances for the kernel to be bounded.
+
+Sufficiently far from the origin,
+this is only possible if our kernels have \emph{Schwartz decay},
+which we prove below.
+
+\begin{proof}[Proof of~\ref{item:kernel_estimates:at_infinity} of Theorem~\ref{theorem:kernel_estimates}]
     Let $M \in \R$ and choose $p \in 2 \N$ sufficiently large so that
     \begin{align*}
         g \geq M \quad \text{and} \quad
