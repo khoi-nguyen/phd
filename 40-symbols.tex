@@ -2480,6 +2480,7 @@ and the \emph{Sobolev inequality}.
 Moreover, it shows that the estimates at the origin in Theorem~\ref{theorem:kernel_estimates} are not optimal.
 
 \begin{example}[Bessel potential]
+\label{example:Bessel_potential}
     Suppose that
     \begin{align*}
         \sigma_m(\lambda) \defeq \Rep \lambda \BesselPotential m,
@@ -2498,10 +2499,17 @@ Moreover, it shows that the estimates at the origin in Theorem~\ref{theorem:kern
 
     By carrying direct estimates on the \emph{heat kernel} (see Subsubsection~\ref{subsubsection:kernel_estimates_revisited}),
     we can show
-    \begin{align*}
+    \begin{align}
         \abs {\kappa_m(h)} \leq C \norm [\Group] h^{-(m + \dim \Group)} \quad \text{if } m > -\dim \Group.
-    \end{align*}
+        \label{eq:sharp_estimates_on_the_Bessel_potential}
+    \end{align}
 \end{example}
+
+\begin{remark}
+    Example~\ref{example:Bessel_potential} illustrates well why the case $\rho = 1$ needs to be distinguished.
+    As our proof of the kernel estimates at the origin relies exclusively on the Sobolev inequality,
+    we will not be able to prove~\eqref{eq:sharp_estimates_on_the_Bessel_potential}.
+\end{remark}
 
 \subsection{\texorpdfstring{$L^2$}{L2} estimates for the kernel}
 
