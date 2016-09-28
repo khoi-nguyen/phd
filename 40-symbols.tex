@@ -4415,7 +4415,9 @@ We are now ready to improve upon our already established kernel estimates.
         \int_\VectorSpace
         \norm [\SchattenClasses 1 {\Lebesgue 2 \CompactGroup}] {\Rep \lambda \BesselPotential {m - \abs {\alpha_1}} \DifferenceOperatorOrder {\alpha_2} \chi_j(\Rep \lambda \Laplacian)} \dd \lambda
     \end{align*}
-    After using the Leibniz-like rule again,
+    with the understanding that we sum over $\alpha_1$ and $\alpha_2$ according to the \emph{Leibniz-like rule}.
+
+    After using the Leibniz-like rule again (and implying the summation again),
     we have
     \begin{align*}
         \DifferenceOperatorOrder {\alpha_2} \chi_j
@@ -4453,15 +4455,22 @@ We are now ready to improve upon our already established kernel estimates.
 
     Choosing $a \in 2N$ in the above sufficiently large so that $m - a + \dim \Group < 0$,
     the above implies
-    \begin{align*}
+    \begin{align}
         \sum_{j = l + 1}^\infty \abs {\kappa_{j, g}(h)}
         &\leq
         C \norm [\Group] h^{-a} \sum_{j = l + 1} 2^{\frac j 2(m - a + \dim \Group)}\\
         &\leq
         C \norm [\Group] h^{-a} 2^{\frac l 2(m - a + \dim \Group)}
         = C \norm [\Group] h^{-(m + \dim \Group)},
+        \label{eq:second_sum_in_Littlewood-Paley}
+    \end{align}
+
+    Combining~\eqref{eq:first_sum_in_Littlewood-Paley} and~\eqref{eq:second_sum_in_Littlewood-Paley},
+    we obtain that
+    \begin{align*}
+        \abs {\kappa_g(h)} \leq C \norm [\Group] h^{-(m + \dim \Group)},
     \end{align*}
-    concluding the proof.
+    which concludes the proof.
 \end{proof}
 
 \subsection{Calder\'on-Zygmund theory}
