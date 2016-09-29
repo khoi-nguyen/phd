@@ -111,8 +111,8 @@ to develop a global pseudo-differential calculus.
 
 \subsection*{Step 1 - Sobolev spaces}
 
-We start by fixing a (sub-)Laplacian or Rockland operator in the graded case,
-which allows us to define \emph{Sobolev spaces}.
+We start by fixing a (sub-)Laplacian or, in the graded case, a positive Rockland operator.
+This allows us to define \emph{Sobolev spaces}.
 We then need to show their basic properties,
 the most important of which is the \emph{Sobolev embedding theorem}.
 
@@ -165,18 +165,18 @@ the following \emph{inverse formula}
     \quad g \in \Group.
 \end{align*}
 
-The problem of defining an extension of the Fourier Transform to make sense of a \emph{Kohn-Nirenberg quantization} procedure was solved for in~\cite[Subsection 5.1.1]{FischerRuzhansky16} for a very large class of groups,
-since it relies exclusively on the \emph{Plancherel} theorem and the definition of Sobolev spaces.
+The problem of defining an extension of the Fourier Transform to make sense of a \emph{Kohn-Nirenberg quantization} procedure was solved in~\cite[Subsection 5.1.1]{FischerRuzhansky16} for a very large class of groups,
+since their solution relies exclusively on the \emph{Plancherel} theorem and the definition of Sobolev spaces.
 
-It is worth keeping in mind that in some simpler settings like the Euclidean and compact cases,
-we have a more natural extension of the Fourier transform
+It is worth keeping in mind that in some simpler settings such as the Euclidean and compact cases,
+we have a more natural and more general extension of the Fourier transform
 (see e.g.~\cite{RuzhanskyTurunen10}).
 
 \subsection*{Step 3 - Difference operators}
 
 In~\cite{RuzhanskyTurunen10},
 \citeauthor{RuzhanskyTurunen10} introduce the following notion of difference operator
-to generalise the derivatives in Fourier variables in the Euclidean definition of symbol classes.
+to generalize the derivatives in Fourier variables in the Euclidean definition of symbol classes.
 If $q \in \SmoothFunctions \Group$,
 they define
 \begin{align*}
@@ -185,7 +185,8 @@ they define
 
 When $\Group = \R^n$,
 we recover the classical derivatives in frequency with the collection
-$\Delta \defeq \{x_1, \dots, x_n \in \SmoothFunctions {\R^n}\}$.
+$\Delta \defeq \{x_1, \dots, x_n \in \SmoothFunctions {\R^n}\}$,
+where $x_i$ is the function that maps $x$ onto its $i$-th coordinate.
 
 We now need to find the properties that a family of functions
 \begin{align*}
@@ -193,12 +194,12 @@ We now need to find the properties that a family of functions
 \end{align*}
 must satisfy in order to develop a global pseudo-differential calculus.
 
-After inspecting the different proofs in the Euclidean~\cite{Stein93},
+Upon inspection of the different proofs in the Euclidean~\cite{Stein93},
 compact~\cite{RuzhanskyTurunen10,Fischer2015} and graded~\cite{FischerRuzhansky16} cases,
-the main requirements are the following.
+the main requirements appear the following.
 \begin{itemize}
     \item We can use a \emph{Taylor development} at the origin.
-        This is due to the fact that the adjunction and the composition are difficult to expres on the symbolic side without using a Taylor development.
+        This is necessary because the adjunction and the composition are difficult to express on the symbolic side without using a Taylor development.
     \item We have a reasonable \emph{Leibniz rule}.
         This ensures for example that the order of the composition of two left-invariant pseudo-differential operators is the sum of the orders.
     \item Ensure our pseudo-differentials of order $0$ are \emph{Calder\'on-Zygmund}.
@@ -213,7 +214,7 @@ Intuitively,
 our definition of symbol classes will ensure that the regularity of the kernel will increase every time we multiply it by one of the $q_j \in \Delta$,
 exactly like in the Euclidean case.
 In particular,
-this means that our kernels must be smooth outside of
+this means that our kernels will be smooth outside of
 \begin{align}
     \bigcap_{q \in \Delta} \{q = 0\},
     \label{eq:common_zeros_of_difference_operators}
@@ -319,21 +320,23 @@ and~\cite[Section 3.1]{Fischer2015} for the compact case.
 \subsection*{Step 5 - Functional calculus}
 
 On $\R^n$,
-the composition and adjunction formulae can be proved by carrying out our computations on the frequency space $\dualGroup {\R^n} = \R^n$.
+the composition and adjunction formulae can be proved by carrying out our computations on the frequency space $\dualGroup {\R^n} = \R^n$,
+exploiting the fact that the Euclidean space is \emph{abelian} and we have explicit expressions of our difference operators.
 Since a group Fourier transform is \emph{operator-valued} in more complicated settings,
-it makes sense to attempt to do our calculations on the kernel side.
+it makes sense to attempt to do our calculations on the kernel side,
+especially since this is how difference operators were defined.
 Unfortunately,
-kernels may have singularities at the origin,
-unlike symbols which are smooth.
+kernels may have a singularity at the origin,
+unlike symbols, which are smooth.
 Therefore, two questions naturally arise.
 
 \begin{itemize}
     \item What is the \emph{strength} of the singularity of the kernel at the origin?
-    \item Can we \emph{approximate} a symbol $\sigma$ by a sequence of smoothing symbols $\sigma_n$ so that the kernel can be approximated by a sequence of smooth kernels?
+    \item Can we \emph{approximate} a symbol $\sigma$ by a sequence of smoothing symbols $(\sigma_n)_{n \in \N}$ so that the kernel can be approximated by the associated sequence of smooth kernels?
 \end{itemize}
 
-In the case of the pseudo-differential operator $\BesselPotential m$,
-the questions is naturally answered via the \emph{functional calculus}.
+Looking at pseudo-differential operators such as $\BesselPotential m$
+suggests that \emph{functional calculus} is the natural framework to answer such questions.
 
 A crucial step of our analysis is to construct a family of smoothing symbols approximating the identity symbol.
 Using the algebra structure of our symbol classes,
@@ -341,7 +344,7 @@ this will yield an important density result,
 as we will be able to approximate any symbol with smoothing symbols.
 
 Ideally,
-we want to create a family $\{\eta_\epsilon = \Fourier p_\epsilon\}_{\epsilon \in (0, 1]} \subset \SmoothingSymbols$
+we would like to create a family $\{\eta_\epsilon = \Fourier p_\epsilon\}_{\epsilon \in (0, 1]} \subset \SmoothingSymbols$
 such that
 \begin{align}
     \SymbolSemiNorm m {\rho, \delta} N {\eta_\epsilon}
@@ -351,7 +354,7 @@ such that
     \\
     \SymbolSemiNorm m {\rho, \delta} N {\Id {} - \eta_\epsilon}
     &\leq \epsilon^\frac m \nu,
-    \quad m \geq 0.
+    \quad m \geq 0,
     \label{eq:survey:density_estimate:2}
 \end{align}
 where $\nu$ is the order of the sub-Laplacian or Rockland operator.
@@ -381,14 +384,12 @@ The family of symbols is used in the following proofs.
     \item[Construction of asymptotic limits]
 
         One of the inherent characteristics of symbolic calculus is that compositions and adjunctions can only be expressed via infinite sums from which we cannot reasonably expect convergence.
-
         As certain applications such as the construction of parametrices rely on making sense of these sums in a suitable sense,
         it is important that we define a notion of \emph{asymptotic convergence}.
 
         The idea is the same as in the Euclidean case.
-        We know that cutting off ``low frequencies'' will not affect the result modulo $\SmoothingSymbols$,
-
-        Given a sequence of symbols $\sigma_j$ with strictly decreasing order,
+        We know that cutting off ``low frequencies'' will not affect the result modulo $\SmoothingSymbols$.
+        Therefore, given a sequence of symbols $\sigma_j$ with strictly decreasing order,
         we thus define
         \begin{align*}
             \sum_{j = 0}^{+\infty} \sigma_j \defsim
@@ -411,8 +412,8 @@ The family of symbols is used in the following proofs.
         can be controlled via our symbolic estimates on $\Id {} - \eta_\epsilon$.
 
         In particular,
-        this allow us to reduce to proving that the composition or adjunction of operators on the symbolic side
-        holds true for smoothing symbols with the appropriate symbol seminorms.
+        this allows us to show the composition and adjunction formulae only for
+        for smoothing symbols and conclude by density
 \end{description}
 
 \subsubsection{The graded case}
@@ -420,7 +421,8 @@ The family of symbols is used in the following proofs.
 The existence of such a family $\eta_\epsilon$ is ensured directly by the \emph{Hulanicki Theorem} (see \cite[Theorem 4.5.1]{FischerRuzhansky16}).
 We can define
 \begin{align*}
-    \eta_\epsilon \defeq \Fourier \{\e^{-t \mathcal R} \delta_{e_\Group}\},
+    \eta_\epsilon(\xi) \defeq \Fourier \{\e^{-\epsilon \mathcal R} \delta_{e_\Group}\}(\xi),
+    \quad \xi \in \dualGroup \Group,
 \end{align*}
 where $\mathcal R$ is a positive Rockland operator,
 and the aforementioned theorem ensures that this defines a smoothing symbol satisfying the appropriate symbolic estimates.
@@ -446,10 +448,10 @@ and the convergence is understood in the strong operator topology.
 \subsubsection{The motion group}
 
 Following the ideas of~\cite{Shubin01, RuzhanskyWirth14},
-I define
+we define
 \begin{align*}
     \eta_\epsilon(\xi) \defeq
-    \int_\Gamma \e^{-t z} \left(\xi(\Id {} - \Laplacian) - z \Id {}\right)^{-1} \dd z,
+    \frac 1 {\i \turn} \int_\Gamma \e^{-t z} \left(\xi(\Id {} - \Laplacian) - z \Id {}\right)^{-1} \dd z,
     \quad \xi \in \dualGroup \Group
 \end{align*}
 with an appropriate contour $\Gamma \subset \C$
@@ -498,9 +500,9 @@ Suppose that $T \defeq \Op(\sigma) \in \OperatorClass m {1, 0}$.
 \begin{enumerate}
     \item As we intend to use a \emph{density} argument,
         we assume first that $\sigma$ is smoothing.
-    \item Perform an exact computation of the kernel $\tilde \kappa$ of $\adj T$ in terms of the kernel $\kappa$ of $T$.
+    \item We perform an exact computation of the kernel $\tilde \kappa$ of $\adj T$ in terms of the kernel $\kappa$ of $T$.
 
-        More precisely, show that $\adj T$ has right-convolution kernel
+        More precisely, we show that $\adj T$ has right-convolution kernel
         \begin{align*}
             \tilde \kappa_g(h) \defeq \conj \kappa_{g h^{-1}}(h^{-1}).
         \end{align*}
@@ -515,7 +517,7 @@ Suppose that $T \defeq \Op(\sigma) \in \OperatorClass m {1, 0}$.
         we take the \emph{Taylor development} with respect to the variable $h$ appearing in the subscript of the kernel
         \begin{align*}
             \tilde \sigma(g, \xi)
-            &= \int_\Group (\sum_{\abs \alpha \leq N} q^{\alpha}(h^{-1}) \LeftDifferentialOperator \alpha \conj \kappa_{g}(h^{-1}) + R_N(h)) \adj{\xi(h)} \dd h\\
+            &= \int_\Group (\sum_{\abs \alpha \leq N} q^{\alpha}(h^{-1}) \LeftDifferentialOperator [g] \alpha \conj \kappa_{g}(h^{-1}) + R_N(h)) \adj{\xi(h)} \dd h\\
             &= \sum_{\abs \alpha \leq N} \frac 1 {\alpha!} \DifferenceOperatorOrder \alpha \LeftDifferentialOperator \alpha \adj \sigma(g, \xi) + \int_\Group R_N(h) \adj{\xi(h)} \dd h.
         \end{align*}
     \item
@@ -526,6 +528,8 @@ Suppose that $T \defeq \Op(\sigma) \in \OperatorClass m {1, 0}$.
             \leq C d(h, e_\Group)^{N + 1} \sup_{\beta \in B} \sup_{\tilde h \in \Gamma_h} \abs {\LeftDifferentialOperator \beta \kappa_g(\tilde h)}
         \end{align*}
         so that the integral can be controlled via good estimates on $\kappa_g$.
+    \item
+        We now conclude the proof by density.
 \end{enumerate}
 
 For the compact case,
