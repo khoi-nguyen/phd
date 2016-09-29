@@ -2974,32 +2974,10 @@ The \emph{strong admissibility} means that polynomials can constitute a good app
     The kernel estimates now follow from the triangle inequality.
 \end{proof}
 
-\begin{remark}[Kernel estimates when $m = -\dim \Group$]
-    We might wonder whether it is possible to obtain better estimates for the case $m = -\dim \Group$
-    than the ones they inherit from the symbol classes inclusion.
-
-    Let $h \in \Group$ be such that $\epsilon \defeq \norm [\Group] h \in (0, 1]$
-    Writing
-    \begin{align*}
-        \sigma_\epsilon(g, \lambda)
-        = \sigma(g, \lambda) \Rep \lambda \BesselPotential {-m} \eta_\epsilon(\lambda) \Rep \lambda \BesselPotential {m},
-    \end{align*}
-    we see that
-    \begin{align*}
-        \abs {\kappa_{\epsilon, g}}
-        &\leq C \int_\VectorSpace \norm [\SchattenClasses 1 {\Lebesgue 2 \CompactGroup}] {\eta_\epsilon(\lambda) \Rep \lambda \BesselPotential m}\\
-        &\leq C \log \epsilon = C \log \norm [\Group] h,
-    \end{align*}
-    which is better than what Theorem~\ref{theorem:kernel_estimates:at_origin} gives us.
-
-    Unfortunately,
-    a similar estimate cannot be achieved for $\kappa_g - \kappa_{\epsilon, g}$.
-    This can be seen by setting
-    \begin{align*}
-        \sigma(g, \lambda) \defeq \Rep \lambda \BesselPotential {-\dim \Group}
-    \end{align*}
-    and observing that
-    $\abs {\kappa_g - \kappa_{\epsilon, g}}$ could not be bounded.
+\begin{remark}
+    The statement of Theorem~\ref{theorem:kernel_estimates:at_origin} is different than its counterpart in~\cite{Fischer2015,FischerRuzhansky16,FischerRuzhansky16}.
+    A closer inspection of the cited proofs shows that there are issues for the case $\rho = 1$ and when $m = -\dim \Group$ (or the homogenous dimension in the graded case),
+    which we tried to emphasize herein.
 \end{remark}
 
 \section{Adjoint and composition formulas}
