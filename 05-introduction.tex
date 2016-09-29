@@ -221,20 +221,23 @@ the authors show that a well-chosen finite subfamily $\Delta$ of
 \begin{align*}
     \{(\tau - \tau(e_\Group))_{m n} : \tau \in \dualGroup \Group, 1 \leq m, n \leq \dimRep \tau\}
 \end{align*}
-has all the required properties.
+can be strongly admissible.
 
 Importantly,
-we do not have an exact \emph{Leibniz rule}
-but the following Leibniz-like rule
+this family yields the following \emph{Leibniz-like} rule
 \begin{align*}
     \DifferenceOperatorOrder \alpha (\Fourier f_1 \Fourier f_2)
     = \sum_{\abs \alpha \leq \abs {\alpha_1} + \abs {\alpha_2} \leq 2 \abs \alpha}
     c^\alpha_{\alpha_1, \alpha_2}
     (\DifferenceOperatorOrder {\alpha_1} \Fourier f_1)
-    (\DifferenceOperatorOrder {\alpha_2} \Fourier f_2).
+    (\DifferenceOperatorOrder {\alpha_2} \Fourier f_2),
 \end{align*}
+which is good enough to establish the calculus,
+but slightly complicates some proofs related to the construction of parametrices.
 
 The compactness of the group allows us to show that the calculus does \emph{not} depend on the choice of strongly admissible difference operators~\cite{RuzhanskyTurunenWirth10,Fischer2015}.
+Such a proof relies strongly on the \emph{finite volume} of our group,
+and it is important to note at this stage that the result does not hold even on $\R^n$.
 
 \subsubsection*{The graded case}
 
@@ -242,12 +245,8 @@ In~\cite{FischerRuzhansky16},
 the authors consider the difference operators associated with \emph{homogeneous polynomials}.
 The dilation structure
 shows that we have a Leibniz rule if we consider a sum on homogeneous degrees
-(see~\cite[Subsection 5.2.1]{FischerRuzhansky16}).
-
-\subsubsection*{The motion group}
-
-As the motion group contains a compact subgroup,
-it should be expected that we shall have the same Leibniz rule as $\CompactGroup$.
+(see~\cite[Subsection 5.2.1]{FischerRuzhansky16}),
+while the strong admissibility is easily obtained by choosing a suitable basis.
 
 \subsection*{Step 4 - Symbol classes}
 
