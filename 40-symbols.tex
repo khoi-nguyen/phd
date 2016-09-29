@@ -2980,10 +2980,14 @@ The \emph{strong admissibility} means that polynomials can constitute a good app
     which we tried to emphasize herein.
 \end{remark}
 
-\section{Adjoint and composition formulas}
+\section{Adjoint and composition formulae}
 \label{section:adjoint_and_composition_formulae}
 
-We are now ready to prove our two main results.
+We are now ready to prove our two main results,
+the \emph{composition} and \emph{adjunction} formulae.
+
+The former ensures it is possible to create parametrices for elliptic operators,
+while the latter allows to extend our pseudo-differential operators (and in particular our paramatrices) to tempered distributions.
 
 \begin{itemize}
     \item Provided $\rho > \delta$,
@@ -2992,13 +2996,14 @@ We are now ready to prove our two main results.
         the composition of $T_1 \in \OperatorClass {m_1} {\rho, \delta}$ and $T_2 \in \OperatorClass {m_2} {\rho, \delta}$ is in $\OperatorClass {m_1 + m_2} {\rho, \delta}$.
 \end{itemize}
 
-Importantly,
-the \emph{composition formula} will relate the composition of operators
-to the pointwise composition of symbols,
-leading to the most beautiful application of pseudo-differential calculus:
-the construction of parametrices.
-
-The stability under adjunction will in particular imply that we can extend our pseudo-differential operators (and their parametrices when they exist) onto the set of tempered distributions.
+Both of these results are often proved by doing calculations on the Fourier Transform side,
+exploiting the fact that $\dualGroup {\R^n} = \R^n$.
+As our symbols are \emph{operator-valued},
+a more suitable strategy would be to carry out our calculations on the kernel side,
+exploiting our previously obtained kernel estimates (Theorem~\ref{theorem:kernel_estimates}).
+Fortunately,
+the fact that kernels might be singular is not an issue,
+since we have the density of smoothing symbols (Proposition~\ref{proposition:approximation_of_symbols}).
 
 \subsection{Asymptotic sums of symbols}
 
