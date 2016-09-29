@@ -307,6 +307,23 @@ and~\cite[Section 3.1]{Fischer2015} for the compact case.
 
 \subsection*{Step 5 - Functional calculus}
 
+On $\R^n$,
+the composition and adjunction formulae can be proved by carrying out our computations on the frequency space $\dualGroup {\R^n} = \R^n$.
+Since a group Fourier transform is \emph{operator-valued} in more complicated settings,
+it makes sense to attempt to do our calculations on the kernel side.
+Unfortunately,
+kernels may have singularities at the origin,
+unlike symbols which are smooth.
+Therefore, two questions naturally arise.
+
+\begin{itemize}
+    \item What is the \emph{strength} of the singularity of the kernel at the origin?
+    \item Can we \emph{approximate} a symbol $\sigma$ by a sequence of smoothing symbols $\sigma_n$ so that the kernel can be approximated by a sequence of smooth kernels?
+\end{itemize}
+
+In the case of the pseudo-differential operator $\BesselPotential m$,
+the questions is naturally answered via the \emph{functional calculus}.
+
 A crucial step of our analysis is to construct a family of smoothing symbols approximating the identity symbol.
 Using the algebra structure of our symbol classes,
 this will yield an important density result,
