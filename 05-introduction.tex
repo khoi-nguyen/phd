@@ -500,9 +500,9 @@ Suppose that $T \defeq \Op(\sigma) \in \OperatorClass m {1, 0}$.
 \begin{enumerate}
     \item As we intend to use a \emph{density} argument,
         we assume first that $\sigma$ is smoothing.
-    \item Perform an exact computation of the kernel $\tilde \kappa$ of $\adj T$ in terms of the kernel $\kappa$ of $T$.
+    \item We perform an exact computation of the kernel $\tilde \kappa$ of $\adj T$ in terms of the kernel $\kappa$ of $T$.
 
-        More precisely, show that $\adj T$ has right-convolution kernel
+        More precisely, we show that $\adj T$ has right-convolution kernel
         \begin{align*}
             \tilde \kappa_g(h) \defeq \conj \kappa_{g h^{-1}}(h^{-1}).
         \end{align*}
@@ -517,7 +517,7 @@ Suppose that $T \defeq \Op(\sigma) \in \OperatorClass m {1, 0}$.
         we take the \emph{Taylor development} with respect to the variable $h$ appearing in the subscript of the kernel
         \begin{align*}
             \tilde \sigma(g, \xi)
-            &= \int_\Group (\sum_{\abs \alpha \leq N} q^{\alpha}(h^{-1}) \LeftDifferentialOperator \alpha \conj \kappa_{g}(h^{-1}) + R_N(h)) \adj{\xi(h)} \dd h\\
+            &= \int_\Group (\sum_{\abs \alpha \leq N} q^{\alpha}(h^{-1}) \LeftDifferentialOperator [g] \alpha \conj \kappa_{g}(h^{-1}) + R_N(h)) \adj{\xi(h)} \dd h\\
             &= \sum_{\abs \alpha \leq N} \frac 1 {\alpha!} \DifferenceOperatorOrder \alpha \LeftDifferentialOperator \alpha \adj \sigma(g, \xi) + \int_\Group R_N(h) \adj{\xi(h)} \dd h.
         \end{align*}
     \item
@@ -528,6 +528,8 @@ Suppose that $T \defeq \Op(\sigma) \in \OperatorClass m {1, 0}$.
             \leq C d(h, e_\Group)^{N + 1} \sup_{\beta \in B} \sup_{\tilde h \in \Gamma_h} \abs {\LeftDifferentialOperator \beta \kappa_g(\tilde h)}
         \end{align*}
         so that the integral can be controlled via good estimates on $\kappa_g$.
+    \item
+        We now conclude the proof by density.
 \end{enumerate}
 
 For the compact case,
