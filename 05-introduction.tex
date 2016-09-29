@@ -176,7 +176,7 @@ we have a more natural and more general extension of the Fourier transform
 
 In~\cite{RuzhanskyTurunen10},
 \citeauthor{RuzhanskyTurunen10} introduce the following notion of difference operator
-to generalise the derivatives in Fourier variables in the Euclidean definition of symbol classes.
+to generalize the derivatives in Fourier variables in the Euclidean definition of symbol classes.
 If $q \in \SmoothFunctions \Group$,
 they define
 \begin{align*}
@@ -185,7 +185,8 @@ they define
 
 When $\Group = \R^n$,
 we recover the classical derivatives in frequency with the collection
-$\Delta \defeq \{x_1, \dots, x_n \in \SmoothFunctions {\R^n}\}$.
+$\Delta \defeq \{x_1, \dots, x_n \in \SmoothFunctions {\R^n}\}$,
+where $x_i$ is the function that maps $x$ onto its $i$-th coordinate.
 
 We now need to find the properties that a family of functions
 \begin{align*}
@@ -193,12 +194,12 @@ We now need to find the properties that a family of functions
 \end{align*}
 must satisfy in order to develop a global pseudo-differential calculus.
 
-After inspecting the different proofs in the Euclidean~\cite{Stein93},
+Upon inspection of the different proofs in the Euclidean~\cite{Stein93},
 compact~\cite{RuzhanskyTurunen10,Fischer2015} and graded~\cite{FischerRuzhansky16} cases,
-the main requirements are the following.
+the main requirements appear the following.
 \begin{itemize}
     \item We can use a \emph{Taylor development} at the origin.
-        This is due to the fact that the adjunction and the composition are difficult to expres on the symbolic side without using a Taylor development.
+        This is necessary because the adjunction and the composition are difficult to express on the symbolic side without using a Taylor development.
     \item We have a reasonable \emph{Leibniz rule}.
         This ensures for example that the order of the composition of two left-invariant pseudo-differential operators is the sum of the orders.
     \item Ensure our pseudo-differentials of order $0$ are \emph{Calder\'on-Zygmund}.
@@ -213,7 +214,7 @@ Intuitively,
 our definition of symbol classes will ensure that the regularity of the kernel will increase every time we multiply it by one of the $q_j \in \Delta$,
 exactly like in the Euclidean case.
 In particular,
-this means that our kernels must be smooth outside of
+this means that our kernels will be smooth outside of
 \begin{align}
     \bigcap_{q \in \Delta} \{q = 0\},
     \label{eq:common_zeros_of_difference_operators}
