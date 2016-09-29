@@ -332,14 +332,17 @@ as we will be able to approximate any symbol with smoothing symbols.
 Ideally,
 we want to create a family $\{\eta_\epsilon = \Fourier p_\epsilon\}_{\epsilon \in (0, 1]} \subset \SmoothingSymbols$
 such that
-\begin{align*}
+\begin{align}
     \SymbolSemiNorm m {\rho, \delta} N {\eta_\epsilon}
     &\leq \epsilon^\frac m \nu,
-    \quad m < 0,\\
+    \quad m < 0,
+    \label{eq:survey:density_estimate:1}
+    \\
     \SymbolSemiNorm m {\rho, \delta} N {\Id {} - \eta_\epsilon}
     &\leq \epsilon^\frac m \nu,
     \quad m \geq 0.
-\end{align*}
+    \label{eq:survey:density_estimate:2}
+\end{align}
 where $\nu$ is the order of the sub-Laplacian or Rockland operator.
 Moreover,
 to prove the Calder\'on-Zygmund property,
@@ -362,7 +365,7 @@ The family of symbols is used in the following proofs.
         where we choose $\epsilon$ so that $\epsilon^\nu$ equals the distance between $h$ and $e_\Group$.
 
         The second term of the right-hand side is the one containing the singularity,
-        and we need good estimates to control it.
+        and we need~\eqref{eq:survey:density_estimate:2} to control it.
 
     \item[Construction of asymptotic limits]
 
@@ -415,8 +418,7 @@ and the aforementioned theorem ensures that this defines a smoothing symbol sati
 
 Following~\cite{FurioliMelziVeneruso06},
 \citeauthor{Fischer2015} shows symbolic estimates for the functional calculus of the Laplace-Beltrami operator in~\cite{Fischer2015}.
-However, as her functional calculus only covers functions with compact support,
-she lets
+However, she proceeds slightly differently by letting
 \begin{align*}
     \eta_\epsilon
     \defeq \chi(\epsilon \xi(\Laplacian [\Group])),
