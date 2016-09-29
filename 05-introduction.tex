@@ -320,21 +320,23 @@ and~\cite[Section 3.1]{Fischer2015} for the compact case.
 \subsection*{Step 5 - Functional calculus}
 
 On $\R^n$,
-the composition and adjunction formulae can be proved by carrying out our computations on the frequency space $\dualGroup {\R^n} = \R^n$.
+the composition and adjunction formulae can be proved by carrying out our computations on the frequency space $\dualGroup {\R^n} = \R^n$,
+exploiting the fact that the Euclidean space is \emph{abelian} and we have explicit expressions of our difference operators.
 Since a group Fourier transform is \emph{operator-valued} in more complicated settings,
-it makes sense to attempt to do our calculations on the kernel side.
+it makes sense to attempt to do our calculations on the kernel side,
+especially since this is how difference operators were defined.
 Unfortunately,
-kernels may have singularities at the origin,
-unlike symbols which are smooth.
+kernels may have a singularity at the origin,
+unlike symbols, which are smooth.
 Therefore, two questions naturally arise.
 
 \begin{itemize}
     \item What is the \emph{strength} of the singularity of the kernel at the origin?
-    \item Can we \emph{approximate} a symbol $\sigma$ by a sequence of smoothing symbols $\sigma_n$ so that the kernel can be approximated by a sequence of smooth kernels?
+    \item Can we \emph{approximate} a symbol $\sigma$ by a sequence of smoothing symbols $(\sigma_n)_{n \in \N}$ so that the kernel can be approximated by the associated sequence of smooth kernels?
 \end{itemize}
 
-In the case of the pseudo-differential operator $\BesselPotential m$,
-the questions is naturally answered via the \emph{functional calculus}.
+Looking at pseudo-differential operators such as $\BesselPotential m$
+suggests that \emph{functional calculus} is the natural framework to answer such questions.
 
 A crucial step of our analysis is to construct a family of smoothing symbols approximating the identity symbol.
 Using the algebra structure of our symbol classes,
@@ -342,7 +344,7 @@ this will yield an important density result,
 as we will be able to approximate any symbol with smoothing symbols.
 
 Ideally,
-we want to create a family $\{\eta_\epsilon = \Fourier p_\epsilon\}_{\epsilon \in (0, 1]} \subset \SmoothingSymbols$
+we would like to create a family $\{\eta_\epsilon = \Fourier p_\epsilon\}_{\epsilon \in (0, 1]} \subset \SmoothingSymbols$
 such that
 \begin{align}
     \SymbolSemiNorm m {\rho, \delta} N {\eta_\epsilon}
@@ -352,7 +354,7 @@ such that
     \\
     \SymbolSemiNorm m {\rho, \delta} N {\Id {} - \eta_\epsilon}
     &\leq \epsilon^\frac m \nu,
-    \quad m \geq 0.
+    \quad m \geq 0,
     \label{eq:survey:density_estimate:2}
 \end{align}
 where $\nu$ is the order of the sub-Laplacian or Rockland operator.
@@ -382,14 +384,12 @@ The family of symbols is used in the following proofs.
     \item[Construction of asymptotic limits]
 
         One of the inherent characteristics of symbolic calculus is that compositions and adjunctions can only be expressed via infinite sums from which we cannot reasonably expect convergence.
-
         As certain applications such as the construction of parametrices rely on making sense of these sums in a suitable sense,
         it is important that we define a notion of \emph{asymptotic convergence}.
 
         The idea is the same as in the Euclidean case.
-        We know that cutting off ``low frequencies'' will not affect the result modulo $\SmoothingSymbols$,
-
-        Given a sequence of symbols $\sigma_j$ with strictly decreasing order,
+        We know that cutting off ``low frequencies'' will not affect the result modulo $\SmoothingSymbols$.
+        Therefore, given a sequence of symbols $\sigma_j$ with strictly decreasing order,
         we thus define
         \begin{align*}
             \sum_{j = 0}^{+\infty} \sigma_j \defsim
@@ -412,8 +412,8 @@ The family of symbols is used in the following proofs.
         can be controlled via our symbolic estimates on $\Id {} - \eta_\epsilon$.
 
         In particular,
-        this allow us to reduce to proving that the composition or adjunction of operators on the symbolic side
-        holds true for smoothing symbols with the appropriate symbol seminorms.
+        this allows us to show the composition and adjunction formulae only for
+        for smoothing symbols and conclude by density
 \end{description}
 
 \subsubsection{The graded case}
@@ -421,7 +421,8 @@ The family of symbols is used in the following proofs.
 The existence of such a family $\eta_\epsilon$ is ensured directly by the \emph{Hulanicki Theorem} (see \cite[Theorem 4.5.1]{FischerRuzhansky16}).
 We can define
 \begin{align*}
-    \eta_\epsilon \defeq \Fourier \{\e^{-t \mathcal R} \delta_{e_\Group}\},
+    \eta_\epsilon(\xi) \defeq \Fourier \{\e^{-\epsilon \mathcal R} \delta_{e_\Group}\}(\xi),
+    \quad \xi \in \dualGroup \Group,
 \end{align*}
 where $\mathcal R$ is a positive Rockland operator,
 and the aforementioned theorem ensures that this defines a smoothing symbol satisfying the appropriate symbolic estimates.
