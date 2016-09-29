@@ -248,13 +248,14 @@ shows that we have a Leibniz rule if we consider a sum on homogeneous degrees
 (see~\cite[Subsection 5.2.1]{FischerRuzhansky16}),
 while the strong admissibility is easily obtained by choosing a suitable basis.
 
-\subsection*{Step 4 - Symbol classes}
+\subsection*{Step 4 - Symbol and operator classes}
 
 Very informally,
 we say that $\sigma(g, \xi)$ is a \emph{symbol} if there exists $\kappa \in \SmoothFunctions {\Group, \TemperedDistributions \Group}$ such that
 \begin{align*}
-    \sigma(g, \xi) = \Fourier \{\kappa(g, \dummy)\}(\xi).
+    \sigma(g, \xi) \defeq \Fourier \{\kappa(g, \dummy)\}(\xi)
 \end{align*}
+is defined.
 The distribution $\kappa$ is called the \emph{kernel associated} wih $\sigma$.
 
 Moreover,
@@ -274,13 +275,31 @@ Note that when the Laplacian is central,
 we can assume $\gamma = 0$.
 For the graded case,
 we replace $\Laplacian$ with $\mathcal R$.
+It should be clear that when $\Group = \R^n$,
+we obtain the classical definition of symbol classes.
 
-And like in the Euclidean case,
-we let
+We also let
 \begin{align*}
-    \SmoothingSymbols \defeq \cap_{m \in \R} \SymbolClass m {\rho, \delta}
+    \SmoothingSymbols \defeq \bigcap_{m \in \R} \SymbolClass m {\rho, \delta}
 \end{align*}
 denote the set of \emph{smoothing symbols}.
+
+We define a \emph{pseudo-differential operator} to be an operator arising from a symbol via an analogue of the \emph{Kohn-Nirenberg quantisation}.
+More precisely,
+the operator
+\begin{align*}
+    \Op(\sigma) \phi(g)
+    \defeq \InverseFourier \left\{ \xi \in \dualGroup \Group \mapsto \xi(g) \sigma(g, \xi) \Fourier \phi(\xi)\right\}(g)
+\end{align*}
+is the \emph{pseudo-differential operator} associated with the symbol $\sigma$.
+We easily check that $\Op [\R^n]$ is the usual Kohn-Nirenberg quantisation.
+
+Naturally,
+the quantisation allows us to define \emph{operator classes} via
+\begin{align*}
+    \OperatorClass m {\rho, \delta} &\defeq \Op(\SymbolClass m {\rho, \delta}),\\
+    \SmoothingOperators &\defeq \Op(\SmoothingSymbols).
+\end{align*}
 
 For more information,
 see~\cite[Section 5.1]{FischerRuzhansky16} for the graded case;
