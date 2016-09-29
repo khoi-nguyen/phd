@@ -16,7 +16,7 @@ holds (see e.g.~\cite[Section 4]{Shubin01}),
 while their Euclidean counterparts make sense without restrictions on $\rho$ and $\delta$.
 Secondly,
 a global notion of \emph{symbol} cannot be invariantly defined,
-making results which rely on a a full symbol (such as Gårding's inequality) difficult to establish.
+making results which rely on a full symbol (such as Gårding's inequality) difficult to establish.
 
 The first successful attempt at defining a global pseudo-differential calculus
 on a non-Euclidean manifold is due to \citeauthor{RuzhanskyTurunen10},
@@ -187,11 +187,11 @@ compact~\cite{RuzhanskyTurunen10,Fischer2015} and graded~\cite{FischerRuzhansky1
 the main requirements are the following.
 \begin{itemize}
     \item We can use a \emph{Taylor development} at the origin.
-        This is due to the fact that the adjunction and the composition cannot be expressed on the symbolic side without using a Taylor development.
+        This is due to the fact that the adjunction and the composition are difficult to expres on the symbolic side without using a Taylor development.
     \item We have a reasonable \emph{Leibniz rule}.
         This ensures for example that the order of the composition of two left-invariant pseudo-differential operators is the sum of the orders.
     \item Ensure our pseudo-differentials of order $0$ are \emph{Calder\'on-Zygmund}.
-        While we can reasonably expect the Plancherel theory to ensure boundedness $\Lebesgue 2 \Group$,
+        While we can reasonably expect the Plancherel theory to ensure $\Lebesgue 2 \Group$ boundedness,
         we rely on the theory of singular integrals to have the boundedness on $\Lebesgue p \Group$.
 \end{itemize}
 
@@ -347,7 +347,7 @@ where $\nu$ is the order of the sub-Laplacian or Rockland operator.
 Moreover,
 to prove the Calder\'on-Zygmund property,
 we need very good estimates on the kernels $p_\epsilon$.
-This implies that the best candidate is the Fourier transform of the \emph{heat kernel}.
+Therefore, the natural candidate is the Fourier transform of the \emph{heat kernel}.
 
 The family of symbols is used in the following proofs.
 \begin{description}
@@ -416,7 +416,7 @@ and the aforementioned theorem ensures that this defines a smoothing symbol sati
 
 \subsubsection{The compact case}
 
-Following~\cite{FurioliMelziVeneruso06},
+Following the classical heat kernel methods (see e.g.~\cite{FurioliMelziVeneruso06,VaropoulosSaloffCosteCoulhon92}),
 \citeauthor{Fischer2015} shows symbolic estimates for the functional calculus of the Laplace-Beltrami operator in~\cite{Fischer2015}.
 However, she proceeds slightly differently by letting
 \begin{align*}
@@ -458,8 +458,6 @@ This approach has however (at least) two drawbacks:
         We only show symbolic estimates for the functional calculus associated with the functions $\e^{t z}$,
         $1 - \e^{t z}$, and $z^\gamma$,
         while~\cite{FischerRuzhansky16} and~\cite{Fischer2015} prove a much more general result in their respective cases.
-        Although this is not necessary to obtain the calculus,
-        it is an interesting result in itself.
     \item
         The kernel estimates when $\rho = 1$,
         essential to show the Calder\'on-Zygmund property,
@@ -470,8 +468,9 @@ This approach has however (at least) two drawbacks:
         to prove the $\Lebesgue p \Group$ boundedness.
 \end{itemize}
 
-It is nevertheless interesting to observe that a pseudo-differential calculus can be constructed with relatively little functional calculus,
-which is the motivation behind this approach.
+It is nevertheless interesting to observe that this approach provides a shorter and more elementary way
+to establish a global pseudo-differential calculus
+if compared with~\cite{Fischer2015,FischerRuzhansky16}.
 
 \subsection*{Steps 6 and 7 - Kernel estimates and calculus proofs}
 
