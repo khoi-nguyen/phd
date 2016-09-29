@@ -5,17 +5,18 @@ pseudo-differential operators have become standard and natural tools in the stud
 On $\R^n$,
 these operators are defined \emph{globally} as arising from smooth maps called \emph{symbols} via the Euclidean Fourier Transform.
 
-While pseudo-differential operators can be defined locally on any connected manifold,
+While pseudo-differential operators can be defined locally via local charts on any connected manifold,
 two issues arise.
 Firstly,
-our operators can only be defined provided that a condition such as
+operators are usually defined provided that a condition such as
 \begin{align*}
     1 - \rho \leq \delta < \rho
 \end{align*}
 holds (see e.g.~\cite[Section 4]{Shubin01}),
-while their Euclidean counterparts make sense without restriction on $\rho$ and $\delta$.
+while their Euclidean counterparts make sense without restrictions on $\rho$ and $\delta$.
 Secondly,
-a global notion of \emph{symbol} cannot be invariantly defined.
+a global notion of \emph{symbol} cannot be invariantly defined,
+making results which rely on a a full symbol (such as Gårding's inequality) difficult to establish.
 
 The first successful attempt at defining a global pseudo-differential calculus
 on a non-Euclidean manifold is due to \citeauthor{RuzhanskyTurunen10},
@@ -42,26 +43,26 @@ To this end,
 we observe that the Ruzhansky-Turunen theory relies on a Fourier-Plancherel theory,
 while good properties of the operators rely on an understanding of the theory of singular integrals.
 Therefore,
-the natural settings to investigate are Lie groups with polynomial volume growth.
+the natural settings to investigate are Lie groups with polynomial growth of the volume.
 
 In 2013,
 \citeauthor{FischerRuzhansky12} treated the case of graded nilpotent Lie groups.
 In particular,
 they dealt with the technical issues which arise from working with infinite-dimensional representations,
 and more crucially,
-non-central sub-Laplacians or Rockland operators.
+non-central sub-Laplacians or positive Rockland operators.
 They also present a strategy to obtain the composition and adjunction formulae,
 which consists of proving symbolic estimates on the functional calculus for the sub-Laplacian or the Rockland operator,
 and subsequently proving kernel estimates for general symbols.
 
 The aim of this thesis is to study the case of the Euclidean motion group,
-which is the smallest group of affine transformations containing both translations and rotations.
+which is the smallest group of affine transformations on a Euclidean space containing both translations and rotations.
 Our analysis will encounter difficulties due to the absence of properties such as compactness and commutativity of the group law,
 and the lack of a dilation structure.
-Furthermore, the infinite dimensional nature of the representations
+Furthermore, the infinite dimensional nature of the representations,
 and the fact that the Laplacian is not central also complicates matters.
 Nevertheless, our interest in this group is justified for two reasons:
-firstly, it is one of the more elementary non-compact groups not yet studied;
+firstly, it is one of the more elementary non-compact groups not yet studied in the context of global pseudo-differential calculus;
 secondly, by its very definition,
 it naturally describes rigid motions such as the position and orientation of a robot arm or polymer chains like DNA.
 As a result,
@@ -87,12 +88,12 @@ all follow the following steps
 to develop a global pseudo-differential calculus.
 
 \begin{description}
-    \item[Step 1.] Study the (sub-)Laplacian or Rockland operator,
+    \item[Step 1.] Study the (sub-)Laplacian or positive Rockland operator,
         and the corresponding Sobolev spaces.
-    \item[Step 2.] Define a sufficiently general Fourier Transform.
+    \item[Step 2.] Study and generalise the group Fourier Transform.
     \item[Step 3.] Find a family of smooth functions which have a Leibniz-like rule and can be used for a Taylor development.
     \item[Step 4.] Define the symbol classes.
-    \item[Step 5.] Functional calculus of the (sub-)Laplacian or Rockland operator.
+    \item[Step 5.] Study the functional calculus of the (sub-)Laplacian or positive Rockland operator.
     \item[Step 6.] Obtain kernel estimates.
     \item[Step 7.] Prove the composition and adjunction formulae.
 \end{description}
@@ -103,8 +104,15 @@ We start by fixing a (sub-)Laplacian or Rockland operator in the graded case,
 which allows us to define \emph{Sobolev spaces}.
 We then need to show their basic properties,
 the most important of which is the \emph{Sobolev embedding theorem}.
+
+As our kernels and symbols will be linked via the Fourier transform,
+the \emph{Plancherel theory} will allow to get $\Lebesgue 2 \Group$ and more generally $\Sobolev s$ estimates on the kernel from symbolic estimates.
+We shall therefore rely on the Sobolev embedding to obtain further regularity results (e.g.~continuity).
+The role of the Sobolev embedding theorem is thus pivotal in the study of the regularity and the singularities of the kernel.
+
 In the graded case,
-this is done in~\cite[Chapter 4]{FischerRuzhansky16}.
+Sobolev spaces in~\cite[Chapter 4]{FischerRuzhansky16},
+following the stratified case (see~\cite{Folland75}).
 
 In the case of the compact group,
 the \emph{Laplace-Beltrami} operator associated with a normalized bi-invariant metric appears the natural candidate,
@@ -112,8 +120,9 @@ since its eigenspaces arise naturally from the group representations.
 
 \subsection*{Step 2 - Fourier analysis}
 
-Our first step is to make sure that our group has a sufficiently general Fourier transform,
-so that we can define an analogue of the Euclidean Kohn-Nirenberg quantization.
+The main idea is to define an analogue of the Euclidean Kohn-Nirenberg quantisation,
+whereby the \emph{symbol} of a pseudo-differential operator is the \emph{Fourier transform of its convolution kernel}.
+Our first step is thus to extend the group Fourier transform to a suitable subset of tempered distributions.
 
 On our settings,
 the Fourier transform is defined on $\Lebesgue 1 {\Group, \dd g}$ via
@@ -145,28 +154,37 @@ the following \emph{inverse formula}
     \quad g \in \Group.
 \end{align*}
 
-The problem of extending the Fourier transform onto convolution kernels acting on Sobolev spaces (the minimum we need to have a good definition of symbol) was solved in~\cite[Subsection 5.1.1]{FischerRuzhansky16}
-Note that the Fourier analysis on the compact case follows from the Peter-Weyl theory,
-and the Fourier transform can easily be extended onto the set of distributions.
-For more detail,
-see~\cite[Section 10.2]{RuzhanskyTurunen10}.
+The problem of defining an extension of the Fourier Transform to make sense of a \emph{Kohn-Nirenberg quantization} procedure was solved for in~\cite[Subsection 5.1.1]{FischerRuzhansky16} for a very large class of groups,
+since it relies exclusively on the \emph{Plancherel} theorem and the definition of Sobolev spaces.
+
+It is worth keeping in mind that in some simpler settings like the Euclidean and compact cases,
+we have a more natural extension of the Fourier transform
+(see e.g.~\cite{RuzhanskyTurunen10}).
 
 \subsection*{Step 3 - Difference operators}
 
 In~\cite{RuzhanskyTurunen10},
 \citeauthor{RuzhanskyTurunen10} introduce the following notion of difference operator
+to generalise the derivatives in Fourier variables in the Euclidean definition of symbol classes.
 If $q \in \SmoothFunctions \Group$,
-we define
+they define
 \begin{align*}
     \DifferenceOperator [\Group] q \Fourier f = \Fourier \{q f\}.
 \end{align*}
 
-We need to find a family of functions
+When $\Group = \R^n$,
+we recover the classical derivatives in frequency with the collection
+$\Delta \defeq \{x_1, \dots, x_n \in \SmoothFunctions {\R^n}\}$.
+
+We now need to find the properties that a family of functions
 \begin{align*}
     \Delta \defeq \{q_1, \dots, q_{\dimDifferenceOperators} \in \SmoothFunctions \Group\}
 \end{align*}
-with respect to which to take difference operators.
-The main requirements are the following.
+must satisfy in order to develop a global pseudo-differential calculus.
+
+After inspecting the different proofs in the Euclidean~\cite{Stein93},
+compact~\cite{RuzhanskyTurunen10,Fischer2015} and graded~\cite{FischerRuzhansky16} cases,
+the main requirements are the following.
 \begin{itemize}
     \item We can use a \emph{Taylor development} at the origin.
         This is due to the fact that the adjunction and the composition cannot be expressed on the symbolic side without using a Taylor development.
@@ -203,20 +221,23 @@ the authors show that a well-chosen finite subfamily $\Delta$ of
 \begin{align*}
     \{(\tau - \tau(e_\Group))_{m n} : \tau \in \dualGroup \Group, 1 \leq m, n \leq \dimRep \tau\}
 \end{align*}
-has all the required properties.
+can be strongly admissible.
 
 Importantly,
-we do not have an exact \emph{Leibniz rule}
-but the following Leibniz-like rule
+this family yields the following \emph{Leibniz-like} rule
 \begin{align*}
     \DifferenceOperatorOrder \alpha (\Fourier f_1 \Fourier f_2)
     = \sum_{\abs \alpha \leq \abs {\alpha_1} + \abs {\alpha_2} \leq 2 \abs \alpha}
     c^\alpha_{\alpha_1, \alpha_2}
     (\DifferenceOperatorOrder {\alpha_1} \Fourier f_1)
-    (\DifferenceOperatorOrder {\alpha_2} \Fourier f_2).
+    (\DifferenceOperatorOrder {\alpha_2} \Fourier f_2),
 \end{align*}
+which is good enough to establish the calculus,
+but slightly complicates some proofs related to the construction of parametrices.
 
 The compactness of the group allows us to show that the calculus does \emph{not} depend on the choice of strongly admissible difference operators~\cite{RuzhanskyTurunenWirth10,Fischer2015}.
+Such a proof relies strongly on the \emph{finite volume} of our group,
+and it is important to note at this stage that the result does not hold even on $\R^n$.
 
 \subsubsection*{The graded case}
 
@@ -224,20 +245,17 @@ In~\cite{FischerRuzhansky16},
 the authors consider the difference operators associated with \emph{homogeneous polynomials}.
 The dilation structure
 shows that we have a Leibniz rule if we consider a sum on homogeneous degrees
-(see~\cite[Subsection 5.2.1]{FischerRuzhansky16}).
+(see~\cite[Subsection 5.2.1]{FischerRuzhansky16}),
+while the strong admissibility is easily obtained by choosing a suitable basis.
 
-\subsubsection*{The motion group}
-
-As the motion group contains a compact subgroup,
-it should be expected that we shall have the same Leibniz rule as $\CompactGroup$.
-
-\subsection*{Step 4 - Symbol classes}
+\subsection*{Step 4 - Symbol and operator classes}
 
 Very informally,
 we say that $\sigma(g, \xi)$ is a \emph{symbol} if there exists $\kappa \in \SmoothFunctions {\Group, \TemperedDistributions \Group}$ such that
 \begin{align*}
-    \sigma(g, \xi) = \Fourier \{\kappa(g, \dummy)\}(\xi).
+    \sigma(g, \xi) \defeq \Fourier \{\kappa(g, \dummy)\}(\xi)
 \end{align*}
+is defined.
 The distribution $\kappa$ is called the \emph{kernel associated} wih $\sigma$.
 
 Moreover,
@@ -257,19 +275,54 @@ Note that when the Laplacian is central,
 we can assume $\gamma = 0$.
 For the graded case,
 we replace $\Laplacian$ with $\mathcal R$.
+It should be clear that when $\Group = \R^n$,
+we obtain the classical definition of symbol classes.
 
-And like in the Euclidean case,
-we let
+We also let
 \begin{align*}
-    \SmoothingSymbols \defeq \cap_{m \in \R} \SymbolClass m {\rho, \delta}
+    \SmoothingSymbols \defeq \bigcap_{m \in \R} \SymbolClass m {\rho, \delta}
 \end{align*}
 denote the set of \emph{smoothing symbols}.
+
+We define a \emph{pseudo-differential operator} to be an operator arising from a symbol via an analogue of the \emph{Kohn-Nirenberg quantisation}.
+More precisely,
+the operator
+\begin{align*}
+    \Op(\sigma) \phi(g)
+    \defeq \InverseFourier \left\{ \xi \in \dualGroup \Group \mapsto \xi(g) \sigma(g, \xi) \Fourier \phi(\xi)\right\}(g)
+\end{align*}
+is the \emph{pseudo-differential operator} associated with the symbol $\sigma$.
+We easily check that $\Op [\R^n]$ is the usual Kohn-Nirenberg quantisation.
+
+Naturally,
+the quantisation allows us to define \emph{operator classes} via
+\begin{align*}
+    \OperatorClass m {\rho, \delta} &\defeq \Op(\SymbolClass m {\rho, \delta}),\\
+    \SmoothingOperators &\defeq \Op(\SmoothingSymbols).
+\end{align*}
 
 For more information,
 see~\cite[Section 5.1]{FischerRuzhansky16} for the graded case;
 and~\cite[Section 3.1]{Fischer2015} for the compact case.
 
 \subsection*{Step 5 - Functional calculus}
+
+On $\R^n$,
+the composition and adjunction formulae can be proved by carrying out our computations on the frequency space $\dualGroup {\R^n} = \R^n$.
+Since a group Fourier transform is \emph{operator-valued} in more complicated settings,
+it makes sense to attempt to do our calculations on the kernel side.
+Unfortunately,
+kernels may have singularities at the origin,
+unlike symbols which are smooth.
+Therefore, two questions naturally arise.
+
+\begin{itemize}
+    \item What is the \emph{strength} of the singularity of the kernel at the origin?
+    \item Can we \emph{approximate} a symbol $\sigma$ by a sequence of smoothing symbols $\sigma_n$ so that the kernel can be approximated by a sequence of smooth kernels?
+\end{itemize}
+
+In the case of the pseudo-differential operator $\BesselPotential m$,
+the questions is naturally answered via the \emph{functional calculus}.
 
 A crucial step of our analysis is to construct a family of smoothing symbols approximating the identity symbol.
 Using the algebra structure of our symbol classes,
@@ -279,14 +332,17 @@ as we will be able to approximate any symbol with smoothing symbols.
 Ideally,
 we want to create a family $\{\eta_\epsilon = \Fourier p_\epsilon\}_{\epsilon \in (0, 1]} \subset \SmoothingSymbols$
 such that
-\begin{align*}
+\begin{align}
     \SymbolSemiNorm m {\rho, \delta} N {\eta_\epsilon}
     &\leq \epsilon^\frac m \nu,
-    \quad m < 0,\\
+    \quad m < 0,
+    \label{eq:survey:density_estimate:1}
+    \\
     \SymbolSemiNorm m {\rho, \delta} N {\Id {} - \eta_\epsilon}
     &\leq \epsilon^\frac m \nu,
     \quad m \geq 0.
-\end{align*}
+    \label{eq:survey:density_estimate:2}
+\end{align}
 where $\nu$ is the order of the sub-Laplacian or Rockland operator.
 Moreover,
 to prove the Calder\'on-Zygmund property,
@@ -309,7 +365,7 @@ The family of symbols is used in the following proofs.
         where we choose $\epsilon$ so that $\epsilon^\nu$ equals the distance between $h$ and $e_\Group$.
 
         The second term of the right-hand side is the one containing the singularity,
-        and we need good estimates to control it.
+        and we need~\eqref{eq:survey:density_estimate:2} to control it.
 
     \item[Construction of asymptotic limits]
 
@@ -362,8 +418,7 @@ and the aforementioned theorem ensures that this defines a smoothing symbol sati
 
 Following~\cite{FurioliMelziVeneruso06},
 \citeauthor{Fischer2015} shows symbolic estimates for the functional calculus of the Laplace-Beltrami operator in~\cite{Fischer2015}.
-However, as her functional calculus only covers functions with compact support,
-she lets
+However, she proceeds slightly differently by letting
 \begin{align*}
     \eta_\epsilon
     \defeq \chi(\epsilon \xi(\Laplacian [\Group])),
@@ -424,6 +479,44 @@ As soon as we have obtained a good approximation of the identity symbol,
 whether it is via a family $\eta_\epsilon, \epsilon \in (0, 1]$
 or a Littlewood-Paley decomposition,
 the proofs of the kernel estimates and subsequently the composition and adjunction formulae are very similar (when $\rho > \delta$).
+
+Let us sketch the proof of the \emph{adjunction formula}
+and let us keep in mind that the arguments for the composition formula are very similar.
+
+Suppose that $T \defeq \Op(\sigma) \in \OperatorClass m {1, 0}$.
+
+\begin{enumerate}
+    \item As we intend to use a \emph{density} argument,
+        we assume first that $\sigma$ is smoothing.
+    \item Perform an exact computation of the kernel $\tilde \kappa$ of $\adj T$ in terms of the kernel $\kappa$ of $T$.
+
+        More precisely, show that $\adj T$ has right-convolution kernel
+        \begin{align*}
+            \tilde \kappa_g(h) \defeq \conj \kappa_{g h^{-1}}(h^{-1}).
+        \end{align*}
+    \item
+        In particular, its \emph{symbol} is given by taking the Fourier transform of the above
+        \begin{align*}
+            \tilde \sigma(g, \xi) \defeq \Fourier \tilde \kappa_g(\xi)
+            = \int_\Group \conj \kappa_{g h^{-1}}(h^{-1}) \adj{\xi(h)} \dd h.
+        \end{align*}
+    \item
+        In the integral above,
+        we take the \emph{Taylor development} with respect to the variable $h$ appearing in the subscript of the kernel
+        \begin{align*}
+            \tilde \sigma(g, \xi)
+            &= \int_\Group (\sum_{\abs \alpha \leq N} q^{\alpha}(h^{-1}) \LeftDifferentialOperator \alpha \conj \kappa_{g}(h^{-1}) + R_N(h)) \adj{\xi(h)} \dd h\\
+            &= \sum_{\abs \alpha \leq N} \frac 1 {\alpha!} \DifferenceOperatorOrder \alpha \LeftDifferentialOperator \alpha \adj \sigma(g, \xi) + \int_\Group R_N(h) \adj{\xi(h)} \dd h.
+        \end{align*}
+    \item
+        Using the Taylor remainder formula,
+        the integrand on the right can be estimated by an expression such as
+        \begin{align*}
+            \abs {R_N(h)}
+            \leq C d(h, e_\Group)^{N + 1} \sup_{\beta \in B} \sup_{\tilde h \in \Gamma_h} \abs {\LeftDifferentialOperator \beta \kappa_g(\tilde h)}
+        \end{align*}
+        so that the integral can be controlled via good estimates on $\kappa_g$.
+\end{enumerate}
 
 For the compact case,
 see~\cite[Sections 6.3 and 7.3]{Fischer2015};
