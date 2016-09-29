@@ -474,6 +474,44 @@ whether it is via a family $\eta_\epsilon, \epsilon \in (0, 1]$
 or a Littlewood-Paley decomposition,
 the proofs of the kernel estimates and subsequently the composition and adjunction formulae are very similar (when $\rho > \delta$).
 
+Let us sketch the proof of the \emph{adjunction formula}
+and let us keep in mind that the arguments for the composition formula are very similar.
+
+Suppose that $T \defeq \Op(\sigma) \in \OperatorClass m {1, 0}$.
+
+\begin{enumerate}
+    \item As we intend to use a \emph{density} argument,
+        we assume first that $\sigma$ is smoothing.
+    \item Perform an exact computation of the kernel $\tilde \kappa$ of $\adj T$ in terms of the kernel $\kappa$ of $T$.
+
+        More precisely, show that $\adj T$ has right-convolution kernel
+        \begin{align*}
+            \tilde \kappa_g(h) \defeq \conj \kappa_{g h^{-1}}(h^{-1}).
+        \end{align*}
+    \item
+        In particular, its \emph{symbol} is given by taking the Fourier transform of the above
+        \begin{align*}
+            \tilde \sigma(g, \xi) \defeq \Fourier \tilde \kappa_g(\xi)
+            = \int_\Group \conj \kappa_{g h^{-1}}(h^{-1}) \adj{\xi(h)} \dd h.
+        \end{align*}
+    \item
+        In the integral above,
+        we take the \emph{Taylor development} with respect to the variable $h$ appearing in the subscript of the kernel
+        \begin{align*}
+            \tilde \sigma(g, \xi)
+            &= \int_\Group (\sum_{\abs \alpha \leq N} q^{\alpha}(h^{-1}) \LeftDifferentialOperator \alpha \conj \kappa_{g}(h^{-1}) + R_N(h)) \adj{\xi(h)} \dd h\\
+            &= \sum_{\abs \alpha \leq N} \frac 1 {\alpha!} \DifferenceOperatorOrder \alpha \LeftDifferentialOperator \alpha \adj \sigma(g, \xi) + \int_\Group R_N(h) \adj{\xi(h)} \dd h.
+        \end{align*}
+    \item
+        Using the Taylor remainder formula,
+        the integrand on the right can be estimated by an expression such as
+        \begin{align*}
+            \abs {R_N(h)}
+            \leq C d(h, e_\Group)^{N + 1} \sup_{\beta \in B} \sup_{\tilde h \in \Gamma_h} \abs {\LeftDifferentialOperator \beta \kappa_g(\tilde h)}
+        \end{align*}
+        so that the integral can be controlled via good estimates on $\kappa_g$.
+\end{enumerate}
+
 For the compact case,
 see~\cite[Sections 6.3 and 7.3]{Fischer2015};
 for the graded case,
