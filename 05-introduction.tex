@@ -120,8 +120,9 @@ since its eigenspaces arise naturally from the group representations.
 
 \subsection*{Step 2 - Fourier analysis}
 
-Our first step is to make sure that our group has a sufficiently general Fourier transform,
-so that we can define an analogue of the Euclidean Kohn-Nirenberg quantisation.
+The main idea is to define an analogue of the Euclidean Kohn-Nirenberg quantisation,
+whereby the \emph{symbol} of a pseudo-differential operator is the \emph{Fourier transform of its convolution kernel}.
+Our first step is thus to extend the group Fourier transform to a suitable subset of tempered distributions.
 
 On our settings,
 the Fourier transform is defined on $\Lebesgue 1 {\Group, \dd g}$ via
@@ -153,10 +154,11 @@ the following \emph{inverse formula}
     \quad g \in \Group.
 \end{align*}
 
-The problem of extending the Fourier transform onto convolution kernels acting on Sobolev spaces (the minimum we need to have a good definition of symbol) was solved in~\cite[Subsection 5.1.1]{FischerRuzhansky16}
-Note that the Fourier analysis on the compact case follows from the Peter-Weyl theory,
-and the Fourier transform can easily be extended onto the set of distributions.
-For more detail,
+The problem of defining an extension of the Fourier Transform to make sense of a \emph{Kohn-Nirenberg quantization} procedure was solved for in~\cite[Subsection 5.1.1]{FischerRuzhansky16} for a very large class of groups,
+since it relies exclusively on the \emph{Plancherel} theorem and the definition of Sobolev spaces.
+
+It is worth keeping in mind that in some simpler settings like the Euclidean and compact cases,
+we have a more natural extension of the Fourier transform.
 see~\cite[Section 10.2]{RuzhanskyTurunen10}.
 
 \subsection*{Step 3 - Difference operators}
