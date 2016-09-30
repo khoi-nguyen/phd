@@ -650,7 +650,7 @@ $X_1, \cdots, X_{\dim \Group}$ will denote a basis such that
             \begin{align*}
                 \RightDifferentialOperatorFirstOrder Y \phi(x, k)
                 = \sum_{j = 1}^{\dim \VectorSpace} (Y x)_j \D 1 [\phi] {x_j} (x, k)
-                + \RightDifferentialOperatorFirstOrder Y_k \phi(x, k)
+                + {\RightDifferentialOperatorFirstOrder Y}_k \phi(x, k)
             \end{align*}
             where in the above $(x, k) \in \Group$, $\phi \in \SmoothFunctions \Group$,
             and $\RightDifferentialOperatorFirstOrder Y_k$ is the right-invariant vector field on the manifold $\CompactGroup$ acting exclusively on the variable $k \in \CompactGroup$.
@@ -678,7 +678,7 @@ $X_1, \cdots, X_{\dim \Group}$ will denote a basis such that
                 &= \eval {\D* 1 t} {t = 0} \phi( (0_\VectorSpace, \exp_\CompactGroup(t Y)) (x, k) )\\
                 &= \eval {\D* 1 t} {t = 0} \phi(\exp_\CompactGroup(t Y) x, \exp_\CompactGroup(t Y) k)\\
                 &= \sum_{j = 1}^{\dim \VectorSpace} (Y x)_j \D 1 [\phi] {x_j} (x, k)
-                + \RightDifferentialOperatorFirstOrder Y_k \phi(x, k)
+                + {\RightDifferentialOperatorFirstOrder Y}_k \phi(x, k)
             \end{align*}
             as required.
     \end{itemize}
