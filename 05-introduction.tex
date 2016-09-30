@@ -522,6 +522,24 @@ see~\cite[Sections 5.4 and 5.5]{FischerRuzhansky16}.
 
 \section{Overview of thesis}
 
+We essentially follow the strategy mentioned in the previous section for the motion group.
+
+In Chapter~\ref{chapter:preliminaries},
+we introduce the necessary material to follow the arguments developed in subsequent chapters.
+In particular, we recall the definition of Fourier Transform on Lie groups of type I.
+
+In Chapter~\ref{chapter:motion_groups},
+we introduce the Euclidean motion groups,
+study its representation theory and the associated Fourier transform.
+We also comment on the formal but deceptive resemblance between the Fourier theory of the motion group $\R^n \ltimes \SpecialOrthogonalGroup n$
+and the one of the direct product $\R^n \times \SpecialOrthogonalGroup n$.
+
+Chapter~\ref{chapter:symbolic_calculus} will contain the main results of our analysis.
+We first define a good family of Ruzhansky-Turunen difference operators,
+and use them to define our symbol and operator classes.
+
+In Section~\ref{section:functional_calculus},
+we define our symbol family which will allow the crucial density argument mentioned in the previous section.
 Following the ideas of~\cite{Shubin01, RuzhanskyWirth14},
 we define
 \begin{align*}
@@ -535,12 +553,10 @@ via the exponential decay on the contour and elementary estimates on the resolve
 in particular \emph{without using the classical estimates on the heat kernel}.
 
 This strategy generalizes verbatim to more general settings
-(provided that we have good properties difference operators).
-It also means that the results herein could be adapted
-to provide a shorter proof for the kernel estimates,
-and thus by extension also for the composition and the adjunction formulae.
+(provided that we have good properties difference operators),
+but also works on the compact group.
 
-This approach has however (at least) two drawbacks:
+This approach has however at least two drawbacks.
 \begin{itemize}
     \item
         We only show symbolic estimates for the functional calculus associated with the functions $\e^{t z}$,
@@ -559,3 +575,8 @@ This approach has however (at least) two drawbacks:
 It is nevertheless interesting to observe that this approach provides a shorter and more elementary way
 to establish a global pseudo-differential calculus
 if compared with~\cite{Fischer2015,FischerRuzhansky16}.
+
+The rest of Chapter~\ref{chapter:symbolic_calculus} is dedicated to showing the main result of the thesis,
+i.e.\ the composition and adjunction formulae,
+but also the $\Lebesgue 2 \Group$ boundedness.
+We then conclude the proof with the classical application of pseudo-differential calculus to the construction of parametrices.
