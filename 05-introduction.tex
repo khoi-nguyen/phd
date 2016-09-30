@@ -442,17 +442,6 @@ The family of symbols is used in the following proofs.
         for smoothing symbols and conclude by density.
 \end{description}
 
-\subsubsection{The graded case}
-
-The existence of such a family $\eta_\epsilon$ is ensured directly by the \emph{Hulanicki Theorem} (see \cite[Theorem 4.5.1]{FischerRuzhansky16}).
-We can define
-\begin{align*}
-    \eta_\epsilon(\xi) \defeq \Fourier \{\e^{-\epsilon \mathcal R} \delta_{e_\Group}\}(\xi),
-    \quad \xi \in \dualGroup \Group,
-\end{align*}
-where $\mathcal R$ is a positive Rockland operator,
-and the aforementioned theorem ensures that this defines a smoothing symbol satisfying the appropriate symbolic estimates.
-
 \subsubsection{The compact case}
 
 Following the classical heat kernel methods (see e.g.~\cite{FurioliMelziVeneruso06,VaropoulosSaloffCosteCoulhon92}),
@@ -470,6 +459,17 @@ she uses a \emph{Littlewood-Paley} decomposition
 \end{align*}
 where $\eta_{\epsilon, j} \defeq \eta_{2^{-j} \epsilon} - \eta_{2^{-j + 1} \epsilon}$
 and the convergence is understood in the strong operator topology.
+
+\subsubsection{The graded case}
+
+The existence of such a family $\eta_\epsilon$ is ensured directly by the \emph{Hulanicki Theorem} (see \cite[Theorem 4.5.1]{FischerRuzhansky16}).
+We can define
+\begin{align*}
+    \eta_\epsilon(\xi) \defeq \Fourier \{\e^{-\epsilon \mathcal R} \delta_{e_\Group}\}(\xi),
+    \quad \xi \in \dualGroup \Group,
+\end{align*}
+where $\mathcal R$ is a positive Rockland operator,
+and the aforementioned theorem ensures that this defines a smoothing symbol satisfying the appropriate symbolic estimates.
 
 \subsubsection{The motion group}
 
