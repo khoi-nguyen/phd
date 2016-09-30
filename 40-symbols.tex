@@ -2448,26 +2448,27 @@ The aim of this section is to prove the following result.
     \begin{enumerate}
         \item \label{item:kernel_estimates:at_infinity}
             For every $d > 0$ and every $N \in \N$,
-            there exists $C \geq 0$ such that for every $g, h = (y, l) \in \Group$ with $\norm {y} \geq d$, we have
+            there exists $C \geq 0$ and $P \in \N$ such that for every $g, h = (y, l) \in \Group$ with $\norm {y} \geq d$, we have
             \begin{align*}
-                \abs{\kappa_g(h)} \leq C \norm y^{-N}.
+                \abs{\kappa_g(h)} \leq C \SymbolSemiNorm m {\rho, \delta} P \sigma \norm y^{-N}.
             \end{align*}
         \item \label{item:kernel_estimates:at_origin:positive}
-            If $m > - \dim \Group$ and $\rho < 1$, there exists $C \geq 0$ such that for every $g, h \in \Group$ with $h \neq 0$, we have
+            If $m > - \dim \Group$ and $\rho < 1$, there exists $C \geq 0$ and $P \in \N$ such that for every $g, h \in \Group$ with $h \neq 0$, we have
             \begin{align*}
-                \abs{\kappa_g(h)} \leq C \norm [\Group] h^{- \frac{\dim \Group + m}{\rho}}.
+                \abs{\kappa_g(h)} \leq C \SymbolSemiNorm m {\rho, \delta} P \sigma \norm [\Group] h^{- \frac{\dim \Group + m}{\rho}}.
             \end{align*}
         \item \label{item:kernel_estimates:at_origin:zero}
             If $m \geq -\dim \Group$ or $\rho = 1$,
             then for every $\gamma < -(m + \dim \Group)/\rho$,
-            there exists $C \geq 0$ such that for every $g, h \in \Group$ with $h \neq 0$, we have
+            there exists $C \geq 0$ and $P \in \N$ such that for every $g, h \in \Group$ with $h \neq 0$, we have
             \begin{align*}
-                \abs{\kappa_g(h)} \leq C \norm [\Group] h^\gamma.
+                \abs{\kappa_g(h)} \leq C \SymbolSemiNorm m {\rho, \delta} P \sigma \norm [\Group] h^\gamma.
             \end{align*}
         \item \label{item:kernel_estimates:at_origin:negative}
-            If $m < -\dim \Group$, $\kappa_g$ is continuous on $\Group$ and is bounded
+            If $m < -\dim \Group$, $\kappa_g$ is continuous on $\Group$
+            and there exists $C \geq 0$ and $P \in \N$ such that
             \begin{align*}
-                \sup_{g, h \in \Group} \abs{\kappa_g(h)} \leq C < \infty.
+                \sup_{g, h \in \Group} \abs{\kappa_g(h)} \leq C \SymbolSemiNorm m {\rho, \delta} P \sigma < \infty.
             \end{align*}
     \end{enumerate}
 \end{theorem}
