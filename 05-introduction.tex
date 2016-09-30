@@ -20,7 +20,7 @@ Overviews of the theory can be found in e.g.~\cite{Shubin01,Hormander07}.
 While pseudo-differential operators can be defined locally via local charts on any connected manifold,
 two issues arise.
 Firstly,
-operators are usually defined provided that a condition such as
+operators are usually defined provided that a condition on the \emph{type} such as
 \begin{align*}
     1 - \rho \leq \delta < \rho
 \end{align*}
@@ -93,7 +93,7 @@ many partial differential equations from engineering, biology and physics
 are naturally expressed on the motion group.
 More detail on the different applications can be found in \cite{ChirikjianWang04,ChirikjianKyatkin00,Chirikjian13}.
 
-\section{Survey and outline}
+\section{Survey of the compact and graded case}
 
 In this section,
 we informally discuss an overview of the theory on compact and graded Lie groups.
@@ -121,6 +121,10 @@ to develop a global pseudo-differential calculus.
     \item[Step 7.] Prove the composition and adjunction formulae.
 \end{description}
 
+We now present the above steps in more detail,
+and $\Group$ will denote a compact or a graded Lie group until the end of this outline
+unless stated otherwise.
+
 \subsection*{Step 1 - Sobolev spaces}
 
 We start by fixing a (sub-)Laplacian or, in the graded case, a positive Rockland operator.
@@ -133,13 +137,20 @@ the \emph{Plancherel theory} will allow to get $\Lebesgue 2 \Group$ and more gen
 We shall therefore rely on the Sobolev embedding to obtain further regularity results (e.g.~continuity).
 The role of the Sobolev embedding theorem is thus pivotal in the study of the regularity and the singularities of the kernel.
 
+Moreover,
+as we require our pseudo-differential operators to be bounded as a map between suitable Sobolev spaces,
+we expect them to be part of our symbol classes definition.
+
 In the graded case,
-Sobolev spaces in~\cite[Chapter 4]{FischerRuzhansky16},
-following the stratified case (see~\cite{Folland75}).
+Sobolev spaces are studied in~\cite[Chapter 4]{FischerRuzhansky16},
+following the proofs of the stratified case (see~\cite{Folland75}).
 
 In the case of the compact group,
-the \emph{Laplace-Beltrami} operator associated with a normalized bi-invariant metric appears the natural candidate,
+the \emph{Laplace-Beltrami} operator associated with a normalized bi-invariant metric appears the natural candidate to define Sobolev spaces,
 since its eigenspaces arise naturally from the group representations.
+
+From this point onwards,
+$\Laplacian$ will denote the operator with respect to which we have defined our Sobolev spaces.
 
 \subsection*{Step 2 - Fourier analysis}
 
@@ -180,10 +191,6 @@ the following \emph{inverse formula}
 The problem of defining an extension of the Fourier Transform to make sense of a \emph{Kohn-Nirenberg quantization} procedure was solved in~\cite[Subsection 5.1.1]{FischerRuzhansky16} for a very large class of groups,
 since their solution relies exclusively on the \emph{Plancherel} theorem and the definition of Sobolev spaces.
 
-It is worth keeping in mind that in some simpler settings such as the Euclidean and compact cases,
-we have a more natural and more general extension of the Fourier transform
-(see e.g.~\cite{RuzhanskyTurunen10}).
-
 \subsection*{Step 3 - Difference operators}
 
 In~\cite{RuzhanskyTurunen10},
@@ -205,6 +212,11 @@ We now need to find the properties that a family of functions
     \Delta \defeq \{q_1, \dots, q_{\dimDifferenceOperators} \in \SmoothFunctions \Group\}
 \end{align*}
 must satisfy in order to develop a global pseudo-differential calculus.
+We then let
+\begin{align*}
+    q^\alpha \defeq q^{\alpha_1}_1 \dots q^{\alpha_{\dimDifferenceOperators}}_{\dimDifferenceOperators},   
+    \quad \DifferenceOperatorOrder \alpha \defeq \DifferenceOperator {q^\alpha(\dummy^{-1})}.
+\end{align*}
 
 Upon inspection of the different proofs in the Euclidean~\cite{Stein93},
 compact~\cite{RuzhanskyTurunen10,Fischer2015} and graded~\cite{FischerRuzhansky16} cases,
@@ -228,7 +240,7 @@ exactly like in the Euclidean case.
 In particular,
 this means that our kernels will be smooth outside of
 \begin{align}
-    \bigcap_{q \in \Delta} \{q = 0\},
+    \bigcap_{q \in \Delta} \{g \in \Group : q(g) = 0\},
     \label{eq:common_zeros_of_difference_operators}
 \end{align}
 while the above set may contain singularities.
@@ -265,6 +277,7 @@ and it is important to note at this stage that the result does not hold even on 
 
 \subsubsection*{The graded case}
 
+The behaviour of difference operators in the graded case is somehow closer to the Euclidean setting
 In~\cite{FischerRuzhansky16},
 the authors consider the difference operators associated with \emph{homogeneous polynomials}.
 The dilation structure
@@ -297,8 +310,6 @@ uniformly in $g \in \Group$
 and essentially uniformly in $\xi \in \dualGroup \Group$ (with respect to the Plancherel measure).
 Note that when the Laplacian is central,
 we can assume $\gamma = 0$.
-For the graded case,
-we replace $\Laplacian$ with $\mathcal R$.
 It should be clear that when $\Group = \R^n$,
 we obtain the classical definition of symbol classes.
 
@@ -353,7 +364,8 @@ suggests that \emph{functional calculus} is the natural framework to answer such
 A crucial step of our analysis is to construct a family of smoothing symbols approximating the identity symbol.
 Using the algebra structure of our symbol classes,
 this will yield an important density result,
-as we will be able to approximate any symbol with smoothing symbols.
+as we will be able to approximate any symbol with smoothing symbols,
+and by extension any kernel with smooth kernels.
 
 Ideally,
 we would like to create a family $\{\eta_\epsilon = \Fourier p_\epsilon\}_{\epsilon \in (0, 1]} \subset \SmoothingSymbols$
@@ -369,7 +381,7 @@ such that
     \quad m \geq 0,
     \label{eq:survey:density_estimate:2}
 \end{align}
-where $\nu$ is the order of the sub-Laplacian or Rockland operator.
+where $\nu$ is the order of the operator $\Laplacian$.
 Moreover,
 to prove the Calder\'on-Zygmund property,
 we need very good estimates on the kernels $p_\epsilon$.
@@ -425,19 +437,8 @@ The family of symbols is used in the following proofs.
 
         In particular,
         this allows us to show the composition and adjunction formulae only for
-        for smoothing symbols and conclude by density
+        for smoothing symbols and conclude by density.
 \end{description}
-
-\subsubsection{The graded case}
-
-The existence of such a family $\eta_\epsilon$ is ensured directly by the \emph{Hulanicki Theorem} (see \cite[Theorem 4.5.1]{FischerRuzhansky16}).
-We can define
-\begin{align*}
-    \eta_\epsilon(\xi) \defeq \Fourier \{\e^{-\epsilon \mathcal R} \delta_{e_\Group}\}(\xi),
-    \quad \xi \in \dualGroup \Group,
-\end{align*}
-where $\mathcal R$ is a positive Rockland operator,
-and the aforementioned theorem ensures that this defines a smoothing symbol satisfying the appropriate symbolic estimates.
 
 \subsubsection{The compact case}
 
@@ -457,45 +458,15 @@ she uses a \emph{Littlewood-Paley} decomposition
 where $\eta_{\epsilon, j} \defeq \eta_{2^{-j} \epsilon} - \eta_{2^{-j + 1} \epsilon}$
 and the convergence is understood in the strong operator topology.
 
-\subsubsection{The motion group}
+\subsubsection{The graded case}
 
-Following the ideas of~\cite{Shubin01, RuzhanskyWirth14},
-we define
+The existence of such a family $\eta_\epsilon$ is ensured directly by the \emph{Hulanicki Theorem} (see \cite[Theorem 4.5.1]{FischerRuzhansky16}).
+We can define
 \begin{align*}
-    \eta_\epsilon(\xi) \defeq
-    \frac 1 {\i \turn} \int_\Gamma \e^{-t z} \left(\xi(\Id {} - \Laplacian) - z \Id {}\right)^{-1} \dd z,
-    \quad \xi \in \dualGroup \Group
+    \eta_\epsilon(\xi) \defeq \Fourier \{\e^{-\epsilon \Laplacian} \delta_{e_\Group}\}(\xi),
+    \quad \xi \in \dualGroup \Group,
 \end{align*}
-with an appropriate contour $\Gamma \subset \C$
-and we show the symbolic estimates on $\eta_\epsilon$ and $\Id {} - \eta_\epsilon$
-via the exponential decay on the contour and elementary estimates on the resolvent,
-in particular \emph{without using the classical estimates on the heat kernel}.
-
-This strategy generalizes verbatim to more general settings
-(provided that we have good properties difference operators).
-It also means that the results herein could be adapted
-to provide a shorter proof for the kernel estimates,
-and thus by extension also for the composition and the adjunction formulae.
-
-This approach has however (at least) two drawbacks:
-\begin{itemize}
-    \item
-        We only show symbolic estimates for the functional calculus associated with the functions $\e^{t z}$,
-        $1 - \e^{t z}$, and $z^\gamma$,
-        while~\cite{FischerRuzhansky16} and~\cite{Fischer2015} prove a much more general result in their respective cases.
-    \item
-        The kernel estimates when $\rho = 1$,
-        essential to show the Calder\'on-Zygmund property,
-        are trickier to obtain
-        and will require better estimates on the kernel.
-        As a result,
-        we will have to follow~\cite{Fischer2015}
-        to prove the $\Lebesgue p \Group$ boundedness.
-\end{itemize}
-
-It is nevertheless interesting to observe that this approach provides a shorter and more elementary way
-to establish a global pseudo-differential calculus
-if compared with~\cite{Fischer2015,FischerRuzhansky16}.
+and the aforementioned theorem ensures that this defines a smoothing symbol satisfying the appropriate symbolic estimates.
 
 \subsection*{Steps 6 and 7 - Kernel estimates and calculus proofs}
 
@@ -504,8 +475,9 @@ whether it is via a family $\eta_\epsilon, \epsilon \in (0, 1]$
 or a Littlewood-Paley decomposition,
 the proofs of the kernel estimates and subsequently the composition and adjunction formulae are very similar (when $\rho > \delta$).
 
-Let us sketch the proof of the \emph{adjunction formula}
-and let us keep in mind that the arguments for the composition formula are very similar.
+In order to better understand the importance of the kernel estimates,
+let us sketch the proof of the \emph{adjunction formula}
+while keeping in mind that the arguments for the composition formula are very similar.
 
 Suppose that $T \defeq \Op(\sigma) \in \OperatorClass m {1, 0}$.
 
@@ -548,3 +520,64 @@ For the compact case,
 see~\cite[Sections 6.3 and 7.3]{Fischer2015};
 for the graded case,
 see~\cite[Sections 5.4 and 5.5]{FischerRuzhansky16}.
+
+\section{Overview of thesis}
+
+We essentially follow the strategy mentioned in the previous section for the motion group.
+
+In Chapter~\ref{chapter:preliminaries},
+we introduce the necessary material to follow the arguments developed in subsequent chapters.
+In particular, we recall the definition of Fourier Transform on Lie groups of type I.
+
+In Chapter~\ref{chapter:motion_groups},
+we introduce the Euclidean motion groups,
+study its representation theory and the associated Fourier transform.
+We also comment on the formal but deceptive resemblance between the Fourier theory of the motion group $\R^n \ltimes \SpecialOrthogonalGroup n$
+and the one of the direct product $\R^n \times \SpecialOrthogonalGroup n$.
+
+Chapter~\ref{chapter:symbolic_calculus} will contain the main results of our analysis.
+We first define a good family of Ruzhansky-Turunen difference operators,
+and use them to define our symbol and operator classes.
+
+In Section~\ref{section:functional_calculus},
+we define our symbol family which will allow the crucial density argument mentioned in the previous section.
+Following the ideas of~\cite{Shubin01, RuzhanskyWirth14},
+we define
+\begin{align*}
+    \eta_\epsilon(\xi) \defeq
+    \frac 1 {\i \turn} \int_\Gamma \e^{-t z} \left(\xi(\Id {} - \Laplacian) - z \Id {}\right)^{-1} \dd z,
+    \quad \xi \in \dualGroup \Group
+\end{align*}
+with an appropriate contour $\Gamma \subset \C$
+and we show the symbolic estimates on $\eta_\epsilon$ and $\Id {} - \eta_\epsilon$
+via the exponential decay on the contour and elementary estimates on the resolvent,
+in particular \emph{without using the classical estimates on the heat kernel}.
+
+This strategy generalizes verbatim to more general settings
+(provided that we have good properties difference operators),
+but also works on the compact group.
+
+This approach has however at least two drawbacks.
+\begin{itemize}
+    \item
+        We only show symbolic estimates for the functional calculus associated with the functions $\e^{t z}$,
+        $1 - \e^{t z}$, and $z^\gamma$,
+        while~\cite{FischerRuzhansky16} and~\cite{Fischer2015} prove a much more general result in their respective cases.
+    \item
+        The kernel estimates when $\rho = 1$,
+        essential to show the Calder\'on-Zygmund property,
+        are trickier to obtain
+        and will require better estimates on the kernel.
+        As a result,
+        we will have to follow~\cite{Fischer2015}
+        to prove the $\Lebesgue p \Group$ boundedness.
+\end{itemize}
+
+It is nevertheless interesting to observe that this approach provides a shorter and more elementary way
+to establish a global pseudo-differential calculus
+if compared with~\cite{Fischer2015,FischerRuzhansky16}.
+
+The rest of Chapter~\ref{chapter:symbolic_calculus} is dedicated to showing the main result of the thesis,
+i.e.\ the composition and adjunction formulae,
+but also the $\Lebesgue 2 \Group$ boundedness.
+We then conclude the proof with the classical application of pseudo-differential calculus to the construction of parametrices.
