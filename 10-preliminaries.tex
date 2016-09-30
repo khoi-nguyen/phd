@@ -867,6 +867,35 @@ nor is it necessary to have such an extension for the purpose of pseudo-differen
 We briefly present here \citeauthor{FischerRuzhansky16}'s construction (see \cite[Subsection 5.1.2]{FischerRuzhansky16}),
 which works for a much more general class of groups.
 
+The central idea is the following:
+the \emph{Abstract Plancherel Theorem}~\cite[Subsection 1.8.2]{FischerRuzhansky16} implies that
+any left invariant operator $T$ belongs to $\Lin {\Lebesgue 2 \Group}$ if and only if
+\begin{align*}
+    T \phi(g) = \int_{\dualGroup \Group} \tr(\xi(g) \sigma(\xi) \Fourier \phi(\xi)) \dd \Plancherel {\Group}(\xi)
+\end{align*}
+for some measurable field $\xi \in \dualGroup \Group \mapsto \sigma(\xi) \in \Lin {\mathcal H_\xi}$
+which satisfies
+\begin{align*}
+    \esssup_{\xi \in \dualGroup \Group} \norm [\Lin {\mathcal H_\xi}] {\sigma(\xi)} < \infty.
+\end{align*}
+
+Motivated by Proposition~\ref{proposition:elementary_properties_of_the_Fourier_transform},
+we say that $\sigma$ is then the Fourier transform of the \emph{right-convolution kernel} associated with $T$.
+
+If $\kappa \in \TemperedDistributions \Group$ is the right-convolution kernel of a bounded operator
+\begin{align*}
+    T : \Sobolev a \to \Sobolev b,
+\end{align*}
+we define
+\begin{align*}
+    \Fourier \kappa(\xi) \defeq
+    \Rep \lambda \BesselPotential {-b}
+    \Fourier \{ \BesselPotential b \BesselPotentialRight {-a} \kappa \}
+    \Rep \lambda \BesselPotential a
+\end{align*}
+
+More detail is available in~\cite{FischerRuzhansky16}.
+
 %\section{The direct product case}
 %
 %As our representations on the motion group will act on $\Lebesgue{2}\CompactGroup$,
