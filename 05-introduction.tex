@@ -93,7 +93,7 @@ many partial differential equations from engineering, biology and physics
 are naturally expressed on the motion group.
 More detail on the different applications can be found in \cite{ChirikjianWang04,ChirikjianKyatkin00,Chirikjian13}.
 
-\section{Survey and outline}
+\section{Survey}
 
 In this section,
 we informally discuss an overview of the theory on compact and graded Lie groups.
@@ -468,46 +468,6 @@ We can define
 \end{align*}
 and the aforementioned theorem ensures that this defines a smoothing symbol satisfying the appropriate symbolic estimates.
 
-\subsubsection{The motion group}
-
-Following the ideas of~\cite{Shubin01, RuzhanskyWirth14},
-we define
-\begin{align*}
-    \eta_\epsilon(\xi) \defeq
-    \frac 1 {\i \turn} \int_\Gamma \e^{-t z} \left(\xi(\Id {} - \Laplacian) - z \Id {}\right)^{-1} \dd z,
-    \quad \xi \in \dualGroup \Group
-\end{align*}
-with an appropriate contour $\Gamma \subset \C$
-and we show the symbolic estimates on $\eta_\epsilon$ and $\Id {} - \eta_\epsilon$
-via the exponential decay on the contour and elementary estimates on the resolvent,
-in particular \emph{without using the classical estimates on the heat kernel}.
-
-This strategy generalizes verbatim to more general settings
-(provided that we have good properties difference operators).
-It also means that the results herein could be adapted
-to provide a shorter proof for the kernel estimates,
-and thus by extension also for the composition and the adjunction formulae.
-
-This approach has however (at least) two drawbacks:
-\begin{itemize}
-    \item
-        We only show symbolic estimates for the functional calculus associated with the functions $\e^{t z}$,
-        $1 - \e^{t z}$, and $z^\gamma$,
-        while~\cite{FischerRuzhansky16} and~\cite{Fischer2015} prove a much more general result in their respective cases.
-    \item
-        The kernel estimates when $\rho = 1$,
-        essential to show the Calder\'on-Zygmund property,
-        are trickier to obtain
-        and will require better estimates on the kernel.
-        As a result,
-        we will have to follow~\cite{Fischer2015}
-        to prove the $\Lebesgue p \Group$ boundedness.
-\end{itemize}
-
-It is nevertheless interesting to observe that this approach provides a shorter and more elementary way
-to establish a global pseudo-differential calculus
-if compared with~\cite{Fischer2015,FischerRuzhansky16}.
-
 \subsection*{Steps 6 and 7 - Kernel estimates and calculus proofs}
 
 As soon as we have obtained a good approximation of the identity symbol,
@@ -559,3 +519,43 @@ For the compact case,
 see~\cite[Sections 6.3 and 7.3]{Fischer2015};
 for the graded case,
 see~\cite[Sections 5.4 and 5.5]{FischerRuzhansky16}.
+
+\section{Outline}
+
+Following the ideas of~\cite{Shubin01, RuzhanskyWirth14},
+we define
+\begin{align*}
+    \eta_\epsilon(\xi) \defeq
+    \frac 1 {\i \turn} \int_\Gamma \e^{-t z} \left(\xi(\Id {} - \Laplacian) - z \Id {}\right)^{-1} \dd z,
+    \quad \xi \in \dualGroup \Group
+\end{align*}
+with an appropriate contour $\Gamma \subset \C$
+and we show the symbolic estimates on $\eta_\epsilon$ and $\Id {} - \eta_\epsilon$
+via the exponential decay on the contour and elementary estimates on the resolvent,
+in particular \emph{without using the classical estimates on the heat kernel}.
+
+This strategy generalizes verbatim to more general settings
+(provided that we have good properties difference operators).
+It also means that the results herein could be adapted
+to provide a shorter proof for the kernel estimates,
+and thus by extension also for the composition and the adjunction formulae.
+
+This approach has however (at least) two drawbacks:
+\begin{itemize}
+    \item
+        We only show symbolic estimates for the functional calculus associated with the functions $\e^{t z}$,
+        $1 - \e^{t z}$, and $z^\gamma$,
+        while~\cite{FischerRuzhansky16} and~\cite{Fischer2015} prove a much more general result in their respective cases.
+    \item
+        The kernel estimates when $\rho = 1$,
+        essential to show the Calder\'on-Zygmund property,
+        are trickier to obtain
+        and will require better estimates on the kernel.
+        As a result,
+        we will have to follow~\cite{Fischer2015}
+        to prove the $\Lebesgue p \Group$ boundedness.
+\end{itemize}
+
+It is nevertheless interesting to observe that this approach provides a shorter and more elementary way
+to establish a global pseudo-differential calculus
+if compared with~\cite{Fischer2015,FischerRuzhansky16}.
