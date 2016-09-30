@@ -310,8 +310,6 @@ uniformly in $g \in \Group$
 and essentially uniformly in $\xi \in \dualGroup \Group$ (with respect to the Plancherel measure).
 Note that when the Laplacian is central,
 we can assume $\gamma = 0$.
-For the graded case,
-we replace $\Laplacian$ with $\mathcal R$.
 It should be clear that when $\Group = \R^n$,
 we obtain the classical definition of symbol classes.
 
@@ -383,7 +381,7 @@ such that
     \quad m \geq 0,
     \label{eq:survey:density_estimate:2}
 \end{align}
-where $\nu$ is the order of the sub-Laplacian or Rockland operator.
+where $\nu$ is the order of the operator $\Laplacian$.
 Moreover,
 to prove the Calder\'on-Zygmund property,
 we need very good estimates on the kernels $p_\epsilon$.
@@ -465,10 +463,9 @@ and the convergence is understood in the strong operator topology.
 The existence of such a family $\eta_\epsilon$ is ensured directly by the \emph{Hulanicki Theorem} (see \cite[Theorem 4.5.1]{FischerRuzhansky16}).
 We can define
 \begin{align*}
-    \eta_\epsilon(\xi) \defeq \Fourier \{\e^{-\epsilon \mathcal R} \delta_{e_\Group}\}(\xi),
+    \eta_\epsilon(\xi) \defeq \Fourier \{\e^{-\epsilon \Laplacian} \delta_{e_\Group}\}(\xi),
     \quad \xi \in \dualGroup \Group,
 \end{align*}
-where $\mathcal R$ is a positive Rockland operator,
 and the aforementioned theorem ensures that this defines a smoothing symbol satisfying the appropriate symbolic estimates.
 
 \subsubsection{The motion group}
