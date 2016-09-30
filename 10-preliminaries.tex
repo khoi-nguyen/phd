@@ -867,87 +867,87 @@ nor is it necessary to have such an extension for the purpose of pseudo-differen
 We briefly present here \citeauthor{FischerRuzhansky16}'s construction (see \cite[Subsection 5.1.2]{FischerRuzhansky16}),
 which works for a much more general class of groups.
 
-\section{The direct product case}
-
-As our representations on the motion group will act on $\Lebesgue{2}\CompactGroup$,
-we will define our Fourier Transform on $\CompactGroup$ so that it acts on $\Lebesgue{2}\CompactGroup$ as well.
-This will allow useful comparisons later on.
-
-\begin{definition}[Representations on $\GroupDirect$]
-    Let $\lambda \in \VectorSpace$.
-    We define the representation associated to $\lambda$,
-    \begin{align*}
-        \Rep [\GroupDirect] \lambda : \Group \to \Lin{\Lebesgue 2 \CompactGroup},
-    \end{align*}
-    via
-    \begin{align*}
-        \Rep [\GroupDirect] \lambda (x, k) \defeq \e^{\i \turn \ip \lambda x} \RightRegularRepresentation (k),
-    \end{align*}
-    where $(x, k) \in \GroupDirect$.
-\end{definition}
-
-\begin{definition}[Fourier Transform]
-    Let $f \in \Lebesgue 1 \GroupDirect$ and $\lambda \in \VectorSpace$.
-    We define the \emph{Fourier coefficient of $f$} at $\lambda$,
-    denoted via $\Fourier[\GroupDirect] f(\lambda)$, via
-    \begin{align*}
-        \Fourier [\GroupDirect] f(\lambda) \defeq \int_\CompactGroup f(x, k) \e^{\i \turn \ip \lambda x} \adj{\RightRegularRepresentation(k)} \dd (x, k).
-    \end{align*}
-    The map
-    \begin{align*}
-        \lambda \in \VectorSpace \mapsto \Fourier [\GroupDirect] f(\lambda)
-    \end{align*}
-    is called the \emph{Fourier Transform} of $f$ on $\GroupDirect$.
-\end{definition}
-
-\begin{proposition}[Plancherel formula]
-    Let $f_1, f_2 \in \Lebesgue 1 \GroupDirect$.
-    If in addition $f_1, f_2 \in \Lebesgue 2 \GroupDirect$,
-    then the following identity holds
-    \begin{align*}
-        \ip [\Lebesgue 2 \GroupDirect] {f_1} {f_2}
-        = \int_\VectorSpace \tr\left(\Fourier [\GroupDirect] f_1(\lambda) \adj{\Fourier [\GroupDirect] f_2(\lambda)}\right) \dd \lambda.
-    \end{align*}
-\end{proposition}
-
-\begin{proposition}[Inverse formula]
-    Let $f \in \SmoothFunctions \GroupDirect$.
-    If $(x, k) \in \GroupDirect$,
-    then $f$ can be recovered via the formula
-    \begin{align*}
-        f(x, k) = \int_\VectorSpace \tr\left(\e^{\i \turn \ip x \lambda} \RightRegularRepresentation(k) \Fourier[\GroupDirect] f(\lambda) \right) \dd \lambda.
-    \end{align*}
-\end{proposition}
-
-\begin{lemma}
-    For each $\tau \in \dualGroup\CompactGroup$,
-    the space $\HilbertCompactGroup{\tau}$ is an eigenspace of the operator $\Laplacian[\CompactGroup]$.
-    Denoting by $\JapaneseBracket{\CompactGroup}{\tau}$ the eigenvalue associated with the operator $\BesselPotential[\CompactGroup]{1}$ on the eigenspace $\HilbertCompactGroup\tau$, we obtain
-    \begin{align*}
-        \eval{\RightRegularRepresentation\left(\BesselPotential[\CompactGroup]{1}\right)}{\HilbertCompactGroup\tau}
-        = \JapaneseBracket{\CompactGroup}{\tau} \Id{\HilbertCompactGroup\tau}
-    \end{align*}
-\end{lemma}
-
-\begin{lemma}[Infinitesimal representations of the Laplacian]
-    Let $\lambda \in \VectorSpace$.
-    The infinitesimal representation of the Laplacian $\Laplacian [\GroupDirect] = \Laplacian [\VectorSpace] + \Laplacian [\CompactGroup]$
-    is given by
-    \begin{align*}
-        \Rep [\GroupDirect] \lambda (\Laplacian [\GroupDirect])
-        = - (\turn)^2 \norm \lambda^2 \Id{\Lebesgue 2 \CompactGroup} + \Laplacian [\CompactGroup]
-    \end{align*}
-\end{lemma}
-
-\begin{proposition}[Sobolev inequality]
-    Let $s \in \R$.
-    We have
-    \begin{align*}
-        \norm [\Lebesgue 2 \GroupDirect] {\BesselPotentialKernel [\GroupDirect] {s}}^2
-        \defeq \int_\VectorSpace \tr(\Rep [\GroupDirect] \lambda (\BesselPotential [\GroupDirect] {2s}) \dd \lambda < \infty
-    \end{align*}
-    if and only if $s > (\dim \VectorSpace + \dim \CompactGroup) / 2$.
-\end{proposition}
+%\section{The direct product case}
+%
+%As our representations on the motion group will act on $\Lebesgue{2}\CompactGroup$,
+%we will define our Fourier Transform on $\CompactGroup$ so that it acts on $\Lebesgue{2}\CompactGroup$ as well.
+%This will allow useful comparisons later on.
+%
+%\begin{definition}[Representations on $\GroupDirect$]
+%    Let $\lambda \in \VectorSpace$.
+%    We define the representation associated to $\lambda$,
+%    \begin{align*}
+%        \Rep [\GroupDirect] \lambda : \Group \to \Lin{\Lebesgue 2 \CompactGroup},
+%    \end{align*}
+%    via
+%    \begin{align*}
+%        \Rep [\GroupDirect] \lambda (x, k) \defeq \e^{\i \turn \ip \lambda x} \RightRegularRepresentation (k),
+%    \end{align*}
+%    where $(x, k) \in \GroupDirect$.
+%\end{definition}
+%
+%\begin{definition}[Fourier Transform]
+%    Let $f \in \Lebesgue 1 \GroupDirect$ and $\lambda \in \VectorSpace$.
+%    We define the \emph{Fourier coefficient of $f$} at $\lambda$,
+%    denoted via $\Fourier[\GroupDirect] f(\lambda)$, via
+%    \begin{align*}
+%        \Fourier [\GroupDirect] f(\lambda) \defeq \int_\CompactGroup f(x, k) \e^{\i \turn \ip \lambda x} \adj{\RightRegularRepresentation(k)} \dd (x, k).
+%    \end{align*}
+%    The map
+%    \begin{align*}
+%        \lambda \in \VectorSpace \mapsto \Fourier [\GroupDirect] f(\lambda)
+%    \end{align*}
+%    is called the \emph{Fourier Transform} of $f$ on $\GroupDirect$.
+%\end{definition}
+%
+%\begin{proposition}[Plancherel formula]
+%    Let $f_1, f_2 \in \Lebesgue 1 \GroupDirect$.
+%    If in addition $f_1, f_2 \in \Lebesgue 2 \GroupDirect$,
+%    then the following identity holds
+%    \begin{align*}
+%        \ip [\Lebesgue 2 \GroupDirect] {f_1} {f_2}
+%        = \int_\VectorSpace \tr\left(\Fourier [\GroupDirect] f_1(\lambda) \adj{\Fourier [\GroupDirect] f_2(\lambda)}\right) \dd \lambda.
+%    \end{align*}
+%\end{proposition}
+%
+%\begin{proposition}[Inverse formula]
+%    Let $f \in \SmoothFunctions \GroupDirect$.
+%    If $(x, k) \in \GroupDirect$,
+%    then $f$ can be recovered via the formula
+%    \begin{align*}
+%        f(x, k) = \int_\VectorSpace \tr\left(\e^{\i \turn \ip x \lambda} \RightRegularRepresentation(k) \Fourier[\GroupDirect] f(\lambda) \right) \dd \lambda.
+%    \end{align*}
+%\end{proposition}
+%
+%\begin{lemma}
+%    For each $\tau \in \dualGroup\CompactGroup$,
+%    the space $\HilbertCompactGroup{\tau}$ is an eigenspace of the operator $\Laplacian[\CompactGroup]$.
+%    Denoting by $\JapaneseBracket{\CompactGroup}{\tau}$ the eigenvalue associated with the operator $\BesselPotential[\CompactGroup]{1}$ on the eigenspace $\HilbertCompactGroup\tau$, we obtain
+%    \begin{align*}
+%        \eval{\RightRegularRepresentation\left(\BesselPotential[\CompactGroup]{1}\right)}{\HilbertCompactGroup\tau}
+%        = \JapaneseBracket{\CompactGroup}{\tau} \Id{\HilbertCompactGroup\tau}
+%    \end{align*}
+%\end{lemma}
+%
+%\begin{lemma}[Infinitesimal representations of the Laplacian]
+%    Let $\lambda \in \VectorSpace$.
+%    The infinitesimal representation of the Laplacian $\Laplacian [\GroupDirect] = \Laplacian [\VectorSpace] + \Laplacian [\CompactGroup]$
+%    is given by
+%    \begin{align*}
+%        \Rep [\GroupDirect] \lambda (\Laplacian [\GroupDirect])
+%        = - (\turn)^2 \norm \lambda^2 \Id{\Lebesgue 2 \CompactGroup} + \Laplacian [\CompactGroup]
+%    \end{align*}
+%\end{lemma}
+%
+%\begin{proposition}[Sobolev inequality]
+%    Let $s \in \R$.
+%    We have
+%    \begin{align*}
+%        \norm [\Lebesgue 2 \GroupDirect] {\BesselPotentialKernel [\GroupDirect] {s}}^2
+%        \defeq \int_\VectorSpace \tr(\Rep [\GroupDirect] \lambda (\BesselPotential [\GroupDirect] {2s}) \dd \lambda < \infty
+%    \end{align*}
+%    if and only if $s > (\dim \VectorSpace + \dim \CompactGroup) / 2$.
+%\end{proposition}
 
 %\section{Difference operators}
 %
