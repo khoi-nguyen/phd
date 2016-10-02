@@ -3549,12 +3549,13 @@ The first step consists of computing the kernel of the adjoint of a smoothing op
 \label{lemma:prepare_adjoint_formula}
     Let $m \in \R$ and
     assume that $1 \geq \rho > \delta \geq 0$.
-    For each $\beta_0 \in \N^{\dim \Group}$ and each $M, N \in \N$ satisfying
+    Fix also $\beta_0 \in \N^{\dim \Group}$ and $N \in \N$.
+    If there exists $M \in \N$ such that $N \geq 2M$ and
     \begin{align*}
         (\rho - \delta) (N + 1) + \rho (\dim \Group)
         > m + 2 M + \delta \abs {\beta_0} + \dim \Group,
     \end{align*}
-    there exists $C \geq 0$ and $P \in \N$ such that for any $\sigma \in \SmoothingSymbols$,
+    then there exists $C \geq 0$ and $P \in \N$ such that for any $\sigma \in \SmoothingSymbols$,
     \begin{align*}
         &\norm [\Lin {\Lebesgue 2 \Group}] {%
         \LeftDifferentialOperator [g] {\beta_0} (
