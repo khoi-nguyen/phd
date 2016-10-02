@@ -21,6 +21,17 @@ as we shall see in Chapter~\ref{chapter:symbolic_calculus}.
 
 \section{Motion groups}
 
+Given $x, y \in \VectorSpace$
+let us denote by $g_{x, k}$ the affine transformation on $\VectorSpace$ consisting in a rotation by $k$ followed by a translation by $x$.
+Naturally,
+such transformations compose in the following way
+\begin{align*}
+    (g_{x, k} \circ g_{y, l})(z) = g_{x + k y, k l},
+\end{align*}
+where $x, y \in \VectorSpace$ and $k, l \in \SpecialOrthogonalGroup \VectorSpace$.
+
+This motivates the following definition.
+
 \begin{definition}[Motion group]
 \label{definition:motion_group}
 \index{motion group}
