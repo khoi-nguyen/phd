@@ -4704,8 +4704,13 @@ We can now state and prove the main result of the section.
 
 \section{Construction of parametrices}
 
-Given $\Lambda \geq 0$,
-we let
+In this section,
+we show that the composition formula (Theorem~\ref{theorem:composition_formula})
+and the construction of asymptotic limits (Proposition~\ref{proposition:asymptotic_sum_of_symbols})
+can be used to construct parametrices of so-called \emph{elliptic pseudo-differential operators}.
+
+Before defining the concept of ellipticity,
+we introduce the following notation
 \begin{align*}
     E_\lambda(\Lambda)
     \defeq
@@ -4714,6 +4719,9 @@ we let
         0 & \text{otherwise}
     \end{cases}
 \end{align*}
+when $\Lambda \geq 0$.
+
+We shall say that a symbol is \emph{elliptic} if it is pointwise invertible for ``high frequencies''.
 
 \begin{definition}[Ellipticity]
 \label{definition:ellipticity}
@@ -4731,6 +4739,9 @@ we let
     holds for every $F \in E_\lambda(\Lambda) \SmoothFunctions \CompactGroup$
     and every $(g, \lambda) \in \Group \times \VectorSpace$.
 \end{definition}
+
+From the definition of ellipticity,
+we can construct an ``inverse for high frequencies'' which satisfy certain symbolic estimates.
 
 \begin{lemma}[Inverse of an elliptic symbol]
 \label{lemma:inverse_of_elliptic_symbol}
@@ -4790,6 +4801,9 @@ we let
     \end{align*}
     which shows~\eqref{eq:boundedness_of_E_lambda_Lambda_sigma_inverse}.
 \end{proof}
+
+The previous lemma can be used to construct a symbol
+which inverts an elliptic symbol modulo $\SmoothingSymbols$.
 
 \begin{proposition}[Inverse of an elliptic symbol]
 \label{proposition:inverse_of_elliptic_symbol}
@@ -4943,6 +4957,8 @@ we let
     The general case can be deduced similarly by applying $\LeftDifferentialOperator \beta \DifferenceOperatorOrder \alpha$ to~\eqref{eq:identity_satisfied_by_inverse_of_symbol}.
 \end{proof}
 
+We are now able to prove that any \emph{elliptic pseudo-differential operator} admits a left parametrix.
+
 \begin{theorem}[Existence of left parametrices]
 \label{theorem:construction_of_parametrices}
     Let $A \in \OperatorClass m {\rho, \delta}$ be an $m$-elliptic operator of order $m$ with $1 \geq \rho > \delta \geq 0$.
@@ -5002,6 +5018,9 @@ we let
     \end{align*}
     concluding the proof.
 \end{proof}
+
+Combined with the $\Lebesgue 2 \Group$ boundedness,
+the existence of parametrices yields the following result.
 
 \begin{corollary}[A-priori estimates]
 \label{corollary:a-priori_estimates}
