@@ -3017,75 +3017,8 @@ We then show in Subsection~\ref{subsection:simplification_of_symbol_classes_defi
 that the symbol classes can be defined in an equivalent way by only considering the action of the right-invariant Laplacian,
 which will allow us to conclude in~\ref{subsection:pseudo-differential_calculus} that both the composition and the adjunction formulae hold.
 
-\subsection{Composition formula}
-
-The first step to obtain the composition formula
-is to understand the composition of two smoothing operators on the kernel side.
-
-\begin{lemma}
-    Let $\sigma_1, \sigma_2 \in \SmoothingSymbols$
-    and denote by $\kappa_1$ and $\kappa_2$ their respective associated kernels.
-    We also set
-    \begin{align*}
-        \kappa_g(h) \defeq \int_\Group \kappa_{2, g l^{-1}}(h l^{-1}) \kappa_{1, g}(l) \dd l
-    \end{align*}
-    for each $g, h \in \Group$,
-    and subsequently define the map
-    \begin{align*}
-        \sigma(g, \lambda) \defeq \Fourier \kappa_g(\lambda),
-        \quad g \in \Group, \lambda \in \VectorSpace.
-    \end{align*}
-
-    The map $\sigma$ defined above is a smoothing symbol for which
-    \begin{align}
-        \sigma(g, \lambda) = \int_\Group \kappa_{1, g}(l) \adj {\Rep \lambda(l)} \sigma_2(g l^{-1}, \lambda) \dd l
-        \label{eq:formal_expression_for_the_symbol_obtained_by_composition}
-    \end{align}
-    holds for all $g \in \Group$ and $\lambda \in \VectorSpace$.
-\end{lemma}
-\begin{proof}
-    % Check it defines a symbol
-    It should be clear that $\kappa$ is smooth on $\Group \times \Group$.
-    To show that the Fourier transform of $\kappa_g$ is well defined,
-    check that $\kappa_g \in \Lebesgue 1 \CompactGroup$.
-    Indeed,
-    \begin{align*}
-        \int_\Group \abs{\kappa_g(h)} \dd h
-        &\leq \int_\Group \int_\Group \abs {\kappa_{2, g l^{-1}}(h l^{-1}) \kappa_{1, g}(l)} \dd l \dd h\\
-        &\leq \max_{g' \in \Group} \int_\Group \abs {\kappa_{2, g'}(h')} \dd h'
-        \int_\Group \abs{\kappa_{1, g}(l)} \dd l
-    \end{align*}
-
-    Let us check that $\kappa_g$ is the kernel of $\Op(\sigma_1) \Op(\sigma_2)$.
-    Applying the quantization formula twice (Proposition~\ref{proposition:quantization}),
-    we obtain
-    \begin{align*}
-        \Op(\sigma_1) \Op(\sigma_2) \phi(g)
-        &= \int_\Group \Op(\sigma_2) \phi(h) \kappa_1(g, h^{-1} g) \dd h\\
-        &= \int_\Group \int_\Group \phi(l) \kappa_2(h, l^{-1} h) \kappa_1(g, h^{-1} g) \dd l \dd h.
-    \end{align*}
-
-    In the right hand side of the above,
-    we can let $m = h^{-1} g$ to obtain
-    \begin{align*}
-        \Op(\sigma_1) \Op(\sigma_2) \phi(g)
-        &= \int_\Group \phi(l) \int_\Group \kappa_2(g m^{-1}, l^{-1} x m^{-1}) \kappa_1(g, m) \dd m \dd l\\
-        &= \int_\Group \phi(l) \kappa_g(l^{-1} g) \dd l
-        = \conv \phi {\kappa_g}(g),
-    \end{align*}
-    which means that $\Op(\sigma_1) \Op(\sigma_2) = \Op(\sigma)$.
-
-    From there, let us try to obtain a more explicit formula describing $\sigma$.
-    Taking the Fourier Transform,
-    we get
-    \begin{align*}
-        \sigma(g, \lambda)
-        &= \int_\Group \kappa_g(h) \adj{\Rep \lambda(h)} \dd h\\
-        &= \int_\Group \int_\Group \kappa_2(g m^{-1}, h m^{-1}) \kappa_1(x, m) \adj{\Rep \lambda(m)} \adj{\Rep \lambda(h m^{-1})} \dd h \dd m\\
-        &= \int_\Group \kappa_1(g, m) \adj{\Rep \lambda(m)} \sigma_2(g m^{-1}, \lambda) \dd m,
-    \end{align*}
-    concluding the proof.
-\end{proof}
+Before we start,
+let us state a proof that will be used in the proof of both results.
 
 \begin{lemma}
 \label{lemma:integrability_of_kernel}
@@ -3161,6 +3094,76 @@ is to understand the composition of two smoothing operators on the kernel side.
             \end{align*}
             which means that the above integral is finite.
     \end{description}
+\end{proof}
+
+\subsection{Composition formula}
+
+The first step to obtain the composition formula
+is to understand the composition of two smoothing operators on the kernel side.
+
+\begin{lemma}
+    Let $\sigma_1, \sigma_2 \in \SmoothingSymbols$
+    and denote by $\kappa_1$ and $\kappa_2$ their respective associated kernels.
+    We also set
+    \begin{align*}
+        \kappa_g(h) \defeq \int_\Group \kappa_{2, g l^{-1}}(h l^{-1}) \kappa_{1, g}(l) \dd l
+    \end{align*}
+    for each $g, h \in \Group$,
+    and subsequently define the map
+    \begin{align*}
+        \sigma(g, \lambda) \defeq \Fourier \kappa_g(\lambda),
+        \quad g \in \Group, \lambda \in \VectorSpace.
+    \end{align*}
+
+    The map $\sigma$ defined above is a smoothing symbol for which
+    \begin{align}
+        \sigma(g, \lambda) = \int_\Group \kappa_{1, g}(l) \adj {\Rep \lambda(l)} \sigma_2(g l^{-1}, \lambda) \dd l
+        \label{eq:formal_expression_for_the_symbol_obtained_by_composition}
+    \end{align}
+    holds for all $g \in \Group$ and $\lambda \in \VectorSpace$.
+\end{lemma}
+\begin{proof}
+    % Check it defines a symbol
+    It should be clear that $\kappa$ is smooth on $\Group \times \Group$.
+    To show that the Fourier transform of $\kappa_g$ is well defined,
+    check that $\kappa_g \in \Lebesgue 1 \CompactGroup$.
+    Indeed,
+    \begin{align*}
+        \int_\Group \abs{\kappa_g(h)} \dd h
+        &\leq \int_\Group \int_\Group \abs {\kappa_{2, g l^{-1}}(h l^{-1}) \kappa_{1, g}(l)} \dd l \dd h\\
+        &\leq \max_{g' \in \Group} \int_\Group \abs {\kappa_{2, g'}(h')} \dd h'
+        \int_\Group \abs{\kappa_{1, g}(l)} \dd l
+    \end{align*}
+
+    Let us check that $\kappa_g$ is the kernel of $\Op(\sigma_1) \Op(\sigma_2)$.
+    Applying the quantization formula twice (Proposition~\ref{proposition:quantization}),
+    we obtain
+    \begin{align*}
+        \Op(\sigma_1) \Op(\sigma_2) \phi(g)
+        &= \int_\Group \Op(\sigma_2) \phi(h) \kappa_1(g, h^{-1} g) \dd h\\
+        &= \int_\Group \int_\Group \phi(l) \kappa_2(h, l^{-1} h) \kappa_1(g, h^{-1} g) \dd l \dd h.
+    \end{align*}
+
+    In the right hand side of the above,
+    we can let $m = h^{-1} g$ to obtain
+    \begin{align*}
+        \Op(\sigma_1) \Op(\sigma_2) \phi(g)
+        &= \int_\Group \phi(l) \int_\Group \kappa_2(g m^{-1}, l^{-1} x m^{-1}) \kappa_1(g, m) \dd m \dd l\\
+        &= \int_\Group \phi(l) \kappa_g(l^{-1} g) \dd l
+        = \conv \phi {\kappa_g}(g),
+    \end{align*}
+    which means that $\Op(\sigma_1) \Op(\sigma_2) = \Op(\sigma)$.
+
+    From there, let us try to obtain a more explicit formula describing $\sigma$.
+    Taking the Fourier Transform,
+    we get
+    \begin{align*}
+        \sigma(g, \lambda)
+        &= \int_\Group \kappa_g(h) \adj{\Rep \lambda(h)} \dd h\\
+        &= \int_\Group \int_\Group \kappa_2(g m^{-1}, h m^{-1}) \kappa_1(x, m) \adj{\Rep \lambda(m)} \adj{\Rep \lambda(h m^{-1})} \dd h \dd m\\
+        &= \int_\Group \kappa_1(g, m) \adj{\Rep \lambda(m)} \sigma_2(g m^{-1}, \lambda) \dd m,
+    \end{align*}
+    concluding the proof.
 \end{proof}
 
 \begin{lemma}
