@@ -97,6 +97,10 @@ This motivates the following definition.
     we choose to use $\VectorSpace$ to denote the vector space instead of simply $\R^n$ to avoid any confusion.
 \end{remark}
 
+Up until now,
+the vector space $\VectorSpace$ was not given a \emph{Euclidean structure}.
+The following Lemma shows that $\VectorSpace$ can be endowed with an inner product that behaves well under the action of $\CompactGroup$.
+
 \begin{lemma}[$\CompactGroup$-invariant inner product]
 \label{lemma:existence_of_K-invariant_inner_product}
     Let $\VectorSpace$ be a vector space,
@@ -135,6 +139,9 @@ This motivates the following definition.
 
 From now on, $\VectorSpace$ will be given the structure of \emph{Euclidean space} with a $\CompactGroup$-invariant inner product
 whose existence is given by Lemma~\ref{lemma:existence_of_K-invariant_inner_product}.
+
+To obtain a \emph{unitary Fourier Transform},
+we normalise the \emph{Haar measure} on $\VectorSpace$ as follows.
 
 \begin{definition}[Lebesgue measure]
     We call the \emph{Lebesgue measure} on $\VectorSpace$
