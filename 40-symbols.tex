@@ -3169,29 +3169,30 @@ is to understand the composition of two smoothing operators on the kernel side.
 \begin{lemma}
 \label{lemma:prepare_composition_formula}
     Let $m_1, m_2 \in \R$ and suppose $\rho, \delta \in \R$ are chosen such that $1 \geq \rho > \delta \geq 0$.
+    Suppose further that $\alpha_0, \beta_0 \in \N^{\dim \Group}$, and $N \in \N$.
 
-    Suppose further that $\alpha_0, \beta_0 \in \N^{\dim \Group}$, $N, M \in \N$ are such that
+    If there exists $M \in \N$ such that
     \begin{align}
         \begin{cases}
             \frac {m_2 + \delta \abs {\beta_{0}}} {1 - \delta} \leq 2 M
             \leq N - \dim \Group - m_1 - \delta \abs {\beta_0} + \rho (\dim \Group)\\
             m_2 + \delta(N + 1 + \abs {\beta_0})
             \leq 2M <
-            -\dim \Group - m_1 - \delta \abs {\beta_0} + \rho (\dim \Group + N + 1).
+            -\dim \Group - m_1 - \delta \abs {\beta_0} + \rho (\dim \Group + N + 1),
         \end{cases}
         \label{eq:composition_formula:conditions_on_M}
     \end{align}
-    There exists $C \geq 0$ and an $P \in \N$ such that
+    then there exists $C \geq 0$ and an $P \in \N$ such that
     for any $\sigma_1, \sigma_2 \in \SmoothingSymbols$ and any $(g, \lambda) \in \Group \times \VectorSpace$,
     we have
     \begin{align*}
         &\norm [\Lin {\Lebesgue 2 \CompactGroup}] {%
             \LeftDifferentialOperator [g] \beta \DifferenceOperatorOrder {\alpha_0} \left(
                 \sigma_1 \circ \sigma_2(g, \lambda)
-                - \sum_{\abs \alpha \leq M} \DifferenceOperatorOrder \alpha \sigma_1(g, \lambda) \TaylorLeftDifferentialOperator \alpha \sigma_2(g, \lambda)
+                - \sum_{\abs \alpha \leq N} \DifferenceOperatorOrder \alpha \sigma_1(g, \lambda) \TaylorLeftDifferentialOperator \alpha \sigma_2(g, \lambda)
             \right)
         }\\
-        &\qquad \leq C \SymbolSemiNorm {m_1, R} {\rho, \delta} P {\sigma_1} \SymbolSemiNorm {m_2} {\rho, \delta} P {\sigma_2}
+        &\qquad \leq C \SymbolSemiNorm {m_1, R} {\rho, \delta} P {\sigma_1} \SymbolSemiNorm {m_2} {\rho, \delta} P {\sigma_2}.
     \end{align*}
 \end{lemma}
 \begin{proof}
