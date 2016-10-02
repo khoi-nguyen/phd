@@ -4139,6 +4139,7 @@ we need to show that for some $m < 0$,
 operators in $\OperatorClass m {\rho, \delta}$ are bounded on $\Lebesgue 2 \Group$.
 
 \begin{proposition}
+\label{proposition:prepare_L2_boundedness}
     Let $\sigma \in \SymbolClass m {\rho, \delta}$,
     where $m < -\dim \Group / 2$ and $\rho, \delta \in [0, 1]$.
     The operator associated with $\sigma$, $\Op(\sigma)$, has a continuous extension
@@ -4216,6 +4217,8 @@ operators in $\OperatorClass m {\rho, \delta}$ are bounded on $\Lebesgue 2 \Grou
     which concludes the proof.
 \end{proof}
 
+We can now prove the main result of this section.
+
 \begin{proposition}[$L^2$ boundedness]
 \label{proposition:L2_boundedness}
     Let $\rho, \delta \in \R$ be such that $1 \geq \rho > \delta \geq 0$.
@@ -4229,11 +4232,7 @@ operators in $\OperatorClass m {\rho, \delta}$ are bounded on $\Lebesgue 2 \Grou
 \end{proposition}
 \begin{proof}
     \begin{description}
-        \item[Step 1.] If $\sigma \in \SymbolClass m {\rho, \delta}$ for $m < -1$, then
-            \begin{align*}
-                \norm [\Lin{\Lebesgue 2 \Group}] {\Op(\sigma)} < \infty.
-            \end{align*}
-        \item[Step 2.] If $\sigma \in \SymbolClass m {\rho, \delta}$ for $m < 0$, then
+        \item[Step 1.] If $\sigma \in \SymbolClass m {\rho, \delta}$ for $m < 0$, then
             \begin{align*}
                 \norm [\Lin{\Lebesgue 2 \Group}] {\Op(\sigma)} < \infty.
             \end{align*}
@@ -4246,8 +4245,9 @@ operators in $\OperatorClass m {\rho, \delta}$ are bounded on $\Lebesgue 2 \Grou
                 (\Op(\sigma) \adj {\Op(\sigma)})^n
             \end{align*}
             is in $\OperatorClass {2 m n} {\rho, \delta}$ and unbounded.
-            When $n$ is such that $-2 m n < -1$, this contradicts Step 1.
-        \item[Step 3.] Conclusion
+            When $n$ is such that $-2 m n < -\dim \Group / 2$, this contradicts
+            Proposition~\ref{proposition:prepare_L2_boundedness}.
+        \item[Step 2.] Conclusion
 
             Let $C \geq 0$ be such that
             \begin{align*}
