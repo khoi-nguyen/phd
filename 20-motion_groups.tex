@@ -1970,10 +1970,11 @@ This strategy can only be successful provided we can prove \emph{Sobolev embeddi
 \begin{proof}
     Let $s > \dim \Group / 2$.
     By Lemma~\ref{lemma:integrability_of_the_Schatten_class_of_the_Bessel_potential} and Proposition~\ref{proposition:Plancherel_formula},
+    the \emph{Bessel potential}
     $\BesselPotentialKernel s \in \Lebesgue 2 \Group$.
     Therefore,
     \begin{align*}
-        f = \conv {\BesselPotential {-s} f} {\BesselPotentialKernel s},
+        f = \conv {\BesselPotential {s} f} {\BesselPotentialKernel s},
     \end{align*}
     can be written as the convolution of two functions in $\Lebesgue 2 \Group$.
     The conclusion now follows from Proposition~\ref{proposition:integrability_of_the_convolution_of_two_L1_functions}.
