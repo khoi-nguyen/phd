@@ -12,7 +12,7 @@ as it implies that $\CompactGroup \subset \SpecialOrthogonalGroup \VectorSpace$.
 Using the fact that both $\Laplacian [\VectorSpace]$ and the Lebesgue measure are invariant under $\SpecialOrthogonalGroup \VectorSpace$,
 we show that the motion group has the \emph{same Haar measure} and \emph{same Laplacian} as $\GroupDirect$.
 Moreover,
-the representations of the motion group seem formally very close to those of $\GroupDirect$, provided that they are grouped on either side.
+the representations of the motion group seem formally very close to those of $\GroupDirect$, provided that they are grouped on both sides.
 
 All these observations lead to the conclusion
 that although the Fourier theory on our group might seem identical to the one of $\GroupDirect$,
@@ -131,7 +131,7 @@ The following Lemma shows that $\VectorSpace$ can be endowed with an inner produ
     i.e.\ $\ip{\dummy}{\dummy}$ is $\CompactGroup$-invariant.
 
     The fact that $\ip{\dummy}{\dummy}$ is bilinear and non-negative definite follows immediately from the fact that $Q$ has those properties.
-    Now, if $x, y \in \VectorSpace$ are such that $\ip{x}{x} = 0$,
+    Now, if $x \in \VectorSpace$ are such that $\ip{x}{x} = 0$,
     then it follows that $Q(k x, k x) = 0$ for almost every $k \in \CompactGroup$, hence for at least one such $k$.
     However, that means that $k x = 0$, hence $x = 0$ as $k$ is invertible.
 \end{proof}
@@ -172,14 +172,14 @@ is that of the direct product $\VectorSpace \times \CompactGroup$.
     which is both left and right-invariant.
 \end{lemma}
 \begin{proof}
-    Let $(x, k) \in \Group$.
+    Let $(x, k) \in \Group$ and $f \in \Lebesgue 1 \Group$.
     \begin{align*}
         \int_\Group f((x, k) (y, l)) \dd (y, l)
         = \int_\VectorSpace \int_\CompactGroup f(x + ky, k l) \dd l \dd y
     \end{align*}
 
     Now, let us substitute $y$ for $k^{-1}(y - x)$ and $l$ for $k^{-1} l$ in the above.
-    As the Lebesgue measure is invariant under $\OrthogonalGroup{\VectorSpace}$ and under translations,
+    As the Lebesgue measure is invariant under $\SpecialOrthogonalGroup{\VectorSpace}$ and under translations,
     and because the Haar measure $\dd l$ is left-invariant,
     we obtain
     \begin{align*}
@@ -246,7 +246,7 @@ The following proposition summarizes how $\CompactGroup$ affects key objects on 
 
 \section{Lie algebra structure}
 
-The difference between the semi-direct structure and its direct counterpart is most easily seen when studying the \emph{Lie algebra}.
+The difference between the semi-direct structure and its direct counterpart appears naturally when we study the \emph{Lie algebra}.
 
 We shall henceforth denote by $\LieAlgebraCompactGroup$ the Lie algebra of $\CompactGroup$.
 
@@ -507,7 +507,7 @@ We now describe explicitely the Lie algebra of Euclidean motion groups.
 \begin{example}[$2$-dimensional Euclidean motion group]
 \label{example:Lie_Algebra_of_2-dimensional_Euclidean_motion_group}
     Assume $\Group = \R^2 \ltimes \T$.
-    The Lie Algebra is the vector space
+    The Lie algebra is the vector space
     \begin{align*}
         \LieAlgebra \defeq \R^2 \oplus \SkewSymmetric{\R^2}.
     \end{align*}
@@ -561,7 +561,7 @@ We now describe explicitely the Lie algebra of Euclidean motion groups.
     For each pair of distinct $i, j \in \{1, \cdots, n\}$,
     we let $E_{ij}$ be the only matrix satisfying
     \begin{align*}
-        E_{ij} e_k = \Kronecker i j e_j - \Kronecker j k e_i
+        E_{ij} e_k = \Kronecker i k e_j - \Kronecker j k e_i
     \end{align*}
     for each $k \in \{1, \cdots, n\}$.
 
@@ -642,7 +642,7 @@ A very important example of left-invariant differential operator is the followin
 \index{Laplacian}
     The \emph{left-invariant Laplacian} $\Laplacian$ is the left-invariant differential operator
     \begin{align*}
-        \Laplacian \defeq \sum_{j = 1}^{\dim \Group} \LeftDifferentialOperatorFirstOrder{X_j}^2
+        \Laplacian \defeq \sum_{j = 1}^{\dim \Group} \LeftDifferentialOperatorFirstOrder{X_j}^2.
     \end{align*}
 \end{definition}
 
@@ -654,7 +654,7 @@ It is however important to keep in mind that this operator is \emph{not right-in
     Let $f \in \SmoothFunctions\Group$.
     If $(x, k) \in \Group$, we check that
     \begin{align*}
-        \Laplacian f(x, k) = \Laplacian[\VectorSpace] f(x, k) + \Laplacian[\CompactGroup] f(x, k)
+        \Laplacian f(x, k) = \Laplacian[\VectorSpace] f(x, k) + \Laplacian[\CompactGroup] f(x, k).
     \end{align*}
 \end{proposition}
 \begin{proof}
@@ -681,7 +681,7 @@ It is however important to keep in mind that this operator is \emph{not right-in
 \end{proof}
 
 It will be important later to be able to establish a link between right-
-and left-invariant differential operator.
+and left-invariant differential operators.
 
 \begin{proposition}
     Let $X \in \LieAlgebra$.
@@ -783,7 +783,7 @@ specifically for the generalized motion group,
 was given in~\cite{Ito52}.
 
 The Fourier analysis on the motion group was studied in~\cite{Kumahara73},
-in which the author observes that the Plancherel formula takes a more elegant form if we group the unitary representations appropriately.
+where the author observes that the Plancherel formula takes a more elegant form if we group the unitary representations appropriately.
 His subsequent papers (e.g.\ \cite{Kumahara76}) work exclusively with those grouped representations as they are technically more converient.
 
 We shall therefore make the same choice as~\cite{Kumahara76},
@@ -1175,7 +1175,7 @@ We now define a central tool in our analysis: the \emph{Fourier transform}.
 \begin{definition}[Fourier transform]
 \label{definition:Fourier_Transform}
 \index{motion group!Fourier transform}
-    Let $f \in \Lebesgue{1}{\Group}$ and $\lambda \in \dualGroup{\VectorSpace}$.
+    Let $f \in \Lebesgue{1}{\Group}$ and $\lambda \in {\VectorSpace}$.
     We define its \emph{Fourier coefficient} at $\lambda$ via
     \begin{align*}
         \Fourier{f}(\lambda) \defeq \int_\Group f(g) \adj{\Rep{\lambda}(g)} \dd g.
@@ -1183,7 +1183,7 @@ We now define a central tool in our analysis: the \emph{Fourier transform}.
 
     Moreover, the map
     \begin{align*}
-        \Fourier{f} : \dualGroup{\VectorSpace} \to \End(\Lebesgue{2}{\CompactGroup}) :
+        \Fourier{f} : {\VectorSpace} \to \End(\Lebesgue{2}{\CompactGroup}) :
         \lambda \mapsto \Fourier{f}(\lambda)
     \end{align*}
     is called the \emph{Fourier Transform} of $f$.
@@ -1232,7 +1232,7 @@ we need to compute some Schatten norms of our Fourier coefficients.
         \dd x
     \end{align*}
 
-    Recognising the Fourier Transform on $\VectorSpace$ in the above, we obtain
+    Recognizing the Fourier Transform on $\VectorSpace$ in the above, we obtain
     \begin{align*}
         \Fourier f(\lambda) F(u)
         &=
@@ -1301,7 +1301,7 @@ applying the Fourier transform reduces to computing the Fourier transform on $\G
     \end{align*}
     where the last line was obtained by substituing $k$ for $u k^{-1}$.
 
-    Recognising a Fourier transform on $\CompactGroup$ with ``grouped representations''
+    Recognizing a Fourier transform on $\CompactGroup$ with ``grouped representations''
     (see Subsubsection~\ref{subsubsection:representations_on_the_direct_product})
     in the right-hand side of the above
     we obtain
@@ -1445,7 +1445,7 @@ we can recover a function from its Fourier transform.
     we have
     \begin{align*}
         \phi(g)
-        = \int_\dualGroup{\VectorSpace}
+        = \int_{\VectorSpace}
         \tr \left( \Rep{\lambda}(g) \Fourier \phi(\lambda) \right) \dd \Plancherel{\VectorSpace}(\lambda).
     \end{align*}
 \end{proposition}
@@ -1465,7 +1465,7 @@ we can recover a function from its Fourier transform.
     \end{align*}
     where the last line was obtained by a change of variables after permuting the integrals.
 
-    Recognising an inverse Fourier Transform in the right-hand side of the above, we obtain
+    Recognizing an inverse Fourier Transform on the right-hand side of the above, we obtain
     \begin{align*}
         \int_\VectorSpace \tr(\Fourier \phi(\lambda)) \dd \lambda
         = \phi(0, e),
@@ -1483,7 +1483,7 @@ we can recover a function from its Fourier transform.
 \subsubsection{The direct product case}
 
 In view of Subsubsection~\ref{subsubsection:representations_on_the_direct_product},
-let us compare the Plancherel formulas.
+let us compare the Plancherel formulae.
 
 Given $f \in \Lebesgue 1 {\GroupDirect}$ and $\lambda \in \VectorSpace$,
 we let
@@ -1799,6 +1799,8 @@ It then follows by classical arguments that we may extend the Fourier Transform 
 \section{Sobolev spaces}
 
 The notion of \emph{order} of a pseudo-differential operator is mainly motivated by boundedness properties between Sobolev spaces.
+As we wish to define pseudo-differential operators with non-integer order,
+we need a notion of Sobolev spaces with general order.
 
 \begin{definition}[Sobolev norm]
     Let $s \in \R$.
@@ -2242,8 +2244,8 @@ we shall write
 We now define an analogue of the Euclidean Taylor development and the associated remainder.
 
 \begin{definition}[Taylor development and remainder]
-    Let $f \in \Group$ and $g \in \Group$.
-    For each $N \in \N$,
+    Let $f \in \SmoothFunctions \Group$ and $g \in \Group$.
+    For each $N \in \Z$,
     we define the \emph{Taylor development of $f$ at $g$} of order $N$ to be
     \begin{align*}
         \TaylorPolynomial f g N(h)
@@ -2279,7 +2281,7 @@ The Taylor polynomial was defined so that the following property holds.
     \end{align*}
 \end{lemma}
 
-By using local charts on $\CompactGroup$ and extending onto $\CompactGroup$ via a partition of unity,
+By using local charts on $\CompactGroup$ and then subsequently extending onto all of $\CompactGroup$ via a partition of unity,
 we can show the following estimate on the remainder.
 
 \begin{proposition}[Taylor's theorem]
