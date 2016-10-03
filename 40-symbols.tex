@@ -2435,9 +2435,9 @@ and the latter can be easily derived directly from the symbolic estimates.
     and denote by $\kappa \in \SmoothFunctions {\Group, \TemperedDistributions \Group}$ its associated kernel.
     If $m < -\dim \Group / 2$,
     then $\kappa_g \in \Lebesgue 2 \Group$ for every $g \in \Group$,
-    and we have the estimate
+    and there exists $C \geq 0$ and $P \in \N$ which do not depend on $\sigma$ such that
     \begin{align*}
-        \sup_{g \in \Group} \norm [\Lebesgue 2 \Group] {\kappa_g} \leq C \SymbolSemiNorm m {\rho, \delta} P \sigma < \infty.
+        \sup_{g \in \Group} \norm [\Lebesgue 2 \Group] {\kappa_g} \leq C \SymbolSemiNorm m {\rho, \delta} P \sigma.
     \end{align*}
 \end{proposition}
 \begin{proof}
@@ -2479,9 +2479,9 @@ and the latter can be easily derived directly from the symbolic estimates.
         s < -\frac{\dim \Group} 2 - m,
     \end{align*}
     the kernel $\kappa_g$ belongs to $\Sobolev s$ for every $g \in \Group$.
-    Moreover, for such an $s \in \R$, we have the estimate:
+    Moreover, for such an $s \in \R$, there exists $C \geq 0$ and $P \in \N$ which do not depend on $\sigma$ such that
     \begin{align*}
-        \sup_{g \in \Group} \norm [\Sobolev s] {\kappa_g} < \infty.
+        \sup_{g \in \Group} \norm [\Sobolev s] {\kappa_g} < C \SymbolSemiNorm m {\rho, \delta} P \sigma.
     \end{align*}
 \end{corollary}
 \begin{proof}
@@ -2516,7 +2516,8 @@ we need only apply Corollary~\ref{corollary:Sobolev_estimates_on_the_kernel} and
     and denote by $\kappa \in \SmoothFunctions {\Group, \TemperedDistributions \Group}$ its associated kernel.
 
     If $m < -\dim \Group$,
-    then $\kappa_g \in \ContinuousFunctions \Group$ is continuous for every $g \in \Group$ and
+    then $\kappa_g \in \ContinuousFunctions \Group$ is continuous for every $g \in \Group$.
+    Moreover, there exists $C \geq 0$ and $P \in \N$ which do not depend on $\sigma$ such that
     \begin{align*}
         \sup_{g \in \Group} \norm [\ContinuousFunctions \Group] {\kappa_g} < \infty.
     \end{align*}
@@ -2678,17 +2679,19 @@ The \emph{strong admissibility} means that polynomials can constitute a good app
     and $\kappa \in \SmoothFunctions {\Group, \TemperedDistributions \Group}$ denotes its associated kernel.
     \begin{enumerate}
         \item
-            If $\rho < 1$ and $m > -\dim \Group$, there exists $C \geq 0$ such that for every $g, h \in \Group$ with $h \neq 0$, we have
+            If $\rho < 1$ and $m > -\dim \Group$, there exists $C \geq 0$ and $P \in \N$ such that for every $g, h \in \Group$ with $h \neq 0$, we have
             \begin{align*}
-                \abs{\kappa_g(h)} \leq C \norm [\Group] h^{- \frac{\dim \Group + m}{\rho}}.
+                \abs{\kappa_g(h)} \leq C \SymbolSemiNorm m {\rho, \delta} P \sigma \norm [\Group] h^{- \frac{\dim \Group + m}{\rho}},
             \end{align*}
+            where $C \geq 0$ and $P \in \N$ do not depend on $\sigma$.
         \item
             If $\rho = 1$ or if $m = -\dim \Group$,
             then for every $\gamma < -(\dim \Group + m)/\rho$,
-            there exists $C \geq 0$ such that for every $g, h \in \Group$ with $h \neq 0$, we have
+            there exists $C \geq 0$ and $P \in \N$ such that for every $g, h \in \Group$ with $h \neq 0$, we have
             \begin{align*}
-                \abs{\kappa_g(h)} \leq C \norm [\Group] h^\gamma.
+                \abs{\kappa_g(h)} \leq C \SymbolSemiNorm m {\rho, \delta} P \sigma \norm [\Group] h^\gamma,
             \end{align*}
+            where $C \geq 0$ and $P \in \N$ do not depend on $\sigma$.
     \end{enumerate}
 \end{theorem}
 \begin{proof}
