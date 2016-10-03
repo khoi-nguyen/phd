@@ -2188,6 +2188,13 @@ We are now ready to prove the following generalisation of Proposition~\ref{propo
 
 \section{Taylor formula}
 
+As in the Euclidean case,
+the composition and adjunction formulae rely on a \emph{Taylor expansion}.
+
+Intuitively,
+we shall say a collection of smooth functions is~\emph{admissible}
+if they can be used to perform a Taylor expansion.
+
 \begin{definition}
 \label{definition:admissibility_of_polynomials}
 \index{polynomials!admissibility}
@@ -2205,6 +2212,8 @@ We are now ready to prove the following generalisation of Proposition~\ref{propo
     we shall say that the collection is \emph{strongly admissible}.
 \end{definition}
 
+The notion of \emph{strong admissibility} was introduced in~\cite{RuzhanskyTurunenWirth10} to ensure the kernels of pseudo-differential operators would only have singularities at the origin (see Chapter~\ref{chapter:symbolic_calculus}).
+
 From now on,
 we let $q_1, \dots, q_{\dim \Group} \in \SmoothFunctions \Group$
 be a strongly admissible family.
@@ -2214,6 +2223,13 @@ Moreover, we fix a basis $X_1, \dots, X_{\dim \Group} \in \LieAlgebra$ such that
     \LeftDifferentialOperatorFirstOrder {X_j} q_k(\dummy^{-1})(e_\Group) = \Kronecker j k
 \end{align*}
 for each $j, k \in \{1, \dots, \dim \Group\}$.
+To insist that the basis is adapted to our family of smooth functions,
+we shall write
+\begin{align*}
+    \TaylorLeftDifferentialOperator \alpha
+    \defeq
+    X^{\alpha_1}_1 \dots X^{\alpha_{\dimDifferenceOperators}}_{\dimDifferenceOperators}
+\end{align*}
 
 \begin{definition}[Distance to the origin]
     Let $g = (x, k) \in \Group$.
@@ -2221,9 +2237,12 @@ for each $j, k \in \{1, \dots, \dim \Group\}$.
     \begin{align*}
         \norm [\Group] g^2
         \defeq
-        \norm x^2 + \dist [\CompactGroup] k {e_\CompactGroup}^2.
+        \norm x^2 + \dist [\CompactGroup] k {e_\CompactGroup}^2,
     \end{align*}
+    where $\dist [K] \dummy \dummy$ is a left-invariant Riemannian distance.
 \end{definition}
+
+We now define an analogue of the Euclidean Taylor development and the associated remainder.
 
 \begin{definition}[Taylor development and remainder]
     Let $f \in \Group$ and $g \in \Group$.
@@ -2232,7 +2251,10 @@ for each $j, k \in \{1, \dots, \dim \Group\}$.
     \begin{align*}
         \TaylorPolynomial f g N(h)
         \defeq
-        \sum_{\abs \alpha \leq N} \frac 1 {\alpha!} q^\alpha(h^{-1}) \LeftDifferentialOperator \alpha f(g),
+        \begin{cases}
+            \sum_{\abs \alpha \leq N} \frac 1 {\alpha!} q^\alpha(h^{-1}) \TaylorLeftDifferentialOperator \alpha f(g) & \text{if } N \geq 0\\
+            0 & \text{if } N < 0,
+        \end{cases}
     \end{align*}
     where $h \in \Group$.
 
@@ -2240,12 +2262,11 @@ for each $j, k \in \{1, \dots, \dim \Group\}$.
     we define the \emph{Taylor remainder} of $f$ of order $N$ at $g \in \Group$ via
     \begin{align*}
         \TaylorRemainder f g N(h) \defeq
-        \begin{cases}
-            f(g h) - \sum_{\abs \alpha \leq N} \frac 1 {\alpha!} q^\alpha(h^{-1}) \TaylorLeftDifferentialOperator \alpha f(g) & \text{if } N \geq 0\\
-            f(g h) & \text{if } N < 0.
-        \end{cases}
+        f(g h) - \TaylorPolynomial f g N(h).
     \end{align*}
 \end{definition}
+
+The Taylor polynomial was defined so that the following property holds.
 
 \begin{lemma}
 \label{lemma:derivative_of_Taylor_polynomial_and_remainder}
@@ -2260,6 +2281,9 @@ for each $j, k \in \{1, \dots, \dim \Group\}$.
         = \TaylorRemainder {\TaylorLeftDifferentialOperator \beta f} g {N - \abs \beta} (e_\Group).
     \end{align*}
 \end{lemma}
+
+By using local charts on $\CompactGroup$ and extending onto $\CompactGroup$ via a partition of unity,
+we can show the following estimate on the remainder.
 
 \begin{proposition}[Taylor's theorem]
 \label{proposition:Taylor_theorem}
