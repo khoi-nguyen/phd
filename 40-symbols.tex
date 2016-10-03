@@ -207,8 +207,7 @@ to show the following result.
     for each $j \in \{1, \dots, \dim \VectorSpace\}$.
 \end{lemma}
 \begin{proof}
-    Denote by $F$ the set of all fundamental representations of $\CompactGroup$,
-    % TODO: add reference for fundamental representations
+    Denote by $F$ the set of all fundamental representations of $\CompactGroup$~\cite[p. 3416]{Fischer2015},
     i.e. a finite collection such that for any $\tau \in \dualGroup \CompactGroup$,
     there exists $\tau_1, \cdots, \tau_n \in F$ such that
     \begin{align*}
@@ -1049,7 +1048,6 @@ We are now ready to state our main result.
 
     Suppose now that $s < -1$.
     Note that we have a determination of the logarithm on our contour,
-    % TODO: not true!
     so we can define
     \begin{align*}
         G(z) \defeq F(z)^{\frac 1 {\Floor{-s} + 1}}
@@ -1381,7 +1379,6 @@ We present a short overview of how they will be used.
 %
 %    Using the Taylor remainder theorem,
 %    it follows that $\TaylorRemainder {q'} N {e_\Group}$ has a zero of order $N + 1$ at the origin $e_\Group$.
-%    % TODO Ask Michael how to conclude
 %\end{proof}
 %
 %\begin{lemma}
@@ -1432,7 +1429,6 @@ We present a short overview of how they will be used.
 %        &\leq \int_\Group \int_\Group \abs{T (\phi \BesselPotential \gamma_{g_1} \psi_{g_1})(g)}^2 \dd g \dd g_1\\
 %        &\leq \norm [\Lin {\Lebesgue 2 \Group, \Sobolev s}] {T} \int_\Group \norm [\Sobolev s] {\phi \BesselPotential \gamma_{g_1} \psi_{g_1}}^2 \dd g_1
 %    \end{align*}
-%    % TODO Conclude
 %\end{proof}
 
 %\section{Link with the H\"ormander classes}
@@ -1580,7 +1576,6 @@ We present a short overview of how they will be used.
 %\begin{proof}
 %    Let us write $T = \Op (\sigma)$.
 %    It follows that by
-%    % TODO: Reference both quantizations
 %    \begin{align*}
 %        T \phi(x, k)
 %        &= \int_{\GroupDirect} \phi(y, l) {\tilde \kappa}_{x, k}(x - y, l^{-1} k) \dd (y, l)\\
@@ -1644,7 +1639,6 @@ We present a short overview of how they will be used.
 %                = \Rep \lambda \BesselPotential \gamma \Rotation {\tilde \sigma},
 %            \end{align*}
 %            or in other words $\sigma = \Rotation {\tilde \sigma}$.
-%            % TODO Conclude for difference operators
 %
 %            The other identity is proven by observing that $\InverseRotation \dummy$ is the inverse of $\Rotation \dummy$.
 %        \item
@@ -1716,7 +1710,6 @@ We present a short overview of how they will be used.
 %\begin{lemma}
 %\label{lemma:inclusion_in_zero_class}
 %    Let $m \defeq \frac {-\dim \CompactGroup} 2 (1 - \rho)$.
-%    % TODO: Can we prove the result for $m = 0$ or improve?
 %    \begin{enumerate}
 %        \item
 %            If $\sigma \in \SymbolClass m {\rho, \delta}$,
@@ -1857,7 +1850,6 @@ We present a short overview of how they will be used.
 %        \norm [\Lin {\Lebesgue 2 \CompactGroup}] {%
 %            \Rep[\GroupDirect] \lambda \BesselPotential{-m' + \rho \abs \alpha  - \delta' \abs \beta} \DifferenceOperator [\GroupDirect] {\tilde q} X^\beta \tilde \sigma(x, k; \lambda) \Rep [\GroupDirect] \lambda
 %        }
-%        % TODO: show the direct product doesn't require the gamma trick
 %    \end{align*}
 %    is finite,
 %    which by definition means that $\tilde \sigma \in \SymbolClass [\GroupDirect] {m'} {\rho, \delta'}$.
@@ -2198,7 +2190,6 @@ We present a short overview of how they will be used.
 %            Let $m \leq 0$.
 %
 %            From~\eqref{eq:Littlewood-Paley:difference_operators} and Lemma~\ref{lemma:left_regular_representation_of_polynomials},
-%            % TODO: Make lemmas more relevant
 %            we know that the range of the operator
 %            \begin{align}
 %                \Rep \lambda \BesselPotential {\rho \abs \alpha + \gamma}
@@ -2711,7 +2702,7 @@ which we prove below.
         &\qquad \leq C \int_\Group \lcsum {\beta' \leq \beta} \abs{\LeftDifferentialOperator [h] {\beta'} \{\norm y^p \kappa_g(h)\}}^2 \dd h\\
         &\qquad \leq C \lcsum {\beta' \leq \beta} \sum_{\abs \alpha = p} \int_\Group \abs{\LeftDifferentialOperator {\beta'} \{q^\alpha \kappa_g\}}^2 \dd h,
     \end{align*}
-    where the last line was obtained by using ??. % TODO: reference!
+    where the last line was obtained by using the strong admissibility of our difference operators.
     Continuing the above calculation,
     we get
     \begin{align*}
@@ -3265,7 +3256,7 @@ This is the reason why we shall always assume $\rho > \delta$ hereafter.
         &\quad \times
         \RightDifferentialOperator[h_2 = h] {\beta_2} \TaylorRemainder {\Rep \lambda \BesselPotentialSquared {-M} \LeftDifferentialOperator [g_2 = g] {\beta_{02}} \DifferenceOperatorOrder {\alpha_{02}} \sigma_2(g_2 \dummy, \lambda)} {e_\Group} N (h_2^{-1}) \dd h,
     \end{align*}
-    Now, using REFERENCE, %TODO add reference
+    Now, using Lemma~\ref{lemma:derivative_of_Taylor_polynomial_and_remainder},
     the above becomes
     \begin{align*}
         &\LeftDifferentialOperator {\beta_0} \DifferenceOperatorOrder {\alpha_0} \tau_N(g, \lambda) =\\
