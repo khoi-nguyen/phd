@@ -972,6 +972,9 @@ and $\dd k$ the associated normalized Haar measure.
 This section is devoted to recalling elementary facts on compact Lie groups.
 For more detail, see e.g.~\cite{RuzhanskyTurunen10,Knapp02}.
 
+We equip $\CompactGroup$ with a normalized bi-invariant Riemannian metric,
+and denote by $\Laplacian [\CompactGroup]$ the associated \emph{Laplace-Beltrami} operator.
+
 Given $\tau \in \dualGroup \CompactGroup$,
 we let $\dimRep \tau$ denote the \emph{dimension} of $\CompactGroup$.
 
@@ -986,6 +989,13 @@ The following result is fundamental on compact Lie groups.
     forms an orthonormal basis of $\Lebesgue 2 \CompactGroup$.
 \end{theorem}
 
+As the set
+\begin{align*}
+    V_\tau \defeq \{\tau_{m n} : m, n = 1, \dots, \dimRep \tau\}
+\end{align*}
+is invariant under the left- and the right-regular representation,
+they are eigenspaces of the \emph{Casimir operator}.
+
 The Plancherel formula takes the following form.
 
 \begin{proposition}[Plancherel formula on $\CompactGroup$]
@@ -996,6 +1006,8 @@ The Plancherel formula takes the following form.
         = \sum_{\tau \in \dualGroup \Group} \dimRep \tau \tr(\Fourier [\CompactGroup] f(\tau) \adj{\Fourier [\CompactGroup] f(\tau)})
     \end{align*}
 \end{proposition}
+
+We shall sometimes use the following notation hereafter.
 
 \begin{definition}[Japanese bracket]
     Let $\tau \in \dualGroup \CompactGroup$.
