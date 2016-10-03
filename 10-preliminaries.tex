@@ -1,7 +1,15 @@
 \chapter{Preliminaries}
 \label{chapter:preliminaries}
 
+This chapter aims to very briefly introduce key concepts which will be used in the subsequent chapters,
+and we will often omit the proofs.
+For a more comprehensive treatment,
+the reader is invited to consult the references given at the beginning of each section.
+
 \section{Lie groups}
+
+For more details,
+see e.g.~\cite{Knapp02,RuzhanskyTurunen10}
 
 To develop a \emph{pseudo-differential calculus} on groups,
 a reasonable prerequisite is that the group be equipped with a \emph{differential} structure.
@@ -19,7 +27,7 @@ This naturally leads us to the notion of \emph{Lie group}.
     \end{align*}
     is smooth.
 
-    If moreover $\Group$ is (locally) compact as a manifold,
+    Moreover, if $\Group$ is (locally) compact as a manifold,
     then we shall say that $\Group$ is a \emph{(locally) compact Lie group}.
 \end{definition}
 
@@ -234,8 +242,8 @@ and the convergence of the exponential power series for real numbers.
 
 We need to choose a measure with respect to which we shall integrate.
 On locally compact topological groups,
-there exists measure which are invariant under the left or right group action.
-This property is crucial for Fourier analysis.
+there exists measures which are invariant under the left or right group action.
+This property is crucial for the Fourier analysis.
 
 \begin{remark}
     Every Lie group $\Group$ is also topological space.
@@ -358,6 +366,9 @@ we can often expect a \emph{Plancherel formula}
 (see \cite[Subsection 1.8.2]{FischerRuzhansky16}).
 
 \section{Representation Theory}
+
+For a more detailed treatment,
+see e.g.~\cite{RuzhanskyTurunen10}.
 
 To generalize the Fourier Transform to other Lie groups,
 we need an adequate substitute for the complex exponentials.
@@ -526,16 +537,16 @@ We fix a basis $Y_1$, \dots, $Y_{\dim \CompactGroup}$ of $\LieAlgebraCompactGrou
     The set of all tempered distributions will be denoted by $\TemperedDistributions \GroupDirect$.
 \end{definition}
 
-As usual, if $\kappa \in \TemperedDistributions \GroupDirect$ and $\phi \in \Schwartz \GroupDirect$
+As usual, if $\kappa \in \TemperedDistributions \GroupDirect$ and $\phi \in \Schwartz \GroupDirect$, we let
 \begin{align*}
     \dualBracket [\GroupDirect] \kappa \phi \defeq \kappa(\phi)
 \end{align*}
 We shall also write
 \begin{align*}
-    \int_{\GroupDirect} \kappa(x, k) \phi(x, k) d(x, k) \defeq \dualBracket [\GroupDirect] \kappa \phi,
+    \int_{\GroupDirect} \kappa(x, k) \phi(x, k) d(x, k) \defeq \dualBracket [\GroupDirect] \kappa \phi
 \end{align*}
-motivated by the inclusion $\Lebesgue 1 \GroupDirect \subset \TemperedDistributions \GroupDirect$,
-and shall say that the above integral is interpreted \emph{in the sense of distributions}.
+(which is motivated by the inclusion $\Lebesgue 1 \GroupDirect \subset \TemperedDistributions \GroupDirect$)
+and we shall say that the above integral is interpreted \emph{in the sense of distributions}.
 
 \begin{theorem}[Schwartz Kernel Theorem]
 \label{theorem:Schwartz_Kernel_Theorem}
@@ -631,6 +642,9 @@ Naturally, every integration on $\Group$ is performed with respect to a Haar mea
 
 \subsection{Convolutions of distributions}
 
+In this subsection, we assume that that $\Group = \VectorSpace \ltimes \CompactGroup$,
+where $\VectorSpace$ is a vector space and $K \subset \SpecialOrthogonalGroup \VectorSpace$.
+
 Suppose that $\kappa, \phi \in \Schwartz \Group$.
 It follows that \eqref{eq:alternative_definition_of_convolution} can be rewritten
 \begin{align*}
@@ -649,8 +663,6 @@ provided that we interpret the above in the sense of distributions,
 leading to the following definition.
 
 \begin{definition}[Convolution]
-    Suppose that $\Group = \VectorSpace \ltimes \CompactGroup$,
-    where $\VectorSpace$ is a vector space and $K \subset \SpecialOrthogonalGroup \VectorSpace$.
     Let $\kappa \in \TemperedDistributions \Group$ and $\phi \in \Schwartz \Group$.
     For every $g \in \Group$,
     we let
@@ -821,7 +833,7 @@ The Fourier transform satisfies the following properties.
 
 \begin{proposition}[Plancherel formula]
     There exists a unique positive $\sigma$-finite measure $\Plancherel\Group$ on $\dualGroup\Group$ such that the following property holds:
-    for every $f \in \Schwartz\Group$,
+    for every $f \in \ContinuousFunctions \Group$ with compact support,
     the map
     \begin{align*}
         \xi \in \dualGroup \Group \mapsto \tr (\Fourier f(\xi) \adj{\Fourier f(\xi)})
@@ -865,10 +877,15 @@ we define
     \Fourier \kappa(\xi) \defeq
     \Rep \lambda \BesselPotential {-b}
     \Fourier \{ \BesselPotential b \BesselPotentialRight {-a} \kappa \}
-    \Rep \lambda \BesselPotential a
+    \Rep \lambda \BesselPotential a,
 \end{align*}
+and check we would obtain the same result with different $a, b \in \R$ such that
+\begin{align*}
+    T : \Sobolev a \to \Sobolev b
+\end{align*}
+is bounded.
 
-More detail is available in~\cite{FischerRuzhansky16}.
+For more detail, see~\cite{FischerRuzhansky16}.
 
 %\section{The direct product case}
 %
