@@ -3710,9 +3710,9 @@ We are now ready to state and prove the main result of this subsection.
     \begin{align*}
         \tilde \sigma(g, \lambda)
         = \sigma(g, \lambda)
-        \Rep \lambda \BesselPotential {-m + (\rho - \delta) N_0 + \rho \abs {\alpha_0} - \delta \abs {\beta_0}}
+        \Rep \lambda \BesselPotential {-m + (\rho - \delta) N_0 - \delta \abs {\beta_0}}
     \end{align*}
-    which is of order $\tilde m \defeq (\rho - \delta) N_0 + \rho \abs {\alpha_0} - \delta \abs {\beta_0}$.
+    which is of order $\tilde m \defeq (\rho - \delta) N_0 - \delta \abs {\beta_0}$.
     Let $M \in \N$ be the smallest natural number such that
     \begin{align*}
         \frac {-\tilde m + (\rho - \delta) N_0 + \delta \abs {\beta_0}} 2 \geq M.
@@ -3730,12 +3730,14 @@ We are now ready to state and prove the main result of this subsection.
         &\norm [\Lin {\Lebesgue 2 \Group}] {%
         \LeftDifferentialOperator [g] {\beta_0}
             \tau_N(g, \lambda)
-            \Rep \lambda \BesselPotential {-m + (\rho - \delta) N_0 + \rho \abs {\alpha_0} - \delta \abs {\beta_0}}
+            \Rep \lambda \BesselPotential {-m + (\rho - \delta) N_0 - \delta \abs {\beta_0}}
         }\\
         &\quad \leq C \SymbolSemiNorm {\tilde m} {\rho, \delta} P {\tilde \sigma}
-        = C \SymbolSemiNorm m {\rho, \delta} P \sigma,
+        = C \SymbolSemiNorm m {\rho, \delta} P \sigma.
     \end{align*}
-    concluding our proof.
+
+    Using the fact that difference operators $\DifferenceOperatorOrder \alpha \sigma^{(*)}$ can be written as a linear combination of $\DifferenceOperatorOrder {\alpha'}$ which does not depend on $\sigma$,
+    we conclude the proof.
 \end{proof}
 
 \subsection{Simplification of the definition of symbol classes}
