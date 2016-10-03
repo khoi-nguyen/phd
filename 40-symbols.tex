@@ -3170,6 +3170,16 @@ is to understand the composition of two smoothing operators on the kernel side.
     concluding the proof.
 \end{proof}
 
+\begin{definition}
+    Let $\sigma_1, \sigma_2 \in \SmoothingSymbols$.
+    We let
+    \begin{align*}
+        \sigma_1 \circ \sigma_2(g, \lambda)
+        &= \int_\Group \kappa_{1, g}(h) \adj {\Rep \lambda(h)} \sigma_2(g h^{-1}, \lambda) \dd h.
+    \end{align*}
+    for each $(g, \lambda) \in \Group \times \VectorSpace$.
+\end{definition}
+
 The following lemma shows that provided some technical conditions are met,
 we obtain an estimate on the remainder in terms of certain seminorms in the \emph{correct} symbol classes.
 Note that if $\rho > \delta$,
@@ -3179,7 +3189,7 @@ This is the reason why we shall always assume $\rho > \delta$ hereafter.
 \begin{lemma}
 \label{lemma:prepare_composition_formula}
     Let $m_1, m_2 \in \R$ and suppose $\rho, \delta \in \R$ are chosen such that $1 \geq \rho > \delta \geq 0$.
-    Suppose further that $\alpha_0, \beta_0 \in \N^{\dim \Group}$, and $N \in \N$.
+    Suppose further that $\beta_0 \in \N^{\dim \Group}$, and $N \in \N$.
 
     If there exists $M \in \N$ such that
     \begin{align}
@@ -3210,8 +3220,9 @@ This is the reason why we shall always assume $\rho > \delta$ hereafter.
     let us define
     \begin{align*}
         \tau_N(g, \lambda) \defeq
-        \sigma(g, \lambda) - \sum_{\abs \alpha \leq N} \DifferenceOperatorOrder \alpha \sigma_1(g, \lambda) \TaylorLeftDifferentialOperator \alpha \sigma_2(g, \lambda)
+        \sigma(g, \lambda) - \sum_{\abs \alpha \leq N} \DifferenceOperatorOrder \alpha \sigma_1(g, \lambda) \TaylorLeftDifferentialOperator \alpha \sigma_2(g, \lambda),
     \end{align*}
+    where $\sigma \defeq \sigma_1 \circ \sigma_2$.
     We want to estimate
     \begin{align}
         &\tau_N(g, \lambda) \notag\\
@@ -3554,6 +3565,16 @@ The first step consists of computing the kernel of the adjoint of a smoothing op
     \end{align*}
     which shows that $\kappa^{(*)}$ is the right-convolution kernel of the adjoint.
 \end{proof}
+
+\begin{definition}
+    Let $\sigma \in \SmoothingSymbols$.
+    We let
+    \begin{align*}
+        \sigma^{(*)}(g, \lambda)
+        \defeq \int_\Group \conj \kappa_{g h^{-1}}(h^{-1}) \adj{\Rep \lambda(h)} \dd h.
+    \end{align*}
+    for each $(g, \lambda) \in \Group \times \VectorSpace$.
+\end{definition}
 
 Exactly like Lemma~\ref{lemma:prepare_composition_formula},
 we give an estimate on the right symbol seminorm of the remainder provided some technical condition is met.
