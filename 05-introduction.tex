@@ -83,7 +83,7 @@ The aim of this thesis is to study the case of the Euclidean motion group,
 which is the smallest group of affine transformations on a Euclidean space containing both translations and rotations.
 Our analysis will encounter difficulties due to the absence of properties such as compactness and commutativity of the group law,
 and the lack of a dilation structure.
-Furthermore, the infinite dimensional nature of the representations,
+Furthermore, the infinite-dimensional nature of the representations,
 and the fact that the Laplacian is not central also complicates matters.
 Nevertheless, our interest in this group is justified for two reasons:
 firstly, it is one of the more elementary non-compact groups not yet studied in the context of global pseudo-differential calculus;
@@ -102,11 +102,10 @@ For more detail,
 the reader is invited to consult~\cite{RuzhanskyTurunen10} for the compact case\footnote{%
     The adjunction and composition formulae are stated therein,
     although their correspending proofs contain a non-trivial gap which has since been filled but not published.
-    For interested readers, a complete proof with a different approach can be found in~\cite{Fischer2015}.
 }
-and~\cite{FischerRuzhansky16} for the graded case.
+and~\cite{FischerRuzhansky16} for graded Lie groups.
 To avoid repetition,
-we shall discuss both cases simultaneously.
+we shall discuss both settings simultaneously.
 
 Essentially,
 \cite{Fischer2015,FischerRuzhansky16} and the present document
@@ -124,9 +123,9 @@ to develop a global pseudo-differential calculus.
     \item[Step 7.] Prove the composition and adjunction formulae.
 \end{description}
 
-We now present the above steps in more detail,
-and $\Group$ will denote a compact or a graded Lie group until the end of this outline
-unless stated otherwise.
+We now present the above steps in more detail.
+Unless stated otherwise,
+$\Group$ will denote a compact or a graded Lie group until the end of this outline.
 
 \subsection*{Step 1 - Sobolev spaces}
 
@@ -141,8 +140,8 @@ We shall therefore rely on the Sobolev embedding to obtain further regularity re
 The role of the Sobolev embedding theorem is thus pivotal in the study of the regularity and the singularities of the kernel.
 
 Moreover,
-as we require our pseudo-differential operators to be bounded as a map between suitable Sobolev spaces,
-we expect them to be part of our symbol classes definition.
+as we require our pseudo-differential operators to be bounded as maps between suitable Sobolev spaces,
+we expect these spaces to be somehow part of our symbol classes definition.
 
 In the graded case,
 Sobolev spaces are studied in~\cite[Chapter 4]{FischerRuzhansky16},
@@ -157,7 +156,7 @@ $\Laplacian$ will denote the operator with respect to which we have defined our 
 
 \subsection*{Step 2 - Fourier analysis}
 
-The main idea is to define an analogue of the Euclidean Kohn-Nirenberg quantisation,
+The main idea is to define an analogue of the Euclidean Kohn-Nirenberg quantization,
 whereby the \emph{symbol} of a pseudo-differential operator is the \emph{Fourier transform of its convolution kernel}.
 Our first step is thus to extend the group Fourier transform to a suitable subset of tempered distributions.
 
@@ -322,7 +321,7 @@ We also let
 \end{align*}
 denote the set of \emph{smoothing symbols}.
 
-We define a \emph{pseudo-differential operator} to be an operator arising from a symbol via an analogue of the \emph{Kohn-Nirenberg quantisation}.
+We define a \emph{pseudo-differential operator} to be an operator arising from a symbol via an analogue of the \emph{Kohn-Nirenberg quantization}.
 More precisely,
 the operator
 \begin{align*}
@@ -330,10 +329,10 @@ the operator
     \defeq \InverseFourier \left\{ \xi \in \dualGroup \Group \mapsto \xi(g) \sigma(g, \xi) \Fourier \phi(\xi)\right\}(g)
 \end{align*}
 is the \emph{pseudo-differential operator} associated with the symbol $\sigma$.
-We easily check that $\Op [\R^n]$ is the usual Kohn-Nirenberg quantisation.
+We easily check that $\Op [\R^n]$ is the usual Kohn-Nirenberg quantization.
 
 Naturally,
-the quantisation allows us to define \emph{operator classes} via
+the quantization allows us to define \emph{operator classes} via
 \begin{align*}
     \OperatorClass m {\rho, \delta} &\defeq \Op(\SymbolClass m {\rho, \delta}),\\
     \SmoothingOperators &\defeq \Op(\SmoothingSymbols).
