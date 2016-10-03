@@ -964,4 +964,44 @@ More detail is available in~\cite{FischerRuzhansky16}.
 %
 %\section{Pseudo-differential calculus}
 
-\section{Compact groups}
+\section{Compact Lie groups}
+
+In the sequel,
+$\CompactGroup$ will denote a compact Lie group,
+and $\dd k$ the associated normalized Haar measure.
+This section is devoted to recalling elementary facts on compact Lie groups.
+For more detail, see e.g.~\cite{RuzhanskyTurunen10,Knapp02}.
+
+Given $\tau \in \dualGroup \CompactGroup$,
+we let $\dimRep \tau$ denote the \emph{dimension} of $\CompactGroup$.
+
+The following result is fundamental on compact Lie groups.
+
+\begin{theorem}[Peter-Weyl]
+\label{theorem:Peter-Weyl_theorem}
+    The set
+    \begin{align*}
+        \mathcal B \defeq \{\dimRep \tau \tau_{m n} : \tau \in \dualGroup \CompactGroup, \ m,n = 1, \dots, \dimRep \tau \} \subset \Lebesgue 2 \CompactGroup
+    \end{align*}
+    forms an orthonormal basis of $\Lebesgue 2 \CompactGroup$.
+\end{theorem}
+
+The Plancherel formula takes the following form.
+
+\begin{proposition}[Plancherel formula on $\CompactGroup$]
+    Let $f \in \Lebesgue 2 \CompactGroup$.
+    The following formula holds:
+    \begin{align*}
+        \int_\CompactGroup \abs f^2 \dd k
+        = \sum_{\tau \in \dualGroup \Group} \dimRep \tau \tr(\Fourier [\CompactGroup] f(\tau) \adj{\Fourier [\CompactGroup] f(\tau)})
+    \end{align*}
+\end{proposition}
+
+\begin{definition}[Japanese bracket]
+    Let $\tau \in \dualGroup \CompactGroup$.
+    We let
+    \begin{align*}
+        \JapaneseBracket \CompactGroup \tau \defeq (1 + \lambda_\tau)^{\frac 1 2},
+    \end{align*}
+    where $\lambda_\tau$ is such that $\Laplacian [\CompactGroup] \tau_{11} = \tau_{11}$.
+\end{definition}
