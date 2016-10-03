@@ -241,26 +241,18 @@ The following proposition summarizes how $\CompactGroup$ affects key objects on 
                 = \tr (\Hessian \phi (k x))
                 = \Laplacian[\VectorSpace] \phi(k x).
             \end{align*}
+        \item This is a direct consequence of the fact that the dilation structure on $\VectorSpace$ is scalar.
     \end{enumerate}
 \end{proof}
 
 \section{Lie algebra structure}
 
-We shall denote by $\LieAlgebraCompactGroup$ the Lie algebra of $\CompactGroup$.
+The difference between the semi-direct structure and its direct counterpart is most easily seen when studying the \emph{Lie algebra}.
 
-Suppose, to simplify notation, that $V = \R^n$.
-The map
-\begin{align*}
-    (x, k) \mapsto
-        \begin{pmatrix}
-            k & x\\
-            0 & 1
-        \end{pmatrix}
-\end{align*}
-defines a \emph{faithful representation}
-and a diffeomorphism to a subgroup of $\GeneralLinear n$.
+We shall henceforth denote by $\LieAlgebraCompactGroup$ the Lie algebra of $\CompactGroup$.
 
 \begin{definition}[Lie algebra of $\Group$]
+\label{definition:Lie_algebra}
     We shall call the set
     \begin{align*}
         \LieAlgebra \defeq
@@ -275,6 +267,8 @@ and a diffeomorphism to a subgroup of $\GeneralLinear n$.
     \end{align*}
 \end{definition}
 
+The Lie algebra $\LieAlgebra$ is characterized by the following \emph{commutation relations}.
+
 \begin{lemma}[Commutation relations]
     Suppose that $X_1$, $X_2$, $X \in \VectorSpace$ and $Y_1$, $Y_2$, $Y \in \LieAlgebraCompactGroup$.
     We have the following \emph{commutation relations}
@@ -285,6 +279,9 @@ and a diffeomorphism to a subgroup of $\GeneralLinear n$.
     \end{align*}
 \end{lemma}
 
+On the motion group,
+the \emph{exponential map} has the following expression.
+
 \begin{definition}[Exponential map]
 \label{definition:exponential_map}
 \index{motion group!exponential map}
@@ -293,6 +290,9 @@ and a diffeomorphism to a subgroup of $\GeneralLinear n$.
         \exp_\Group : \LieAlgebra \to \Group : (X, Y) \mapsto \left(\sum_{k = 0}^\infty \frac{Y^k}{{(k + 1)}!} X, \exp_\CompactGroup Y\right)
     \end{align*}
 \end{definition}
+
+Definitions~\ref{definition:exponential_map} and~\ref{definition:Lie_algebra}
+are motivated by the following proposition.
 
 \begin{proposition}
     Fix an orthonormal basis $e_1, \cdots, e_n$ of $\VectorSpace$,
@@ -458,6 +458,10 @@ and a diffeomorphism to a subgroup of $\GeneralLinear n$.
     \end{enumerate}
 \end{proof}
 
+Naturally,
+we can define differential operators which are left- or right-invariant
+via the exponential map.
+
 \begin{definition}[Left and right-invariant vector fields]
 \label{definition:invariant_differential_operators}
     Let $X \in \LieAlgebra$.
@@ -498,6 +502,8 @@ and a diffeomorphism to a subgroup of $\GeneralLinear n$.
             \end{align*}
     \end{enumerate}
 \end{proposition}
+
+We now describe explicitely the Lie algebra of Euclidean motion groups.
 
 \begin{example}[$2$-dimensional Euclidean motion group]
 \label{example:Lie_Algebra_of_2-dimensional_Euclidean_motion_group}
@@ -575,6 +581,8 @@ and a diffeomorphism to a subgroup of $\GeneralLinear n$.
     for the last commutation relation we additionally assume $i < k$.
 \end{example}
 
+Let us compute the expression of a left-invariant derivatives arising from $\VectorSpace \subset \LieAlgebra$.
+
 \begin{lemma}
     Let $X \in \VectorSpace \subset \LieAlgebra$.
     If $\phi \in \SmoothFunctions\Group$,
@@ -599,14 +607,15 @@ and a diffeomorphism to a subgroup of $\GeneralLinear n$.
     \end{align*}
 \end{proof}
 
+Let us choose a basis of $\LieAlgebra$.
 Since $\CompactGroup$ is compact,
-$\LieAlgebraCompactGroup$ is \emph{reductive}.
+$\LieAlgebraCompactGroup$ is \emph{reductive}~\cite[Corollary 4.25]{Knapp02}.
 Therefore, it follows that
 \begin{align*}
     \LieAlgebra = \VectorSpace \oplus \mathfrak a \oplus \mathfrak s,
 \end{align*}
 where $\mathfrak a$ is \emph{abelian} and $\mathfrak s$ is \emph{semisimple}.
-In particular, we can naturally define an inner product $\ip[\LieAlgebra]\dummy\dummy$ on $\LieAlgebra$ via the Killing form of $\mathfrak s$.
+In particular, we can naturally define an inner product $\ip[\LieAlgebra]\dummy\dummy$ on $\LieAlgebra$ via the Killing form of $\mathfrak k$~\cite[Corollary 4.26]{Knapp02}.
 
 From now on,
 $X_1, \cdots, X_{\dim \Group}$ will denote a basis such that
