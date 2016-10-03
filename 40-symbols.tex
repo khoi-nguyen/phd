@@ -13,7 +13,7 @@ In~\cite{RuzhanskyTurunen10},
 to generalize the aforementioned derivatives in Fourier variables
 and obtain a pseudo-differential calculus on compact Lie groups.
 
-\begin{definition}
+\begin{definition}[Difference operators]
 \label{definition:difference_operators}
     Let $q \in \SmoothFunctions{\Group}$.
     The \emph{difference operator} associated with $q$, $\DifferenceOperator{q}$ is defined via
@@ -27,13 +27,13 @@ and obtain a pseudo-differential calculus on compact Lie groups.
 \end{definition}
 
 In our definition of symbol classes,
-we shall require that the order of our differential operator decrease
+we shall require that the order of our symbols decrease
 every time we apply difference operators from a well-chosen family of smooth functions.
 
 It is thus important to show that this condition is not too restrictive,
 which is the aim of the next statement.
 As we intend for our symbol classes to contain characteristic polynomials,
-we show that applying difference operators \emph{reduces} the order.
+we show that applying difference operators \emph{reduces} their order.
 
 \begin{lemma}[Difference operators on characteristic polynomials]
 \label{lemma:difference_operators_on_characteristic_polynomials}
@@ -146,8 +146,8 @@ it is thus important to consider a family with respect to which we can use a \em
     if the associated smooth functions form a \emph{(strongly) admissible} collection in the sense of Definition~\ref{definition:admissibility_of_polynomials}.
 \end{definition}
 
-The existence of a Taylor expansion and the estimates on the remainder are then given by~\ref{proposition:Taylor_theorem}.
-We shall see later that the \emph{strong} admissibility will ensure our the singularity of our kernels is confined to the identity $e_\Group$.
+The existence of a Taylor expansion and the estimates on the remainder are then given by Proposition~\ref{proposition:Taylor_theorem}.
+We shall see later that the \emph{strong} admissibility will ensure that the singularity of our kernels is confined to the identity $e_\Group$.
 
 Another technical requirement is that our collection of smooth functions satsify a \emph{Leibniz-like} rule.
 This, amongst other things, ensures that our collection of symbols form an algebra with respect to pointwise composition.
@@ -167,15 +167,15 @@ This, amongst other things, ensures that our collection of symbols form an algeb
 \end{definition}
 
 It is a routine check to show that the Leibniz-like property for smooth functions
-become the following \emph{Leibniz-like rule} for difference operators.
+becomes the following \emph{Leibniz-like rule} for difference operators.
 
 \begin{lemma}[Leibniz-like rule]
 \label{lemma:Leibniz-like_property_for_difference_operators}
     Assume that
     \begin{align*}
-        \Delta \defeq \{q_1, \dots, q_{\dimDifferenceOperators} \SmoothFunctions \Group\}
+        \Delta \defeq \{q_1, \dots, q_{\dimDifferenceOperators} \in \SmoothFunctions \Group\}
     \end{align*}
-    is a collection of admissible of smooth functions satisfying the Leibniz-like property.
+    is a collection of admissible smooth functions satisfying the Leibniz-like property.
     Writing
     \begin{align*}
         q^\alpha \defeq q^{\alpha_1}_1 \dots q^{\alpha_{\dimDifferenceOperators}}_{\dimDifferenceOperators},
@@ -252,7 +252,7 @@ to show the following result.
             \end{align*}
         \item [Leibniz-like formula]
             Using \cite[Corollary 5.13]{Fischer2015},
-            we only need to show that $q_j$, $j = 1, \cdots, \dim \VectorSpace$ satisfy the Leibniz-like preperty.
+            we only need to show that the $q_j$, $j = 1, \cdots, \dim \VectorSpace$ satisfy the Leibniz-like preperty.
             For each $j \in \N$,
             \begin{align*}
                 q_j((x, k) (y, l))
@@ -311,7 +311,7 @@ we can now introduce our main definition.
 
 \begin{definition}[Symbol classes]
 \label{definition:symbol_classes}
-    Let $m \in \R$ and fix $\rho, \delta \in \R$ such that $0 \leq \rho \leq \delta \leq 1$.
+    Let $m \in \R$ and fix $\rho, \delta \in \R$ such that $0 \leq \rho, \delta \leq 1$.
     We shall say that a map
     \begin{align*}
         \sigma : \Group \times \VectorSpace \mapsto \End(\SmoothFunctions \CompactGroup)
@@ -373,8 +373,8 @@ Let us make a few comments on Definition~\ref{definition:symbol_classes}.
 
         We shall see later, again using the ideas of~\cite{FischerRuzhansky16},
         that we also only need to check for $\gamma = 0$ in our case.
-        It is worth remembering that the fact that our Laplacian is not central
-        is due to the \emph{semi-direct} structure,
+        It is worth keeping in mind that the fact that our Laplacian is not central
+        is due to the \emph{semi-direct} structure.
 \end{itemize}
 
 We can naturally define a collection of seminorms on our symbol classes,
@@ -382,7 +382,7 @@ and check they endow each $\SymbolClass m {\rho, \delta}$ with a structure of \e
 
 \begin{definition}[Symbol semi-norms]
 \label{definition:symbol_semi-norms}
-    Let $m \in \R$ and fix $\rho, \delta \in \R$ such that $0 \leq \rho \leq \delta \leq 1$.
+    Let $m \in \R$ and fix $\rho, \delta \in \R$ such that $0 \leq \rho, \delta \leq 1$.
     If $\sigma \in \SymbolClass m {\rho, \delta}$,
     then for each $N \in \N$,
     we let
@@ -527,7 +527,7 @@ The process of \emph{quantization} is the association of a symbol with an operat
 \end{definition}
 
 Now that we can associate a symbol to an operator,
-the latter can inherit properties such as \emph{order} and \emph{type} from the former.
+the latter can inherit properties such as the \emph{order} or the \emph{type} from the former.
 
 \begin{definition}[Operator classes]
 \label{definition:operator_classes}
@@ -684,7 +684,7 @@ we use the \emph{Leibniz-like rule} of Lemma~\ref{lemma:Leibniz-like_property_fo
             defines a symbol in $\SymbolClass {m_1 + m_2} {\rho, \delta}$,
             whose symbol is given by
             \begin{align*}
-                g \in \Group \mapsto \conv {\kappa_{1, g}} {\kappa_{2, g}}
+                g \in \Group \mapsto \conv {\kappa_{2, g}} {\kappa_{1, g}}
             \end{align*}
     \end{enumerate}
 
@@ -725,7 +725,7 @@ We are thus led to the following definition.
     Let $\sigma \in \SymbolClass m {\rho, \delta}$ with $m > 0$.
     Given a subset $\Lambda \subset \C$,
     we shall say that $\sigma$ is \emph{parameter-elliptic} with respect to $\Lambda$
-    if the following properties hold.
+    if the following properties holds.
     \begin{enumerate}
         \item For each $z \in \Lambda$ and each $(g, \lambda) \in \Group \times \VectorSpace$,
             the operator
@@ -855,11 +855,11 @@ We are now ready to state our main result.
     Assume $0 \leq \delta < \rho \leq 1$.
     Let $\sigma \in \SymbolClass m {\rho, \delta}$ be a symbol of strictly positive order,
     which is self-adjoint and parameter-elliptic with respect to a sector $\Lambda \subset \C$.
-    If $F$ is analytic in $\C \setminus \Lambda_\epsilon$
-    with $\Lambda_\epsilon \defeq (\Lambda \cup \{z \in \C : \abs z \leq \epsilon\})$ for some $\epsilon > 0$
+    If $F$ is analytic in $\C \setminus \Lambda_\eta$
+    with $\Lambda_\eta \defeq (\Lambda \cup \{z \in \C : \abs z \leq \eta\})$ for some $\eta > 0$
     and satisfies
     \begin{align*}
-        \abs {F(z)} \leq C \abs z^s, \quad z \in \Gamma \defeq \partial \Lambda_\epsilon.
+        \abs {F(z)} \leq C \abs z^s, \quad z \in \Gamma \defeq \partial \Lambda_\eta.
     \end{align*}
     for some $s < 0$,
     then $F(\sigma)(g, \lambda) $defines a symbol in $\SymbolClass {s m} {\rho, \delta}$.
@@ -1196,7 +1196,7 @@ and control the convergence in all symbol classes of order $m_1 > m$.
     \begin{enumerate}
         \item For each $\epsilon \in (0, 1]$,
             $\sigma_\epsilon(g, \lambda)$ has compact support in $g \in \Group$.
-            In particular, its associated kernel
+            More precisely, its associated kernel
             \begin{align*}
                 \Group \times \Group : (g, h) \mapsto \kappa_{\epsilon, g}(h)
             \end{align*}
@@ -2755,12 +2755,12 @@ The \emph{strong admissibility} means that polynomials can constitute a good app
             Keeping in mind that $\epsilon^2 = \norm [\Group] h$,
             let us now treat the different cases separately.
             \begin{description}
-                \item[$\rho = 1$ and $m > -\dim \Group$.] We pick $\gamma < -(\dim \Group + m)$ to obtain
+                \item[$\rho = 1$.] We pick $\gamma < -(\dim \Group + m)$ to obtain
                     \begin{align*}
                         \abs {\kappa_{\epsilon, g}(h)}
                         &\leq C \norm [\Group] h^\gamma.
                     \end{align*}
-                \item[$\rho < 1$ and $m > -\dim \Group$.]
+                \item[$\rho < 1$]
                     We pick
                     \begin{align*}
                         \gamma \defeq -\frac {\dim \Group + m} \rho,
@@ -2853,7 +2853,7 @@ The \emph{strong admissibility} means that polynomials can constitute a good app
 
             Let us now treat the different cases.
             \begin{description}
-                \item[$\rho = 1$ and $m > -\dim \Group$]
+                \item[$\rho = 1$]
                     Choose $\tilde \gamma \defeq \gamma - r$
                     so that $-r \leq \tilde \gamma < -(\dim \Group + m)$.
                     Clearly, we have
@@ -2861,7 +2861,7 @@ The \emph{strong admissibility} means that polynomials can constitute a good app
                         \abs{(\kappa_g - \kappa_{g, \epsilon})(h)}
                         \leq \norm [\Group] h^{\tilde \gamma}.
                     \end{align*}
-                \item[$\rho < 1$ and $m > -\dim \Group$]
+                \item[$\rho < 1$]
                     Pick $\gamma$ as follows:
                     \begin{align*}
                         \gamma - r = -\frac{\dim \Group + m} \rho.
@@ -2994,6 +2994,8 @@ the \emph{composition} and \emph{adjunction} formulae.
 The former ensures it is possible to create parametrices for elliptic operators,
 while the latter allows to extend our pseudo-differential operators (and in particular our paramatrices) to tempered distributions.
 
+We shall show the following results.
+
 \begin{itemize}
     \item Provided $\rho > \delta$,
         each operator class $\OperatorClass m {\rho, \delta}$ is stable under adjunction.
@@ -3014,7 +3016,7 @@ For technical simplicity,
 we shall perform symbolic estimates only with right symbol seminorms.
 We then show in Subsection~\ref{subsection:simplification_of_symbol_classes_definition}
 that the symbol classes can be defined in an equivalent way by only considering the action of the right-invariant Laplacian,
-which will allow us to conclude in~\ref{subsection:pseudo-differential_calculus} that both the composition and the adjunction formulae hold.
+which will allow us to conclude in Subsection~\ref{subsection:pseudo-differential_calculus} that both the composition and the adjunction formulae hold.
 
 Before we start,
 let us state a proof that will be used in the proof of both results.
@@ -3209,7 +3211,7 @@ This is the reason why we shall always assume $\rho > \delta$ hereafter.
         &\norm [\Lin {\Lebesgue 2 \CompactGroup}] {%
             \LeftDifferentialOperator [g] \beta \left(
                 \sigma_1 \circ \sigma_2(g, \lambda)
-                - \sum_{\abs \alpha \leq N} \DifferenceOperatorOrder \alpha \sigma_1(g, \lambda) \TaylorLeftDifferentialOperator \alpha \sigma_2(g, \lambda)
+                - \sum_{\abs \alpha \leq N} \frac 1 {\alpha !} \DifferenceOperatorOrder \alpha \sigma_1(g, \lambda) \TaylorLeftDifferentialOperator \alpha \sigma_2(g, \lambda)
             \right)
         }\\
         &\qquad \leq C \SymbolSemiNorm {m_1, R} {\rho, \delta} P {\sigma_1} \SymbolSemiNorm {m_2} {\rho, \delta} P {\sigma_2}.
@@ -3220,14 +3222,14 @@ This is the reason why we shall always assume $\rho > \delta$ hereafter.
     let us define
     \begin{align*}
         \tau_N(g, \lambda) \defeq
-        \sigma(g, \lambda) - \sum_{\abs \alpha \leq N} \DifferenceOperatorOrder \alpha \sigma_1(g, \lambda) \TaylorLeftDifferentialOperator \alpha \sigma_2(g, \lambda),
+        \sigma(g, \lambda) - \sum_{\abs \alpha \leq N} \frac 1 {\alpha!} \DifferenceOperatorOrder \alpha \sigma_1(g, \lambda) \TaylorLeftDifferentialOperator \alpha \sigma_2(g, \lambda),
     \end{align*}
     where $\sigma \defeq \sigma_1 \circ \sigma_2$.
     We want to estimate
     \begin{align}
         &\tau_N(g, \lambda) \notag\\
         &= \int_\Group \kappa_{1, g}(h) \adj{\Rep \lambda(h)}
-        \left(\sigma_2(g h^{-1}, \lambda) - \sum_{\abs \alpha \leq N} q_\alpha(h^{-1}) \TaylorLeftDifferentialOperator \alpha \sigma_2(g, \lambda)\right) \dd h \notag\\
+        \left(\sigma_2(g h^{-1}, \lambda) - \sum_{\abs \alpha \leq N} \frac 1 {\alpha!} q_\alpha(h^{-1}) \TaylorLeftDifferentialOperator \alpha \sigma_2(g, \lambda)\right) \dd h \notag\\
         &= \int_\Group \kappa_{1, g}(h) \adj {\Rep \lambda(h)} \TaylorRemainder {\sigma_2(g \dummy, \lambda)} {e_\Group} N (h^{-1}) \dd h.
         \label{eq:remainder_of_composition_formula}
     \end{align}
@@ -3295,7 +3297,7 @@ This is the reason why we shall always assume $\rho > \delta$ hereafter.
     if we take the operator norm,
     we obtain
     \begin{align}
-        &\norm [\Lin {\Lebesgue 2 \CompactGroup}] {\LeftDifferentialOperator {\beta_0} \tau_n(g, \lambda)} \notag\\
+        &\norm [\Lin {\Lebesgue 2 \CompactGroup}] {\LeftDifferentialOperator {\beta_0} \tau_n(g, \lambda)} \leq \notag\\
         &\quad \lcsum{%
             \substack{%
                 \beta_{01} + \beta_{02} = \beta_0\\
@@ -3340,7 +3342,7 @@ This is the reason why we shall always assume $\rho > \delta$ hereafter.
     we have
     \begin{align*}
         &\norm [\Lin {\Lebesgue 2 \CompactGroup}] {\TaylorRemainder {\Rep \lambda \BesselPotentialSquared {-M} \LeftDifferentialOperator [g_2 = g] {\beta_{02}} \LeftDifferentialOperator {\beta_2} \sigma_2(g_2 \dummy, \lambda)} g {N - \abs {\beta_2}} (h^{-1})}\\
-        &\ \leq
+        &\ \leq C
         \sup_{\abs \gamma \leq N - \abs {\beta_2} + 1}
         \norm [\Group] h^{N - \abs {\beta_2} + 1}
         S(h, M, \gamma, \beta_{02}, \beta_2),
@@ -3609,7 +3611,7 @@ this condition is not too restrictive if $\rho > \delta$.
     \begin{align}
         \tau_N(g, \lambda) &\defeq
         \sigma^{(*)}(g, \lambda)
-        - \sum_{\abs \alpha \leq N} \DifferenceOperatorOrder \alpha \LeftDifferentialOperator \alpha \adj \sigma(g, \lambda) \notag\\
+        - \sum_{\abs \alpha \leq N} \frac 1 {\alpha!} \DifferenceOperatorOrder \alpha \LeftDifferentialOperator \alpha \adj \sigma(g, \lambda) \notag\\
         &= \int_\Group \TaylorRemainder {\kappa_{g \dummy}^{(*)}(h)} g N (h^{-1}) \adj{\Rep \lambda (h)} \dd h.
         \label{eq:adjunction_formula:Taylor_remainder}
     \end{align}
@@ -3888,13 +3890,13 @@ Propositions~\ref{proposition:composition_formula} and~\ref{proposition:adjoint_
     $\sigma$ is given modulo $\SmoothingSymbols$ by the asymptotic sum
     \begin{align*}
         \sigma \sim
-        \sum_{\alpha \in \N^{\dimDifferenceOperators}} \DifferenceOperatorOrder \alpha \sigma_1 \ \TaylorLeftDifferentialOperator \alpha \sigma_2.
+        \sum_{\alpha \in \N^{\dimDifferenceOperators}} \frac 1 {\alpha!} \DifferenceOperatorOrder \alpha \sigma_1 \ \TaylorLeftDifferentialOperator \alpha \sigma_2.
     \end{align*}
     More precisely,
     we have
     \begin{align*}
         \sigma
-        - \sum_{\abs \alpha \leq N} \DifferenceOperatorOrder \alpha \sigma_1 \ \TaylorLeftDifferentialOperator \alpha \sigma_2 \in \SymbolClass {m - (\rho - \delta) N} {\rho, \delta}
+        - \sum_{\abs \alpha \leq N} \frac 1 {\alpha!} \DifferenceOperatorOrder \alpha \sigma_1 \ \TaylorLeftDifferentialOperator \alpha \sigma_2 \in \SymbolClass {m - (\rho - \delta) N} {\rho, \delta}
     \end{align*}
     for each $N \in \N$.
 \end{theorem}
@@ -4000,7 +4002,7 @@ The construction of asymptotic limits is essential to construct parametrices.
     \end{align}
     where the last line was obtained by applying~\eqref{eq:dyadic_decay_in_asymptotic_sum_of_modified_symbols}.
     As $\SymbolClass {m_0} {\rho, \delta}$ is a Fr\'echet space,
-    it follows from REF that the sum
+    it follows that the sum
     \begin{align*}
         \sum_{j = 0}^{+\infty} \tilde \sigma_j
     \end{align*}
@@ -4199,7 +4201,7 @@ operators in $\OperatorClass m {\rho, \delta}$ are bounded on $\Lebesgue 2 \Grou
     \begin{align}
         \int_{\Ball [\Group] {g_0} 1} \abs {T f(g)}^2 \dd g
         &= \int_{\Ball [\Group] e 1} \abs {T f(g_0 g)}^2 \dd g\notag\\
-        &\leq C \SymbolSemiNorm m {\rho, \sigma} ? \sigma^2
+        &\leq C \SymbolSemiNorm m {\rho, \sigma} P \sigma^2
         \norm [\Lebesgue 2 \Group] {(1 + \norm [\Group] \dummy^2)^{-N} f(g_0 \dummy)}^2.
         \label{eq:integral_of_Tf_on_ball_of_radius_1}
     \end{align}
@@ -4244,7 +4246,7 @@ operators in $\OperatorClass m {\rho, \delta}$ are bounded on $\Lebesgue 2 \Grou
     we obtain
     \begin{align*}
         \norm [\Lebesgue 2 \Group] {T f}^2
-        &\leq C \SymbolSemiNorm m {\rho, \sigma} ? \sigma^2
+        &\leq C \SymbolSemiNorm m {\rho, \sigma} P \sigma^2
         \norm [\Lebesgue 2 \Group] {(1 + \norm [\Group] \dummy^2)^{-N} f(g_0 \dummy)}^2,
     \end{align*}
     which concludes the proof.
