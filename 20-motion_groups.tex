@@ -636,6 +636,8 @@ $X_1, \cdots, X_{\dim \Group}$ will denote a basis such that
     \end{align*}
 \end{definition}
 
+A very important example of left-invariant differential operator is the following.
+
 \begin{definition}[Left-invariant Laplacian]
 \label{definition:left-invariant_Laplacian}
 \index{Laplacian}
@@ -644,6 +646,10 @@ $X_1, \cdots, X_{\dim \Group}$ will denote a basis such that
         \Laplacian \defeq \sum_{j = 1}^{\dim \Group} \LeftDifferentialOperatorFirstOrder{X_j}^2
     \end{align*}
 \end{definition}
+
+Deceptively,
+the left-invariant Laplacian of $\Group$ is identical to the one of $\GroupDirect$.
+It is however important to keep in mind that this operator is \emph{not right-invariant} with the semidirect structure.
 
 \begin{proposition}[Left-invariant Laplacian]
     Let $f \in \SmoothFunctions\Group$.
@@ -674,6 +680,9 @@ $X_1, \cdots, X_{\dim \Group}$ will denote a basis such that
     By~\cite[Subsection 8.3.2]{RuzhanskyTurunen10},
     it corresponds to the \emph{Laplace-Beltrami} operator on $\CompactGroup$.
 \end{proof}
+
+It will be important later to be able to establish a link between right-
+and left-invariant differential operator.
 
 \begin{proposition}
     Let $X \in \LieAlgebra$.
