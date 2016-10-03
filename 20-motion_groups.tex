@@ -1190,6 +1190,9 @@ We now define a central tool in our analysis: the \emph{Fourier transform}.
     is called the \emph{Fourier Transform} of $f$.
 \end{definition}
 
+To establish the Plancherel and inverse formulae,
+we need to compute some Schatten norms of our Fourier coefficients.
+
 \begin{lemma}
 \label{lemma:kernels_of_Fourier_coefficients}
     Let $\lambda \in \VectorSpace$, and $f \in \Lebesgue{1}\Group$.
@@ -1272,7 +1275,10 @@ We now define a central tool in our analysis: the \emph{Fourier transform}.
     \end{enumerate}
 \end{proof}
 
-\begin{corollary}
+If a function is rotation-invariant in the Euclidean variable,
+applying the Fourier transform reduces to computing the Fourier transform on $\GroupDirect$.
+
+\begin{lemma}
     Let $\lambda \in \VectorSpace$ and $f \in \Lebesgue 1 \Group$.
     If for every $l \in \CompactGroup$,
     \begin{align}
@@ -1283,7 +1289,7 @@ We now define a central tool in our analysis: the \emph{Fourier transform}.
     \begin{align*}
         \Fourier f(\lambda) = \Fourier [\GroupDirect] f(\lambda).
     \end{align*}
-\end{corollary}
+\end{lemma}
 \begin{proof}
     By Lemma~\ref{lemma:kernels_of_Fourier_coefficients} and \eqref{eq:function_on_motion_group_invariant_under_K},
     we know that
@@ -1296,14 +1302,16 @@ We now define a central tool in our analysis: the \emph{Fourier transform}.
     \end{align*}
     where the last line was obtained by substituing $k$ for $u k^{-1}$.
 
-    Recognising a Fourier transform on $\CompactGroup$ is the right-hand side of the above,
+    Recognising a Fourier transform on $\CompactGroup$ with ``grouped representations''
+    (see Subsubsection~\ref{subsubsection:representations_on_the_direct_product})
+    in the right-hand side of the above
     we obtain
     \begin{align*}
         \Fourier f(\lambda) F(u)
         &=
         \Fourier [\GroupDirect] f(\lambda) F(u),
     \end{align*}
-    which shows that both Fourier transforms are indeed equal for $f$.
+    which shows that both Fourier transforms are indeed equal.
 \end{proof}
 
 %\begin{definition}
@@ -1352,7 +1360,7 @@ as those notions are linked via the Fourier transform.
     Let $f \in \Lebesgue{1}{\Group} \cap \Lebesgue{2}{\Group}$.
     The following formula holds
     \begin{align}
-        \int_G \abs{f}^2 \dd g = \int_\dualGroup{\VectorSpace} \norm[\HilbertSchmidt{\Lebesgue{2}{\CompactGroup}}]{\Fourier{f}(\lambda)}^2 \dd \Plancherel{\VectorSpace}(\lambda).
+        \int_G \abs{f}^2 \dd g = \int_{\VectorSpace} \norm[\HilbertSchmidt{\Lebesgue{2}{\CompactGroup}}]{\Fourier{f}(\lambda)}^2 \dd \lambda.
         \label{proposition:Plancherel_formula:formula}
     \end{align}
 \end{proposition}
@@ -1367,8 +1375,8 @@ as those notions are linked via the Fourier transform.
     Now, integrating with respect to $\lambda$,
     we obtain
     \begin{align*}
-        \int_\dualGroup{\VectorSpace} \norm[\HilbertSchmidt{\Lebesgue{2}{\CompactGroup}}]{\Fourier{f}(\lambda)}^2 \dd \Plancherel{\VectorSpace}(\lambda)
-        &= \int_\dualGroup{\VectorSpace} \int_\CompactGroup \abs{\Fourier[\VectorSpace]{f}(\lambda, k)}^2 \dd k \dd \Plancherel{\VectorSpace}(\lambda)\\
+        \int_{\VectorSpace} \norm[\HilbertSchmidt{\Lebesgue{2}{\CompactGroup}}]{\Fourier{f}(\lambda)}^2 \dd \lambda
+        &= \int_{\VectorSpace} \int_\CompactGroup \abs{\Fourier[\VectorSpace]{f}(\lambda, k)}^2 \dd k \dd \Plancherel{\VectorSpace}(\lambda)\\
         &= \int_\VectorSpace \int_\CompactGroup \abs{f(x, k)}^2 \dd u \dd k,
     \end{align*}
     where the last line was obtained by applying the Plancherel formula on $\VectorSpace$.
@@ -1426,6 +1434,9 @@ as those notions are linked via the Fourier transform.
 
 The following result is equivalent to the Plancherel formula,
 in the sense that proving one allows us to prove the other.
+
+It says that for a very regular function,
+we can recover a function from its Fourier transform.
 
 \begin{proposition}[Inverse Fourier Transform]
 \label{proposition:inverse_Fourier_Transform}
@@ -1525,6 +1536,22 @@ this means that the \emph{inverse formula} takes the form
     f(g) = \int_{\GroupDirect} \tr(\Rep [\GroupDirect] \lambda(g) \Fourier [\GroupDirect] f(\lambda)) \dd \lambda,
 \end{align*}
 where $f \in \Schwartz \GroupDirect$ and $g \in \GroupDirect$.
+
+We have thus shown that the Fourier theory and the Plancherel Theory are formally very similar on $\Group$ and $\GroupDirect$ provided we group the representations on either side.
+
+Note that the resemblance is extremely deceptive.
+To illustrate that last assertion,
+we observe that
+\begin{align*}
+    \Rep \lambda (\Laplacian) =
+    \Rep [\GroupDirect] \lambda (\Laplacian [\GroupDirect])
+\end{align*}
+when we group the representations on both sides.
+However,
+the term appearing on the right-hand side decomposes as a direct sum of \emph{scalar operators} on the irreducible representations,
+unlike the term appearing on the left.
+This is a direct consequence of the fact
+that $\Laplacian [\Group] = \Laplacian [\GroupDirect]$ is right-invariant on $\GroupDirect$ but not on $\Group$.
 
 %\section{Applications to engineering}
 %
