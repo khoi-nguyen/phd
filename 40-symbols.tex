@@ -607,18 +607,18 @@ is in fact the \emph{right-convolution kernel} of its associated pseudo-differen
     In other words, $\kappa$ is the right convolution kernel associated with $\Op(\sigma)$.
 \end{proposition}
 \begin{proof}
-    Let $g \in \Group$ and fix $s < -\max \{\dim \Group/2, \abs m\}$.
+    Let $g \in \Group$ and fix $s > \max \dim \Group/2$.
     By definition, we know that $\conv \phi \kappa_g \in \Sobolev s$ if and only if
     \begin{align*}
-        \Rep \dummy \BesselPotential s \Fourier \{\conv \phi {\kappa_g}\}
-        = \Rep \dummy \BesselPotential s \sigma(g, \dummy) \Fourier \phi
+        \lambda \mapsto
+        \Rep \lambda \BesselPotential s \sigma(g, \dummy) \Rep \lambda \BesselPotential {-m - s + s - m} \Fourier \phi
     \end{align*}
     belongs to $\LebesgueDual 2 \Group$.
     To show this,
-    observe that the above identity implies
+    observe that the above implies
     \begin{align*}
         \norm[\SchattenClasses 2 {\Lebesgue 2 \CompactGroup}] {\Rep \dummy \BesselPotential s \Fourier \{\conv \phi {\kappa_g}\}}^2
-        \leq C_s \norm[\SchattenClasses 2 {\Lebesgue 2 \CompactGroup}] {\Fourier \phi}^2,
+        \leq C_s \norm[\SchattenClasses 2 {\Lebesgue 2 \CompactGroup}] {\Rep \lambda \BesselPotential {s - m}\Fourier \phi}^2,
     \end{align*}
     which, since the right-hand side is integrable on $\VectorSpace$,
     means that $\conv \phi {\kappa_g}$ belongs to $\Sobolev s$.
