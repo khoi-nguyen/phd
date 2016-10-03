@@ -662,6 +662,9 @@ leading to the following definition.
 
 \section{Fourier Transform}
 
+If $\Group$ is separable, locally compact, unimodular and of type I~\cite{FischerRuzhansky16},
+we have a Fourier-Plancherel theory.
+
 \begin{definition}[Fourier coefficient]
 \label{definition:Fourier_coefficient}
     Let $\xi \in \dualGroup\Group$.
@@ -679,14 +682,7 @@ leading to the following definition.
     is called the \emph{Fourier transform of $f$}.
 \end{definition}
 
-\begin{definition}
-    Let $\xi \in \VectorSpace$.
-    If $f \in \Lebesgue{1}\VectorSpace$,
-    we define the \emph{Fourier coefficient of $f$ at $\lambda$}, $\Fourier[\VectorSpace] f(\xi)$, via
-    \begin{align*}
-        \Fourier[\VectorSpace] f(\xi) \defeq \int_\VectorSpace f(x) \e^{-\i \turn \ip{x}\xi} \dd x.
-    \end{align*}
-\end{definition}
+The Fourier transform satisfies the following properties.
 
 \begin{proposition}
 \label{proposition:elementary_properties_of_the_Fourier_transform}
@@ -822,41 +818,17 @@ leading to the following definition.
     \end{enumerate}
 \end{proof}
 
-\begin{proposition}
-    There exists a measure $\Plancherel\Group$ on $\dualGroup\Group$ such that the following property holds:
-    if $f \in \Schwartz\Group$, we have
+\begin{proposition}[Plancherel formula]
+    There exists a unique positive $\sigma$-finite measure $\Plancherel\Group$ on $\dualGroup\Group$ such that the following property holds:
+    for every $f \in \Schwartz\Group$,
+    the map
+    \begin{align*}
+        \xi \in \dualGroup \Group \mapsto \tr (\Fourier f(\xi) \adj{\Fourier f(\xi)})
+    \end{align*}
+    is integrable against $\Plancherel \Group$ and we have
     \begin{align*}
         \int_\Group \abs{f}^2 \dd g
         = \int_{\dualGroup\Group} \tr \left( \Fourier f(\xi) \adj{\Fourier f(\xi)} \right) \dd \Plancherel\Group(\xi).
-    \end{align*}
-\end{proposition}
-
-\begin{example}[Plancherel Measure on $\dualGroup\CompactGroup$]
-    If $f \in \SmoothFunctions{\CompactGroup}$,
-    then the Peter-Weyl theorem implies:
-    \begin{align*}
-        \int_\CompactGroup \abs{f}^2 \dd g
-        = \sum_{\tau \in \dualGroup\CompactGroup}
-            \dimRep\tau
-            \tr \left(
-                \Fourier[\CompactGroup] f(\tau)
-                \adj{\Fourier[\CompactGroup] f(\tau)}
-            \right)
-    \end{align*}
-\end{example}
-
-\begin{proposition}[Inverse Fourier Transform]
-    Let $g \in \Group$.
-    If $f \in \Schwartz\Group$,
-    then we have
-    \begin{align*}
-        f(g) =
-        \int_\dualGroup\Group
-            \tr\left(
-                \xi(g)
-                \Fourier f(\xi)
-            \right)
-        \dd \Plancherel\Group(\xi).
     \end{align*}
 \end{proposition}
 
