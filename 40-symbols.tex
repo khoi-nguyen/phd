@@ -3429,7 +3429,7 @@ once we have obtained a similar result for the adjunction.
     Consider the symbols
     \begin{align*}
         \tilde \sigma_1(g, \lambda) &\defeq \sigma_1(g, \lambda)\\
-        \tilde \sigma_2(g, \lambda) &\defeq \sigma_2(g, \lambda) \Rep \lambda \BesselPotential {-m_1 - m_2 + (\rho - \delta) N_0 + \rho \abs {\alpha_0} - \delta \abs {\beta_0}}\\
+        \tilde \sigma_2(g, \lambda) &\defeq \sigma_2(g, \lambda) \Rep \lambda \BesselPotential {-m_1 - m_2 + (\rho - \delta) N_0 - \delta \abs {\beta_0}}\\
     \end{align*}
     which are symbols of order
     \begin{align*}
@@ -3451,28 +3451,42 @@ once we have obtained a similar result for the adjunction.
     \begin{align*}
         &\norm [\Lin {\Lebesgue 2 \CompactGroup}] {%
         \LeftDifferentialOperator [g] {\beta_0}
-        \DifferenceOperatorOrder {\alpha_0}
         \left(
                 \tilde \sigma_1 \circ \tilde \sigma_2(g, \lambda)
-                - \sum_{\abs \alpha \leq N} \tilde \sigma_1(g, \lambda) \LeftDifferentialOperator [g] \alpha \tilde \sigma_2(x, \lambda)
+                - \sum_{\abs \alpha \leq N} \frac 1 {\alpha!} \DifferenceOperatorOrder \alpha \tilde \sigma_1(g, \lambda) \TaylorLeftDifferentialOperator \alpha \tilde \sigma_2(g, \lambda)
             \right)
         }\\
         &\qquad \leq C \SymbolSemiNorm {\tilde m_1, R} {\rho, \delta} P {\tilde \sigma_1} \SymbolSemiNorm {\tilde m_2} {\rho, \delta} P {\tilde \sigma_2}.
     \end{align*}
 
-    In particular,
-    this implies that
+    From there,
+    we may deduce that
     \begin{align*}
         &\norm [\Lin {\Lebesgue 2 \CompactGroup}] {%
         \LeftDifferentialOperator [g] {\beta_0}
-        \DifferenceOperatorOrder {\alpha_0}
         \tau_N(g, \lambda)
-        \Rep \lambda \BesselPotential {-m_1 - m_2 + (\rho - \delta) N_0 + \rho \abs {\alpha_0} - \delta \abs {\beta_0}}
+        \Rep \lambda \BesselPotential {-m_1 - m_2 + (\rho - \delta) N_0 - \delta \abs {\beta_0}}
         }\\
         &\qquad \leq C \SymbolSemiNorm {m_1, R} {\rho, \delta} {P'} {\sigma_1} \SymbolSemiNorm {\tilde m_2} {\rho, \delta} {P'} {\tilde \sigma_2}\\
-        &\qquad \leq C \SymbolSemiNorm {m_1, R} {\rho, \delta} {P''} {\sigma_1} \SymbolSemiNorm {m_2} {\rho, \delta} {P''} {\sigma_2},
+        &\qquad \leq C \SymbolSemiNorm {m_1, R} {\rho, \delta} {P''} {\sigma_1} \SymbolSemiNorm {m_2} {\rho, \delta} {P''} {\sigma_2}.
     \end{align*}
-    which can be rewritten as
+    where as usual
+    \begin{align*}
+        \tau_N(g, \lambda)
+        \defeq
+        (\sigma_1 \circ \sigma_2)(g, \lambda)
+        - \sum_{\abs \alpha \leq N_0} \DifferenceOperatorOrder \alpha \sigma_1(g, \lambda) \LeftDifferentialOperator \alpha \sigma_2(g, \lambda).
+    \end{align*}
+
+    Using the fact that
+    \begin{align*}
+        \DifferenceOperatorOrder {\alpha_0} (\tilde \sigma_1 \circ \tilde \sigma_2)
+        = \lcsum{\alpha_{01}, \alpha_{02}}
+        \DifferenceOperatorOrder {\alpha_{01}} \tilde \sigma_1 \circ
+        \DifferenceOperatorOrder {\alpha_{02}} \tilde \sigma_2
+    \end{align*}
+    where the coefficients are exactly the ones from the Leibniz-like rule for differential operators for a pointwise multiplication,
+    we can show that
     \begin{align*}
         \SymbolSemiNorm {m_1 + m_2 - N_0 (\rho - \delta)} {\rho, \delta} P {\tau_N}
         \leq C \SymbolSemiNorm {m_1, R} {\rho, \delta} {P''} {\sigma_1} \SymbolSemiNorm {m_2} {\rho, \delta} {P''} {\sigma_2}.
