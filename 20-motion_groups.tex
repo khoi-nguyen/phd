@@ -1799,6 +1799,8 @@ It then follows by classical arguments that we may extend the Fourier Transform 
 
 \section{Sobolev spaces}
 
+The notion of \emph{order} of a pseudo-differential operator is mainly motivated by boundedness properties between Sobolev spaces.
+
 \begin{definition}[Sobolev norm]
     Let $s \in \R$.
     If $\phi \in \Schwartz\Group$, we let
@@ -1820,6 +1822,8 @@ It then follows by classical arguments that we may extend the Fourier Transform 
     Let $s \in \R$.
     We define the \emph{Sobolev space of order $s$} to be the completion of $\Schwartz\Group$ with the norm $\norm[\Sobolev{s}]{\dummy}$.
 \end{definition}
+
+The Sobolev spaces satisfy the following properties.
 
 \begin{proposition}[Properties of the Sobolev spaces]
 \label{proposition:elementary_properties_of_Sobolev_spaces}
@@ -1896,18 +1900,9 @@ It then follows by classical arguments that we may extend the Fourier Transform 
     \end{itemize}
 \end{proof}
 
-\begin{proposition}[Duality]
-    Let $s \in \R$.
-    The dual of $\Sobolev s$ is isomorphic to $\Sobolev {-s}$.
-\end{proposition}
-\begin{proof}
-    Suppose
-\end{proof}
-
-\subsubsection{Sobolev embeddings}
-
 A classical strategy to show that a distribution is a continuous function
 is to show that it belongs to a Sobolev space $\Sobolev s$ for a sufficiently large $s \in \R$.
+This strategy can only be successful provided we can prove \emph{Sobolev embeddings}.
 
 \begin{lemma}
 \label{lemma:integrability_of_the_Schatten_class_of_the_Bessel_potential}
@@ -1982,6 +1977,10 @@ is to show that it belongs to a Sobolev space $\Sobolev s$ for a sufficiently la
     can be written as the convolution of two functions in $\Lebesgue 2 \Group$.
     The conclusion now follows from Proposition~\ref{proposition:integrability_of_the_convolution_of_two_L1_functions}.
 \end{proof}
+
+The Sobolev embedding theorem allows us to extend the Fourier inversion formula onto Sobolev spaces.
+To show this,
+we first show the following technical result.
 
 \begin{lemma}
 \label{lemma:preparation_for_general_inverse_formula}
@@ -2067,6 +2066,8 @@ is to show that it belongs to a Sobolev space $\Sobolev s$ for a sufficiently la
     Letting $j \to \infty$ in the above,
     we obtain the desired conclusion.
 \end{proof}
+
+We are now ready to prove the following generalisation of Proposition~\ref{proposition:inverse_Fourier_Transform}.
 
 \begin{proposition}[Fourier inverse formula]
 \label{proposition:general_Fourier_inverse_formula}
