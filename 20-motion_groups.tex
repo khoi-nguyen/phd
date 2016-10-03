@@ -584,6 +584,7 @@ We now describe explicitely the Lie algebra of Euclidean motion groups.
 Let us compute the expression of a left-invariant derivatives arising from $\VectorSpace \subset \LieAlgebra$.
 
 \begin{lemma}
+\label{lemma:Euclidean_left-invariant_derivatives}
     Let $X \in \VectorSpace \subset \LieAlgebra$.
     If $\phi \in \SmoothFunctions\Group$,
     \begin{align*}
@@ -644,7 +645,7 @@ $X_1, \cdots, X_{\dim \Group}$ will denote a basis such that
     \end{align*}
 \end{definition}
 
-\begin{proposition}
+\begin{proposition}[Left-invariant Laplacian]
     Let $f \in \SmoothFunctions\Group$.
     If $(x, k) \in \Group$, we check that
     \begin{align*}
@@ -653,7 +654,7 @@ $X_1, \cdots, X_{\dim \Group}$ will denote a basis such that
 \end{proposition}
 \begin{proof}
     Let $(x, k) \in \Group$.
-    By INSERT PROPOSITION OR THEOREM??? ,
+    By Lemma~\ref{lemma:Euclidean_left-invariant_derivatives},
     we check that for each $j \in \{1, \cdots, \dim \VectorSpace\}$,
     \begin{align*}
         \LeftDifferentialOperatorFirstOrder{X_j} \LeftDifferentialOperatorFirstOrder{X_j} f(x, k)
@@ -667,6 +668,11 @@ $X_1, \cdots, X_{\dim \Group}$ will denote a basis such that
         \sum_{j = 0}^{\dim \VectorSpace} \LeftDifferentialOperatorFirstOrder{X_j} \LeftDifferentialOperatorFirstOrder{X_j} f(x, k)
         = \tr \Hessian f(x, k) = \Laplacian[\VectorSpace] f(x, k).
     \end{align*}
+
+    The sum over $j = \dim \VectorSpace + 1, \dots, \dim \Group$
+    is the \emph{Casimir element} of $\LieAlgebraCompactGroup$.
+    By~\cite[Subsection 8.3.2]{RuzhanskyTurunen10},
+    it corresponds to the \emph{Laplace-Beltrami} operator on $\CompactGroup$.
 \end{proof}
 
 \begin{proposition}
