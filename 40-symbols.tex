@@ -3197,7 +3197,7 @@ This is the reason why we shall always assume $\rho > \delta$ hereafter.
     we have
     \begin{align*}
         &\norm [\Lin {\Lebesgue 2 \CompactGroup}] {%
-            \LeftDifferentialOperator [g] \beta \DifferenceOperatorOrder {\alpha_0} \left(
+            \LeftDifferentialOperator [g] \beta \left(
                 \sigma_1 \circ \sigma_2(g, \lambda)
                 - \sum_{\abs \alpha \leq N} \DifferenceOperatorOrder \alpha \sigma_1(g, \lambda) \TaylorLeftDifferentialOperator \alpha \sigma_2(g, \lambda)
             \right)
@@ -3221,20 +3221,17 @@ This is the reason why we shall always assume $\rho > \delta$ hereafter.
         \label{eq:remainder_of_composition_formula}
     \end{align}
 
-    Let $\alpha_0 \in \N^{\dimDifferenceOperators}$ and $\beta_0 \in \N^{\dim \Group}$.
+    Let $\beta_0 \in \N^{\dim \Group}$.
     Applying the Leibniz-like rule for difference operators
     and the Leibniz rule for left-invariant differential operators,
     we obtain
     \begin{align*}
-        &\LeftDifferentialOperator {\beta_0} \DifferenceOperatorOrder {\alpha_0} \tau_N(g, \lambda) =\\
+        &\LeftDifferentialOperator {\beta_0} \tau_N(g, \lambda) =\\
         &\sum_{%
-            \substack{%
-                \abs{\alpha_0} \leq \abs{\alpha_{01}} + \abs{\alpha_{02}} \leq 2 \abs{\alpha_0}\\
                 \beta_{01} + \beta_{02} = \beta_0
-            }
         }
-        \int_\Group q^{\alpha_{01}}(h) \LeftDifferentialOperator [g] {\beta_{01}} \kappa_{1, g}(h) \adj{\Rep \lambda(h)}
-        \TaylorRemainder {\LeftDifferentialOperator [g_2 = g] {\beta_{02}} \DifferenceOperatorOrder {\alpha_{02}} \sigma_2(g_2 \dummy, \lambda)} {e_\Group} N (h^{-1}) \dd h.
+        \int_\Group \LeftDifferentialOperator [g] {\beta_{01}} \kappa_{1, g}(h) \adj{\Rep \lambda(h)}
+        \TaylorRemainder {\LeftDifferentialOperator [g_2 = g] {\beta_{02}} \sigma_2(g_2 \dummy, \lambda)} {e_\Group} N (h^{-1}) \dd h.
     \end{align*}
 
     Now, we would like to introduce powers of $\Rep \lambda \BesselPotentialSquared {}$ near $\sigma_2$,
@@ -3257,50 +3254,47 @@ This is the reason why we shall always assume $\rho > \delta$ hereafter.
     Therefore,
     injecting the above into \eqref{eq:remainder_of_composition_formula} and using integration by parts yields
     \begin{align*}
-        &\LeftDifferentialOperator {\beta_0} \DifferenceOperatorOrder {\alpha_0} \tau_N(g, \lambda) =\\
+        &\LeftDifferentialOperator {\beta_0} \tau_N(g, \lambda) =\\
         &\quad \lcsum{%
             \substack{%
-                \abs{\alpha_0} \leq \abs{\alpha_{01}} + \abs{\alpha_{02}} \leq 2 \abs{\alpha_0}\\
                 \beta_{01} + \beta_{02} = \beta_0\\
                 \abs {\beta_1} + \abs {\beta_2} \leq 2 M
             }
         }
-        \int_\Group \RightDifferentialOperator[h_1 = h] {\beta_1} (\LeftDifferentialOperator [g] {\beta_{01}} q^{\alpha_{01}} \kappa_{1, g})(h_1) \adj {\Rep \lambda(h)}\\
+        \int_\Group \RightDifferentialOperator[h_1 = h] {\beta_1} (\LeftDifferentialOperator [g] {\beta_{01}} \kappa_{1, g})(h_1) \adj {\Rep \lambda(h)}\\
         &\quad \times
-        \RightDifferentialOperator[h_2 = h] {\beta_2} \TaylorRemainder {\Rep \lambda \BesselPotentialSquared {-M} \LeftDifferentialOperator [g_2 = g] {\beta_{02}} \DifferenceOperatorOrder {\alpha_{02}} \sigma_2(g_2 \dummy, \lambda)} {e_\Group} N (h_2^{-1}) \dd h,
+        \RightDifferentialOperator[h_2 = h] {\beta_2} \TaylorRemainder {\Rep \lambda \BesselPotentialSquared {-M} \LeftDifferentialOperator [g_2 = g] {\beta_{02}} \sigma_2(g_2 \dummy, \lambda)} {e_\Group} N (h_2^{-1}) \dd h,
     \end{align*}
     Now, using Lemma~\ref{lemma:derivative_of_Taylor_polynomial_and_remainder},
     the above becomes
     \begin{align*}
-        &\LeftDifferentialOperator {\beta_0} \DifferenceOperatorOrder {\alpha_0} \tau_N(g, \lambda) =\\
+        &\LeftDifferentialOperator {\beta_0} \tau_N(g, \lambda) =\\
         &\quad \lcsum{%
             \substack{%
-                \abs{\alpha_0} \leq \abs{\alpha_{01}} + \abs{\alpha_{02}} \leq 2 \abs{\alpha_0}\\
                 \beta_{01} + \beta_{02} = \beta_0\\
                 \abs {\beta_1} + \abs {\beta_2} \leq 2 M
             }
         }
-        \int_\Group \RightDifferentialOperator[h_1 = h] {\beta_1} (\LeftDifferentialOperator [g] {\beta_{01}} q^{\alpha_{01}} \kappa_{1, g})(h_1) \adj {\Rep \lambda(h)}\\
+        \int_\Group \RightDifferentialOperator[h_1 = h] {\beta_1} (\LeftDifferentialOperator [g] {\beta_{01}} \kappa_{1, g})(h_1) \adj {\Rep \lambda(h)}\\
         &\quad \times
-        \TaylorRemainder {\Rep \lambda \BesselPotentialSquared {-M} \LeftDifferentialOperator [g_2 = g] {\beta_{02}} \LeftDifferentialOperator {\beta_2} \DifferenceOperatorOrder {\alpha_{02}} \sigma_2(g_2 \dummy, \lambda)} {e_\Group} {N - \abs {\beta_2}} (h_2^{-1}) \dd h.
+        \TaylorRemainder {\Rep \lambda \BesselPotentialSquared {-M} \LeftDifferentialOperator [g_2 = g] {\beta_{02}} \LeftDifferentialOperator {\beta_2} \sigma_2(g_2 \dummy, \lambda)} {e_\Group} {N - \abs {\beta_2}} (h_2^{-1}) \dd h.
     \end{align*}
 
     Therefore,
     if we take the operator norm,
     we obtain
     \begin{align}
-        &\norm [\Lin {\Lebesgue 2 \CompactGroup}] {\LeftDifferentialOperator {\beta_0} \DifferenceOperatorOrder {\alpha_0} \tau_n(g, \lambda)} \notag\\
+        &\norm [\Lin {\Lebesgue 2 \CompactGroup}] {\LeftDifferentialOperator {\beta_0} \tau_n(g, \lambda)} \notag\\
         &\quad \lcsum{%
             \substack{%
-                \abs{\alpha_0} \leq \abs{\alpha_{01}} + \abs{\alpha_{02}} \leq 2 \abs{\alpha_0}\\
                 \beta_{01} + \beta_{02} = \beta_0\\
                 \abs {\beta_1} + \abs {\beta_2} \leq 2 M
             }
         }
-        \int_\Group \abs {\RightDifferentialOperator[h_1 = h] {\beta_1} (\LeftDifferentialOperator [g] {\beta_{01}} q^{\alpha_{01}} \kappa_{1, g})(h_1)} \notag\\
+        \int_\Group \abs {\RightDifferentialOperator[h_1 = h] {\beta_1} (\LeftDifferentialOperator [g] {\beta_{01}} \kappa_{1, g})(h_1)} \notag\\
         &\quad \times
         \norm [\Lin {\Lebesgue 2 \CompactGroup}] {%
-            \TaylorRemainder {\Rep \lambda \BesselPotentialSquared {-M} \LeftDifferentialOperator [g_2 = g] {\beta_{02}} \LeftDifferentialOperator {\beta_2} \DifferenceOperatorOrder {\alpha_{02}} \sigma_2(g_2 \dummy, \lambda)} {e_\Group} {N - \abs {\beta_2}} (h_2^{-1})
+            \TaylorRemainder {\Rep \lambda \BesselPotentialSquared {-M} \LeftDifferentialOperator [g_2 = g] {\beta_{02}} \LeftDifferentialOperator {\beta_2} \sigma_2(g_2 \dummy, \lambda)} {e_\Group} {N - \abs {\beta_2}} (h_2^{-1})
         } \dd h.
         \label{eq:composition_formula:main_bound_for_negative_order}
     \end{align}
@@ -3311,8 +3305,8 @@ This is the reason why we shall always assume $\rho > \delta$ hereafter.
     provided that
     \begin{align*}
         \begin{cases}
-            m_1 - \rho \abs {\alpha_{01}} + \delta (\abs {\beta_{01}} + \abs {\beta_1}) + \dim \Group < \rho(\dim \Group + \abs {\beta_{02}})\\
-            -2 M + \delta(\abs {\beta_{02}} + \abs {\beta_2}) - \rho \abs {\alpha_{02}} \leq - m_2.
+            m_1 + \delta (\abs {\beta_{01}} + \abs {\beta_1}) + \dim \Group < \rho(\dim \Group + \abs {\beta_{02}})\\
+            -2 M + \delta(\abs {\beta_{02}} + \abs {\beta_2}) \leq - m_2.
         \end{cases}
     \end{align*}
 
@@ -3334,22 +3328,21 @@ This is the reason why we shall always assume $\rho > \delta$ hereafter.
     Applying the Taylor Remainder Theorem (Proposition~\ref{proposition:Taylor_theorem}),
     we have
     \begin{align*}
-        &\norm [\Lin {\Lebesgue 2 \CompactGroup}] {\TaylorRemainder {\Rep \lambda \BesselPotentialSquared {-M} \LeftDifferentialOperator [g_2 = g] {\beta_{02}} \LeftDifferentialOperator {\beta_2} \DifferenceOperatorOrder {\alpha_{02}} \sigma_2(g_2 \dummy, \lambda)} g {N - \abs {\beta_2}} (h^{-1})}\\
+        &\norm [\Lin {\Lebesgue 2 \CompactGroup}] {\TaylorRemainder {\Rep \lambda \BesselPotentialSquared {-M} \LeftDifferentialOperator [g_2 = g] {\beta_{02}} \LeftDifferentialOperator {\beta_2} \sigma_2(g_2 \dummy, \lambda)} g {N - \abs {\beta_2}} (h^{-1})}\\
         &\ \leq
         \sup_{\abs \gamma \leq N - \abs {\beta_2} + 1}
         \norm [\Group] h^{N - \abs {\beta_2} + 1}
-        S(h, M, \gamma, \beta_{02}, \beta_2, \alpha_{02}),
+        S(h, M, \gamma, \beta_{02}, \beta_2),
     \end{align*}
     where
     \begin{align*}
-        S(h, M, &\gamma, \beta_{02}, \beta_2, \alpha_{02}) \defeq
+        S(h, M, &\gamma, \beta_{02}, \beta_2 ) \defeq
         \sup_{\norm [\Group] {g_1} \leq \eta \norm [\Group] h}\\
         &\norm [\Lin {\Lebesgue 2 \CompactGroup}] {%
             \Rep \lambda \BesselPotentialSquared {-M}
             \LeftDifferentialOperator [g_1] {\gamma}
             \LeftDifferentialOperator [g_2 = g] {\beta_{02}}
             \LeftDifferentialOperator [g_1] {\beta_2}
-            \DifferenceOperatorOrder {\alpha_{02}}
             \sigma_2(g_2 g_1, \lambda)
         }.
     \end{align*}
@@ -3357,14 +3350,13 @@ This is the reason why we shall always assume $\rho > \delta$ hereafter.
     Observing that we can replace $\LeftDifferentialOperator [g_2] {\beta_{02}}$ by $\RightDifferentialOperator [g_1] {\beta_{02}}$ in the above,
     Corollary~\ref{corollary:from_right_to_left-invariant_differential_operators},
     \begin{align}
-        &S(h, M, \gamma, \beta_{02}, \beta_2, \alpha_{02})
+        &S(h, M, \gamma, \beta_{02}, \beta_2)
         \leq C \norm [\Group] h^{\abs {\beta_{02}}} \notag\\
         &\ \sum_{\abs {\beta'_{02}} \leq \abs {\beta_{02}}}
         \sup_{g_1 \in \Group}
         \norm [\Lin {\Lebesgue 2 \CompactGroup}] {%
             \Rep \lambda \BesselPotentialSquared {-M}
             \LeftDifferentialOperator [g_1] {\gamma + \beta'_{02} + \beta_2}
-            \DifferenceOperatorOrder {\alpha_{02}}
             \sigma_2(g_1, \lambda)
         }.
         \label{eq:composition_formula:bound_on_S}
@@ -3376,9 +3368,9 @@ This is the reason why we shall always assume $\rho > \delta$ hereafter.
         &\leq
         \lcsum{\abs {\beta_1} + \abs {\beta_2} \leq 2M}
         \sup_{\abs \gamma \leq N - \abs {\beta_2} + 1}
-        S(M, \gamma, \beta_{02}, \beta_2, \alpha_{02}) \notag\\
+        S(M, \gamma, \beta_{02}, \beta_2) \notag\\
         &\qquad \qquad
-        \int_\Group \abs {\RightDifferentialOperator[h_1 = h] {\beta_1} (\LeftDifferentialOperator [g] {\beta_{01}} q^{\alpha_{01}} \kappa_{1, g})(h_1)} \norm [\Group] h^{N - \abs {\beta_2} + 1} \dd h.
+        \int_\Group \abs {\RightDifferentialOperator[h_1 = h] {\beta_1} (\LeftDifferentialOperator [g] {\beta_{01}} \kappa_{1, g})(h_1)} \norm [\Group] h^{N - \abs {\beta_2} + 1} \dd h.
         \label{eq:composition_formula:bound_on_the_remainder}
     \end{align}
 
@@ -3388,8 +3380,8 @@ This is the reason why we shall always assume $\rho > \delta$ hereafter.
     that~\eqref{eq:composition_formula:bound_on_the_remainder} is bounded (up to a constant) by $\SymbolSemiNorm {m_1, R} {\rho, \delta} {N'} {\sigma_1} \SymbolSemiNorm {m_2} {\rho, \delta} {N'} {\sigma_2}$ if both
     \begin{align*}
         \begin{cases}
-            m_1 - \rho \abs {\alpha_{01}} + \delta \abs {\beta_{01}} + \abs {\beta_1} + \dim \Group < \rho (\dim \Group + N - \abs {\beta_2} + 1 + \abs{\beta_{02}})\\
-            -2 M + \delta(\abs \gamma + \abs {\beta'_{02}} + \abs {\beta_2}) - \rho \abs {\alpha_{02}} \leq -m_2.
+            m_1 + \delta \abs {\beta_{01}} + \abs {\beta_1} + \dim \Group < \rho (\dim \Group + N - \abs {\beta_2} + 1 + \abs{\beta_{02}})\\
+            -2 M + \delta(\abs \gamma + \abs {\beta'_{02}} + \abs {\beta_2}) \leq -m_2.
         \end{cases}
     \end{align*}
     hold.
