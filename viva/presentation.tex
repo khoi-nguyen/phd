@@ -31,4 +31,33 @@
     \end{align*}
 \end{frame}
 
+\begin{frame}{Key argument}
+    For each $\epsilon \in (0, 1]$,
+    we let
+    \begin{align*}
+        \eta_\epsilon(\lambda)
+        \defeq
+        \frac 1 {\i \turn}
+        \int_\Gamma
+        \e^{-\epsilon z}
+        (\Rep \lambda \BesselPotentialSquared {} - z \Id {\Lebesgue 2 \CompactGroup})^{-1}
+        \dd z
+    \end{align*}
+
+    \pause
+
+    \begin{theorem}[Approximation of $\Id {\Lebesgue 2 \CompactGroup}$]
+        For each $\epsilon \in (0, 1]$, each $m \in \R$ and each $N \in \N$,
+        there exists $C \geq 0$ such that
+        \begin{align*}
+                \SymbolSemiNorm m {} N {\eta_\epsilon}
+                &\leq C \epsilon^\frac m 2
+                & \text{if } m < 0\\
+                \SymbolSemiNorm m {} N {\Id {\Lebesgue 2 \CompactGroup} - \eta_\epsilon}
+                &\leq C \epsilon^\frac m 2
+                & \text{if } m \geq 0
+        \end{align*}
+    \end{theorem}
+\end{frame}
+
 \end{document}
