@@ -19,3 +19,5 @@
 log.xml
 !references/*.pdf
 *-blx.bib
+*.nav
+*.snm
