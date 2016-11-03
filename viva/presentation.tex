@@ -1,4 +1,4 @@
-\documentclass{beamer}
+\documentclass[handout]{beamer}
 
 \usepackage{amsmath, amsthm, amssymb, amsfonts}
 \usepackage{mathtools}
@@ -17,6 +17,38 @@
 \begin{document}
 
 \maketitle
+
+\section{Introduction}
+
+\begin{frame}{Global pseudo-differential calculus on Lie groups}
+    Is there a collection of operators $\bigcup_{m \in \R} \OperatorClass m {\rho, \delta}$ such that
+    \begin{enumerate}
+        \item
+            For each $k \in \N$,
+            $\mathrm{Diff}^k(\Group) \subset \OperatorClass k {\rho, \delta}$.
+        \item
+            If $m \leq m'$,
+            then $\OperatorClass m {\rho, \delta} \subset \OperatorClass {m'} {\rho, \delta}$.
+        \item
+            If $T \in \OperatorClass m {\rho, \delta}$, then $\adj T \in \OperatorClass m {\rho, \delta}$.
+        \item
+            If $T_i \in \OperatorClass {m_i} {\rho, \delta}$, $i = 1, 2$,
+            then $T_1 \circ T_2 \in \OperatorClass {m_1 + m_2} {\rho, \delta}$.
+        \item
+            If $T \in \OperatorClass m {\rho, \delta}$,
+            then $T$ extends to a bounded operator
+            \begin{align*}
+                T : \Sobolev s \to \Sobolev {s - m}.
+            \end{align*}
+        \item There exists symbol classes and a map
+            \begin{align*}
+                \Op : \SymbolClass m {\rho, \delta} \to \OperatorClass m {\rho, \delta}
+            \end{align*}
+            such that
+            $\Op (\sigma_1) \circ \Op(\sigma_2) = \Op (\sigma_1 \sigma_2)$
+            mod l.o.t.
+    \end{enumerate}
+\end{frame}
 
 \begin{frame}{Motion group}
     \begin{definition}[Motion group]
