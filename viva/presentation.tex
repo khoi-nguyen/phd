@@ -168,7 +168,22 @@
 \begin{frame}{Ruzhansky-Turunen difference operators}
     \begin{definition}[Difference operators \cite{RuzhanskyTurunen10}]
         Let $q \in \SmoothFunctions \Group$.
+
+        We define $\DifferenceOperator q$ via
+        \begin{align*}
+            \DifferenceOperator q \Fourier f(\lambda)
+            \defeq \Fourier \{q f\}(\lambda)
+        \end{align*}
     \end{definition}
+
+    \pause
+
+    Selecting a family $\Delta = \{q_1, \dots, q_M \in \SmoothFunctions \Group\}$,
+    we write
+    \begin{align*}
+        \DifferenceOperatorOrder \alpha \defeq \DifferenceOperator {q^\alpha(\dummy^{-1})},
+        \quad q^\alpha \defeq q^{\alpha_1}_1 \dots q^{\alpha_M}_M.
+    \end{align*}
 \end{frame}
 
 \begin{frame}[Fischer-Ruzhansky]
