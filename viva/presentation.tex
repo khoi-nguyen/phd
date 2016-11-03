@@ -186,6 +186,25 @@
     \end{align*}
 \end{frame}
 
+\begin{frame}{Difference operators (continued)}
+    We choose $\Delta \defeq \{q_1, \dots, q_M \in \SmoothFunctions \Group\}$ so that
+    \begin{enumerate}
+        \item
+            $\Span \{\dd q_j(e) : j = 1, \dots, M\} = T_e G$.
+        \item
+            $\bigcap_{q \in \Delta} \{q = 0\} = \{e\}$.
+        \item
+            Leibniz-like rule:
+    \end{enumerate}
+    \begin{align*}
+        \DifferenceOperator {q_i} \{\sigma_1 \sigma_2\}
+        =
+        \left(\DifferenceOperator {q_i} \sigma_1 \right) \sigma_2
+        + \sigma_1 \left(\DifferenceOperator {q_i} \sigma_2\right)
+        + \sum_{j, k = 1} c^i_{j k} \left(\DifferenceOperator {q_j} \sigma_1\right) \left(\DifferenceOperator {q_k} \sigma_2\right)
+    \end{align*}
+\end{frame}
+
 \begin{frame}[Fischer-Ruzhansky]
     In~\cite{Fischer2015,FischerRuzhansky16},
     the key argument is an approximation of the \emph{identity symbol} via a \emph{Littlewood-Paley decomposition}.
