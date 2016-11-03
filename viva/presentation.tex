@@ -3,6 +3,7 @@
 \usepackage{amsmath, amsthm, amssymb, amsfonts}
 \usepackage{mathtools}
 \usepackage{xparse}
+\usepackage{color}
 
 \usepackage{../macros}
 
@@ -143,6 +144,31 @@
             = \int_{\R^n} \tr \left(\Rep \lambda(g) \Fourier f(\lambda)\right) \dd \lambda.
         \end{align*}
     \end{theorem}
+\end{frame}
+
+\section{Difference operators}
+
+\begin{frame}{Derivatives in frequency variables}
+    On $\R^n$,
+    \begin{align*}
+        \abs {\iD {x^\beta} {\color{red} \iD {\xi^\alpha}} \sigma(x, \xi)}
+        \leq C_{\alpha, \beta} (1 + \abs \xi^2)^{\frac {m - \rho \abs \alpha + \delta \abs \beta} 2}
+    \end{align*}
+
+    How do we generalize $\iD {\xi^\alpha}$?
+
+    \pause
+
+    \begin{align*}
+        {\color{red} \iD {\xi^\alpha}} \Fourier [\R^n] \kappa(\xi)
+        = C_\alpha \Fourier [\R^n] {\{{\color{red} x^\alpha} \kappa\}}(\xi)
+    \end{align*}
+\end{frame}
+
+\begin{frame}{Ruzhansky-Turunen difference operators}
+    \begin{definition}[Difference operators \cite{RuzhanskyTurunen10}]
+        Let $q \in \SmoothFunctions \Group$.
+    \end{definition}
 \end{frame}
 
 \begin{frame}[Fischer-Ruzhansky]
