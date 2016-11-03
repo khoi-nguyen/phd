@@ -70,6 +70,8 @@
     \end{enumerate}
 \end{frame}
 
+\section{The motion group}
+
 \begin{frame}{Motion group}
     \begin{definition}[Motion group]
         We shall call
@@ -86,6 +88,38 @@
     \begin{align*}
         (x, k) \circ (y, l) \defeq (x + k y, k l)
     \end{align*}
+\end{frame}
+
+\begin{frame}{Fourier transform}
+    \begin{definition}[Representations]
+        Let $\lambda \in \R^n$ and $(x, k) \in \Group$.
+        We define
+        \begin{align*}
+            \Rep \lambda(x, k) F(u)
+            = \e^{\i \turn \ip [\R^n] \lambda {u x}} F(u k)
+        \end{align*}
+        for each $F \in \Lebesgue 2 \CompactGroup$ and each $u \in \CompactGroup$.
+    \end{definition}
+
+    Note that the above representations are reducible.
+\end{frame}
+
+\begin{frame}{Plancherel formula}
+    \begin{theorem}[Plancherel and inverse formulas]
+        If $f \in \Schwartz \Group$,
+        then we have
+        \begin{align*}
+            \int_\Group \abs f^2 \dd g
+            = \int_{\R^n} \tr \left(\Fourier f(\lambda) \adj {\Fourier f(\lambda)}\right) \dd \lambda.
+        \end{align*}
+
+        Moreover,
+        for each $g \in \Group$, we have
+        \begin{align*}
+            f(g)
+            = \int_{\R^n} \tr \left(\Rep \lambda(g) \Fourier f(\lambda)\right) \dd \lambda.
+        \end{align*}
+    \end{theorem}
 \end{frame}
 
 \begin{frame}[Fischer-Ruzhansky]
