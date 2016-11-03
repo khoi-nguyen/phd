@@ -210,6 +210,25 @@
     $\Delta$ will denote such a family.
 \end{frame}
 
+\begin{frame}{Symbol classes}
+    \begin{definition}[Symbol classes]
+        A map $\sigma: \Group \times \R^n \to \End {\SmoothFunctions \Group}$ is in $\SymbolClass m {\rho, \delta}$ if
+        \begin{enumerate}
+            \item
+                $\sigma$ is smooth.
+            \item
+                For each $\alpha \in \N^M$ and each $\beta \in \N^{\dim \Group}$,
+                \begin{align*}
+                    \norm [\Lin {\Lebesgue 2 \CompactGroup}] {
+                        \Rep \lambda \BesselPotential {-m + \rho \abs \alpha - \delta \abs \beta}
+                        \LeftDifferentialOperator \beta \DifferenceOperatorOrder \alpha \sigma(g, \lambda)
+                    } < \infty
+                \end{align*}
+                uniformly in $g \in \Group$, $\lambda \in \R^n$.
+        \end{enumerate}
+    \end{definition}
+\end{frame}
+
 \begin{frame}[Fischer-Ruzhansky]
     In~\cite{Fischer2015,FischerRuzhansky16},
     the key argument is an approximation of the \emph{identity symbol} via a \emph{Littlewood-Paley decomposition}.
