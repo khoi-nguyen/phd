@@ -36,6 +36,21 @@
     \end{align*}
 \end{frame}
 
+\begin{frame}[Fischer-Ruzhansky]
+    In~\cite{Fischer2015,FischerRuzhansky16},
+    the key argument is an approximation of the \emph{identity symbol} via a \emph{Littlewood-Paley decomposition}.
+    \begin{align*}
+        \Id {\Lebesgue 2 \CompactGroup} = \sum_{j = 0}^{+ \infty} \eta_l
+    \end{align*}
+
+    This allows us to write
+    \begin{align*}
+        \sigma = \sum_{j = 0}^{+ \infty} \sigma_j,
+        \quad
+        \sigma_j \in \SmoothingSymbols
+    \end{align*}
+\end{frame}
+
 \begin{frame}{Key argument}
     For each $\epsilon \in (0, 1]$,
     we let
@@ -63,6 +78,22 @@
                 & \text{if } m \geq 0
         \end{align*}
     \end{theorem}
+\end{frame}
+
+\begin{frame}{Key argument (continued)}
+    \begin{enumerate}
+        \item
+            We replace all the Littlewood-Paley decompositions in~\cite{Fischer2015,FischerRuzhansky16} by
+            \begin{align*}
+                \Id {\Lebesgue 2 \CompactGroup}
+                =
+                \eta_\epsilon +
+                (\Id {\Lebesgue 2 \CompactGroup} - \eta_\epsilon)
+            \end{align*}
+        \item
+            In~\cite{FischerRuzhansky16,Fischer2015},
+            the corresponding result is proved \emph{on the kernel side}.
+    \end{enumerate}
 \end{frame}
 
 \end{document}
