@@ -202,8 +202,10 @@
     \begin{enumerate}
         \item
             $\Span \{\dd q_j(e) : j = 1, \dots, M\} = T_e G$.
+            \pause
         \item
             $\bigcap_{q \in \Delta} \{q = 0\} = \{e\}$.
+            \pause
         \item
             Leibniz-like rule:
     \end{enumerate}
@@ -318,7 +320,8 @@
     In~\cite{Fischer2015,FischerRuzhansky16},
     the key argument is an approximation of the \emph{identity symbol} via a \emph{Littlewood-Paley decomposition}.
     \begin{align*}
-        \Id {\Lebesgue 2 {\SpecialOrthogonalGroup n}} = \sum_{j = 0}^{+ \infty} \Psi_j(\Rep \lambda (\Laplacian))
+        \Id {\Lebesgue 2 {\SpecialOrthogonalGroup n}} = \sum_{j = 0}^{+ \infty} \Psi_j(\Rep \lambda (\Laplacian)),
+        \quad \sum_j \Psi_j = 1.
     \end{align*}
 
     \pause
@@ -327,7 +330,15 @@
     \begin{align*}
         \sigma = \sum_{j = 0}^{+ \infty} \sigma_j,
         \quad
-        \sigma_j \in \SmoothingSymbols
+        \sigma_j \in \SmoothingSymbols.
+    \end{align*}
+
+    \pause
+
+    Informally, we will choose
+    \begin{align*}
+        \Psi_0(\lambda) = \e^{\lambda}, \quad \Psi_1 = 1 - \e^{\lambda},
+        \quad \Psi_j = 0, \ j > 1
     \end{align*}
 \end{frame}
 
@@ -373,7 +384,42 @@
             \pause
         \item
             In~\cite{FischerRuzhansky16,Fischer2015},
-            the corresponding result is proved \emph{on the kernel side}.
+            the corresponding result is proved \emph{on the kernel side} with \emph{heat kernel} estimates.
+    \end{enumerate}
+\end{frame}
+
+\begin{frame}{Comments on \cite{FischerRuzhansky16}}
+    \begin{enumerate}
+        \item
+            It is difficult to establish symbolic estimates directly
+            \begin{align*}
+                \DifferenceOperator q \sigma = \Fourier \{q \kappa\}
+            \end{align*}
+
+            \pause
+        \item
+            We are able to obtain a simple proof because
+            \begin{enumerate}
+                \item We use \emph{holomorphic functional calculus}
+                    $\eta_\epsilon = \e^{-\epsilon \Rep \lambda \BesselPotentialSquared {}}$
+                \item Symbolic estimates are obtained by applying difference operators to
+                    \begin{align*}
+                        \Id {\Lebesgue 2 {\SpecialOrthogonalGroup n}} =
+                        \left(\Rep \lambda \BesselPotentialSquared {} - z \Id {\Lebesgue 2 {\SpecialOrthogonalGroup n}}\right)
+                        \left(\Rep \lambda \BesselPotentialSquared {} - z \Id {\Lebesgue 2 {\SpecialOrthogonalGroup n}}\right)^{-1}
+                    \end{align*}
+            \end{enumerate}
+    \end{enumerate}
+\end{frame}
+
+\begin{frame}{Conclusion}
+    \begin{enumerate}
+        \item Our approximation of the identity does not rely on explicit expressions specific to the motion group.
+            \pause
+        \item In particular,
+            we can shorten the proofs in the compact and graded cases.
+            \pause
+        \item Strategy works for any Lie group with polynomial growth that has a good family of difference operators.
     \end{enumerate}
 \end{frame}
 
