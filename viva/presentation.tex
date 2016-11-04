@@ -264,6 +264,22 @@
     \end{block}
 \end{frame}
 
+\begin{frame}{Sketch proof of adjunction formula}
+    Let $\sigma \in \SymbolClass m {\rho, \delta}$.
+    \begin{enumerate}
+        \item Compute $\adj T \phi(g) = (\conv \phi {\conj \kappa_{g \dummy^{-1}}}(\dummy^{-1}))(g)$.
+        \item Define $\sigma^{(*)}(g, \lambda) \defeq \Fourier \{ \conj \kappa_{g \dummy^{-1}}(\dummy^{-1}) \}(\lambda)$.
+        \item By a Taylor development,
+            \begin{align*}
+                \sigma^{(*)}(g, \lambda)
+                &= \int_\Group \left(\sum_{\abs \alpha \leq N} \frac 1 {\alpha !} q^\alpha(h^{-1}) \LeftDifferentialOperator [g] \alpha \conj \kappa_g(h^{-1}) + R_N(h)\right) \adj {\Rep \lambda(h)} \dd h\\
+                &= \sum_{\abs \alpha \leq N} \frac 1 {\alpha !} \DifferenceOperatorOrder \alpha \LeftDifferentialOperator [g] \alpha \adj \sigma(g, \lambda) + \int_\Group R_N(h) \adj {\Rep \lambda(h)} \dd h.
+            \end{align*}
+        \item
+            Taylor's Theorem: $\abs {R_N(h)} \leq C \norm [\Group] h^{N + 1} \sup_{\abs \alpha = N + 1} \abs {\LeftDifferentialOperator \alpha \conj \kappa_g}$.
+    \end{enumerate}
+\end{frame}
+
 \begin{frame}[Fischer-Ruzhansky]
     In~\cite{Fischer2015,FischerRuzhansky16},
     the key argument is an approximation of the \emph{identity symbol} via a \emph{Littlewood-Paley decomposition}.
