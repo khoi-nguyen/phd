@@ -28,20 +28,25 @@
         \item
             For each $k \in \N$,
             $\mathrm{Diff}^k(\Group) \subset \OperatorClass k {\rho, \delta}$.
+            \pause
         \item
             If $m \leq m'$,
             then $\OperatorClass m {\rho, \delta} \subset \OperatorClass {m'} {\rho, \delta}$.
+            \pause
         \item
             If $T \in \OperatorClass m {\rho, \delta}$, then $\adj T \in \OperatorClass m {\rho, \delta}$.
+            \pause
         \item
             If $T_i \in \OperatorClass {m_i} {\rho, \delta}$, $i = 1, 2$,
             then $T_1 \circ T_2 \in \OperatorClass {m_1 + m_2} {\rho, \delta}$.
+            \pause
         \item
             If $T \in \OperatorClass m {\rho, \delta}$,
             then $T$ extends to a bounded operator
             \begin{align*}
                 T : \Sobolev s \to \Sobolev {s - m}.
             \end{align*}
+            \pause
         \item There exists symbol classes and a map
             \begin{align*}
                 \Op : \SymbolClass m {\rho, \delta} \to \OperatorClass m {\rho, \delta}
@@ -57,8 +62,11 @@
 
     \begin{itemize}
         \item Euclidean spaces
+            \pause
         \item Compact groups \cite{RuzhanskyTurunen10}
+            \pause
         \item Graded Lie groups \cite{FischerRuzhansky16}
+            \pause
     \end{itemize}
 
     What about semi-direct product of such groups?
@@ -67,7 +75,9 @@
 \begin{frame}{Outline}
     \begin{enumerate}
         \item Define \emph{symbols} as the group Fourier Transform of right convolution kernels of operators.
+            \pause
         \item Define \emph{symbol classes} with Ruzhansky-Turunen \emph{difference operators}.
+            \pause
         \item Prove \emph{composition} and \emph{adjunction} formulas.
     \end{enumerate}
 \end{frame}
@@ -269,13 +279,16 @@
     Let $\sigma \in \SymbolClass m {\rho, \delta}$.
     \begin{enumerate}
         \item Compute $\adj T \phi(g) = (\conv \phi {\conj \kappa_{g \dummy^{-1}}}(\dummy^{-1}))(g)$.
+            \pause
         \item Define $\sigma^{(*)}(g, \lambda) \defeq \Fourier \{ \conj \kappa_{g \dummy^{-1}}(\dummy^{-1}) \}(\lambda)$.
+            \pause
         \item By a Taylor development,
             \begin{align*}
                 \sigma^{(*)}(g, \lambda)
                 &= \int_\Group \left(\sum_{\abs \alpha \leq N} \frac 1 {\alpha !} q^\alpha(h^{-1}) \LeftDifferentialOperator [g] \alpha \conj \kappa_g(h^{-1}) + R_N(h)\right) \adj {\Rep \lambda(h)} \dd h\\
                 &= \sum_{\abs \alpha \leq N} \frac 1 {\alpha !} \DifferenceOperatorOrder \alpha \LeftDifferentialOperator [g] \alpha \adj \sigma(g, \lambda) + \int_\Group R_N(h) \adj {\Rep \lambda(h)} \dd h.
             \end{align*}
+            \pause
         \item
             Taylor's Theorem: $\abs {R_N(h)} \leq C \norm [\Group] h^{N + 1} \sup_{\abs \alpha = N + 1} \abs {\LeftDifferentialOperator \alpha \conj \kappa_g}$.
     \end{enumerate}
@@ -307,6 +320,8 @@
     \begin{align*}
         \Id {\Lebesgue 2 \CompactGroup} = \sum_{j = 0}^{+ \infty} \eta_l
     \end{align*}
+
+    \pause
 
     This allows us to write
     \begin{align*}
@@ -355,6 +370,7 @@
                 \eta_\epsilon +
                 (\Id {\Lebesgue 2 \CompactGroup} - \eta_\epsilon)
             \end{align*}
+            \pause
         \item
             In~\cite{FischerRuzhansky16,Fischer2015},
             the corresponding result is proved \emph{on the kernel side}.
