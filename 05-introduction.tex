@@ -352,7 +352,7 @@ it makes sense to attempt to do our calculations on the kernel side,
 especially since this is how difference operators were defined.
 Unfortunately,
 kernels may have a singularity at the origin,
-unlike symbols, which are smooth.
+unlike symbols which are smooth.
 Therefore, two questions naturally arise.
 
 \begin{itemize}
@@ -363,7 +363,7 @@ Therefore, two questions naturally arise.
 Looking at pseudo-differential operators such as $\BesselPotential m$
 suggests that \emph{functional calculus} is the natural framework to answer such questions.
 
-A crucial step of our analysis is to construct a family of smoothing symbols approximating the identity symbol.
+A crucial step in our analysis is to construct a family of smoothing symbols approximating the identity symbol.
 Using the algebra structure of our symbol classes,
 this will yield an important density result,
 as we will be able to approximate any symbol with smoothing symbols,
@@ -389,7 +389,7 @@ to prove the Calder\'on-Zygmund property,
 we need very good estimates on the kernels $p_\epsilon$.
 Therefore, the natural candidate is the Fourier transform of the \emph{heat kernel}.
 
-The family of symbols is used in the following proofs.
+The family of symbols is used to prove the following results.
 \begin{description}
     \item[Kernel estimates]
 
@@ -410,13 +410,13 @@ The family of symbols is used in the following proofs.
     \item[Construction of asymptotic limits]
 
         One of the inherent characteristics of symbolic calculus is that compositions and adjunctions can only be expressed via infinite sums from which we cannot reasonably expect convergence.
-        As certain applications such as the construction of parametrices rely on making sense of these sums in a suitable sense,
+        As certain applications, such as the construction of parametrices, rely on constructing a limit of these sums in a suitable sense,
         it is important that we define a notion of \emph{asymptotic convergence}.
 
         The idea is the same as in the Euclidean case.
         We know that cutting off ``low frequencies'' will not affect the result modulo $\SmoothingSymbols$.
         Therefore, given a sequence of symbols $\sigma_j$ with strictly decreasing order,
-        we thus define
+        we define
         \begin{align*}
             \sum_{j = 0}^{+\infty} \sigma_j \defsim
             \sum_{j = 0}^{+\infty} \sigma_j (\Id {} - \eta_{\epsilon_j})
@@ -457,7 +457,7 @@ she uses a \emph{Littlewood-Paley} decomposition
 \begin{align*}
     \Id {} - \eta_\epsilon = \sum_{j = 1}^{+\infty} \eta_{\epsilon, j},
 \end{align*}
-where $\eta_{\epsilon, j} \defeq \eta_{2^{-j} \epsilon} - \eta_{2^{-j + 1} \epsilon}$
+where $\eta_{\epsilon, j} \defeq \eta_{2^{-j} \epsilon} - \eta_{2^{-j + 1} \epsilon}$,
 and the convergence is understood in the strong operator topology.
 
 \subsubsection{The graded case}
