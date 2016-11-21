@@ -296,6 +296,23 @@
     \end{theorem}
 \end{frame}
 
+\begin{frame}{Adjunction formula}
+    \begin{theorem}[Adjunction formula]
+        Let $\sigma \in \SymbolClass {m} {\rho, \delta}$ with $\rho > \delta$.
+        There exists $\sigma^{(*)} \in \SymbolClass {m} {\rho, \delta}$ such that
+        \begin{align*}
+            \Op(\sigma^{(*)}) = \adj {\Op(\sigma)}.
+        \end{align*}
+
+        Moreover,
+        for each $N \in \N$,
+        \begin{align*}
+            \sigma^{(*)} - \sum_{\abs \alpha \leq N} \frac 1 {\alpha!} \DifferenceOperator {\alpha} \LeftDifferentialOperator {\alpha} \adj \sigma \in \SymbolClass {m - (\rho - \delta) N} {\rho, \delta}
+        \end{align*}
+        with an adapted basis of the Lie algebra.
+    \end{theorem}
+\end{frame}
+
 \section{A proof}
 
 \begin{frame}{Sketch proof of adjunction formula \cite{FischerRuzhansky16}}
