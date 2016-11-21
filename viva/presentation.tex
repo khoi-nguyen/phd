@@ -182,6 +182,29 @@
 \end{frame}
 
 \begin{frame}{Difference operators (continued)}
+    Informally,
+    \begin{itemize}
+        \item
+            They control the order of the terms appearing in asymptotic expansions (e.g. $\DifferenceOperatorOrder \alpha \LeftDifferentialOperator \alpha \sigma \in \SymbolClass {m - (\rho - \delta) \abs \alpha} {\rho, \delta}$).
+            \pause
+        \item Control the regularity of the kernel
+            \begin{align*}
+                \DifferenceOperatorOrder \alpha \sigma
+                = \Fourier \{q^\alpha \kappa\}
+                \in \SymbolClass {m - \rho \abs \alpha} {\rho, \delta}
+            \end{align*}
+            \pause
+
+            \begin{itemize}
+                \item
+                    Show operators of low order are Calderon-Zygmund.
+                \item
+                    Control the remainder in asymptotic expansion.
+            \end{itemize}
+    \end{itemize}
+\end{frame}
+
+\begin{frame}{Difference operators (continued)}
     We choose $\Delta \defeq \{q_1, \dots, q_M \in \SmoothFunctions \Group\}$ so that
     \begin{enumerate}
         \item
