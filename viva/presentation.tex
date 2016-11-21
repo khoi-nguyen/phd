@@ -277,6 +277,27 @@
     \end{block}
 \end{frame}
 
+\section{Main results}
+
+\begin{frame}{Composition formula}
+    \begin{theorem}[Composition formula]
+        Let $\sigma_i \in \SymbolClass {m_i} {\rho, \delta}$, $i = 1, 2$ with $\rho > \delta$.
+        There exists $\sigma \in \SymbolClass {m_1 + m_2} {\rho, \delta}$ such that
+        \begin{align*}
+            \Op(\sigma) = \Op(\sigma_1) \circ \Op(\sigma_2).
+        \end{align*}
+
+        Moreover,
+        for each $N \in \N$,
+        \begin{align*}
+            \sigma - \sum_{\abs \alpha \leq N} \frac 1 {\alpha!} \DifferenceOperator {\alpha} \sigma_1 \ \LeftDifferentialOperator {\alpha} \sigma_2 \in \SymbolClass {m - (\rho - \delta) N} {\rho, \delta}
+        \end{align*}
+        with an adapted basis of the Lie algebra.
+    \end{theorem}
+\end{frame}
+
+\section{A proof}
+
 \begin{frame}{Sketch proof of adjunction formula \cite{FischerRuzhansky16}}
     Let $\sigma \in \SymbolClass m {\rho, \delta}$.
     \begin{enumerate}
