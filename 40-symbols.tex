@@ -3853,8 +3853,107 @@ This will allow us to conclude the proof that our collection of operators $\Oper
         \leq \SymbolSemiNorm m {\rho, \delta} {N} \sigma,
     \end{align*}
     It follows that the seminorms $\SymbolSemiNorm {m, R} {\rho, \delta} N \dummy, N \in \N$ define the same topology as $\SymbolSemiNorm m {\rho, \delta} N \dummy, N \in \N$.
-    As $\SymbolClass m {\rho, \delta}$ is the completion of $\SmoothingSymbols$ with respect to the family $\SymbolSemiNorm m {\rho, \delta} N \dummy$, $N \in \N$ of seminorms,
-    the conclusion follows easily.
+
+    It remains thus to show that $\SymbolClass {m, R} {\rho, \delta} \subset \SymbolClass m {\rho, \delta}$
+    as the reverse inclusion is trivial.
+    To this end,
+    fix a symbol $\sigma \in \SymbolClass {m, R} {\rho, \delta}$,
+    and for each $\epsilon \in (0, 1]$,
+    let
+    \begin{align*}
+        \sigma \defeq \sigma \eta_\epsilon,
+    \end{align*}
+    where $\eta_\epsilon$ was defined in Theorem~\ref{theorem:generalized_Littlewood-Paley_decomposition}.
+
+    Using the fact that the right seminorms yield the same topology,
+    we obtain
+    \begin{align*}
+        \sup_{\epsilon \in (0, 1]} &\SymbolSemiNorm m {\rho, \delta} N {\sigma_\epsilon}\\
+        &\leq C
+        \sup_{\epsilon \in (0, 1]} \SymbolSemiNorm {m, R} {\rho, \delta} {N'} {\sigma_\epsilon}\\
+        &\leq C
+        \left(
+        \SymbolSemiNorm {m, R} {\rho, \delta} {N'} {\sigma} +
+        \sup_{\epsilon \in (0, 1]}
+        \SymbolSemiNorm {m, R} {\rho, \delta} {N'} {\sigma_\epsilon - \sigma}
+        \right) < \infty,
+    \end{align*}
+    where the finiteness is obtained by Proposition~\ref{proposition:approximation_of_symbols}.
+
+    From the above,
+    since $\sigma_\epsilon$ converges pointwise to $\sigma$ on $\SmoothFunctions \CompactGroup$,
+    it follows that
+    \begin{align*}
+        &\norm [\Lin {\Lebesgue 2 \CompactGroup}] {%
+            \Rep \lambda \BesselPotential {-m + \gamma - \delta \abs \beta}
+            \LeftDifferentialOperator \beta
+            \sigma(g, \lambda)
+            \Rep \lambda \BesselPotential {-\gamma}
+        }
+        \\
+        &\quad \leq
+        \liminf_{\epsilon \to 0}
+        \norm [\Lin {\Lebesgue 2 \CompactGroup}] {%
+            \Rep \lambda \BesselPotential {-m + \gamma - \delta \abs \beta}
+            \LeftDifferentialOperator \beta
+            \sigma_\epsilon(g, \lambda)
+            \Rep \lambda \BesselPotential {-\gamma}
+        },
+    \end{align*}
+    which implies that the left-hand side of the above
+    is indeed uniformly bounded in $g \in \Group$ and $\lambda \in \VectorSpace$.
+
+    Assume now that $\alpha \in \N^{\dimDifferenceOperators}$ is non-zero.
+    By the Leibniz-like rule,
+    we have
+    \begin{align*}
+        \LeftDifferentialOperator \beta \DifferenceOperatorOrder \alpha &\sigma_\epsilon(g, \lambda)
+        =
+        \LeftDifferentialOperator \beta \DifferenceOperatorOrder \alpha \sigma(g, \lambda) \eta_\epsilon(\lambda)
+        +
+        L_\epsilon(g, \lambda),
+    \end{align*}
+    where
+    \begin{align*}
+        L_\epsilon(g, \lambda) \defeq
+        \sum_{\substack{\abs \alpha \leq \abs {\alpha_1} + \abs {\alpha_2} \leq 2 \abs \alpha\\ \alpha_2 \neq 0}}
+        \LeftDifferentialOperator \beta \DifferenceOperatorOrder {\alpha_1} \sigma(g, \lambda)
+        \DifferenceOperatorOrder {\alpha_2} (\Id {\Lebesgue 2 \CompactGroup} - \eta_\epsilon(\lambda)).
+    \end{align*}
+
+    Using the estimates in Theorem~\ref{theorem:generalized_Littlewood-Paley_decomposition},
+    it follows that
+    \begin{align*}
+        \liminf_{\epsilon \to 0}
+        \norm [\Lin {\Lebesgue 2 \Group}] {%
+            \Rep \lambda \BesselPotential {-m + \rho \abs \alpha - \delta \abs \beta + \gamma}
+            L_\epsilon(g, \lambda)
+            \Rep \lambda \BesselPotential {-\gamma}
+        } = 0.
+    \end{align*}
+    Therefore,
+    we can conclude that
+    \begin{align*}
+        &\norm [\Lin {\Lebesgue 2 \CompactGroup}] {%
+            \Rep \lambda \BesselPotential {-m + \gamma - \delta \abs \beta}
+            \LeftDifferentialOperator \beta
+            \DifferenceOperatorOrder \alpha
+            \sigma(g, \lambda)
+            \Rep \lambda \BesselPotential {-\gamma}
+        }
+        \\
+        &\quad \leq
+        \liminf_{\epsilon \to 0}
+        \norm [\Lin {\Lebesgue 2 \CompactGroup}] {%
+            \Rep \lambda \BesselPotential {-m + \gamma - \delta \abs \beta}
+            \LeftDifferentialOperator \beta
+            \DifferenceOperatorOrder \alpha
+            \sigma_\epsilon(g, \lambda)
+            \Rep \lambda \BesselPotential {-\gamma}
+        }
+    \end{align*}
+    is uniformly bounded in $g$ and $\lambda$,
+    concluding the proof that $\sigma \in \SymbolClass m {\rho, \delta}$.
 \end{proof}
 
 Naturally,
