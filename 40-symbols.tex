@@ -4029,16 +4029,64 @@ Propositions~\ref{proposition:composition_formula} and~\ref{proposition:adjoint_
     $\tilde \sigma$ is given modulo $\SmoothingSymbols$ by the asymptotic sum
     \begin{align*}
         \tilde \sigma \sim
-        \sum_{\alpha \in \N^{\dimDifferenceOperators}} \frac 1 {\alpha!} \DifferenceOperatorOrder \alpha \TaylorLeftDifferentialOperator \alpha \sigma.
+        \sum_{\alpha \in \N^{\dimDifferenceOperators}} \frac 1 {\alpha!} \DifferenceOperatorOrder \alpha \TaylorLeftDifferentialOperator \alpha \adj \sigma.
     \end{align*}
     More precisely,
     we have
     \begin{align*}
         \tilde \sigma
-        - \sum_{\abs \alpha \leq N} \frac 1 {\alpha!} \DifferenceOperatorOrder \alpha \TaylorLeftDifferentialOperator \alpha \sigma \in \SymbolClass {m - (\rho - \delta) N} {\rho, \delta}
+        - \sum_{\abs \alpha \leq N} \frac 1 {\alpha!} \DifferenceOperatorOrder \alpha \TaylorLeftDifferentialOperator \alpha \adj \sigma \in \SymbolClass {m - (\rho - \delta) (N + 1)} {\rho, \delta}
     \end{align*}
     for each $N \in \N$.
 \end{theorem}
+\begin{proof}
+    Let $\sigma \in \SymbolClass m {\rho, \delta}$ and write
+    \begin{align*}
+        \tau_N
+        =
+        \sigma^{(*)}
+        - \sum_{\abs \alpha \leq N} \frac 1 {\alpha!} \DifferenceOperatorOrder \alpha \TaylorLeftDifferentialOperator \alpha \adj \sigma
+    \end{align*}
+    Moreover, for each $\epsilon \in (0, 1]$,
+    we let
+    \begin{align*}
+        \sigma_\epsilon &\defeq \eta_\epsilon \sigma,\\
+        \tau_{\epsilon, N} &\defeq
+        \sigma_\epsilon^{(*)} -
+        \sum_{\alpha \in \N^{\dimDifferenceOperators}} \frac 1 {\alpha!} \DifferenceOperatorOrder \alpha \TaylorLeftDifferentialOperator \alpha \adj \sigma_\epsilon.
+    \end{align*}
+
+    Using the fact that $\sigma_\epsilon^{(*)} = \sigma^{(*)} \eta_\epsilon$ and $\adj {\sigma_\epsilon} = \adj \sigma \eta_\epsilon$,
+    it follows that
+    \begin{align*}
+        \tau_{\epsilon, N} \defeq \tau_N \eta_\epsilon - L_\epsilon,
+    \end{align*}
+    where
+    \begin{align*}
+        L_\epsilon =
+        \frac 1 {\alpha!}
+        \sum_{\alpha \in \N^{\dimDifferenceOperators}}
+        \sum_{\substack{\abs \alpha \leq \abs {\alpha_1} + \abs {\alpha_2} \leq 2 \abs \alpha\\ \alpha_2 \neq 0}}
+        \DifferenceOperatorOrder {\alpha_1} \TaylorLeftDifferentialOperator \alpha \adj \sigma \DifferenceOperatorOrder {\alpha_2} \eta_\epsilon.
+    \end{align*}
+
+    Arguing like in the proof of Theorem~\ref{theorem:simplification_of_symbol_classes_definition},
+    we obtain that
+    \begin{align*}
+        \liminf_{\epsilon \to 0}
+        \norm [\Lin {\Lebesgue 2 \Group}] {%
+            \LeftDifferentialOperator \beta \DifferenceOperatorOrder \alpha L_\epsilon(g, \lambda)
+            \Rep \lambda \BesselPotential {-m + (\rho - \delta)(N + 1) + \rho \abs \alpha - \delta \abs \beta}
+        } = 0
+    \end{align*}
+    and
+    \begin{align*}
+        \SymbolSemiNorm {m - (\rho - \delta)(N + 1)} {\rho, \delta} P {\tau_N}
+        = \liminf_{\epsilon \to 0}
+        \SymbolSemiNorm {m - (\rho - \delta)(N + 1)} {\rho, \delta} P {\tau_{N, \epsilon}} < +\infty,
+    \end{align*}
+    which concludes the proof.
+\end{proof}
 
 \subsection{Asymptotic sums of symbols}
 
