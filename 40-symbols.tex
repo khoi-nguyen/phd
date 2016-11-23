@@ -3927,7 +3927,7 @@ This will allow us to conclude the proof that our collection of operators $\Oper
         \liminf_{\epsilon \to 0}
         \norm [\Lin {\Lebesgue 2 \Group}] {%
             \Rep \lambda \BesselPotential {-m + \rho \abs \alpha - \delta \abs \beta + \gamma}
-            L_\epsilon(g, \lambda)
+            \LeftDifferentialOperator \alpha L_\epsilon(g, \lambda)
             \Rep \lambda \BesselPotential {-\gamma}
         } = 0.
     \end{align*}
@@ -4010,7 +4010,7 @@ Propositions~\ref{proposition:composition_formula} and~\ref{proposition:adjoint_
     we have
     \begin{align*}
         \sigma
-        - \sum_{\abs \alpha \leq N} \frac 1 {\alpha!} \DifferenceOperatorOrder \alpha \sigma_1 \ \TaylorLeftDifferentialOperator \alpha \sigma_2 \in \SymbolClass {m - (\rho - \delta) N} {\rho, \delta}
+        - \sum_{\abs \alpha \leq N} \frac 1 {\alpha!} \DifferenceOperatorOrder \alpha \sigma_1 \ \TaylorLeftDifferentialOperator \alpha \sigma_2 \in \SymbolClass {m - (\rho - \delta) (N + 1)} {\rho, \delta}
     \end{align*}
     for each $N \in \N$.
 \end{theorem}
