@@ -4014,6 +4014,52 @@ Propositions~\ref{proposition:composition_formula} and~\ref{proposition:adjoint_
     \end{align*}
     for each $N \in \N$.
 \end{theorem}
+\begin{proof}
+    Let $N \in \N$.
+    We write
+    \begin{align*}
+        \tau_N &\defeq
+        \sigma_1 \circ \sigma_2
+        - \sum_{\abs \alpha \leq N} \frac 1 {\alpha!} \DifferenceOperatorOrder \alpha \sigma_1 \ \TaylorLeftDifferentialOperator \alpha \sigma_2.
+    \end{align*}
+    For each $\epsilon \in (0, 1]$,
+    we let
+    \begin{align*}
+        \sigma_{1, \epsilon} &\defeq \eta_\epsilon \sigma_1\\
+        \tau_{N, \epsilon} &\defeq
+        \sigma_{1, \epsilon} \circ \sigma_2
+        - \sum_{\abs \alpha \leq N} \frac 1 {\alpha!} \DifferenceOperatorOrder \alpha \sigma_{1, \epsilon} \ \TaylorLeftDifferentialOperator \alpha \sigma_2.
+    \end{align*}
+
+    We check that
+    \begin{align*}
+        \tau_{N, \epsilon} = \eta_\epsilon \tau_N - L_\epsilon,
+    \end{align*}
+    where
+    \begin{align*}
+        L_\epsilon \defeq
+        \sum_{\abs \alpha \leq N}
+        \sum_{\substack{\abs \alpha \leq \abs {\alpha_1} \eta_\epsilon + \abs {\alpha_2} \leq 2 \abs \alpha \\ \alpha_1 \neq 0}}
+        \frac 1 {\alpha!} \DifferenceOperatorOrder {\alpha_1} \DifferenceOperatorOrder {\alpha_2} \sigma_1 \ \TaylorLeftDifferentialOperator \alpha \sigma_2.
+    \end{align*}
+
+    Arguing like in the proof of Theorem~\ref{theorem:simplification_of_symbol_classes_definition},
+    we obtain that
+    \begin{align*}
+        \liminf_{\epsilon \to 0}
+        \norm [\Lin {\Lebesgue 2 \Group}] {%
+            \LeftDifferentialOperator \beta \DifferenceOperatorOrder \alpha L_\epsilon(g, \lambda)
+            \Rep \lambda \BesselPotential {-m + (\rho - \delta)(N + 1) + \rho \abs \alpha - \delta \abs \beta}
+        } = 0
+    \end{align*}
+    and
+    \begin{align*}
+        \SymbolSemiNorm {m - (\rho - \delta)(N + 1)} {\rho, \delta} P {\tau_N}
+        = \liminf_{\epsilon \to 0}
+        \SymbolSemiNorm {m - (\rho - \delta)(N + 1)} {\rho, \delta} P {\tau_{N, \epsilon}} < +\infty,
+    \end{align*}
+    which concludes the proof.
+\end{proof}
 
 \begin{theorem}[Adjunction formula]
 \label{theorem:adjunction_formula}
