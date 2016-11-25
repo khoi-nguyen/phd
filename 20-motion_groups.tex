@@ -20,7 +20,7 @@ the resemblance is actually very deceptive.
 
 \section{Motion groups}
 
-Given $x, y \in \VectorSpace$
+Given $x, y \in \VectorSpace$,
 let us denote by $g_{x, k}$ the affine transformation on $\VectorSpace$ consisting in a rotation by $k$ followed by a translation by $x$.
 Naturally,
 such transformations compose in the following way
@@ -87,7 +87,7 @@ This motivates the following definition.
     \end{align*}
     where the law is the composition of functions.
 
-    Arguing like in Example~\ref{example:Euclidean_motion_groups},
+    Arguing as in Example~\ref{example:Euclidean_motion_groups},
     the above group can be identified with $\C^n \ltimes \SpecialUnitaryGroup{n}$.
 \end{example}
 
@@ -116,11 +116,11 @@ The following Lemma shows that $\VectorSpace$ can be endowed with an inner produ
     \begin{align*}
         \ip{x}{y} \defeq \int_\CompactGroup Q(k x, k y) \dd k,
     \end{align*}
-    where $\dd k$ is the Haar measure on $\CompactGroup$.
+    where $\dd k$ is the normalized Haar measure on $\CompactGroup$.
 
     It follows that if $k \in \CompactGroup$,
-    then using the right-invariance of the Haar measure on compact groups,
-    (for this, see for example \cite[Theorem 7.4.21]{RuzhanskyTurunen10})
+    then using the right-invariance of the Haar measure on compact groups
+    (for this, see for example \cite[Theorem 7.4.21]{RuzhanskyTurunen10}),
     we obtain
     \begin{align*}
         \ip{k x}{k y}
@@ -138,7 +138,6 @@ The following Lemma shows that $\VectorSpace$ can be endowed with an inner produ
 
 From now on, $\VectorSpace$ will be given the structure of \emph{Euclidean space} with a $\CompactGroup$-invariant inner product
 whose existence is given by Lemma~\ref{lemma:existence_of_K-invariant_inner_product}.
-
 To obtain a \emph{unitary Fourier Transform},
 we normalise the \emph{Haar measure} on $\VectorSpace$ as follows.
 
@@ -198,17 +197,17 @@ The following proposition summarizes how $\CompactGroup$ affects key objects on 
 \begin{proposition}
     Let $\VectorSpace$ be a finite dimensional vector space
     and $\CompactGroup$ be a subgroup of $\SpecialOrthogonalGroup\VectorSpace$.
-    The following properties hold:
+    The following properties hold.
     \begin{enumerate}
         \item The Lebesgue measure on $\VectorSpace$ is invariant under $\CompactGroup$,
             i.e.\ for every $k \in \CompactGroup$ and each Borel set $A \subset \VectorSpace$, we have
             \begin{align*}
-                \int_A 1 \dd x = \int_{kA} 1 \dd x;
+                \int_A 1 \dd x = \int_{kA} 1 \dd x.
             \end{align*}
         \item The Laplacian on $\VectorSpace$ is invariant under $\CompactGroup$,
             i.e.\ for every $k \in \CompactGroup$ and every $\phi \in \SmoothFunctions\VectorSpace$, we have
             \begin{align*}
-                \Laplacian[\VectorSpace] (\phi \circ k)(x) = \Laplacian[\VectorSpace] \phi(k x);
+                \Laplacian[\VectorSpace] (\phi \circ k)(x) = \Laplacian[\VectorSpace] \phi(k x).
             \end{align*}
         \item The action of $\CompactGroup$ on $\VectorSpace$ commutes with the dilation structure of $\VectorSpace$.
     \end{enumerate}
@@ -221,7 +220,7 @@ The following proposition summarizes how $\CompactGroup$ affects key objects on 
                 = \int_A (1 \circ k) \det k \dd x
                 = \int_A 1 \dd x,
             \end{align*}
-            where we used the fact that $\det k = 1$ since $k \in \SpecialOrthogonalGroup\VectorSpace$.
+            where we use the fact that $\det k = 1$ since $k \in \SpecialOrthogonalGroup\VectorSpace$.
         \item First, observe that
             \begin{align*}
                 \dd (\phi \circ k)(x) = \dd \phi(k x) k
@@ -286,7 +285,7 @@ the \emph{exponential map} has the following expression.
 \index{motion group!exponential map}
     The \emph{exponential map} on $\Group$ is the map
     \begin{align*}
-        \exp_\Group : \LieAlgebra \to \Group : (X, Y) \mapsto \left(\sum_{k = 0}^\infty \frac{Y^k}{{(k + 1)}!} X, \exp_\CompactGroup Y\right)
+        \exp_\Group : \LieAlgebra \to \Group : (X, Y) \mapsto \left(\sum_{k = 0}^\infty \frac{Y^k}{{(k + 1)}!} X, \exp_\CompactGroup Y\right).
     \end{align*}
 \end{definition}
 
@@ -309,7 +308,7 @@ are motivated by the following proposition.
     \end{align*}
     for all $i, j \in \{1, \cdots, n\}$.
 
-    The following properties hold:
+    The following properties hold.
     \begin{enumerate}
         \item $\Phi$ is a faithful representation of $\Group$.
         \item The map
@@ -484,12 +483,12 @@ via the exponential map.
 
 \begin{proposition}
     Let $X \in \LieAlgebra$.
-    The differential operator $\LeftDifferentialOperatorFirstOrder{X}$ is the only differential operator satisfying the following properties:
+    The differential operator $\LeftDifferentialOperatorFirstOrder{X}$ is the only differential operator satisfying the following properties.
     \begin{enumerate}
         \item $\LeftDifferentialOperatorFirstOrder{X}$ is \emph{left-invariant},
             i.e. for every $h \in \Group$, we have
             \begin{align*}
-                (X f(h \dummy))(g) = (X f)(h g);
+                (X f(h \dummy))(g) = (X f)(h g).
             \end{align*}
         \item The vector in $T_e \Group$ corresponding to the differentiation by $\LeftDifferentialOperatorFirstOrder{X}$ at $e$ is precisely $X$.
         \item Given $X, Y \in \LieAlgebra$, we have
@@ -502,7 +501,7 @@ via the exponential map.
     \end{enumerate}
 \end{proposition}
 
-We now describe explicitely the Lie algebra of Euclidean motion groups.
+We now describe explicitly the Lie algebra of Euclidean motion groups.
 
 \begin{example}[$2$-dimensional Euclidean motion group]
 \label{example:Lie_Algebra_of_2-dimensional_Euclidean_motion_group}
@@ -542,9 +541,9 @@ We now describe explicitely the Lie algebra of Euclidean motion groups.
     then the associated left-invariant operators act via
     \begin{align*}
         \LeftDifferentialOperatorFirstOrder{X_1} f(x, t)
-            &= \cos(\turn t) \D{1}[f]{{x_1} }(x, t) + \sin(\turn t) \D{1}[f]{{x_2} }(x, t)\\
+            &= \cos(\turn t) \D{1}[f]{{x_1} }(x, t) + \sin(\turn t) \D{1}[f]{{x_2} }(x, t),\\
         \LeftDifferentialOperatorFirstOrder{X_2} f(x, t)
-            &= -\sin(\turn t) \D{1}[f]{{x_1} }(x, t) + \cos(\turn t) \D{1}[f]{{x_2} }(x, t)\\
+            &= -\sin(\turn t) \D{1}[f]{{x_1} }(x, t) + \cos(\turn t) \D{1}[f]{{x_2} }(x, t),\\
         \LeftDifferentialOperatorFirstOrder{X_3} f(x, t)
             &= \D{1}[f]{t}(x, t),
     \end{align*}
@@ -580,7 +579,7 @@ We now describe explicitely the Lie algebra of Euclidean motion groups.
     for the last commutation relation we additionally assume $i < k$.
 \end{example}
 
-Let us compute the expression of a left-invariant derivatives arising from $\VectorSpace \subset \LieAlgebra$.
+Let us compute the expression of a left-invariant derivative arising from $\VectorSpace \subset \LieAlgebra$.
 
 \begin{lemma}
 \label{lemma:Euclidean_left-invariant_derivatives}
@@ -620,7 +619,7 @@ In particular, we can naturally define an inner product $\ip[\LieAlgebra]\dummy\
 From now on,
 $X_1, \cdots, X_{\dim \Group}$ will denote a basis such that
 \begin{enumerate}
-    \item the collection is orthonormal with respect to $\ip[\LieAlgebra]\dummy\dummy$;
+    \item The collection is orthonormal with respect to $\ip[\LieAlgebra]\dummy\dummy$.
     \item If $1 \leq j \leq \dim \VectorSpace$, then $X_j \in \VectorSpace$,
         otherwise $X_j \in \LieAlgebraCompactGroup$.
 \end{enumerate}
@@ -631,11 +630,11 @@ $X_1, \cdots, X_{\dim \Group}$ will denote a basis such that
     \begin{align*}
         \LeftDifferentialOperator{\alpha} =
         \LeftDifferentialOperatorFirstOrder{X_1}^{\alpha_1} \cdots
-        \LeftDifferentialOperatorFirstOrder{X_{\dim \Group}}^{\alpha_{\dim \Group}}
+        \LeftDifferentialOperatorFirstOrder{X_{\dim \Group}}^{\alpha_{\dim \Group}}.
     \end{align*}
 \end{definition}
 
-A very important example of left-invariant differential operator is the following.
+The following definition is a very important example of left-invariant differential operator.
 
 \begin{definition}[Left-invariant Laplacian]
 \label{definition:left-invariant_Laplacian}
@@ -692,7 +691,7 @@ and left-invariant differential operators.
                 \RightDifferentialOperatorFirstOrder X \phi(x, k)
                 = \ip {\grad \phi(x, k)} X,
             \end{align*}
-            where in the above $(x, k) \in \Group$ and $\phi \in \SmoothFunctions \Group$.
+            where $(x, k) \in \Group$ and $\phi \in \SmoothFunctions \Group$.
         \item
             If $Y \in \LieAlgebraCompactGroup$, then its associated right-invariant vector field acts on $\SmoothFunctions \Group$ via
             \begin{align*}
@@ -700,8 +699,8 @@ and left-invariant differential operators.
                 = \sum_{j = 1}^{\dim \VectorSpace} (Y x)_j \D 1 [\phi] {{x_j} } (x, k)
                 + {\RightDifferentialOperatorFirstOrder Y}_k \phi(x, k)
             \end{align*}
-            where in the above $(x, k) \in \Group$, $\phi \in \SmoothFunctions \Group$,
-            and $\RightDifferentialOperatorFirstOrder Y_k$ is the right-invariant vector field on the manifold $\CompactGroup$ acting exclusively on the variable $k \in \CompactGroup$.
+            where $(x, k) \in \Group$, $\phi \in \SmoothFunctions \Group$,
+            and $\RightDifferentialOperatorFirstOrder Y_k$ is the right-invariant vector field associated with $Y$ on the manifold $\CompactGroup$ acting exclusively on the variable $k \in \CompactGroup$.
     \end{itemize}
 \end{proposition}
 \begin{proof}
@@ -746,9 +745,9 @@ and left-invariant differential operators.
             \begin{align*}
                 \RightDifferentialOperatorFirstOrder Y
                 = \sum_{i, j = 1}^{\dim \VectorSpace} (Y x)_j \ip {k e_i} {e_j} \LeftDifferentialOperatorFirstOrder X_i
-                + \RightDifferentialOperatorFirstOrder Y_k
+                + \RightDifferentialOperatorFirstOrder Y_k,
             \end{align*}
-            where $\RightDifferentialOperatorFirstOrder Y_k$ is the right-invariant vector field on the manifold $\CompactGroup$ acting exclusively on the variable $k \in \CompactGroup$.
+            where $\RightDifferentialOperatorFirstOrder Y_k$ is the right-invariant vector field associated with $Y$ on the manifold $\CompactGroup$ acting exclusively on the variable $k \in \CompactGroup$.
     \end{itemize}
 \end{corollary}
 
@@ -784,7 +783,7 @@ was given in~\cite{Ito52}.
 
 The Fourier analysis on the motion group was studied in~\cite{Kumahara73},
 where the author observes that the Plancherel formula takes a more elegant form if we group the unitary representations appropriately.
-His subsequent papers (e.g.\ \cite{Kumahara76}) work exclusively with those grouped representations as they are technically more converient.
+His subsequent papers (e.g.\ \cite{Kumahara76}) work exclusively with those grouped representations as they are technically more convenient.
 
 We shall therefore make the same choice as~\cite{Kumahara76},
 and introduce the following unitary, albeit reducible, representations.
@@ -792,7 +791,7 @@ and introduce the following unitary, albeit reducible, representations.
 \begin{definition}
 \label{definition:reducible_representation}
     Let $\lambda \in \VectorSpace$.
-    We define a unitary representation $\Rep{\lambda} \in \Hom(\Group, \End(\Lebesgue{2}{\CompactGroup}))$ of $\Group$ via
+    We define a unitary representation $\Rep{\lambda} \in \Hom(\Group, \End(\Lebesgue{2}{\CompactGroup}))$ of $\Group$, via
     \begin{align}
         \Rep{\lambda} (x, k) F(u) \defeq \e^{\i \turn \ip \lambda {u x}} F(u k),
         \label{eq:reducible_representations_on_the_motion_groups}
@@ -821,7 +820,7 @@ a few comments are necessary.
         the representations $\Rep \lambda$ and $\Rep {k \lambda}$
         are equivalent (see Lemma~\ref{lemma:invariance_property}).
         Again,
-        we choose to work with them all the same
+        we choose to work with them nevertheless
         because they will yield a more elegant Plancherel formula,
         but will allow us to always be able to differentiate with respect to $\lambda$.
     \item
@@ -867,7 +866,7 @@ Our representations satisfy the following invariance property.
     Let $\lambda \in \VectorSpace$.
     For each $k \in \CompactGroup$, we have
     \begin{align*}
-        \Rep{k \lambda}(y, l) = \LeftRegularRepresentation(k) \Rep{\lambda}(y, l) \LeftRegularRepresentation(k^{-1})
+        \Rep{k \lambda}(y, l) = \LeftRegularRepresentation(k) \Rep{\lambda}(y, l) \LeftRegularRepresentation(k^{-1}).
     \end{align*}
 \end{lemma}
 \begin{proof}
@@ -896,7 +895,7 @@ the unitary dual is given by
 \end{align*}
 which, if we group the representations of $\CompactGroup$, becomes
 \begin{align*}
-    \e^{\i \turn \ip \lambda \dummy} \otimes \left(\bigoplus_{\tau \in \dualGroup \CompactGroup} \tau^{\otimes \dimRep \tau}\right)
+    \e^{\i \turn \ip \lambda \dummy} \otimes \left(\bigoplus_{\tau \in \dualGroup \CompactGroup} \tau^{\otimes \dimRep \tau}\right).
 \end{align*}
 
 Using the Peter-Weyl Theorem (Theorem~\ref{theorem:Peter-Weyl_theorem}),
@@ -904,7 +903,7 @@ the representation above is equivalent to the following.
 
 \begin{definition}
     Let $\lambda \in \VectorSpace$.
-    We define a unitary representation $\Rep [\GroupDirect] {\lambda} \in \Hom(\Group, \End(\Lebesgue{2}{\CompactGroup}))$ of $\Group$ via
+    We define a unitary representation $\Rep [\GroupDirect] {\lambda} \in \Hom(\Group, \End(\Lebesgue{2}{\CompactGroup}))$ of $\Group$, via
     \begin{align*}
         \Rep [\GroupDirect] {\lambda} (x, k) F(u) \defeq \e^{\i \turn \ip \lambda x} F(u k),
     \end{align*}
@@ -1073,7 +1072,7 @@ the representation above is equivalent to the following.
 \subsection{Infinitesimal representations}
 
 Infinitesimal representations are important
-because they characterize the action of left- (resp. right-) invariant differential operators on the Fourier Transform side.
+because they characterize the action of left- (respectively right-) invariant differential operators on the Fourier Transform side.
 As such,
 they provide the most elementary example of Fourier transform of distributions that are not integrable functions.
 
@@ -1096,13 +1095,13 @@ they provide the most elementary example of Fourier transform of distributions t
 \label{proposition:infinitesimal_representations_of_differential_operators}
     Let $\lambda \in \VectorSpace$ and let $j \in \{1, \cdots, \dim \Group\}$.
     Fix also $F \in \SmoothFunctions \CompactGroup$ and $u \in \CompactGroup$.
-    The infinitesimal representation of $X_j$ has the following expression:
+    The infinitesimal representation of $X_j$ has the following expression.
     \begin{enumerate}
-        \item if $j \leq \dim \VectorSpace$, then
+        \item If $j \leq \dim \VectorSpace$, then
             \begin{align*}
-                \Rep{\lambda}(X_j) F(u) = \i \turn \ip \lambda {u e_j} F(u)
+                \Rep{\lambda}(X_j) F(u) = \i \turn \ip \lambda {u e_j} F(u).
             \end{align*}
-        \item if $j > \dim \VectorSpace$, then
+        \item If $j > \dim \VectorSpace$, then
             \begin{align*}
                 \Rep{\lambda}(X_j) F(u) = \LeftDifferentialOperatorFirstOrder{X_j} F(u),
             \end{align*}
@@ -1167,7 +1166,7 @@ let us adapt the classical definition of Schwartz space.
     \end{align*}
 
     The maps ${(\seminorm[\Schwartz\Group]{N}{\dummy})}_{N \in \N}$ define a collection of semi-norms on $\Schwartz\Group$
-    and give it a structure of \emph{Fr\'echet space}.
+    and give it a structure of a \emph{Fr\'echet space}.
 \end{definition}
 
 We now define a central tool in our analysis: the \emph{Fourier transform}.
@@ -1205,18 +1204,18 @@ we need to compute some Schatten norms of our Fourier coefficients.
         \Fourier f(\lambda) F(u) = \int_\CompactGroup K_f(\lambda; u, k) F(k) \dd k.
     \end{align*}
 
-    In particular, the following properties hold:
+    In particular, the following properties hold.
     \begin{enumerate}
-        \item if $f \in \Schwartz\Group$, then $K_f$ is smooth,
+        \item If $f \in \Schwartz\Group$, then $K_f$ is smooth,
             $\Fourier f(\lambda)$ is trace class and
             \begin{align*}
-                \tr(\Fourier f(\lambda)) = \int_\CompactGroup \Fourier[\VectorSpace] f(k \lambda, e) \dd k;
+                \tr(\Fourier f(\lambda)) = \int_\CompactGroup \Fourier[\VectorSpace] f(k \lambda, e) \dd k.
             \end{align*}
-        \item if $f \in \Lebesgue{1}\Group \cap \Lebesgue{2}\Group$, then for almost every $\lambda \in \VectorSpace$,
+        \item If $f \in \Lebesgue{1}\Group \cap \Lebesgue{2}\Group$, then for almost every $\lambda \in \VectorSpace$,
             $\Fourier f(\lambda)$ is Hilbert-Schmidt and
             \begin{align*}
                 \norm[\SchattenClasses{2}{\Lebesgue{2}\CompactGroup}]{\Fourier f(\lambda)}^2
-                = \int_\CompactGroup \int_\CompactGroup \abs{\Fourier[\VectorSpace] f(k \lambda, u)}^2 \dd u \dd k
+                = \int_\CompactGroup \int_\CompactGroup \abs{\Fourier[\VectorSpace] f(k \lambda, u)}^2 \dd u \dd k.
             \end{align*}
     \end{enumerate}
 \end{lemma}
@@ -1229,7 +1228,7 @@ we need to compute some Schatten norms of our Fourier coefficients.
             \int_\CompactGroup
                 f(x, k) \e^{-\i \turn \ip{k u^{-1} \lambda}{x}} F(u k^{-1})
             \dd k
-        \dd x
+        \dd x.
     \end{align*}
 
     Recognizing the Fourier Transform on $\VectorSpace$ in the above, we obtain
@@ -1242,7 +1241,7 @@ we need to compute some Schatten norms of our Fourier coefficients.
         &=
         \int_\CompactGroup
             \Fourier[\VectorSpace] f(k^{-1} \lambda, k^{-1} u) F(k)
-        \dd k
+        \dd k,
     \end{align*}
     where we substituted $k$ for $k^{-1} u$ to obtain the last line.
 
@@ -1299,11 +1298,11 @@ applying the Fourier transform reduces to computing the Fourier transform on $\G
         &=
         \int_\CompactGroup \Fourier [\VectorSpace] f(\lambda, k) F(u k^{-1}) \dd k,
     \end{align*}
-    where the last line was obtained by substituing $k$ for $u k^{-1}$.
+    where the last line is obtained by substituing $k$ for $u k^{-1}$.
 
     Recognizing a Fourier transform on $\CompactGroup$ with ``grouped representations''
     (see Subsubsection~\ref{subsubsection:representations_on_the_direct_product})
-    in the right-hand side of the above
+    in the right-hand side of the above,
     we obtain
     \begin{align*}
         \Fourier f(\lambda) F(u)
@@ -1446,7 +1445,7 @@ we can recover a function from its Fourier transform.
     \begin{align*}
         \phi(g)
         = \int_{\VectorSpace}
-        \tr \left( \Rep{\lambda}(g) \Fourier \phi(\lambda) \right) \dd \Plancherel{\VectorSpace}(\lambda).
+        \tr \left( \Rep{\lambda}(g) \Fourier \phi(\lambda) \right) \dd \lambda.
     \end{align*}
 \end{proposition}
 \begin{proof}
@@ -1463,7 +1462,7 @@ we can recover a function from its Fourier transform.
         &= \int_\VectorSpace \int_\CompactGroup \Fourier[\VectorSpace] \phi(k \lambda, e) \dd k \dd \lambda\\
         &= \int_\VectorSpace \Fourier[\VectorSpace] \phi(\lambda, e) \dd \lambda,
     \end{align*}
-    where the last line was obtained by a change of variables after permuting the integrals.
+    where the last line is obtained by a change of variables after permuting the integrals.
 
     Recognizing an inverse Fourier Transform on the right-hand side of the above, we obtain
     \begin{align*}
@@ -1477,7 +1476,7 @@ we can recover a function from its Fourier transform.
         \phi(g) = \phi(e g) = \int_\VectorSpace \tr(\Fourier \{\phi(\dummy g)\}(\lambda)) \dd \lambda
         = \int_\VectorSpace \tr(\Rep\lambda(g) \Fourier \phi(\lambda)) \dd \lambda,
     \end{align*}
-    where the last equality was obained by Proposition~\ref{proposition:elementary_properties_of_the_Fourier_transform}.
+    where the last equality is obained by Proposition~\ref{proposition:elementary_properties_of_the_Fourier_transform}.
 \end{proof}
 
 \subsubsection{The direct product case}
@@ -1498,7 +1497,7 @@ Moreover,
 it is clear that
 \begin{align}
     \Fourier [\GroupDirect] f(\lambda)
-    \sim \bigoplus_{\tau \in \dualGroup \CompactGroup} \left(\Fourier [\GroupDirect] f(\lambda, \tau)\right)^{\otimes \dimRep \tau}
+    \sim \bigoplus_{\tau \in \dualGroup \CompactGroup} \left(\Fourier [\GroupDirect] f(\lambda, \tau)\right)^{\otimes \dimRep \tau}.
     \label{eq:relation_between_both_Fourier_transforms_on_the_direct_product}
 \end{align}
 
@@ -1536,7 +1535,7 @@ this means that the \emph{inverse formula} takes the form
 \end{align*}
 where $f \in \Schwartz \GroupDirect$ and $g \in \GroupDirect$.
 
-We have thus shown that the Fourier theory and the Plancherel Theory are formally very similar on $\Group$ and $\GroupDirect$ provided we group the representations on either side.
+We have thus shown that the Fourier theory and the Plancherel theory are formally very similar on $\Group$ and $\GroupDirect$ provided we group the representations on either side.
 
 Note that the resemblance is extremely deceptive.
 To illustrate that last assertion,
@@ -1631,17 +1630,17 @@ that $\Laplacian [\Group] = \Laplacian [\GroupDirect]$ is right-invariant on $\G
 \subsection{Fourier Transform of distributions}
 
 Although Subsection~\ref{subsection:Fourier_transform_of_distributions} already treated the problem of generalizing the Fourier Transform for the purposes of pseudo-differential calculus,
-let us mention some results that have been obtained explicitely for the motion group.
+let us mention some results that have been obtained explicitly for the motion group.
 
 For a complete proof of the results stated in this subsection,
 the reader is invited to consult~\cite{EguchiMasaakiKumahara80}.
 
 \begin{definition}[Image of the Schwartz space]
     We shall denote by $\Schwartz{\dualGroup\Group}$
-    the set of all functions $F \in \SmoothFunctions{\VectorSpace, \Lin{\Lebesgue{2}\CompactGroup}}$ such that:
+    the set of all functions $F \in \SmoothFunctions{\VectorSpace, \Lin{\Lebesgue{2}\CompactGroup}}$ satisfying the following properties.
     \begin{enumerate}
         \item For each $\alpha \in \N^{\dim \VectorSpace}$,
-            $\D{\abs \alpha}[F]{\lambda^\alpha}$ leaves $\SmoothFunctions\CompactGroup$ stable;
+            $\D{\abs \alpha}[F]{\lambda^\alpha}$ leaves $\SmoothFunctions\CompactGroup$ stable.
         \item For each $N \in \N$, the quantity
             \begin{align*}
                 \seminorm[\Schwartz{\dualGroup\Group}]{N}{F} \defeq
@@ -1654,7 +1653,7 @@ the reader is invited to consult~\cite{EguchiMasaakiKumahara80}.
                     \Rep\lambda(\LeftDifferentialOperator{\beta'})
                 }
             \end{align*}
-            is finite;
+            is finite.
         \item For every $k \in \CompactGroup$ and each $\lambda \in \VectorSpace$,
             \begin{align*}
                 F(k \lambda) = \LeftRegularRepresentation(k) F(k) \LeftRegularRepresentation(k^{-1}).
@@ -1672,7 +1671,7 @@ One easily checks the following result.
 \begin{theorem}[\cite{EguchiMasaakiKumahara80}]
     The Fourier Transform is a topological isomorphism
     \begin{align*}
-        \Fourier : \Schwartz \Group \to \Schwartz {\dualGroup \Group}
+        \Fourier : \Schwartz \Group \to \Schwartz {\dualGroup \Group}.
     \end{align*}
 \end{theorem}
 
@@ -1799,8 +1798,8 @@ It then follows by classical arguments that we may extend the Fourier Transform 
 \section{Sobolev spaces}
 
 The notion of \emph{order} of a pseudo-differential operator is mainly motivated by boundedness properties between Sobolev spaces.
-As we wish to define pseudo-differential operators with non-integer order,
-we need a notion of Sobolev spaces with general order.
+As we wish to define pseudo-differential operators with non-integer orders,
+we need a notion of Sobolev spaces with general orders.
 
 \begin{definition}[Sobolev norm]
     Let $s \in \R$.
@@ -1883,11 +1882,11 @@ The Sobolev spaces satisfy the following properties.
             \end{align*}
             where
             \begin{align*}
-                I_{s, \alpha} \defeq \Rep \lambda \BesselPotential {s - \abs \alpha} \Rep \lambda (X)^\alpha \Rep \lambda \BesselPotential{-s}
+                I_{s, \alpha} \defeq \Rep \lambda \BesselPotential {s - \abs \alpha} \Rep \lambda (X)^\alpha \Rep \lambda \BesselPotential{-s}.
             \end{align*}
 
             One easily checks that $\norm [\Lin{\Lebesgue 2 \CompactGroup}] {I_{s, \alpha}} < \infty$,
-            so that a density argument tells us yields the existence of a unique continuous extension of
+            so that a density argument yields the existence of a unique continuous extension of
             \begin{align*}
                 \LeftDifferentialOperator \alpha : \Sobolev s \to \Sobolev {s - \abs \alpha}.
             \end{align*}
@@ -1945,9 +1944,9 @@ This strategy can only be successful provided we can prove \emph{Sobolev embeddi
     which would imply that
     \begin{align*}
         I(s)
-        &\asymp \sum_{\tau \in \dualGroup \CompactGroup} \dimRep \tau \JapaneseBracket \CompactGroup \tau^{-s + \dim \VectorSpace},
+        &\asymp \sum_{\tau \in \dualGroup \CompactGroup} \dimRep \tau \JapaneseBracket \CompactGroup \tau^{-s + \dim \VectorSpace}.
     \end{align*}
-    However, \cite[Lemma 6.3]{Fischer2015}
+    However, \cite[Lemma 6.3]{Fischer2015} implies that the above converges if and only if
     \begin{align*}
         -s + \dim \VectorSpace < -\dim \CompactGroup,
     \end{align*}
@@ -1998,7 +1997,7 @@ we first show the following technical result.
     then we have
     \begin{align*}
         \lim_{j \to \infty} \int_\VectorSpace \tr(\Rep \lambda (g) \Fourier {f_j}(\lambda)) \dd \lambda
-        = \int_\VectorSpace \tr(\Rep \lambda (g) \Fourier f(\lambda)) \dd \lambda.
+        = \int_\VectorSpace \tr(\Rep \lambda (g) \Fourier f(\lambda)) \dd \lambda
     \end{align*}
     for every $g \in \Group$.
 \end{lemma}
@@ -2082,7 +2081,7 @@ We are now ready to prove the following generalization of Proposition~\ref{propo
     is integrable on $\VectorSpace$.
     Moreover, $f$ is continuous on $\Group$ and for every $g \in \Group$, the map
     \begin{align*}
-        \Group \to \C : g \mapsto \int_\VectorSpace \tr\left(\Rep \lambda (g) \Fourier f(\lambda)\right) \dd \lambda.
+        \Group \to \C : g \mapsto \int_\VectorSpace \tr\left(\Rep \lambda (g) \Fourier f(\lambda)\right) \dd \lambda
     \end{align*}
     is continuous and equal to $f$ almost-everywhere.
 \end{proposition}
@@ -2223,12 +2222,13 @@ Moreover, we fix a basis $X_1, \dots, X_{\dim \Group} \in \LieAlgebra$ such that
     \LeftDifferentialOperatorFirstOrder {X_j} q_k(\dummy^{-1})(e_\Group) = \Kronecker j k
 \end{align*}
 for each $j, k \in \{1, \dots, \dim \Group\}$.
-To insist that the basis is adapted to our family of smooth functions,
+To insist upon the fact
+that the basis is adapted to our family of smooth functions,
 we shall write
 \begin{align*}
     \TaylorLeftDifferentialOperator \alpha
     \defeq
-    X^{\alpha_1}_1 \dots X^{\alpha_{\dimDifferenceOperators}}_{\dimDifferenceOperators}
+    X^{\alpha_1}_1 \dots X^{\alpha_{\dimDifferenceOperators}}_{\dimDifferenceOperators}.
 \end{align*}
 
 \begin{definition}[Distance to the origin]
@@ -2297,7 +2297,7 @@ we can show the following estimate on the remainder.
         C \norm [\Group] h^{N + 1}
         \sup_{\abs \alpha \leq N + 1}
         \sup_{\norm [\Group] z \leq \eta \norm [\Group] h}
-        \abs {\TaylorLeftDifferentialOperator \alpha f(g z)}.
+        \abs {\TaylorLeftDifferentialOperator \alpha f(g z)}
     \end{align*}
     for every $h \in \Group$.
 \end{proposition}
