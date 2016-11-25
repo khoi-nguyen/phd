@@ -549,26 +549,26 @@ Following the ideas of~\cite{Shubin01, RuzhanskyWirth14},
 we define
 \begin{align*}
     \eta_\epsilon(\xi) \defeq
-    \frac 1 {\i \turn} \int_\Gamma \e^{-t z} \left(\xi(\Id {} - \Laplacian) - z \Id {}\right)^{-1} \dd z,
+    \frac 1 {\i \turn} \int_\Gamma \e^{-\epsilon z} \left(\xi(\Id {} - \Laplacian) - z \Id {}\right)^{-1} \dd z,
     \quad \xi \in \dualGroup \Group
 \end{align*}
-with an appropriate contour $\Gamma \subset \C$
-and we show the symbolic estimates on $\eta_\epsilon$ and $\Id {} - \eta_\epsilon$
+with an appropriate contour $\Gamma \subset \C$.
+We also show the symbolic estimates on $\eta_\epsilon$ and $\Id {} - \eta_\epsilon$
 via the exponential decay on the contour and elementary estimates on the resolvent,
 in particular \emph{without using the classical estimates on the heat kernel}.
 
 This strategy generalizes verbatim to more general settings
-(provided that we have good properties difference operators),
+(provided that we have good properties for difference operators),
 but also works on the compact group.
 
-This approach has however at least two drawbacks.
+This approach has, however, at least two drawbacks.
 \begin{itemize}
     \item
         We only show symbolic estimates for the functional calculus associated with the functions $\e^{t z}$,
         $1 - \e^{t z}$, and $z^\gamma$,
         while~\cite{FischerRuzhansky16} and~\cite{Fischer2015} prove a much more general result in their respective cases.
     \item
-        The kernel estimates when $\rho = 1$,
+        The kernel estimates in the case $\rho = 1$,
         essential to show the Calder\'on-Zygmund property,
         are trickier to obtain
         and will require better estimates on the kernel.
@@ -584,4 +584,4 @@ if compared with~\cite{Fischer2015,FischerRuzhansky16}.
 The rest of Chapter~\ref{chapter:symbolic_calculus} is dedicated to showing the main result of the thesis,
 i.e.\ the composition and adjunction formulae,
 but also the $\Lebesgue 2 \Group$ boundedness.
-We then conclude the proof with the classical application of pseudo-differential calculus to the construction of parametrices.
+We then conclude with the classical application of pseudo-differential calculus to the construction of parametrices.
