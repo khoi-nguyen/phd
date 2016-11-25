@@ -58,7 +58,7 @@ we show that applying difference operators \emph{reduces} their order.
     we have
     \begin{align*}
         \DifferenceOperator q \Rep \lambda(\LeftDifferentialOperator \alpha)
-        = (-1)^\alpha \Fourier \{q \LeftDifferentialOperator \alpha \delta_{e_\Group}\}
+        = (-1)^\alpha \Fourier \{q \LeftDifferentialOperator \alpha \delta_{e_\Group}\}.
     \end{align*}
 
     Let $H \in \Schwartz {\dualGroup \Group}$ and write
@@ -77,7 +77,7 @@ we show that applying difference operators \emph{reduces} their order.
         } h
         =
         (-1)^{\abs \alpha}
-        \dualBracket [\Group] {\delta_{e_\Group}} {\LeftDifferentialOperator \alpha (qh)}
+        \dualBracket [\Group] {\delta_{e_\Group}} {\LeftDifferentialOperator \alpha (qh)}.
         \label{eq:difference_operator_of_X_alpha}
     \end{align}
 
@@ -135,9 +135,9 @@ we show that applying difference operators \emph{reduces} their order.
     we obtain the desired formula.
 \end{proof}
 
-With our approach
+With our approach,
 we will not be able to write the composition or adjunction of operators directly in terms of our symbols,
-it is thus important to consider a family with respect to which we can use a \emph{Taylor development}.
+hence it is important to consider a family with respect to which we can use a \emph{Taylor development}.
 
 \begin{definition}
 \label{definition:admissibility_of_difference_operators}
@@ -150,7 +150,7 @@ The existence of a Taylor expansion and the estimates on the remainder are then 
 We shall see later that the \emph{strong} admissibility will ensure that the singularity of our kernels is confined to the identity $e_\Group$.
 
 Another technical requirement is that our collection of smooth functions satsify a \emph{Leibniz-like} rule.
-This, amongst other things, ensures that our collection of symbols form an algebra with respect to pointwise composition.
+This, amongst other things, ensures that our collection of symbols forms an algebra with respect to pointwise composition.
 
 \begin{definition}
 \label{definition:Leibniz-like_property_for_smooth_functions}
@@ -223,7 +223,7 @@ to show the following result.
         q^\tau_{m n}(x, k) &\defeq {\left(\tau - \Id {H_\tau}\right)}_{m n},
         &\tau \in F, \ 1 \leq m, n \leq \dimRep \tau.
     \end{align*}
-    Now we let
+    Now, we let
     \begin{align*}
         \Delta = \{q_j : 1 \leq j \leq \dim \VectorSpace\}
         \cup \{q^\tau_{m n} : \tau \in F, \ 1 \leq m, n \leq \dimRep \tau\}
@@ -248,7 +248,7 @@ to show the following result.
             while if all $q_j(x, k)$ vanish, this means $x = 0_\VectorSpace$.
             Therefore,
             \begin{align*}
-                \bigcap_{q \in \Delta} \{q = 0\} = (0_\VectorSpace, \Id \VectorSpace)
+                \bigcap_{q \in \Delta} \{q = 0\} = (0_\VectorSpace, \Id \VectorSpace).
             \end{align*}
         \item [Leibniz-like formula]
             Using \cite[Corollary 5.13]{Fischer2015},
@@ -258,7 +258,7 @@ to show the following result.
                 q_j((x, k) (y, l))
                 &= \ip {x + k y} {e_j}\\
                 &= q_j(x, k) + q_j(y, l) + \ip {(k - \Id \VectorSpace) y} {e_j}\\
-                &= q_j(x, k) + q_j(y, l) + \ip y {{(k - \Id \VectorSpace)}^{-1} e_j}
+                &= q_j(x, k) + q_j(y, l) + \ip y {{(k - \Id \VectorSpace)}^{-1} e_j}.
             \end{align*}
 
             Observing that
@@ -271,12 +271,12 @@ to show the following result.
             \begin{align*}
                 q_j((x, k) (y, l))
                 &= q_j(x, k) + q_j(y, l) + \sum_{i = 1}^{\dim \VectorSpace} (k - \Id \VectorSpace)_{j i} \ip y {e_i}\\
-                &= q_j(x, k) + q_j(y, l) + \sum_{i = 1}^{\dim \VectorSpace} (k - \Id \VectorSpace)_{j i} q_i(y, l)
+                &= q_j(x, k) + q_j(y, l) + \sum_{i = 1}^{\dim \VectorSpace} (k - \Id \VectorSpace)_{j i} q_i(y, l).
             \end{align*}
 
             Defining
             \begin{align*}
-                \tau(k) \defeq k
+                \tau(k) \defeq k,
             \end{align*}
             we observe that $\tau \in F$ and so the above becomes
             \begin{align*}
@@ -443,7 +443,7 @@ the requirement that the support be compact in the example above can be relaxed
 provided that we assume the the coefficients have bounded derivatives for all orders.
 
 Equipped with the topology of seminorms defined in Definition~\ref{definition:symbol_semi-norms},
-we can easily show that the following continuous inclusions.
+we can easily show the following continuous inclusions.
 
 \begin{lemma}[Inclusion of symbol classes]
     Suppose that $m_1, m_2 \in \R$ and $\rho_1, \rho_2, \delta_1, \delta_2 \in [0, 1]$.
@@ -470,13 +470,13 @@ we can easily show that the following continuous inclusions.
         I_1 &\defeq \Rep \lambda \BesselPotential {m_1 - m_2 + (\rho_2 - \rho_1) \abs \alpha + (\delta_1 - \delta_2) \abs \beta}\\
         I_2 &\defeq \Rep{\lambda} \BesselPotential{\rho_1 \abs\alpha - m_1 - \delta_1 \abs\beta + \gamma}
         \LeftDifferentialOperator{\beta} \DifferenceOperatorOrder{\alpha} \sigma(g, \lambda)
-        \Rep{\lambda} \BesselPotential{-\gamma}
+        \Rep{\lambda} \BesselPotential{-\gamma}.
     \end{align*}
 
     Because of our assumption,
     it is clear that
     \begin{align*}
-        m_1 - m_2 + (\rho_2 - \rho_1) \abs \alpha + (\delta_1 - \delta_2) \abs \beta \leq 0
+        m_1 - m_2 + (\rho_2 - \rho_1) \abs \alpha + (\delta_1 - \delta_2) \abs \beta \leq 0,
     \end{align*}
     so that $I_1$ satisfies
     \begin{align*}
@@ -491,7 +491,7 @@ we can easily show that the following continuous inclusions.
 
 One cannot expect to be able to perform \emph{exact} symbolic computations.
 Therefore,
-we shall often attempt to obtain results up to symbols which belongs to symbolic classes of ``arbitrarily low orders''.
+we shall often attempt to obtain results up to symbols which belong to symbolic classes of ``arbitrarily low orders''.
 Such symbols will be called \emph{smoothing symbols}.
 
 \begin{definition}[Smoothing symbols]
@@ -547,7 +547,7 @@ the latter can inherit properties such as the \emph{order} or the \emph{type} fr
 
 To compute adjoints or compose pseudo-differential operators,
 it is useful to know their right \emph{convolution kernel}.
-Such kernels can be define directly in terms of the symbols,
+Such kernels can be defined directly in terms of the symbols,
 and we shall subsequently check that they are indeed the right-convolution kernel
 associated with the pseudo-differential operator.
 
@@ -684,7 +684,7 @@ we use the \emph{Leibniz-like rule} of Lemma~\ref{lemma:Leibniz-like_property_fo
             defines a symbol in $\SymbolClass {m_1 + m_2} {\rho, \delta}$,
             whose symbol is given by
             \begin{align*}
-                g \in \Group \mapsto \conv {\kappa_{2, g}} {\kappa_{1, g}}
+                g \in \Group \mapsto \conv {\kappa_{2, g}} {\kappa_{1, g}}.
             \end{align*}
     \end{enumerate}
 
@@ -697,7 +697,7 @@ we use the \emph{Leibniz-like rule} of Lemma~\ref{lemma:Leibniz-like_property_fo
 The aim of this section is to show two results concerning functions of symbols which will be essential hereafter.
 
 First, we wish to show that for a well-behaved symbol $\sigma \in \SymbolClass m {\rho, \delta}$,
-its powers $\sigma^s$, $s \in \R$ define symbols in $\SymbolClass {s m} {\rho, \delta}$.
+its powers $\sigma^s$, $s \in \R$, define symbols in $\SymbolClass {s m} {\rho, \delta}$.
 
 Secondly, we would like to show that $\SmoothingSymbols$ is dense in $\SymbolClass m {\rho, \delta}$,
 a result whose importance can be compared to that of other density results in analysis.
@@ -859,10 +859,10 @@ We are now ready to state our main result.
     with $\Lambda_\eta \defeq (\Lambda \cup \{z \in \C : \abs z \leq \eta\})$ for some $\eta > 0$
     and satisfies
     \begin{align*}
-        \abs {F(z)} \leq C \abs z^s, \quad z \in \Gamma \defeq \partial \Lambda_\eta.
+        \abs {F(z)} \leq C \abs z^s, \quad z \in \Gamma \defeq \partial \Lambda_\eta
     \end{align*}
     for some $s < 0$,
-    then $F(\sigma)(g, \lambda) $defines a symbol in $\SymbolClass {s m} {\rho, \delta}$.
+    then $F(\sigma)(g, \lambda)$ defines a symbol in $\SymbolClass {s m} {\rho, \delta}$.
 
     Moreover,
     for each $N \in \N$,
@@ -914,7 +914,7 @@ We are now ready to state our main result.
         }
         \leq
         C
-        (z^{\frac 1 m} + \norm [\VectorSpace] \lambda + \JapaneseBracket \CompactGroup \mu)^{-m}
+        (\abs z^{\frac 1 m} + \norm [\VectorSpace] \lambda + \JapaneseBracket \CompactGroup \mu)^{-m}
         L_{\mu \nu}(\alpha, \beta, \gamma)
     \end{align*}
     where
@@ -986,10 +986,10 @@ We are now ready to state our main result.
     \begin{align*}
         \SymbolSemiNorm {m s} {\rho, \delta} N {F(\sigma)}
         \leq C
-        \sup_{z \in \Gamma} \frac {\abs {F(z)}} {\abs z^s}.
+        \sup_{z \in \Gamma} \frac {\abs {F(z)}} {\abs z^s},
     \end{align*}
     where the inclusion in the symbol class above can only be obtained
-    if the symbol is independent on $g$.
+    if the symbol does not depend on $g$.
     When we have obtained the composition formula,
     note that this will hold for any symbol $\sigma$ satisfying the assumptions of the proof.
 \end{proof}
@@ -1004,7 +1004,7 @@ We are now ready to state our main result.
     defines a symbol in $\SymbolClass \gamma {1, 0}$.
 \end{corollary}
 \begin{proof}
-    Since $F(z) = z^s$ with $s < 0$ is holomorphic in $\C \setminus \Lambda$, where
+    Since $F(z) = z^s$, with $s < 0$, is holomorphic in $\C \setminus \Lambda$, where
     \begin{align*}
         \Lambda \defeq \Lambda(\frac {\turn} 3, \frac {4 \pi} 3)
     \end{align*}
@@ -1046,6 +1046,7 @@ We show that the Fourier transform of the heat kernel can be used to define a go
             \begin{align*}
                 \SymbolSemiNorm m {\rho, \delta} N {\eta_\epsilon} \leq C \epsilon^\frac m 2
             \end{align*}
+            for each $\epsilon \in (0, 1]$.
         \item
             If $0 \leq m \leq 4$,
             then for each $N \in \N$
@@ -1053,6 +1054,7 @@ We show that the Fourier transform of the heat kernel can be used to define a go
             \begin{align*}
                 \SymbolSemiNorm m {\rho, \delta} N {\Id {\Lebesgue 2 \CompactGroup} - \eta_\epsilon} \leq C \epsilon^\frac m 2
             \end{align*}
+            for each $\epsilon \in (0, 1]$.
     \end{itemize}
 
     In particular, for each $m > 0$, $\eta_\epsilon$ converges to $\Id {\Lebesgue 2 \CompactGroup}$ in $\SymbolClass m {\rho, \delta}$ as $\epsilon \to 0$.
@@ -1069,10 +1071,10 @@ We show that the Fourier transform of the heat kernel can be used to define a go
     We observe that since $F_\epsilon$ decays faster than any polynomial and does not have a pole at $0$,
     \begin{align*}
         \abs {F_\epsilon(z)} \leq C \abs {\epsilon z}^\frac m 2,
-        \quad z \in \Gamma.
+        \quad z \in \Gamma,
     \end{align*}
     where $C$ does not depend on $\epsilon$.
-    Theorem~\ref{theorem:functional_calculus} with~\eqref{eq:functional_calculus:bound_on_seminorm} imply that
+    Theorem~\ref{theorem:functional_calculus}, with~\eqref{eq:functional_calculus:bound_on_seminorm}, implies that
     \begin{align*}
         \SymbolSemiNorm {m} {\rho, \delta} N {\eta_\epsilon}
         \leq C_{N, n, s} \epsilon^{\frac m 2}.
@@ -1097,7 +1099,7 @@ We show that the Fourier transform of the heat kernel can be used to define a go
     we obtain
     \begin{align*}
         \SymbolSemiNorm {-m/2} {\rho, \delta} N {G_\epsilon(\Rep \lambda (\Laplacian))}
-        \leq C \epsilon^{-m/4}
+        \leq C \epsilon^{-m/4}.
     \end{align*}
 
     We can now conclude by Corollary~\ref{corollary:powers_of_the_Laplacian} that
@@ -1112,11 +1114,11 @@ We show that the Fourier transform of the heat kernel can be used to define a go
     Now, assume that $m = 0$.
     Defining
     \begin{align*}
-        G_\epsilon(z) = (\epsilon z)^{-1} (1 - \e^{-\epsilon z})
+        G_\epsilon(z) = (\epsilon z)^{-1} (1 - \e^{-\epsilon z}),
     \end{align*}
     it is clear that
     \begin{align*}
-        \abs {G_\epsilon(z)} \leq C \abs {\epsilon z}^{-1}
+        \abs {G_\epsilon(z)} \leq C \abs {\epsilon z}^{-1},
     \end{align*}
     where C does not depend on $\epsilon$.
     Using Theorem~\ref{theorem:functional_calculus} with~\eqref{eq:functional_calculus:bound_on_seminorm},
@@ -1205,7 +1207,7 @@ and control the convergence in all symbol classes of order $m_1 > m$.
             \begin{align*}
                 \SymbolSemiNorm {m_1} {\rho, \delta} N {\sigma_\epsilon}
                 \leq C \SymbolSemiNorm m {\rho, \delta} {N'} \sigma
-                \epsilon^\frac {m_1 - m} 2.
+                \epsilon^\frac {m_1 - m} 2
             \end{align*}
             for each $\epsilon \in (0, 1]$.
         \item If $m_1 \geq m$, then for each $N \in \N$ there exists $C \geq 0$ and $N' \in \N$ such that
@@ -1237,19 +1239,19 @@ and control the convergence in all symbol classes of order $m_1 > m$.
     and Part~\ref{item:properties_of_symbols:pointwise_composition} of Proposition~\ref{proposition:first_properties_of_symbol_classes}.
 \end{proof}
 
-Those estimates are crucial in the rest of our analysis.
+These estimates are crucial in the rest of our analysis.
 We present a short overview of how they will be used.
 
 \begin{itemize}
     \item
-        If we want to estimate the singularity of the kernel at the origin,
+        If we wish to estimate the singularity of the kernel at the origin,
         we approximate the kernel $\kappa_g$ with $\kappa_{\epsilon, g} \defeq \InverseFourier \sigma_\epsilon(g, \dummy)$
         and use the bounds provided by Proposition~\ref{proposition:approximation_of_symbols}.
         For more details, see the proof of Theorem~\ref{theorem:kernel_estimates}.
     \item
         We can prove results such as the composition and adjunction formulae first on $\sigma_\epsilon$,
         a smoothing symbol which has a kernel which is compactly supported in $g \in \Group$.
-        For more details, see Section~\ref{section:adjoint_and_composition_formulae}
+        For more details, see Section~\ref{section:adjoint_and_composition_formulae}.
     \item
         By Proposition~\ref{proposition:approximation_of_symbols},
         \begin{align*}
@@ -1258,7 +1260,7 @@ We present a short overview of how they will be used.
             \quad \text{modulo } \SmoothingSymbols.
         \end{align*}
 
-        If for example,
+        If, for example,
         the order of $\sigma_j$ decreases as $j \to \infty$ and we choose $\epsilon_j$ carefully,
         the right-hand side could define a convergent series in $\SymbolClass {m_1} {\rho, \delta}$
         using the estimates provided by Proposition~\ref{proposition:approximation_of_symbols}.
@@ -2323,7 +2325,7 @@ and every result concerning or using kernel estimates will have that assumption.
 
 We shall see that the regularity of the kernel increases
 as the order of the symbol decreases.
-Since $\rho > 0$, applying difference operators decreases the order of the symbol
+Since $\rho > 0$, applying difference operators decreases the order of the symbol,
 which can be reformulated equivalently
 by saying that multiplying kernels by some suitable polynomial increases its regularity.
 However, this can only happen if at each $g \in \Group$,
@@ -2378,7 +2380,7 @@ The aim of this section is to prove the following result.
 
 \begin{remark}[Right semi-norms]
 \label{remark:right_semi-norms}
-    By inspecting the proof of all estimates Theorem~\ref{theorem:kernel_estimates}
+    By inspecting the proof of all estimates in Theorem~\ref{theorem:kernel_estimates},
     we check it is possible to replace the symbol semi-norms by $\SymbolSemiNorm {m, R} {\rho, \delta} {P'} \sigma$.
 \end{remark}
 
@@ -2479,7 +2481,7 @@ and the latter can be easily derived directly from the symbolic estimates.
         s < -\frac{\dim \Group} 2 - m,
     \end{align*}
     the kernel $\kappa_g$ belongs to $\Sobolev s$ for every $g \in \Group$.
-    Moreover, for such an $s \in \R$, there exists $C \geq 0$ and $P \in \N$ which do not depend on $\sigma$ such that
+    Moreover, for such $s \in \R$, there exists $C \geq 0$ and $P \in \N$ which do not depend on $\sigma$ such that
     \begin{align*}
         \sup_{g \in \Group} \norm [\Sobolev s] {\kappa_g} < C \SymbolSemiNorm m {\rho, \delta} P \sigma.
     \end{align*}
@@ -2566,7 +2568,7 @@ which we prove below.
     Let $M \in \R$ and choose $p \in 2 \N$ sufficiently large so that
     \begin{align*}
         g \geq M \quad \text{and} \quad
-        m - \rho p + \Ceiling {\dim \Group / 2} < -\frac {\dim \Group} 2
+        m - \rho p + \Ceiling {\dim \Group / 2} < -\frac {\dim \Group} 2.
     \end{align*}
 
     Fix $d > 0$,
@@ -2575,7 +2577,7 @@ which we prove below.
         \chi(y, l) =
         \begin{cases}
             0 & \text{if } \norm y \leq d/2\\
-            1 & \text{if } \norm y \geq d
+            1 & \text{if } \norm y \geq d.
         \end{cases}
     \end{align*}
 
@@ -2650,7 +2652,7 @@ which we prove below.
 
 We have shown so far that the regularity of the kernel is linked to the order of its corresponding symbol in the following way:
 the lower the order, the more regular the kernel is.
-As applying difference operator strictly \emph{reduces the order} when $\rho > 0$,
+As applying difference operators strictly \emph{reduces the order} when $\rho > 0$,
 the distribution
 \begin{align*}
     q^\alpha \kappa_g \defeq \InverseFourier \{ \DifferenceOperatorOrder \alpha \sigma(g, \dummy) \}
@@ -2669,7 +2671,7 @@ which will lead to the proof of parts \ref{item:kernel_estimates:at_origin:posit
 The ideas are relatively simple.
 Multiplying the kernels by a polynomial of a sufficiently high order removes the singularity at the origin
 since it causes the order to decrease.
-The \emph{strong admissibility} means that polynomials can constitute a good approximation to the distance to the origin.
+The \emph{strong admissibility} means that polynomials can constitute a good approximation of the distance to the origin.
 
 \begin{theorem}[Kernel estimates at the origin]
 \label{theorem:kernel_estimates:at_origin}
@@ -2711,12 +2713,12 @@ The \emph{strong admissibility} means that polynomials can constitute a good app
     \end{align*}
     the idea of the proof is to estimate both terms of the right-hand side above separately.
 
-    As we have shown earlier in Corollary~\ref{corollary:Sobolev_estimates_on_the_kernel}
+    As we have shown earlier in Corollary~\ref{corollary:Sobolev_estimates_on_the_kernel},
     we can get a bound on the kernel provided the order of its associated symbol is strictly less than $-\dim \Group$.
     For $\kappa_\epsilon$, this will be easy since $\sigma_\epsilon$ is smoothing;
     for $\kappa_g - \kappa_{g, \epsilon}$, we will have to use difference operators to lower the order.
 
-    Note that the case $m = -\dim \Group$ is a simple consequences of the other estimates,
+    Note that the case $m = -\dim \Group$ is a simple consequence of the other estimates,
     and the inclusion $\SymbolClass m {\rho, \delta} \subset \SymbolClass {m'} {\rho, \delta}$ when $m \leq m'$.
     We can therefore assume without loss of generality that $m > -\dim \Group$.
 
@@ -2728,8 +2730,9 @@ The \emph{strong admissibility} means that polynomials can constitute a good app
                 \sigma_\epsilon(g, \lambda)
                 &= \sigma(g, \lambda) \Rep \lambda \BesselPotential {-m}\\
                 &\qquad \eta_\epsilon(\lambda) \Rep \lambda \BesselPotential {-\gamma}
-                \Rep \lambda \BesselPotential {-m + \gamma}.
+                \Rep \lambda \BesselPotential {m + \gamma}
             \end{align*}
+            since $\eta_\epsilon$ is diagonal.
 
             Using the H\"older inequality on Schatten classes,
             together with Theorem~\ref{theorem:generalized_Littlewood-Paley_decomposition},
@@ -2760,7 +2763,7 @@ The \emph{strong admissibility} means that polynomials can constitute a good app
                         \abs {\kappa_{\epsilon, g}(h)}
                         &\leq C \norm [\Group] h^\gamma.
                     \end{align*}
-                \item[$\rho < 1$]
+                \item[$\rho < 1$.]
                     We pick
                     \begin{align*}
                         \gamma \defeq -\frac {\dim \Group + m} \rho,
@@ -2797,10 +2800,10 @@ The \emph{strong admissibility} means that polynomials can constitute a good app
             \end{align*}
             where
             \begin{align*}
-                I_{1, \alpha_1} &\defeq \DifferenceOperator {\alpha_1} \sigma(g, \lambda) \Rep \lambda \BesselPotential {-m + \rho \abs {\alpha_1}}\\
-                I_{2, \alpha_2, \gamma} &\defeq \Rep \lambda \BesselPotential {m - \rho \abs {\alpha_1}} \DifferenceOperatorOrder {\alpha_2} (\Id {\Lebesgue 2 \CompactGroup} - \eta_\epsilon(\lambda))\\
+                I_{1, \alpha_1} &\defeq \DifferenceOperator {\alpha_1} \sigma(g, \lambda) \Rep \lambda \BesselPotential {-m + \rho \abs {\alpha_1}},\\
+                I_{2, \alpha_2, \gamma} &\defeq \Rep \lambda \BesselPotential {m - \rho \abs {\alpha_1}} \DifferenceOperatorOrder {\alpha_2} (\Id {\Lebesgue 2 \CompactGroup} - \eta_\epsilon(\lambda)),\\
                 &\qquad \qquad\Rep \lambda \BesselPotential {-\gamma + \rho \abs {\alpha_2} - m + \rho \abs {\alpha_1})}\\
-                I_{3, \gamma} &\defeq \Rep \lambda \BesselPotential {\gamma + m - \rho \abs \alpha}
+                I_{3, \gamma} &\defeq \Rep \lambda \BesselPotential {\gamma + m - \rho \abs \alpha}.
             \end{align*}
 
             Since $\sigma \in \SymbolClass m {\rho, \delta}$,
@@ -2823,10 +2826,10 @@ The \emph{strong admissibility} means that polynomials can constitute a good app
             we obtain
             \begin{align*}
                 \abs {(q^\alpha(\kappa_g - \kappa_{g, \epsilon}))(h)}
-                \leq C \epsilon^\frac \gamma 2
+                \leq C \epsilon^\frac \gamma 2,
             \end{align*}
             provided that $\gamma \geq 0$ and $\gamma + m - \rho \abs \alpha < -\dim \Group$.
-            Observe that those two conditions can be summarized by the inequality
+            Observe that these two conditions can be summarized by the inequality
             \begin{align*}
                 0 \leq \gamma < \rho \abs \alpha - (\dim \Group + m).
             \end{align*}
@@ -2836,10 +2839,10 @@ The \emph{strong admissibility} means that polynomials can constitute a good app
                 \norm [\Group] h^r \abs{(\kappa_g - \kappa_{g, \epsilon})(h)}
                 &\leq C \sum_{\abs \alpha = r} \abs{q^\alpha(h) (\kappa_g - \kappa_{g, \epsilon})(h)},
             \end{align*}
-            we have so far shown, keeping in mind that $\epsilon = \norm [\Group] h^2$ that
+            we have so far shown, keeping in mind that $\epsilon = \norm [\Group] h^2$, that
             \begin{align}
                 \abs{(\kappa_g - \kappa_{g, \epsilon})(h)}
-                &\leq C \norm [\Group] h^{\gamma - r}
+                &\leq C \norm [\Group] h^{\gamma - r},
                 \label{eq:estimate_on_the_remainder}
             \end{align}
             provided $0 \leq \gamma < \rho r - (\dim \Group + m)$.
@@ -2853,7 +2856,7 @@ The \emph{strong admissibility} means that polynomials can constitute a good app
 
             Let us now treat the different cases.
             \begin{description}
-                \item[$\rho = 1$]
+                \item[$\rho = 1$.]
                     Choose $\tilde \gamma \defeq \gamma - r$
                     so that $-r \leq \tilde \gamma < -(\dim \Group + m)$.
                     Clearly, we have
@@ -2861,8 +2864,8 @@ The \emph{strong admissibility} means that polynomials can constitute a good app
                         \abs{(\kappa_g - \kappa_{g, \epsilon})(h)}
                         \leq \norm [\Group] h^{\tilde \gamma}.
                     \end{align*}
-                \item[$\rho < 1$]
-                    Pick $\gamma$ as follows:
+                \item[$\rho < 1$.]
+                    Pick $\gamma$ as follows
                     \begin{align*}
                         \gamma - r = -\frac{\dim \Group + m} \rho.
                     \end{align*}
@@ -2882,7 +2885,7 @@ The \emph{strong admissibility} means that polynomials can constitute a good app
                     We can thus apply~\eqref{eq:estimate_on_the_remainder} to obtain
                     \begin{align*}
                         \abs{(\kappa_g - \kappa_{g, \epsilon})(h)}
-                        \leq \norm [\Group] h^{-\frac {\dim \Group + m} \rho}
+                        \leq \norm [\Group] h^{-\frac {\dim \Group + m} \rho}.
                     \end{align*}
             \end{description}
     \end{description}
@@ -2897,7 +2900,8 @@ The \emph{strong admissibility} means that polynomials can constitute a good app
 
 Before we are able to describe smoothing operators,
 we need to recall a property of convolution by tempered distributions.
-For a proof, see e.g.~\cite[Lemma 3.1.55]{FischerRuzhansky16} which can be easily adapted to our case.
+For a proof, see e.g.~\cite[Lemma 3.1.55]{FischerRuzhansky16},
+which can be easily adapted to our case.
 
 \begin{lemma}
 \label{lemma:continuity_of_convolutions}
@@ -2909,7 +2913,7 @@ For a proof, see e.g.~\cite[Lemma 3.1.55]{FischerRuzhansky16} which can be easil
         C
         \seminorm [\TemperedDistributions \Group] N f
         (1 + \norm [\Group] g)^N
-        \seminorm [\Schwartz \Group] N \phi
+        \seminorm [\Schwartz \Group] N \phi.
     \end{align*}
 \end{lemma}
 
@@ -2949,7 +2953,7 @@ We are now able to show that $\SmoothingOperators$ are worthy of the name.
         \LeftDifferentialOperator \beta (T f)(g)
         = \lcsum{\beta = \beta_1 + \beta_2}
         \LeftDifferentialOperator [g_1 = g] {\beta_1}
-        (\conv f {\LeftDifferentialOperator [g_2 = g] {\beta_2} \kappa_{g_2}})(g_1)
+        (\conv f {\LeftDifferentialOperator [g_2 = g] {\beta_2} \kappa_{g_2}})(g_1).
     \end{align*}
 
     Passing from left-invariant vector fields to their right-invariant counterpart,
@@ -2981,7 +2985,7 @@ We are now able to show that $\SmoothingOperators$ are worthy of the name.
         \seminorm [\Schwartz \Group] {N'} {\LeftDifferentialOperator [g_2 = g] {\beta_2} \kappa_{g_2}}.
     \end{align*}
 
-    Using the above together with~\eqref{eq:bound_on_Schwartz_seminorm_of_smoothing_kernel},
+    Using the above, together with~\eqref{eq:bound_on_Schwartz_seminorm_of_smoothing_kernel},
     we conclude easily that $T$ is continuous from $\TemperedDistributions \Group$ to $\SmoothFunctions \Group$.
 \end{proof}
 
@@ -3034,7 +3038,7 @@ which will allow us to conclude in Subsection~\ref{subsection:pseudo-differentia
 \end{remark}
 
 Before we start,
-let us state a proof that will be used in the proof of both results.
+let us state a result that will be used in the proof of both results.
 
 \begin{lemma}
 \label{lemma:integrability_of_kernel}
@@ -3058,7 +3062,7 @@ let us state a proof that will be used in the proof of both results.
     \begin{align*}
         \int_\Group \dd h
         = \int_{\norm [\Group] h \leq 1} \dd h
-        + \int_{\norm [\Group] h \geq 1} \dd h
+        + \int_{\norm [\Group] h \geq 1} \dd h.
     \end{align*}
 
     \begin{description}
@@ -3082,7 +3086,7 @@ let us state a proof that will be used in the proof of both results.
         \item [Integral on] $\norm [\Group] h \leq 1$
 
             If $m \geq -\dim \CompactGroup$,
-            then by Part~\eqref{item:kernel_estimates:at_origin:positive} of Theorem~\ref{theorem:kernel_estimates} implies
+            then Part~\eqref{item:kernel_estimates:at_origin:positive} of Theorem~\ref{theorem:kernel_estimates} implies
             that if we pick $\tilde \gamma$ satisfying
             \begin{align}
                 \begin{cases}
@@ -3091,7 +3095,7 @@ let us state a proof that will be used in the proof of both results.
                 \end{cases},
                 \label{eq:consequence_of_kernel_estimates:choice_of_tilde_gamma}
             \end{align}
-            there exists $N \in \N$ such that
+            then there exists $N \in \N$ such that
             \begin{align*}
                 \sup_{0 < \norm [\Group] h \leq 1} \abs{\kappa_g(h)}
                 \leq
@@ -3109,7 +3113,7 @@ let us state a proof that will be used in the proof of both results.
             We conclude the proof by observing that ~\eqref{eq:consequence_of_kernel_estimates:choice_of_tilde_gamma}
             implies
             \begin{align*}
-                \gamma + \tilde \gamma > -\dim \Group.
+                \gamma + \tilde \gamma > -\dim \Group,
             \end{align*}
             which means that the above integral is finite.
     \end{description}
@@ -3153,7 +3157,7 @@ is to understand the composition of two smoothing operators on the kernel side.
         \int_\Group \abs{\kappa_g(h)} \dd h
         &\leq \int_\Group \int_\Group \abs {\kappa_{2, g l^{-1}}(h l^{-1}) \kappa_{1, g}(l)} \dd l \dd h\\
         &\leq \max_{g' \in \Group} \int_\Group \abs {\kappa_{2, g'}(h')} \dd h'
-        \int_\Group \abs{\kappa_{1, g}(l)} \dd l
+        \int_\Group \abs{\kappa_{1, g}(l)} \dd l.
     \end{align*}
 
     Let us check that $\kappa_g$ is the kernel of $\Op(\sigma_1) \Op(\sigma_2)$.
@@ -3192,7 +3196,7 @@ is to understand the composition of two smoothing operators on the kernel side.
     We let
     \begin{align*}
         \sigma_1 \circ \sigma_2(g, \lambda)
-        &= \int_\Group \kappa_{1, g}(h) \adj {\Rep \lambda(h)} \sigma_2(g h^{-1}, \lambda) \dd h.
+        &= \int_\Group \kappa_{1, g}(h) \adj {\Rep \lambda(h)} \sigma_2(g h^{-1}, \lambda) \dd h
     \end{align*}
     for each $(g, \lambda) \in \Group \times \VectorSpace$.
 \end{definition}
@@ -3219,7 +3223,7 @@ This is the reason why we shall always assume $\rho > \delta$ hereafter.
         \end{cases}
         \label{eq:composition_formula:conditions_on_M}
     \end{align}
-    then there exists $C \geq 0$ and an $P \in \N$ such that
+    then there exists $C \geq 0$ and $P \in \N$ such that
     for any $\sigma_1, \sigma_2 \in \SmoothingSymbols$ and any $(g, \lambda) \in \Group \times \VectorSpace$,
     we have
     \begin{align*}
@@ -3255,7 +3259,7 @@ This is the reason why we shall always assume $\rho > \delta$ hereafter.
     we obtain
     \begin{align*}
         &\LeftDifferentialOperator {\beta_0} \tau_N(g, \lambda) =\\
-        &\sum_{%
+        &\lcsum{%
                 \beta_{01} + \beta_{02} = \beta_0
         }
         \int_\Group \LeftDifferentialOperator [g] {\beta_{01}} \kappa_{1, g}(h) \adj{\Rep \lambda(h)}
@@ -3263,7 +3267,7 @@ This is the reason why we shall always assume $\rho > \delta$ hereafter.
     \end{align*}
 
     Now, we would like to introduce powers of $\Rep \lambda \BesselPotentialSquared {}$ near $\sigma_2$,
-    which will allow to estimate the above in terms of the symbol semi-norms of $\sigma_2$.
+    which will allow us to estimate the above in terms of the symbol semi-norms of $\sigma_2$.
     To this end,
     observe that if $M \in \N$,
     \begin{align*}
@@ -3276,7 +3280,7 @@ This is the reason why we shall always assume $\rho > \delta$ hereafter.
         \adj{\Rep \lambda(h)}
         &=
         \lcsum{\abs \beta \leq 2 M}
-        \adj{(\RightDifferentialOperator \beta \Rep \lambda(h))} \Rep \lambda \BesselPotentialSquared {-M},
+        \adj{(\RightDifferentialOperator \beta \Rep \lambda(h))} \Rep \lambda \BesselPotentialSquared {-M}.
     \end{align*}
 
     Therefore,
@@ -3291,8 +3295,9 @@ This is the reason why we shall always assume $\rho > \delta$ hereafter.
         }
         \int_\Group \RightDifferentialOperator[h_1 = h] {\beta_1} (\LeftDifferentialOperator [g] {\beta_{01}} \kappa_{1, g})(h_1) \adj {\Rep \lambda(h)}\\
         &\quad \times
-        \RightDifferentialOperator[h_2 = h] {\beta_2} \TaylorRemainder {\Rep \lambda \BesselPotentialSquared {-M} \LeftDifferentialOperator [g_2 = g] {\beta_{02}} \sigma_2(g_2 \dummy, \lambda)} {e_\Group} N (h_2^{-1}) \dd h,
+        \RightDifferentialOperator[h_2 = h] {\beta_2} \TaylorRemainder {\Rep \lambda \BesselPotentialSquared {-M} \LeftDifferentialOperator [g_2 = g] {\beta_{02}} \sigma_2(g_2 \dummy, \lambda)} {e_\Group} N (h_2^{-1}) \dd h.
     \end{align*}
+
     Now, using Lemma~\ref{lemma:derivative_of_Taylor_polynomial_and_remainder},
     the above becomes
     \begin{align*}
@@ -3375,8 +3380,8 @@ This is the reason why we shall always assume $\rho > \delta$ hereafter.
         }.
     \end{align*}
 
-    Observing that we can replace $\LeftDifferentialOperator [g_2] {\beta_{02}}$ by $\RightDifferentialOperator [g_1] {\beta_{02}}$ in the above,
-    Corollary~\ref{corollary:from_right_to_left-invariant_differential_operators},
+    Observing that we can replace $\LeftDifferentialOperator [g_2] {\beta_{02}}$ by $\RightDifferentialOperator [g_1] {\beta_{02}}$ in the above
+    (see Corollary~\ref{corollary:from_right_to_left-invariant_differential_operators}),
     \begin{align}
         &S(h, M, \gamma, \beta_{02}, \beta_2)
         \leq C \norm [\Group] h^{\abs {\beta_{02}}} \notag\\
@@ -3457,12 +3462,12 @@ once we have obtained a similar result for the adjunction.
     Consider the symbols
     \begin{align*}
         \tilde \sigma_1(g, \lambda) &\defeq \sigma_1(g, \lambda)\\
-        \tilde \sigma_2(g, \lambda) &\defeq \sigma_2(g, \lambda) \Rep \lambda \BesselPotential {-m_1 - m_2 + (\rho - \delta) N_0 - \delta \abs {\beta_0}}\\
+        \tilde \sigma_2(g, \lambda) &\defeq \sigma_2(g, \lambda) \Rep \lambda \BesselPotential {-m_1 - m_2 + (\rho - \delta) N_0 - \delta \abs {\beta_0}},
     \end{align*}
     which are symbols of order
     \begin{align*}
         \tilde m_1 &\defeq m_1\\
-        \tilde m_2 &\defeq -m_1 + (\rho - \delta) N_0 - \delta \abs {\beta_0}
+        \tilde m_2 &\defeq -m_1 + (\rho - \delta) N_0 - \delta \abs {\beta_0}.
     \end{align*}
     We will apply Lemma~\ref{lemma:prepare_composition_formula} to $\tilde \sigma_1$ and $\tilde \sigma_2$.
 
@@ -3496,7 +3501,7 @@ once we have obtained a similar result for the adjunction.
         \Rep \lambda \BesselPotential {-m_1 - m_2 + (\rho - \delta) N_0 - \delta \abs {\beta_0}}
         }\\
         &\qquad \leq C \SymbolSemiNorm {m_1, R} {\rho, \delta} {P'} {\sigma_1} \SymbolSemiNorm {\tilde m_2} {\rho, \delta} {P'} {\tilde \sigma_2}\\
-        &\qquad \leq C \SymbolSemiNorm {m_1, R} {\rho, \delta} {P''} {\sigma_1} \SymbolSemiNorm {m_2} {\rho, \delta} {P''} {\sigma_2}.
+        &\qquad \leq C \SymbolSemiNorm {m_1, R} {\rho, \delta} {P''} {\sigma_1} \SymbolSemiNorm {m_2} {\rho, \delta} {P''} {\sigma_2},
     \end{align*}
     where as usual
     \begin{align*}
@@ -3511,7 +3516,7 @@ once we have obtained a similar result for the adjunction.
         \DifferenceOperatorOrder {\alpha_0} (\tilde \sigma_1 \circ \tilde \sigma_2)
         = \lcsum{\alpha_{01}, \alpha_{02}}
         \DifferenceOperatorOrder {\alpha_{01}} \tilde \sigma_1 \circ
-        \DifferenceOperatorOrder {\alpha_{02}} \tilde \sigma_2
+        \DifferenceOperatorOrder {\alpha_{02}} \tilde \sigma_2,
     \end{align*}
     where the coefficients are exactly the ones from the Leibniz-like rule for differential operators for a pointwise multiplication,
     we can show that
@@ -3536,7 +3541,7 @@ once we have obtained a similar result for the adjunction.
 
 We now follow the same steps as in the previous subsection,
 but this time to study the adjunction of operators.
-As only one symbol,
+As this involves only one symbol,
 the proof is somehow slightly easier and less technical.
 
 The first step consists of computing the kernel of the adjoint of a smoothing operator.
@@ -3557,7 +3562,7 @@ The first step consists of computing the kernel of the adjoint of a smoothing op
     \begin{align*}
         \sigma^{(*)}(g, \lambda)
         \defeq \Fourier \kappa_g^{(*)}(\lambda),
-        \quad (g, \lambda) \in \Group \times \VectorSpace.
+        \quad (g, \lambda) \in \Group \times \VectorSpace,
     \end{align*}
     defines a smoothing symbol which satisfies
     \begin{align*}
@@ -3588,7 +3593,7 @@ The first step consists of computing the kernel of the adjoint of a smoothing op
     We let
     \begin{align*}
         \sigma^{(*)}(g, \lambda)
-        \defeq \int_\Group \conj \kappa_{g h^{-1}}(h^{-1}) \adj{\Rep \lambda(h)} \dd h.
+        \defeq \int_\Group \conj \kappa_{g h^{-1}}(h^{-1}) \adj{\Rep \lambda(h)} \dd h
     \end{align*}
     for each $(g, \lambda) \in \Group \times \VectorSpace$.
 \end{definition}
@@ -3708,7 +3713,7 @@ this condition is not too restrictive if $\rho > \delta$.
     \begin{align*}
         m + 2 M + \delta(N + 1 + \abs {\beta_0}) + \dim \Group
         <
-        \rho (N + 1 + \dim \Group)
+        \rho (N + 1 + \dim \Group),
     \end{align*}
     which can be rewritten
     \begin{align*}
@@ -3852,7 +3857,7 @@ This will allow us to conclude the proof that our collection of operators $\Oper
         \SymbolSemiNorm {m, R} {\rho, \delta} {N} {\sigma}
         \leq \SymbolSemiNorm m {\rho, \delta} {N} \sigma,
     \end{align*}
-    It follows that the seminorms $\SymbolSemiNorm {m, R} {\rho, \delta} N \dummy, N \in \N$ define the same topology as $\SymbolSemiNorm m {\rho, \delta} N \dummy, N \in \N$.
+    It follows that the seminorms $\SymbolSemiNorm {m, R} {\rho, \delta} N \dummy, N \in \N$, define the same topology as $\SymbolSemiNorm m {\rho, \delta} N \dummy, N \in \N$.
 
     It remains thus to show that $\SymbolClass {m, R} {\rho, \delta} \subset \SymbolClass m {\rho, \delta}$
     as the reverse inclusion is trivial.
@@ -3998,7 +4003,7 @@ Propositions~\ref{proposition:composition_formula} and~\ref{proposition:adjoint_
 
     There exists $\sigma \in \SymbolClass {m_1 + m_2} {\rho, \delta}$ such that
     \begin{align*}
-        \Op (\sigma) = \Op(\sigma_1) \circ \Op(\sigma_2)
+        \Op (\sigma) = \Op(\sigma_1) \circ \Op(\sigma_2).
     \end{align*}
     Moreover,
     $\sigma$ is given modulo $\SmoothingSymbols$ by the asymptotic sum
@@ -4066,11 +4071,11 @@ Propositions~\ref{proposition:composition_formula} and~\ref{proposition:adjoint_
 \label{theorem:adjunction_formula}
     Assume that $1 \geq \rho > \delta \geq 0$.
     Let
-    $\sigma \in \SymbolClass m {\rho, \delta}$ for some $m \in \R$
+    $\sigma \in \SymbolClass m {\rho, \delta}$ for some $m \in \R$.
 
     There exists $\tilde \sigma \in \SymbolClass m {\rho, \delta}$ such that
     \begin{align*}
-        \Op (\tilde \sigma) = \adj {\Op(\sigma)}
+        \Op (\tilde \sigma) = \adj {\Op(\sigma)}.
     \end{align*}
     Moreover,
     $\tilde \sigma$ is given modulo $\SmoothingSymbols$ by the asymptotic sum
@@ -4183,7 +4188,7 @@ The construction of asymptotic limits is essential to construct parametrices.
     Without loss of generality,
     we assume that $N_l \geq l$.
 
-    Choosing a decreasing sequence of sufficiently small $\epsilon_j > 0$, $j \in \N$
+    Choosing a decreasing sequence of sufficiently small $\epsilon_j > 0$, $j \in \N$,
     so that the right-hand side of the above satisfies
     \begin{align*}
         C_j \SymbolSemiNorm {m_0} {\rho, \delta} {N_j} {\sigma_j} \epsilon_j^{\frac {\max \{m_0 - m_j, 4\}} 2}
@@ -4201,7 +4206,7 @@ The construction of asymptotic limits is essential to construct parametrices.
     \end{align}
 
     Fix $l \in \N$.
-    we have
+    We have
     \begin{align}
         \sum_{j = 0}^\infty \SymbolSemiNorm {m_0} {\rho, \delta} l {\tilde \sigma_j}
         &\leq \sum_{j = 0}^l \SymbolSemiNorm {m_0} {\rho, \delta} l {\tilde \sigma_j}
@@ -4340,7 +4345,7 @@ The crucial part of the proof is therefore to show that~\eqref{eq:symbol_to_prov
     invertible,
     and its inverse satisfies
     \begin{align*}
-        \sup_{g \in \Group} \esssup_{\lambda \in \VectorSpace} \norm [\Lin {\Lebesgue 2 \Group}] {\sigma(g, \lambda)^{-1}} < \infty.
+        \sup_{g \in \Group} \esssup_{\lambda \in \VectorSpace} \norm [\Lin {\Lebesgue 2 \Group}] {\sigma(g, \lambda)^{-1}} < \infty,
     \end{align*}
     then its \emph{square root}
     \begin{align*}
@@ -4365,7 +4370,7 @@ The crucial part of the proof is therefore to show that~\eqref{eq:symbol_to_prov
             (\sigma(g, \lambda) - z \Id {\Lebesgue 2 \CompactGroup})^{-1}
             \Rep \lambda \BesselPotential {-\gamma}
         }\\
-        &\qquad \leq C(1 + \abs z)^{-1}
+        &\qquad \leq C(1 + \abs z)^{-1},
     \end{align*}
     which means that $\sigma$ is parameter-elliptic with order $0$.
 
@@ -4445,7 +4450,7 @@ operators in $\OperatorClass m {\rho, \delta}$ are bounded on $\Lebesgue 2 \Grou
     we therefore get that
     \begin{align}
         \int_\Group &\norm [\Lebesgue 2 \Group] {(1 + \norm [\Group] \dummy^2)^{-N} f(g_0 \dummy)}^2 \dd g_0
-        \leq C \norm [\Lebesgue 2 \Group] f^2
+        \leq C \norm [\Lebesgue 2 \Group] f^2.
         \label{eq:right_hand_side_of_ball_integral_for_L2_boundedness}
     \end{align}
 
@@ -4471,7 +4476,7 @@ We can now prove the main result of this section.
     then its associated operator $T \defeq \Op(\sigma)$ is bounded in $\Lebesgue 2 \Group$,
     i.e.\ we have
     \begin{align*}
-        \norm [\Lebesgue 2 \Group] {T \phi} \leq C \norm [\Lebesgue 2 \Group] \phi.
+        \norm [\Lebesgue 2 \Group] {T \phi} \leq C \norm [\Lebesgue 2 \Group] \phi
     \end{align*}
     for every $\phi \in \Schwartz \Group$.
 \end{proposition}
@@ -4552,7 +4557,7 @@ we easily deduce the following corollary.
     between $\Sobolev s$ and $\Sobolev {s - m}$,
     i.e.\ there exists $C \geq 0$ such that
     \begin{align*}
-        \norm [\Sobolev {s - m}] {T \phi} \leq C \norm [\Sobolev s] \phi.
+        \norm [\Sobolev {s - m}] {T \phi} \leq C \norm [\Sobolev s] \phi
     \end{align*}
     for every $\phi \in \Schwartz \Group$.
 \end{theorem}
@@ -4568,17 +4573,17 @@ we have
     \abs {\kappa_g(h)} \leq C \norm [\Group] h^{-\dim \Group},
     \quad h \neq e_\Group,
 \end{align*}
-which is problematic because $-\dim \Group$ is a \emph{critical exponent} because of the Sobolev inequality.
+which is problematic because $-\dim \Group$ is a \emph{critical exponent} due to the Sobolev inequality.
 We therefore need \emph{sharper estimates},
 which can be provided by studying the \emph{heat kernel}.
 
 \begin{remark}
     The discussion herein does not appear in~\cite{Fischer2015,FischerRuzhansky12,FischerRuzhansky16}
-    but the ideas presented here are based upon V\'eronique Fischer's privately communicated proof in the compact and graded setting.
+    but the ideas presented are based upon V\'eronique Fischer's privately communicated proof in the compact and graded setting.
 \end{remark}
 
-The following lemma is obtained by very simple modification of~\cite[Lemma A.6]{Fischer2015},
-which relies mainly on classical heat kernel estimates valid for Lie group with polynomial growth of the volume,
+The following lemma is obtained by a very simple modification of~\cite[Lemma A.6]{Fischer2015},
+which relies mainly on classical heat kernel estimates valid for Lie groups with polynomial growth of the volume,
 and are thus valid on the motion group.
 
 The arguments in~\cite[Lemma A.6]{Fischer2015} are themselves based on~\cite{FurioliMelziVeneruso06, VaropoulosSaloffCosteCoulhon92}.
@@ -4636,7 +4641,7 @@ From there, we can deduce the following corollary.
         t^n
         \norm [\Sobolev m] {
             q^\alpha (\Laplacian^n f_1(t \Laplacian) \delta_{e_\Group})
-        }
+        }.
     \end{align*}
 
     Applying the Leibniz rule, we obtain that the right-hand side is bounded by
@@ -4653,7 +4658,7 @@ From there, we can deduce the following corollary.
         &\leq C
         \sum_{(\alpha_1, \alpha_2) \in A}
         t^n t^{\frac {\abs {\alpha_2} - 2 n + \abs {\alpha_1} - m - \dim \Group/2} 2}
-        = C \sqrt t^{\abs \alpha - m - \frac {\dim \Group} 2}
+        = C \sqrt t^{\abs \alpha - m - \frac {\dim \Group} 2}.
     \end{align*}
     where in the above
     $A \defeq \{(\alpha_1, \alpha_2) : \abs \alpha \leq \abs {\alpha_1} + \abs {\alpha_2} \leq 2 \abs \alpha\}$.
@@ -4693,7 +4698,7 @@ We are now ready to improve upon our already established kernel estimates.
         q^\alpha \sqrt {\chi_j}(t \Laplacian) \delta_{e_\Group}
         }
         \leq
-        C 2^{-\frac j 2 (\abs \alpha - m - \frac {\dim \Group} 2)}.
+        C 2^{-\frac j 2 (\abs \alpha - m - \frac {\dim \Group} 2)},
         \label{eq:Littlewood-Paley_bounds}
     \end{align}
     where the above is understood to hold only for $m = \abs \alpha = 0$ when $j = 0$.
@@ -4717,7 +4722,7 @@ We are now ready to improve upon our already established kernel estimates.
         \leq \sum_{j = 0}^l \int_\VectorSpace
         \norm [\SchattenClasses 1 {\Lebesgue 2 \CompactGroup}] {\sigma(g, \lambda) \Rep \lambda \BesselPotential {m - m} \chi_j(\Rep \lambda \Laplacian)} \dd \lambda\\
         \leq C \sum_{j = 0}^l \int_\VectorSpace
-        \norm [\SchattenClasses 2 {\Lebesgue 2 \CompactGroup}] {\Rep \lambda \BesselPotentialSquared {-\frac m 4} \sqrt{\chi_j}(\Rep \lambda \Laplacian)}^2 \dd \lambda
+        \norm [\SchattenClasses 2 {\Lebesgue 2 \CompactGroup}] {\Rep \lambda \BesselPotentialSquared {-\frac m 4} \sqrt{\chi_j}(\Rep \lambda \Laplacian)}^2 \dd \lambda,
     \end{align*}
     so that applying the Plancherel formula yields
     \begin{align}
@@ -4739,7 +4744,7 @@ We are now ready to improve upon our already established kernel estimates.
         \norm [\SchattenClasses 1 {\Lebesgue 2 \CompactGroup}] {\DifferenceOperatorOrder {\alpha_1} \sigma(g, \lambda) \DifferenceOperatorOrder {\alpha_2} \chi_j(\Rep \lambda \Laplacian)} \dd \lambda\\
         &\leq C
         \int_\VectorSpace
-        \norm [\SchattenClasses 1 {\Lebesgue 2 \CompactGroup}] {\Rep \lambda \BesselPotential {m - \abs {\alpha_1}} \DifferenceOperatorOrder {\alpha_2} \chi_j(\Rep \lambda \Laplacian)} \dd \lambda
+        \norm [\SchattenClasses 1 {\Lebesgue 2 \CompactGroup}] {\Rep \lambda \BesselPotential {m - \abs {\alpha_1}} \DifferenceOperatorOrder {\alpha_2} \chi_j(\Rep \lambda \Laplacian)} \dd \lambda,
     \end{align*}
     with the understanding that we sum over $\alpha_1$ and $\alpha_2$ according to the \emph{Leibniz-like rule}.
 
@@ -4749,7 +4754,7 @@ We are now ready to improve upon our already established kernel estimates.
         \DifferenceOperatorOrder {\alpha_2} \chi_j
         = \sum_{\alpha_{21}, \alpha_{22}}
         \DifferenceOperatorOrder {\alpha_{21}} \sqrt {\chi_j}(\Rep \lambda(\Laplacian))
-        \DifferenceOperatorOrder {\alpha_{22}} \sqrt {\chi_j}(\Rep \lambda(\Laplacian))
+        \DifferenceOperatorOrder {\alpha_{22}} \sqrt {\chi_j}(\Rep \lambda(\Laplacian)),
     \end{align*}
     so that the above calculation becomes
     \begin{align*}
@@ -4787,7 +4792,7 @@ We are now ready to improve upon our already established kernel estimates.
         C \norm [\Group] h^{-a} \sum_{j = l + 1} 2^{\frac j 2(m - a + \dim \Group)}\\
         &\leq
         C \norm [\Group] h^{-a} 2^{\frac l 2(m - a + \dim \Group)}
-        = C \norm [\Group] h^{-(m + \dim \Group)},
+        = C \norm [\Group] h^{-(m + \dim \Group)}.
         \label{eq:second_sum_in_Littlewood-Paley}
     \end{align}
 
@@ -4856,6 +4861,7 @@ We give here a sufficient condition to be Calder\'on-Zygmund.
     Clearly, the first inequality is satisfied.
 
     Using the second inequality in our assumption,
+    we obtain
     \begin{align*}
         \sup_{\norm [\Group] z \leq \norm [\Group] {g^{-1} g'}} \abs {(X_j)_{g_1 = g z} \kappa(g_1, h)}
         \leq A
@@ -4865,7 +4871,7 @@ We give here a sufficient condition to be Calder\'on-Zygmund.
     Assume now that $2 \norm [\Group] {g^{-1} g'} \leq \norm [\Group] {h^{-1} g}$.
     It follows that
     \begin{align*}
-        \norm [\Group] z \leq \frac 1 2 \norm [\Group] {h^{-1} g}
+        \norm [\Group] z \leq \frac 1 2 \norm [\Group] {h^{-1} g}.
     \end{align*}
     Since $\norm [\Group] \dummy$ satisfies a triangle inequality,
     it also satisfies a reverse triangle inequality,
@@ -4880,9 +4886,10 @@ We give here a sufficient condition to be Calder\'on-Zygmund.
     \end{align*}
 
     Using the second inequality in our assumption,
+    we have
     \begin{align*}
         \sup_{\norm [\Group] z \leq \norm [\Group] {g^{-1} g'}} \abs {(X_j)_{g_1 = g z} \kappa(g_1, h)}
-        \leq C \norm [\Group] {h^{-1} g}^{-\dim \Group - 1}
+        \leq C \norm [\Group] {h^{-1} g}^{-\dim \Group - 1}.
     \end{align*}
 
     By the Taylor Remainder theorem,
@@ -4910,9 +4917,10 @@ We can now state and prove the main result of the section.
 \end{proposition}
 \begin{proof}
     Let $\tilde \kappa(g, h) \defeq \kappa_g(h^{-1} g)$.
-    It follows that for each $\phi \in \Schwartz \Group$
+    It follows that for each $\phi \in \Schwartz \Group$,
+    we have
     \begin{align*}
-        T \phi(g) = \int_{\Group} \phi(h) \tilde \kappa(g, h) \dd h,
+        T \phi(g) = \int_{\Group} \phi(h) \tilde \kappa(g, h) \dd h
     \end{align*}
     for each $g \in \Group$,
     where the right-hand side is interpreted in the sense of distributions.
@@ -4920,7 +4928,7 @@ We can now state and prove the main result of the section.
     By the kernel estimates for $\rho = 1$ (Theorem~\ref{theorem:kernel_estimates_revisited}),
     we have
     \begin{align*}
-        \abs {\tilde \kappa(g, h)} \leq \abs {\kappa_g(h^{-1} g)} \leq C \norm [\Group] {h^{-1} g}^{-\dim \Group}
+        \abs {\tilde \kappa(g, h)} \leq \abs {\kappa_g(h^{-1} g)} \leq C \norm [\Group] {h^{-1} g}^{-\dim \Group}.
     \end{align*}
 
     Fix $j \in \{1, \dots, \dim \Group\}$.
@@ -4932,7 +4940,7 @@ We can now state and prove the main result of the section.
         \abs {(X_j)_{g_1 = g} \kappa_{g_1}(h^{-1} g)}
         + \abs {(X_j)_{g_2 = g} \kappa_{g}(h^{-1} g_2)}\\
         &\quad \leq
-        C \norm [\Group] {h^{-1} g}^{-\dim \Group - 1}
+        C \norm [\Group] {h^{-1} g}^{-\dim \Group - 1},
     \end{align*}
     and similarly
     \begin{align*}
@@ -4970,7 +4978,7 @@ We shall say that a symbol is \emph{elliptic} if it is pointwise invertible for 
 
 \begin{definition}[Ellipticity]
 \label{definition:ellipticity}
-    Let $\sigma \in \SymbolClass m {\rho, \delta}$
+    Let $\sigma \in \SymbolClass m {\rho, \delta}$.
     We shall say that that $\sigma$ is \emph{elliptic} and of \emph{elliptic order} $m$
     if there exists $\Lambda \geq 0$ such that the following property holds:
     for each $\gamma \in \R$,
@@ -4996,7 +5004,7 @@ we can construct an ``inverse for high frequencies'' which satisfy certain symbo
     For any $F \in E_\lambda(\Lambda) \SmoothFunctions \CompactGroup$,
     let
     \begin{align*}
-        E_\lambda(\Lambda) \sigma(g, \lambda)^{-1} \left(\sigma(g, \lambda) F\right) \defeq F.
+        E_\lambda(\Lambda) \sigma(g, \lambda)^{-1} \left(\sigma(g, \lambda) F\right) \defeq F,
     \end{align*}
     and consider the unique extension of $E_\lambda(\Lambda) \sigma(g, \lambda)^{-1}$ onto $\SmoothFunctions \CompactGroup$ which satisfies
     \begin{align*}
@@ -5015,7 +5023,7 @@ we can construct an ``inverse for high frequencies'' which satisfy certain symbo
             E_\lambda(\Lambda) \sigma(g, \lambda)^{-1}
             \Rep \lambda \BesselPotential {-\gamma}
         }
-        < \infty
+        < \infty.
         \label{eq:boundedness_of_E_lambda_Lambda_sigma_inverse}
     \end{align}
 \end{lemma}
@@ -5091,7 +5099,7 @@ which inverts an elliptic symbol modulo $\SmoothingSymbols$.
         &\quad \leq
         \norm [\Lin {\Lebesgue 2 \CompactGroup}] {\psi_\Lambda}
         \norm [\Lin {\Lebesgue 2 \CompactGroup}] {\Rep \lambda \BesselPotential m E_\lambda(\Lambda) \sigma(g, \lambda)^{-1}}
-        < \infty
+        < \infty,
     \end{align*}
     where the finiteness is given by Lemma~\ref{lemma:inverse_of_elliptic_symbol}.
 
@@ -5207,9 +5215,9 @@ We are now able to prove that any \emph{elliptic pseudo-differential operator} a
 \begin{theorem}[Existence of left parametrices]
 \label{theorem:construction_of_parametrices}
     Let $A \in \OperatorClass m {\rho, \delta}$ be an $m$-elliptic operator of order $m$ with $1 \geq \rho > \delta \geq 0$.
-    The exists an operator $B \in \OperatorClass {-m} {\rho, \delta}$ which satisfies
+    There exists an operator $B \in \OperatorClass {-m} {\rho, \delta}$ which satisfies
     \begin{align*}
-        B A = \Id {\Schwartz \Group} \qquad \text{mod} \quad \SmoothingOperators
+        B A = \Id {\Schwartz \Group} \qquad \text{mod} \quad \SmoothingOperators.
     \end{align*}
 \end{theorem}
 \begin{proof}
@@ -5231,13 +5239,13 @@ We are now able to prove that any \emph{elliptic pseudo-differential operator} a
     by the composition formula.
     Suppose by induction that we have defined $B_j$ and $E_j = \Op(e_j)$ for $j = 0, \dots, k$ such that
     \begin{align*}
-        (B_0 + \dots + B_k) A = I - E_k \quad \text{where } E_k = \Op(e_k) \in \OperatorClass {-(k + 1)(\rho - \delta)} {\rho, \delta}
+        (B_0 + \dots + B_k) A = I - E_k \quad \text{where } E_k = \Op(e_k) \in \OperatorClass {-(k + 1)(\rho - \delta)} {\rho, \delta}.
     \end{align*}
 
     Letting $B_{k + 1} \defeq \Op(E_k \sigma_\Lambda(g, \lambda)^{-1})$,
     we obtain
     \begin{align*}
-        (B_0 + \dots + B_{k + 1}) A = I - E_k + B_{k + 1} A = I - E_{k + 1}
+        (B_0 + \dots + B_{k + 1}) A = I - E_k + B_{k + 1} A = I - E_{k + 1},
     \end{align*}
     where $E_{k + 1} \defeq E_k - B_{k + 1} A$ is an operator in $\OperatorClass {-(k + 2)(\rho - \delta)} {\rho - \delta}$,
     again by the composition formula.
