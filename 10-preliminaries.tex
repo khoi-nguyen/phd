@@ -1,15 +1,15 @@
 \chapter{Preliminaries}
 \label{chapter:preliminaries}
 
-This chapter aims to very briefly introduce key concepts which will be used in the subsequent chapters,
-and we will often omit the proofs.
+This chapter aims to very briefly introduce key concepts which will be used in subsequent chapters,
+and as a result we shall often omit the proofs.
 For a more comprehensive treatment,
 the reader is invited to consult the references given at the beginning of each section.
 
 \section{Lie groups}
 
-For more details,
-see e.g.~\cite{Knapp02,RuzhanskyTurunen10}
+For more details
+see e.g.~\cite{Knapp02,RuzhanskyTurunen10}.
 
 To develop a \emph{pseudo-differential calculus} on groups,
 a reasonable prerequisite is that the group be equipped with a \emph{differential} structure.
@@ -45,7 +45,7 @@ a non-exhaustive list of which is now given.
     \begin{enumerate}
         \item The set $\GeneralLinear \VectorSpace$ of invertible linear maps,
             equipped with the composition of functions,
-            naturally forms a Lie Group called the \emph{general linear group} of $\VectorSpace$.
+            naturally forms a Lie group called the \emph{general linear group} of $\VectorSpace$.
         \item The set
             \begin{align*}
                 \SpecialOrthogonalGroup \VectorSpace
@@ -69,7 +69,7 @@ a non-exhaustive list of which is now given.
     such that
     \begin{enumerate}
         \item $\LieBracket X X = 0$ for every $X \in \LieAlgebra$;
-        \item for every $X, Y, Z \in \LieAlgebra$, we have the following \emph{Jacobi identity}
+        \item For every $X, Y, Z \in \LieAlgebra$, we have the following \emph{Jacobi identity}
             \begin{align*}
                 \LieBracket X {\LieBracket Y Z} +
                 \LieBracket Y {\LieBracket Z X} +
@@ -219,7 +219,7 @@ we let
 \end{example}
 
 The convergence of the series~\eqref{eq:definition_of_exponential_of_matrices} can be shown
-by using a \emph{submultiplicative norm} on $\SquareMatrices n$
+using a \emph{submultiplicative norm} on $\SquareMatrices n$
 and the convergence of the exponential power series for real numbers.
 
 \begin{example}[Exponential map on $\SpecialOrthogonalGroup n$]
@@ -234,7 +234,7 @@ and the convergence of the exponential power series for real numbers.
 \end{example}
 
 \begin{proposition}
-    Let $\Group$ be a connected simply connected Lie group.
+    Let $\Group$ be a connected and simply connected Lie group.
     The exponential map is a diffeomorphism from $\LieAlgebra \defeq \Lie(\Group)$ onto $\Group$.
 \end{proposition}
 
@@ -242,11 +242,11 @@ and the convergence of the exponential power series for real numbers.
 
 We need to choose a measure with respect to which we shall integrate.
 On locally compact topological groups,
-there exists measures which are invariant under the left or right group action.
+there exist measures which are invariant under the left or right group action.
 This property is crucial for the Fourier analysis.
 
 \begin{remark}
-    Every Lie group $\Group$ is also topological space.
+    Every Lie group $\Group$ is also a topological space.
     As a result, all the topological definitions apply to Lie groups.
 \end{remark}
 
@@ -267,7 +267,7 @@ This property is crucial for the Fourier analysis.
 
 \begin{proposition}[Haar measure]
     If $\Group$ is a locally compact Lie group,
-    then there exists a Haar measure $\mu$ on $\Group$.
+    then there exists a non-zero Haar measure $\mu$ on $\Group$.
 
     Moreover, if $\nu$ is another left-invariant Radon measure on $\Group$,
     then we can find $c \geq 0$ such that $\nu = c \mu$.
@@ -277,7 +277,7 @@ This property is crucial for the Fourier analysis.
 \label{definition:unimodular_group}
     Let $\Group$ be a locally compact Lie group.
     If a non-zero Haar measure on $\Group$ is also right-invariant,
-    or equivalently if all Haar measure are right-invariant,
+    or equivalently if all Haar measures are right-invariant,
     we shall say that $\Group$ is \emph{unimodular}.
 \end{definition}
 
@@ -327,7 +327,7 @@ that are measurable with respect to a chosen Haar measure.
                 \defeq \left(\int_\Group \abs f^p \dd g\right)^{\frac 1 p},
                 \quad f \in \Lebesgue p \Group
             \end{align*}
-            defines a norm provided we identify the elements
+            defines a norm, provided we identify the elements
             which are equal almost everywhere with respect to $\dd g$.
         \item
             If $p = \infty$,
@@ -342,7 +342,7 @@ that are measurable with respect to a chosen Haar measure.
                 \defeq \esssup \abs f,
                 \quad f \in \Lebesgue \infty \Group
             \end{align*}
-            defines a norm provided we identify the elements
+            defines a norm, provided we identify the elements
             which are equal almost everywhere with respect to $\dd g$.
     \end{itemize}
 \end{definition}
@@ -389,11 +389,11 @@ are group homomorphisms $\R^n \to \UnitaryGroup 1$ for each fixed $\xi \in \R^n$
     \end{align*}
     is called a \emph{unitary representation (on $\Hil$)} if
     \begin{enumerate}
-        \item for each $g \in \Group$, the map $\xi(g)$ is unitary:
+        \item For each $g \in \Group$, the map $\xi(g)$ is unitary:
             \begin{align*}
                 {\xi(g)}^{-1} = \adj{\xi(g)};
             \end{align*}
-        \item if $g, h \in \Group$, then we have $\xi(g h) = \xi(g) \xi(h)$.
+        \item If $g, h \in \Group$, then we have $\xi(g h) = \xi(g) \xi(h)$.
     \end{enumerate}
 
     The \emph{dimension} of $\xi$ is that of $\Hil$.
@@ -445,13 +445,13 @@ are group homomorphisms $\R^n \to \UnitaryGroup 1$ for each fixed $\xi \in \R^n$
     \begin{align*}
         \xi_2(g) = A \circ \xi_1(g) \circ A^{-1}.
     \end{align*}
-    In that case, $A$ is called an \emph{intertwining operator}.
+    In this case, $A$ is called an \emph{intertwining operator}.
 \end{definition}
 
 \begin{definition}[Strongly continuous representations]
 \label{definition:strongly_continuous_representation}
 \index{strongly continuous}
-    Suppose that $\Group$ is a group and $\Hil$ be a Hilbert space.
+    Suppose that $\Group$ is a group and let $\Hil$ be a Hilbert space.
     Suppose further that $\xi$ is a representation of $\Group$ on $\Hil$.
     We shall say that $\xi$ is \emph{strongly continuous}
     if for each $x \in \Hil$,
@@ -472,7 +472,7 @@ are group homomorphisms $\R^n \to \UnitaryGroup 1$ for each fixed $\xi \in \R^n$
 
 \begin{remark}
     Let $\Group$ be a locally compact topological group.
-    We shall often abuse the notation and use $\dualGroup\Group$ to denote a set consisting of
+    We shall often abuse notation and use $\dualGroup\Group$ to denote a set consisting of
     exactly one representation in each equivalence class of the actual unitary dual.
 \end{remark}
 
@@ -523,7 +523,7 @@ We fix a basis $Y_1$, \dots, $Y_{\dim \CompactGroup}$ of $\LieAlgebraCompactGrou
             {(1 + \abs x)}^N \D{\abs \alpha}{x^\alpha} Y^{\beta}_k f(x, k)
         } < \infty.
     \end{align*}
-    The set of all rapidly decaying functions will denoted by $\Schwartz \GroupDirect$.
+    The set of all rapidly decaying functions will be denoted by $\Schwartz \GroupDirect$.
     The family $\{\seminorm [\Schwartz \GroupDirect] N \dummy : N \in \N\}$ gives $\Schwartz \GroupDirect$
     the structure of a Fr\'echet space.
 \end{definition}
@@ -559,14 +559,15 @@ and we shall say that the above integral is interpreted \emph{in the sense of di
     then there exists a unique distribution
     $\kappa \in \TemperedDistributions {\GroupDirect \times \GroupDirect}$ such that
     \begin{align*}
-        T \phi(x, k) = \int_{\GroupDirect} \kappa(x, k; y, l) \phi(y, l) \dd (y, l).
+        T \phi(x, k) = \int_{\GroupDirect} \kappa(x, k; y, l) \phi(y, l) \dd (y, l)
     \end{align*}
+    in the sense of distributions.
 \end{theorem}
 
 \section{Convolutions}
 
 As the notion of convolution depends on the group structure,
-we introduce it in the abstract, general case of a locally compact Lie group $\Group$.
+we introduce it in the abstract, general case of a locally compact unimodular Lie group $\Group$.
 Naturally, every integration on $\Group$ is performed with respect to a Haar measure.
 
 \begin{definition}[Convolution]
@@ -600,7 +601,7 @@ Naturally, every integration on $\Group$ is performed with respect to a Haar mea
     we get
     \begin{align*}
         \int_\Group \abs {\int_\Group f_1(h) f_2(h^{-1} g) \dd h} \dd g
-        \leq \int_\Group \int_\Group \abs{f_1(h)} \abs{f_2(h^{-1} g)} \dd h \dd g
+        \leq \int_\Group \int_\Group \abs{f_1(h)} \abs{f_2(h^{-1} g)} \dd h \dd g.
     \end{align*}
 
     By the Fubini-Tonelli Theorem,
@@ -612,7 +613,7 @@ Naturally, every integration on $\Group$ is performed with respect to a Haar mea
         &\leq \int_\Group \int_\Group \abs{f_1(h)} \abs{f_2(g)} \dd g \dd h\\
         &\leq \norm [\Lebesgue 1 \Group] {f_1} \norm [\Lebesgue 1 \Group] {f_2},
     \end{align*}
-    concluding the prood.
+    concluding the proof.
 \end{proof}
 
 \begin{lemma}[Young's inequality]
@@ -643,10 +644,10 @@ Naturally, every integration on $\Group$ is performed with respect to a Haar mea
 \subsection{Convolutions of distributions}
 
 In this subsection, we assume that that $\Group = \VectorSpace \ltimes \CompactGroup$,
-where $\VectorSpace$ is a vector space and $K \subset \SpecialOrthogonalGroup \VectorSpace$.
+where $\VectorSpace$ is a Euclidean space and $K \subset \SpecialOrthogonalGroup \VectorSpace$.
 
 Suppose that $\kappa, \phi \in \Schwartz \Group$.
-It follows that \eqref{eq:alternative_definition_of_convolution} can be rewritten
+It follows that \eqref{eq:alternative_definition_of_convolution} can be rewritten as
 \begin{align*}
     \conv \phi \kappa &= \int_\Group \phi(g h^{-1}) \kappa(h) \dd h\\
     &= \int_\Group \kappa(h) \RightRegularRepresentation(g^{-1}) \InverseFunctionArgument \phi(h) \dd g,
@@ -700,7 +701,7 @@ The Fourier transform satisfies the following properties.
 \begin{proposition}
 \label{proposition:elementary_properties_of_the_Fourier_transform}
     Let $f, f_1, f_2 \in \Lebesgue{1}{\Group}$ and $\xi \in \dualGroup\Group$.
-    The Fourier Transform satisfies the following properties:
+    The Fourier Transform satisfies the following properties.
     \begin{enumerate}
         \item For each $g \in \Group$, we have
             \begin{align*}
@@ -722,9 +723,14 @@ The Fourier transform satisfies the following properties.
                 = \Fourier f(\xi) \xi(X).
             \end{align*}
     \end{enumerate}
+
+    In the above,
+    \begin{align*}
+        \xi(X) \defeq \eval {\D* 1 t} {t = 0} \xi(\exp_\Group(t X))
+    \end{align*}
 \end{proposition}
 \begin{proof}
-    Let us prove each of those claims separately.
+    Let us prove each claim separately.
 
     \begin{enumerate}
         \item
@@ -736,7 +742,7 @@ The Fourier transform satisfies the following properties.
                 &= \int_\Group f(h g) \adj{\xi(h)} \dd h\\
                 &= \int_\Group f(h) \adj{\xi(h g^{-1})} \dd h,
             \end{align*}
-            where we used the invariance of the Haar measure under the group action.
+            where we use the invariance of the Haar measure under the group action.
             Continuing the above calculation,
             we obtain
             \begin{align*}
@@ -744,7 +750,7 @@ The Fourier transform satisfies the following properties.
                 = \int_\Group f(h) \xi(g) \adj{\xi(h)} \dd h
                 = \xi(g) \Fourier f(\xi),
             \end{align*}
-            which is what we wanted to show.
+            which is what we intended to show.
 
             Let us proceed similarly for the left-translation.
             Let us observe that this time
@@ -753,7 +759,7 @@ The Fourier transform satisfies the following properties.
                 &= \int_\Group f(g h) \adj{\xi(h)} \dd h\\
                 &= \int_\Group f(h) \adj{\xi(g^{-1} h)} \dd h,
             \end{align*}
-            where we again used the invariance of the Haar measure under the group action.
+            where we again use the invariance of the Haar measure under the group action.
             Continuing the above calculation,
             we now obtain
             \begin{align*}
@@ -761,7 +767,7 @@ The Fourier transform satisfies the following properties.
                 = \int_\Group f(h) \adj{\xi(h)} \xi(g) \dd h
                 = \Fourier f(\xi) \xi(g),
             \end{align*}
-            which is what we wanted to show.
+            which is the desired result.
         \item
             By Proposition~\ref{proposition:integrability_of_the_convolution_of_two_L1_functions},
             $\conv {f_1} {f_2} \in \Lebesgue 1 \Group$.
@@ -770,7 +776,7 @@ The Fourier transform satisfies the following properties.
             yielding
             \begin{align*}
                 \Fourier \{\conv {f_1} {f_2}\}(\xi)
-                &= \int_\Group \int_\Group f_1(h) f_2(h^{-1} g) \adj{\xi(g)} \dd g
+                &= \int_\Group \int_\Group f_1(h) f_2(h^{-1} g) \adj{\xi(g)} \dd g.
             \end{align*}
 
             Using $\adj{\xi(g)} = \adj{(\xi(h) \xi(h^{-1} g))} = \adj{\xi(h^{-1} g)} \adj{\xi(h)}$ in the above,
@@ -783,7 +789,7 @@ The Fourier transform satisfies the following properties.
         \item
             Let $X \in \LieAlgebra$.
             Using integration by parts,
-            we get
+            we have
             \begin{align*}
                 \Fourier \{\LeftDifferentialOperatorFirstOrder X f\}(\xi)
                 = \int_\Group \LeftDifferentialOperatorFirstOrder X f(g) \adj{\xi(g)} \dd g
@@ -804,21 +810,21 @@ The Fourier transform satisfies the following properties.
                 &= - \xi(X) \adj{\xi(g)}.
             \end{align*}
 
-            Substituing the above into the Fourier transform above,
+            Substituing this into the Fourier transform above,
             we obtain
             \begin{align*}
                 \Fourier \{\LeftDifferentialOperatorFirstOrder X f\}(\xi)
                 = \int_\Group f(g) \xi(X) \adj{\xi(g)} \dd g
                 = \xi(X) \Fourier f(\xi).
-            \end{align*}.
+            \end{align*}
 
             Let us now turn our attention to the case of the right-invariant vector fields.
-            In this case,
+            Here,
             \begin{align*}
                 \RightDifferentialOperatorFirstOrder X \adj{\xi(g)}
                 &= \eval {\D* 1 t} {t = 0} \adj{\xi(\exp_\Group(t X) g)}
                 = \eval {\D* 1 t} {t = 0} \adj{\xi(g)} \adj{\xi(\exp_\Group(t X))}\\
-                &= - \adj{\xi(g)} \xi(X)
+                &= - \adj{\xi(g)} \xi(X),
             \end{align*}
             which allows us to conclude that
             \begin{align*}
@@ -849,12 +855,12 @@ The Fourier transform satisfies the following properties.
 \label{subsection:Fourier_transform_of_distributions}
 
 It is not always possible to extend the Fourier Transform onto the set of tempered distributions,
-nor is it necessary to have such an extension for the purpose of pseudo-differential calculus.
-We briefly present here \citeauthor{FischerRuzhansky16}'s construction (see \cite[Subsection 5.1.2]{FischerRuzhansky16}),
+nor is it necessary to have such a general extension for the purpose of pseudo-differential calculus.
+Here, we briefly present \citeauthor{FischerRuzhansky16}'s construction (see \cite[Subsection 5.1.2]{FischerRuzhansky16}),
 which works for a much more general class of groups.
 
 The central idea is the following:
-the \emph{Abstract Plancherel Theorem}~\cite[Subsection 1.8.2]{FischerRuzhansky16} implies that
+the \emph{abstract Plancherel Theorem}~\cite[Subsection 1.8.2]{FischerRuzhansky16} implies that
 any left invariant operator $T$ belongs to $\Lin {\Lebesgue 2 \Group}$ if and only if
 \begin{align*}
     T \phi(g) = \int_{\dualGroup \Group} \tr(\xi(g) \sigma(\xi) \Fourier \phi(\xi)) \dd \Plancherel {\Group}(\xi)
@@ -1013,16 +1019,16 @@ As the set
 \end{align*}
 is invariant under the left- and the right-regular representation,
 they are eigenspaces of the \emph{Casimir operator},
-which coincides with $\Laplacian \CompactGroup$.
+which coincides with $\Laplacian [\CompactGroup]$.
 
 The Plancherel formula takes the following form.
 
 \begin{proposition}[Plancherel formula on $\CompactGroup$]
     Let $f \in \Lebesgue 2 \CompactGroup$.
-    The following formula holds:
+    The following formula holds
     \begin{align*}
         \int_\CompactGroup \abs f^2 \dd k
-        = \sum_{\tau \in \dualGroup \Group} \dimRep \tau \tr(\Fourier [\CompactGroup] f(\tau) \adj{\Fourier [\CompactGroup] f(\tau)})
+        = \sum_{\tau \in \dualGroup \Group} \dimRep \tau \tr(\Fourier [\CompactGroup] f(\tau) \adj{\Fourier [\CompactGroup] f(\tau)}).
     \end{align*}
 \end{proposition}
 
