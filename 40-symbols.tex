@@ -4966,16 +4966,13 @@ and the construction of asymptotic limits (Proposition~\ref{proposition:asymptot
 can be used to construct parametrices of so-called \emph{elliptic pseudo-differential operators}.
 
 Before defining the concept of ellipticity,
-we introduce the following notation
+we define the following linear operator
 \begin{align*}
     E_\lambda(\Lambda)
     \defeq
-    \begin{cases}
-        \Id {\Lebesgue 2 \CompactGroup} & \text{if } \lambda \geq \Lambda\\
-        0 & \text{otherwise}
-    \end{cases}
+    \Id {\bigoplus_{\JapaneseBracket \CompactGroup \tau + \abs \lambda^2 \geq \Lambda} \Span \{\tau_{ij} : i, j = 1, \dots, \dimRep \tau\}}
 \end{align*}
-when $\Lambda \geq 0$.
+when $\lambda \in \VectorSpace$ and $\Lambda \geq 0$.
 
 We shall say that a symbol is \emph{elliptic} if it is pointwise invertible for ``high frequencies''.
 
