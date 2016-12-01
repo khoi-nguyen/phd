@@ -674,6 +674,25 @@ leading to the following definition.
     where $\InverseFunctionArgument \phi(h) \defeq \phi(h^{-1})$ for each $h \in \Group$.
 \end{definition}
 
+Following~\cite[Section 5.1]{FischerRuzhansky16},
+we define the convolution between two distributions associated with left-invariant operators that are bounded between appropriate Sobolev spaces.
+
+\begin{definition}[Convolution of distributions]
+    Let $\kappa_1, \kappa_2 \in \TemperedDistributions \Group$
+    and write
+    \begin{align*}
+        T_i : \phi \in \Schwartz \Group \mapsto \conv \phi {\kappa_i},
+        \quad i = 1, 2.
+    \end{align*}
+    If there exists $a, b, c \in \R$ such that
+    $T_1$ is bounded from $\Sobolev a$ to $\Sobolev b$ and
+    $T_2$ is bounded from $\Sobolev b$ to $\Sobolev c$,
+    then we define $\conv {\kappa_1} {\kappa_2}$ to be the right convolution kernel of
+    \begin{align*}
+        \phi \in \Schwartz \Group \mapsto (T_1 \circ T_2) (\phi).
+    \end{align*}
+\end{definition}
+
 \section{Fourier Transform}
 
 If $\Group$ is separable, locally compact, unimodular and of type I~\cite{FischerRuzhansky16},
@@ -890,7 +909,6 @@ and check we would obtain the same result with different $a, b \in \R$ such that
     T : \Sobolev a \to \Sobolev b
 \end{align*}
 is bounded.
-
 For more detail, see~\cite{FischerRuzhansky16}.
 
 %\section{The direct product case}
