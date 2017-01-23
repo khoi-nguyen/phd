@@ -1,0 +1,99 @@
+\documentclass{beamer}
+%\documentclass[handout]{beamer}
+
+\usepackage{amsmath, amsthm, amssymb, amsfonts}
+\usepackage{mathtools}
+\usepackage{xparse}
+\usepackage{color}
+
+\usepackage{../macros}
+\DeclareMathOperator{\order}{order}
+
+\usepackage[style=alphabetic]{biblatex}
+\bibliography{../Bibliography.bib}
+
+\title{Pseudo-Differential Calculus on Generalized Motion Groups}
+\author{Binh-Khoi Nguyen}
+
+\usetheme{Warsaw}
+
+\begin{document}
+
+\maketitle
+
+\section{Differential operators}
+
+\renewcommand \Group {\R^n}
+
+\begin{frame}
+    {Differential operators}
+
+    Suppose that $T$ is a \emph{differential operator}
+    \begin{align*}
+        T =
+        \sum_{\abs \alpha \leq N}
+        c_\alpha \in \SmoothFunctions {\R^n}
+        \text{ bdd },
+    \end{align*}
+    where $c_\alpha \in \SmoothFunctions {\R^n}$ is \emph{bounded} and \emph{smooth}.
+
+    \pause
+
+    Denote by
+    \begin{align*}
+        \order(T)
+    \end{align*}
+    the \emph{order} of the differential operator.
+\end{frame}
+
+\begin{frame}
+    {Order of differential operators}
+
+    Suppose that $T_i, T$ are differential operators
+    of order $m_i, m$
+    with smooth bounded coefficients.
+
+    \begin{enumerate}
+        \item $T_1 \circ T_2$ has order $m_1 + m_2$;
+            \pause
+        \item For each $n \in \N$, $T^n$ has order $n m$.
+            \pause
+        \item $\adj T$ has order m;
+            \pause
+        \item $T$ is bounded between
+            \begin{align*}
+                \Sobolev k \to \Sobolev {k - m},
+                \quad k = m, m + 1, \dots
+            \end{align*}
+    \end{enumerate}
+\end{frame}
+
+\begin{frame}
+    {Motivation}
+
+    If the operator
+    \begin{align*}
+        {\Laplacian [\R^n]}^\frac s 2
+    \end{align*}
+    "has order" $s \in \R$,
+    \pause
+    then the equation
+    \begin{align*}
+        {\Laplacian [\R^n]}^\frac s 2 u = f
+    \end{align*}
+    satisfies the \emph{subelliptic estimate}
+    \begin{align*}
+        \norm [\Sobolev {k + s}] u
+        \leq C \norm [\Sobolev k] f.
+    \end{align*}
+    \pause
+    \emph{Proof:} $u = {\Laplacian [\R^n]}^\frac {-s} 2 f$.
+\end{frame}
+
+\begin{frame}
+    {Motivation (continued)}
+
+    An adequate generalisation the notion of order to a larger algebra of operators allows us to study the regularity of solutions.
+\end{frame}
+
+\end{document}
