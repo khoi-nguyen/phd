@@ -125,4 +125,37 @@
     Essentially, we just replaced $\partial$ by $\i \turn \xi$.
 \end{frame}
 
+\begin{frame}
+    {Characteristic polynomials (continued)}
+
+    \begin{enumerate}
+        \item
+            The order of $T$ can be obtained by studying the \emph{growth} of $\sigma_T$.
+            \pause
+        \item
+            The composition of two differential operators arise from the $\chi$-polynomial
+            \begin{align}
+                \sigma(x, \xi)
+                \defeq
+                \sum_{\alpha \in \N}
+                \frac 1 {\alpha!}
+                \iD {\xi^\alpha} \sigma_1(x, \xi)
+                \iD {x^\alpha} \sigma_2(x, \xi).
+                \label{eq:Euclidean_composition_formula}
+            \end{align}
+            \pause
+        \item
+            The adjoint of a differential operator arises from the $\chi$-polynomial
+            \begin{align}
+                \sigma'(x, \xi)
+                \defeq
+                \sum_{\alpha \in \N}
+                \frac 1 {\alpha!}
+                \iD {\xi^\alpha}
+                \iD {x^\alpha} \sigma(x, \xi).
+                \label{eq:Euclidean_adjunction_formula}
+            \end{align}
+    \end{enumerate}
+\end{frame}
+
 \end{document}
