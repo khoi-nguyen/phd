@@ -170,8 +170,37 @@
     Note that we have
     \begin{align*}
         \sigma_T(x, \xi)
-        = \Fourier \{\kappa_T(x, \dummy)\}(\xi).
+        = \Fourier \{\kappa_T(x, \dummy)\}(\xi),
     \end{align*}
+    \pause
+    from which it follows that
+    \begin{align*}
+        T \phi(x) =
+        \int_{\Group} \e^{i \turn \ip x \xi} \sigma(x, \xi) \Fourier f(\xi) \dd \xi.
+    \end{align*}
+\end{frame}
+
+\begin{frame}
+    {Definition}
+
+    \begin{definition}
+        [Symbol classes]
+
+        Let $1 \geq \rho > \delta \geq 0$.
+        We shall say that $\sigma \in \SmoothFunctions {\R^n \times \R^n}$ is a \emph{symbol of order $m \in \R$ and type $(\rho, \delta)$}
+        if there exists $C \geq 0$ such that
+        \begin{align*}
+            \abs {%
+                \iD {\xi^\alpha}
+                \iD {x^\beta}
+                \sigma(x, \xi)
+            } \leq
+            C (1 + \norm [\R^n] \xi)^{m - \rho \abs \alpha + \delta \abs \beta}.
+        \end{align*}
+
+        \pause
+        Notation: $\SymbolClass m {\rho, \delta}$.
+    \end{definition}
 \end{frame}
 
 \end{document}
