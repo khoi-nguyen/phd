@@ -224,4 +224,21 @@
     to have ''lower order`` as $\abs \alpha$ increases.
 \end{frame}
 
+\begin{frame}
+    {Pseudo-differential operator}
+
+    \begin{definition}
+        [Pseudo-differential operator]
+
+        Let $1 \geq \rho > \delta \geq 0$.
+        A linear operator $T$ is a \emph{pseudo-differential operator of order $m$ and type $(\rho, \delta)$}
+        if there exists $\sigma \in \SymbolClass m {\rho, \delta}$ such that
+        \begin{align*}
+            T \phi(x)
+            = \int_{\R^n} \e^{\i \turn \ip x \xi} \sigma(x, \xi) \Fourier \phi(\xi) \dd \xi
+        \end{align*}
+        for all $\phi \in \Schwartz \Group$ and $x \in \R^n$.
+    \end{definition}
+\end{frame}
+
 \end{document}
