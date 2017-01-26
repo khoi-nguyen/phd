@@ -181,7 +181,7 @@
 \end{frame}
 
 \begin{frame}
-    {Definition}
+    {Symbol classes}
 
     \begin{definition}
         [Symbol classes]
@@ -201,6 +201,27 @@
         \pause
         Notation: $\SymbolClass m {\rho, \delta}$.
     \end{definition}
+\end{frame}
+
+\begin{frame}
+    {Symbols}
+
+    The condition on $(\rho, \delta)$ is justified by the fact that we want the terms in
+    \begin{align}
+        \sigma(x, \xi)
+        &\defeq
+        \sum_{\alpha \in \N}
+        \frac 1 {\alpha!}
+        \iD {\xi^\alpha} \sigma_1(x, \xi)
+        \iD {x^\alpha} \sigma_2(x, \xi),\\
+        \sigma'(x, \xi)
+        &\defeq
+        \sum_{\alpha \in \N}
+        \frac 1 {\alpha!}
+        \iD {\xi^\alpha}
+        \iD {x^\alpha} \sigma(x, \xi).
+    \end{align}
+    to have ''lower order`` as $\abs \alpha$ increases.
 \end{frame}
 
 \end{document}
