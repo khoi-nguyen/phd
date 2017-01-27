@@ -278,4 +278,17 @@
     Notation: $\sigma \sim \sum_{j \in \N} \sigma_j$
 \end{frame}
 
+\begin{frame}
+    {Sobolev spaces}
+
+    \begin{definition}[Sobolev spaces]
+        Let $s \in \R$.
+        The set $\Sobolev s$ is the set of $f \in \TemperedDistributions \Group$ such that
+        \begin{align*}
+            \norm [\Sobolev s] f^2
+            \defeq \int_{\R^n} \abs{(1 + \norm [\R^n] \xi^2)^\frac s 2 \Fourier f(\xi)}^2 \dd \xi.
+        \end{align*}
+    \end{definition}
+\end{frame}
+
 \end{document}
