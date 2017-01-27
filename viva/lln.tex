@@ -266,16 +266,16 @@
     \begin{theorem}[Asymptotic convergence]
         Let $m_j$ be a strictly decreasing sequence of real numbers.
 
-        If for each $j \in \N$, $\sigma_j \in \SymbolClass {m_j} {\rho, \delta}$,
-        then
-        \begin{align*}
-            \sum_{j = 0}^{N} \sigma_j
+        Suppose that for each $j \in \N$, $\sigma_j \in \SymbolClass {m_j} {\rho, \delta}$.
+        There exists $\sigma \in \SymbolClass {m_0} {\rho, \delta}$ such that \begin{align*}
+            \sigma - \sum_{j = 0}^{N} \sigma_j \in \SymbolClass {m_{N + 1}} {\rho, \delta}
         \end{align*}
-        converges as $N \to \infty$ to a unique limit in $\SymbolClass {m_0} {\rho, \delta}$ modulo $\SmoothingSymbols$.
+        for each $N \in \N$,
+        and $\sigma$ is unique modulo $\SmoothingSymbols$.
     \end{theorem}
 
     \pause
-    Notation: $\sigma \sim \sum_{j \in \N} \sigma_j$.
+    Notation: $\sigma \sim \sum_{j \in \N} \sigma_j$
 \end{frame}
 
 \end{document}
