@@ -258,4 +258,24 @@
     \end{itemize}
 \end{frame}
 
+\begin{frame}
+    {Asymptotic convergence}
+
+    Asymptotic convergence = convergence modulo smoothing symbols/operators.
+    \pause
+    \begin{theorem}[Asymptotic convergence]
+        Let $m_j$ be a strictly decreasing sequence of real numbers.
+
+        If for each $j \in \N$, $\sigma_j \in \SymbolClass {m_j} {\rho, \delta}$,
+        then
+        \begin{align*}
+            \sum_{j = 0}^{N} \sigma_j
+        \end{align*}
+        converges as $N \to \infty$ to a unique limit in $\SymbolClass {m_0} {\rho, \delta}$ modulo $\SmoothingSymbols$.
+    \end{theorem}
+
+    \pause
+    Notation: $\sigma \sim \sum_{j \in \N} \sigma_j$.
+\end{frame}
+
 \end{document}
