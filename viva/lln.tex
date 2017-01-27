@@ -291,4 +291,39 @@
     \end{definition}
 \end{frame}
 
+\begin{frame}
+    {Composition formula}
+
+    The composition of pseudo-differential level can be written at the symbolic level in terms of an asymptotic sum.
+
+    \begin{theorem}
+        [Composition formula]
+
+        Let $\sigma_i \in \SymbolClass {m_i} {\rho, \delta}$, $i = 1, 2$,
+        be a symbol associated with $T_i \in \OperatorClass {m_i} {\rho, \delta}$.
+        Then $T_1 \circ T_2 \in \OperatorClass {m_1 + m_2} {\rho, \delta}$ and its symbol $\sigma$ is an asymptotic limit of
+        \begin{align*}
+            \sum_{\alpha \in \N} \frac {(\i \turn)^{\abs \alpha}} {\alpha!} 
+            \iD {\xi^\alpha} \sigma_1(x, \xi)
+            \iD {x^\alpha} \sigma_2(x, \xi)
+        \end{align*}
+    \end{theorem}
+\end{frame}
+
+\begin{frame}
+    {Adjoint formula}
+
+    \begin{theorem}
+        [Adjoint formula]
+
+        Let $\sigma \in \SymbolClass {m} {\rho, \delta}$
+        be a symbol associated with $T \in \OperatorClass {m} {\rho, \delta}$.
+        Then $\adj T \in \OperatorClass {m} {\rho, \delta}$ and its symbol $\sigma^{(*)}$ is an asymptotic limit of
+        \begin{align*}
+            \sum_{\alpha \in \N} \frac {(\i \turn)^{\abs \alpha}} {\alpha!} 
+            \iD {\xi^\alpha} \iD {x^\alpha} \adj \sigma(x, \xi)
+        \end{align*}
+    \end{theorem}
+\end{frame}
+
 \end{document}
