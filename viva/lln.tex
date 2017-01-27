@@ -377,4 +377,30 @@
     \end{theorem}
 \end{frame}
 
+\begin{frame}
+    {Existence of a parametrix: sketch proof}
+
+    \pause
+    Denote by $\sigma$ the symbol of T.
+    \begin{enumerate}
+        \item Take $S_1 \defeq \Op(1 / \sigma) \in \OperatorClass {-m} {\rho, \delta}$ so that
+            \begin{align*}
+                S_1 \circ T = \Id {\Schwartz \Group} - E_1,
+                \quad E_1 \in \OperatorClass {-(\rho - \delta)} {\rho, \delta}
+            \end{align*}
+            \pause
+        \item Take $S_2 \defeq \Op(e_1/\sigma)$ so that
+            \begin{align*}
+                (S_1 + S_2) \circ T = \Id {\Schwartz \Group} - E_2,
+                \quad E_2 \in \OperatorClass {-2(\rho - \delta)} {\rho, \delta}
+            \end{align*}
+            \pause
+        \item Define $S \sim \sum_{j \in \N} S_j$ and check that
+            \begin{align*}
+                S \circ T = \Id {\Schwartz \Group} - E,
+                \quad E \in \SmoothingOperators.
+            \end{align*}
+    \end{enumerate}
+\end{frame}
+
 \end{document}
