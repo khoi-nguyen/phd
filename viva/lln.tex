@@ -7,7 +7,6 @@
 \usepackage{color}
 
 \usepackage{../macros}
-\DeclareMathOperator{\order}{order}
 
 \usepackage[style=alphabetic]{biblatex}
 \bibliography{../Bibliography.bib}
@@ -21,7 +20,7 @@
 
 \maketitle
 
-\section{Differential operators}
+\section{Introduction}
 
 \renewcommand \Group {\R^n}
 
@@ -44,7 +43,7 @@
 
     Denote by
     \begin{align*}
-        \order(T)
+        \mathrm{order}(T)
     \end{align*}
     the \emph{order} of the differential operator.
 \end{frame}
@@ -179,6 +178,8 @@
         \int_{\Group} \e^{i \turn \ip x \xi} \sigma(x, \xi) \Fourier f(\xi) \dd \xi.
     \end{align*}
 \end{frame}
+
+\section{Symbol classes}
 
 \begin{frame}
     {Symbol classes}
@@ -414,6 +415,251 @@
 
         If $(\rho, \delta) = (1, 0)$,
         we may replace $2$ by $k$.
+    \end{theorem}
+\end{frame}
+
+\section{On Lie groups}
+
+\renewcommand{\Group}{G}
+
+\begin{frame}
+    {Fourier transform on Lie groups}
+
+    \begin{enumerate}
+        \item Replace Lebesgue measure by Haar measure.
+            \pause
+        \item Replace complex exponentials by a family $\dualGroup \Group$ of group morphisms
+            \begin{align*}
+                \xi : \Group \to \End(\Hil),
+            \end{align*}
+            where $\Hil$ is a Hilbert space.
+    \end{enumerate}
+    \pause
+    If $\phi \in \Schwartz \Group$,
+    then
+    \begin{align*}
+        \Fourier \phi(\xi) \defeq \int_\Group \phi(g) \adj \xi(g) \dd g
+    \end{align*}
+\end{frame}
+
+\begin{frame}
+    {Plancherel theory}
+
+    \begin{theorem}
+        [Plancherel theorem]
+
+        Let $f \in \Lebesgue 1 \Group \cap \Lebesgue 2 \Group$.
+        There exists a measure $\mu$ on $\dualGroup \Group$ such that
+        \begin{align*}
+            \int_\Group \abs f^2 \dd g
+            = \int_{\dualGroup \Group} \tr(\Fourier f(\xi) \adj{\Fourier f(\xi)}) \dd \mu(\xi).
+        \end{align*}
+    \end{theorem}
+
+    \pause
+    \begin{theorem}
+        [Inverse formula]
+
+        Let $f \in C^\infty_c(\Group)$.
+        We have
+        \begin{align*}
+            f(g)
+            = \int_{\dualGroup \Group} \tr(\xi(g) \Fourier f(\xi)) \dd \mu(\xi).
+        \end{align*}
+        for each $g \in \Group$.
+    \end{theorem}
+\end{frame}
+
+\begin{frame}
+    {Infinitesimal representations}
+
+    Let $\LeftDifferentialOperatorFirstOrder {X_1}, \dots \LeftDifferentialOperatorFirstOrder {X_{\dim \Group}}$ be a basis of left-invariant vector fields on $\Group$.
+
+    \begin{align*}
+        \xi(X_i) \defeq \eval {\D*{1}{t} \xi(\exp(t X_i))}{t = 0} 
+    \end{align*}
+
+    \pause
+    As in the Euclidean case,
+    \begin{align*}
+        \Fourier \{X_i f\} = \xi(X_i) \Fourier f(\xi).
+    \end{align*}
+    
+    \pause
+    Example: $\Group = \R^n$
+    \begin{align*}
+        \Fourier [\R^n] \{\BesselPotentialSquared [\R^n] {} f\}(\xi)
+        = (1 + \norm [\R^n] \xi^2)
+        \Fourier [\R^n] f(\xi)
+    \end{align*}
+\end{frame}
+
+\begin{frame}
+    {Symbol classes revisited}
+
+    The symbol classes definition could be rewritten as:
+
+    \begin{align*}
+        \abs {%
+            \xi
+            \BesselPotential {-m + \rho \abs \alpha - \delta \abs \beta}
+            \iD {\xi^\alpha}
+            \iD {x^\beta}
+            \sigma(x, \xi)
+        } \leq
+        C_{\alpha, \beta}
+        < \infty.
+    \end{align*}
+
+    \pause
+    \begin{itemize}
+        \item $\sigma$ is a Fourier transform,
+            so will be operator valued in the general case.
+            \pause
+        \item $\iD {x^\beta}$ can be replaced by $\LeftDifferentialOperator \beta$ for the non-Euclidean case.
+            \pause
+        \item What about the derivatives on $\xi \in \dualGroup \Group$?
+    \end{itemize}
+\end{frame}
+
+\begin{frame}
+    {Derivatives in $\xi$}
+
+    Observe that
+    \begin{align*}
+        {\color{red} \iD {\xi^\alpha}} \Fourier [\R^n] \kappa(\xi)
+        = C_\alpha \Fourier [\R^n] {\{{\color{red} x^\alpha} \kappa\}}(\xi)
+    \end{align*}
+
+    \pause
+    We choose a finite family $\Delta \subset \SmoothFunctions \Group$ such that
+    \begin{itemize}
+        \pause
+        \item
+            We can do Taylor developments
+            \pause
+        \item The functions vanish simultaneously only at the identity
+            \pause
+        \item
+            As close to a Leibniz rule as possible
+    \end{itemize}
+\end{frame}
+
+\begin{frame}
+    {Difference operators}
+
+    \begin{definition}
+        [Difference operators]
+
+        If $\Delta = \{q_1, \dots, q_{\dimDifferenceOperators} \}$ and $\alpha \in \N^{\dimDifferenceOperators}$,
+        we let
+        \begin{align*}
+            \DifferenceOperator \alpha \Fourier f(\xi)
+            = \Fourier \{q^\alpha(\dummy^{-1}) f\}(\xi)
+        \end{align*}
+        for each $f \in C^\infty_c(\Group)$,
+        $\xi \in \dualGroup \Group$.
+    \end{definition}
+\end{frame}
+
+\begin{frame}{Symbol classes}
+    \begin{definition}[Symbol classes]
+        A map $\sigma$ is in $\SymbolClass m {\rho, \delta}$ if
+        \begin{enumerate}
+            \item
+                $\sigma$ is smooth.
+            \item
+                For each $\alpha \in \N^M$ and each $\beta \in \N^{\dim \Group}$,
+                \begin{align*}
+                    \norm [op] {
+                        \xi \BesselPotential {-m + \rho \abs \alpha - \delta \abs \beta}
+                        \LeftDifferentialOperator \beta \DifferenceOperatorOrder \alpha \sigma(g, \lambda)
+                    } < \infty
+                \end{align*}
+                uniformly in $g \in \Group$, $\xi \in \dualGroup \Group$.
+        \end{enumerate}
+    \end{definition}
+\end{frame}
+
+\begin{frame}{Pseudo-differential operators}
+    If $\sigma \in \SymbolClass m {\rho, \delta}$,
+    we let
+    \begin{align*}
+        \Op(\sigma) \phi(g) = \InverseFourier \left\{ \sigma(g, \dummy) \Fourier \phi \right\}(g).
+    \end{align*}
+
+    $\Op(\sigma)$ is the \emph{pseudo-differential operator} associated with $\sigma$.
+
+    We write
+    \begin{align*}
+        \OperatorClass m {\rho, \delta} \defeq \Op \left(\SymbolClass m {\rho, \delta}\right).
+    \end{align*}
+
+    \pause
+
+    The map
+    \begin{align*}
+        g \in \Group \mapsto \kappa_g \defeq \InverseFourier \{\sigma(g, \dummy)\}
+    \end{align*}
+    is called the \emph{kernel} associated with $\sigma$.
+\end{frame}
+
+\begin{frame}{Quantization}
+    \begin{block}{Proposition}
+        Let $\sigma \in \SymbolClass m {\rho, \delta}$.
+        For every $\phi \in \Schwartz \Group$,
+        we have
+        \begin{align*}
+            \Op(\sigma) \phi(g) = (\conv \phi {\kappa_g})(g)
+        \end{align*}
+        for every $g \in \Group$.
+    \end{block}
+\end{frame}
+
+\section{Main results}
+
+\begin{frame}{Composition formula}
+    \begin{theorem}[Composition formula]
+        Let $\sigma_i \in \SymbolClass {m_i} {\rho, \delta}$, $i = 1, 2$ with $\rho > \delta$.
+        There exists $\sigma \in \SymbolClass {m_1 + m_2} {\rho, \delta}$ such that
+        \begin{align*}
+            \Op(\sigma) = \Op(\sigma_1) \circ \Op(\sigma_2).
+        \end{align*}
+
+        Moreover,
+        for each $N \in \N$,
+        \begin{align*}
+            \sigma - \sum_{\abs \alpha \leq N} \frac 1 {\alpha!} \DifferenceOperatorOrder {\alpha} \sigma_1 \ \LeftDifferentialOperator {\alpha} \sigma_2 \in \SymbolClass {m - (\rho - \delta) (N + 1)} {\rho, \delta}
+        \end{align*}
+        with an adapted basis of the Lie algebra.
+    \end{theorem}
+\end{frame}
+
+\begin{frame}{Adjunction formula}
+    \begin{theorem}[Adjunction formula]
+        Let $\sigma \in \SymbolClass {m} {\rho, \delta}$ with $\rho > \delta$.
+        There exists $\sigma^{(*)} \in \SymbolClass {m} {\rho, \delta}$ such that
+        \begin{align*}
+            \Op(\sigma^{(*)}) = \adj {\Op(\sigma)}.
+        \end{align*}
+
+        Moreover,
+        for each $N \in \N$,
+        \begin{align*}
+            \sigma^{(*)} - \sum_{\abs \alpha \leq N} \frac 1 {\alpha!} \DifferenceOperatorOrder {\alpha} \LeftDifferentialOperator {\alpha} \adj \sigma \in \SymbolClass {m - (\rho - \delta) (N + 1)} {\rho, \delta}
+        \end{align*}
+        with an adapted basis of the Lie algebra.
+    \end{theorem}
+\end{frame}
+
+\begin{frame}{$L^2$ boundedness}
+    \begin{theorem}[$L^2$ boundedness]
+        Let $T \in \OperatorClass m {\rho, \delta}$ for $\rho > \delta$.
+        The operator $T$ has a continuous extension
+        \begin{align*}
+            T : \Sobolev s \to \Sobolev {s - m}
+        \end{align*}
+        for each $s \in \R$.
     \end{theorem}
 \end{frame}
 
