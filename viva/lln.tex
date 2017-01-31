@@ -1,4 +1,4 @@
-\documentclass{beamer}
+\documentclass[handout]{beamer}
 %\documentclass[handout]{beamer}
 
 \usepackage{amsmath, amsthm, amssymb, amsfonts}
@@ -34,8 +34,7 @@
         c_\alpha(x)
         \iD {x^\alpha},
         \quad
-        c_\alpha \in \SmoothFunctions {\R^n}
-        \text{ bdd },
+        c_\alpha \in \SmoothFunctions {\R^n},
     \end{align*}
     where $c_\alpha \in \SmoothFunctions {\R^n}$ is \emph{smooth} with \emph{bounded derivatives}.
 
@@ -95,7 +94,7 @@
 \begin{frame}
     {Motivation (continued)}
 
-    An adequate generalisation the notion of order to a larger algebra of operators allows us to study the regularity of solutions.
+    An adequate generalization of the notion of order to a larger algebra of operators allows us to study the regularity of solutions.
 \end{frame}
 
 \begin{frame}
@@ -132,12 +131,12 @@
             The order of $T$ can be obtained by studying the \emph{growth} of $\sigma_T$.
             \pause
         \item
-            The composition of two differential operators arise from the $\chi$-polynomial
+            The composition of two differential operators arises from the $\chi$-polynomial
             \begin{align}
                 \sigma(x, \xi)
                 \defeq
                 \sum_{\alpha \in \N}
-                \frac 1 {\alpha!}
+                \frac {(i \turn)^{-\abs \alpha}} {\alpha!}
                 \iD {\xi^\alpha} \sigma_1(x, \xi)
                 \iD {x^\alpha} \sigma_2(x, \xi).
                 \label{eq:Euclidean_composition_formula}
@@ -149,7 +148,7 @@
                 \sigma'(x, \xi)
                 \defeq
                 \sum_{\alpha \in \N}
-                \frac 1 {\alpha!}
+                \frac {(i \turn)^{-\abs \alpha}} {\alpha!}
                 \iD {\xi^\alpha}
                 \iD {x^\alpha} \sigma(x, \xi).
                 \label{eq:Euclidean_adjunction_formula}
@@ -189,15 +188,17 @@
 
         Let $1 \geq \rho > \delta \geq 0$.
         We shall say that $\sigma \in \SmoothFunctions {\R^n \times \R^n}$ is a \emph{symbol of order $m \in \R$ and type $(\rho, \delta)$}
-        if there exists $C \geq 0$ such that
+        if for every $\alpha, \beta \in \N^n$
+        there exists $C \geq 0$ such that
         \begin{align*}
             \abs {%
                 \iD {\xi^\alpha}
                 \iD {x^\beta}
                 \sigma(x, \xi)
             } \leq
-            C (1 + \norm [\R^n] \xi)^{m - \rho \abs \alpha + \delta \abs \beta}.
+            C (1 + \norm [\R^n] \xi)^{m - \rho \abs \alpha + \delta \abs \beta}
         \end{align*}
+        holds for every $x, \xi \in \R^n$.
 
         \pause
         Notation: $\SymbolClass m {\rho, \delta}$.
@@ -215,13 +216,13 @@
         \sigma(x, \xi)
         &\defeq
         \sum_{\alpha \in \N}
-        \frac 1 {\alpha!}
+        \frac {(i \turn)^{-\abs \alpha}} {\alpha!}
         \iD {\xi^\alpha} \sigma_1(x, \xi)
         \iD {x^\alpha} \sigma_2(x, \xi),\\
         \sigma'(x, \xi)
         &\defeq
         \sum_{\alpha \in \N}
-        \frac 1 {\alpha!}
+        \frac {(i \turn)^{-\abs \alpha}} {\alpha!}
         \iD {\xi^\alpha}
         \iD {x^\alpha} \sigma(x, \xi).
     \end{align}
@@ -297,7 +298,7 @@
 \begin{frame}
     {Composition formula}
 
-    The composition of pseudo-differential level can be written at the symbolic level in terms of an asymptotic sum.
+    The composition of pseudo-differential operators can be written at the symbolic level in terms of an asymptotic sum.
 
     \begin{theorem}
         [Composition formula]
@@ -522,7 +523,7 @@
     Example: $\Group = \R^n$
     \begin{align*}
         \Fourier [\R^n] \{\BesselPotentialSquared [\R^n] {} f\}(\xi)
-        = (1 + \norm [\R^n] \xi^2)
+        = (1 + 4 \pi^2 \norm [\R^n] \xi^2)
         \Fourier [\R^n] f(\xi)
     \end{align*}
 \end{frame}
