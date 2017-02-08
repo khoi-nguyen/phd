@@ -1,4 +1,4 @@
-\documentclass[handout]{beamer}
+\documentclass{beamer}
 %\documentclass[handout]{beamer}
 
 \usepackage{amsmath, amsthm, amssymb, amsfonts}
@@ -150,7 +150,7 @@
                 \sum_{\alpha \in \N}
                 \frac {(i \turn)^{-\abs \alpha}} {\alpha!}
                 \iD {\xi^\alpha}
-                \iD {x^\alpha} \sigma(x, \xi).
+                \iD {x^\alpha} \adj \sigma(x, \xi).
                 \label{eq:Euclidean_adjunction_formula}
             \end{align}
     \end{enumerate}
@@ -212,20 +212,16 @@
     {Symbols}
 
     The condition on $(\rho, \delta)$ is justified by the fact that we want the terms in
-    \begin{align}
-        \sigma(x, \xi)
-        &\defeq
-        \sum_{\alpha \in \N}
+    \begin{align*}
+        &\sum_{\alpha \in \N}
         \frac {(i \turn)^{-\abs \alpha}} {\alpha!}
         \iD {\xi^\alpha} \sigma_1(x, \xi)
-        \iD {x^\alpha} \sigma_2(x, \xi),\\
-        \sigma'(x, \xi)
-        &\defeq
-        \sum_{\alpha \in \N}
+        \iD {x^\alpha} \sigma_2(x, \xi)\\
+        &\sum_{\alpha \in \N}
         \frac {(i \turn)^{-\abs \alpha}} {\alpha!}
         \iD {\xi^\alpha}
-        \iD {x^\alpha} \sigma(x, \xi).
-    \end{align}
+        \iD {x^\alpha} \sigma(x, \xi)
+    \end{align*}
     to have ''lower order`` as $\abs \alpha$ increases.
 \end{frame}
 
@@ -307,7 +303,7 @@
         be a symbol associated with $T_i \in \OperatorClass {m_i} {\rho, \delta}$.
         Then $T_1 \circ T_2 \in \OperatorClass {m_1 + m_2} {\rho, \delta}$ and its symbol $\sigma$ is an asymptotic limit of
         \begin{align*}
-            \sum_{\alpha \in \N} \frac {(\i \turn)^{\abs \alpha}} {\alpha!}
+            \sum_{\alpha \in \N} \frac {(\i \turn)^{-\abs \alpha}} {\alpha!}
             \iD {\xi^\alpha} \sigma_1(x, \xi)
             \iD {x^\alpha} \sigma_2(x, \xi)
         \end{align*}
@@ -324,7 +320,7 @@
         be a symbol associated with $T \in \OperatorClass {m} {\rho, \delta}$.
         Then $\adj T \in \OperatorClass {m} {\rho, \delta}$ and its symbol $\sigma^{(*)}$ is an asymptotic limit of
         \begin{align*}
-            \sum_{\alpha \in \N} \frac {(\i \turn)^{\abs \alpha}} {\alpha!}
+            \sum_{\alpha \in \N} \frac {(\i \turn)^{-\abs \alpha}} {\alpha!}
             \iD {\xi^\alpha} \iD {x^\alpha} \adj \sigma(x, \xi)
         \end{align*}
     \end{theorem}
@@ -415,7 +411,7 @@
         then $\phi \in \Sobolev {s + m}$.
 
         If $(\rho, \delta) = (1, 0)$,
-        we may replace $2$ by $k$.
+        we may replace $2$ by any $1 < p < + \infty$.
     \end{theorem}
 \end{frame}
 
